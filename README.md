@@ -1,2 +1,2 @@
 # andraugust.github.io
-My homepage.
+andraugust homepage.
