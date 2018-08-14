@@ -1,13 +1,21 @@
 ---
 layout: page
-title: About
-tagline: A few more words about this theme
+title: 	❓ About
 permalink: /about/
 ---
 
-This is the _Cayman Blog_ Jekyll theme. You can find out more info about customizing this theme, as well as basic usage documentation, and source code at: [cayman-blog](https://github.com/lorepirri/cayman-blog)
+## ❓ About
 
-You can find the source code for _Jekyll_ at [jekyll](https://github.com/jekyll/jekyll)
-
-
-[Go to the Home Page](./)
+<table>
+  <tr>
+    <td>
+    <p align="center"> <img src="me.jpg" width="70%" height="70%"> </p>
+    </td>
+    <td class="full">
+    <p> "The tool should be charming, it should be elegant, it should be worthy of our love. This is no joke, I am terribly serious about this. In this respect the programmer does not differ from any other craftsman: unless he loves his tools it is highly improbable that he will ever create something of superior quality." - Dijkstra <a href="http://www.cs.utexas.edu/~EWD/ewd00xx/EWD32.PDF">EWD32</a></p>
+    <p>
+    Contact: aaugust288@gmail.com. <br />
+    </p>
+    </td>
+  </tr>
+</table>

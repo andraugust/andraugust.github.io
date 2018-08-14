@@ -1,17 +1,18 @@
-title: Andrew August's Notebook
-author: 
+title: andraugust.com
+author:
 #email: andraugust1@gmail.com
 
-url: "https://andraugust.com"
+#description: > # this means to ignore newlines until "baseurl:"
+#  Write an awesome description for your new site here. You can edit this
+#  line in _config.yml. It will appear in your document head meta (for
+#  Google search results) and in your feed.xml site description.
 
-description: This is a description...
-
-#github_username: andraugust
+#github_username:  andraugust
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-cayman-blog:
-  date_format: "%b %-d, %Y"
+#minima:
+#  date_format: "%b %-d, %Y"
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
@@ -21,7 +22,7 @@ header_pages:
 
 # Build settings
 markdown: kramdown
-theme:
+theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock

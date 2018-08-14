@@ -1,17 +1,142 @@
 ---
-#
-# Here you can change the text shown in the Home page before the Latest Posts section.
-#
-# Edit cayman-blog's home layout in _layouts instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
-layout: home
+layout: page
 ---
 
-Cayman Blog Theme is a clean, responsive blogging theme for Jekyll, with social features. It is inspired by the Cayman Theme for Github Pages, which can be greatly used for single projects but not as blogging platform.
+<!-- <div style="background-image: url(yellow.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;"> -->
+<div>
+<br />
+<br />
+<center><h4><b>Welcome to</b></h4></center>
+<center><h2><b>Andrew August's Notebook</b></h2></center>
+<!-- <center><h2>&#x1f4d5;</h2></center> -->
+<br />
+<br />
+</div>
+<!-- </div> -->
 
-This theme has instead all you need to start today blogging with Jekyll, and no effort: pages, posts, few social buttons. Try loading this on mobile too.
+<table>
+<tr class="notebook-table">
+  <td colspan="2" class="full">
+    <hr><br />
+    <h3><center><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></center></h3>
+  </td>
+ </tr>
+ <tr class="notebook-table">
+   <td width="50%" class="full">
+       <p>
+       An interesting property of Wikipedia is that pages often have first-links that lead to their immediate superset.  For example, 'poker' links to 'card game', 'card game' links to 'game', etc.  In this post the first-links of Wikipedia are extracted and used to construct a taxonomy of all pages.  Included is an explorable taxonomy visualizer and some analysis of the taxonomy's structure.
+         <br /><center><em>Posted 4/18</em></center>
+       </p>
+   </td>
+   <td width="50%" class="full">
+       <a href="/wikilinks/"><img src="wikilinks/net70k.png"></a>
+   </td>
+ </tr>
+<tr class="notebook-table">
+  <td colspan="2" class="full">
+    <hr><br />
+    <h3><center><a href="/fmow/"><b>Satellite Image Recognition on the fMoW Dataset</b></a></center></h3>
+  </td>
+ </tr>
+ <tr class="notebook-table">
+   <td width="50%" class="full">
+       <p>
+         The Functional Map of the World (fMoW) dataset contains satellite images of 62 classes of objects. The objects span a variety of shapes and sizes and have a highly biased class distribution.  This post documents some observations made while training a CNN for the fMoW dataset.
+         <br /><center><em>Posted 11/17</em></center>
+       </p>
+   </td>
+   <td width="50%" class="full">
+       <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>
+   </td>
+ </tr>
+<tr class="notebook-table">
+  <td colspan="2" class="full">
+    <hr><br />
+    <h3><center><a href="/rl/"><b>Reinforcement Learning IRL</b></a></center></h3>
+  </td>
+ </tr>
+ <tr class="notebook-table">
+   <td width="50%" class="full">
+       <p>
+         This post documents a robot that learns to crawl using a reinforcement learning algorithm called Q-learning.  Initially the robot moves randomly but eventually learns actions that lead to positive rewards and desirable motion. Included is a video showing the robot in action.
+         <br /><center><em>Posted 11/17</em></center>
+       </p>
+   </td>
+   <td width="50%" class="full">
+       <a href="/rl/"><img src="rl/notebook_im.png"></a>
+   </td>
+ </tr>
 
-Have a look at the Github page for more information.
+<tr class="notebook-table">
+  <td colspan="2" class="full">
+    <hr><br />
+    <h3><center><a href="/cm-clustering/"><b>Discovering Class-Hierarchies by Clustering Confusion Matrices</b></a></center></h3>
+  </td>
+ </tr>
+ <tr class="notebook-table">
+   <td width="50%" class="full">
+       <p>
+         Grouping similar classes into course-grained macro-classes can expose the hierarchical structure of a dataset and guide the development of hierarchical models.  But what's a good way to group classes together?  This post shows how groups can be discovered using spectral clustering on confusion matrices.
+         <br /><center><em>Posted 10/17</em></center>
+       </p>
+   </td>
+   <td width="50%" class="full">
+       <a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png"></a>
+   </td>
+ </tr>
 
-You find this descriptive text in the `index.md` file, so you can change it, or remove it completely, according to your needs.
+<tr class="notebook-table">
+  <td colspan="2" class="full">
+    <hr><br />
+    <h3><center><a href="/neuroev/"><b>Artificial Life, Neural Nets, and Genetic Algorithms</b></a></center></h3>
+  </td>
+ </tr>
+ <tr class="notebook-table">
+   <td width="50%" class="full">
+       <p>
+         Can neural nets be used to control Artificial Life agents?  Can genetic algorithms optimize such nets to produce interesting behavior?  In this post a genetic algorithm called Enforced Subpopulations is implemented to show that <em>yes</em>, neural nets can control AL agents, and <em>yes</em>, genetic algorithms can be used as optimizers.
+         <br /><center><em>Posted 10/17</em></center>
+       </p>
+   </td>
+   <td width="50%" class="full">
+       <a href="/neuroev/"><img src="neuroev/giphy.gif"></a>
+   </td>
+ </tr>
+
+  <tr class="notebook-table">
+    <td colspan="2" class="full">
+      <hr><br />
+      <h3><center><a href="/bellman/"><b>Winning at Dice with Backward Induction</b></a></center></h3>
+    </td>
+   </tr>
+   <tr class="notebook-table">
+     <td width="50%" class="full">
+         <p>
+           Backward induction is a conceptually simple technique for optimizing sequential decision problems.  It's very general and thus has a very non-specific definition.  In this post I give an example of backward induction applied to a dice game called <em>Threes</em>.  I explain the rules of <em>Threes</em> and derive its optimal strategy using backward induction.
+           <br /><center><em>Posted 9/17</em></center>
+         </p>
+     </td>
+     <td width="50%" class="full">
+         <a href="/bellman/"><img src="bellman/dice2.JPG"></a>
+     </td>
+   </tr>
+</table>
+
+<hr>
+<div style="background-image: url(Um-dia-na-Terra.gif); background-position: center; background-repeat: no-repeat;
+background-size: cover;">
+<br />
+<br />
+<br />
+<center><font color="white"><h2>More posts coming soon...</h2></font></center>
+<br />
+<br />
+<br />
+</div>
+
+<!--<br />
+<center><img src="Um-dia-na-Terra.gif"></center>
+<br />
+
+<center><h2> More posts coming soon!!! </h2></center>
+-->
