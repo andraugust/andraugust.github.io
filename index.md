@@ -46,14 +46,14 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><center><a href="/rl/"><b>Reinforcement Learning IRL</b></a></center></h3>
+    <h3><a href="/rl/"><b>Reinforcement Learning IRL</b></a></h3>
   </td>
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
+       <p>2017-11</p>
        <p>
          This post documents a robot that learns to crawl using a reinforcement learning algorithm called Q-learning.  Initially the robot moves randomly but eventually learns actions that lead to positive rewards and desirable motion. Included is a video showing the robot in action.
-         <br /><center><em>Posted 11/17</em></center>
        </p>
    </td>
    <td width="50%" class="full">
@@ -64,14 +64,14 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><center><a href="/cm-clustering/"><b>Discovering Class-Hierarchies by Clustering Confusion Matrices</b></a></center></h3>
+    <h3><a href="/cm-clustering/"><b>Discovering Class-Hierarchies by Clustering Confusion Matrices</b></a></h3>
   </td>
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
+   <p>2017-10</p>
        <p>
          Grouping similar classes into course-grained macro-classes can expose the hierarchical structure of a dataset and guide the development of hierarchical models.  But what's a good way to group classes together?  This post shows how groups can be discovered using spectral clustering on confusion matrices.
-         <br /><center><em>Posted 10/17</em></center>
        </p>
    </td>
    <td width="50%" class="full">
@@ -82,32 +82,31 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><center><a href="/neuroev/"><b>Artificial Life, Neural Nets, and Genetic Algorithms</b></a></center></h3>
+    <h3><a href="/neuroev/"><b>Artificial Life, Neural Nets, and Genetic Algorithms</b></a></h3>
   </td>
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
+   <p>2017-10</p>
        <p>
          Can neural nets be used to control Artificial Life agents?  Can genetic algorithms optimize such nets to produce interesting behavior?  In this post a genetic algorithm called Enforced Subpopulations is implemented to show that <em>yes</em>, neural nets can control AL agents, and <em>yes</em>, genetic algorithms can be used as optimizers.
-         <br /><center><em>Posted 10/17</em></center>
        </p>
    </td>
    <td width="50%" class="full">
        <a href="/neuroev/"><img src="neuroev/giphy.gif"></a>
    </td>
  </tr>
-
   <tr class="notebook-table">
     <td colspan="2" class="full">
       <hr><br />
-      <h3><center><a href="/bellman/"><b>Winning at Dice with Backward Induction</b></a></center></h3>
+      <h3><a href="/bellman/"><b>Winning at Dice with Backward Induction</b></a></h3>
     </td>
    </tr>
    <tr class="notebook-table">
      <td width="50%" class="full">
+     <p>2017-09</p>
          <p>
            Backward induction is a conceptually simple technique for optimizing sequential decision problems.  It's very general and thus has a very non-specific definition.  In this post I give an example of backward induction applied to a dice game called <em>Threes</em>.  I explain the rules of <em>Threes</em> and derive its optimal strategy using backward induction.
-           <br /><center><em>Posted 9/17</em></center>
          </p>
      </td>
      <td width="50%" class="full">
