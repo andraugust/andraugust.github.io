@@ -114,7 +114,7 @@ background-size: cover;">
      <td width="50%" class="full">
      <p><em>2017-09</em></p>
          <p>
-           Threes is a dice game.  This is its solution.  Included are the rules of the game and the backward induction steps that are used to solve it.
+           Threes is the \#1 dice game on planet Earth.  These are its rules and the backward induction steps used to find its optimal policy.
          </p>
      </td>
      <td width="50%" class="full">
