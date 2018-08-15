@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<!-- <div style="background-image: url(yellow.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;"> -->
+<div style="background-image: url(yellow.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
 <div>
 <br />
 <br />
@@ -22,7 +22,7 @@ layout: page
 <tr class="notebook-table">
   <td width="50%" class="full">
     <p><em>2018-04</em></p>
-    <p>An interesting property of Wikipedia is that pages often first-link to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  This post contains an analysis and visualization of Wikipedia's first-link taxonomy.</p>
+    <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of this link taxonomy look like?  This post contains an analysis and visualization to answer these questions.</p>
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png" height="420" width="420"></a>
@@ -38,7 +38,7 @@ layout: page
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p><em>2017-12</em></p>
-       <p>This post documents the use of deep CNNs to classify objects in a satellite image dataset called the Functional Map of the World Dataset.  The dataset contains satellite images of 62 classes of objects over a wide range of sizes.  I look at fine-tuning, the effects of sample size distribution, and the inclusion of context.</p>
+       <p>This post documents the use of deep CNNs to classify objects in a satellite image dataset called the Functional Map of the World Dataset.  The dataset contains satellite images of 62 classes of objects over a wide range of sizes.  I look at fine-tuning, the effects of sample size distribution, and the effect of adding spatial context to the model input.</p>
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="420" width="420"></a>
@@ -55,7 +55,7 @@ layout: page
    <td width="50%" class="full">
        <p><em>2017-11</em></p>
        <p>
-         This post documents an arduino-based robot that learns to crawl using Q-learning.  Initially the robot moves randomly but eventually finds actions that lead to positive rewards and desirable motion. Included is a video of the robot in action.
+         This is an Arduino-based robot that learns to crawl using Q-learning.  Initially the robot moves randomly, but eventually it manages to find desirable actions that lead to positive rewards. Included is a video of the robot in action.
        </p>
    </td>
    <td width="50%" class="full">
@@ -93,7 +93,7 @@ layout: page
    <td width="50%" class="full">
    <p><em>2017-10</em></p>
        <p>
-         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that <em>yes</em>, neural nets can control AL agents and <em>yes</em> GAs can be used as optimizers.
+         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that <em>yes</em> neural nets can control AL agents and <em>yes</em> GAs can be used as optimizers.
        </p>
    </td>
    <td width="50%" class="full">
@@ -111,7 +111,7 @@ layout: page
      <td width="50%" class="full">
      <p><em>2017-09</em></p>
          <p>
-           Threes is a dice game.  This post it its solution.  Included are the rules of Threes and the backward induction steps used to solve it.
+           Threes is a dice game.  This is its solution.  Included are the rules of the game and the backward induction steps that are used to solve it.
          </p>
      </td>
      <td width="50%" class="full">
