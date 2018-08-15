@@ -16,7 +16,6 @@ background-size: cover;">
 <br />
 </div>
 <!-- </div> -->
-<table>
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
@@ -123,7 +122,7 @@ background-size: cover;">
          <br /><br />
      </td>
    </tr>
-</table>
+<!-- </table> -->
 
 <hr>
 <div style="background-image: url(Um-dia-na-Terra.gif); background-position: center; background-repeat: no-repeat;
