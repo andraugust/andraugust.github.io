@@ -18,7 +18,7 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><center><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></center></h3>
+    <h3><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></h3>
   </td>
  </tr>
  <tr class="notebook-table">
