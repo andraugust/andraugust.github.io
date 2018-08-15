@@ -26,7 +26,7 @@ layout: page
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png"></a>
-       <br />
+       <br /><br />
    </td>
 </tr>
 <tr class="notebook-table">
