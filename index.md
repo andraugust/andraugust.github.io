@@ -82,7 +82,7 @@ background-size: cover;">
    <center><a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png" height="350" width="350"></a></center>
    <br />
        <p>
-         This post gives an example of applying spectral clustering to a confusion matrix in order to find appropriate groupings/super-classes.
+         This post gives an example of applying spectral clustering to a confusion matrix in order to define appropriate super-classes.
        </p>
    </td>
    <td width="50%" class="full">
@@ -121,7 +121,7 @@ background-size: cover;">
      <center><a href="/bellman/"><img src="bellman/dice2.JPG" height="350" width="350"></a></center>
      <br />
          <p>
-           Threes is the #1 dice game ever to be played by humankind.  These are its rules and the backward induction steps used to find its optimal policy.
+           Threes is the #1 dice game ever to be played by humankind.  Do you know how to play Threes?  Do you know how to win at Threes?  These are the rules and the backward induction steps used to find its optimal policy.
          </p>
      </td>
      <td width="50%" class="full">
