@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Winning at Dice with Backward Induction"
+title: "Solving Threes"
 permalink: /bellman/
 ---
 <br />
-<h2><center>Winning at Dice with Backward Induction</center></h2>
+<h2><center>Solving Threes</center></h2>
 
 ![bellman/dice.JPG](dice.JPG)
 <center><p>All threes&mdash;the infamous <em>hallelujah</em> roll.</p></center>

@@ -19,7 +19,7 @@ background-size: cover;">
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><a href="/wikilinks/"><b>Exploring Wikipedia's First-Link Taxonomy</b></a></h3>
+    <h3><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></h3>
   </td>
 </tr>
 <tr class="notebook-table">
@@ -114,7 +114,7 @@ background-size: cover;">
      <td width="50%" class="full">
      <p><em>2017-09</em></p>
          <p>
-           Threes is the \#1 dice game on planet Earth.  These are its rules and the backward induction steps used to find its optimal policy.
+           Threes is the #1 dice game ever to be played by humankind.  These are its rules and the backward induction steps used to find its optimal policy.
          </p>
      </td>
      <td width="50%" class="full">

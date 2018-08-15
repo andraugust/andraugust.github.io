@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Satellite Image Recognition on the fMoW Dataset"
+title: "Satellite Image Classification with Deep CNNs"
 permalink: /fmow/
 ---
 <br />
-<h2><center>Satellite Image Recognition on the fMoW Dataset</center></h2>
+<h2><center>Satellite Image Classification with Deep CNNs</center></h2>
 
 The Functional Map of the World dataset (fMoW) is a satellite image dataset recently released by IARPA for object recognition modeling.  Each image in the dataset contains a bounding box over an object of interest and the goal is to train a classifier to correctly label the bounding boxes.  This post lists some observations made while working with fMoW.
 
