@@ -121,7 +121,7 @@ background-size: cover;">
      <center><a href="/bellman/"><img src="bellman/dice2.JPG" height="350" width="350"></a></center>
      <br />
          <p>
-           Threes is the #1 dice game ever to be played by humankind.  Do you know how to play Threes?  Do you know how to win at Threes?  These are the rules and the backward induction steps used to find its optimal policy.
+           Threes is the #1 dice game ever to be played by humankind.  Do <u>you</u> know how to play Threes?  Do <u>you</u> know how to win at Threes?  These are the rules and the backward induction steps used to find Threes's optimal policy.
          </p>
      </td>
      <td width="50%" class="full">
