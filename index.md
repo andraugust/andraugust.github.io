@@ -18,14 +18,14 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></h3>
+    <h3><center><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></center></h3>
   </td>
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
+   <p>2018-04</p>
        <p>
        An interesting property of Wikipedia is that pages often have first-links that lead to their immediate superset.  For example, 'poker' links to 'card game', 'card game' links to 'game', etc.  In this post the first-links of Wikipedia are extracted and used to construct a taxonomy of all pages.  Included is an explorable taxonomy visualizer and some analysis of the taxonomy's structure.
-         <br /><center><em>Posted 4/18</em></center>
        </p>
    </td>
    <td width="50%" class="full">

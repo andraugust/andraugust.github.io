@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 	❓ About
+title: About
 permalink: /about/
 ---
 
-## ❓ About
+## About
 
 <table>
   <tr>
