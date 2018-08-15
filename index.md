@@ -113,7 +113,7 @@ layout: page
          <a href="/bellman/"><img src="bellman/dice2.JPG"></a>
      </td>
    </tr>
-</table>
+<!-- </table> -->
 
 <hr>
 <div style="background-image: url(Um-dia-na-Terra.gif); background-position: center; background-repeat: no-repeat;
