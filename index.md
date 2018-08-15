@@ -4,7 +4,7 @@ layout: page
 
 <!-- <div style="background-image: url(yellow.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;"> -->
 <div style="background-image: url(Lined-Paper-Template-20.jpg); background-position: center; background-repeat: no-repeat;
-background-size: cover;">
+background-size: cover; padding: 0px;">
 <br />
 <br />
 <br />
