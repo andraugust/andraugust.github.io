@@ -4,7 +4,7 @@ layout: page
 
 <!-- <div style="background-image: url(yellow.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;"> -->
 <div style="background-image: url(Lined-Paper-Template-20.jpg); background-position: center; background-repeat: no-repeat;
-background-size: cover; padding-left: 0px;">
+background-size: cover;">
 <br />
 <br />
 <br />
@@ -16,6 +16,7 @@ background-size: cover; padding-left: 0px;">
 <br />
 </div>
 <!-- </div> -->
+<table>
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
@@ -122,7 +123,7 @@ background-size: cover; padding-left: 0px;">
          <br /><br />
      </td>
    </tr>
-<!-- </table> -->
+</table>
 
 <hr>
 <div style="background-image: url(Um-dia-na-Terra.gif); background-position: center; background-repeat: no-repeat;
