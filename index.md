@@ -43,11 +43,11 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p><em>2017-12</em></p>
-       <center><a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="350" width="350"></a></center>
        <br />
        <p>This post documents the use of deep CNNs for object classification on a satellite image dataset called The Functional Map of the World.  The dataset contains satellite images of 62 classes of objects over a wide range of sizes and shapes.  I look at fine-tuning, the effects of sample size distribution, and the effect of adding spatial context to the model input.</p>
    </td>
    <td width="50%" class="full">
+       <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>
        <br />
    </td>
  </tr>
@@ -60,13 +60,13 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p><em>2017-11</em></p>
-       <center><a href="/rl/"><img src="rl/notebook_im.png" height="350" width="350"></a></center>
        <br />
        <p>
          This is an Arduino robot that learns to crawl using Q-learning.  Initially the robot moves randomly but eventually manages to find desirable actions and accumulates positive rewards. Included is a video of the robot in action.
        </p>
    </td>
    <td width="50%" class="full">
+       <a href="/rl/"><img src="rl/notebook_im.png"></a>
        <br />
    </td>
  </tr>
@@ -80,13 +80,13 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
    <p><em>2017-10</em></p>
-   <center><a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png" height="350" width="350"></a></center>
    <br />
        <p>
          This post gives an example of applying spectral clustering to a confusion matrix in order to define appropriate super-classes.
        </p>
    </td>
    <td width="50%" class="full">
+       <a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png"></a>
        <br />
    </td>
  </tr>
@@ -100,13 +100,13 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
    <p><em>2017-10</em></p>
-   <center><a href="/neuroev/"><img src="neuroev/giphy.gif" height="350" width="350"></a></center>
    <br />
        <p>
          Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that <em>yes</em> neural nets can control AL agents and <em>yes</em> GAs can be used as optimizers.
        </p>
    </td>
    <td width="50%" class="full">
+       <a href="/neuroev/"><img src="neuroev/giphy.gif"></a>
        <br />
    </td>
  </tr>
@@ -119,13 +119,13 @@ background-size: cover;">
    <tr class="notebook-table">
      <td width="50%" class="full">
      <p><em>2017-09</em></p>
-     <center><a href="/bellman/"><img src="bellman/dice2.JPG" height="350" width="350"></a></center>
      <br />
          <p>
            Threes is the #1 dice game ever to be played by humankind.  Do <u>you</u> know how to play Threes?  Do <u>you</u> know how to win at Threes?  These are the rules and the backward induction steps used to find Threes's optimal policy.
          </p>
      </td>
      <td width="50%" class="full">
+         <a href="/bellman/"><img src="bellman/dice2.JPG"></a>
          <br />
      </td>
    </tr>
