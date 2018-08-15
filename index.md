@@ -16,13 +16,13 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></h3>
+    <h3><a href="/wikilinks/"><b>Exploring Wikipedia's First-Link Taxonomy</b></a></h3>
   </td>
 </tr>
 <tr class="notebook-table">
   <td width="50%" class="full">
     <p><em>2018-04</em></p>
-    <p>An interesting property of Wikipedia is that pages often have first-links that lead to their immediate superset.  For example, 'poker' links to 'card game', 'card game' links to 'game', etc.  In this post the first-links of Wikipedia are extracted and used to construct a taxonomy of all pages.  Included is an explorable taxonomy visualizer and some analysis of the taxonomy's structure.</p>
+    <p>An interesting property of Wikipedia is that pages often first-link to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  This post contains an analysis and visualization of Wikipedia's first-link taxonomy.</p>
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png" height="420" width="420"></a>
@@ -32,13 +32,13 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><a href="/fmow/"><b>Satellite Image Recognition with Deep CNNs</b></a></h3>
+    <h3><a href="/fmow/"><b>Satellite Image Classification with Deep CNNs</b></a></h3>
   </td>
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p><em>2017-12</em></p>
-       <p>This post looks at the effectiveness of deep CNNs for recognizing objects in satellite images.The Functional Map of the World (fMoW) dataset contains satellite images of 62 classes of objects. The objects span a variety of shapes and sizes and have a highly biased class distribution.  This post documents some observations made while training a CNN for the fMoW dataset.</p>
+       <p>This post documents the use of deep CNNs to classify objects in a satellite image dataset called the Functional Map of the World Dataset.  The dataset contains satellite images of 62 classes of objects over a wide range of sizes.  I look at fine-tuning, the effects of sample size distribution, and the inclusion of context.</p>
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="420" width="420"></a>
@@ -55,7 +55,7 @@ layout: page
    <td width="50%" class="full">
        <p><em>2017-11</em></p>
        <p>
-         This post documents a robot that learns to crawl using a reinforcement learning algorithm called Q-learning.  Initially the robot moves randomly but eventually learns actions that lead to positive rewards and desirable motion. Included is a video showing the robot in action.
+         This post documents an arduino-based robot that learns to crawl using Q-learning.  Initially the robot moves randomly but eventually finds actions that lead to positive rewards and desirable motion. Included is a video of the robot in action.
        </p>
    </td>
    <td width="50%" class="full">
@@ -74,7 +74,7 @@ layout: page
    <td width="50%" class="full">
    <p><em>2017-10</em></p>
        <p>
-         Grouping similar classes into course-grained macro-classes can expose the hierarchical structure of a dataset and guide the development of hierarchical models.  But what's a good way to group classes together?  This post shows how groups can be discovered using spectral clustering on confusion matrices.
+         This post gives an example of applying spectral clustering to a confusion matrix in order to find appropriate groupings/super-classes.
        </p>
    </td>
    <td width="50%" class="full">
@@ -93,7 +93,7 @@ layout: page
    <td width="50%" class="full">
    <p><em>2017-10</em></p>
        <p>
-         Can neural nets be used to control Artificial Life agents?  Can genetic algorithms optimize such nets to produce interesting behavior?  In this post a genetic algorithm called Enforced Subpopulations is implemented to show that <em>yes</em>, neural nets can control AL agents, and <em>yes</em>, genetic algorithms can be used as optimizers.
+         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that <em>yes</em>, neural nets can control AL agents and <em>yes</em> GAs can be used as optimizers.
        </p>
    </td>
    <td width="50%" class="full">
@@ -104,14 +104,14 @@ layout: page
   <tr class="notebook-table">
     <td colspan="2" class="full">
       <hr><br />
-      <h3><a href="/bellman/"><b>Winning at Dice with Backward Induction</b></a></h3>
+      <h3><a href="/bellman/"><b>Solving Threes</b></a></h3>
     </td>
    </tr>
    <tr class="notebook-table">
      <td width="50%" class="full">
      <p><em>2017-09</em></p>
          <p>
-           Backward induction is a conceptually simple technique for optimizing sequential decision problems.  It's very general and thus has a very non-specific definition.  In this post I give an example of backward induction applied to a dice game called <em>Threes</em>.  I explain the rules of <em>Threes</em> and derive its optimal strategy using backward induction.
+           Threes is a dice game.  This post it its solution.  Included are the rules of Threes and the backward induction steps used to solve it.
          </p>
      </td>
      <td width="50%" class="full">
