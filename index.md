@@ -7,9 +7,11 @@ layout: page
 background-size: cover;">
 <br />
 <br />
+<br />
 <center><h4><b>Welcome to</b></h4></center>
 <center><h2><b>Andrew August's Notebook</b></h2></center>
 <!-- <center><h2>&#x1f4d5;</h2></center> -->
+<br />
 <br />
 <br />
 </div>
