@@ -42,7 +42,7 @@ layout: page
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>
-       <br />
+       <br /><br />
    </td>
  </tr>
 <tr class="notebook-table">
@@ -60,7 +60,7 @@ layout: page
    </td>
    <td width="50%" class="full">
        <a href="/rl/"><img src="rl/notebook_im.png"></a>
-       <br />
+       <br /><br />
    </td>
  </tr>
 
@@ -79,7 +79,7 @@ layout: page
    </td>
    <td width="50%" class="full">
        <a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png"></a>
-       <br />
+       <br /><br />
    </td>
  </tr>
 
@@ -98,7 +98,7 @@ layout: page
    </td>
    <td width="50%" class="full">
        <a href="/neuroev/"><img src="neuroev/giphy.gif"></a>
-       <br />
+       <br /><br />
    </td>
  </tr>
   <tr class="notebook-table">
@@ -116,7 +116,7 @@ layout: page
      </td>
      <td width="50%" class="full">
          <a href="/bellman/"><img src="bellman/dice2.JPG"></a>
-         <br />
+         <br /><br />
      </td>
    </tr>
 <!-- </table> -->
