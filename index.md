@@ -25,7 +25,7 @@ layout: page
     <p>An interesting property of Wikipedia is that pages often have first-links that lead to their immediate superset.  For example, 'poker' links to 'card game', 'card game' links to 'game', etc.  In this post the first-links of Wikipedia are extracted and used to construct a taxonomy of all pages.  Included is an explorable taxonomy visualizer and some analysis of the taxonomy's structure.</p>
   </td>
   <td width="50%" class="full">
-       <a href="/wikilinks/"><img src="wikilinks/net70k.png" height="210" width="210"></a>
+       <a href="/wikilinks/"><img src="wikilinks/net70k.png" height="420" width="420"></a>
        <br /><br />
    </td>
 </tr>
@@ -41,7 +41,7 @@ layout: page
        <p>This post looks at the effectiveness of deep CNNs for recognizing objects in satellite images.The Functional Map of the World (fMoW) dataset contains satellite images of 62 classes of objects. The objects span a variety of shapes and sizes and have a highly biased class distribution.  This post documents some observations made while training a CNN for the fMoW dataset.</p>
    </td>
    <td width="50%" class="full">
-       <a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="210" width="210"></a>
+       <a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="420" width="420"></a>
        <br /><br />
    </td>
  </tr>
@@ -59,7 +59,7 @@ layout: page
        </p>
    </td>
    <td width="50%" class="full">
-       <a href="/rl/"><img src="rl/notebook_im.png" height="210" width="210"></a>
+       <a href="/rl/"><img src="rl/notebook_im.png" height="420" width="420"></a>
        <br /><br />
    </td>
  </tr>
@@ -78,7 +78,7 @@ layout: page
        </p>
    </td>
    <td width="50%" class="full">
-       <a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png" height="210" width="210"></a>
+       <a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png" height="420" width="420"></a>
        <br /><br />
    </td>
  </tr>
@@ -97,7 +97,7 @@ layout: page
        </p>
    </td>
    <td width="50%" class="full">
-       <a href="/neuroev/"><img src="neuroev/giphy.gif" height="210" width="210"></a>
+       <a href="/neuroev/"><img src="neuroev/giphy.gif" height="420" width="420"></a>
        <br /><br />
    </td>
  </tr>
@@ -115,7 +115,7 @@ layout: page
          </p>
      </td>
      <td width="50%" class="full">
-         <a href="/bellman/"><img src="bellman/dice2.JPG" height="210" width="210"></a>
+         <a href="/bellman/"><img src="bellman/dice2.JPG" height="420" width="420"></a>
          <br /><br />
      </td>
    </tr>
