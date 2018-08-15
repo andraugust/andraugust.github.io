@@ -31,15 +31,13 @@ layout: page
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><center><a href="/fmow/"><b>Satellite Image Recognition on the fMoW Dataset</b></a></center></h3>
+    <h3><a href="/fmow/"><b>Satellite Image Recognition with Deep CNNs</b></a></h3>
   </td>
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
-       <p>
-         The Functional Map of the World (fMoW) dataset contains satellite images of 62 classes of objects. The objects span a variety of shapes and sizes and have a highly biased class distribution.  This post documents some observations made while training a CNN for the fMoW dataset.
-         <br /><center><em>Posted 11/17</em></center>
-       </p>
+       <p><em>2017-12</em></p>
+       <p>This post looks at the effectiveness of deep CNNs for recognizing objects in satellite images.The Functional Map of the World (fMoW) dataset contains satellite images of 62 classes of objects. The objects span a variety of shapes and sizes and have a highly biased class distribution.  This post documents some observations made while training a CNN for the fMoW dataset.</p>
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>
