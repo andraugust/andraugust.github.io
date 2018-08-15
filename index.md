@@ -44,7 +44,7 @@ background-size: cover;">
        <p><em>2017-12</em></p>
        <center><a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="350" width="350"></a></center>
        <br />
-       <p>This post documents the use of deep CNNs to classify objects in a satellite image dataset called the Functional Map of the World Dataset.  The dataset contains satellite images of 62 classes of objects over a wide range of sizes.  I look at fine-tuning, the effects of sample size distribution, and the effect of adding spatial context to the model input.</p>
+       <p>This post documents the use of deep CNNs for object classification on a satellite image dataset called The Functional Map of the World.  The dataset contains satellite images of 62 classes of objects over a wide range of sizes and shapes.  I look at fine-tuning, the effects of sample size distribution, and the effect of adding spatial context to the model input.</p>
    </td>
    <td width="50%" class="full">
        <br />
