@@ -28,7 +28,7 @@ background-size: cover;">
     <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of this link taxonomy look like?  This post contains an analysis and visualization to answer these questions.</p>
   </td>
   <td width="50%" class="full">
-       <a href="/wikilinks/"><img src="wikilinks/net70k.png" height="420" width="420"></a>
+       <a href="/wikilinks/"><img src="wikilinks/net70k.png" height="350" width="350"></a>
        <br /><br />
    </td>
 </tr>
@@ -44,7 +44,7 @@ background-size: cover;">
        <p>This post documents the use of deep CNNs to classify objects in a satellite image dataset called the Functional Map of the World Dataset.  The dataset contains satellite images of 62 classes of objects over a wide range of sizes.  I look at fine-tuning, the effects of sample size distribution, and the effect of adding spatial context to the model input.</p>
    </td>
    <td width="50%" class="full">
-       <a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="420" width="420"></a>
+       <a href="/fmow/"><img src="fmow/notebook-im-probability.png" height="350" width="350"></a>
        <br /><br />
    </td>
  </tr>
@@ -62,7 +62,7 @@ background-size: cover;">
        </p>
    </td>
    <td width="50%" class="full">
-       <a href="/rl/"><img src="rl/notebook_im.png" height="420" width="420"></a>
+       <a href="/rl/"><img src="rl/notebook_im.png" height="350" width="350"></a>
        <br /><br />
    </td>
  </tr>
@@ -81,7 +81,7 @@ background-size: cover;">
        </p>
    </td>
    <td width="50%" class="full">
-       <a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png" height="420" width="420"></a>
+       <a href="/cm-clustering/"><img src="cm-clustering/notebook_im.png" height="350" width="350"></a>
        <br /><br />
    </td>
  </tr>
@@ -100,7 +100,7 @@ background-size: cover;">
        </p>
    </td>
    <td width="50%" class="full">
-       <a href="/neuroev/"><img src="neuroev/giphy.gif" height="420" width="420"></a>
+       <a href="/neuroev/"><img src="neuroev/giphy.gif" height="350" width="350"></a>
        <br /><br />
    </td>
  </tr>
@@ -118,7 +118,7 @@ background-size: cover;">
          </p>
      </td>
      <td width="50%" class="full">
-         <a href="/bellman/"><img src="bellman/dice2.JPG" height="420" width="420"></a>
+         <a href="/bellman/"><img src="bellman/dice2.JPG" height="350" width="350"></a>
          <br /><br />
      </td>
    </tr>
