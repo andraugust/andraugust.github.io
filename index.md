@@ -25,10 +25,11 @@ background-size: cover;">
 <tr class="notebook-table">
   <td width="50%" class="full">
     <p><em>2018-04</em></p>
+    <center><a href="/wikilinks/"><img src="wikilinks/net70k.png" height="350" width="350"></a></center>
     <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of this link taxonomy look like?  This post contains an analysis and visualization to answer these questions.</p>
   </td>
   <td width="50%" class="full">
-       <a href="/wikilinks/"><img src="wikilinks/net70k.png" height="350" width="350"></a>
+
        <br /><br />
    </td>
 </tr>
@@ -58,7 +59,7 @@ background-size: cover;">
    <td width="50%" class="full">
        <p><em>2017-11</em></p>
        <p>
-         This is an Arduino-based robot that learns to crawl using Q-learning.  Initially the robot moves randomly, but eventually it manages to find desirable actions that lead to positive rewards. Included is a video of the robot in action.
+         This is an Arduino robot that learns to crawl using Q-learning.  Initially the robot moves randomly but eventually manages to find desirable actions and accumulates positive rewards. Included is a video of the robot in action.
        </p>
    </td>
    <td width="50%" class="full">

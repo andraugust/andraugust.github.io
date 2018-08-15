@@ -29,7 +29,7 @@ The second largest disconnected subgraph (originally 0.15M, now 4k) is shown bel
 
 The network layout was determined through a force-directed physics technique.  Each edge exerts a damped spring force on its adjacent nodes and all nodes exert a long-range attractive force like gravity on each other.  In addition there's a short-range repelling force that prevents nodes from forming a 'black hole'.
 
-Nodes are initialized arbitrarily on the perimeter of a circle and a 2d physics simulation steps until a stopping condition is met.  I stopped the simulation when the fastest node became slower than a threshold, another option is to wait until the change in average speed is less than a threshold.
+Nodes are initialized arbitrarily on the perimeter of a circle and the physics simulation steps until a stopping condition is satisfied.  I stopped the simulation when the fastest node became slower than a threshold (another option is to wait until the change in average speed is less than a threshold).
 
 The 70k network is shown below.  It's much slower to load compared to the 4k network, but still do-able.
 
@@ -47,7 +47,7 @@ Necessarily both networks converge to a limit cycle.  The 4k network converges t
 <center>Clicking first-links repeatedly will lead to this limit cycle for about 90% of pages.</center>
 <br />
 
-In the '\<subset\> is a \<superset\>' analogy these nine nodes in union comprise the most abstract set. Combined they contain about 90% of pages, forming what might be called the base of Wikipedia's tree of knowledge. (Or at least the base of _English_ Wikipedia's tree of knowledge.  For an interesting analysis on the variation in attractor nodes across countries, see reference [2].)
+In the '\<subset\> is a \<superset\>' analogy these nine nodes in union comprise the most abstract set. Combined they contain about 90% of pages, forming what might be called the base of Wikipedia's tree of knowledge. (Or at least the base of _English_ Wikipedia's tree of knowledge.  For an interesting analysis on the variation in attractor across countries, see reference [2].)
 
 Attractor members differ in the number of pages leading to them.  The table below shows the fraction of pages leading to each attractor node.  We'll call this the node's _abstractness_.  Knowledge has a much higher abstractness than Philosophy, so even though several first-link accounts have focused on Philosophy it seems more appropriate to focus on Knowledge.
 
