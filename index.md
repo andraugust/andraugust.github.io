@@ -27,7 +27,7 @@ background-size: cover;">
   <td width="50%" class="full">
     <p><em>2018-04</em></p>
     <br />
-    <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of this link taxonomy look like?  This post contains an analysis and visualization to answer these questions.</p>
+    <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of this link taxonomy look like?  This post contains analysis and visualizations to answer these questions.</p>
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png"></a>
@@ -62,7 +62,7 @@ background-size: cover;">
        <p><em>2017-11</em></p>
        <br />
        <p>
-         This is an Arduino robot that learns to crawl using Q-learning.  Initially the robot moves randomly but eventually manages to find desirable actions and accumulates positive rewards. Included is a video of the robot in action.
+         This is an Arduino robot that learns to crawl using Q-learning.  Initially the robot moves randomly but eventually finds desirable actions and accumulates positive rewards. Included is a video of the robot in action.
        </p>
    </td>
    <td width="50%" class="full">
@@ -82,7 +82,7 @@ background-size: cover;">
    <p><em>2017-10</em></p>
    <br />
        <p>
-         This post gives an example of applying spectral clustering to a confusion matrix in order to define appropriate super-classes.
+         This post gives an example of applying spectral clustering to a confusion matrix in order to cluster classes into super-classes.
        </p>
    </td>
    <td width="50%" class="full">
@@ -102,7 +102,7 @@ background-size: cover;">
    <p><em>2017-10</em></p>
    <br />
        <p>
-         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that <em>yes</em> neural nets can control AL agents and <em>yes</em> GAs can be used as optimizers.
+         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented and shown to optimize NNs that control AL agents.
        </p>
    </td>
    <td width="50%" class="full">
@@ -121,7 +121,7 @@ background-size: cover;">
      <p><em>2017-09</em></p>
      <br />
          <p>
-           Threes is the #1 dice game ever to be played by humankind.  Do <u>you</u> know how to play Threes?  Do <u>you</u> know how to win at Threes?  These are the rules and the backward induction steps used to find Threes's optimal policy.
+           Threes is the #1 dice game ever to be played by humankind.  Do <u>you</u> know how to play Threes?  Do <u>you</u> know how to win at Threes?  Look within this post and you'll learn how to play, and who knows, maybe you'll even see how the optimal policy is derived.
          </p>
      </td>
      <td width="50%" class="full">
