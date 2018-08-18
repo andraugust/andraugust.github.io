@@ -26,7 +26,7 @@ background-size: cover;">
 </tr>
 <tr class="notebook-table">
   <td width="50%" class="full">
-    <p><em>2018-04</em></p>
+    <p style="opacity:0.5"><em>2018-04</em></p>
     <br />
     <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of the link-taxonomy look like?</p>
   </td>
