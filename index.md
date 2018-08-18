@@ -11,13 +11,13 @@ background-size: cover;">
 <br />
 <center><h4><b>Welcome to</b></h4></center>
 <center><h2><b>Andrew August's Notebook</b></h2></center>
+<center><h4><b>With things I want to remember or show other people.</b></h4></center>
 <!-- <center><h2>&#x1f4d5;</h2></center> -->
 <br />
 <br />
 <br />
 <br />
 </div>
-<p>This where I write about things I want to remember or show other people.  Enjoy.</p>
 <table>
 <tr class="notebook-table">
   <td colspan="2" class="full">
@@ -29,7 +29,7 @@ background-size: cover;">
   <td width="50%" class="full">
     <p><em>2018-04</em></p>
     <br />
-    <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of the link taxonomy look like?</p>
+    <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of the link-taxonomy look like?</p>
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png"></a>
@@ -104,7 +104,7 @@ background-size: cover;">
    <p><em>2017-10</em></p>
    <br />
        <p>
-         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that yes GAs can optimize NNs that control ALs.
+         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that yes GAs can optimize NNs that control AL agents.
        </p>
    </td>
    <td width="50%" class="full">
