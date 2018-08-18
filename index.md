@@ -11,7 +11,6 @@ background-size: cover;">
 <br />
 <center><h4><b>Welcome to</b></h4></center>
 <center><h2><b>Andrew August's Notebook</b></h2></center>
-<center><h4><b>With things I want to remember or show other people.</b></h4></center>
 <!-- <center><h2>&#x1f4d5;</h2></center> -->
 <br />
 <br />
