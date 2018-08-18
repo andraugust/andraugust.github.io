@@ -27,7 +27,6 @@ background-size: cover;">
 <tr class="notebook-table">
   <td width="50%" class="full">
     <p style="opacity:0.5"><em>2018-04</em></p>
-    <br />
     <p>An interesting property of Wikipedia is that pages often have first links that lead to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the structure of the link-taxonomy look like?</p>
   </td>
   <td width="50%" class="full">
@@ -43,8 +42,7 @@ background-size: cover;">
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
-       <p><em>2017-12</em></p>
-       <br />
+       <p style="opacity:0.5"><em>2017-12</em></p>
        <p>This post documents the use of deep CNNs for object classification on The Functional Map of the World dataset.  The dataset contains satellite images of 62 classes of objects that have diverse sizes and shapes.  I look at fine-tuning, the effects of sample size distribution, and the effect of adding spatial context to model input.</p>
    </td>
    <td width="50%" class="full">
@@ -60,8 +58,7 @@ background-size: cover;">
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
-       <p><em>2017-11</em></p>
-       <br />
+       <p style="opacity:0.5"><em>2017-11</em></p>
        <p>
          This is an Arduino robot that learns to crawl using Q-learning.  Initially the robot moves randomly but eventually finds desirable actions after exploring the state-action space. Included is a video of the robot in action.
        </p>
@@ -80,9 +77,8 @@ background-size: cover;">
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
-   <p><em>2017-10</em></p>
-   <br />
-       <p>
+   <p style="opacity:0.5"><em>2017-10</em></p>
+      <p>
          This post gives an example of applying spectral clustering to a confusion matrix in order to find class hierarchies.
        </p>
    </td>
@@ -100,8 +96,7 @@ background-size: cover;">
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
-   <p><em>2017-10</em></p>
-   <br />
+   <p style="opacity:0.5"><em>2017-10</em></p>
        <p>
          Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that yes GAs can optimize NNs that control AL agents.
        </p>
@@ -119,8 +114,7 @@ background-size: cover;">
    </tr>
    <tr class="notebook-table">
      <td width="50%" class="full">
-     <p><em>2017-09</em></p>
-     <br />
+     <p style="opacity:0.5"><em>2017-09</em></p>
          <p>
            Threes is probably the #1 dice game ever to be played by humankind.  Do <u>you</u> know how to play Threes?  Do <u>you</u> know how to win at Threes?  Here I explain the rules of Threes and use backward induction to find its optimal policy.
          </p>
