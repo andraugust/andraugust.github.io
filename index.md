@@ -27,7 +27,7 @@ background-size: cover;">
 <tr class="notebook-table">
   <td width="50%" class="full">
     <p style="opacity:0.5"><em>2018-04</em></p>
-    <p>An interesting property of Wikipedia is that pages often first-link to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the first-link taxonomy look like?</p>
+    <p>An interesting property of Wikipedia is that pages often first-link to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?</p>
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png"></a>
