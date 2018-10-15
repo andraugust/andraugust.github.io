@@ -5,6 +5,9 @@ permalink: /airbus/
 ---
 
 
+<br />
+<h2><center>Kaggle Ship Detection Challenge</center></h2>
+
 The Kaggle Ship Detection Challenge sponsored by Airbus provides a set of satellite images of the ocean with corresponding ground-truth masks identifying the locations of ship in each image.  The objective is to create a model that accurately masks ships in a provided un-labelled test-set.  This is my solution diary.
 
 
@@ -14,9 +17,9 @@ Getting the data:
 $ mkdir Airbus
 $ cd Airbus
 $ kaggle competitions download -c airbus-ship-detection
-$ unzip ./train_v2.zip -d ./Airbus/data/train_v2/
-$ unzip ./test_v2.zip -d ./Airbus/data/test_v2/
-$ unzip ./train_ship_segmentations_v2.csv.zip -d ./Airbus/data/
+$ unzip ./train_v2.zip -d ./data/train_v2/
+$ unzip ./test_v2.zip -d ./data/test_v2/
+$ unzip ./train_ship_segmentations_v2.csv.zip -d ./data/
 ```
 
 Check if any images are corrupt:
@@ -51,7 +54,7 @@ df_with_ships = df.loc[has_ship]
 print('n with ships:', np.sum(has_ship))
 print('n without ships:', len(has_ship)-np.sum(has_ship))
 ```
-The result is mostly no ships: 150,000 without and 81,723 ships. 
+The result is mostly no ships: 150,000 without and 81,723 with.
 
 What do images with ships look like?
 ```python
@@ -59,7 +62,6 @@ from skimage.io import imread
 import utils
 import matplotlib.pyplot as plt
 plt.switch_backend('agg')
-
 
 # Get images that have ships
 df = pd.read_csv('./data/train_ship_segmentations_v2.csv')
@@ -76,7 +78,6 @@ for _, im_id, rle in df_with_ships.itertuples():
 
 # Plot
 n_plots = 6
-
 plt_count = 0
 for im_id, rles in rle_dict.items():
     plt_count += 1
@@ -110,8 +111,9 @@ plt.xlabel('Number of Ships')
 plt.ylabel('Number of Images')
 plt.savefig('./figures/ship_count_distribution.png')
 ```
-
-![alt text](./figures/ship_count_distribution.png)
+<br />
+<center><img src="../airbus/ship_count_distribution.png" style="height:60%; width:60%"></center>
+<br />
 
 Nearly all images have less than three ships, with most having only one.
 
@@ -134,24 +136,23 @@ plt.xlabel('Ship Area')
 plt.ylabel('Count')
 plt.savefig('./figures/ship_areas.png')
 ```
-![alt text](./figures/ship_areas.png)
+<br />
+<center><img src="../airbus/ship_areas.png" style="height:60%; width:60%"></center>
+<br />
 
-The smallest is tiny--2 pixels in area, the largest is 25,904 pixels (4% of the image), but most are in the hundred to few-hundreds:
-
-![alt text](./figures/ship_areas_zoom.png)
-
+The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), and most are in the hundred to few-hundreds:
+<br />
+<center><img src="../airbus/ship_areas_zoom.png" style="height:60%; width:60%"></center>
+<br />
 
 ## Modeling
-First we'd like to classify images according to if they have ships or not.  This way the localization model can train on a more relevant dataset of ship images and we can quickly generate empty masks for the predicted no-ship images.
+First we'd like to classify images according to if they have ships or not.  This way the localization model can train on a more relevant dataset and we can quickly generate empty masks for the predicted no-ship images.
 
-Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use is a Unet, and Unets tend to be trained on images for which the pixel-wise labels are approximately balanced per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images in half the out-numbering will be lessened, and, on a practical dimension, normal batch sizes (16-32 images) will be able to fit into my GPU memory.
+Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel classes per image.  In our case pixels of no-ships significantly out-number pixels of ships.  By cutting images into quarters the out-numbering will be lessened, and, on a practical dimension, normal batch sizes (16-32 images) will be able to fit into my GPU's memory.
 
-One concern about cutting images, however, is that ships will also get cut, leaving behind a slice that might be hard for Unet to recognize.  Let's see how many ships get cut:
+One concern about quartering images, however, is that ships will get split across quarters, leaving behind a slivers that might be hard for Unet to recognize.  Let's see how many ships get cut:
 
 ```python
-# quartify.py
-from tqdm import tqdm
-
 rles = df['EncodedPixels'].tolist()
 rles = [_ for _ in rles if isinstance(_,str)]   # remove empty masks
 
@@ -175,11 +176,12 @@ for rle in tqdm(rles):
 print(n_crossing)
 ```
 
-The result is `10045`, so about 12% of ships get cut.  That's more than we'd like, but the trade-off might be ok, so we'll go through with the cutting anyways and check later to see if cut-ships are indeed harder to detect.
+The result is 10,045, so about 12% of ships get cut.  That's more than we'd like, but we'll do the cutting anyways and check later to see if cut-ships are indeed harder to detect.
 
-Let's quartify images:
+Quartifying images:
 
 ```python
+# quartify.py
 from multiprocessing import Pool
 from skimage.io import imread, imsave
 
@@ -189,7 +191,6 @@ paths = glob(imgs_root+'**/*.jpg', recursive=True)
 
 df = read_csv('./data/train_ship_segmentations_v2.csv')
 
-# Loop images
 def make_quarters(path):
     im_id = path.split('/')[-1]
     id_no_jpg = im_id.split('.')[0]
@@ -224,15 +225,33 @@ def make_quarters(path):
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         imsave(save_path, im_quarter, plugin='pil', quality=100)
 
-
 pool = Pool(4)
 for _ in tqdm(pool.imap_unordered(make_quarters, paths), total=len(paths)):
     pass
 pool.close()
 ```
 ```bash
-$ python -W ignore quartify.py ./data/train_v2/ ./data/quartered/train_v2/    # supress annoying skimage warnings
+$ python -W ignore quartify.py ./data/train_v2/ ./data/quartered/train_v2/    # suppress annoying skimage warnings
 $ python -W ignore quartify.py ./data/test_v2/ ./data/quartered/test_v2/
 ```
 
-The training set now has 706,997 negative instances and 63,223 positive instances.
+The train set now has 706,997 negative instances and 63,223 positive instances.  We'll train on a balanced set by keeping 63,223 negative instances and ignoring the rest.  The assumption here is that 706,997 negative instances goes beyond the point of diminishing return for sample size, and having fewer samples to train on will accelerate architecture testing.  This set is split 75/25 train/val.  Also, training images are rotated arbitrarily by either 0, 90, 180, or 270 degrees during each epoch to introduce rotational invariance into the model.
+
+After playing with several architectures, I found the best to be an Xception model with ImageNet weights, global max-pooling applied to the last convolutional output, and one sigmoid node on the end to represent probability of ship.  The first 50 layers of the network were frozen to minimize training time.
+
+After the third epoch the validation accuracy reaches a maximum of 0.89 and the f-score reaches a maximum of 0.88.  The confusion matrix is
+
+```bash
+[[15529   277]
+ [ 3177 12629]]
+```
+
+where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real data (the testing data) is expected to have many more negative samples than what was used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate that accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%.
+
+Let's look at validation samples that were misclassified:
+<br />
+<center><img src="../airbus/false_negatives.png" style="height:60%; width:60%"></center>
+<br />
+<br />
+<center><img src="../airbus/false_positives.png" style="height:60%; width:60%"></center>
+<br />
