@@ -115,10 +115,10 @@ plt.ylabel('Number of Images')
 plt.savefig('./figures/ship_count_distribution.png')
 ```
 <br />
-<center><img src="../airbus/ship_count_distribution.png""></center>
+<center><img src="../airbus/ship_count_distribution.png"></center>
 <br />
 
-Nearly all images have less than three ships, with most having only one.
+Nearly all images have less than three ships, most having only one.
 
 What surface area do ships cover?
 ```python
@@ -140,7 +140,7 @@ plt.ylabel('Count')
 plt.savefig('./figures/ship_areas.png')
 ```
 <br />
-<center><img src="../airbus/ship_areas.png""></center>
+<center><img src="../airbus/ship_areas.png"></center>
 <br />
 
 The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), and most are in the hundred to few-hundreds:
