@@ -41,7 +41,7 @@ $ find ./data/train_v2/ -name "*.jpg" | wc -l  # train
 $ find ./data/test_v2/ -name "*.jpg" | wc -l  # test
 >>> 15606
 ```
-How many training images have/don't have ships?
+How many train images have/don't have ships?
 ```python
 import numpy as np
 import pandas as pd
@@ -145,7 +145,7 @@ plt.savefig('./figures/ship_areas.png')
 
 The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), and most are in the hundred to few-hundreds:
 <br />
-<center><img src="../airbus/ship_areas_zoom.png""></center>
+<center><img src="../airbus/ship_areas_zoom.png"></center>
 <br />
 
 ## Modeling
