@@ -95,12 +95,12 @@ for im_id, rles in rle_dict.items():
         break
 ```
 <br />
-<center><img src="../airbus/train_image_masks.png""></center>
+<center><img src="../airbus/train_image_masks.png"></center>
 <br />
 
 Some ships are large and distinguishable like in the first column but others are really small and harder to detect, like the last column.  Some ships are _very_ close together, making them hard to distinguish, even when zoomed in:
 <br />
-<center><img src="../airbus/train_image_masks_closeup.png""></center>
+<center><img src="../airbus/train_image_masks_closeup.png"></center>
 <br />
 
 Some images have one ship while others have multiple.  What's the distribution over ships per image, given there are ships?
