@@ -94,11 +94,14 @@ for im_id, rles in rle_dict.items():
         plt.savefig('./figures/train_images_masks.png', dpi=500)
         break
 ```
-![alt text](./figures/train_image_masks.png)
+<br />
+<center><img src="../airbus/train_image_masks.png""></center>
+<br />
 
 Some ships are large and distinguishable like in the first column but others are really small and harder to detect, like the last column.  Some ships are _very_ close together, making them hard to distinguish, even when zoomed in:
-
-![alt text](./figures/train_image_masks_closeup.png)
+<br />
+<center><img src="../airbus/train_image_masks_closeup.png""></center>
+<br />
 
 Some images have one ship while others have multiple.  What's the distribution over ships per image, given there are ships?
 ```python
@@ -112,7 +115,7 @@ plt.ylabel('Number of Images')
 plt.savefig('./figures/ship_count_distribution.png')
 ```
 <br />
-<center><img src="../airbus/ship_count_distribution.png" style="height:60%; width:60%"></center>
+<center><img src="../airbus/ship_count_distribution.png""></center>
 <br />
 
 Nearly all images have less than three ships, with most having only one.
@@ -137,12 +140,12 @@ plt.ylabel('Count')
 plt.savefig('./figures/ship_areas.png')
 ```
 <br />
-<center><img src="../airbus/ship_areas.png" style="height:60%; width:60%"></center>
+<center><img src="../airbus/ship_areas.png""></center>
 <br />
 
 The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), and most are in the hundred to few-hundreds:
 <br />
-<center><img src="../airbus/ship_areas_zoom.png" style="height:60%; width:60%"></center>
+<center><img src="../airbus/ship_areas_zoom.png""></center>
 <br />
 
 ## Modeling
@@ -248,10 +251,10 @@ After the third epoch the validation accuracy reaches a maximum of 0.89 and the 
 
 where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real data (the testing data) is expected to have many more negative samples than what was used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate that accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%.
 
-Let's look at validation samples that were misclassified:
+Let's look at some validation misclassifications:
 <br />
-<center><img src="../airbus/false_negatives.png" style="height:60%; width:60%"></center>
+<center><img src="../airbus/false_negatives.png"></center>
 <br />
 <br />
-<center><img src="../airbus/false_positives.png" style="height:60%; width:60%"></center>
+<center><img src="../airbus/false_positives.png"></center>
 <br />
