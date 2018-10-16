@@ -260,6 +260,6 @@ Let's look at some validation misclassifications:
 
 The false negatives mostly occur when ships are split, occluded by clouds, or are really tiny; the false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
 
-### Localization Model
+### The Localization Model
 
 The localization model we'll use is a Unet with the same architecture as it was original proposed in [this paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
