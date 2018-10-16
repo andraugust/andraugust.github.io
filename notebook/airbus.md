@@ -98,12 +98,12 @@ for im_id, rles in rle_dict.items():
 <center><img src="../airbus/train_image_masks.png"></center>
 <br />
 
-Some ships are large and distinguishable like in the first column but others are really small and harder to detect, like the last column.  Some ships are _very_ close together, making them hard to distinguish, even when zoomed in:
+Some ships are large and distinguishable, like the first column, but others are really small and harder to detect, like the last column.  Some ships are _very_ close together, making them hard to distinguish, even when zoomed in:
 <br />
 <center><img src="../airbus/train_image_masks_closeup.png"></center>
 <br />
 
-Some images have one ship while others have multiple.  What's the distribution over ships per image, given there are ships?
+Some images have one ship while others have multiple.  What's the distribution over ships per image (given there are ships)?
 ```python
 ship_counts = [len(item[1]) for item in rle_dict.items()]
 max_ships = max(ship_counts)
@@ -118,7 +118,7 @@ plt.savefig('./figures/ship_count_distribution.png')
 <center><img src="../airbus/ship_count_distribution.png"></center>
 <br />
 
-Nearly all images have less than three ships, most having only one.
+Most images have only one ship, and nearly all have less than three.
 
 What surface area do ships cover?
 ```python
@@ -143,17 +143,17 @@ plt.savefig('./figures/ship_areas.png')
 <center><img src="../airbus/ship_areas.png"></center>
 <br />
 
-The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), and most are in the hundred to few-hundreds:
+The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), and most are in the hundreds range:
 <br />
 <center><img src="../airbus/ship_areas_zoom.png"></center>
 <br />
 
 ## Modeling
-First we'd like to classify images according to if they have ships or not.  This way the localization model can train on a more relevant dataset and we can quickly generate empty masks for the predicted no-ship images.
+First we're going to classify images according to if they have ships or not.  This way the localization model will train on a more relevant dataset and we can quickly generate empty masks for the predicted no-ship images.
 
-Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel classes per image.  In our case pixels of no-ships significantly out-number pixels of ships.  By cutting images into quarters the out-numbering will be lessened, and, on a practical dimension, normal batch sizes (16-32 images) will be able to fit into my GPU's memory.
+Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, normal batch sizes (16-32 images) will be able to fit into my GPU's memory.
 
-One concern about quartering images, however, is that ships will get split across quarters, leaving behind a slivers that might be hard for Unet to recognize.  Let's see how many ships get cut:
+One concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard for Unet to recognize.  Let's see how many ships get cut:
 
 ```python
 rles = df['EncodedPixels'].tolist()
@@ -181,7 +181,7 @@ print(n_crossing)
 
 The result is 10,045, so about 12% of ships get cut.  That's more than we'd like, but we'll do the cutting anyways and check later to see if cut-ships are indeed harder to detect.
 
-Quartifying images:
+Quartering images:
 
 ```python
 # quartify.py
@@ -191,17 +191,14 @@ from skimage.io import imread, imsave
 imgs_root = sys.argv[0]
 out_root = sys.argv[1]
 paths = glob(imgs_root+'**/*.jpg', recursive=True)
-
 df = read_csv('./data/train_ship_segmentations_v2.csv')
 
 def make_quarters(path):
     im_id = path.split('/')[-1]
     id_no_jpg = im_id.split('.')[0]
     rles = df.loc[df['ImageId']==im_id, 'EncodedPixels'].tolist()
-
     # Get mask
     mask = utils.rles2mask(rles)
-
     # Quarter masks
     mask_quarters = [
         mask[0:384, 0:384],
@@ -212,7 +209,6 @@ def make_quarters(path):
     # Binary label for each quarter
     mask_labels = [np.sum(_)>0 for _ in mask_quarters]
     mask_labels = [int(_) for _ in mask_labels]
-
     # Load image
     im = imread(path)
     im_quarters = [
@@ -221,7 +217,6 @@ def make_quarters(path):
         im[384:, 0:384, :],
         im[384:, 384:, :]
     ]
-
     # Save image in <root>/<class>/<id>/<id>_<quarter>.jpg
     for i, im_quarter in enumerate(im_quarters):
         save_path = '%s%i/%s/%s_%i.jpg' % (out_root, mask_labels[i], id_no_jpg, id_no_jpg, i)
@@ -238,7 +233,11 @@ $ python -W ignore quartify.py ./data/train_v2/ ./data/quartered/train_v2/    # 
 $ python -W ignore quartify.py ./data/test_v2/ ./data/quartered/test_v2/
 ```
 
-The train set now has 706,997 negative instances and 63,223 positive instances.  We'll train on a balanced set by keeping 63,223 negative instances and ignoring the rest.  The assumption here is that 706,997 negative instances goes beyond the point of diminishing return for sample size, and having fewer samples to train on will accelerate architecture testing.  This set is split 75/25 train/val.  Also, training images are rotated arbitrarily by either 0, 90, 180, or 270 degrees during each epoch to introduce rotational invariance into the model.
+The train set now has 706,997 negative instances and 63,223 positive instances.  We'll balance the set by keeping 63,223 negative instances and ignoring the rest.  The assumption here is that 706,997 negative instances goes beyond the point of diminishing return for sample size, also, having fewer samples to train on will accelerate architecture testing.
+
+### The Binary Model
+
+The set is split 75/25 train/val, and train images are rotated arbitrarily by 0, 90, 180, or 270 degrees on each epoch to introduce rotational invariance into the model.
 
 After playing with several architectures, I found the best to be an Xception model with ImageNet weights, global max-pooling applied to the last convolutional output, and one sigmoid node on the end to represent probability of ship.  The first 50 layers of the network were frozen to minimize training time.
 
@@ -249,7 +248,7 @@ After the third epoch the validation accuracy reaches a maximum of 0.89 and the 
  [ 3177 12629]]
 ```
 
-where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real data (the testing data) is expected to have many more negative samples than what was used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate that accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%.
+where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real (testing) data is expected to have many more negative samples than what was used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate that accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%.
 
 Let's look at some validation misclassifications:
 <br />
@@ -258,3 +257,9 @@ Let's look at some validation misclassifications:
 <br />
 <center><img src="../airbus/false_positives.png"></center>
 <br />
+
+The false negatives mostly occur when ships are split, occluded by clouds, or are really tiny; the false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
+
+### Localization Model
+
+The localization model we'll use is a Unet with the same architecture as it was original proposed in [this paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
