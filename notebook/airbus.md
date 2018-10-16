@@ -151,10 +151,11 @@ The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), 
 ## Modeling
 First we're going to classify images according to if they have ships or not.  This way the localization model will train on a more relevant dataset and we can quickly generate empty masks for the predicted no-ship images.
 
-Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, normal batch sizes (16-32 images) will be able to fit into my GPU's memory.
+Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, batch sizes between 16 and 32 will be able to fit into my GPU :).
 
-One concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard for Unet to recognize.  Let's see how many ships get cut:
+One concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get cut:
 
+<div style="overflow:auto;">
 ```python
 rles = df['EncodedPixels'].tolist()
 rles = [_ for _ in rles if isinstance(_,str)]   # remove empty masks
@@ -178,6 +179,7 @@ for rle in tqdm(rles):
 
 print(n_crossing)
 ```
+</div>
 
 The result is 10,045, so about 12% of ships get cut.  That's more than we'd like, but we'll do the cutting anyways and check later to see if cut-ships are indeed harder to detect.
 
@@ -233,7 +235,7 @@ $ python -W ignore quartify.py ./data/train_v2/ ./data/quartered/train_v2/    # 
 $ python -W ignore quartify.py ./data/test_v2/ ./data/quartered/test_v2/
 ```
 
-The train set now has 706,997 negative instances and 63,223 positive instances.  We'll balance the set by keeping 63,223 negative instances and ignoring the rest.  The assumption here is that 706,997 negative instances goes beyond the point of diminishing return for sample size, also, having fewer samples to train on will accelerate architecture testing.
+The train set now has 706,997 negative instances and 63,223 positive instances.  We'll balance the set by keeping 63,223 negative instances and ignore the rest.  The assumption is that 706,997 negative instances goes beyond the point of diminishing return for sample size, but also having fewer samples  will accelerate architecture testing.
 
 ### The Binary Model
 
@@ -254,12 +256,11 @@ Let's look at some validation misclassifications:
 <br />
 <center><img src="../airbus/false_negatives.png"></center>
 <br />
-<br />
 <center><img src="../airbus/false_positives.png"></center>
 <br />
 
-The false negatives mostly occur when ships are split, occluded by clouds, or are really tiny; the false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
+False negatives mostly occur when ships are either split, occluded by clouds, or really small; false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
 
 ### The Localization Model
 
-The localization model we'll use is a Unet with the same architecture as it was original proposed in [this paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
+The localization model we'll use is a Unet with the same architecture that was used in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
