@@ -151,11 +151,10 @@ The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), 
 ## Modeling
 First we're going to classify images according to if they have ships or not.  This way the localization model will train on a more relevant dataset and we can quickly generate empty masks for the predicted no-ship images.
 
-Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, batch sizes between 16 and 32 will be able to fit into my GPU :).
+Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, batch sizes of 32 will fit in my GPU memory :).
 
 One concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get cut:
 
-<div style="overflow:auto;">
 ```python
 rles = df['EncodedPixels'].tolist()
 rles = [_ for _ in rles if isinstance(_,str)]   # remove empty masks
@@ -179,9 +178,8 @@ for rle in tqdm(rles):
 
 print(n_crossing)
 ```
-</div>
 
-The result is 10,045, so about 12% of ships get cut.  That's more than we'd like, but we'll do the cutting anyways and check later to see if cut-ships are indeed harder to detect.
+The result is 10,045, so about 12% of ships get cut.  That's more than we'd like, but we'll do the cutting anyway and check later to see if cut-ships are indeed harder to detect.
 
 Quartering images:
 
