@@ -277,7 +277,7 @@ The results are pretty impressive.  After just the first epoch the model localiz
 
 Now let's see where the Unet performed poorly.  These are the validation samples with the largest loss:
 <br />
-<center><a href="../airbus/unet_errors.png"><img src="../airbus/unet_predictions.png"></a></center>
+<center><a href="../airbus/unet_errors.png"><img src="../airbus/unet_errors.png"></a></center>
 <br />
 
 Evidently, docked ships are the hardest to detect.  This is probably because most training ships are surrounded by water, so ships touching land are predicted to be land also.
