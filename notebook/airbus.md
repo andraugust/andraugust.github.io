@@ -261,4 +261,18 @@ False negatives mostly occur when ships are either split, occluded by clouds, or
 
 ### The Localization Model
 
-The localization model we'll use is a Unet with the same architecture that was used in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
+The localization model we'll use is a Unet with the same architecture from the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
+
+We train directly on the 384x384 images using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, the batch size is 6.  The objective function/loss is pixel-wise binary cross entropy.  Here's the validation loss over epochs:
+<br />
+<center><img src="../airbus/unet_loss.png"></center>
+<br />
+
+And here are some validation predictions after each epoch:
+<br />
+<center><img src="../airbus/unet_predictions.png"></center>
+<br />
+
+
+
+the Here are the results over each epoch for some randomly selected validation samples:
