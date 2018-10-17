@@ -268,11 +268,7 @@ We train directly on the 384x384 images using a 0.75/0.25 train/val split.  The 
 <center><img src="../airbus/unet_loss.png"></center>
 <br />
 
-And here are some validation predictions after each epoch:
+And here are some validation predictions after each epoch, click to enlarge:
 <br />
-<center><img src="../airbus/unet_predictions.png"></center>
+<center><a href="../airbus/unet_predictions.png"><img src="../airbus/unet_predictions.png"></a></center>
 <br />
-
-
-
-the Here are the results over each epoch for some randomly selected validation samples:
