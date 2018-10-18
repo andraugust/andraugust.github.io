@@ -275,9 +275,23 @@ And here are some validation predictions after each epoch, click to enlarge:
 
 The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and the land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edge of images.
 
-Now let's see where the Unet performed poorly.  These are the validation samples with the largest loss:
+Now let's see where the Unet performed poorly.  These are the validation images with the biggest loss:
 <br />
 <center><a href="../airbus/unet_errors.png"><img src="../airbus/unet_errors.png"></a></center>
 <br />
 
-Evidently, docked ships are the hardest to detect.  This is probably because most training ships are surrounded by water, so ships touching land are predicted to be land also.
+Evidently, docked ships are hardest to detect.  This is probably because most training ships are surrounded by water, so those touching land are hard to identify.
+
+### Post-processing
+
+
+- Un-quarter images
+- Threshold Unet predictions
+- Isolate connected groups of pixels as individual ships
+- Convert masks to rles
+- Submit
+
+
+- Fit a minimum bounding-rectangle
+
+- Work on special cases
