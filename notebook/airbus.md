@@ -8,8 +8,7 @@ permalink: /airbus/
 <br />
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
 
-The Kaggle Ship Detection Challenge sponsored by Airbus provides a set of satellite images of the ocean with corresponding ground-truth masks identifying the locations of ship in each image.  The objective is to create a model that accurately masks ships in a provided un-labelled test-set.  This is my solution diary.
-
+The Kaggle Ship Detection Challenge, sponsored by Airbus, provides satellite images of the ocean with ground-truth labels indicating the locations of ships in each image.  The objective is to create a model that accurately localizes ships in a test set.  This post walks through my solution to the challenge.
 
 ## Data Exploration
 Getting the data:
@@ -143,17 +142,17 @@ plt.savefig('./figures/ship_areas.png')
 <center><img src="../airbus/ship_areas.png"></center>
 <br />
 
-The smallest is tiny--2 pixels, the largest is 25,904 pixels (4% of the image), and most are in the hundreds range:
+The smallest is tiny, only 2 pixels.  The largest is 25,904 pixels (4% of the image).  Most are in the hundreds range:
 <br />
 <center><img src="../airbus/ship_areas_zoom.png"></center>
 <br />
 
 ## Modeling
-First we're going to classify images according to if they have ships or not.  This way the localization model will train on a more relevant dataset and we can quickly generate empty masks for the predicted no-ship images.
+First we're going to classify images according to if they have ships or not.  This way the localization model can train on a more relevant dataset containing only ships, and we can quickly generate empty masks for predicted no-ship images.
 
-Before implementing the binary classifier we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, batch sizes of 32 will fit in my GPU memory :).
+But before implementing the binary classifier, we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, batch sizes of 32 will fit in my GPU memory without having to down-sample and lose resolution.
 
-One concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get cut:
+One concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get split:
 
 ```python
 rles = df['EncodedPixels'].tolist()
@@ -179,7 +178,7 @@ for rle in tqdm(rles):
 print(n_crossing)
 ```
 
-The result is 10,045, so about 12% of ships get cut.  That's more than we'd like, but we'll do the cutting anyway and check later to see if cut-ships are indeed harder to detect.
+The result is 10,045, so about 12% of ships get split.  That's more than we'd like, but we'll do the cutting anyway and check later to see if split ships are indeed harder to detect.
 
 Quartering images:
 
@@ -233,11 +232,11 @@ $ python -W ignore quartify.py ./data/train_v2/ ./data/quartered/train_v2/    # 
 $ python -W ignore quartify.py ./data/test_v2/ ./data/quartered/test_v2/
 ```
 
-The train set now has 706,997 negative instances and 63,223 positive instances.  We'll balance the set by keeping 63,223 negative instances and ignore the rest.  The assumption is that 706,997 negative instances goes beyond the point of diminishing return for sample size, but also having fewer samples  will accelerate architecture testing.
+The train set now has 706,997 negative instances and 63,223 positive instances.  We'll balance the set by keeping 63,223 negative instances and ignore the rest.  The assumption is that 706,997 negative instances goes beyond the point of diminishing return for sample size and having fewer samples will accelerate architecture testing.
 
 ### The Binary Model
 
-The set is split 75/25 train/val, and train images are rotated arbitrarily by 0, 90, 180, or 270 degrees on each epoch to introduce rotational invariance into the model.
+The set is split 0.75/0.25 train/val, and train images are rotated arbitrarily by 0, 90, 180, or 270 degrees on each epoch to build rotational invariance into the model.
 
 After playing with several architectures, I found the best to be an Xception model with ImageNet weights, global max-pooling applied to the last convolutional output, and one sigmoid node on the end to represent probability of ship.  The first 50 layers of the network were frozen to minimize training time.
 
@@ -248,7 +247,7 @@ After the third epoch the validation accuracy reaches a maximum of 0.89 and the 
  [ 3177 12629]]
 ```
 
-where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real (testing) data is expected to have many more negative samples than what was used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate that accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%.
+where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real data, i.e., the testing data, is expected to have many more negative samples than what's used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate that accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%. Not bad.
 
 Let's look at some validation misclassifications:
 <br />
@@ -257,13 +256,13 @@ Let's look at some validation misclassifications:
 <center><img src="../airbus/false_positives.png"></center>
 <br />
 
-False negatives mostly occur when ships are either split, occluded by clouds, or really small; false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
+False negatives mostly occur when ships are either split, occluded by clouds, or really small; false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.  We just have to deal with that.
 
 ### The Localization Model
 
-The localization model we'll use is a Unet with the same architecture from the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
+The localization model we'll use is a Unet with the same architecture as the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
 
-We train directly on the 384x384 images using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, the batch size is 6.  The objective function/loss is pixel-wise binary cross entropy.  Here's the validation loss over epochs:
+We train directly on 384x384 images using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, batch size is 6, and the loss to minimize is pixel-wise binary cross entropy.  Here's the validation loss over epochs:
 <br />
 <center><img src="../airbus/unet_loss.png"></center>
 <br />
@@ -273,9 +272,9 @@ And here are some validation predictions after each epoch, click to enlarge:
 <center><a href="../airbus/unet_predictions.png"><img src="../airbus/unet_predictions.png"></a></center>
 <br />
 
-The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and the land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edge of images.
+The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edge of images, which we were worried might not happen.
 
-Now let's see where the Unet performed poorly.  These are the validation images with the biggest loss:
+Let's see where Unet performed poorly.  These validation samples have the biggest loss:
 <br />
 <center><a href="../airbus/unet_errors.png"><img src="../airbus/unet_errors.png"></a></center>
 <br />
@@ -284,14 +283,12 @@ Evidently, docked ships are hardest to detect.  This is probably because most tr
 
 ### Post-processing
 
+Submissions
+- blank
+- threshold at 0.5
+- threshold at 0.5, bbox
+- threshold at 0.5, bbox, delete small ones, delete big ones, delete weird ones
 
-- Un-quarter images
-- Threshold Unet predictions
-- Isolate connected groups of pixels as individual ships
-- Convert masks to rles
-- Submit
 
-
-- Fit a minimum bounding-rectangle
-
-- Work on special cases
+### Misc notes
+- Unet took about 48 hours to train on my 8GB GTX1080.  The maximum energy usage of the GPU is around 180W, and the CPU is probably (?) using about the same; local residential electricity cost is 8.5c/kWh, so the Unet took about 1.50$ cents to train---take that aws!
