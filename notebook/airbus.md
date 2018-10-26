@@ -284,11 +284,11 @@ Evidently, docked ships are hardest to detect, they just look like a continuatio
 
 The objective function used by Kaggle is somewhat convoluted.  For each image, an intersection-over-union is computed between any predictions and ground-truths that might exist.  The IoU is then thresholded over a set of values to determine if the prediction will be a TP.  Then, f2 score is calculated and averaged for each threshold.  Then, that average f2 score is averaged over all images, and that's your prediction score.  Note that bounding-boxes aren't used as predictions, but instead run-length encoded masks, so really they can look like anything.  It isn't entirely clear if a single mask can be TP for multiple ships, or how predictions are assigned to ground-truths when there are multiple predictions and ground-truths per image, but more info on scoring is [here](https://www.kaggle.com/c/airbus-ship-detection#evaluation).
 
-To get a sense of where to threshold the Unet predictions, let's loop over several thresholds and look at the IoU averaged over the validation set (with error bars of 1 std dev on each side):
+To get a sense of where to threshold Unet predictions, let's loop over thresholds and look at average IoUs on the validation set (with error bars of 1 std dev on each side):
 <br />
 <center><a href="../airbus/iou_v_thresh.png"><img src="../airbus/iou_v_thresh.png"></a></center>
 <br />
-Looks like 0.4 is a good threshold value
+We'll use 0.4 as a threshold.
 
 
 ### Testing
@@ -299,9 +299,12 @@ Let's spot-check some test predictions.
 
 Submissions
 - blank: 0.520
-- threshold unet, ship area >=40: 0.680
-- threshold unet, ship area >=20: 0.680
-- threshold unet, ship area >=100: 0.679
+- threshold unet, ship area 40: 0.680
+- threshold unet, ship area 40, box_area 0.2: 0.680
+- threshold unet, ship area 40, box_area 0.4: 0.679
+- threshold unet, ship area 20: 0.680
+- threshold unet, ship area 20, box_area 0.2: 0.680
+- threshold unet, ship area 100: 0.679
 - threshold unet, mode filter
 - threshold unet, mode filter, bbox
 - threshold at 0.5, bbox, delete small ones, delete big ones, delete weird ones
