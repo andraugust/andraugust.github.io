@@ -8,7 +8,7 @@ permalink: /airbus/
 <br />
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
 
-The Kaggle Ship Detection Challenge, sponsored by Airbus, provides satellite images of the ocean with ground-truth labels indicating the locations of ships in each image.  The objective is to create a model that accurately localizes ships in a test set.  This post walks through my solution to the challenge.
+The Kaggle Ship Detection Challenge (sponsored by Airbus) provides satellite images of the ocean and ground-truth masks of ships in each image.  The objective is to create a model that accurately localizes ships in a set of testing images.  This post walks through my solution to the challenge.
 
 ## Data Exploration
 Getting the data:
@@ -40,7 +40,7 @@ $ find ./data/train_v2/ -name "*.jpg" | wc -l  # train
 $ find ./data/test_v2/ -name "*.jpg" | wc -l  # test
 >>> 15606
 ```
-How many train images have/don't have ships?
+How many train images do/don't have ships?
 ```python
 import numpy as np
 import pandas as pd
@@ -94,15 +94,15 @@ for im_id, rles in rle_dict.items():
         break
 ```
 <br />
-<center><img src="../airbus/train_image_masks.png"></center>
+<center><a href="../airbus/train_image_masks.png"><img src="../airbus/train_image_masks.png"></a></center>
 <br />
 
-Some ships are large and distinguishable, like the first column, but others are really small and harder to detect, like the last column.  Some ships are _very_ close together, making them hard to distinguish, even when zoomed in:
+Some ships are large and easy to distinguish, like the first column, but others are small and hard to detect, like the last column.  Some ships are _very_ close together, making them hard to separate, even when zoomed in:
 <br />
 <center><img src="../airbus/train_image_masks_closeup.png"></center>
 <br />
 
-Some images have one ship while others have multiple.  What's the distribution over ships per image (given there are ships)?
+Some images have one ship while others have multiple.  What's the distribution over ships per image, given there are ships?
 ```python
 ship_counts = [len(item[1]) for item in rle_dict.items()]
 max_ships = max(ship_counts)
@@ -142,17 +142,17 @@ plt.savefig('./figures/ship_areas.png')
 <center><img src="../airbus/ship_areas.png"></center>
 <br />
 
-The smallest is tiny, only 2 pixels.  The largest is 25,904 pixels (4% of the image).  Most are in the hundreds range:
+The smallest is tiny, only 2 pixels.  The largest is 25,904 pixels, about 4% of the image.  Most are in the hundreds range.  Here's a zoom-in:
 <br />
 <center><img src="../airbus/ship_areas_zoom.png"></center>
 <br />
 
 ## Modeling
-First we're going to classify images according to if they have ships or not.  This way the localization model can train on a more relevant dataset containing only ships, and we can quickly generate empty masks for predicted no-ship images.
+To model, we'll train a binary classifier to indicate if an image has at least one ship or not, then we'll train a localization model on only images with ships.
 
-But before implementing the binary classifier, we're going to cut images into square quarters.  The reason for doing this is because the localization model we'll use after the binary prediction is a Unet, and Unets are best trained on images that have approximately balanced pixel-wise classes per image.  In our case pixels of no-ship significantly out-number pixels of ship.  By cutting images into quarters the out-numbering will be lessened, and, on a practical side, batch sizes of 32 will fit in my GPU memory without having to down-sample and lose resolution.
+Before implementing the binary classifier, we're going to cut images into square quarters.  This is so that the localization model can train on images that have a more balanced pixel-wise class distributions, i.e., the ratio of no-ship pixels to ship pixels will be closer to 0.5 (though it'll still be fairly far off).  Also, by cutting images into quarters, batch sizes of 32 will fit in my GPU memory and it won't be necessary to down-sample images, which would cause resolution loss.
 
-One concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get split:
+A concern about quartering images, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get split:
 
 ```python
 rles = df['EncodedPixels'].tolist()
@@ -178,7 +178,7 @@ for rle in tqdm(rles):
 print(n_crossing)
 ```
 
-The result is 10,045, so about 12% of ships get split.  That's more than we'd like, but we'll do the cutting anyway and check later to see if split ships are indeed harder to detect.
+The result is 10,045, so about 12% of ships get split.  That's more than we'd like, but I think the trade-off will be worth it, so we'll do the cutting anyway and check later to see if split ships are indeed harder to detect.
 
 Quartering images:
 
@@ -229,14 +229,13 @@ pool.close()
 ```
 ```bash
 $ python -W ignore quartify.py ./data/train_v2/ ./data/quartered/train_v2/    # suppress annoying skimage warnings
-$ python -W ignore quartify.py ./data/test_v2/ ./data/quartered/test_v2/
 ```
 
 The train set now has 706,997 negative instances and 63,223 positive instances.  We'll balance the set by keeping 63,223 negative instances and ignore the rest.  The assumption is that 706,997 negative instances goes beyond the point of diminishing return for sample size and having fewer samples will accelerate architecture testing.
 
 ### The Binary Model
 
-The set is split 0.75/0.25 train/val, and train images are rotated arbitrarily by 0, 90, 180, or 270 degrees on each epoch to build rotational invariance into the model.
+The set is split 0.75/0.25 train/val, and train images are rotated arbitrarily by 0, 90, 180, or 270 degrees on each epoch with the hope that this will make the model more invariant to rotations.
 
 After playing with several architectures, I found the best to be an Xception model with ImageNet weights, global max-pooling applied to the last convolutional output, and one sigmoid node on the end to represent probability of ship.  The first 50 layers of the network were frozen to minimize training time.
 
@@ -247,22 +246,22 @@ After the third epoch the validation accuracy reaches a maximum of 0.89 and the 
  [ 3177 12629]]
 ```
 
-where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real data, i.e., the testing data, is expected to have many more negative samples than what's used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate that accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%. Not bad.
+where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real data, i.e., the testing data, is expected to have many more negative samples than what's used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate the testing accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%. Not bad.
 
 Let's look at some validation misclassifications:
 <br />
-<center><img src="../airbus/false_negatives.png"></center>
+<center><a href="../airbus/false_negatives.png"><img src="../airbus/false_negatives.png"></a></center>
 <br />
-<center><img src="../airbus/false_positives.png"></center>
+<center><a href="../airbus/false_positives.png"><img src="../airbus/false_positives.png"></a></center>
 <br />
 
 False negatives mostly occur when ships are either split, occluded by clouds, or really small; false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.  We just have to deal with that.
 
 ### The Localization Model
 
-The localization model we'll use is a Unet with the same architecture as the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
+The localization model we'll use is a Unet with the same architecture as in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
 
-We train directly on 384x384 images using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, batch size is 6, and the loss to minimize is pixel-wise binary cross entropy.  Here's the validation loss over epochs:
+We train directly on the 384x384 quarters using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, batch size is 6, and the loss is pixel-wise binary cross entropy.  Here's the validation loss over epochs:
 <br />
 <center><img src="../airbus/unet_loss.png"></center>
 <br />
@@ -272,21 +271,39 @@ And here are some validation predictions after each epoch, click to enlarge:
 <center><a href="../airbus/unet_predictions.png"><img src="../airbus/unet_predictions.png"></a></center>
 <br />
 
-The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edge of images, which we were worried might not happen.
+The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edges of images, which is what we were worried it would have trouble with when we did the quartering.
 
 Let's see where Unet performed poorly.  These validation samples have the biggest loss:
 <br />
 <center><a href="../airbus/unet_errors.png"><img src="../airbus/unet_errors.png"></a></center>
 <br />
 
-Evidently, docked ships are hardest to detect.  This is probably because most training ships are surrounded by water, so those touching land are hard to identify.
+Evidently, docked ships are hardest to detect, they just look like a continuation of the land, especially the yachts, which, in some sense, are.  The second to last column has what appear to be oil rigs that were misclassified.  The predictions, though, are very ir-rectangular compared to real ships, and we can try to use this information to our advantage when we do processing triage.
+
+### The Objective Function
+
+The objective function used by Kaggle is somewhat convoluted.  For each image, an intersection-over-union is computed between any predictions and ground-truths that might exist.  The IoU is then thresholded over a set of values to determine if the prediction will be a TP.  Then, f2 score is calculated and averaged for each threshold.  Then, that average f2 score is averaged over all images, and that's your prediction score.  Note that bounding-boxes aren't used as predictions, but instead run-length encoded masks, so really they can look like anything.  It isn't entirely clear if a single mask can be TP for multiple ships, or how predictions are assigned to ground-truths when there are multiple predictions and ground-truths per image, but more info on scoring is [here](https://www.kaggle.com/c/airbus-ship-detection#evaluation).
+
+To get a sense of where to threshold the Unet predictions, let's loop over several thresholds and look at the IoU averaged over the validation set (with error bars of 1 std dev on each side):
+<br />
+<center><a href="../airbus/iou_v_thresh.png"><img src="../airbus/iou_v_thresh.png"></a></center>
+<br />
+Looks like 0.4 is a good threshold value
+
+
+### Testing
+
+Let's spot-check some test predictions.
 
 ### Post-processing
 
 Submissions
-- blank
-- threshold at 0.5
-- threshold at 0.5, bbox
+- blank: 0.520
+- threshold unet, ship area >=40: 0.680
+- threshold unet, ship area >=20: 0.680
+- threshold unet, ship area >=100: 0.679
+- threshold unet, mode filter
+- threshold unet, mode filter, bbox
 - threshold at 0.5, bbox, delete small ones, delete big ones, delete weird ones
 
 
