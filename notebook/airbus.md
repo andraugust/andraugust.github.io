@@ -5,7 +5,6 @@ permalink: /airbus/
 ---
 <br />
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
-<br />
 <center><img src="../airbus/banner.png"></center>
 <br />
 The Kaggle Ship Detection Challenge (sponsored by Airbus) provides satellite images of the ocean and ground-truth masks of ships in each image.  The objective is to create a model that accurately localizes ships in a set of testing images.  This post walks through my solution to the challenge.
@@ -208,10 +207,10 @@ We'll use 0.4 as a threshold.
 ### Testing
 Here are some spot checked testing predictions
 
+
+
 ### Post-processing
 After a little bit of post processing to remove masks that are too small (<40 pixels), the testing results are:
-
-
 
 Submissions
 - 2 unets, 2 bin: 0.692
