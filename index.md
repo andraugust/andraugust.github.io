@@ -11,7 +11,6 @@ background-size: cover;">
 <br />
 <center><h4><b>Welcome to</b></h4></center>
 <center><h2><b>Andrew August's Notebook</b></h2></center>
-<!-- <center><h2>&#x1f4d5;</h2></center> -->
 <br />
 <br />
 <br />
@@ -27,7 +26,7 @@ background-size: cover;">
 <tr class="notebook-table">
   <td width="50%" class="full">
     <p style="opacity:0.5"><em>2018-04</em></p>
-    <p>An interesting property of Wikipedia is that pages often first-link to their immediate supersets.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?</p>
+    <p>An interesting property of Wikipedia is that pages often have first-links that go to their immediate superset.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?</p>
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png"></a>
@@ -43,7 +42,7 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-12</em></p>
-       <p>This post documents the use of deep CNNs for object classification on The Functional Map of the World dataset.  The dataset contains satellite images of 62 classes of objects that have diverse sizes and shapes.  I look at fine-tuning and the effects of sample size distribution and spatial context inclusion.</p>
+       <p>This post documents the use of CNNs for object classification on The Functional Map of the World Dataset.  I look at fine-tuning, the effects of sample size distribution, and the effect of including spatial context.</p>
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>
@@ -60,7 +59,7 @@ background-size: cover;">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-11</em></p>
        <p>
-         This is an Arduino robot that learns to crawl using Q-learning.  The robot initially moves randomly but eventually finds desirable actions through state-action exploration and reward feedback. Included is a video of the robot in action.
+         This is an Arduino robot that learns to crawl using Q-learning.  The robot initially moves randomly but eventually finds actions that cause continual forward motion. Included is a video of the robot in-action.
        </p>
    </td>
    <td width="50%" class="full">
@@ -137,10 +136,3 @@ background-size: cover;">
 <br />
 <br />
 </div>
-
-<!--<br />
-<center><img src="Um-dia-na-Terra.gif"></center>
-<br />
-
-<center><h2> More posts coming soon!!! </h2></center>
--->

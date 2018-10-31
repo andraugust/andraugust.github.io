@@ -7,7 +7,7 @@ permalink: /airbus/
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
 <center><img src="../airbus/banner.png"></center>
 <br />
-The Kaggle Ship Detection Challenge (sponsored by Airbus) provides satellite images of the ocean and ground-truth masks of ships in each image.  The objective is to create a model that accurately localizes ships in a set of testing images.  This post walks through my solution to the challenge.
+The Kaggle Ship Detection Challenge sponsored by Airbus provides satellite images of the ocean with ground-truth masks indicating the locations of ships in each image.  The objective is to accurately localizes ships in a set of testing images.  This post is my solution journal.
 
 ## Data Exploration
 Getting the data:
@@ -205,11 +205,6 @@ We'll use 0.4 as a threshold.
 
 
 ### Testing
-Here are some spot checked testing predictions
-
-
-
-### Post-processing
 After a little bit of post processing to remove masks that are too small (<40 pixels), the testing results are:
 
 Submissions
@@ -229,7 +224,3 @@ Submissions
 - threshold unet, mode filter
 - threshold unet, mode filter, bbox
 - threshold at 0.5, bbox, delete small ones, delete big ones, delete weird ones
-
-
-### Misc notes
-- Unet took about 48 hours to train on my 8GB GTX1080.  The maximum energy usage of the GPU is around 180W, and the CPU is probably (?) using about the same; local residential electricity cost is 8.5c/kWh, so the Unet took about 1.50$ cents to train---take that aws!
