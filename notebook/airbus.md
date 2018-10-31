@@ -3,11 +3,11 @@ layout: page
 title: "Airbus"
 permalink: /airbus/
 ---
-
-
 <br />
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
-
+<br />
+<center><img src="../airbus/banner.png"></center>
+<br />
 The Kaggle Ship Detection Challenge (sponsored by Airbus) provides satellite images of the ocean and ground-truth masks of ships in each image.  The objective is to create a model that accurately localizes ships in a set of testing images.  This post walks through my solution to the challenge.
 
 ## Data Exploration
