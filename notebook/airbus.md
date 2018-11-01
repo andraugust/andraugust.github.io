@@ -207,20 +207,18 @@ We'll use 0.4 as a threshold.
 ### Testing
 After a little bit of post processing to remove masks that are too small (<40 pixels), the testing results are:
 
-Submissions
-- 2 unets, 2 bin: 0.692
-- 2 unets, 1 bin: 0.687
-- 1 unet, 1 bin: 0.680
-- blank: 0.520
+|       Model       | Score |
+|:-----------------:|:-----:|
+| 2 unets, 2 binary | 0.692 |
+| 2 unets, 1 binary | 0.687 |
+|  1 unet, 1 binary | 0.680 |
+|  blank submission | 0.520 |
 
+Clearly the accuracy increase with the size of the ensemble.
 
-- 2unets thresh 0.4, area thresh 60: 0.687
-- 2unets thresh 0.4, area thresh 20: 0.686
-- threshold unet, ship area 40, box_area 0.2: 0.680
-- threshold unet, ship area 40, box_area 0.4: 0.679
-- threshold unet, ship area 20: 0.680
-- threshold unet, ship area 20, box_area 0.2: 0.680
-- threshold unet, ship area 100: 0.679
-- threshold unet, mode filter
-- threshold unet, mode filter, bbox
-- threshold at 0.5, bbox, delete small ones, delete big ones, delete weird ones
+Here are some spot-checked testing predictions:
+<br />
+<center><a href="../airbus/test_prediction_overlay.png"><img src="../airbus/test_prediction_overlay.png"></a></center>
+<br />
+
+Looking good!
