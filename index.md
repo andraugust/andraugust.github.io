@@ -11,7 +11,7 @@ background-size: cover;">
 <br />
 <center><h4><b>Welcome to</b></h4></center>
 <center><h2><b>Andrew August's Notebook</b></h2></center>
-<center><h4><b>Here I keep track of some things I've done,&#13;&#10;mostly related to data science.</b></h4></center>
+<center><h4><b>Here I keep track of some things I've done,<br />mostly related to data science.</b></h4></center>
 <br />
 <br />
 <br />
@@ -27,7 +27,7 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2018-11</em></p>
-       <p>Kaggle's Ship Detection Challenge provides satellite images of the ocean with ground-truth masks indicating ships in each image.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my development of such a segmentation model.</p>
+       <p>Kaggle's Ship Detection Challenge provides satellite images of the ocean with ground-truth masks indicating ships in each image.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my development of this segmentation model.</p>
    </td>
    <td width="50%" class="full">
        <a href="/airbus/"><img src="airbus/index_im.png"></a>
