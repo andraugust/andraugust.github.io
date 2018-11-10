@@ -11,7 +11,7 @@ background-size: cover;">
 <br />
 <center><h4><b>Welcome to</b></h4></center>
 <center><h2><b>Andrew August's Notebook</b></h2></center>
-<center><h4><b>Here I keep track of some things I've done, mostly related to Data Science.</b></h4></center>
+<center><h4><b>Here I keep track of some things I've done,&#13;&#10;mostly related to data science.</b></h4></center>
 <br />
 <br />
 <br />
