@@ -7,7 +7,7 @@ permalink: /airbus/
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
 <center><img src="../airbus/banner.png"></center>
 <br />
-The Kaggle Ship Detection Challenge sponsored by Airbus provides satellite images of the ocean with ground-truth masks indicating the locations of ships in each image.  The objective is to accurately localizes ships in a set of testing images.  This post is my solution journal.
+The Kaggle Ship Detection Challenge sponsored by Airbus provides satellite images of the ocean with ground-truth masks indicating the locations of ships.  The objective is to accurately localizes ships in a set of testing images.
 
 ## Data Exploration
 Getting the data:
@@ -184,7 +184,7 @@ And here are some validation predictions after each epoch, click to enlarge:
 <center><a href="../airbus/unet_predictions.png"><img src="../airbus/unet_predictions.png"></a></center>
 <br />
 
-The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edges of images, which is what we were worried it would have trouble with when we did the quartering.
+The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edges of images, which is what we were worried about when we did the quartering.
 
 Let's see where Unet performed poorly.  These validation samples have the biggest loss:
 <br />
@@ -209,16 +209,18 @@ After a little bit of post processing to remove masks that are too small (<40 pi
 
 |       Model       | Score |
 |:-----------------:|:-----:|
-| 2 unets, 2 binary | 0.692 |
+| 2 unets, 2 binary | 0.697 |
 | 2 unets, 1 binary | 0.687 |
 |  1 unet, 1 binary | 0.680 |
 |  blank submission | 0.520 |
 
-Clearly the accuracy increase with the size of the ensemble.
+As was hoped, accuracy increase with ensemble size.
 
-Here are some spot-checked testing predictions:
+To finish up, we'll look at some test predictions made by the best ensemble:
 <br />
 <center><a href="../airbus/test_prediction_overlay.png"><img src="../airbus/test_prediction_overlay.png"></a></center>
 <br />
 
-Looking good!
+Looks pretty good!
+
+{% include disqus.html %}

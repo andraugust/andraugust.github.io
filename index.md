@@ -20,6 +20,22 @@ background-size: cover;">
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
+    <h3><a href="/airbus/"><b>Kaggle Diary: Ship Segmentation</b></a></h3>
+  </td>
+ </tr>
+ <tr class="notebook-table">
+   <td width="50%" class="full">
+       <p style="opacity:0.5"><em>2017-12</em></p>
+       <p>Kaggle's Ship Segmentation Challenge provides satellite images of the ocean and ground truth masks locating ships in each image.  This post is my solution to the challenge.</p>
+   </td>
+   <td width="50%" class="full">
+       <a href="/airbus/"><img src="airbus/index_im.png"></a>
+       <br />
+   </td>
+ </tr>
+<tr class="notebook-table">
+  <td colspan="2" class="full">
+    <hr><br />
     <h3><a href="/wikilinks/"><b>Exploring the First-Link Taxonomy of Wikipedia</b></a></h3>
   </td>
 </tr>
