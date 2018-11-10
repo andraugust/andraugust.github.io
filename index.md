@@ -25,8 +25,8 @@ background-size: cover;">
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
-       <p style="opacity:0.5"><em>2017-12</em></p>
-       <p>Kaggle's Ship Segmentation Challenge provides satellite images of the ocean and ground truth masks locating ships in each image.  This post is my solution to the challenge.</p>
+       <p style="opacity:0.5"><em>2018-11</em></p>
+       <p>The Kaggle Ship Detection Challenge provides satellite images of the ocean with ground-truth masks indicating ships in each image.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my solution to the problem.</p>
    </td>
    <td width="50%" class="full">
        <a href="/airbus/"><img src="airbus/index_im.png"></a>
