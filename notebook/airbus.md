@@ -7,7 +7,7 @@ permalink: /airbus/
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
 <center><img src="../airbus/banner.png"></center>
 <br />
-The Kaggle Ship Detection Challenge provides satellite images of the ocean with ground-truth masks indicating ships in each image.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my solution to the problem.
+The Kaggle Ship Detection Challenge provides satellite images of the ocean with ground-truth masks indicating ships in each image.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my development of such a segmentation model.
 
 ## Data Exploration
 Getting the data:
