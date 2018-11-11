@@ -76,7 +76,7 @@ background-size: cover;">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-11</em></p>
        <p>
-         This is an Arduino robot that learns to crawl using Q-learning.  The robot initially moves randomly but eventually finds actions that cause continual forward motion. Included is a video of the robot in-action.
+         This is an Arduino robot that learns to crawl using Q-learning.  The robot initially moves randomly but eventually finds actions that cause continual forward motion. Included is a video showing the robot in action.
        </p>
    </td>
    <td width="50%" class="full">
