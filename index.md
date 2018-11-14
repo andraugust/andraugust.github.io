@@ -9,9 +9,9 @@ background-size: cover;">
 <br />
 <br />
 <br />
-<center><h4><b>Welcome to</b></h4></center>
+<center><h4>Welcome to</h4></center>
 <center><h2><b>Andrew August's Notebook</b></h2></center>
-<center><h4><b>Here I keep track of some things I've done,<br />mostly related to data science.</b></h4></center>
+<center><h4>Here I keep track of some things I've done,<br />mostly related to data science.</h4></center>
 <br />
 <br />
 <br />
