@@ -7,10 +7,10 @@ permalink: /quara/
 <h2><center>Quara Insincere Question Classification</center></h2>
 <center><img src="../quara/banner.png"></center>
 <br />
-The Quara Insincere Question Classification challenge provides a dataset of Quara questions with binary labels indicating the insincerity of each question.  The objective is to make a model that accurately labels sincerity of testing questions.  This post follows my solution to the challenge.
+The Quara Insincere Question Classification challenge provides a dataset of Quara questions and binary labels indicating whether or not a question is _sincere_.  The objective is to make a model that accurately labels a set of testing questions.  This post documents my solution to the challenge.
 
 ## Data Exploration
-What are some sincere instances?
+What are some sincere questions?
 ```
 00002165364db923c7e6,How did Quebec nationalists see their province as a nation in the 1960s?,0
 000032939017120e6e44,"Do you have an adopted dog, how would you encourage people to adopt and not shop?",0
@@ -47,13 +47,13 @@ What are some sincere instances?
 
 ```
 A few things to note:
-- Questions with commas are surrounded by quotes.
+- Questions with commas are surrounded by quotes.  We'll eventually want to remove these.
 - Some samples are mis-labeled, e.g., `have you licked the skin of a corpse` or `Is Gaza slowly becoming Auschwitz, Dachau or Treblinka for Palestinians?`.
-- Some words aren't separated by space, e.g. `..OS as well as for data storage.will the data..`
+- Some words aren't separated by space, e.g. `..OS as well as for data storage.will the data..`, we'll probably ignore these since they won't have an embedding.
 - Sincere questions tend to ask about how to do something, e.g., `Can you make Amazon Alexa trigger events in the browser?`, or about advice regarding something legal or technical, e.g., `What should I know before visiting Mcleodganj and doing the Triund trek?` and `What do I need to know about buying a car in South Africa as an American?`.
 
 
-What are some insincere instances?
+What are some insincere questions?
 ```
 0000e91571b60c2fb487,Has the United States become the largest dictatorship in the world?,1
 00013ceca3f624b09f42,Which babies are more sweeter to their parents? Dark skin babies or light skin babies?,1
@@ -90,9 +90,9 @@ What are some insincere instances?
 02d559d602a0a5612f74,"Whenever we missed a dose of ephedrine, could we take 2 doses at once?",1
 ```
 A few things to note:
-- Insincere questions tend to be about politics or religion or sex and often make broad generalizations about groups of people, e.g., `Why Italian so narcist with their own food,...` and `If Hispanics are so proud of their countries, why do they move out?`.
+- Insincere questions tend to be about politics or religion or sex, and often make broad generalizations about groups of people, e.g., `Why Italian so narcist with their own food,...` and `If Hispanics are so proud of their countries, why do they move out?`.
 - Insincere questions seem more likely to be premised on an opinion than a fact, e.g., `Why are South Indian dishes which are prepared by North Indians more tasty than dishes prepared by South Indian restaurants?`.
-- Some samples are mislabelled, e.g., `Whenever we missed a dose of ephedrine, could we take 2 doses at once?`, but it seems there are fewer mislabeled samples compared to in the sincere set, possibly the motivation behind this challenge.
+- Some samples are mislabelled, e.g., `Whenever we missed a dose of ephedrine, could we take 2 doses at once?`, but it seems there are fewer mislabels here compared to the sincere set, this is may be what motivated the challenge!
 
 How many samples are there?
 - Train: 1,306,122
@@ -102,21 +102,37 @@ What's the class bias?
 - 1/0 = 80,810/1,225,312 = 0.066
 
 ### Embeddings
-Provided with the questions are four embedding sets:
+The challenge provides four embedding sets.  Each has a dimensionality of 300.
 
 - `glove.840B.300d.txt`
     - GloVe vectors from Pennington, et al.
-    - vocab size: 2.2M
-    - dimensionality: 300
-    - trained on common crawl
+    - vocab: 2.2M
+    - training: common crawl
+    - format: space-separated text file
     - [reference](https://nlp.stanford.edu/projects/glove/)
 - `GoogleNews-vectors-negative300.bin`
-    - trained on Google News articles
-    - vocab size: 3B
-    - dimensionality: 300
-
+    - Google's word2vec Embeddings
+    - vocab: 3B
+    - training: Google News articles
+    - format: binary, load with `gensim`
+    - [reference](https://code.google.com/archive/p/word2vec/)
 - `paragram_300_sl999.txt`
+    - vocab: 1,703,756
+    - trained on: paraphrase data
+    - format: space-separated text file
+    - [reference](https://cogcomp.org/page/resource_view/106)
 - `wiki-news-300d-1M.vec`
+    - vocab: 999,994
+    - format: space-separated text file
+    - trained on: Wikipedia 2017, UMBC webbase corpus and statmt.org news dataset
+    - [reference](https://fasttext.cc/docs/en/english-vectors.html)
+
+### Modelling
+
+#### lstm
+1. make training set
+    - embed each word in each sample
+    - 
 
 
 
