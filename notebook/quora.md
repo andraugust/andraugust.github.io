@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "Quara"
-permalink: /quara/
+title: "Quora"
+permalink: /quora/
 ---
 <br />
-<h2><center>Quara Insincere Question Classification</center></h2>
-<center><img src="../quara/banner.png"></center>
+<h2><center>Quora Insincere Question Classification</center></h2>
+<center><img src="../quora/banner.png"></center>
 <br />
-The Quara Insincere Question Classification challenge provides a dataset of Quara questions and binary labels indicating whether or not a question is _sincere_.  The objective is to make a model that accurately labels a set of testing questions.  This post documents my solution to the challenge.
+The Quora Insincere Question Classification challenge provides a dataset of questions asked on [quora.com](https://www.quora.com/) and a binary label indicating if each question is _sincere_. The goal is to develop a model that accuartely labels a set of testing questions.  This post documents my development of such a model.
 
 ## Data Exploration
 What are some sincere questions?
@@ -132,7 +132,7 @@ The challenge provides four embedding sets.  Each has a dimensionality of 300.
 #### lstm
 1. make training set
     - embed each word in each sample
-    - 
+    -
 
 
 

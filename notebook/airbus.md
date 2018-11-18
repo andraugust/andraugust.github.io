@@ -221,6 +221,12 @@ To finish up, we'll look at some test predictions made by the best ensemble:
 <center><a href="../airbus/test_prediction_overlay.png"><img src="../airbus/test_prediction_overlay.png"></a></center>
 <br />
 
-Looks pretty good!
+### Ways to Improve
+So far the results are pretty good, but if I were to spend more time on this I would do a few extra things:
+- __Hard sample learning__ After initially training the binary model, fine-tune on samples with predict probability in the range 0.3-0.7.  In other words, do extra learning on 'hard' samples.
+- __More data augmentation__ Do more types of image transformation to augment the training set.  For example, use [imaug](https://github.com/aleju/imgaug) or [Augmentor](https://github.com/mdbloice/Augmentor).
+- __Smart cropping__ Don't let ships get split by a cropping boundary; check if splitting happens before cropping.
+- __Ground-truth boundary erosion__ Erode the boundaries of ground-truth masks to help distinguish ships that are touching, then extend prediction boundaries to undo the learned erosion.
+
 
 {% include disqus.html %}
