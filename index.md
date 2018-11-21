@@ -27,7 +27,7 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2018-11</em></p>
-       <p>This post follows my development of a ship segmentation model for Kaggle's Ship Detection Challenge.</p>
+       <p>In this post I develop a ship segmentation model for Kaggle's Ship Detection Challenge.</p>
    </td>
    <td width="50%" class="full">
        <a href="/airbus/"><img src="airbus/index_im.png"></a>
@@ -53,13 +53,13 @@ background-size: cover;">
 <tr class="notebook-table">
   <td colspan="2" class="full">
     <hr><br />
-    <h3><a href="/fmow/"><b>Satellite Image Classification with Deep CNNs</b></a></h3>
+    <h3><a href="/fmow/"><b>Satellite Image Classification with CNNs</b></a></h3>
   </td>
  </tr>
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-12</em></p>
-       <p>This post documents the use of CNNs for object classification on The Functional Map of the World Dataset.  I look at fine-tuning, the effects of sample size distribution, and the effect of including spatial context.</p>
+       <p>This post documents the use of CNNs for satellite image classification on The Functional Map of the World dataset. I look at fine-tuning, the effects of sample size distribution, and the effect of including spatial context.</p>
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>

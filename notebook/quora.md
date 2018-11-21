@@ -7,7 +7,7 @@ permalink: /quora/
 <h2><center>Quora Insincere Question Classification</center></h2>
 <center><img src="../quora/banner.png"></center>
 <br />
-The Quora Insincere Question Classification challenge provides a dataset of questions asked on [quora.com](https://www.quora.com/) and a binary label indicating if each question is _sincere_. The goal is to develop a model that accuartely labels a set of testing questions.  This post documents my development of such a model.
+The Quora Insincere Question Classification challenge provides a dataset of questions asked on [quora.com](https://www.quora.com/) and a binary label indicating if each question is _sincere_. The goal is to develop a model that accurately labels a set of testing questions.  This post documents my development of such a model.
 
 ## Data Exploration
 What are some sincere questions?
@@ -46,8 +46,8 @@ What are some sincere questions?
 00022b535fb044b4d890,Why do we calead leap year.?,0
 
 ```
-A few things to note:
-- Questions with commas are surrounded by quotes.  We'll eventually want to remove these.
+A few observations:
+- Questions with commas are surrounded by quotes.  We'll eventually remove these.
 - Some samples are mis-labeled, e.g., `have you licked the skin of a corpse` or `Is Gaza slowly becoming Auschwitz, Dachau or Treblinka for Palestinians?`.
 - Some words aren't separated by space, e.g. `..OS as well as for data storage.will the data..`, we'll probably ignore these since they won't have an embedding.
 - Sincere questions tend to ask about how to do something, e.g., `Can you make Amazon Alexa trigger events in the browser?`, or about advice regarding something legal or technical, e.g., `What should I know before visiting Mcleodganj and doing the Triund trek?` and `What do I need to know about buying a car in South Africa as an American?`.
@@ -89,7 +89,7 @@ What are some insincere questions?
 002409e1ac34d209f6dc,"If Hispanics are so proud of their countries, why do they move out?",1
 02d559d602a0a5612f74,"Whenever we missed a dose of ephedrine, could we take 2 doses at once?",1
 ```
-A few things to note:
+A few observations:
 - Insincere questions tend to be about politics or religion or sex, and often make broad generalizations about groups of people, e.g., `Why Italian so narcist with their own food,...` and `If Hispanics are so proud of their countries, why do they move out?`.
 - Insincere questions seem more likely to be premised on an opinion than a fact, e.g., `Why are South Indian dishes which are prepared by North Indians more tasty than dishes prepared by South Indian restaurants?`.
 - Some samples are mislabelled, e.g., `Whenever we missed a dose of ephedrine, could we take 2 doses at once?`, but it seems there are fewer mislabels here compared to the sincere set, this is may be what motivated the challenge!
@@ -102,7 +102,7 @@ What's the class bias?
 - 1/0 = 80,810/1,225,312 = 0.066
 
 ### Embeddings
-The challenge provides four embedding sets.  Each has a dimensionality of 300.
+The challenge provides four embedding sets.  Each has __dimensionality 300__.
 
 - `glove.840B.300d.txt`
     - GloVe vectors from Pennington, et al.
