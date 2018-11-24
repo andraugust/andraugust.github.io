@@ -127,7 +127,58 @@ The challenge provides four embedding sets.  Each has __dimensionality 300__.
     - trained on: Wikipedia 2017, UMBC webbase corpus and statmt.org news dataset
     - [reference](https://fasttext.cc/docs/en/english-vectors.html)
 
-### Modelling
+### Preprocessing
+```python
+import re
+import pandas as pd
+
+def clean_sentence(sentence):
+    sentence = sentence.lower()
+    sentence = re.sub(r"u\.s\.", "american", sentence)
+
+    ignore_chars = '"!,.?()[]{}\-+=:;<>@#$%^&*_|~`'
+    for c in ignore_chars:
+        sentence = sentence.replace(c, '')
+    sentence = sentence.replace('/', ' ')
+
+    sentence = re.sub(r"what's", "what is", sentence)
+    sentence = re.sub(r"\'s", "", sentence)
+    sentence = re.sub(r"\'ve", " have", sentence)
+    sentence = re.sub(r"can't", "cannot", sentence)
+    sentence = re.sub(r"n't", " not", sentence)
+    sentence = re.sub(r"i'm", "i am", sentence)
+    sentence = re.sub(r"\'re", " are", sentence)
+    sentence = re.sub(r"\'d", " would", sentence)
+    sentence = re.sub(r"\'ll", " will", sentence)
+    sentence = re.sub(r"s\' ", "s ", sentence)
+    sentence = re.sub(r"0s", "0", sentence)
+    return sentence
+
+D = pd.read_csv('train.csv')
+
+for idx, (_, q, _) in tqdm(D.iterrows(), total=D.shape[0]):
+    D.at[idx, 'question_text'] = utils.clean_sentence(q)
+
+D.to_csv('train_clean.csv', sep=',', index=False)
+```
+Don't do stemming because of [these results](https://towardsdatascience.com/word-embeddings-and-document-vectors-when-in-doubt-simplify-8c9aaeec244e)
+
+Options for spellchecking:  https://github.com/wolfgarbe/SymSpell and https://github.com/phatpiglet/autocorrect
+
+Next, cache the glove dict for future use (constructing the dict from scratch takes about 1.5m, while loading the cached dict takes about 5s):
+```python
+import pickle
+
+glove_dict = {}
+
+with open('embeddings/glove.840B.300d.txt', 'r') as f:
+    for l in tqdm(f, total=2196017):
+        l_arr = l.split(' ')
+        glove_dict[l_arr[0]] = np.array(l_arr[1:], dtype=np.float32)
+
+pickle.dump(glove_dict, open('glove_dict.p','wb'))
+```
+
 
 #### lstm
 1. make training set

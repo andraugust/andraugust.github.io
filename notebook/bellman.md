@@ -9,35 +9,35 @@ permalink: /bellman/
 ![bellman/dice.JPG](dice.JPG)
 <center><p>All threes&mdash;the infamous <em>hallelujah</em> roll.</p></center>
 
-### Backward Induction
-
-Backward induction identifies optimal actions by working backward in time.  It starts at the last step of a problem, identifies the optimal action there, then uses that action to identify the optimal action at the second-to-last step, continuing until the current step.
-
-It may seem like this requires us to simulate the problem backwards every time we want to make a decision (an expensive procedure) but we actually don't have to:  there's a nice cacheing technique that allows us to simulate only once.  We'll walk through this cacheing technique, but first let's look at the game we're going to solve.
-
 ### Threes: How to Play
 
-Threes is a two player game. The first player starts by rolling all five dice and collects whichever they want to keep.  After collecting they roll the remaining dice and collect again, continuing until they've collected all the dice.  When all the dice are collected the player's score is counted as the sum of their dice where __threes count as zero__.  The second player rolls the same way and the player with the lowest score wins.
+Threes is played by two or more people. The first player rolls five dice and collects the ones they want to keep.  Then they roll the remaining dice and collect again, continuing until all dice are collected.  At this point, the player's score is counted as the sum of their dice where _threes count as zero_.  The second player rolls the same way and the player with the lowest score wins.
 
-Dice are collected in an interesting way.  Players are supposed to collect at least one dice after each roll, but if they roll all high dice and don't want to take any they can choose to collect no dice and re-roll but with the consequence of having to collect __at least two__ on the re-roll.
+Dice are collected in an interesting way.  Players are supposed to collect at least one dice after each roll, but if they roll all high dice and don't want to take any, then they can choose to collect no dice and re-roll with the consequence that they have to collect _at least two_ on the re-roll.
 
-As-per the rules, players can't skip re-rolls and, e.g., take at least three dice on a re-re-roll, and players can't re-roll the last die, they have to take it.  An example game is shown in the appendix at the end of this post.
+Players can't accumulate re-rolls, they can only do it once, and players can't re-roll the last die, they have to take it.  An example game is shown in the appendix of this post.
+
+### Backward Induction
+
+We're going to solve Threes using backward induction.  Backward induction works by identifying the optimal action at the last step of the game, and uses that to identify the optimal action at the second to last step, etc. until the current step is reached.
+
+It may seem like this requires us to simulate the game backward every time we want to take an action, but in-fact we can compute so-called _values_ which cache the results of the simulation and eliminate the need to repeat simulations.  All of this will be clearer in the example to come.
 
 ### Game Representation
-Here's how we'll represent Threes:
+Let's set up some notation for the game representation:
 
-* __Game-states__ consist of a list of rolled dice values and a binary take-two indicator.  For example, the state $$ s = ((0,2,4,6),T) $$ indicates a roll of $$(0,2,4,6)$$ where at least two dice have to be taken.  The value $$3$$ is written as $$0$$ and the other outcomes are written in sorted order.  The sorted order is useful because later we're going to refer to dice using an index into the roll list and we want low indices to correspond to low dice values.
+* __States:__ Game states consist of a list of rolled dice values and a binary take-two indicator.  For example, the state $$ s = ((0,2,4,6),T) $$ indicates a roll of $$(0,2,4,6)$$ with take-two set to True.  The value $$3$$ is written as $$0$$ and the other outcomes are written in sorted order.  Sorting is done because we're going to refer to dice using an index and we want low indices to correspond to low dice values.
 
-* __Actions__ are an integer $$a$$ indicating the number of dice to take.  Since we're trying to minimize score, we'll assume that these are the _lowest_ $$a$$ dice.  Note that $$0 \le a \le len(r)$$, where $$r$$ is the roll-list and $$len$$ is its length/number of elements.
+* __Actions:__ An action is an integer $$a$$ indicating the number of dice to take.  Since we're trying to minimize score, we'll assume that these are the _lowest_ $$a$$ dice.  Note that $$0 \le a \le len(r)$$, where $$r$$ is the roll-list.
 
-* __Game Dynamics__: Game dynamics are determined by a pseudo-random number generator that gives each dice a uniformly random outcome.  Agent actions are determined by a policy $$a(s)$$ that maps states to actions.  Note that an agent is fully specified by its policy and in this sense _is_ its policy.
+* __Game Dynamics__: Game dynamics are determined by a pseudo-random number generator that gives each dice a uniformly random outcome.  Agent actions are determined by a policy $$a(s)$$ that maps states to actions.  Note that an agent is fully specified by its policy and in this sense the agent _is_ its policy.
 
 ### Rolling First
 If you roll first, you don't know what your opponent's score is going to be, so your best bet is to minimize final score.
 
-To find the policy that does this, we'll make a probabilistic model of dice outcomes and use it to predict which actions will result in which scores, then we'll choose an action that minimizes expected score and take this as our policy.
+To find the policy that does this, we'll make a probabilistic model of the dice outcomes and use it to predict which actions will result in which scores, then we'll choose an action that minimizes expected score and take that as our policy.
 
-In technical slang we're treating the game as a _Markov decision process_ and we're solving it using _backward induction_ on the _Bellman equation_, but an easier way to understand what's going on is to look at a few examples.
+In technical slang we're treating the game as a _Markov decision process_ and we're solving it using _backward induction_ on the _Bellman equation_, but an easier way to understand this is with a few examples.
 
 Suppose there are two dice left and we don't have to take two and we roll $$(1,6)$$.  The diagram below shows the decisions we can make.
 

@@ -59,7 +59,7 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-12</em></p>
-       <p>This post documents the use of CNNs for satellite image classification on The Functional Map of the World dataset. I look at fine-tuning, the effects of sample size distribution, and the effect of including spatial context.</p>
+       <p>This post documents the use of CNNs for classification on The Functional Map of the World dataset. I look at fine-tuning, the effect of sample size distribution, and the effect of including spatial context.</p>
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>
@@ -76,7 +76,7 @@ background-size: cover;">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-11</em></p>
        <p>
-         This is an Arduino robot that learns to crawl using Q-learning.  The robot initially moves randomly but eventually finds actions that cause continual forward motion. Included is a video showing the robot in action.
+         This is an Arduino robot that learns to crawl using Q-learning.  Included is a video/tutorial showing the robot in action.
        </p>
    </td>
    <td width="50%" class="full">
@@ -95,7 +95,7 @@ background-size: cover;">
    <td width="50%" class="full">
    <p style="opacity:0.5"><em>2017-10</em></p>
       <p>
-         This is an example where class hirerarchies are discovered by applying spectral clustering to a confusion matrix.
+         This is an example where class hierarchies are discovered by applying spectral clustering to a confusion matrix.
        </p>
    </td>
    <td width="50%" class="full">
