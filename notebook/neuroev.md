@@ -26,9 +26,9 @@ permalink: /neuroev/
 <br />
 
 
-One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Backpropagation---the de-facto NN learning algorithm---works well for classification in-part because ground truth is available for each input, and the stadard error functions are differentiable.  In many AI contexts, however, feedback doesn't exist until the end of a long sequence of actions, the objective function isn't differentiable (as will definitely be the case in the example here).
+One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Backpropagation---the de-facto NN learning algorithm---works well for classification partly because ground truth is available for each input and objective functions are differentiable, but in many AI contexts feedback doesn't exist until the end of a long sequence of actions, and objective functions aren't differentiable (and probably can't even be written down explicitly), so packprop doesn't work.
 
-Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a <em>genetic algorithm</em> to learn good neural net weights despite the absence of instant-by-instant feedback.
+Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a <em>genetic algorithm</em> to learn good neural net weights despite the absence of instant-by-instant feedback or a differentiable objective function.
 
 ## Artificial Life: The Setting
 
