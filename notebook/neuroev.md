@@ -32,9 +32,9 @@ Learning, however, is an optimization task, so any optimization algorithm is can
 
 ## Artificial Life: The Setting
 
-The context of the problem is artificial life: an agent moves in a 2-d world and must find food to survive.  But the world is scary and contains deadly moving objects that kill on contact, and in addition there's a "metabolic clock" that kills agents if it reaches 0%, so agents have to find food before they starve.
+The context of the problem is artificial life: an agent moves in a 2-d world and must find food to survive.  But the world is a scary place and contains deadly moving circles that kill on contact, and there's a "metabolic clock" that kills if it reaches 0%, so agents have to find food before they starve.
 
-Agents are controlled by feed-forward neural nets that converts sensory inputs into actions.  Actions are based solely on the parameters of the network and the input stimulus from the environment (more on that below).  To identify parameters that produce long-living agents, a genetic algorithm is used.  The GA searches through parameter space, and, as we'll see, is able to find good parameters that keep agents alive for progressively longer time-periods.
+Agents are controlled by feed-forward neural nets that convert sensory input into actions.  Actions are based solely on the parameters of the network and the input stimulus from the environment (more about inputs later).  To identify parameters that produce long-living agents, a genetic algorithm is used.  The GA searches through parameter space, and, as we'll see, is able to find good parameters that keep agents alive for progressively longer time-periods.
 
 The video above shows agents at various stages of optimization, so-called _generations_.  In the beginning, agents move arbitrarily and get killed pretty quickly (the red bar indicates health).  After about 10 generations agents manage to navigate to food, but only sometimes.  By generation 25 agents expertly avoid balls and navigating to food.  Success.
 
