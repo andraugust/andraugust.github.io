@@ -62,7 +62,7 @@ The network has six sigmoid nodes (tanh) and three linear nodes.  Actions are as
 
 The action performed at a given timestep is an index into the action-list:
 
-$$a_t = \idx\max{[W_2\tanh{(W_1s_t)]}}$$
+$$a_t = \arg\max{[W_2\tanh{(W_1s_t)]}}$$
 
 ## Genetic Algorithms: The Optimizer
 Brains are pretty standard neural nets, but they're optimized in an interesting way. Neural nets typically train using backpropagation which requires ground-truth feedback.  In the context of the simulated micro-organism there isn't really any ground-truth.  We do keep track of how long agents live, and use this to measure "error", but the length of time that an agent lives doesn't inform _what_ made the agent live that long.  For instance, if an agent rotates in place every few seconds and then moves towards food every few seconds, then was it the rotating in place that made the agent successful or the moving towards food?  Obviously we know it's the moving towards food, but the lifespan information doesn't make a distinction.  To deal with ambiguous feedback like this we use an optimization procedure that doesn't require continuous feedback, we use a genetic algorithm called Enforced SubPopulations, or ESP.
@@ -84,7 +84,7 @@ Each loop through this algorithm is called a _generation_.  Here's a plot of lif
 
 <center><img src="lifetime_plot.png"></center>
 <br />
-Evidently lifetimes aren't significantly influenced by the number of sigmoid nodes used (at least over the range tested), but nonetheless the genetic algorithm works and after about 20 generations agents live for about 1000 (!) times longer than their arbitrarily generated ancestors.  Pretty awesome.
+Evidently lifetimes aren't significantly influenced by the number of sigmoid nodes used (at least over the range tested), but nonetheless the genetic algorithm works and after about 20 generations agents live for about 1000 (!) times longer than their arbitrarily generated ancestors.
 
 __Reference:__ Gomez, F. J. (2003). Robust Non-linear Control through Neuroevolution. PhD thesis, University of Texas, Austin, TX. [Link](http://www.cs.utexas.edu/users/nn/downloads/papers/gomez.phdtr03.pdf)
 
