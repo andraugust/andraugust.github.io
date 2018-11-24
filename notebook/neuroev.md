@@ -26,30 +26,32 @@ permalink: /neuroev/
 <br />
 
 
-One of the challenges of using neural nets to control AI agents is the absence of a suitable training algorithm. Backpropagation works well in classification tasks because ground truth feedback is provided.  In many AI contexts ground-truth feedback doesn't exist until the end of a game, or even at all, so it's hard to know which actions resulted in desirable/undesirable behavior.
+One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Backpropagation---the de-facto NN learning algorithm---works well for classification tasks in-part because ground truth feedback is provided for each input instance.  In many AI contexts, however, feedback doesn't exist until the end of a long sequence of actions, so updating weights with backpropagation doesn't make sense: it isn't clear which actions are responsible for the desireable behavior.
 
-Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I show that a <em>genetic optimization</em> algorithm can be used to learn neural net weights despite the absence of ground-truth feedback.  The agents are simulated micro-organisms that move in a 2-d world and have to find food to survive.  Eventually the genetic algorithm learns agents that behave intelligently and at times even appear intentional.
+Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a <em>genetic algorithm</em> to learn good neural net weights despite the absence of instant-by-instant feedback.
 
 ## Artificial Life: The Setting
-Agents move in a 2-d world and must find food to survive.  Their world contains deadly moving objects that kill on contact, and agents have a "metabolic clock" that kills/starves them if it reaches 0%, so they have to find food quickly.
 
-Each agent is controlled by a neural network that converts sensory inputs into motion.  The neural networks perform these conversions based solely on the values of parameters (numbers) they're defined by, with different parameters resulting in different behaviors.  To identify parameters that produce long-living agents, a genetic algorithm is used.  The genetic algorithm searches through parameter space, and, as we'll see, is able to find good parameters that keep agents alive for progressively longer time-periods.
+The context of the problem is artificial life.  An agent moves in a 2-d world and must find food to survive.  The world contains deadly moving objects that kill on contact, and there's a "metabolic clock" that kills/starves agents if it reaches 0%, so agents have to find food quickly.
 
-The video above shows agents at various stages of evolution.  In the beginning, agents move arbitrarily and get killed pretty quickly (the red bar indicates health).  After about 10 generations agents manage to navigate to food, but only sometimes.  By generation 25 agents expertly avoid balls and navigating to food.  Some agents even live indefinitely--success.
+Each agent is controlled by a feed-forward neural net that converts sensory inputs into actions.  Outputs are based solely on the parameters of the network.  To identify parameters that produce long-living agents, a genetic algorithm is used.  The GA searches through parameter space, and, as we'll see, is able to find good parameters that keep agents alive for progressively longer time-periods.
+
+The video above shows agents at various stages of optimization, so-called _generations_.  In the beginning, agents move arbitrarily and get killed pretty quickly (the red bar indicates health).  After about 10 generations agents manage to navigate to food, but only sometimes.  By generation 25 agents expertly avoid balls and navigating to food.  Some agents even live indefinitely--success.
 
 ## Neural Nets: The Brain
+
 Agents have access to their environment through eight senses:
 
 * The distance to food.
-* The distance to the nearest ball.
+* The distance to the nearest blue ball.
 * The sine and cosine of the angle between the agent's heading direction and food.
-* The sine and cosine of the angle between the agent's heading direction and the nearest ball.
+* The sine and cosine of the angle between the agent's heading direction and the nearest blue ball.
 * The sine and cosine of the agent's heading direction relative to the world's coordinate system.
 
-These measurements are fed into a single-layer feed-forward neural network that functions as the agent's brain.  The neural network outputs one of the following actions at each time-step:
+These measurements are fed into a single-layer feed-forward neural net that functions as the agent's brain.  The neural net outputs one of the following actions at each time-step:
 
-* Rotate by a small amount.
-* Translate forward by a small amount.
+* Rotate by a small pre-defined constant amount.
+* Translate forward by a small pre-defined constant amount.
 * Sit still.
 
 Here's a diagram of the neural net:
