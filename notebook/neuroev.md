@@ -26,17 +26,17 @@ permalink: /neuroev/
 <br />
 
 
-One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Backpropagation---the de-facto NN learning algorithm---works well for classification tasks in-part because ground truth feedback is provided for each input instance.  In many AI contexts, however, feedback doesn't exist until the end of a long sequence of actions, so updating weights with backpropagation doesn't make sense: it isn't clear which actions are responsible for the desireable behavior.
+One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Backpropagation---the de-facto NN learning algorithm---works well for classification in-part because ground truth is available for each input, and the stadard error functions are differentiable.  In many AI contexts, however, feedback doesn't exist until the end of a long sequence of actions, the objective function isn't differentiable (as will definitely be the case in the example here).
 
 Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a <em>genetic algorithm</em> to learn good neural net weights despite the absence of instant-by-instant feedback.
 
 ## Artificial Life: The Setting
 
-The context of the problem is artificial life.  An agent moves in a 2-d world and must find food to survive.  The world contains deadly moving objects that kill on contact, and there's a "metabolic clock" that kills/starves agents if it reaches 0%, so agents have to find food quickly.
+The context of the problem is artificial life: an agent moves in a 2-d world and must find food to survive.  But the world is scary and contains deadly moving objects that kill on contact, and in addition there's a "metabolic clock" that kills agents if it reaches 0%, so agents have to find food before they starve.
 
-Each agent is controlled by a feed-forward neural net that converts sensory inputs into actions.  Outputs are based solely on the parameters of the network.  To identify parameters that produce long-living agents, a genetic algorithm is used.  The GA searches through parameter space, and, as we'll see, is able to find good parameters that keep agents alive for progressively longer time-periods.
+Agents are controlled by feed-forward neural nets that converts sensory inputs into actions.  Actions are based solely on the parameters of the network and the input stimulus from the environment (more on that below).  To identify parameters that produce long-living agents, a genetic algorithm is used.  The GA searches through parameter space, and, as we'll see, is able to find good parameters that keep agents alive for progressively longer time-periods.
 
-The video above shows agents at various stages of optimization, so-called _generations_.  In the beginning, agents move arbitrarily and get killed pretty quickly (the red bar indicates health).  After about 10 generations agents manage to navigate to food, but only sometimes.  By generation 25 agents expertly avoid balls and navigating to food.  Some agents even live indefinitely--success.
+The video above shows agents at various stages of optimization, so-called _generations_.  In the beginning, agents move arbitrarily and get killed pretty quickly (the red bar indicates health).  After about 10 generations agents manage to navigate to food, but only sometimes.  By generation 25 agents expertly avoid balls and navigating to food.  Success.
 
 ## Neural Nets: The Brain
 
@@ -60,9 +60,9 @@ Here's a diagram of the neural net:
 <br />
 The network has six sigmoid nodes (tanh) and three linear nodes.  Actions are associated with each linear node and the action with the largest output is implementation by the agent.
 
-The action performed at a given timestep is
+The action performed at a given timestep is an index into the action-list:
 
-$$a_t = \arg\max{[W_2\tanh{(W_1s_t)]}}$$
+$$a_t = \idx\max{[W_2\tanh{(W_1s_t)]}}$$
 
 ## Genetic Algorithms: The Optimizer
 Brains are pretty standard neural nets, but they're optimized in an interesting way. Neural nets typically train using backpropagation which requires ground-truth feedback.  In the context of the simulated micro-organism there isn't really any ground-truth.  We do keep track of how long agents live, and use this to measure "error", but the length of time that an agent lives doesn't inform _what_ made the agent live that long.  For instance, if an agent rotates in place every few seconds and then moves towards food every few seconds, then was it the rotating in place that made the agent successful or the moving towards food?  Obviously we know it's the moving towards food, but the lifespan information doesn't make a distinction.  To deal with ambiguous feedback like this we use an optimization procedure that doesn't require continuous feedback, we use a genetic algorithm called Enforced SubPopulations, or ESP.

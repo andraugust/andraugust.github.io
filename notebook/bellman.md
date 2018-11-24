@@ -33,7 +33,7 @@ Let's set up some notation for the game representation:
 * __Game Dynamics__: Game dynamics are determined by a pseudo-random number generator that gives each dice a uniformly random outcome.  Agent actions are determined by a policy $$a(s)$$ that maps states to actions.  Note that an agent is fully specified by its policy and in this sense the agent _is_ its policy.
 
 ### Rolling First
-If you roll first, you don't know what your opponent's score is going to be, so your best bet is to minimize final score.
+If you roll first, you don't know what your opponent's score is going to be, so your best bet is to minimize your final score.
 
 To find the policy that does this, we'll make a probabilistic model of the dice outcomes and use it to predict which actions will result in which scores, then we'll choose an action that minimizes expected score and take that as our policy.
 
@@ -67,16 +67,16 @@ __The Value Function__. Once we have all the values $$v$$ it's simple to choose 
 |    5    |    T   |  7  |
 |    5    |   F   | 5.6 |
 
-__The Optimal Policy__. The value function and the heuristic "choose the action which minimizes immediate points plus next-state value" defines the optimal policy.  Here's the formula:
+__The Optimal Policy__. The value function together with the heuristic "choose the action which minimizes immediate points plus next-state value" defines the optimal policy.  Here's the corresponding formula:
 
 <center> $$a(s) = \arg \min_{a'} \bigl (r[0:a'] + v(len(r)-a',a'==0) \bigr)$$ </center>
-$$r[0:a']$$ is the number of points gained from the immediate action, and $$v(len(r)-a',a'==0)$$ is the value of the next state assuming action $$a'$$ is taken.
+Where $$r[0:a']$$ is the number of points gained from the immediate action, and $$v(len(r)-a',a'==0)$$ is the value of the next state assuming action $$a'$$ is taken.
 
-__Experiments__. Let's do some experiments to see how well the optimal policy plays.  Here's a comparison between the optimal policy and a policy that takes one lowest dice on every roll.  30,000 games were simulated:
+__Experiments__. Let's do some experiments to see how well the optimal policy does.  Here's a comparison between the optimal policy and a policy that takes one lowest dice on every roll, the "playing it safe" policy. 30,000 games were simulated:
 
 <center><img src="take-one.png"></center>
 
-Here's a comparison between the optimal policy and _my_ policy.  To approximate my policy I played Threes three hundred times and recorded my score after each game (yes I actually did that).  On average the optimal policy gets a score of 5.6, while I get a score of 5.8.  Evidently I play approximately optimally--this is very re-assuring.
+Here's a comparison between the optimal policy and _my_ policy.  To approximate my policy I played Threes three hundred times and recorded my score after each game (yes I actually did that).  On average the optimal policy gets a score of 5.6, while I get a score of 5.8.  Evidently I play approximately optimally, but I already had the feeling I did :).
 
 <center><img src="human.png"></center>
 
@@ -182,10 +182,10 @@ __Example Game.__ Here's an example game, the winner is Player 2 who used a re-r
 
 <br />
 
-__Questions__
+__Questions for the Reader__
 * What challenges would be faced if the total number of dice was much larger than 5, say 5000?
 * What would be an interesting format for betting on Threes?  How could the information derived in this post be used to maximize earnings?
-* How would Threes be solved if it involved more than two players?
+* How would Threes be solved if it had more than two players?
 
 <br />
 
