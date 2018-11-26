@@ -27,7 +27,7 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2018-11</em></p>
-       <p>In this post I develop a ship segmentation model for Kaggle's Ship Detection Challenge.</p>
+       <p>This post is all about developing a ship segmentation model using data from Kaggle's Ship Detection Challenge.</p>
    </td>
    <td width="50%" class="full">
        <a href="/airbus/"><img src="airbus/index_im.png"></a>
@@ -43,7 +43,7 @@ background-size: cover;">
 <tr class="notebook-table">
   <td width="50%" class="full">
     <p style="opacity:0.5"><em>2018-04</em></p>
-    <p>An interesting property of Wikipedia is that pages often have first-links that go to their immediate superset.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?</p>
+    <p>An interesting property of Wikipedia is that a page's first-link often goes to its immediate superset.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?</p>
   </td>
   <td width="50%" class="full">
        <a href="/wikilinks/"><img src="wikilinks/net70k.png"></a>
@@ -59,7 +59,7 @@ background-size: cover;">
  <tr class="notebook-table">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-12</em></p>
-       <p>This post documents the use of CNNs for classification on The Functional Map of the World dataset. I look at fine-tuning, the effect of sample size distribution, and the effect of including spatial context.</p>
+       <p>This post documents the use of CNNs for satellite image classification on The Functional Map of the World dataset. I look at fine-tuning, the effect of sample size distribution, and the effect of adding spatial context.</p>
    </td>
    <td width="50%" class="full">
        <a href="/fmow/"><img src="fmow/notebook-im-probability.png"></a>
@@ -76,7 +76,7 @@ background-size: cover;">
    <td width="50%" class="full">
        <p style="opacity:0.5"><em>2017-11</em></p>
        <p>
-         This is an Arduino robot that learns to crawl using Q-learning.  Included is a video/tutorial showing the robot in action.
+         This is post describes an Arduino robot that learns to crawl using Q-learning.  Included is a video/tutorial showing the robot in action.
        </p>
    </td>
    <td width="50%" class="full">
@@ -95,7 +95,7 @@ background-size: cover;">
    <td width="50%" class="full">
    <p style="opacity:0.5"><em>2017-10</em></p>
       <p>
-         This is an example where class hierarchies are discovered by applying spectral clustering to a confusion matrix.
+         This is an example showing how class hierarchies can be discovered by applying spectral clustering to a confusion matrix.
        </p>
    </td>
    <td width="50%" class="full">
@@ -114,7 +114,7 @@ background-size: cover;">
    <td width="50%" class="full">
    <p style="opacity:0.5"><em>2017-10</em></p>
        <p>
-         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize Artificial Life NNs?  In this post a GA called Enforced Subpopulations is implemented to show that <em>yes</em> GAs can optimize NNs, and <em>yes</em> NNs can effectively control AL agents.
+         Can neural nets control Artificial Life agents?  Can genetic algorithms optimize such neural nets?  In this post a GA called Enforced Subpopulations is implemented to show that <em>yes</em> GAs can optimize NNs, and <em>yes</em> NNs can effectively control AL agents.
        </p>
    </td>
    <td width="50%" class="full">

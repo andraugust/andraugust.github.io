@@ -179,12 +179,44 @@ with open('embeddings/glove.840B.300d.txt', 'r') as f:
 pickle.dump(glove_dict, open('glove_dict.p','wb'))
 ```
 
+Convert each sentence into a 2-d array of embeddings:
+```python
+# need to figureout how to save big dict
+```
 
-#### lstm
-1. make training set
-    - embed each word in each sample
-    -
+#### RNN
+```python
+from keras import backend as K
+import tensorflow as tf
+from keras.models import Sequential
+from keras.layers import Dense, SimpleRNN, Input
+import numpy as np
 
+word_window = 1
+embed_sz = 300
+model = Sequential()
+model.add(SimpleRNN(10, activation='relu', stateful=True, batch_input_shape=(1, word_window, embed_sz)))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile('adam', loss='binary_crossentropy')
+initial_state = np.random.random((1,n_hidden))*0.
+K.set_value(model.layers[0].states[0], initial_state)
+
+x, y = X_train[0], Y_train[0]
+
+for x, y in zip(X_train,Y_train):
+    x = sentence2matrix(x)
+    print(K.eval(model.layers[0].states[0]))
+    for xi in x:
+        xi = np.expand_dims(xi, axis=0)
+        xi = np.expand_dims(xi, axis=0)
+        print(model.train_on_batch(xi, [[y]]))
+        # print(K.eval(model.layers[0].states[0]))
+    K.set_value(model.layers[0].states[0], initial_state)
+
+# get value of rnn state
+state = K.eval(model.layers[0].states[0])
+```
 
 
 {% include disqus.html %}
