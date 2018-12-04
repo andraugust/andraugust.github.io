@@ -102,7 +102,7 @@ What's the class bias?
 - 1/0 = 80,810/1,225,312 = 0.066
 
 ### Embeddings
-The challenge provides four embedding sets.  Each has __dimensionality 300__.
+The challenge provides four embedding sets.  Each has dimensionality 300.
 
 - `glove.840B.300d.txt`
     - GloVe vectors from Pennington, et al.
@@ -128,44 +128,7 @@ The challenge provides four embedding sets.  Each has __dimensionality 300__.
     - [reference](https://fasttext.cc/docs/en/english-vectors.html)
 
 ### Preprocessing
-```python
-import re
-import pandas as pd
-
-def clean_sentence(sentence):
-    sentence = sentence.lower()
-    sentence = re.sub(r"u\.s\.", "american", sentence)
-
-    ignore_chars = '"!,.?()[]{}\-+=:;<>@#$%^&*_|~`'
-    for c in ignore_chars:
-        sentence = sentence.replace(c, '')
-    sentence = sentence.replace('/', ' ')
-
-    sentence = re.sub(r"what's", "what is", sentence)
-    sentence = re.sub(r"\'s", "", sentence)
-    sentence = re.sub(r"\'ve", " have", sentence)
-    sentence = re.sub(r"can't", "cannot", sentence)
-    sentence = re.sub(r"n't", " not", sentence)
-    sentence = re.sub(r"i'm", "i am", sentence)
-    sentence = re.sub(r"\'re", " are", sentence)
-    sentence = re.sub(r"\'d", " would", sentence)
-    sentence = re.sub(r"\'ll", " will", sentence)
-    sentence = re.sub(r"s\' ", "s ", sentence)
-    sentence = re.sub(r"0s", "0", sentence)
-    return sentence
-
-D = pd.read_csv('train.csv')
-
-for idx, (_, q, _) in tqdm(D.iterrows(), total=D.shape[0]):
-    D.at[idx, 'question_text'] = utils.clean_sentence(q)
-
-D.to_csv('train_clean.csv', sep=',', index=False)
-```
-Don't do stemming because of [these results](https://towardsdatascience.com/word-embeddings-and-document-vectors-when-in-doubt-simplify-8c9aaeec244e)
-
-Options for spellchecking:  https://github.com/wolfgarbe/SymSpell and https://github.com/phatpiglet/autocorrect
-
-Next, cache the glove dict for future use (constructing the dict from scratch takes about 1.5m, while loading the cached dict takes about 5s):
+First let's cache a dict of the glove vectors (constructing the dict from scratch takes about 1.5m, while loading from cache takes about 5s):
 ```python
 import pickle
 
@@ -178,6 +141,98 @@ with open('embeddings/glove.840B.300d.txt', 'r') as f:
 
 pickle.dump(glove_dict, open('glove_dict.p','wb'))
 ```
+
+Next let's clean the text.  We'll expand contractions, fix spelling, and removing non alpha-numeric characters, then save as csv.  I'm not going to do stemming because of [these results](https://towardsdatascience.com/word-embeddings-and-document-vectors-when-in-doubt-simplify-8c9aaeec244e).
+
+```python
+import pandas as pd
+import re
+
+
+contraction_dict = {"ain't": "is not", "aren't": "are not", "can't": "cannot", "'cause": "because", "could've": "could have", "couldn't": "could not", "didn't": "did not",  "doesn't": "does not", "don't": "do not", "hadn't": "had not", "hasn't": "has not", "haven't": "have not", "he'd": "he would","he'll": "he will", "he's": "he is", "how'd": "how did", "how'd'y": "how do you", "how'll": "how will", "how's": "how is",  "I'd": "I would", "I'd've": "I would have", "I'll": "I will", "I'll've": "I will have","I'm": "I am", "I've": "I have", "i'd": "i would", "i'd've": "i would have", "i'll": "i will",  "i'll've": "i will have","i'm": "i am", "i've": "i have", "isn't": "is not", "it'd": "it would", "it'd've": "it would have", "it'll": "it will", "it'll've": "it will have","it's": "it is", "let's": "let us", "ma'am": "madam", "mayn't": "may not", "might've": "might have","mightn't": "might not","mightn't've": "might not have", "must've": "must have", "mustn't": "must not", "mustn't've": "must not have", "needn't": "need not", "needn't've": "need not have","o'clock": "of the clock", "oughtn't": "ought not", "oughtn't've": "ought not have", "shan't": "shall not", "sha'n't": "shall not", "shan't've": "shall not have", "she'd": "she would", "she'd've": "she would have", "she'll": "she will", "she'll've": "she will have", "she's": "she is", "should've": "should have", "shouldn't": "should not", "shouldn't've": "should not have", "so've": "so have","so's": "so as", "this's": "this is","that'd": "that would", "that'd've": "that would have", "that's": "that is", "there'd": "there would", "there'd've": "there would have", "there's": "there is", "here's": "here is","they'd": "they would", "they'd've": "they would have", "they'll": "they will", "they'll've": "they will have", "they're": "they are", "they've": "they have", "to've": "to have", "wasn't": "was not", "we'd": "we would", "we'd've": "we would have", "we'll": "we will", "we'll've": "we will have", "we're": "we are", "we've": "we have", "weren't": "were not", "what'll": "what will", "what'll've": "what will have", "what're": "what are",  "what's": "what is", "what've": "what have", "when's": "when is", "when've": "when have", "where'd": "where did", "where's": "where is", "where've": "where have", "who'll": "who will", "who'll've": "who will have", "who's": "who is", "who've": "who have", "why's": "why is", "why've": "why have", "will've": "will have", "won't": "will not", "won't've": "will not have", "would've": "would have", "wouldn't": "would not", "wouldn't've": "would not have", "y'all": "you all", "y'all'd": "you all would","y'all'd've": "you all would have","y'all're": "you all are","y'all've": "you all have","you'd": "you would", "you'd've": "you would have", "you'll": "you will", "you'll've": "you will have", "you're": "you are", "you've": "you have" }
+contraction_dict_quote = {"ain’t": "is not", "aren’t": "are not", "can’t": "cannot", "’cause": "because", "could’ve": "could have", "couldn’t": "could not", "didn’t": "did not",  "doesn’t": "does not", "don’t": "do not", "hadn’t": "had not", "hasn’t": "has not", "haven’t": "have not", "he’d": "he would","he’ll": "he will", "he’s": "he is", "how’d": "how did", "how’d’y": "how do you", "how’ll": "how will", "how’s": "how is",  "I’d": "I would", "I’d’ve": "I would have", "I’ll": "I will", "I’ll’ve": "I will have","I’m": "I am", "I’ve": "I have", "i’d": "i would", "i’d’ve": "i would have", "i’ll": "i will",  "i’ll’ve": "i will have","i’m": "i am", "i’ve": "i have", "isn’t": "is not", "it’d": "it would", "it’d’ve": "it would have", "it’ll": "it will", "it’ll’ve": "it will have","it’s": "it is", "let’s": "let us", "ma’am": "madam", "mayn’t": "may not", "might’ve": "might have","mightn’t": "might not","mightn’t’ve": "might not have", "must’ve": "must have", "mustn’t": "must not", "mustn’t’ve": "must not have", "needn’t": "need not", "needn’t’ve": "need not have","o’clock": "of the clock", "oughtn’t": "ought not", "oughtn’t’ve": "ought not have", "shan’t": "shall not", "sha’n’t": "shall not", "shan’t’ve": "shall not have", "she’d": "she would", "she’d’ve": "she would have", "she’ll": "she will", "she’ll’ve": "she will have", "she’s": "she is", "should’ve": "should have", "shouldn’t": "should not", "shouldn’t’ve": "should not have", "so’ve": "so have","so’s": "so as", "this’s": "this is","that’d": "that would", "that’d’ve": "that would have", "that’s": "that is", "there’d": "there would", "there’d’ve": "there would have", "there’s": "there is", "here’s": "here is","they’d": "they would", "they’d’ve": "they would have", "they’ll": "they will", "they’ll’ve": "they will have", "they’re": "they are", "they’ve": "they have", "to’ve": "to have", "wasn’t": "was not", "we’d": "we would", "we’d’ve": "we would have", "we’ll": "we will", "we’ll’ve": "we will have", "we’re": "we are", "we’ve": "we have", "weren’t": "were not", "what’ll": "what will", "what’ll’ve": "what will have", "what’re": "what are",  "what’s": "what is", "what’ve": "what have", "when’s": "when is", "when’ve": "when have", "where’d": "where did", "where’s": "where is", "where’ve": "where have", "who’ll": "who will", "who’ll’ve": "who will have", "who’s": "who is", "who’ve": "who have", "why’s": "why is", "why’ve": "why have", "will’ve": "will have", "won’t": "will not", "won’t’ve": "will not have", "would’ve": "would have", "wouldn’t": "would not", "wouldn’t’ve": "would not have", "y’all": "you all", "y’all’d": "you all would","y’all’d’ve": "you all would have","y’all’re": "you all are","y’all’ve": "you all have","you’d": "you would", "you’d’ve": "you would have", "you’ll": "you will", "you’ll’ve": "you will have", "you’re": "you are", "you’ve": "you have"}
+mispell_dict = {'colour': 'color', 'centre': 'center', 'favourite': 'favorite', 'travelling': 'traveling', 'counselling': 'counseling', 'theatre': 'theater', 'cancelled': 'canceled', 'labour': 'labor', 'organisation': 'organization', 'wwii': 'world war 2', 'citicise': 'criticize', 'youtu ': 'youtube ', 'Qoura': 'Quora', 'sallary': 'salary', 'Whta': 'What', 'narcisist': 'narcissist', 'howdo': 'how do', 'whatare': 'what are', 'howcan': 'how can', 'howmuch': 'how much', 'howmany': 'how many', 'whydo': 'why do', 'doI': 'do I', 'theBest': 'the best', 'howdoes': 'how does', 'mastrubation': 'masturbation', 'mastrubate': 'masturbate', "mastrubating": 'masturbating', 'pennis': 'penis', 'Etherium': 'Ethereum', 'narcissit': 'narcissist', 'bigdata': 'big data', '2k17': '2017', '2k18': '2018', 'qouta': 'quota', 'exboyfriend': 'ex boyfriend', 'airhostess': 'air hostess', "whst": 'what', 'watsapp': 'whatsapp', 'demonitisation': 'demonetization', 'demonitization': 'demonetization', 'demonetisation': 'demonetization'}
+misc_replace = {"u.s.": "america"}
+
+replace_dict = {**contraction_dict, **misc_replace, **mispell_dict, **contraction_dict_quote}
+ignore_chars = '",.?()[]{}\-+=:;<>@#$%^&*_|~`!“”…⋯‘'
+
+def clean_sentence(sentence):
+    sentence = sentence.lower()
+    # Remove non letters
+    for c in ignore_chars:
+        sentence = sentence.replace(c, '')
+    sentence = sentence.replace('/', ' ')
+    # Remove contractions, etc
+    cleaned = ''
+    for w in sentence.split(' '):
+        if w in replace_dict:
+            cleaned += replace_dict[w] + ' '
+        else:
+            cleaned += w + ' '
+    cleaned = re.sub("'s", "", cleaned)
+    cleaned = re.sub("’s", "", cleaned)
+    cleaned = re.sub("'", "", cleaned)
+    return cleaned[0:-1]
+
+D = pd.read_csv('train.csv')
+
+for idx, (_, q, _) in tqdm(D.iterrows(), total=D.shape[0]):
+    D.at[idx, 'question_text'] = clean_sentence(q)
+
+D.to_csv('train_clean.csv', sep=',', index=False)
+```
+
+Let's see how many out-of-vocabulary (oov) words are left:
+
+```python
+from multiprocessing import Pool
+from collections import Counter
+
+glove_dict = pickle.load(open('glove_dict.p','rb'))
+glove_words = list(glove_dict.keys())
+del glove_dict
+
+question_df = pd.read_csv('train_clean.csv').dropna()
+questions = question_df['question_text']
+# questions = questions[0:100000]
+
+def helper(q):
+    oov_dict = {}
+    for w in q.split(' '):
+        if w not in glove_words:
+            if w in oov_dict:
+                oov_dict[w] += 1
+            else:
+                oov_dict[w] = 1
+    if oov_dict:
+        return oov_dict
+
+pool = Pool(5)
+oov_dicts = list(tqdm(pool.imap(helper, questions), total=len(questions)))
+oov_dicts = [_ for _ in oov_dicts if _]   # remove None entries
+
+combined = Counter({})
+for d in tqdm(oov_dicts):
+    combined = combined + Counter(d)
+
+out_f = 'oov_counts.csv'
+with open(out_f,'w+') as f:
+    for k in combined:
+        f.write('%s,%s\n' % (k, combined[k]))
+
+exit()
+combined = sorted(combined.items(), key=operator.itemgetter(1), reverse=True)
+print(combined)
+exit()
+```
+
+
+
+
+Options for spellchecking:  https://github.com/wolfgarbe/SymSpell,  https://github.com/phatpiglet/autocorrect,
+https://github.com/blatinier/pyhunspell
+
 
 Convert each sentence into a 2-d array of embeddings:
 ```python
