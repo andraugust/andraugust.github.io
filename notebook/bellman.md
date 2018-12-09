@@ -11,15 +11,15 @@ permalink: /bellman/
 
 ### Threes: How to Play
 
-Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll the remaining dice and collect until they've taken them all.  At this point, the player's score is the sum of their dice where _threes count as zero_.  The second player rolls the same way and the player with the lowest score wins.
+Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice with threes counting as _zero_.  The second player rolls in the same way and the player with the lowest score wins.
 
-Dice are collected in an interesting way.  Players are supposed to take at least one dice after each roll, but if they roll all high dice and don't want to take any, then they can choose to take no dice and re-roll but with the consequence that they have to take _at least two_ dice on the re-roll.
+Dice are collected in an interesting way.  Players are supposed to take at least one dice after each roll, but if they roll all high dice (like all fives and sixes) and they don't want to take any, then they can choose to take no dice and re-roll, but with the consequence that they have to take _at least two_ dice on the re-roll.
 
-As per the rules, players can't accumulate re-rolls and they can't re-roll the last die, they have to take it.  An example game is shown at the bottom of the post.
+Note that players aren't allowed to accumulate re-rolls and they aren't allowed to re-roll the last die---they have to take it.  An example game is shown at the bottom of this post.
 
 ### Backward Induction
 
-We're going to solve Threes using backward induction.  Backward induction works by identifying the optimal action at the last step of the game, and uses that to identify the optimal action at the second to last step, etc. until the current step is reached.
+We're going to solve Threes using backward induction.  Backward induction works by identifying the optimal action at the last step of the game, and uses that action to identify the optimal action at the second to last step, etc. until the current step is reached.
 
 It may seem like this requires us to simulate the game backward every time we want to take an action, but in-fact we can compute so-called _values_ which cache the results of the simulation and eliminate the need to repeat simulations.  All of this will be clearer in the example to come.
 

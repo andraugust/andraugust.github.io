@@ -84,7 +84,7 @@ Each loop through this algorithm is called a _generation_.  Here's a plot of lif
 
 <center><img src="lifetime_plot.png"></center>
 <br />
-Evidently lifetimes aren't significantly influenced by the number of sigmoid nodes used (at least over the range tested), but nonetheless the genetic algorithm works and after about 20 generations agents live for about 1000 (!) times longer than their arbitrarily generated ancestors.
+Evidently lifetimes aren't significantly influenced by the number of sigmoid nodes used (at least over the range tested), but nonetheless the genetic algorithm works and after about 20 generations agents live for about 1000 (!) times longer than their arbitrarily generated ancestors.  Pretty awesome!
 
 __Reference:__ Gomez, F. J. (2003). Robust Non-linear Control through Neuroevolution. PhD thesis, University of Texas, Austin, TX. [Link](http://www.cs.utexas.edu/users/nn/downloads/papers/gomez.phdtr03.pdf)
 
