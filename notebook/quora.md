@@ -10,8 +10,16 @@ permalink: /quora/
 The Quora Insincere Question Classification challenge provides a dataset of questions asked on [quora.com](https://www.quora.com/) and a binary label indicating if each question is _sincere_. The goal is to develop a model that accurately labels a set of testing questions.  This post documents my development of such a model.
 
 ## Data Exploration
+Getting the data:
+```
+$ mkdir Quora
+$ cd Quora
+$ kaggle competitions download -c quora-insincere-questions-classification
+```
+
 What are some sincere questions?
 ```
+$ grep "0$" train.csv | head
 00002165364db923c7e6,How did Quebec nationalists see their province as a nation in the 1960s?,0
 000032939017120e6e44,"Do you have an adopted dog, how would you encourage people to adopt and not shop?",0
 0000412ca6e4628ce2cf,Why does velocity affect time? Does velocity affect space geometry?,0
@@ -55,6 +63,7 @@ A few observations:
 
 What are some insincere questions?
 ```
+$ grep "1$" train.csv | head
 0000e91571b60c2fb487,Has the United States become the largest dictatorship in the world?,1
 00013ceca3f624b09f42,Which babies are more sweeter to their parents? Dark skin babies or light skin babies?,1
 0004a7fcb2bf73076489,If blacks support school choice and mandatory sentencing for criminals why don't they vote Republican?,1
