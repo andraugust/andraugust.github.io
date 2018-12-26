@@ -3,3 +3,5 @@ description: Andrew August's Data Science Notebook
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-slate
+big_title: Andrew August's
+little_title: Data Science Notebook
