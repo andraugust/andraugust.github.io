@@ -4,7 +4,7 @@ layout: default
 
 <br />
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
-<center><img src="banner.png"></center>
+<center><img src="airbus/banner.png"></center>
 <br />
 Kaggle's [Ship Detection Challenge](https://kaggle.com/c/airbus-ship-detection) provides satellite images of the ocean and ground-truth labels indicating the locations of ships in each image.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my development of such a model.
 
@@ -81,12 +81,12 @@ for im_id, rles in rle_dict.items():
         break
 ```
 <br />
-<center><a href="../airbus/train_image_masks.png"><img src="train_image_masks.png"></a></center>
+<center><a href="../airbus/train_image_masks.png"><img src="airbus/train_image_masks.png"></a></center>
 <br />
 
 Some ships are large and easy to distinguish, like the first column, but others are small and hard to detect, like the last column.  Some ships are _very_ close together, making them hard to separate, even when zoomed in:
 <br />
-<center><img src="train_image_masks_closeup.png"></center>
+<center><img src="airbus/train_image_masks_closeup.png"></center>
 <br />
 
 Some images have one ship while others have multiple.  What's the distribution over ships per image, given there are ships?
@@ -101,18 +101,18 @@ plt.ylabel('Number of Images')
 plt.savefig('./figures/ship_count_distribution.png')
 ```
 <br />
-<center><img src="ship_count_distribution.png"></center>
+<center><img src="airbus/ship_count_distribution.png"></center>
 <br />
 
 Most images have only one ship, and nearly all have less than three.
 
 What surface area do ships cover?
 <br />
-<center><img src="ship_areas.png"></center>
+<center><img src="airbus/ship_areas.png"></center>
 <br />
 The smallest is tiny, only 2 pixels.  The largest is 25,904 pixels, about 4% of the image.  Most are in the hundreds range.  Here's a zoom-in:
 <br />
-<center><img src="ship_areas_zoom.png"></center>
+<center><img src="airbus/ship_areas_zoom.png"></center>
 <br />
 
 ## Modeling
@@ -162,9 +162,9 @@ where rows are ground-truth and columns are predicted.  We see that there are ma
 
 Let's look at some validation misclassifications:
 <br />
-<center><a href="../airbus/false_negatives.png"><img src="false_negatives.png"></a></center>
+<center><a href="../airbus/false_negatives.png"><img src="airbus/false_negatives.png"></a></center>
 <br />
-<center><a href="../airbus/false_positives.png"><img src="false_positives.png"></a></center>
+<center><a href="../airbus/false_positives.png"><img src="airbus/false_positives.png"></a></center>
 <br />
 
 False negatives mostly occur when ships are either split, occluded by clouds, or really small; false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
@@ -175,19 +175,19 @@ The localization model we'll use is a Unet with the same architecture as in the 
 
 We train directly on the 384x384 quarters using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, batch size is 6, and the loss is pixel-wise binary cross entropy.  Here's the validation loss over epochs:
 <br />
-<center><img src="unet_loss.png"></center>
+<center><img src="airbus/unet_loss.png"></center>
 <br />
 
 And here are some validation predictions after each epoch, click to enlarge:
 <br />
-<center><a href="../airbus/unet_predictions.png"><img src="unet_predictions.png"></a></center>
+<center><a href="../airbus/unet_predictions.png"><img src="airbus/unet_predictions.png"></a></center>
 <br />
 
 The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edges of images, which is what we were worried about when we did the quartering.
 
 Let's see where Unet performed poorly.  These validation samples have the biggest loss:
 <br />
-<center><a href="../airbus/unet_errors.png"><img src="unet_errors.png"></a></center>
+<center><a href="../airbus/unet_errors.png"><img src="airbus/unet_errors.png"></a></center>
 <br />
 
 Evidently, docked ships are hardest to detect, they just look like a continuation of the land, especially the yachts, which, in some sense, are.  The second to last column has what appear to be oil rigs that were misclassified.
@@ -198,7 +198,7 @@ The objective function used by Kaggle is somewhat convoluted.  For each image, a
 
 To figure out where to threshold Unet predictions, loop over thresholds and look at average IoUs on the validation set (with error bars of 1 std dev on each side):
 <br />
-<center><a href="../airbus/iou_v_thresh.png"><img src="iou_v_thresh.png"></a></center>
+<center><a href="../airbus/iou_v_thresh.png"><img src="airbus/iou_v_thresh.png"></a></center>
 <br />
 We'll use 0.4 as a threshold.
 
@@ -217,7 +217,7 @@ As was hoped, accuracy increase with ensemble size.
 
 To finish up, we'll look at some test predictions made by the best ensemble:
 <br />
-<center><a href="../airbus/test_prediction_overlay.png"><img src="test_prediction_overlay.png"></a></center>
+<center><a href="../airbus/test_prediction_overlay.png"><img src="airbus/test_prediction_overlay.png"></a></center>
 <br />
 
 ### Ways to Improve
