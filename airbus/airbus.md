@@ -1,8 +1,7 @@
 ---
-layout: page
-title: "Airbus"
-permalink: /airbus/
+layout: default
 ---
+
 <br />
 <h2><center>Kaggle Ship Detection Challenge</center></h2>
 <center><img src="banner.png"></center>
