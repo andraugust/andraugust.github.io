@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 # Kaggle Ship Detection Challenge
 
 <center><img src="airbus/banner.png"></center>
