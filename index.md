@@ -16,7 +16,7 @@ This post documents the use of CNNs for satellite image classification on The Fu
 
 ## [Reinforcement Learning IRL](rl.html)
 
-This is post describes an Arduino robot that learns to crawl using Q-learning.  Included is a video/tutorial showing the robot in action.
+This post describes an Arduino robot that learns to crawl using Q-learning.  Included is a video/tutorial showing the robot in action.
 
 ## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
 
