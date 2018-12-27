@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
   color:#222222;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; //'Lucida Grande', Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
 
@@ -156,7 +156,7 @@ p img {
 
 pre, code {
   color: #222;
-  background-color: #222;
+  background-color: #f8f8f8;
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
