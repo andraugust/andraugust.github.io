@@ -2,8 +2,7 @@
 layout: default
 ---
 
-<br />
-<h2><center>Solving Threes</center></h2>
+# Solving Threes
 
 ![bellman/dice.JPG](dice.JPG)
 <center><p>All threes&mdash;the infamous <em>hallelujah</em> roll.</p></center>

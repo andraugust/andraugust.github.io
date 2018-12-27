@@ -18,7 +18,8 @@ layout: default
 }
 </style>
 <br />
-<h2><center>Artificial Life, Neural Nets, and Genetic Algorithms</center></h2>
+
+# Artificial Life, Neural Nets, and Genetic Algorithms
 
 <div class="video-responsive"><iframe width="840" height="472" src="https://www.youtube.com/embed/UW8y_R7PE_c?rel=0" frameborder="0" allowfullscreen></iframe></div>
 <br />

@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<br />
-<h2><center>Discovering Class-Hierarchies by Clustering Confusion Matrices</center></h2>
+
+# Discovering Class-Hierarchies by Clustering Confusion Matrices
 
 Grouping similar classes into course-grained macro-classes can expose the hierarchical structure of a dataset and guide the development of hierarchical models, but what's an appropriate way to group classes together?  If we interpret a confusion matrix as a similarity matrix, then we can apply clustering on it and the resulting clusters will define the desired macro-classes.  In this post I explain this process in the context of a text classification problem.
 

@@ -2,8 +2,7 @@
 layout: default
 ---
 
-<br />
-<h2><center>Exploring the First-Link Taxonomy of Wikipedia</center></h2>
+# Exploring the First-Link Taxonomy of Wikipedia
 
 <br />
 <center><img src="../wikilinks/Banner.png" /></center>
