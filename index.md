@@ -2,9 +2,9 @@
 layout: default
 ---
 
-## Ship Segmentation for Kaggle's Ship Detection Challenge
+## [Kaggle Ship Detection Challenge](airbus.html)
 
-This post follows my development of a dense ship segmenter.  The basic pipeline consists of a ship/noship CNN followed by a Unet and some post-processing. The results.
+This post follows my development of a dense ship segmenter for Kaggle's Ship Detection Challenge.  The basic pipeline consists of a ship/noship CNN followed by a Unet and some post-processing.
 
 ## Exploring the First-Link Taxonomy of Wikipedia
 
