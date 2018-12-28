@@ -4,7 +4,7 @@ layout: default
 
 # Reinforcement Learning IRL
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/f2nIKFMyfSg?rel=0" frameborder="0" allowfullscreen></iframe></center>
+<center><iframe src="https://www.youtube.com/embed/f2nIKFMyfSg?rel=0" frameborder="0" allowfullscreen></iframe></center>
 
 ## The Agent
 The agent's body is made of acrylic and has two servos that control two arms.  _The agent's goal is to operate its arms to pull itself forward._ The servos are controlled by a microcontroller (Arduino) that performs one action at each time-step.  The four possible actions are:
