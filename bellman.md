@@ -4,7 +4,8 @@ layout: default
 
 # Solving Threes
 
-![bellman/dice.JPG](dice.JPG)
+<center><img src="bellman/dice.JPG"></center>
+
 <center><p>All threes&mdash;the infamous <em>hallelujah</em> roll.</p></center>
 
 ### Threes: How to Play
@@ -39,13 +40,13 @@ In technical slang we're treating the game as a _Markov decision process_ and we
 
 Suppose there are two dice left and we don't have to take two and we roll $$(1,6)$$.  The diagram below shows the decisions we can make.
 
-![bellman/decisions1.png](decisions1.png)
+<center><img src="bellman/decisions1.png"></center>
 
 The quantity $$v$$ indicates how many points we expect to collect on the _next_ roll, assuming we select the corresponding action.  For example, $$v(len(r)=2,\texttt{taketwo}=T) = 6$$ because rolling two dice and collecting them both gives a total of $$6$$ on average.  The bottom of the tree contains numbers that are used to make our final decision.  In this case $$a=1$$ is the optimal decision because cost plus value is minimum.
 
 One more example, then we can generalize the solution:
 
-![bellman/decisions2.png](decisions2.png)
+<center><img src="bellman/decisions2.png"></center>
 
 In this case we can't choose an action because we don't know $$v(len(r)=3, \texttt{taketwo}=T)$$ or $$v(len(r)=2, \texttt{taketwo}=F)$$, but we can approximate them using simulations.  For example, $$len(r)=2, \texttt{taketwo}=F$$ is the situation shown in the first tree, and we were able to make a decision there, so we'll simulate this situation several times and average the score of the optimal action there.  The result is $$v(len(r)=3, \texttt{taketwo}=T)=7$$.  Using a similar technique we find that $$v(len(r)=2, \texttt{taketwo}=F)=4$$.
 
