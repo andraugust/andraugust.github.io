@@ -6,13 +6,13 @@ layout: default
 
 <p style="opacity:0.5">11/2018</p>
 
-This post follows my development of a dense ship segmenter for Kaggle's Ship Detection Challenge.  The basic pipeline consists of a ship/noship CNN followed by a Unet and some post-processing.
+This post documents my dense ship segmenter for Kaggle's Ship Detection Challenge.  The basic pipeline consists of a ship/noship CNN followed by a Unet and some post-processing.
 
 ## [Exploring the First-Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
 
-An interesting property of Wikipedia is that each page's first-link often goes to its immediate superset.  For example, 'poker' first-links to 'card game' and 'card game' first-links to 'game', etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?
+An interesting property of Wikipedia pages is that their first-links often goes to their immediate supersets.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?
 
 ## [Satellite Image Classification on the fMoW Dataset](fmow.html)
 
@@ -24,22 +24,22 @@ This post documents the use of CNNs for satellite image classification on The Fu
 
 <p style="opacity:0.5">10/2017</p>
 
-This is an example showing how class hierarchies can be discovered by applying spectral clustering to a confusion matrix.
+This is an example of how spectral clustering can be applied to a confusion matrix in order to find class hierarchies.
 
 ## [Solving Threes](bellman.md)
 
 <p style="opacity:0.5">03/2016</p>
 
-Threes is a dice game definitely worth knowing.  Do _you_ know how to play Threes?  Do _you_ know how to win at Threes?  Here I explain the rules of Threes and use backward induction to find its optimal policy.
+Threes is a dice game of endless fun.  Do you know how to play Threes?  Do you know how to win at Threes?  Here I explain the rules of Threes and use backward induction to find its optimal policy.
 
 ## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
 
 <p style="opacity:0.5">11/2015</p>
 
-Can neural nets control Artificial Life agents?  Can genetic algorithms optimize such neural nets?  In this post a GA called Enforced Subpopulations is implemented to show that _yes_ GAs can optimize NNs, and _yes_ NNs can effectively control AL agents.
+Can neural nets effectively control Artificial Life agents?  Can genetic algorithms optimize such neural nets?  In this post I implement a GA called Enforced Subpopulations to provide an example wherein GAs successfully optimize AL NNs.
 
 ## [Reinforcement Learning IRL](rl.html)
 
 <p style="opacity:0.5">12/2014</p>
 
-This post describes an Arduino robot that learns to crawl using Q-learning.  Included is a video/tutorial showing the robot in action.
+This post describes an Arduino robot that learns to crawl using Q-learning.  Included is a video and tutorial showing the robot in action.
