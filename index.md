@@ -12,7 +12,7 @@ This post documents my dense ship segmenter for Kaggle's Ship Detection Challeng
 
 <p style="opacity:0.5">04/2018</p>
 
-An interesting property of Wikipedia pages is that their first-links often goes to their immediate supersets.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?
+An interesting property of Wikipedia pages is that their first-links often go to their immediate supersets.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?
 
 ## [Satellite Image Classification on the fMoW Dataset](fmow.html)
 
