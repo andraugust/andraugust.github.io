@@ -2,6 +2,12 @@
 layout: default
 ---
 
+## [Connect PyCharm to remote server](pycharm-remote.html)
+
+<p style="opacity:0.5">01/2019</p>
+
+Reference for how to connect PyCharm to a remote machine.
+
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
