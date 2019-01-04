@@ -10,11 +10,11 @@ PyCharm > Preferences > Project: _project name_ > Project Interpeter > _Select f
 
 Selecting an existing interpreter:
 
-![alt text]('pycharm-remote/1.png')
+![alt text](pycharm-remote/1.png)
 
 Adding a new interpreter:
 
-![alt text]('pycharm-remote/2.png')
+![alt text](pycharm-remote/2.png)
 
 2. Configure deployment folder:
 
@@ -22,11 +22,11 @@ Tools > Deployment > Configuration > Connection > _Configure connection_ > Mappi
 
 Configured connection:
 
-![alt text]('pycharm-remote/3.png')
+![alt text](pycharm-remote/3.png)
 
 Configured path mapping:
 
-![alt text]('pycharm-remote/4.png')
+![alt text](pycharm-remote/4.png)
 
 3. Set up auto upload to server:
 
