@@ -31,4 +31,5 @@ Configured path mapping:
 ### Set up auto upload to server:
 
 Tools > Deployment > Upload to _server name_
+
 Tools > Deployment > Automatic Upload
