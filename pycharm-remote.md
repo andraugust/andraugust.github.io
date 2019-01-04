@@ -41,3 +41,5 @@ Tools > Deployment > Automatic Upload
 It has happened to me that an environment variable wasn't found to be defined on the remote system, and using something like ```os.environ['CUDA_VISIBLE_DEVICES']='1'``` in the script I was running didn't work.  The solution is to set the environment variable directly in PyCharm:
 
 Run > Edit Configurations > _set environment variables_ > Apply > OK
+
+But I only recommend doing this _after_ an error related to undefined environment variables appears _and_ no other solution fixes it.
