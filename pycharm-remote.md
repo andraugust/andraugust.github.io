@@ -6,7 +6,7 @@ layout: default
 
 These steps were tested on PyCharm Professional Edition 2017.2.3
 
-### Configure interpreter
+### Configuring the interpreter
 
 PyCharm > Preferences > Project: _project name_ > Project Interpeter > _Select from dropdown or add new_ > Apply > OK
 
@@ -18,7 +18,7 @@ Adding a new interpreter:
 
 ![alt text](pycharm-remote/2.png)
 
-### Configure deployment folder (the mapping between local and remote directories)
+### Configuring the deployment folder (the mapping between local and remote directories)
 
 Tools > Deployment > Configuration > Connection > _Configure connection_ > Mappings > _Configure mappings_ > OK
 
@@ -30,7 +30,7 @@ Configure mapping:
 
 ![alt text](pycharm-remote/4.png)
 
-### Set auto upload to server
+### Set auto upload to server when file changes made
 
 Tools > Deployment > Upload to _server name_
 
