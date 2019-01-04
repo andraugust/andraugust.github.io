@@ -35,3 +35,9 @@ Configuring the mapping:
 Tools > Deployment > Upload to _server name_
 
 Tools > Deployment > Automatic Upload
+
+### Setting remote environment variables
+
+It has happened to me that an environment variable wasn't found to be defined on the remote system, and using something like ```os.environ['CUDA_VISIBLE_DEVICES']='1'``` in the script I was running didn't work.  The solution is to set the environment variable directly in PyCharm:
+
+Run > Edit Configurations > _set environment variables_ > Apply > OK
