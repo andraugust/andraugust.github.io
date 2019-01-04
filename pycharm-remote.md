@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Connecting PyCharm to Remote Server
+### Connecting PyCharm to Remote Server
 
 1. Configure interpreter:
 
@@ -16,7 +16,7 @@ Adding a new interpreter:
 
 ![alt text](pycharm-remote/2.png)
 
-2. Configure deployment folder:
+### Configure deployment folder:
 
 Tools > Deployment > Configuration > Connection > _Configure connection_ > Mappings > _Configure mappings_ > OK
 
@@ -28,7 +28,7 @@ Configured path mapping:
 
 ![alt text](pycharm-remote/4.png)
 
-3. Set up auto upload to server:
+### Set up auto upload to server:
 
 Tools > Deployment > Upload to _server name_
 Tools > Deployment > Automatic Upload
