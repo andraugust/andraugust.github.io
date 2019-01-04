@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## [Connect PyCharm to Remote Server](pycharm-remote.html)
+## [Connecting PyCharm to a Remote Server](pycharm-remote.html)
 
 <p style="opacity:0.5">01/2019</p>
 
