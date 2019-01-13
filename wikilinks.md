@@ -49,6 +49,7 @@ In the '\<subset\> is a \<superset\>' analogy these nine nodes in union comprise
 
 Attractor members differ in the number of pages leading to them.  The table below shows the fraction of pages leading to each attractor node.  We'll call this the node's _abstractness_.  Knowledge has a much higher abstractness than Philosophy, so even though several first-link accounts have focused on Philosophy it seems more appropriate to focus on Knowledge.
 
+<center>
 | Page Name | Abstractness |
 |:----------:|:------------:|
 | Knowledge | 0.59 |
@@ -60,6 +61,7 @@ Attractor members differ in the number of pages leading to them.  The table belo
 | Learning | <0.01 |
 | Axiom | <0.01 |
 | Premise | <0.01 |
+</center>
 
 Here's the abstractness distribution of the un-trimmed giant component.  The distribution is approximately linear on a log-log scale suggesting a power law relationship.
 <br />
