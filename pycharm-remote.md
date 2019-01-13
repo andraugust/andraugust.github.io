@@ -4,7 +4,7 @@ layout: default
 
 # Connecting PyCharm to a Remote Server
 
-These steps were tested on PyCharm Professional Edition 2017.2.3.
+I end up doing this a lot, but if it's been a while then sometime I forget, so best to take notes!  Disclaimer: these steps and screenshots are from PyCharm Professional Edition 2017.2.3.
 
 ### Configuring the interpreter
 

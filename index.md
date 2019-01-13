@@ -12,7 +12,7 @@ Reference for how to connect PyCharm to a remote machine.
 
 <p style="opacity:0.5">11/2018</p>
 
-This post documents my dense ship segmenter for Kaggle's Ship Detection Challenge.  The basic pipeline consists of a ship/noship CNN followed by a Unet and some post-processing.
+This post documents my dense ship segmenter for Kaggle's Ship Detection Challenge.  The basic pipeline consists of a ship/noship CNN followed by a ship segmenting Unet and some post-processing.
 
 ## [Exploring the First-Link Taxonomy of Wikipedia](wikilinks.html)
 
@@ -36,7 +36,7 @@ This is an example of how spectral clustering can be applied to a confusion matr
 
 <p style="opacity:0.5">03/2016</p>
 
-Threes is a dice game of endless fun.  Do you know how to play Threes?  Do you know how to win at Threes?  Here I explain the rules of Threes and use backward induction to find its optimal policy.
+Threes is a dice game.  Do you know how to play Threes?  Do you know how to win at Threes?  Here I explain the rules of Threes and use backward induction to find its optimal policy.
 
 ## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
 
