@@ -72,7 +72,7 @@ The output of the microcontroller is an action elicited to one of the sevo arms 
 The $$Q$$ table has $$144$$ entries representing $$4$$ actions $$\times$$ $$6$$ servo1 states $$\times$$ $$6$$ servo2 states.  $$Q$$ was initialized to have all entries be $$10$$ so as to instill something like optimism in the agent for unseen states.  We somewhat arbitrarily set $$\gamma=0.75$$ and $$\alpha=0.1$$.  As the video above demonstrates, it works!
 
 ## Code
-[Here](arduino-qlearning.txt).
+[Here](./rl/arduino-qlearning.txt).
 
 
 {% include disqus.html %}
