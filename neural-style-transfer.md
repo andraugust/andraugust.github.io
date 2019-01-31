@@ -9,13 +9,13 @@ Creativity is claimed by some to be uniquely human. Computers shouldn't be able 
 
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a method for transferring the style of a source image onto a target image using a neural network.  What does that mean?  It means the texture and color of one image are adjusted to match the texture and color of another image, and the adjustment is based on the output of a neural network.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a method for transferring the style of a source image onto a target image using a neural network.  What does that mean?  It basically means the texture and color of one image are adjusted to match the texture and color of another image, and the adjustment is based on the output of a neural network.
 
-If the source image is _Starry Night_ by van Gogh, and the target image is a picture of a dog riding a skateboard, then the style transfer aims to modify the dog picture to appear as if it were painted by van Gogh himself.
+If the source image is _Starry Night_ by van Gogh, for example, and the target image is a picture of a dog riding a skateboard, then the style transfer aims to modify the dog picture so it appear as if it were painted by van Gogh himself.
 
 (im dog) + (im van gogh) = (style transfer)
 
-Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photo below shows input images that maximally activate various filters in a VGG16 architecture. (These are from the [keras blog](https://blog.keras.io/category/demo.html))
+Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photos below, [keras blog](https://blog.keras.io/category/demo.html), show images that maximally activate various filters in a VGG16 architecture.  Deeper layers detect low frequency texture while shallow layers detect high frequency texture.
 
 ![im](neural-style-transfer/keras1.png)
 ![im](neural-style-transfer/keras2.png)
