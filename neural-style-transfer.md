@@ -9,11 +9,20 @@ Creativity is claimed by some to be uniquely human. Computers shouldn't be able 
 
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2014, the authors define a method for transferring the style of a source image onto a target image using a neural network.  What does that mean?  It means the texture and color of an image are adjusted to match some other image, and the adjustment is based on the output from a neural network.  For example, if the source image is _Starry Night_ by van Gogh, and the target image is a picture of a dog riding a skateboard, then the style transfer modifies the dog to appear to be painted by van Gogh himself.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a method for transferring the style of a source image onto a target image using a neural network.  What does that mean?  It means the texture and color of one image are adjusted to match the texture and color of another image, and the adjustment is based on the output of a neural network.
+
+If the source image is _Starry Night_ by van Gogh, and the target image is a picture of a dog riding a skateboard, then the style transfer aims to modify the dog picture to appear as if it were painted by van Gogh himself.
 
 (im dog) + (im van gogh) = (style transfer)
 
-The key insight made by Gatys and his co-authors is that style can be represented in terms of the
+Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photo below shows input images that maximally activate various filters in a VGG16 architecture. (These are from the [keras blog](https://blog.keras.io/category/demo.html))
+
+![im](neural-style-transfer/keras1.png)
+![im](neural-style-transfer/keras2.png)
+![im](neural-style-transfer/keras3.png)
+
+
+The key insight made by Gatys and his co-authors, which makes is that style can be represented in terms of the
 
 
 
