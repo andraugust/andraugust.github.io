@@ -15,7 +15,7 @@ If the source image is _Starry Night_ by van Gogh, for example, and the target i
 
 (im dog) + (im van gogh) = (style transfer)
 
-Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photos below, [keras blog](https://blog.keras.io/category/demo.html), show images that maximally activate various filters in a VGG16 architecture.  Deeper layers detect low frequency texture while shallow layers detect high frequency texture.
+Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show images that maximally activate various filters in a VGG16 architecture.  Note that deep layers detect low frequency texture while shallow layers detect high frequency texture.
 
 ![im](neural-style-transfer/keras1.png)
 ![im](neural-style-transfer/keras2.png)
