@@ -4,6 +4,19 @@ layout: default
 
 # Notes on [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al, CVPR 2016)
 
+## Introduction
+Creativity is claimed by some to be uniquely human. Computers shouldn't be able to make beutiful paintings
+
+
+## Background
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2014, the authors define a method for transferring the style of a source image onto a target image using a neural network.  What does that mean?  It means the texture and color of an image are adjusted to match some other image, and the adjustment is based on the output from a neural network.  For example, if the source image is _Starry Night_ by van Gogh, and the target image is a picture of a dog riding a skateboard, then the style transfer modifies the dog to appear to be painted by van Gogh himself.
+
+(im dog) + (im van gogh) = (style transfer)
+
+The key insight made by Gatys and his co-authors is that style can be represented in terms of the
+
+
+
 
 - __Architecture__ Features from VGG19 (16 conv, 5 pool). "Normalize" network weights.  No fully connected layers.  Use avg pool instead of max pool.
 
@@ -13,7 +26,7 @@ Let $X^l_i$ be the outputs from the original image and $\tilde{X}^l_i$ be the ou
 
 $$J_{content}^l = \sum_{i}{(X^l_i - \tilde{X}^l_i)^2}$$
 
-- __Style representation__  Style is represented by the covariance between channels in a convolutional output.  If a convolutional output has shape $N \times M \times K$, then each channel is flattened and arrange into a matrix of shape $N M \times K$.  This matrix is used to compute covariance in the usual way: $G = FF^T$.
+- __Style representation__  Style is represented by the covariance between channels in a convolutional output.  If a convolutional output has shape $$N \times M \times K$$, then each channel is flattened and arrange into a matrix of shape $$N M \times K$$.  This matrix is used to compute covariance in the usual way: $$G = FF^T$$.
 
 - [picture of style reconstruction from fig. 1]
 

@@ -12,7 +12,7 @@ Reference for how to connect PyCharm to a remote machine.
 
 <p style="opacity:0.5">11/2018</p>
 
-This post documents my dense ship segmenter for Kaggle's Ship Detection Challenge.  The basic pipeline consists of a ship/noship CNN followed by a ship segmenting Unet and some post-processing.
+This is my dense ship segmenter for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship CNN followed by a ship segmenting Unet and some post-processing.
 
 ## [Exploring the First-Link Taxonomy of Wikipedia](wikilinks.html)
 
