@@ -4,25 +4,24 @@ layout: default
 
 # Notes on [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al, CVPR 2016)
 
-## Introduction
-Creativity is claimed by some to be uniquely human. Computers shouldn't be able to make beutiful paintings
-
-
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a method for transferring the style of a source image onto a target image using a neural network.  What does that mean?  It basically means the texture and color of one image are adjusted to match the texture and color of another image, and the adjustment is based on the output of a neural network.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a neural method for transforming the style of an image so that it matches the style of another image.
 
-If the source image is _Starry Night_ by van Gogh, for example, and the target image is a picture of a dog riding a skateboard, then the style transfer aims to modify the dog picture so it appear as if it were painted by van Gogh himself.
+For example, if we choose the style image to be van Gogh's _Starry Night_, we want to make another image, like one of a dog riding a skateboard, have the same color and texture properties as _Starry Night_.  What the authors used, and what we're going to use, are neural networks to make this style transfer.
 
 (im dog) + (im van gogh) = (style transfer)
 
-Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show images that maximally activate various filters in a VGG16 architecture.  Note that deep layers detect low frequency texture while shallow layers detect high frequency texture.
+Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
 ![im](neural-style-transfer/keras1.png)
 ![im](neural-style-transfer/keras2.png)
 ![im](neural-style-transfer/keras3.png)
 
+Given the ability to respond to textures, the authors ask if it's possible to make the texture response of a target image, like skate dog, match the texture response of a source image, like _Starry Night_.  The only question is how does one transform the target image in an appropriate way, and how does one even define 'texture response' in the first place?
 
-The key insight made by Gatys and his co-authors, which makes is that style can be represented in terms of the
+The insight by Gatys and his co-authors, is that texture response, or what they call _style_, can be defined by the Gramian matrix computed from vectorized feature channels.
+
+Here's what that means.  Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  (We'll call $$N$$ and $$M$$ _spatial components_ because their values are determined by the width and height of the input image, and we'll call $$K$$ the _channel component_, it's defined by the number of convolutional filters in the block.)  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the matrix $$G = X^TX$$.  This $$G$$ will be the style matrix.
 
 
 
