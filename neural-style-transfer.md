@@ -7,7 +7,7 @@ layout: default
 ## Background
 In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a neural method for transforming the style of an image so that it matches the style of another image.
 
-For example, if we choose the style image to be van Gogh's _Starry Night_, we want to make another image, like one of a dog riding a skateboard, have the same color and texture properties as _Starry Night_.  What the authors used, and what we're going to use, are neural networks to make this style transfer.
+For example, if we choose the style image to be van Gogh's _Starry Night_, we want to make another image, like one of a dog riding a skateboard, have the same color and texture properties as _Starry Night_.  What the authors used, and what we're going to use to do this, is a neural network.
 
 (im dog) + (im van gogh) = (style transfer)
 
@@ -17,11 +17,11 @@ Neural networks, in particular convolutional ones, have been shown to extract te
 ![im](neural-style-transfer/keras2.png)
 ![im](neural-style-transfer/keras3.png)
 
-Given the ability to respond to textures, the authors ask if it's possible to make the texture response of a target image, like skate dog, match the texture response of a source image, like _Starry Night_.  The only question is how does one transform the target image in an appropriate way, and how does one even define 'texture response' in the first place?
+Given the ability to respond to textures, the authors ask if it's possible to make the texture response of a target image, like skatedog, match the texture response of a source image, like _Starry Night_.  The only question is how does one transform the target image in an appropriate way, and how does one even define 'texture response' in the first place?
 
 The insight by Gatys and his co-authors, is that texture response, or what they call _style_, can be defined by the Gramian matrix computed from vectorized feature channels.
 
-Here's what that means.  Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  (We'll call $$N$$ and $$M$$ _spatial components_ because their values are determined by the width and height of the input image, and we'll call $$K$$ the _channel component_, it's defined by the number of convolutional filters in the block.)  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the matrix $$G = X^TX$$.  This $$G$$ will be the style matrix.
+Here's what that means.  Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial components_ determined by the width and height of the input image, and $$K$$ is the _channel component_ determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the matrix $$G = X^TX$$.  This $$G$$ is defined as the style matrix.
 
 
 
