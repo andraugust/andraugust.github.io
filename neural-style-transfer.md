@@ -19,11 +19,15 @@ Neural networks, in particular convolutional ones, have been shown to extract te
 
 Given the ability to respond to textures like this, and the correspondence between texture and style, the authors ask if it's possible to use convolutional output to achieve style transfer. They show that the answer is yes, and here's how they do it.
 
-Let $$X$$ be a $$N \times M \times K$$ matrix containing the output at a given convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial_ shapes determined by the width and height of the input image, and $$K$$ is the _channel_ shape determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form what we'll call the _style matrix_ $$G = X^TX$$.
+Let $$X$$ be a $$N \times M \times K$$ matrix containing the output at a given convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial_ shapes determined by the width and height of the input image, and $$K$$ is the _channel_ shape determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form what we'll call the _style matrix_
+
+$$G = \frac{1}{NM} X^TX$$,
+
+where we've normalized by spacial shape because we don't want the shape of the input image to influence the magnitude of the entries in $$G$$.
 
 What we'll do next is compute $$G$$ for the source image and $$\tilde{G}$$ for the destination image and do gradient descent on the destination image until $$G \approx \tilde{G}$$.  In particular, we'll minimize
 
-$$\frac{1}{NM}\sum_{i}{(G_i - \tilde{G}_i)^2}$$
+$$\sum_{i}{(G_{ij} - \tilde{G}_{ij})^2}$$
 
 
 
