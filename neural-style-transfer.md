@@ -2,12 +2,12 @@
 layout: default
 ---
 
-# Notes on [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al, CVPR 2016)
+# Notes on Neural Style Transfer
 
 ## Background
 In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a neural method for transforming an image's style so it matches the style of another image.
 
-If we choose the style image to be van Gogh's _Starry Night_, then we want to modify another image, like one of a dog riding a skateboard, so it has the same swirly colors and textures.  What the authors used, and what we're going to use to do this is a neural network.
+If we choose the style image to be van Gogh's _Starry Night_, then we want to modify another image, like one of a dog riding a skateboard, so it has the same swirly colors and textures as a bona fide van Gogh.  What the authors used, and what we're going to use to do this is a neural network.
 
 (im dog) + (im van gogh) = (style transfer)
 
@@ -17,9 +17,9 @@ Neural networks, in particular convolutional ones, have been shown to extract te
 ![im](neural-style-transfer/keras2.png)
 ![im](neural-style-transfer/keras3.png)
 
-Given the ability to respond to textures like this, the authors ask if it's possible to use convolutional output to achieve style transfer. and the main insight they provide is their definition of _style_. can be defined by making a matrix out of the dot product of vectorized feature channels.
+Given the ability to respond to textures like this, the authors ask if it's possible to use convolutional output to achieve style transfer. They show that the answer is yes, and here's how.
 
-Here's what that means.  Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial components_ determined by the width and height of the input image, and $$K$$ is the _channel component_ determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the _style matrix_ $$G = X^TX$$.
+Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial components_ determined by the width and height of the input image, and $$K$$ is the _channel component_ determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the _style matrix_ $$G = X^TX$$.
 
 
 
