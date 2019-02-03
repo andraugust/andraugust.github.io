@@ -5,9 +5,9 @@ layout: default
 # Notes on [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al, CVPR 2016)
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a neural method for transforming the style of an image so that it matches the style of another image.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a neural method for transforming an image's style so it matches the style of another image.
 
-For example, if we choose the style image to be van Gogh's _Starry Night_, we want to make another image, like one of a dog riding a skateboard, have the same color and texture properties as _Starry Night_.  What the authors used, and what we're going to use to do this, is a neural network.
+If we choose the style image to be van Gogh's _Starry Night_, then we want to make another image have the same color and texture properties as _Starry Night_.  What the authors used, and what we're going to use to do this is a neural network.
 
 (im dog) + (im van gogh) = (style transfer)
 
