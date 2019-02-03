@@ -21,7 +21,7 @@ Given the ability to respond to textures, the authors ask if it's possible to ma
 
 The insight by Gatys and his co-authors, is that texture response, or what they call _style_, can be defined by the Gramian matrix computed from vectorized feature channels.
 
-Here's what that means.  Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial components_ determined by the width and height of the input image, and $$K$$ is the _channel component_ determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the matrix $$G = X^TX$$.  This $$G$$ is defined as the style matrix.
+Here's what that means.  Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial components_ determined by the width and height of the input image, and $$K$$ is the _channel component_ determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the _style matrix_ $$G = X^TX$$.
 
 
 
