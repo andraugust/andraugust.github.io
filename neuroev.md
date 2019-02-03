@@ -27,7 +27,7 @@ layout: default
 
 ## Background
 
-One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Gradient descent based methods work well for NN classifiers and regressors, but this is because each input has a well defined desired output, and the dependence of the objective function on the input-output mapping is explicit _and_ differentiable.  In many AI contexts, however, the objective function isn't evaluated until after a long sequence of NN outputs (actions) have occurred, so it isn't clear which outputs played what role in shaping the final value of the objective f'n.  And did I mention that AI objective functions can't often be written down explicitly in terms of individual actions?
+One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Gradient descent based methods work well for NN classifiers and regressors, but that's because in these cases inputs have well defined desired outputs, and the dependence of the objective function on the input-output mapping is explicit _and_ differentiable.  In many AI contexts, however, objective functions aren't evaluated until after a long sequence of NN outputs (actions) have occurred, so it isn't clear which outputs played what role in shaping the final value of the objective f'n.  And did I mention that AI objective functions can't often be written down explicitly in terms of individual actions, let alone be differentiable??
 
 Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a non-gradient based algorithm called a _genetic algorithm_ to learn good neural net weights, despite the absence of instant-by-instant feedback or a differentiable objective f'n.
 
@@ -85,7 +85,7 @@ Each loop through this algorithm is called a _generation_.  Here's a plot of lif
 
 <center><img src="neuroev/lifetime_plot.png"></center>
 <br />
-Evidently lifetimes aren't significantly influenced by the number of sigmoid nodes used (at least over the range tested), but nonetheless the genetic algorithm works and after about 20 generations agents live for about 1000 (!) times longer than their arbitrarily generated ancestors.  Pretty awesome!
+Evidently there isn't a clear relationship between the lifetime and the number of sigmoid nodes used (at least in the range tested), but nonetheless the GA works and after about 20 generations the agents live for about 1000 (!) times longer than their arbitrarily generated ancestors.  Pretty awesome!
 
 __Reference:__ Gomez, F. J. (2003). Robust Non-linear Control through Neuroevolution. PhD thesis, University of Texas, Austin, TX. [Link](http://www.cs.utexas.edu/users/nn/downloads/papers/gomez.phdtr03.pdf)
 
