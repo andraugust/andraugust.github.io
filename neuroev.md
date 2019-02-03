@@ -25,9 +25,11 @@ layout: default
 <br />
 
 
-One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Backpropagation---the de-facto NN learning algorithm---works well for classification partly because ground truth is available for each input and objective functions are differentiable, but in many AI contexts feedback doesn't exist until the end of a long sequence of actions, and objective functions aren't differentiable (and probably can't even be written down explicitly), so packprop doesn't work.
+## Background
 
-Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a <em>genetic algorithm</em> to learn good neural net weights despite the absence of instant-by-instant feedback or a differentiable objective function.
+One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Gradient descent based methods work well for NN classifiers and regressors, but this is because each input has a well defined desired output, and the dependence of the objective function on the input-output mapping is explicit _and_ differentiable.  In many AI contexts, however, the objective function isn't evaluated until after a long sequence of NN outputs (actions) have occurred, so it isn't clear which outputs played what role in shaping the final value of the objective f'n.  And did I mention that AI objective functions can't often be written down explicitly in terms of individual actions?
+
+Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a non-gradient based algorithm called a _genetic algorithm_ to learn good neural net weights, despite the absence of instant-by-instant feedback or a differentiable objective f'n.
 
 ## Artificial Life: The Setting
 

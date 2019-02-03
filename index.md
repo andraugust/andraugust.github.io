@@ -18,7 +18,7 @@ This is my dense ship segmenter for Kaggle's Ship Detection Challenge.  The pipe
 
 <p style="opacity:0.5">04/2018</p>
 
-An interesting property of Wikipedia pages is that their first-links often go to their immediate supersets.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?
+An interesting property of Wikipedia is that pages often first-link to their immediate supersets.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?
 
 ## [Satellite Image Classification on the fMoW Dataset](fmow.html)
 
@@ -48,6 +48,6 @@ Can neural nets effectively control Artificial Life agents?  Can genetic algorit
 
 <p style="opacity:0.5">12/2014</p>
 
-This post describes an Arduino robot that learns to crawl using Q-learning.  Included is a video and tutorial showing the robot in action.
+This post is about my Arduino robot that learns to crawl using Q-learning.  Included is a video and tutorial showing the robot in action.
 
 <br />
