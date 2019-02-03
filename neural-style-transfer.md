@@ -17,9 +17,9 @@ Neural networks, in particular convolutional ones, have been shown to extract te
 ![im](neural-style-transfer/keras2.png)
 ![im](neural-style-transfer/keras3.png)
 
-Given the ability to respond to textures like this, the authors ask if it's possible to use convolutional output to achieve style transfer. They show that the answer is yes, and here's how.
+Given the ability to respond to textures like this, and the correspondence between texture and style, the authors ask if it's possible to use convolutional output to achieve style transfer. They show that the answer is yes, and here's how they do it.
 
-Let $$X$$ be the $$N \times M \times K$$ output at a convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial components_ determined by the width and height of the input image, and $$K$$ is the _channel component_ determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form the _style matrix_ $$G = X^TX$$.
+Let $$X$$ be a $$N \times M \times K$$ matrix containing the output at a given convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial_ shapes determined by the width and height of the input image, and $$K$$ is the _channel_ shape determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form what we'll call the _style matrix_ $$G = X^TX$$.
 
 
 
