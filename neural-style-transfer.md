@@ -5,27 +5,25 @@ layout: default
 # Notes on Neural Style Transfer
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a neural method for transforming an image's style so it matches the style of another image.
-
-If we choose the style image to be van Gogh's _Starry Night_, then we want to modify another image, like one of a dog riding a skateboard, so it has the same swirly colors and textures as a bona fide van Gogh.  What the authors used, and what we're going to use to do this is a neural network.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), published by Gatys et al for CVPR 2016, the authors define a neural method for transforming the style of an image so it matches the style of another image.
 
 (im dog) + (im van gogh) = (style transfer)
 
-Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
+Neural networks, in particular convolutional ones, have been shown to extract texture information at both hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show the images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
 ![im](neural-style-transfer/keras1.png)
 ![im](neural-style-transfer/keras2.png)
 ![im](neural-style-transfer/keras3.png)
 
-Given the ability to respond to textures like this, and the correspondence between texture and style, the authors ask if it's possible to use convolutional output to achieve style transfer. They show that the answer is yes, and here's how they do it.
+Given the ability to respond to texture like this, and the correspondence between texture and style, the authors of the paper ask if convolutional output can be used to achieve style transfer. They show that the answer is yes. Here's how they do it.
 
-Let $$X$$ be a $$N \times M \times K$$ matrix containing the output at a given convolutional block of a VGG style network.  $$N$$ and $$M$$ are the _spatial_ shapes determined by the width and height of the input image, and $$K$$ is the _channel_ shape determined by the number of conv filters in the particular block.  Now treat each channel as a vector so that $$\texttt{shape(}X\texttt{)} = NM \times K$$ and take all the inner products between each pair of channel vectors to form what we'll call the _style matrix_
+Let $$X$$ be a $$N \times M \times K$$ matrix containing the output of a convolutional layer of a VGG style network.  $$N$$ and $$M$$ are the _spatial_ shapes determined by the width and height of the input image, and $$K$$ is the _channel_ shape determined by the number of conv filters in the particular layer.  Now treat each channel like a $$NM \times K$$ vector and take the inner product between each pair of channel vectors to form what we'll call the _style matrix_
 
 $$G = \frac{1}{NM} X^TX$$
 
-where we've normalized by spacial shape because we don't want the shape of the input image to influence the magnitude of the entries in $$G$$.
+Here we've normalized by spacial shape because we don't want the shape of the input image to influence the magnitude of the entries in $$G$$.
 
-What we'll do next is compute $$G$$ for the source image and $$\tilde{G}$$ for the destination image and do gradient descent on the destination image until $$G \approx \tilde{G}$$.  In particular, we'll minimize
+We'll compute $$G$$ for the source image and $$\tilde{G}$$ for the destination image, then we'll do gradient descent on the destination image until $$G \approx \tilde{G}$$.  In particular, we'll minimize
 
 $$\sum_{ij}{(G_{ij} - \tilde{G}_{ij})^2}$$
 
