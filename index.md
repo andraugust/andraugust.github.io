@@ -50,4 +50,11 @@ Can neural nets effectively control Artificial Life agents?  Can genetic algorit
 
 This post is about my Arduino robot that learns to crawl using Q-learning.  Included is a video and tutorial showing the robot in action.
 
+## [Cheatsheet](cheatsheet.html)
+
+<p style="opacity:0.5">Ongoing</p>
+
+Code snippets and such.
+
+
 <br />
