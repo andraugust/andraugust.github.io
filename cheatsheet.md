@@ -31,6 +31,7 @@ set_session(tf.Session(config=config))
 
 - Use `tqdm` with `multiprocessing`:
 ```python
+pool = multiprocessing.Pool(n_processes=4)
 for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)):
     pass
 ```

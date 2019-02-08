@@ -29,37 +29,11 @@ $$\sum_{ij}{(G_{ij} - \tilde{G}_{ij})^2}$$
 
 with respect to the input image.
 
-But why this definition of the style matrix?  The authors don't provide an answer, and a look around the internet suggests no clear consensus.  I like to think of it like this: if instead of making the $$G$$s match, we tried to directly make the conv output match, then we would find ourselves constructing a destination image that's pixel-for-pixel equal to the source image.  This suggests that maybe we should try instead to reconstruct the _relationship_ between conv outputs.  Dot products are a good candidate for measuring relationship because they calculate the angle between two vectors, so if we try to reconstruct all of the angles between conv vectors then maybe we'll reconstruct the style of the source image yet maintain the content of the destination image.  Of course the real explanation for why $$G$$ is defined this way is that __it works__, so we'll stick with it and do some experiments of our own.
+But why this definition of the style matrix?  The authors don't provide an answer, and a look around the internet suggests no clear consensus.  I like to think it's because of this: if instead of making the $$G$$s match, we tried to directly make the conv output match, then we'd find ourselves constructing an image that's pixel-for-pixel equal to the source image.  This suggests that maybe we should try instead to reconstruct the _relationship_ between conv outputs, instead of the exact values.  Dot products are a good candidate for measuring relationship because they calculate the angle between two vectors, so if we try to reconstruct all of the angles between conv vectors then maybe we'll reconstruct the style of the source image and still maintain the content of the destination image.  Of course the real explanation for why $$G$$ is defined this way is that __it works__, so we'll stick with it and do some experiments of our own.
 
 ## Implementation
 
 I'm going to use `keras` to implement the transfer.
 
-
-
-
-- __Architecture__ Features from VGG19 (16 conv, 5 pool). "Normalize" network weights.  No fully connected layers.  Use avg pool instead of max pool.
-
-- __Content Transfer__ 1) Input an image to CNN, 2) Measure the output at layer $l$, 3) Input a random noise image to the CNN, 4) Apply gradient descent to the noise image such that the output at $l$ matches that of the original image.
-
-Let $X^l_i$ be the outputs from the original image and $\tilde{X}^l_i$ be the outputs from the constructed image, then the content loss is given by
-
-$$J_{content}^l = \sum_{i}{(X^l_i - \tilde{X}^l_i)^2}$$
-
-- __Style representation__  Style is represented by the covariance between channels in a convolutional output.  If a convolutional output has shape $$N \times M \times K$$, then each channel is flattened and arrange into a matrix of shape $$N M \times K$$.  This matrix is used to compute covariance in the usual way: $$G = FF^T$$.
-
-- [picture of style reconstruction from fig. 1]
-
-- __Style Transfer__ Style is transferred just like content is, but instead of matching $X_l$ to $\tilde{X}_l$, we match $G_l$ to $\tilde{G}_l$.  The style objective is
-
-$$J_{style}^l = \sum{(G^l_i - \tilde{G}^l_i)}^2$$
-
-Note that G is really 2 dimensional, so technically this should be a double sum, but we're comparing element-wise so we can ignore the complex notation of two sums. If you like, imagine G gets flattened prior to summing, so now we only need one index.
-
-- __Putting it all together__  The final objective is
-
-$$J = \sum_{l}{\alpha J_{content}^l + J_{style}^l}$$
-
-Where $\alpha$ controls how much the content is emphasized relative to the style.
 
 - __Heuristics__ The authors point out that it isn't necessary to initialize the generated image to random noise.  Instead, the content image could be the initialization.  In this case there will be one unique generate image (assuming there's a fixed random seed on the objective solver), whereas using a random initialization allows for possibly different generated images to be found.
