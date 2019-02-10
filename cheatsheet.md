@@ -35,3 +35,21 @@ pool = multiprocessing.Pool(n_processes=4)
 for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)):
     pass
 ```
+
+- Make a movie with opencv.  A list of video codecs is [here](https://gist.github.com/takuma7/44f9ecb028ff00e2132e).
+```python
+from cv2 import VideoWriter, VideoWriter_fourcc
+
+video_dest = 'video.mp4'
+fps = 1
+im_rows, im_cols = 100, 100
+codec = VideoWriter_fourcc(*'mp4v')
+video = VideoWriter(video_dest, codec, fps, (im_cols,im_rows))
+
+for frame in range(nframes):
+    im = np.random.random((im_rows, im_cols, 3))*255
+    im = im.astype(np.uint8)
+    video.write(im)
+
+video.release()
+```
