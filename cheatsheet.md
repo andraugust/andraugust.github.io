@@ -36,8 +36,7 @@ for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)
     pass
 ```
 
-- Make a movie with opencv.  A list of video codecs is [here](https://gist.github.com/takuma7/44f9ecb028ff00e2132e).
-
+- Make a movie with opencv.  A list of video codecs is [here](https://gist.github.com/takuma7/44f9ecb028ff00e2132e):
 ```python
 from cv2 import VideoWriter, VideoWriter_fourcc
 
