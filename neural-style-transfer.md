@@ -128,6 +128,4 @@ A few notes:
 
 Lets see results for various conv layers:
 
-<video width="480" height="320" controls="controls">
-<source src="neural-style-transfer/1_1.mp4" type="video/mp4">
-</video>
+<video src="neural-style-transfer/1_1.mp4" width="320" height="200" controls preload></video>
