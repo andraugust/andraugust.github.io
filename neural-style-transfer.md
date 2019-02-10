@@ -33,7 +33,85 @@ But why this definition of style matrix?  The authors don't provide an answer, a
 
 ## Implementation
 
-I'm going to use `keras` to implement the transfer.
+I'll use `keras` to implement the transfer.  The code is below:
+
+```python
+import numpy as np
+np.random.seed(10)
+from keras.applications.vgg19 import VGG19, preprocess_input
+from keras.models import Model
+from keras import backend as K
+from keras.preprocessing.image import load_img
+from cv2 import VideoWriter, VideoWriter_fourcc
+'''
+Working example of applying gradient descent to an input image.
+'''
+
+# Load source image
+src_im_file = 'ims/starry_night.jpg'
+src_im = np.array(load_img(src_im_file))
+src_im = preprocess_input(src_im)
+src_im = np.expand_dims(src_im, axis=0)
+_, input_rows, input_cols, _ = src_im.shape
+
+# Load destination image
+# dest_im = np.random.random((input_rows, input_cols, 3))*255
+dest_im_file = 'ims/skatedog.jpg'
+dest_im = np.array(load_img(dest_im_file, target_size=(input_rows,input_cols)))
+dest_im = preprocess_input(dest_im)
+dest_im = np.expand_dims(dest_im, axis=0)
+
+# Init video writer for saving output
+video_dest = 'video.mp4'
+fps = 10
+codec = VideoWriter_fourcc(*'mp4v')
+video = VideoWriter(video_dest, codec, fps, (input_cols,input_rows))
 
 
-- __Heuristics__ The authors point out that it isn't necessary to initialize the generated image to random noise.  Instead, the content image could be the initialization.  In this case there will be one unique generate image (assuming there's a fixed random seed on the objective solver), whereas using a random initialization allows for possibly different generated images to be found.
+def normalize(x):
+    # L2 norm for conv output
+    return x / (K.sqrt(K.sum(K.square(x))) + K.epsilon())
+
+def postprocess(im):
+    # undo preprocessing so image is plot-able
+    im = im[0,:,:,:]
+    im += np.array([103.939, 116.779, 123.68])  # offsets used by vgg19.preprocess_input
+    im = np.clip(im,0,255)
+    return im.astype(np.uint8)
+
+
+# load model
+model = VGG19(include_top=False, input_shape=(input_rows, input_cols,3))
+
+# intermediate model
+conv_block = 1
+conv_number = 1
+probe_model = Model(inputs=model.input, outputs=model.get_layer('block%s_conv%s' % (conv_block, conv_number)).output)
+
+# save intermediate output of source image
+X_src = probe_model.predict(src_im)
+
+# compute loss
+_, n_rows, n_cols, n_channels = X_src.shape
+X_src, X_dest = K.reshape(X_src, (n_rows*n_cols, n_channels)), K.reshape(probe_model.output, (n_rows*n_cols, n_channels))
+G_src, G_dest = K.dot(K.transpose(X_src), X_src), K.dot(K.transpose(X_dest), X_dest)
+G_src, G_dest = G_src / (n_rows*n_cols), G_dest / (n_rows*n_cols)
+loss = K.mean(K.pow(G_src - G_dest, 2))
+
+grads = K.gradients(loss, probe_model.input)[0]
+grads = normalize(grads)
+
+f = K.function([probe_model.input], [loss, grads])
+
+# Main loop
+eta = 100            # gradient descent coeff
+for i in range(2000):
+    l, g = f([dest_im])
+    print(i, l)
+    dest_im -= eta*g
+    plt_im = postprocess(dest_im.copy())
+    if i % 10 == 0:
+        video.write(plt_im)
+
+video.release()
+```
