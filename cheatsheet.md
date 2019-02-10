@@ -54,3 +54,5 @@ for frame in range(nframes):
 
 video.release()
 ```
+
+- Make a video out of images in a folder: `ffmpeg -r 1/2 -pattern_type glob -i '*.jpg' movie.mp4`.

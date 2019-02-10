@@ -4,7 +4,7 @@ layout: default
 
 # Connecting PyCharm to a Remote Server
 
-I end up doing this a lot, but if it's been a while then sometime I forget, so best to take notes!  Note: these steps and screenshots are from PyCharm Professional Edition 2017.2.3.
+These steps and screenshots are from PyCharm Professional Edition 2017.2.3, but they should be the same or close for newer versions.
 
 ### Configuring the interpreter
 
@@ -38,8 +38,8 @@ Tools > Deployment > Automatic Upload
 
 ### Setting remote environment variables
 
-It has happened to me that an environment variable wasn't found to be defined on the remote system, and using something like ```os.environ['CUDA_VISIBLE_DEVICES']='1'``` in the script I was running didn't work.  The solution is to set the environment variable directly in PyCharm:
+Sometimes an environment variable isn't found to be defined on the remote system, even when something like ```os.environ['CUDA_VISIBLE_DEVICES']='1'``` is in the running script.  The solution is to set the environment variable directly in PyCharm:
 
 Run > Edit Configurations > _set environment variables_ > Apply > OK
 
-But I only recommend doing this _after_ an error related to undefined environment variables appears _and_ no other solution fixes it.
+An example use case is setting `LD_LIBRARY_PATH` for using CUDA.
