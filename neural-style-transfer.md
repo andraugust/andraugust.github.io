@@ -25,7 +25,7 @@ We've normalized by spatial shape because we don't want the input shape to influ
 
 We'll compute $$G$$ for the source image and $$\tilde{G}$$ for the destination image, then we'll do gradient descent on the destination image until $$G \approx \tilde{G}$$.  In particular, we'll minimize
 
-$$frac{1}{K^2}\sum_{ij}{(G_{ij} - \tilde{G}_{ij})^2}$$
+$$\frac{1}{K^2}\sum_{ij}{(G_{ij} - \tilde{G}_{ij})^2}$$
 
 with respect to the input image.
 
