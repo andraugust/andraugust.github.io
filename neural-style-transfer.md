@@ -29,11 +29,11 @@ $$\frac{1}{K^2}\sum_{ij}{(G_{ij} - \tilde{G}_{ij}(D))^2}$$
 
 with respect to the destination image $$D$$.
 
-But why this definition of style matrix?  The authors don't provide an answer, and a look around the internet suggests no clear consensus.  I like to think it's because if instead of making the $$G$$s match, we tried to directly make the conv output match, then we'd find ourselves constructing the destination image to be pixel-for-pixel equal to the source image.  This suggests that maybe we should try instead to reconstruct the _relationship_ between conv outputs, instead of the exact values.  Dot products are a good candidate for measuring relationship because they calculate the angle between two vectors, so if we reconstruct all angles between conv vectors then maybe we'll reconstruct the style of the source image and still maintain the content of the destination image.  Of course the real explanation for why $$G$$ is defined this way is that it works, so we'll stick with it and do some experiments of our own.
+But why this definition of style matrix?  The authors don't provide an answer, and a look around the internet suggests no clear consensus.  I like to think it's because if instead of making the $$G$$s match we directly make the conv output match, then we'd find ourselves constructing the destination image to be pixel-for-pixel equal to the source image.  This suggests that maybe we should try instead to reconstruct the _relationship_ between conv outputs, instead of exact values.  Dot products are a good candidate for measuring relationship because they calculate the angle between two vectors, so if we reconstruct all angles between conv vectors then maybe we'll reconstruct the style of the source image and still maintain the content of the destination image.  Of course the real explanation for why $$G$$ is defined this way is that it works, so we'll stick with it and do some experiments of our own :)
 
 ## Implementation
 
-I'll use `keras` to implement the transfer.  The code is below:
+I used `keras` to implementation the style transfer.  Here's the code:
 
 ```python
 import numpy as np
@@ -115,3 +115,19 @@ for i in range(2000):
 
 video.release()
 ```
+
+A few notes:
+- The CNN is a VGG19 with imagenet weights.
+- A `probe_model` is defined to extract intermediate model output.
+- To use the keras `gradient` function, it's necessary for arrays to be `Tensor` objects, so they should be modified by backend functions like `K.dot` and `K.transpose`.
+- In defining the loss it's necessary to refer to convolutional output abstractly as `probe_model.output`.
+- Loss and gradient computations are consolidated into one function: `K.function([probe_model.input], [loss, grads])`. Like the convolutional output reference, input here is abstractly referenced as `probe_model.input`.
+- The actual optimization happens in the simple line `dest_im -= eta*g`.
+
+## Results
+
+Lets see results for various conv layers:
+
+<video width="480" height="320" controls="controls">
+<source src="neural-style-transfer/1_1.mp4" type="video/mp4">
+</video>
