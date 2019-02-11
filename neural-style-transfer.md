@@ -7,7 +7,7 @@ layout: default
 <a href="neural-style-transfer/banner.png"><img src="neural-style-transfer/banner.png"></a>
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), Gatys et al for CVPR 2016, the authors define a neural method for transfering the style of one image to another.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al CVPR 2016), the authors define a neural method for transfering the style of one image to another.
 
 Why might this be possible?  Neural networks, particularly convolutional ones, have been shown to extract/respond to texture at hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show input images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
@@ -35,7 +35,7 @@ But why this definition of style matrix?  The authors don't provide an answer, a
 
 ## Implementation
 
-I used `keras` to implementation the style transfer.  Here's the code:
+I used `keras` to implement the style transfer.  Here's the code:
 
 ```python
 import numpy as np

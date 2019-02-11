@@ -6,13 +6,13 @@ layout: default
 
 <p style="opacity:0.5">02/2019</p>
 
-Can _style_ be transferred from one image to another?
+Can style be transferred from one image to another?
 
 ## [Connecting PyCharm to a Remote Server](pycharm-remote.html)
 
 <p style="opacity:0.5">01/2019</p>
 
-Reference for how to connect PyCharm to a remote machine.
+Reference for connecting PyCharm to a remote machine.
 
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
