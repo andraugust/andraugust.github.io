@@ -128,11 +128,42 @@ A few notes:
 
 Lets see results for various conv layers:
 
-<video controls="controls" allowfullscreen="true" poster="neural-style-transfer/1_1.mp4">
-    <source src="neural-style-transfer/1_1.mp4" type="video/mp4">
-</video>
-
 <center>
 block_1conv_1
 <iframe width="640" height="360" src="https://www.youtube.com/embed/2yX5gFyTeh4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+
+<center>
+block_1conv_2
+<iframe width="640" height="360" src="https://www.youtube.com/embed/i5J-qCkcSIQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+
+<center>
+block_2conv_1
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/s7YawJTg3UU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+
+<center>
+block_3conv_1
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gD0GjJxSZfs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+
+<center>
+block_3conv_4
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/kH5sDBnfJVc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+
+<center>
+block_4conv_1
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/TbNzl2KexYs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+
+<center>
+block_5conv_1
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/CmD0vwmCD88?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+
+<center>
+block_5conv_4
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/3IGXvvD0xy8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <center>
