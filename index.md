@@ -48,7 +48,7 @@ Threes is a dice game.  Do you know how to play Threes?  Do you know how to win 
 
 <p style="opacity:0.5">11/2015</p>
 
-Can neural nets effectively control Artificial Life agents?  Can genetic algorithms optimize such neural nets?  In this post I implement a GA called Enforced Subpopulations to provide an example wherein GAs successfully optimize AL NNs.
+Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize these nets?  In this post I implement a GA called Enforced Subpopulations to give an example of a GA that successfully optimizes an AL NNs.
 
 ## [Reinforcement Learning IRL](rl.html)
 
