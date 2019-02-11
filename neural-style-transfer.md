@@ -2,10 +2,10 @@
 layout: default
 ---
 
-#Neural Style Transfer
+# Neural Style Transfer
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al for CVPR 2016), the authors define a neural method for transfering the style of one image to another image.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), Gatys et al for CVPR 2016, the authors define a neural method for transfering the style of one image to another.
 
 <a href="neural-style-transfer/banner.png"><img src="neural-style-transfer/banner.png"></a>
 
@@ -15,9 +15,11 @@ Why might this be possible?  Neural networks, particularly convolutional ones, h
 ![im](neural-style-transfer/keras2.png)
 ![im](neural-style-transfer/keras3.png)
 
-Given the ability to respond to texture like this, and the correspondence between texture and style, the authors ask if convolutional output can be used to achieve style transfer. They show the answer to be yes, and here's how they do it.
+Given the ability to respond to texture like this, and the correspondence between texture and style, the authors ask if convolutional output can be used to achieve style transfer. They show that the answer is yes.  Here's how they do it.
 
-Let $$X$$ be a $$N \times M \times K$$ matrix containing the output of a convolutional layer in a VGG type network.  $$N$$ and $$M$$ are the spatial shapes determined by the width and height of the input image, $$K$$ is the channel shape determined by the number of conv filters in the layer.  Now treat each channel like a $$NM \times K$$ vector and take the inner product between each pair of channel vectors to form the so-called _style matrix_
+## Approach
+
+Let $$X$$ be a $$N \times M \times K$$ matrix containing the output of a convolutional layer in a VGG type network.  $$N$$ and $$M$$ are the spatial shapes determined by the width and height of the input image, and $$K$$ is the channel shape determined by the number of conv filters in the layer.  Now treat each channel like a $$NM \times K$$ vector and take the inner product between each pair of channel vectors to form the so-called _style matrix_
 
 $$G = \frac{1}{NM} X^TX$$
 
@@ -27,9 +29,9 @@ We'll compute $$G$$ for the source image and compute $$\tilde{G}$$ for the desti
 
 $$\frac{1}{K^2}\sum_{ij}{(G_{ij} - \tilde{G}_{ij}(D))^2}$$
 
-with respect to the destination image $$D$$.
+with respect to the destination image $$D$$. The factor $$K^2$$ is there because this is an average.
 
-But why this definition of style matrix?  The authors don't provide an answer, and a look around the internet suggests no clear consensus.  I like to think it's because if instead of making the $$G$$s match we directly make the conv output match, then we'd find ourselves constructing the destination image to be pixel-for-pixel equal to the source image.  This suggests that maybe we should try instead to reconstruct the _relationship_ between conv outputs, instead of exact values.  Dot products are a good candidate for measuring relationship because they calculate the angle between two vectors, so if we reconstruct all angles between conv vectors then maybe we'll reconstruct the style of the source image and still maintain the content of the destination image.  Of course the real explanation for why $$G$$ is defined this way is that it works, so we'll stick with it and do some experiments of our own :)
+But why this definition of style matrix?  The authors don't provide an answer, and a look around the internet suggests no clear consensus.  I like to think it's because if instead of making the $$G$$s match we directly make the conv output match, then we'd find ourselves constructing a destination image that's pixel-for-pixel equal to the source image.  This suggests that maybe we should try instead to reconstruct the _relationship_ between conv outputs, instead of exact values.  Dot products are a good candidate for measuring relationship because they calculate angle between vectors, so if we reconstruct all angles between conv vectors then maybe we'll reconstruct the style of the source image and still maintain the content of the destination image.  Of course the real explanation for why $$G$$ is defined this way is because it works, so we'll stick with it and do some experiments of our own :)
 
 ## Implementation
 
@@ -44,7 +46,7 @@ from keras import backend as K
 from keras.preprocessing.image import load_img
 from cv2 import VideoWriter, VideoWriter_fourcc
 '''
-Working example of applying gradient descent to an input image.
+Working example of applying gradient descent to an input image for style transfer.
 '''
 
 # Load source image
@@ -168,11 +170,18 @@ block5_conv4
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/3IGXvvD0xy8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-- The spatial extent of texture increases with layer depth.  This is expected given that deeper layers have a wider effective field of view on the input (deeper layers' output is a function of a wider spatial portion of the input compared to shallow layers).  This jibes with the results of the keras blog, pictured above.
+We see that the spatial extent of texture increases with layer depth.  This is expected given that deeper layers have a wider effective field of view on the input (deeper layers' output is a function of a wider spatial portion of the input compared to shallow layers).  This fits with the results of the keras blog images above.
 
-- Color transfer happens in block1, brush-stroke transfer happens in block3, 'swirl' transfer happens in block5.
+Qualitatively, color transfer happens in block1, brush-stroke transfer happens in block3, and 'swirl' transfer happens in block5.
 
-In general we'd like to transfer style at multiple spatial scales, so we'll measure $$X$$ at multiple layers and compute the corresponding $$G$$s and $$\tilde{G}$$s, then sum the loss for each layer and apply gradient descent.  Here's the result:
+In general we'd like to transfer style at multiple spatial scales, so we'll measure $$X$$ at multiple layers and compute the corresponding $$G$$s and $$\tilde{G}$$s, then sum the loss for each layer and apply gradient descent.  In terms of implementation, we get multiple layer output Using
+```python
+layers_names = ['block1_conv1', 'block4_conv1']
+layer_outputs = [model.get_layer(l).output for l in layers_names]
+probe = K.function([model.input], layer_outputs)
+```
+
+Here's the result:
 
 <center>
 block1_conv1 and block4_conv1
