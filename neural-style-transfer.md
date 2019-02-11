@@ -2,12 +2,12 @@
 layout: default
 ---
 
-# Notes on Neural Style Transfer
+#Neural Style Transfer
 
 ## Background
 In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al for CVPR 2016), the authors define a neural method for transfering the style of one image to another image.
 
-![banner](neural-style-transfer/banner.png)
+<a href="neural-style-transfer/banner.png"><img src="neural-style-transfer/banner.png"></a>
 
 Why might this be possible?  Neural networks, particularly convolutional ones, have been shown to extract/respond to texture at hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show input images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
@@ -172,7 +172,7 @@ block5_conv4
 
 - Color transfer happens in block1, brush-stroke transfer happens in block3, 'swirl' transfer happens in block5.
 
-In general we'd like to transfer style at multiple spatial scales.  To do that we'll measure $$X$$ at multiple layers to compute $$G$$ and $$\tilde{G}$$ at those layers and then sum the losses.  Here's the result:
+In general we'd like to transfer style at multiple spatial scales, so we'll measure $$X$$ at multiple layers and compute the corresponding $$G$$s and $$\tilde{G}$$s, then sum the loss for each layer and apply gradient descent.  Here's the result:
 
 <center>
 block1_conv1 and block4_conv1
