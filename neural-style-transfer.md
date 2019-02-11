@@ -144,7 +144,7 @@ block2_conv1
 </center>
 
 <center>
-block3_conv1
+block3_conv2
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gD0GjJxSZfs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
@@ -180,3 +180,6 @@ block1_conv1 and block4_conv1
 </center>
 
 Pretty sweet!
+<br/>
+<br/>
+{% include disqus.html %}
