@@ -7,7 +7,7 @@ layout: default
 ## Background
 In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al for CVPR 2016), the authors define a neural method for transfering the style of one image to another image.
 
-(im dog) + (im van gogh) = (style transfer)
+![banner](neural-style-transfer/banner.png)
 
 Why might this be possible?  Neural networks, particularly convolutional ones, have been shown to extract/respond to texture at hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show input images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
@@ -23,7 +23,7 @@ $$G = \frac{1}{NM} X^TX$$
 
 We've normalized by spatial shape because we don't want input shape to influence the magnitude of entries in $$G$$.
 
-We'll compute $$G$$ for the source image and compute $$\tilde{G}$$ for the destination image, then we'll do gradient descent on the destination image until $$G \approx \tilde{G}$$.  In particular, we'll minimize
+We'll compute $$G$$ for the source image and compute $$\tilde{G}$$ for the destination image and do gradient descent on the destination image until $$G \approx \tilde{G}$$.  In particular, we'll minimize
 
 $$\frac{1}{K^2}\sum_{ij}{(G_{ij} - \tilde{G}_{ij}(D))^2}$$
 
@@ -126,44 +126,57 @@ A few notes:
 
 ## Results
 
-Lets see results for various conv layers:
+Lets see some results for when $$X$$ comes from different layers:
 
 <center>
-block_1conv_1
+block1_conv1
 <iframe width="640" height="360" src="https://www.youtube.com/embed/2yX5gFyTeh4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<center>
+</center>
 
 <center>
-block_1conv_2
+block1_conv2
 <iframe width="640" height="360" src="https://www.youtube.com/embed/i5J-qCkcSIQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<center>
+</center>
 
 <center>
-block_2conv_1
+block2_conv1
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/s7YawJTg3UU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<center>
+</center>
 
 <center>
-block_3conv_1
+block3_conv1
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gD0GjJxSZfs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<center>
+</center>
 
 <center>
-block_3conv_4
+block3_conv4
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/kH5sDBnfJVc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<center>
+</center>
 
 <center>
-block_4conv_1
+block4_conv1
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/TbNzl2KexYs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<center>
+</center>
 
 <center>
-block_5conv_1
+block5_conv1
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/CmD0vwmCD88?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<center>
+</center>
 
 <center>
-block_5conv_4
+block5_conv4
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/3IGXvvD0xy8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+- The spatial extent of texture increases with layer depth.  This is expected given that deeper layers have a wider effective field of view on the input (deeper layers' output is a function of a wider spatial portion of the input compared to shallow layers).  This jibes with the results of the keras blog, pictured above.
+
+- Color transfer happens in block1, brush-stroke transfer happens in block3, 'swirl' transfer happens in block5.
+
+In general we'd like to transfer style at multiple spatial scales.  To do that we'll measure $$X$$ at multiple layers to compute $$G$$ and $$\tilde{G}$$ at those layers and then sum the losses.  Here's the result:
+
 <center>
+block1_conv1 and block4_conv1
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/sfjCsvHFsME?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+Pretty sweet!
