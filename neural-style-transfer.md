@@ -128,4 +128,4 @@ A few notes:
 
 Lets see results for various conv layers:
 
-<video src="neural-style-transfer/1_1.mp4" width="320" height="200" controls preload></video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2yX5gFyTeh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
