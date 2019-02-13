@@ -6,7 +6,7 @@ layout: default
 
 <p style="opacity:0.5">02/2019</p>
 
-Can style be transferred from one image to another?
+How to transfer style from one image to another.
 
 ## [Connecting PyCharm to a Remote Server](pycharm-remote.html)
 
