@@ -189,6 +189,18 @@ block1_conv1 and block4_conv1
 </center>
 
 Pretty sweet!
+
+## Future Considerations
+The main drawback of this method is that gradient descent has to be performed on each new input image we want to stylize.  Wouldn't it be nice if we had a _model_ which could immediately stylize any image just by calling `model.predict` on it?  Turn out people have looked into this.  The clever solution involves four things: a style (source) image, a set of _several_ content (destination) images, a stylizing network, and a loss network.  The stylizing network is the thing we'll eventually call `model.predict` on, it's an untrained CNN that has output shape equal to input shape (it outputs an image).  The loss network is a pre-trained CNN like the one we've been using.
+
+1. Pass a batch of destination images through the stylizing network.
+2. Pass the output of the stylizing network through the pre-trained CNN.
+3. Compute the average loss, defined like before.
+4. Do gradient descent on the _stylizing network_ based on this loss.
+5. Loop until loss is sufficiently low.
+
+What this gives you is a stylizing network that's been trained to transfer style over a variety of inputs.  Once it's been trained sufficiently it'll output a stylized image for any input, without the need for further optimization.
+
 <br/>
 <br/>
 {% include disqus.html %}
