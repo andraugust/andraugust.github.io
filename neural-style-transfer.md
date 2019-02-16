@@ -4,7 +4,7 @@ layout: default
 
 # Neural Style Transfer
 
-<a href="neural-style-transfer/banner.png"><img src="neural-style-transfer/banner.png"></a>
+<a href="neural-style-transfer/banner2.png"><img src="neural-style-transfer/banner.png"></a>
 
 ## Background
 In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al CVPR 2016), the authors define a neural method for transfering the style of one image to another.
@@ -191,7 +191,7 @@ block1_conv1 and block4_conv1
 Pretty sweet!
 
 ## Future Considerations
-The main drawback of this method is that gradient descent has to be performed on each new input image we want to stylize.  Wouldn't it be nice if we had a _model_ which could immediately stylize any image just by calling `model.predict` on it?  Turn out people have looked into this.  The clever solution involves four things: a style (source) image, a set of _several_ content (destination) images, a stylizing network, and a loss network.  The stylizing network is the thing we'll eventually call `model.predict` on, it's an untrained CNN that has output shape equal to input shape (it outputs an image).  The loss network is a pre-trained CNN like the one we've been using.
+The main drawback of this method is that gradient descent has to be performed on each new image we want to stylize.  Wouldn't it be nice if we had a _model_ which could immediately stylize any image just by calling `model.predict` on it?  Turn out people have looked into this.  The clever solution involves four things: a style (source) image, a set of _several_ content (destination) images, a stylizing network, and a loss network.  The stylizing network is the thing we'll eventually call `model.predict` on, it's an untrained CNN that has output shape equal to input shape (it outputs an image).  The loss network is a pre-trained CNN like the one we've been using.
 
 1. Pass a batch of destination images through the stylizing network.
 2. Pass the output of the stylizing network through the pre-trained CNN.
