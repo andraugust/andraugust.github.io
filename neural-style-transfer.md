@@ -4,7 +4,7 @@ layout: default
 
 # Neural Style Transfer
 
-<a href="neural-style-transfer/banner2.png"><img src="neural-style-transfer/banner.png"></a>
+<a href="neural-style-transfer/banner2.png"><img src="neural-style-transfer/banner2.png"></a>
 
 ## Background
 In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al CVPR 2016), the authors define a neural method for transfering the style of one image to another.
@@ -128,7 +128,7 @@ A few notes:
 
 ## Results
 
-Lets see some results for when $$X$$ comes from different layers:
+Lets see some results for when $$X$$ comes from different layers.  I use van Gogh's Starry Night as a source image.
 
 <center>
 block1_conv1
