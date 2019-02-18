@@ -157,7 +157,9 @@ block3_conv4
 
 <center>
 block4_conv1
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/TbNzl2KexYs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/TbNzl2KexYs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div/>
 </center>
 
 <center>
@@ -203,7 +205,7 @@ What this gives you is a style network that transfers style to a variety of imag
 
 ## Footnote: Alternative Implementation
 
-In the implementation we performed gradient descent 'by hand'--we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if instead we could use the fancy optimization algorithms already built into keras?  But these algorithms operate on _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking the input image is weights by pre-pending the network with a layer containing the image pixel values as weights and have an identity input consisting of ones.  This way we can call `model.predict` and the input image will be updated.  We just need to set all other weights to have `trainable = False`.
+In the example code we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if instead we could use the fancy optimization algorithms already built into keras?  But these algorithms operate on _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking the input image is weights by pre-pending the network with a layer containing the image pixel values as weights and have an identity input consisting of ones.  This way we can call `model.predict` and the input image will be updated.  We just need to set all other weights to have `trainable = False`.
 
 
 <br/>
