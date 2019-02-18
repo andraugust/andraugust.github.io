@@ -201,6 +201,11 @@ The main drawback of this method is that gradient descent has to be performed on
 
 What this gives you is a style network that transfers style to a variety of images, so once it's trained sufficiently it'll output a stylized version of its input, even if the input's not in the training set, and with no need for further optimization.
 
+## Footnote: Alternative Implementation
+
+In the implementation we performed gradient descent 'by hand'--we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if instead we could use the fancy optimization algorithms already built into keras?  But these algorithms operate on _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking the input image is weights by pre-pending the network with a layer containing the image pixel values as weights and have an identity input consisting of ones.  This way we can call `model.predict` and the input image will be updated.  We just need to set all other weights to have `trainable = False`.
+
+
 <br/>
 <br/>
 {% include disqus.html %}
