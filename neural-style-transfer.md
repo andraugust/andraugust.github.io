@@ -132,27 +132,37 @@ Lets see some results for when $$X$$ comes from different layers.  I use van Gog
 
 <center>
 block1_conv1
-<iframe width="640" height="360" src="https://www.youtube.com/embed/2yX5gFyTeh4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/2yX5gFyTeh4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 <center>
 block1_conv2
-<iframe width="640" height="360" src="https://www.youtube.com/embed/i5J-qCkcSIQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/i5J-qCkcSIQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 <center>
 block2_conv1
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/s7YawJTg3UU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/s7YawJTg3UU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 <center>
 block3_conv2
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gD0GjJxSZfs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gD0GjJxSZfs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 <center>
 block3_conv4
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/kH5sDBnfJVc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/kH5sDBnfJVc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 <center>
@@ -164,12 +174,16 @@ block4_conv1
 
 <center>
 block5_conv1
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/CmD0vwmCD88?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/CmD0vwmCD88?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 <center>
 block5_conv4
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/3IGXvvD0xy8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/3IGXvvD0xy8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 We see that the spatial extent of texture increases with layer depth.  This is expected given that deeper layers have a wider effective field of view on the input (deeper layers' output is a function of a wider spatial portion of the input compared to shallow layers).  This fits with the results of the keras blog images above.
@@ -187,7 +201,9 @@ Here's the result:
 
 <center>
 block1_conv1 and block4_conv1
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/sfjCsvHFsME?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/sfjCsvHFsME?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </center>
 
 Pretty sweet!

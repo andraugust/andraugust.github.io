@@ -2,28 +2,12 @@
 layout: default
 ---
 
-<style>
-.video-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-}
-.video-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-</style>
-<br />
-
 # Artificial Life, Neural Nets, and Genetic Algorithms
 
-<div class="video-responsive"><iframe width="840" height="472" src="https://www.youtube.com/embed/UW8y_R7PE_c?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-responsive">
+  <iframe width="840" height="472" src="https://www.youtube.com/embed/UW8y_R7PE_c?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 <br />
-
 
 ## Background
 
