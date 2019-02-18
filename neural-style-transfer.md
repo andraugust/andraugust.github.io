@@ -9,7 +9,7 @@ layout: default
 ## Background
 In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al CVPR 2016), the authors define a neural method for transfering the style of one image to another.
 
-Why might this be possible?  Neural networks, particularly convolutional ones, have been shown to extract/respond to texture at hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show input images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
+Why might this be possible?  Neural networks, particularly convolutional ones, have been shown to respond to texture at hi and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show input images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
 ![im](neural-style-transfer/keras1.png)
 ![im](neural-style-transfer/keras2.png)
@@ -221,7 +221,7 @@ What this gives you is a style network that transfers style to a variety of imag
 
 ## Footnote: Alternative Implementation
 
-In the example code we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if instead we could use the fancy optimization algorithms already built into keras?  But these algorithms operate on _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking the input image is weights by pre-pending the network with a layer containing the image pixel values as weights and have an identity input consisting of ones.  This way we can call `model.predict` and the input image will be updated.  We just need to set all other weights to have `trainable = False`.
+In the code above we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if we could use the fancy optimization algorithms built into keras instead?  These algorithms though operate on _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking the input image is weights by pre-pending the network with a layer containing the image pixel values as weights and use an input pseudo-image consisting of all ones.  This way when we call `model.predict` the weights corresponding to the real image will be updated, we just need to set all other weights to have `trainable = False`.
 
 
 <br/>
