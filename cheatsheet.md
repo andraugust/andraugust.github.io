@@ -57,4 +57,4 @@ video.release()
 
 - Make a video out of images in a folder: `$ ffmpeg -r $FPS -pattern_type glob -i '*.jpg' movie.mp4`.
 
-- sed find and replace text: `$ sed -i .bak 's/<find_regex>/<replace_regex>/g' file.txt`.
+- sed find and replace inplace: `$ sed -i .bak "s/<find_regex>/<replace_regex>/g" file.txt`.
