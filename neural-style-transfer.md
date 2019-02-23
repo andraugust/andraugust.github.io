@@ -221,7 +221,7 @@ What this algorithm produces is a style network that transfers style to a variet
 
 ## Footnote: Alternative Implementation
 
-In the code above we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if we could use the fancy optimization algorithms already built into keras?  But these algorithms optimize _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking an input image is weights by pre-pending the network with a layer containing the image's pixel-values as weights and use a pseudo-image containing all 1s to replace the original image.  This way we can call `model.fit` the weights corresponding to the real image will be optimized, we just need to set all other weights to have `trainable = False`.
+In the code above we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if we could use the fancy optimization algorithms already built into keras?  But these algorithms optimize _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking an input image is weights by pre-pending the network with a layer containing the image's pixel-values as weights and use a pseudo-image of all 1s to replace the original image.  This way when we call `model.fit` the real image will be optimized, we just need to set all other weights to have `trainable = False`.
 
 
 <br/>
