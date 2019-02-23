@@ -4,6 +4,8 @@ layout: default
 
 # Cheatsheet
 
+- Check if images in a folder are corrupt: `$ find folder/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"`
+
 - Use matplotlib on a server: `plt.switch_backend('agg')` in the import block.
 
 - Pretty print json at command line: `$ python -m json.tool file.json`.

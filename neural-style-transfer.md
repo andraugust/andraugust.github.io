@@ -209,19 +209,19 @@ block1_conv1 and block4_conv1
 Pretty sweet!
 
 ## Future Considerations
-The main drawback of this method is that gradient descent has to be performed on each new image we want to stylize.  Wouldn't it be nice if we had a _model_ which could immediately stylize any image just by calling `model.predict` on it?  Turn out [people have looked into this](https://arxiv.org/abs/1603.08155).  The clever solution involves four things: a style (source) image, a set of _several_ content (destination) images, a style network, and a loss network.  The style network is the thing we'll eventually call `model.predict` on, it's an untrained CNN that has output shape equal to input shape (it outputs an image).  The loss network is a pre-trained CNN like the one we've been using.
+The main drawback of this method is that gradient descent has to be performed on each image we want to stylize.  Wouldn't it be nice if we had a single _model_ which could immediately stylize any image just by calling `model.predict` on it?  It turns out that [people have looked into this](https://arxiv.org/abs/1603.08155).  The clever solution uses four things: a style (source) image, a _set_ of content (destination) images, a style network, and a loss network.  The style network is the thing we'll eventually call `model.predict` on, it's an untrained CNN that has output shape equal to input shape (it outputs an image).  The loss network is a pre-trained CNN like the one we've already been using.  Here's what's done:
 
 1. Pass a batch of destination images through the style network.
 2. Pass the output of the stylize network through the pre-trained CNN.
 3. Compute the average loss, defined as before.
-4. Do gradient descent on the _stylize network_ using this loss.
+4. Do gradient descent on the style network using the loss.
 5. Loop until loss is sufficiently low.
 
-What this gives you is a style network that transfers style to a variety of images, so once it's trained sufficiently it'll output a stylized version of its input, even if the input's not in the training set, and with no need for further optimization.
+What this algorithm produces is a style network that transfers style to a variety of images, so once the network is trained sufficiently it'll output a stylized version of its input, even if the input isn't in the training set; there's no need for further optimization.
 
 ## Footnote: Alternative Implementation
 
-In the code above we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if we could use the fancy optimization algorithms built into keras instead?  These algorithms though operate on _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking the input image is weights by pre-pending the network with a layer containing the image pixel values as weights and use an input pseudo-image consisting of all ones.  This way when we call `model.predict` the weights corresponding to the real image will be updated, we just need to set all other weights to have `trainable = False`.
+In the code above we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice if we could use the fancy optimization algorithms already built into keras?  But these algorithms optimize _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking an input image is weights by pre-pending the network with a layer containing the image's pixel-values as weights and use a pseudo-image containing all 1s to replace the original image.  This way we can call `model.fit` the weights corresponding to the real image will be optimized, we just need to set all other weights to have `trainable = False`.
 
 
 <br/>
