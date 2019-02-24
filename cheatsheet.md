@@ -4,6 +4,8 @@ layout: default
 
 # Cheatsheet
 
+- Example `xargs`.  Move files that are listed in a .txt from one machine to another: `cat file_names.txt | xargs -I % scp remote:% dest/`. 
+
 - Check if images in a folder are corrupt: `$ find folder/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"`
 
 - Use matplotlib on a server: `plt.switch_backend('agg')` in the import block.
