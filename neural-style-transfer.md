@@ -7,15 +7,15 @@ layout: default
 <a href="neural-style-transfer/banner2.png"><img src="neural-style-transfer/banner2.png"></a>
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al CVPR 2016), the authors define a neural method for transfering the style of one image to another.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al CVPR 2016), the authors define a neural method for transferring style from one image to another.  The basic idea is to extract texture and color information from a source image and move it to a target image while maintaining the content of the target image.
 
-Why might this be possible?  Neural networks, particularly convolutional ones, have been shown to respond to texture at high and low spatial scales.  The photos below, borrowed from the [keras blog](https://blog.keras.io/category/demo.html), show input images that maximally activate filters in an ImageNet trained VGG16.  Note that shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
+Why might this be possible?  Convolutional neural nets have been shown to respond to texture at high and low spatial scales.  The photos below from the [keras blog](https://blog.keras.io/category/demo.html) show input images that maximally activate filters in an ImageNet trained VGG16.  Shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
 ![im](neural-style-transfer/keras1.png)
 ![im](neural-style-transfer/keras2.png)
 ![im](neural-style-transfer/keras3.png)
 
-Given the ability to respond to texture like this, and the correspondence between texture and style, the authors ask if convolutional output can be used to achieve style transfer. They show that the answer is yes.  Here's how they do it.
+Given the ability to respond to texture, and the correspondence between texture and style, the authors ask if convolutional output can be used to achieve style transfer. They show that the answer is yes.
 
 ## Approach
 
@@ -219,7 +219,7 @@ The main drawback of this method is that gradient descent has to be performed on
 
 What this algorithm produces is a style network that transfers style to a variety of images, so once the network is trained sufficiently it'll output a stylized version of its input, even if the input isn't in the training set; there's no need for further optimization.
 
-## Footnote: Alternative Implementation
+## Alternative Implementation
 
 In the code above we implemented gradient descent 'by hand'---we computed gradients and explicitly wrote `dest_im -= eta*g`.  Wouldn't it be nice to instead use the fancy optimization algorithms already built into keras?  Unfortunately these algorithms optimize _weights_, and what we're optimizing is an input.  An input isn't weights is it?  It could be.  We could trick keras into thinking an input image is weights by pre-pending the network with a layer containing the image's pixel-values as weights and use a pseudo-image of all 1s to replace the original image.  This way when we call `model.fit` the real image will be optimized, we just need to set all other weights to have `trainable = False`.
 
