@@ -4,7 +4,17 @@ layout: default
 
 # Cheatsheet
 
+- Neural network initializers:
+    - He: use with relu activation
+    -
+
+- Suppress tensorflow warnings: `export TF_CPP_MIN_LOG_LEVEL=2`
+
 - Determinism with keras:
+
+```bash
+$ export PYTHONHASHSEED=10
+```
 
 ```python
 import numpy as np
@@ -17,6 +27,11 @@ session_conf = tf.ConfigProto(intra_op_parallelism_threads=1,
                               inter_op_parallelism_threads=1)
 sess = tf.Session(graph=tf.get_default_graph(), conf=session_conf)
 K.set_session(sess)
+```
+
+```bash
+# reset pythonhashseed to random
+$ export PYTHONHASHSEED=10
 ```
 
 - Example `xargs`.  Move files that are listed in a .txt from one machine to another: `cat file_names.txt | xargs -I % scp remote:% dest/`.
