@@ -5,8 +5,12 @@ layout: default
 # Cheatsheet
 
 - Neural network initializers:
-    - He: use with relu activation
-    -
+
+| Activation |  Initializer  |               Scaling               |
+|:----------:|:-------------:|:-----------------------------------:|
+|   Linear   |  lecun_normal |     $$\frac{1}{\sqrt(n_{in})}$$     |
+|    ReLU    |   he_normal   |     $$\sqrt{\frac{2}{n_{in}}}$$     |
+|    Tanh    | Glorot_normal | $$\sqrt{\frac{2}{n_{in}+n_{out}}}$$ |
 
 - Suppress tensorflow warnings: `export TF_CPP_MIN_LOG_LEVEL=2`
 
