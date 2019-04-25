@@ -5,6 +5,7 @@ layout: default
 # Cheatsheet
 
 - Determinism with keras:
+
 ```python
 import numpy as np
 np.random.seed(10)
