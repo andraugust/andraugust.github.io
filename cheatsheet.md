@@ -4,7 +4,21 @@ layout: default
 
 # Cheatsheet
 
-- Example `xargs`.  Move files that are listed in a .txt from one machine to another: `cat file_names.txt | xargs -I % scp remote:% dest/`. 
+- Determinism with keras:
+```python
+import numpy as np
+np.random.seed(10)
+import tensorflow as tf
+tf.set_random_seed(10)
+from keras import backend as K
+
+session_conf = tf.ConfigProto(intra_op_parallelism_threads=1,
+                              inter_op_parallelism_threads=1)
+sess = tf.Session(graph=tf.get_default_graph(), conf=session_conf)
+K.set_session(sess)
+```
+
+- Example `xargs`.  Move files that are listed in a .txt from one machine to another: `cat file_names.txt | xargs -I % scp remote:% dest/`.
 
 - Check if images in a folder are corrupt: `$ find folder/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"`
 
