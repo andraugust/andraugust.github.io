@@ -34,8 +34,8 @@ K.set_session(sess)
 ```
 
 ```bash
-# reset pythonhashseed to random
-$ export PYTHONHASHSEED=10
+# reset pythonhashseed to normal behavior
+$ export PYTHONHASHSEED=random
 ```
 
 - Example `xargs`.  Move files that are listed in a .txt from one machine to another: `cat file_names.txt | xargs -I % scp remote:% dest/`.
