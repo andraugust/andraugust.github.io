@@ -4,13 +4,13 @@ layout: default
 
 # Cheatsheet
 
-- Neural network initializers:
+- Weight initializations that are best used for various activation functions:
 
 | Activation |  Initializer  |               Scaling               |
 |:----------:|:-------------:|:-----------------------------------:|
-|   Linear   |  lecun_normal |     $$\frac{1}{\sqrt(n_{in})}$$     |
+|   Linear   |  lecun_normal |     $$\frac{1}{\sqrt{n_{in}}}$$     |
 |    ReLU    |   he_normal   |     $$\sqrt{\frac{2}{n_{in}}}$$     |
-|    Tanh    | Glorot_normal | $$\sqrt{\frac{2}{n_{in}+n_{out}}}$$ |
+|    Tanh    | glorot_normal | $$\sqrt{\frac{2}{n_{in}+n_{out}}}$$ |
 
 - Suppress tensorflow warnings: `export TF_CPP_MIN_LOG_LEVEL=2`
 
