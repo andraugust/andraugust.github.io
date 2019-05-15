@@ -4,13 +4,14 @@ layout: default
 
 # Cheatsheet
 
-### Python Stuff
+### Python
 
 - Remove output from a jupyter notebook:
 ```bash
 jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled=True --stdout > notebook_clear.ipynb
 ```
 - Determinism with keras:
+
 ```bash
 $ export PYTHONHASHSEED=10
 ```
@@ -79,8 +80,7 @@ video.release()
 ```
 
 
-
-### Bash Stuff
+### Bash
 
 - Suppress tensorflow warnings: `export TF_CPP_MIN_LOG_LEVEL=2`.
 - Check if images in a folder are corrupt: `$ find folder/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"`.
