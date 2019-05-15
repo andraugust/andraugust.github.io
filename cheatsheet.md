@@ -4,16 +4,9 @@ layout: default
 
 # Cheatsheet
 
-- Weight initializations that are best used for various activation functions:
+### Python Stuff
 
-| Activation |  Initializer  |               Scaling               |
-|:----------:|:-------------:|:-----------------------------------:|
-|   Linear   |  lecun_normal |     $$\frac{1}{\sqrt{n_{in}}}$$     |
-|    ReLU    |   he_normal   |     $$\sqrt{\frac{2}{n_{in}}}$$     |
-|    Tanh    | glorot_normal | $$\sqrt{\frac{2}{n_{in}+n_{out}}}$$ |
-
-- Suppress tensorflow warnings: `export TF_CPP_MIN_LOG_LEVEL=2`
-
+- Remove output from a jupyter notebook: `jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled=True --stdout > notebook_clear.ipynb`.
 - Determinism with keras:
 
 ```bash
@@ -38,21 +31,9 @@ K.set_session(sess)
 $ export PYTHONHASHSEED=random
 ```
 
-- Example `xargs`.  Move files that are listed in a .txt from one machine to another: `cat file_names.txt | xargs -I % scp remote:% dest/`.
-
-- Check if images in a folder are corrupt: `$ find folder/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"`
-
 - Use matplotlib on a server: `plt.switch_backend('agg')` in the import block.
-
-- Pretty print json at command line: `$ python -m json.tool file.json`.
-
-- Inspect h5 at command line: `$ h5dump file.h5`.  Use `-H` to only show headers.
-
-- Bash kill script if subprocess returns non 0 exit code: `-e`.  Useful for bash scripts that run python scripts.  Useful for `$ nohup bash -e script.sh &`.
-
-- Python force output buffer to flush: `-u`.  Useful for `$ nohup python -u script.py &`.
-
 - Tensorflow/keras control gpu usage:
+
 ```python
 from keras.backend.tensorflow_backend import set_session
 config = tf.ConfigProto()
@@ -60,6 +41,7 @@ config.gpu_options.allow_growth=True
 sess = tf.Session(config=config)
 set_session(sess)
 ```
+
 ```python
 from keras.backend.tensorflow_backend import set_session
 config = tf.ConfigProto()
@@ -67,7 +49,8 @@ config.gpu_options.per_process_gpu_memory_fraction = 0.5
 set_session(tf.Session(config=config))
 ```
 
-- Use `tqdm` with `multiprocessing`:
+- Use tqdm with multiprocessing:
+
 ```python
 pool = multiprocessing.Pool(n_processes=4)
 for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)):
@@ -93,6 +76,74 @@ for frame in range(nframes):
 video.release()
 ```
 
-- Make a video out of images in a folder: `$ ffmpeg -r $FPS -pattern_type glob -i '*.jpg' movie.mp4`.
 
-- sed find and replace inplace: `$ sed -i .bak "s/<find_regex>/<replace_regex>/g" file.txt`.
+
+### Bash Stuff
+
+- Suppress tensorflow warnings: `export TF_CPP_MIN_LOG_LEVEL=2`.
+- Check if images in a folder are corrupt: `$ find folder/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"`.
+- Pretty print json: `$ python -m json.tool file.json`.
+- Pretty print h5: `$ h5dump file.h5`.  Use `-H` to only show headers.
+- Force python's output buffer to flush: `-u`, e.g.,  `$ nohup python -u script.py &`.
+- Make video using images in a folder: `$ ffmpeg -r $FPS -pattern_type glob -i '*.jpg' movie.mp4`.
+- sed example: `$ sed -i .bak "s/<find_regex>/<replace_regex>/g" file.txt`.
+- awk example: `$ awk -F, {print $1} file.csv`.
+- xargs example: `cat file_names.txt | xargs -I % scp remote:% dest/`
+
+
+
+### Misc
+
+- Weight initializations best used for various activation functions:
+
+| Activation |  Initializer  |               Scaling               |
+|:----------:|:-------------:|:-----------------------------------:|
+|   Linear   |  lecun_normal |     $$\frac{1}{\sqrt{n_{in}}}$$     |
+|    ReLU    |   he_normal   |     $$\sqrt{\frac{2}{n_{in}}}$$     |
+|    Tanh    | glorot_normal | $$\sqrt{\frac{2}{n_{in}+n_{out}}}$$ |
+
+
+
+```bash
+$ export PYTHONHASHSEED=10
+```
+
+```python
+import numpy as np
+np.random.seed(10)
+import tensorflow as tf
+tf.set_random_seed(10)
+from keras import backend as K
+
+session_conf = tf.ConfigProto(intra_op_parallelism_threads=1,
+                              inter_op_parallelism_threads=1)
+sess = tf.Session(graph=tf.get_default_graph(), conf=session_conf)
+K.set_session(sess)
+```
+
+```bash
+# reset pythonhashseed to normal behavior
+$ export PYTHONHASHSEED=random
+```
+
+- Example `xargs`.  Move files that are listed in a .txt from one machine to another: `cat file_names.txt | xargs -I % scp remote:% dest/`.
+
+  
+
+  
+
+```python
+from keras.backend.tensorflow_backend import set_session
+config = tf.ConfigProto()
+config.gpu_options.allow_growth=True
+sess = tf.Session(config=config)
+set_session(sess)
+```
+```python
+from keras.backend.tensorflow_backend import set_session
+config = tf.ConfigProto()
+config.gpu_options.per_process_gpu_memory_fraction = 0.5
+set_session(tf.Session(config=config))
+```
+
+- Use `tqdm` with `multiprocessing`:
