@@ -6,7 +6,7 @@ layout: default
 
 ### Python Stuff
 
-- Remove output from a jupyter notebook: 
+- Remove output from a jupyter notebook:
 ```bash
 jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled=True --stdout > notebook_clear.ipynb
 ```
@@ -14,6 +14,7 @@ jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled
 ```bash
 $ export PYTHONHASHSEED=10
 ```
+
 ```python
 import numpy as np
 np.random.seed(10)
@@ -102,6 +103,3 @@ video.release()
 |   Linear   |  lecun_normal |     $$\frac{1}{\sqrt{n_{in}}}$$     |
 |    ReLU    |   he_normal   |     $$\sqrt{\frac{2}{n_{in}}}$$     |
 |    Tanh    | glorot_normal | $$\sqrt{\frac{2}{n_{in}+n_{out}}}$$ |
-
-
-
