@@ -4,7 +4,14 @@ layout: default
 
 # Cheatsheet
 
-### Python
+## Python
+
+- Best way to install tensorflow such that all cuda dependencies are handled correctly:
+```bash
+conda create tf-env python=3.6
+conda activate tf-env
+conda install -c anaconda tensorflow-gpu=1.12
+```
 
 - Remove output from a jupyter notebook:
 ```bash
@@ -80,7 +87,7 @@ video.release()
 ```
 
 
-### Bash
+## Bash
 
 - Suppress tensorflow warnings: `export TF_CPP_MIN_LOG_LEVEL=2`.
 - Check if images in a folder are corrupt: `$ find folder/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"`.
@@ -94,7 +101,7 @@ video.release()
 
 
 
-### Misc
+## Misc
 
 - Weight initializations best used for various activation functions:
 
