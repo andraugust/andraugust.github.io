@@ -86,6 +86,38 @@ for frame in range(nframes):
 video.release()
 ```
 
+- Replace nans in a 2d array with their nearest neighbor:
+
+  ```python
+  def clean_nans(arr):
+      '''
+      Input: 2d array possibly containing nans
+      Output: 2d array with nans replaced by nearest non-nan neighbor
+      '''
+      def get_neighbor_val(i,j):
+          d = 1  # offset from i,j
+          while True:
+              for a in range(-d, d+1):
+                  if i+a < 0: continue  # dont end-index
+                  for b in range(-d, d+1):
+                      if j+b < 0: continue  # dont end-index
+                      if abs(a) != d and abs(b) != d: continue  # only iterate over perimeter
+                      try:
+                          val = arr[i+a,j+b]
+                      except IndexError:
+                          continue
+                      else:
+                          if not np.isnan(val):
+                              return val
+              d += 1 
+  
+      arr_clean = np.copy(arr)
+      for i,j in np.argwhere(np.isnan(arr)):
+          arr_clean[i,j] = get_neighbor_val(i,j)
+      return arr_clean
+  ```
+
+  
 
 ## Bash
 
