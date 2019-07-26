@@ -11,7 +11,7 @@ layout: default
 
 ## Background
 
-One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Gradient descent based methods work well for NN classifiers and regressors, but that's because in these cases inputs have well defined desired outputs, and the dependence of the objective function on the input-output mapping is explicit _and_ differentiable.  In many AI contexts, however, objective functions aren't evaluated until after a long sequence of NN outputs (actions) have occurred, so it isn't clear which outputs played what role in shaping the final value of the objective f'n.  And did I mention that AI objective functions can't often be written down explicitly in terms of individual actions, let alone be differentiable??
+One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Gradient descent based methods work well for NN classifiers and regressors, but that's because in these cases inputs have well defined desired outputs, and the dependence of the objective function on the input-output mapping is explicit _and_ differentiable.  In many AI contexts, however, objective functions aren't evaluated until after a long sequence of NN outputs (actions) have occurred, so it isn't clear which outputs played what role in shaping the final value of the objective f'n.
 
 Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a non-gradient based algorithm called a _genetic algorithm_ to learn good neural net weights, despite the absence of instant-by-instant feedback or a differentiable objective f'n.
 
