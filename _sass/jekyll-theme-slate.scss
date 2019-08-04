@@ -261,6 +261,10 @@ Full-Width Styles
   width: 100%;
 }
 
+.outerer {
+  background-image: url("heic0707a.jpg");
+}
+
 .inner {
   position: relative;
   max-width: 640px;
@@ -284,13 +288,13 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background-image: url("heic0707a.jpg");
-  //background: #212121;
-  //background: -moz-linear-gradient(top, #373737, #212121);
-  //background: -webkit-linear-gradient(top, #373737, #212121);
-  //background: -ms-linear-gradient(top, #373737, #212121);
-  //background: -o-linear-gradient(top, #373737, #212121);
-  //background: linear-gradient(to top, #373737, #212121);
+  //background-image: url("heic0707a.jpg");
+  background: #212121;
+  background: -moz-linear-gradient(top, #373737, #212121);
+  background: -webkit-linear-gradient(top, #373737, #212121);
+  background: -ms-linear-gradient(top, #373737, #212121);
+  background: -o-linear-gradient(top, #373737, #212121);
+  background: linear-gradient(to top, #373737, #212121);
 }
 
 #header_wrap .inner {
