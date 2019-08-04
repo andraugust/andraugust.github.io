@@ -4,8 +4,6 @@
     <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_sass/jekyll-theme-slate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/jekyll-theme-slate.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-style-transfer.md" beforeDir="false" afterPath="$PROJECT_DIR$/neural-style-transfer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solve_it.md" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/_layouts/default.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="473">
-              <caret line="33" column="24" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="24" />
+              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -27,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_sass/jekyll-theme-slate.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="288" column="2" selection-start-line="288" selection-start-column="2" selection-end-line="288" selection-end-column="2" />
+            <state relative-caret-position="374">
+              <caret line="260" column="2" selection-start-line="260" selection-start-column="2" selection-end-line="260" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -38,6 +36,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>header_wrap</find>
+      <find>class=&quot;outer</find>
+      <find>outer</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -116,12 +116,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564906425790</updated>
-      <workItem from="1564906427748" duration="626000" />
+      <workItem from="1564906427748" duration="936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="626000" />
+    <option name="totallyTimeSpent" value="936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -168,14 +168,14 @@
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="24" />
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_sass/jekyll-theme-slate.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="288" column="2" selection-start-line="288" selection-start-column="2" selection-end-line="288" selection-end-column="2" />
+        <state relative-caret-position="374">
+          <caret line="260" column="2" selection-start-line="260" selection-start-column="2" selection-end-line="260" selection-end-column="2" />
         </state>
       </provider>
     </entry>
