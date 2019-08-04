@@ -7,7 +7,7 @@ layout: default
 <a href="neural-style-transfer/banner2.png"><img src="neural-style-transfer/banner2.png"></a>
 
 ## Background
-In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) (Gatys et al CVPR 2016), the authors define a neural method for transferring style from one image to another.  The basic idea is to extract texture and color information from a source image and move it to a target image while maintaining the content of the target image.
+In the paper [Image Style Transfer Using Convolutional Neural Networks](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), the authors define a neural method for transferring style from one image to another.  The basic idea is to extract texture and color information from a source image and move it to a target image while maintaining the content of the target image.
 
 Why might this be possible?  Convolutional neural nets have been shown to respond to texture at high and low spatial scales.  The photos below from the [keras blog](https://blog.keras.io/category/demo.html) show input images that maximally activate filters in an ImageNet trained VGG16.  Shallow layers respond to high frequency texture while deep layers respond to low frequency texture.
 
