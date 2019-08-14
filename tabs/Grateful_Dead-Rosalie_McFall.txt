@@ -5,14 +5,11 @@ GD - Rosalie McFall
 Cappo 4
 
 CHORD PROGRESSION
-(note that these are only the chord shapes and, because of the 
-cappo, do not match the actual chords to be played)
 
 C    C    Am    C    Am    C    G    C
 
 
-INTRO (strum appropriate chords during breaks between single 
-notes to produce a fuller sound)
+INTRO
 ----------------------------------------------------------
 ----------------------------------------------------------
 ----------0------0--2--0-----------------------------2----
