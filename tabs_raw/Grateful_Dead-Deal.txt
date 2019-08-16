@@ -1,5 +1,4 @@
-GD - "Deal"
-~~~~~~~~~~~
+
 
 A                C#7         F#m              D7
 Since it costs a lot to win, and even more to lose,
