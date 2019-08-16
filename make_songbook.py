@@ -24,7 +24,7 @@ for tab_file in tab_files:
     row = f'''
     <tr>
     <td>{artist}</td>
-    <td><a href="{tab_file}">{song_name}</a></td>
+    <td><a href="tabs_html/{osp.basename(tab_file).split(".")[0]}.html">{song_name}</a></td>
     </tr>'''
 
     table_str += row
