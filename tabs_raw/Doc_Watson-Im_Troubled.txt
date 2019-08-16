@@ -1,8 +1,6 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 I'm Troubled
 Recorded by Lester Flatt and Earl Scruggs
 Written by Doc Watson
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 D                             G           D
 Our meeting is a pleasure and partying is grief 
@@ -16,7 +14,7 @@ I'm troubled I'm troubled I'm troubled in mind
 If trouble don't kill me I'll live a long time
 
 A grave will decay you and turn you to dust 
-Ain’t a girl in a million that a poor boy can trust
+Ain't a girl in a million that a poor boy can trust
 They'll hug and kiss you and tell you more lies 
 As the crossties on the railroad or stars in the sky
 

@@ -1,7 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="" />
+    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/song_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_songbook.py" beforeDir="false" afterPath="$PROJECT_DIR$/make_songbook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/songbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Arlo_Guthrie-Days_Are_Short.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Arlo_Guthrie-Days_Are_Short.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/CCR-I_Put_A_Spell_On_You.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/CCR-I_Put_A_Spell_On_You.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Doc_Watson-Im_Troubled.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Doc_Watson-Im_Troubled.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Doc_Watson-Solid_Gone.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Doc_Watson-Solid_Gone.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Doc_Watson-What_Does_The_Deep_Sea_Say.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Doc_Watson-What_Does_The_Deep_Sea_Say.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Doc_Watson-Whiskey_Before_Breakfast.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Doc_Watson-Whiskey_Before_Breakfast.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Doc_Watson-Wreck_of_Old_Number_Nine.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Doc_Watson-Wreck_of_Old_Number_Nine.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Elizabeth_Cotten-Freight_Train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Elizabeth_Cotten-Freight_Train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Althea.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Althea.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Bertha.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Bertha.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Birdsong.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Birdsong.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Cassidy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Cassidy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Catfish_John.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Catfish_John.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Deal.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Deal.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Deep_Elem_Blues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Deep_Elem_Blues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Dire_Wolf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Dire_Wolf.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-He's_Gone.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-He's_Gone.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Ive_Been_All_Around_This_World.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Ive_Been_All_Around_This_World.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Loser.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Loser.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Monkey_and_the_Engineer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Monkey_and_the_Engineer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Peggy_O.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Peggy_O.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Playing_In_the_Band.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Playing_In_the_Band.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Ramble_On_Rose.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Ramble_On_Rose.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Ripple.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Ripple.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Rosalie_McFall.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Rosalie_McFall.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Row_Jimmy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Row_Jimmy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Sugaree.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Sugaree.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Tennessee_Jed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Tennessee_Jed.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Terrapin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Terrapin.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-They_Love_Each_Other.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-They_Love_Each_Other.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-Wharf_Rat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Wharf_Rat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Grateful_Dead-You_Win_Again.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Grateful_Dead-You_Win_Again.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Isto-Spirit_In_A_Bottle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Isto-Spirit_In_A_Bottle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Jerry_Garcia-Shady_Grove.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Jerry_Garcia-Shady_Grove.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Jerry_Garcia_David_Grisman-Take_Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Jerry_Garcia_David_Grisman-Take_Me.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Jim_Croce-Cigarettes,_Whiskey,_and_Wild,_Wild,_Women.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Jim_Croce-Cigarettes,_Whiskey,_and_Wild,_Wild,_Women.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Jim_Croce-Jailhouse_Now.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Jim_Croce-Jailhouse_Now.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Jim_Croce-Mama_Tried.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Jim_Croce-Mama_Tried.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/John_Prine-Paradise.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/John_Prine-Paradise.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Kitchen_Syncopators-Ghost_Train_To_Kalispell.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Kitchen_Syncopators-Ghost_Train_To_Kalispell.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Kitchen_Syncopators-Satisfied.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Kitchen_Syncopators-Satisfied.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Mapache-Lonesome_LA_Cowboy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Mapache-Lonesome_LA_Cowboy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Marty_Robbins-Big_Iron.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Marty_Robbins-Big_Iron.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Neil_Young-Down_By_The_River.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Neil_Young-Tell_Me_Why.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Neil_Young-Tell_Me_Why.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Norman_Blake-Crossing_No9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Norman_Blake-Crossing_No9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Norman_Blake-Hand_Me_Down_Walking_Cane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Norman_Blake-Hand_Me_Down_Walking_Cane.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Norman_Blake-Jordan_Am_A_Hard_Road_To_Travel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Norman_Blake-Jordan_Am_A_Hard_Road_To_Travel.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Norman_Blake-Lorena.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Norman_Blake-Lorena.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Norman_Blake-Orphan_Annie.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Norman_Blake-Orphan_Annie.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Norman_Blake-Randall_Collins.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Norman_Blake-Randall_Collins.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Norman_Blake-Wildwood_Flower.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Norman_Blake-Wildwood_Flower.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Willie_Nelson-City_Of_New_Orleans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Willie_Nelson-City_Of_New_Orleans.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Willie_Nelson-Mammas_Dont_Let_Your_Babies_Grow_Up_To_Be_Cowboys.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Willie_Nelson-Mammas_Dont_Let_Your_Babies_Grow_Up_To_Be_Cowboys.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Willie_Nelson-My_Heros_Have_Always_Been_Cowboys.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Willie_Nelson-My_Heros_Have_Always_Been_Cowboys.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Willie_Nelson-On_The_Road_Again.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Willie_Nelson-On_The_Road_Again.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Willie_Nelson-Railroad_Lady.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Willie_Nelson-Railroad_Lady.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabs/Woody_Guthrie-Union_Maid.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Woody_Guthrie-Union_Maid.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,12 +72,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_layouts/default.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="240">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
@@ -23,10 +86,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_sass/jekyll-theme-slate.scss">
+        <entry file="file://$PROJECT_DIR$/make_songbook.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="259" column="8" selection-start-line="259" selection-start-column="8" selection-end-line="259" selection-end-column="8" />
+            <state relative-caret-position="567">
+              <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/song_template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -38,7 +113,13 @@
       <find>header_wrap</find>
       <find>class=&quot;outer</find>
       <find>outer</find>
+      <find>song</find>
+      <find>�</find>
     </findStrings>
+    <replaceStrings>
+      <replace>song_name</replace>
+      <replace>'</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
@@ -51,11 +132,18 @@
       <list>
         <option value="$PROJECT_DIR$/_sass/jekyll-theme-slate.scss" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
+        <option value="$PROJECT_DIR$/songbook_template.html" />
+        <option value="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Althea.txt" />
+        <option value="$PROJECT_DIR$/tabs_raw/Grateful_Dead-Cassidy.txt" />
+        <option value="$PROJECT_DIR$/tabs_raw/Grateful_Dead-They_Love_Each_Other.txt" />
+        <option value="$PROJECT_DIR$/tabs_raw/Willie_Nelson-City_Of_New_Orleans.txt" />
+        <option value="$PROJECT_DIR$/tabs_html/Grateful_Dead-Cassidy.html" />
+        <option value="$PROJECT_DIR$/make_songbook.py" />
+        <option value="$PROJECT_DIR$/song_template.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -74,12 +162,7 @@
             <path>
               <item name="andraugust.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="andraugust.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andraugust.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andraugust.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_sass" type="462c0819:PsiDirectoryNode" />
+              <item name="tabs_html" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -94,6 +177,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -118,25 +206,20 @@
       <option name="presentableId" value="Default" />
       <updated>1564906425790</updated>
       <workItem from="1564906427748" duration="1665000" />
+      <workItem from="1565929543064" duration="3270000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1665000" />
+    <option name="totallyTimeSpent" value="4935000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24453124" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -144,11 +227,17 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +255,58 @@
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/songbook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="266" column="7" lean-forward="true" selection-start-line="266" selection-start-column="7" selection-end-line="266" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_raw/Doc_Watson-Im_Troubled.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_raw/Grateful_Dead-Cassidy.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_raw/Grateful_Dead-Althea.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1011">
+          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_raw/Grateful_Dead-They_Love_Each_Other.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_raw/Willie_Nelson-City_Of_New_Orleans.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_raw/Neil_Young-Down_By_The_River.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5520" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_html/Arlo_Guthrie-Days_Are_Short.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-603" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_sass/jekyll-theme-slate.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -173,13 +314,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/songbook_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_html/CCR-I_Put_A_Spell_On_You.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_html/Elizabeth_Cotten-Freight_Train.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/make_songbook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="240">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabs_html/Grateful_Dead-Cassidy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/song_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
