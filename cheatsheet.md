@@ -128,7 +128,7 @@ video.release()
 - Force python's output buffer to flush: `-u`, e.g.,  `$ nohup python -u script.py &`.
 - Make video using images in a folder: `$ ffmpeg -r $FPS -pattern_type glob -i '*.jpg' movie.mp4`.
 - sed example: `$ sed -i .bak "s/<find_regex>/<replace_regex>/g" file.txt`.
-- awk example: `$ awk -F, {print $1} file.csv`.
+- awk example: `$ awk -F, '{ print $1 }' file.csv`.
 - xargs example: `cat file_names.txt | xargs -I % scp remote:% dest/`.
 
 
