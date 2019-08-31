@@ -42,7 +42,7 @@ This is an example of how spectral clustering can be applied to a confusion matr
 
 <p style="opacity:0.5">03/2016</p>
 
-The optimal policy for the dice game Threes, solved with backward induction.
+Here I derive the optimal policy for a dice game called Threes using backward induction.
 
 ## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
 
@@ -61,5 +61,12 @@ This is an Arduino robot I made that learns to crawl using Q-learning.  Included
 <p style="opacity:0.5">Ongoing</p>
 
 Code snippets and such.
+
+## [Songbook](songbook.html)
+
+<p style="opacity:0.5">Ongoing</p>
+
+What do you do when all the guitar chord websites are full of ads and slide-up things?  Host your own chords ad free!
+
 
 <br />
