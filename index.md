@@ -18,13 +18,13 @@ Reference for connecting PyCharm to a remote machine.
 
 <p style="opacity:0.5">11/2018</p>
 
-This is my dense ship segmenter for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship CNN classifier followed by a U-net and some post-processing.
+This is my ship segmenter for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship CNN followed by a U-net and some post-processing.
 
-## [Exploring the First-Link Taxonomy of Wikipedia](wikilinks.html)
+## [The First-Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
 
-An interesting property of Wikipedia is that most pages have first-links that lead to their immediate superset.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do all these first-links go?  And what does the first-link taxonomy of Wikipedia look like?
+An interesting property of Wikipedia is that most pages have first-links that lead to their immediate superset.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do the first-links eventually go?  And what does the first-link taxonomy look like?
 
 ## [Satellite Image Classification on the fMoW Dataset](fmow.html)
 
@@ -48,7 +48,7 @@ Here I derive the optimal policy for a dice game called Threes using backward in
 
 <p style="opacity:0.5">11/2015</p>
 
-Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize these nets?  In this post I implement a GA called Enforced Subpopulations to give an example of a GA that successfully optimizes an AL NNs.
+Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize these nets?  In this post I implement a GA called Enforced Subpopulations to show that yes, a GA can optimize AL NNs.
 
 ## [Reinforcement Learning IRL](rl.html)
 
@@ -66,7 +66,7 @@ Code snippets and such.
 
 <p style="opacity:0.5">Ongoing</p>
 
-What do you do when all the guitar chord websites are full of ads and slide-up things?  Host your own chords ad free!
+What do you do when all the guitar-chord websites have tons of ads and pop-ups?  Host your own chords, ad free!
 
 
 <br />
