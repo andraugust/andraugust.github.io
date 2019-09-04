@@ -2,7 +2,7 @@ import numpy as np
 from itertools import permutations
 
 
-r = 4
+r = 5
 N = 6
 
 def count():
@@ -12,8 +12,9 @@ def count():
     n_options = len(options)
     n_optimal = len([p for p in options if p[r-1]==1])
     prob_success = n_optimal / n_options
-    print('N possible optimals', n_optimal)
     print('N possible options', n_options)
+    print('N possible optimals', n_optimal)
+    print('N possible non-optimals', n_options-n_optimal)
     print('Win probability', prob_success)
 
 count()
