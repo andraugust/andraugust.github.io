@@ -28,7 +28,9 @@ I'm going to find the cutoff using backward induction.  Like most backward induc
 
 
 
-In the diagram time flows downward, with candidates being interviewed sequentially, and arrows indicating possible outcomes after each interview.  When candidate number $$r$$ is interviewed they can either be the best so-far or not the best so-far.  If they're not the best so far, then we pass automatically (as per the heuristic); if they're the best so far, then we can either hire them or pass.  If we hire them, there's a probability $$\theta_{r}$$ they're rank-1.
+In the diagram time flows downward, with candidates being interviewed sequentially, and arrows pointing to possible outcomes after each interview or decision.
 
-Given a candidate is better than the best so far, we need to decide if we should hire the or not.  This is done by comparing $$\theta_r$$ to $$V(r+1)$$, where $$V(r+1)$$ is the expected probability of hiring rank-1 if we're in state $$r+1$$.  In the parlance of backward induction $$V$$ is called the value function.
+When candidate number $$r$$ is interviewed they can either be the best so-far or not the best so-far.  If they're not the best so far, we pass automatically (as per the heuristic); if they're the best so far, we can either hire them or pass.  If we hire them, there's a probability $$\theta_{r}$$ they're rank-1.
+
+Given that a candidate is better than the best so far, we need to decide hire or pass.  This is done by comparing $$\theta_r$$ to $$V(r+1)$$, where $$V(r+1)$$ is the expected probability of interviewing and hiring rank-1 if we're in state $$r+1$$.  In the parlance of backward induction $$V$$ is called the _value function_.
 
