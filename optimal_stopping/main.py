@@ -1,25 +1,40 @@
 import numpy as np
+np.set_printoptions(precision=3)
 from itertools import permutations
 
 
-r = 5
-N = 6
 
 def count():
-    perms = permutations(range(1,N+1,1))
+    r = 6
+    R = 6
+    perms = permutations(range(1,R+1,1))
     perms = [np.array(p) for p in perms]
     options = [p for p in perms if (p[r-1] < p[0:r-1]).all()]
     n_options = len(options)
     n_optimal = len([p for p in options if p[r-1]==1])
-    prob_success = n_optimal / n_options
-    print('N possible options', n_options)
-    print('N possible optimals', n_optimal)
-    print('N possible non-optimals', n_options-n_optimal)
-    print('Win probability', prob_success)
-
-count()
+    print('possible options', n_options)
+    print('possible optimals', n_optimal)
+    print('possible non-optimals', n_options-n_optimal)
+    print('Win probability given option', n_optimal / n_options)
+    print('Probability of having option', n_options / len(perms))
 
 
+def get_VA():
+    R_max = 10
+    V = np.zeros((R_max,R_max))
+    A = np.zeros((R_max,R_max))
+    for R in range(1,R_max,1):
+        V[R,R] = 1/(R+1)
+        for r in range(R-1,-1,-1):
+            V[R,r] = ( np.max([(r+1)/(R+1), V[R,r+1]]) * (1/(r+1)) ) + ( V[R,r+1] * (1-(1/(r+1))) )
+            if (r+1)/(R+1) >= V[R,r+1]:
+                A[R,r] = (r+1)/(R+1)
+    return V, A
+
+
+V, A = get_VA()
+print(V)
+print(A)
 
 
 

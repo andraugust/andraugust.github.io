@@ -66,7 +66,7 @@ Code snippets and such.
 
 <p style="opacity:0.5">Ongoing</p>
 
-What do you do when all the guitar-chord websites have tons of ads and pop-ups?  Host your own chords, ad free!
+What do you do when guitar-chord websites are all covered in ads and pop-ups?  Host your own chords, ad free!
 
 
 <br />
