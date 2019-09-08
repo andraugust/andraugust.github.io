@@ -14,9 +14,9 @@ First I'll tell you the optimal heuristic, then we'll solve for the details.
 
 The optimal heuristic is to automatically pass on a fixed number of candidates and then select the first one who's better than the rest seen so far.  If no better candidate is found then select the last one (you have to, they're the only one left).
 
-The intuition is as follows: All ranks are independent and candidate order is uniformly random, so knowing the relative rank of, say, the first $$r$$ candidates doesn't help predict the rank of future candidates, so the best we can do is pass on the first several candidates (possibly only one) and hope to find the best after this.  As for choosing, if we did something like "choose the 6th candidate always", we'd ignore information about the 6th candidate.  In particular, since we're trying to find rank-1, if the 6th candidate isn't better than the previous 5, then we know they're not rank-1, so we should pass, even if this means passing until we get to the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting rank-R.)
+The intuition is as follows: All ranks are independent and candidate order is uniformly random, so knowing the relative rank of the cadidate's you've interviewed doesn't help predict the relative rank of the candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for when to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might not be better than the first 5, and since you're looking for rank-1 you should pass, even if this means passing until you get to the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting rank-R).
 
-So the real question is: what's the cutoff whereaftter we should start looking for the best-so-far?
+So the real question is: what's the cutoff whereafter you should start looking for the best-so-far?
 
 ### Finding the cutoff
 
