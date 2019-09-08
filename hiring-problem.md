@@ -4,13 +4,11 @@ layout: default
 
 # The Hiring Problem
 
-### The problem
-
 Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate, otherwise your company is bound for failure.  The candidates you interview are top-notch, but this means they have offers on the table from your competitor, and they'll take those offers unless you hire them on the spot.
 
 The candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you either hire or pass to the next candidate.  If you pass, you can't return to make them an offer in the future (they've accepted the job from your competitor).  Your objective is to hire the top-ranking candidate.  What's your strategy?
 
-###The optimal heuristic
+### The optimal heuristic
 
 First I'll tell you the optimal heuristic, then we'll solve for the details.
 
@@ -24,7 +22,7 @@ So the real question is: what's the cutoff whereaftter we should start looking f
 
 I'm going to find the cutoff using backward induction.  Here's the diagram of possible state-actions, for assistance:
 
-<img src="hiring-problem/state-action-diagram.svg" type="image/svg+xml">
+<center><img src="hiring-problem/state-action-diagram.svg" type="image/svg+xml"></center>
 
 
 
