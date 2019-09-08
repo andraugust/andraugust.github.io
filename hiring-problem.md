@@ -26,17 +26,4 @@ I'm going to find the cutoff using backward induction.  Here's the state-action 
 
 
 
-Here, $$r \in \{1..R\}$$ is the candidate being interviewed and $$\theta$$
-
-
-
-
-
-Solution and value function
-
-
-
-Numeric values and stopping criteria
-
-
-
+When candidate number $$r$$ is interviewed they can either be the best so-far or not the best so-far.  If they're not the best so far, then candidate $$r+1$$ is interviewed; if they're the best so far, then we can either pass to interview $$r+1$$, or hire them, in which case there's a probability $$\theta_{r}$$ they're rank-1.
