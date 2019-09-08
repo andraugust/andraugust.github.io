@@ -24,7 +24,7 @@ So the real question is: what's the cutoff whereaftter we should start looking f
 
 I'm going to find the cutoff using backward induction.  Here's the diagram of possible state-actions, for assistance:
 
-<img scr="hiring-problem/state-action-diagram.svg">
+<img src="hiring-problem/state-action-diagram.svg" type="image/svg+xml">
 
 
 
