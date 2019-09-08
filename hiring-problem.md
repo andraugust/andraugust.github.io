@@ -6,7 +6,9 @@ layout: default
 
 Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate, otherwise your company is bound to fail.  The candidates you have lined up are top-notch, but this means they have offers on the table from your competitor, and they'll take those offers unless you hire them on the spot.
 
-Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you either hire or pass to the next candidate.  If you pass on a candidate, you can't make them an offer in the future (they've accepted the job from your competitor).  Your objective is to hire the top-ranking candidate.  What's your strategy?
+Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you either hire or pass to the next candidate.  If you pass on a candidate, you can't make them an offer in the future (they've already accepted the job from your competitor).
+
+Your objective is to hire the top-ranking candidate.  What's your strategy?
 
 ### The optimal strategy
 
@@ -20,10 +22,13 @@ So the question becomes: what's the cutoff whereafter you should look for the be
 
 ### Finding the cutoff
 
-I'm going to find the cutoff using backward induction.  Here's the state-action transition diagram:
+I'm going to find the cutoff using backward induction.  Like most backward induction problems, it helps to look at the state-action transition diagram:
 
 <center><img src="hiring-problem/state-action-diagram.svg" type="image/svg+xml"></center>
 
 
 
-When candidate number $$r$$ is interviewed they can either be the best so-far or not the best so-far.  If they're not the best so far, then candidate $$r+1$$ is interviewed; if they're the best so far, then we can either pass to interview $$r+1$$, or hire them, in which case there's a probability $$\theta_{r}$$ they're rank-1.
+In the diagram time flows downward, with candidates being interviewed sequentially, and arrows indicating possible outcomes after each interview.  When candidate number $$r$$ is interviewed they can either be the best so-far or not the best so-far.  If they're not the best so far, then we pass automatically (as per the heuristic); if they're the best so far, then we can either hire them or pass.  If we hire them, there's a probability $$\theta_{r}$$ they're rank-1.
+
+Given a candidate is better than the best so far, we need to decide if we should hire the or not.  This is done by comparing $$\theta_r$$ to $$V(r+1)$$, where $$V(r+1)$$ is the expected probability of hiring rank-1 if we're in state $$r+1$$.  In the parlance of backward induction $$V$$ is called the value function.
+
