@@ -36,7 +36,7 @@ Given that a candidate is better than the best so far, we need to decide to hire
 
 The solution is to hire when $$P(1|r,\texttt{bsf}) \ge V(r+1)$$, otherwise pass.
 
-### Computing $P$s and $V$s
+### Computing the $$P$$s and $$V$$s
 
 The value function is given by
 
