@@ -42,17 +42,17 @@ $$V(r) = V(r \vert \texttt{bsf})P(\texttt{bsf} \vert r) + V(r \vert \neg\texttt{
 
 Here, $$P(\texttt{bsf} \vert r)$$ is the probability that candidate $$r$$ will be the best-so-far after their interview.  To compute it, we need to count the number of ways $$\texttt{bsf}$$ can happen.  The following are possible rankings of 5 candidates:
 
-$$\rightarrow \texttt{34}\underline{\texttt{2}}\texttt{51}$$
+$$\rightarrow \texttt{34}\ul{\texttt{2}}\texttt{51}$$
 
 $$\rightarrow \texttt{34}\underline{\texttt{2}}\texttt{51}$$
 
-$$\; \texttt{32}\underline{\texttt{5}}\texttt{14}$$
+$$\texttt{32}\underline{\texttt{5}}\texttt{14}$$
 
 $$\rightarrow \texttt{45}\underline{\texttt{3}}\texttt{12}$$
 
 $$\rightarrow \texttt{45}\underline{\texttt{3}}\texttt{21}$$
 
-$$\; \texttt{23}\underline{\texttt{4}}\texttt{51}$$
+$$\texttt{23}\underline{\texttt{4}}\texttt{51}$$
 
 
 
