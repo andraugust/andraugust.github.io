@@ -38,8 +38,8 @@
         <entry file="file://$PROJECT_DIR$/hiring-problem.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="430">
-                <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <first_editor relative-caret-position="437">
+                <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               </first_editor>
               <second_editor />
             </state>
@@ -192,12 +192,12 @@
       <workItem from="1565929543064" duration="3572000" />
       <workItem from="1566883812548" duration="6083000" />
       <workItem from="1567241587965" duration="5551000" />
-      <workItem from="1567747045857" duration="2451000" />
+      <workItem from="1567747045857" duration="2655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19322000" />
+    <option name="totallyTimeSpent" value="19526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -371,8 +371,8 @@
     <entry file="file://$PROJECT_DIR$/hiring-problem.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="430">
-            <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <first_editor relative-caret-position="437">
+            <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           </first_editor>
           <second_editor />
         </state>
