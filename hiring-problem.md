@@ -26,8 +26,6 @@ I'm going to find the cutoff using backward induction.  Like most backward induc
 
 <center><img src="hiring-problem/state-action-diagram.svg" type="image/svg+xml"></center>
 
-
-
 In the diagram time flows downward, with candidates being interviewed sequentially. Arrows point to outcomes; another interview or the option to hire.
 
 When candidate number $$r$$ is interviewed they can either be the best-so-far or not.  If they're not, we pass automatically (as per the heuristic); if they are, we can either hire or pass.  If we hire, we're done.
@@ -36,11 +34,9 @@ Given that a candidate is better than the best so far, we need to decide to hire
 
 The solution is to hire when $$P(1|r,\texttt{bsf}) \ge V(r+1)$$, otherwise pass.
 
-### Computing the $$P$$s and $$V$$s
+### Computing the $P$s and $V$s
 
-The value function is given by
-
-$$V(r) = V(r|\texttt{bsf})\theta_r + V(r|\neg\texttt{bsf})(1-\theta_r) $$
+The value function is given by $$V(r) = V(r|\texttt{bsf})\theta_r + V(r|\neg\texttt{bsf})(1-\theta_r)$$
 
 where $$V(r|\texttt{bsf})$$ is the value of being in state $$r$$ given that after the interview $$r$$ is the best-so-far.  Similarly, 
 
