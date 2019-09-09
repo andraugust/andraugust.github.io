@@ -40,9 +40,11 @@ The value function has a term for the best-so-far outcome and a term for the not
 
 $$V(r) = V(r \vert \texttt{bsf})P(\texttt{bsf} \vert r) + V(r \vert \neg\texttt{bsf})(1-P(\texttt{bsf} \vert r))$$
 
-Here, $$P(\texttt{bsf} \vert r)$$ is the probability that candidate $$r$$ will be the best-so-far after their interview.  To compute it, we need to count the number of ways $$\texttt{bsf}$$ can happen.  The following are possible rankings of 5 candidates:
+Here, $$P(\texttt{bsf} \vert r)$$ is the probability that candidate $$r$$ will be the best-so-far after their interview.  To compute this probability, we need to count the number of ways $$\texttt{bsf}$$ can happen.
 
-$$\rightarrow \texttt{34251}$$
+Here's an example.  Suppose there are 5 candidates and we're about to interview candidate 3.  The following are possible rank outcomes, ordered left to right by order of interview:
+
+$$\rightarrow \texttt{34152}$$
 
 $$\rightarrow \texttt{43251}$$
 
@@ -56,7 +58,21 @@ $$\texttt{23451}$$
 
 $$\vdots$$
 
+These are the outcomes we would see if we interviewed to the end. If we're at $$r=3$$, the arrowed outcomes are the ones that have $$\texttt{bsf}=True$$. Our job is to count the number of arrowed outcomes and divide by the total number of possible outcomes.
 
+To start, observe that $$\texttt{bsf}=True$$ when $$rank(3) \in \{1,2,3\}$$.  For each rank in this set, there are a different number of ways to fill in the other 4 ranks. For example, if $$rank(3)=3$$, then the only ranks that can be to the left are 4 and 5, but if $$rank(3)=2$$, then the ranks that can be to the left are 3, 4, and 5.  Note that the number of possible ranks to the left can exceed the number of spaces to the left, and that the ranks to the left and right of $$r$$ are independently permutable.  For example, both $$\texttt{45312}$$ and $$\texttt{54321}$$ have $$\texttt{bsf}=True$$.
+
+Putting this all together we get
+
+$$P(\texttt{bsf} \vert r )=\frac{1}{R!} \sum_{i=1}^{R-r+1}N(i)$$
+
+where
+
+$$N(i) = \binom{R-i}{r-1}(r-1)!(R-r)!$$
+
+Which simplifies conveniently to
+
+$$P(\texttt{bsf} \vert r) = 1/r$$
 
 
 
