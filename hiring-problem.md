@@ -30,15 +30,15 @@ In the diagram time flows downward, with candidates being interviewed sequential
 
 When candidate number $$r$$ is interviewed they can either be the best-so-far or not.  If they're not, we pass automatically (as per the heuristic); if they are, we can either hire or pass.  If we hire, we're done.
 
-Given that a candidate is better than the best so far, we need to decide to hire or pass.  This is done by computing two things: the probability that they're rank-1, and the probability that, if we pass, we'll find and hire rank-1.  Let's call the first quantity $$P(1|r,\texttt{bsf})$$ and the second quantity $$V(r+1)$$.  In the parlance of backward induction $$V$$ is called the _value function_, and $$V(r+1)$$ is the value of being in _state_ $$r+1$$.  $$\texttt{bsf}$$ is a binary variable indicating whether or not the current candidate is the best so far.
+Given that a candidate is better than the best so far, we need to decide to hire or pass.  This is done by computing two things: the probability that they're rank-1, and the probability that, if we pass, we'll find and hire rank-1.  Let's call the first quantity $$P(1 \vert r,\texttt{bsf})$$ and the second quantity $$V(r+1)$$.  In the parlance of backward induction $$V$$ is called the _value function_, and $$V(r+1)$$ is the value of being in _state_ $$r+1$$.  $$\texttt{bsf}$$ is a binary variable indicating whether or not the current candidate is the best so far.
 
-The solution is to hire when $$P(1|r,\texttt{bsf}) \ge V(r+1)$$, otherwise pass.
+The solution is to hire when $$P(1 \vert r,\texttt{bsf}) \ge V(r+1)$$, otherwise pass.
 
 ### Computing the $P$s and $V$s
 
-The value function is given by $$V(r) = V(r|\texttt{bsf})\theta_r + V(r|\neg\texttt{bsf})(1-\theta_r)$$
+The value function is given by $$V(r) = V(r \vert \texttt{bsf})\theta_r + V(r \vert \neg\texttt{bsf})(1-\theta_r)$$
 
-where $$V(r|\texttt{bsf})$$ is the value of being in state $$r$$ given that after the interview $$r$$ is the best-so-far.  Similarly, 
+where $$V(r \vert \texttt{bsf})$$ is the value of being in state $$r$$ given that after the interview $$r$$ is the best-so-far.  Similarly, 
 
 
 
