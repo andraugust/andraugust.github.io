@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hiring-problem.md" beforeDir="false" afterPath="$PROJECT_DIR$/hiring-problem.md" afterDir="false" />
-    </list>
+    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +22,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="212">
-                <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+                <caret line="43" selection-start-line="43" selection-end-line="43" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hiring-problem.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="430">
+                <caret line="32" selection-start-line="32" selection-end-line="32" />
               </first_editor>
               <second_editor />
             </state>
@@ -182,12 +192,12 @@
       <workItem from="1565929543064" duration="3572000" />
       <workItem from="1566883812548" duration="6083000" />
       <workItem from="1567241587965" duration="5551000" />
-      <workItem from="1567747045857" duration="2141000" />
+      <workItem from="1567747045857" duration="2451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19012000" />
+    <option name="totallyTimeSpent" value="19322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -348,21 +358,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
+    <entry file="file://$PROJECT_DIR$/index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="291" selection-start-line="8" selection-start-column="291" selection-end-line="8" selection-end-column="291" />
+          <first_editor relative-caret-position="212">
+            <caret line="43" selection-start-line="43" selection-end-line="43" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.md">
+    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="212">
-            <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <first_editor relative-caret-position="430">
+            <caret line="32" selection-start-line="32" selection-end-line="32" />
           </first_editor>
           <second_editor />
         </state>
