@@ -28,15 +28,21 @@ I'm going to find the cutoff using backward induction.  Like most backward induc
 
 
 
-In the diagram time flows downward, with candidates being interviewed sequentially. Arrows point to possible outcomes after each interview or decision.
+In the diagram time flows downward, with candidates being interviewed sequentially. Arrows point to outcomes; another interview or the option to hire.
 
-When candidate number $$r$$ is interviewed they can either be the best so-far or not.  If they're not the best so far, we pass automatically (as per the heuristic); if they're the best so far, we can either hire them or pass.  If we hire them, there's a probability $$\theta_{r}$$ they're rank-1.
+When candidate number $$r$$ is interviewed they can either be the best-so-far or not.  If they're not, we pass automatically (as per the heuristic); if they are, we can either hire or pass.  If we hire, we're done.
 
-Given that a candidate is better than the best so far, we need to decide if we want to hire them or pass to the next candidate.  This decision is made by comparing $$\theta_r$$ to $$V(r+1)$$, where $$V(r+1)$$ is defined as the expected probability of hiring rank-1 if we pass to candidate $$r+1$$.  In the parlance of backward induction $$V$$ is called the _value function_, and $$V(r+1)$$ is the value of being in _state_ $$r+1$$.  We should pass if $$\theta_r \lt V(r+1)$$, and hire otherwise.
+Given that a candidate is better than the best so far, we need to decide to hire or pass.  This is done by computing two things: the probability that they're rank-1, and the probability that, if we pass, we'll find and hire rank-1.  Let's call the first quantity $$P(1|r,\texttt{bsf})$$ and the second quantity $$V(r+1)$$.  In the parlance of backward induction $$V$$ is called the _value function_, and $$V(r+1)$$ is the value of being in _state_ $$r+1$$.  $$\texttt{bsf}$$ is a binary variable indicating whether or not the current candidate is the best so far.
 
+The solution is to hire when $$P(1|r,\texttt{bsf}) \ge V(r+1)$$, otherwise pass.
 
+### Computing $P$s and $V$s
 
+The value function is given by
 
+$$V(r) = V(r|\texttt{bsf})\theta_r + V(r|\neg\texttt{bsf})(1-\theta_r) $$
+
+where $$V(r|\texttt{bsf})$$ is the value of being in state $$r$$ given that after the interview $$r$$ is the best-so-far.  Similarly, 
 
 
 

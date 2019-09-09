@@ -24,24 +24,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="397">
-                <caret line="59" selection-start-line="59" selection-end-line="59" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hiring-problem.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="120">
-                <caret line="8" column="291" selection-start-line="8" selection-start-column="291" selection-end-line="8" selection-end-column="291" />
+              <first_editor relative-caret-position="212">
+                <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               </first_editor>
               <second_editor />
             </state>
@@ -99,10 +87,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1656" />
-    <option name="height" value="985" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -195,18 +182,18 @@
       <workItem from="1565929543064" duration="3572000" />
       <workItem from="1566883812548" duration="6083000" />
       <workItem from="1567241587965" duration="5551000" />
-      <workItem from="1567747045857" duration="1504000" />
+      <workItem from="1567747045857" duration="2141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18375000" />
+    <option name="totallyTimeSpent" value="19012000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1656" height="985" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14673913" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18984374" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -361,21 +348,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="397">
-            <caret line="59" selection-start-line="59" selection-end-line="59" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hiring-problem.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="120">
             <caret line="8" column="291" selection-start-line="8" selection-start-column="291" selection-end-line="8" selection-end-column="291" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="212">
+            <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
           </first_editor>
           <second_editor />
         </state>
