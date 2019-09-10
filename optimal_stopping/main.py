@@ -1,7 +1,7 @@
 import numpy as np
-np.set_printoptions(precision=3)
+np.set_printoptions(precision=5)
 from itertools import permutations
-
+import matplotlib.pyplot as plt
 
 
 def count():
@@ -19,69 +19,38 @@ def count():
     print('Probability of having option', n_options / len(perms))
 
 
-def get_VA():
-    R_max = 10
+def get_V(R_max):
     V = np.zeros((R_max,R_max))
-    A = np.zeros((R_max,R_max))
-    for R in range(1,R_max,1):
+    for R in range(R_max):
         V[R,R] = 1/(R+1)
         for r in range(R-1,-1,-1):
             V[R,r] = ( np.max([(r+1)/(R+1), V[R,r+1]]) * (1/(r+1)) ) + ( V[R,r+1] * (1-(1/(r+1))) )
-            if (r+1)/(R+1) >= V[R,r+1]:
-                A[R,r] = (r+1)/(R+1)
-    return V, A
+    return V
 
 
-V, A = get_VA()
-print(V)
-print(A)
+def get_thresholds(V):
+    thresholds = []
+    for row in V:
+        # non_zeros = row[row != 0]
+        # plt.clf()
+        # plt.scatter(range(len(non_zeros)), non_zeros)
+        # plt.show()
+        for i in range(len(row)):
+            if (row[i+1] + 1e-5) < row[i]:
+                thresholds.append(i)
+                break
+    return thresholds
 
+V = get_V(R_max=1000)
+thresholds = get_thresholds(V)
+win_probabilities = np.max(V,axis=1)
+print(win_probabilities)
+plt.scatter(range(1,len(thresholds)+1,1), thresholds)
+# plt.show()
+# plt.clf()
 
-
-
-
-
-# ranks = np.array([4,3,1,2,0])
-
-# N = 100
-
-# def I(k):
-#     if k == N:
-#         return 1
-#     elif np.any(ranks[0:k] < ranks[k]):
-#         return 0
-#     else:
-#         return 1
-
-# def r(k):
-#     if k == N:
-#         return 0
-#     if k == 0:
-#         return 0
-#     return (N - k) / k
-#
-# R = 0
-# s = 0
-# for k in range(N,-1,-1):
-#     R += r(k)
-#     s += 1
-#     if R >= 1:
-#         break
-#
-# Q = 1
-# for k in range(N,s-1,-1):
-#     Q *= k/N
-#
-#
-# print('\nN', N)
-# print('s', s)
-# print('\nR', R)
-# print('Q', Q)
-# print(Q*R)
-
-
-
-
-
+thresholds_relative = [t/(R+1) for R,t in enumerate(thresholds)]
+plt.scatter(range(1,len(thresholds)+1,1), thresholds_relative)
+# plt.show()
 
 
