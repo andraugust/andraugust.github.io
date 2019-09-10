@@ -98,9 +98,9 @@ I wasn't able to find a nice compact way of writing $$V(r)$$ in terms of $$r$$ a
 
 <center><img src="hiring-problem/value-function.png"></center>
 
-Value is constant for early states and then drops off to $$1/R$$.  When this drop off begins automatic passing ends.
+Value is constant for early states and then drops off to $$1/R$$.  Automatic passing ends when this dropoff begins.
 
-Here's the ending threshold as a function of $$R$$, and the win probability:
+Here's the ending threshold and win probability as a function of $$R$$ :
 
 <center><img src="hiring-problem/threshold.png"></center>
 
