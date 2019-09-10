@@ -96,4 +96,16 @@ The optimal policy is to hire if $$r$$ is better than the best so-far and  $$r/R
 
 I wasn't able to find a nice compact way of writing $$V(r)$$ in terms of $$r$$ alone, i.e., without recursion, so the next best thing is to compute it numerically.  Here's the result:
 
-$$\begin{array} {|r|r|}\hline 0_0 & 0_1 & 0_2 \\ \hline 1_0 & 1_1 & 1_2 \\ \hline 2_0 & 2_1 & 2_2 \\ \hline  \end{array}$$
+<center><img src="hiring-problem/value-function.png"></center>
+
+Value is constant for early states and then drops off to $$1/R$$.  When this drop off begins automatic passing ends.
+
+Here's the ending threshold as a function of $$R$$, and the win probability:
+
+<center><img src="hiring-problem/threshold.png"></center>
+
+<center><img src="hiring-problem/win-probability.png"></center>
+
+Evidently, the win probability approaches a constant, 
+
+

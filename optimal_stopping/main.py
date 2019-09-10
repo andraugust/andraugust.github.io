@@ -1,7 +1,36 @@
 import numpy as np
-np.set_printoptions(precision=5)
+np.set_printoptions(precision=3)
 from itertools import permutations
 import matplotlib.pyplot as plt
+
+
+def plot_value_function():
+    farmers = [i + 1 for i in range(V.shape[0])]
+    vegetables = farmers
+    fig, ax = plt.subplots()
+    im = ax.imshow(V)
+
+    # We want to show all ticks...
+    ax.set_xticks(np.arange(len(farmers)))
+    ax.set_yticks(np.arange(len(vegetables)))
+    # ... and label them with the respective list entries
+    ax.set_xticklabels(farmers)
+    ax.set_yticklabels(vegetables)
+
+    # Rotate the tick labels and set their alignment.
+    # plt.setp(ax.get_xticklabels(), ha="right")
+
+    # Loop over data dimensions and create text annotations.
+    for i in range(len(vegetables)):
+        for j in range(len(farmers)):
+            if V[i, j] != 0.0:
+                text = ax.text(j, i, f'{V[i, j]:.2f}', ha="center", va="center", color="w")
+
+    ax.set_xlabel('r')
+    ax.set_ylabel('R', rotation=0)
+    ax.set_title("Value Function")
+    fig.tight_layout()
+    plt.show()
 
 
 def count():
@@ -41,16 +70,39 @@ def get_thresholds(V):
                 break
     return thresholds
 
-V = get_V(R_max=1000)
-thresholds = get_thresholds(V)
-win_probabilities = np.max(V,axis=1)
-print(win_probabilities)
-plt.scatter(range(1,len(thresholds)+1,1), thresholds)
-# plt.show()
-# plt.clf()
 
-thresholds_relative = [t/(R+1) for R,t in enumerate(thresholds)]
-plt.scatter(range(1,len(thresholds)+1,1), thresholds_relative)
+def plot_thresholds():
+    thresholds = get_thresholds(V)
+    plt.scatter(range(1, len(thresholds) + 1, 1), thresholds)
+    plt.xticks([1,5,10,15,20])
+    plt.xlabel('R')
+    plt.ylabel('Threshold')
+    plt.show()
+
+
+def plot_win_probability():
+    win_probability = V[:,0]
+    plt.scatter(range(1, len(win_probability) + 1, 1), win_probability)
+    plt.xticks([1, 5, 10, 15, 20])
+    plt.xlabel('R')
+    plt.ylabel('Win Probability')
+    plt.show()
+
+
+V = get_V(R_max=20)
+thresholds = get_thresholds(V)
+# plot_thresholds()
+plot_win_probability()
+# win_probabilities = np.max(V,axis=1)
+# print(win_probabilities)
+
+
+# thresholds_relative = [t/(R+1) for R,t in enumerate(thresholds)]
+# plt.scatter(range(1,len(thresholds)+1,1), thresholds_relative)
 # plt.show()
+
+
+
+
 
 
