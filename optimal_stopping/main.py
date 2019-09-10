@@ -74,6 +74,7 @@ def get_thresholds(V):
 def plot_thresholds():
     thresholds = get_thresholds(V)
     plt.scatter(range(1, len(thresholds) + 1, 1), thresholds)
+    # plt.xticks([1,25,50,75,100,125,150,175,200])
     plt.xticks([1,5,10,15,20])
     plt.xlabel('R')
     plt.ylabel('Threshold')
@@ -81,23 +82,28 @@ def plot_thresholds():
 
 
 def plot_win_probability():
-    win_probability = V[:,0]
-    plt.scatter(range(1, len(win_probability) + 1, 1), win_probability)
-    plt.xticks([1, 5, 10, 15, 20])
+    win_probability = V[1:,0]
+    plt.scatter(range(2, len(win_probability) + 2, 1), win_probability)
+    plt.xticks([1,25,50,75,100,125,150,175,200])
     plt.xlabel('R')
     plt.ylabel('Win Probability')
     plt.show()
 
 
-V = get_V(R_max=20)
-thresholds = get_thresholds(V)
+V = get_V(R_max=2500)
 # plot_thresholds()
-plot_win_probability()
+# exit()
+
+thresholds = get_thresholds(V)
+thresholds_relative = [t/(R+1) for R,t in enumerate(thresholds)]
+print(thresholds_relative[-10:])
+
+
+
 # win_probabilities = np.max(V,axis=1)
 # print(win_probabilities)
 
 
-# thresholds_relative = [t/(R+1) for R,t in enumerate(thresholds)]
 # plt.scatter(range(1,len(thresholds)+1,1), thresholds_relative)
 # plt.show()
 

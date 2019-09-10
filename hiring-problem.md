@@ -100,12 +100,12 @@ I wasn't able to find a nice compact way of writing $$V(r)$$ in terms of $$r$$ a
 
 Value is constant for early states and then drops off to $$1/R$$.  Automatic passing ends when this dropoff begins.
 
-Here's the ending threshold and win probability as a function of $$R$$ :
+Here's the ending threshold and win probability as a function of $$R$$:
 
-<center><img src="hiring-problem/threshold.png"></center>
+<center><img src="hiring-problem/threshold-probability.svg" type="image/svg+xml"></center>
 
-<center><img src="hiring-problem/win-probability.png"></center>
+Evidently, the threshold is approximately linear in $$R$$ and the win probability converges to a constant. Interestingly, this constant is $$1/e$$, meanwhile the slope of the line is about 0.37.
 
-Evidently, the win probability approaches a constant, 
+Thus, you should ignore the first 37% of candidates and this will lead to about a 37% chance of choosing the top candidate. 
 
 
