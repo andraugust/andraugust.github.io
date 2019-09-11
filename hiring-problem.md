@@ -98,14 +98,16 @@ I wasn't able to find a nice compact way of writing $$V(r)$$ in terms of $$r$$ a
 
 <center><img src="hiring-problem/value-function.png"></center>
 
-Value is constant for early states and then drops off to $$1/R$$.  Automatic passing ends when this dropoff begins.
+Value is constant for early states; corresponding to the candidates that will be ignored (except for the last one with that value).
 
 Here's the ending threshold and win probability as a function of $$R$$:
 
 <center><img src="hiring-problem/threshold-probability.svg" type="image/svg+xml"></center>
 
-Evidently, the threshold is approximately linear in $$R$$ and the win probability converges to a constant. Interestingly, this constant is $$1/e$$, meanwhile the slope of the line is about 0.37.
+We see that the threshold is linear in $$R$$ and the win probability converges to a constant. Interestingly, this constant is $$1/e$$, meanwhile the slope of the threshold is about 0.37.
 
-Thus, you should ignore the first 37% of candidates and this will lead to about a 37% chance of choosing the top candidate. 
+Thus, the first 37% of candidates should be ignored, in which case the probability of choosing the top candidate is at least 37%.
 
+Now you know, so go save your company!
 
+{% include disqus.html %}

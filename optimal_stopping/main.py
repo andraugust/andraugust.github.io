@@ -66,16 +66,16 @@ def get_thresholds(V):
         # plt.show()
         for i in range(len(row)):
             if (row[i+1] + 1e-5) < row[i]:
-                thresholds.append(i)
+                thresholds.append(i+1)
                 break
     return thresholds
 
 
 def plot_thresholds():
     thresholds = get_thresholds(V)
-    plt.scatter(range(1, len(thresholds) + 1, 1), thresholds)
-    # plt.xticks([1,25,50,75,100,125,150,175,200])
-    plt.xticks([1,5,10,15,20])
+    plt.scatter(range(2, len(thresholds) + 1, 1), thresholds[1:])
+    plt.xticks([2,25,50,75,100,125,150,175,200])
+    # plt.xticks([2,4,6,8,10,12,14,16,18,20])
     plt.xlabel('R')
     plt.ylabel('Threshold')
     plt.show()
@@ -84,29 +84,25 @@ def plot_thresholds():
 def plot_win_probability():
     win_probability = V[1:,0]
     plt.scatter(range(2, len(win_probability) + 2, 1), win_probability)
-    plt.xticks([1,25,50,75,100,125,150,175,200])
+    plt.xticks([2,25,50,75,100,125,150,175,200])
+    # plt.xticks([2,4,6,8,10,12,14,16,18,20])
     plt.xlabel('R')
     plt.ylabel('Win Probability')
     plt.show()
 
 
-V = get_V(R_max=2500)
+V = get_V(R_max=1000)
 # plot_thresholds()
-# exit()
+# plot_win_probability()
 
 thresholds = get_thresholds(V)
 thresholds_relative = [t/(R+1) for R,t in enumerate(thresholds)]
-print(thresholds_relative[-10:])
+print(thresholds_relative[10:])
 
 
 
 # win_probabilities = np.max(V,axis=1)
 # print(win_probabilities)
-
-
-# plt.scatter(range(1,len(thresholds)+1,1), thresholds_relative)
-# plt.show()
-
 
 
 
