@@ -14,12 +14,6 @@ Suppose you're interviewing candidates for a job. Interviews give you informatio
 
 Transferring style from one image to another using neural networks.
 
-## [Connecting PyCharm to a Remote Server](pycharm-remote.html)
-
-<p style="opacity:0.5">01/2019</p>
-
-Reference for connecting PyCharm to a remote machine.
-
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
