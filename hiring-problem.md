@@ -110,4 +110,10 @@ So when all is said and done, the first 37% of candidates should be ignored, in 
 
 Now you know, so go save your company!
 
+
+### References
+
+- https://en.wikipedia.org/wiki/Secretary_problem
+- http://theory.stanford.edu/~sergei/slides/hiring-dagstuhl.pdf
+
 {% include disqus.html %}
