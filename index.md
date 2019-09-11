@@ -2,6 +2,12 @@
 layout: default
 ---
 
+## [The Hiring Problem](hiring-problem.html)
+
+<p style="opacity:0.5">02/2019</p>
+
+Suppose you're interviewing candidates for a job. Interviews give you information about how good candidates can be, but they're also costly.  When should you stop interviewing and start selecting a candidate? 
+
 ## [Neural Style Transfer](neural-style-transfer.html)
 
 <p style="opacity:0.5">02/2019</p>

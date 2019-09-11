@@ -16,7 +16,7 @@ First I'll tell you the optimal strategy, then we'll solve for the details.
 
 The optimal strategy is to automatically pass on a fixed number of candidates and then select the first one who's better than the rest seen so far.  If no better candidate is found, select the last one (you have to, they're the only one left).
 
-The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidate's you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might not be better than the first 5, and since you're looking for rank-$$1$$ you should pass, even if this means passing until you get to the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
+The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidates you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might not be better than the first 5, and since you're looking for rank-$$1$$ you should pass, even if this means passing until you get to the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
 
 So the question becomes: what's the cutoff after which you should start looking for the best-so-far, i.e., transition from exploring possibilities to exploiting what you know?
 
@@ -36,7 +36,7 @@ The solution is to hire when $$P(1 \vert \text{bsf}) \ge V(r+1)$$, otherwise pas
 
 ### Computing P and V
 
-The value function has a term for the best-so-far outcome and a term for the not-best-so-far ourcome:
+The value function has a term for the best-so-far outcome and a term for the not-best-so-far outcome:
 
 $$V(r) = V(r \vert \text{bsf})P(\text{bsf} \vert r) + V(r \vert \neg\text{bsf})(1-P(\text{bsf} \vert r))$$
 
@@ -60,7 +60,7 @@ $$\vdots$$
 
 These are the ranks we would know if we interviewed to the end. If we're at $$r=3$$, the arrowed outcomes are the ones for which $$\text{bsf}=True$$. Our job is to count the number of arrowed outcomes and divide by the total number of possible outcomes.
 
-To start, observe that $$\text{bsf}$$ can only be $$True$$ when $$rank(3) \in \{1,2,3\}$$.  (For example, if $$rank(3)=4$$, there's no way to make $$rank(1) \lt 4$$ and $$rank(2) \lt 4$$.) For each rank in this set, there are a different number of ways to fill in the other 4 ranks. For example, if $$rank(3)=3$$, then the only ranks that can be to the left are 4 and 5, but if $$rank(3)=2$$, then the ranks that can be to the left are 3, 4, and 5.  Note that the number of possible ranks to the left can exceed the number of spaces to the left, and the ranks to the left and right of $$r$$ are independently permutable.  For example, both $$\text{45312}$$ and $$\text{54321}$$ have $$\text{bsf}=True$$.
+To start, observe that $$\text{bsf}$$ can only be $$True$$ when $$rank(3) \in \{1,2,3\}$$.  For example, if $$rank(3)=4$$, there's no way to make $$rank(1) \lt 4$$ and $$rank(2) \lt 4$$. For each rank in this set, there are a different number of ways to fill in the other 4 ranks. For example, if $$rank(3)=3$$, then the only ranks that can be to the left are 4 and 5, but if $$rank(3)=2$$, then the ranks that can be to the left are 3, 4, and 5.  Note that the number of possible ranks to the left can exceed the number of spaces to the left, and the ranks to the left and right of $$r$$ are independently permutable.  For example, both $$\text{45312}$$ and $$\text{54321}$$ have $$\text{bsf}=True$$.
 
 Putting this all together we get
 
@@ -74,7 +74,7 @@ The binomial coefficient comes from choosing which ranks to put on the left of $
 
 The probability simplifies conveniently to $$1/r$$.
 
-Next, let's look at $$V(r \vert \neg \text{bsf})$$.  This one's much easier.  This is the case where we automatically pass to the next candidate, in otherwords $$V(r \vert \neg \text{bsf}) = V(r+1)$$. Easy.
+Next, let's look at $$V(r \vert \neg \text{bsf})$$.  This one's much easier.  This is the case where we automatically pass to the next candidate, in other words $$V(r \vert \neg \text{bsf}) = V(r+1)$$. Easy.
 
 Now $$V(r \vert \text{bsf})$$.  This is where we know candidate $$r$$ is best-so-far.  So what's the value then?  It's the value of choosing the optimal decision.  If the decision is pass, then we move to $$r+1$$ and the value is $$V(r+1)$$. If the decision is keep, then the value is the probability they're rank-1; this probability we've already encountered, it's $$P(1 \vert \text{bsf})$$.  So we have
 
@@ -106,7 +106,7 @@ Here's the stop-automatically-passing threshold and win probability as a functio
 
 We see that the threshold is linear in $$R$$ and the win probability converges to a constant. Interestingly, this constant is $$1/e$$, meanwhile the slope of the threshold is about 0.37, close to $$1/e$$.
 
-So when all is said and done, the first 37% of candidates should be ignored, in which case the probability of choosing the best candidate maximizes at at least 37%.
+So when all is said and done, the first 37% of candidates should be ignored, in which case the probability of choosing the best candidate maximizes at 37% or more, depending on how many total candidates there are.
 
 Now you know, so go save your company!
 

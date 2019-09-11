@@ -4,9 +4,7 @@
     <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiring-problem.md" beforeDir="false" afterPath="$PROJECT_DIR$/hiring-problem.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiring-problem/threshold-probability.svg" beforeDir="false" afterPath="$PROJECT_DIR$/hiring-problem/threshold-probability.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiring-problem/threshold-small-big.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/optimal_stopping/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/optimal_stopping/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,17 +21,17 @@
         <entry file="file://$PROJECT_DIR$/optimal_stopping/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="541">
-              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hiring-problem.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="574">
-                <caret line="112" selection-start-line="112" selection-end-line="112" />
+              <first_editor relative-caret-position="1164">
+                <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
               </first_editor>
               <second_editor />
             </state>
@@ -52,12 +50,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="197">
-                <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+              <first_editor relative-caret-position="120">
+                <caret line="8" column="69" lean-forward="true" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
               </first_editor>
               <second_editor />
             </state>
@@ -83,12 +81,14 @@
       <find>N</find>
       <find>|</find>
       <find>center</find>
+      <find>texttt</find>
     </findStrings>
     <replaceStrings>
       <replace>song_name</replace>
       <replace>'</replace>
       <replace>R</replace>
       <replace>\vert</replace>
+      <replace>text</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -112,9 +112,9 @@
         <option value="$PROJECT_DIR$/make_songbook.py" />
         <option value="$PROJECT_DIR$/about.md" />
         <option value="$PROJECT_DIR$/wikilinks.md" />
-        <option value="$PROJECT_DIR$/index.md" />
         <option value="$PROJECT_DIR$/optimal_stopping/main.py" />
         <option value="$PROJECT_DIR$/hiring-problem.md" />
+        <option value="$PROJECT_DIR$/index.md" />
       </list>
     </option>
   </component>
@@ -210,12 +210,12 @@
       <workItem from="1565929543064" duration="3572000" />
       <workItem from="1566883812548" duration="6083000" />
       <workItem from="1567241587965" duration="5551000" />
-      <workItem from="1567747045857" duration="13087000" />
+      <workItem from="1567747045857" duration="13770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29958000" />
+    <option name="totallyTimeSpent" value="30641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="148" y="47" width="1506" height="1121" extended-state="0" />
@@ -372,7 +372,7 @@
     <entry file="file://$PROJECT_DIR$/optimal_stopping/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
-          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
         </state>
       </provider>
     </entry>
@@ -386,21 +386,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.md">
+    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="197">
-            <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+          <first_editor relative-caret-position="1164">
+            <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
+    <entry file="file://$PROJECT_DIR$/index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="574">
-            <caret line="112" selection-start-line="112" selection-end-line="112" />
+          <first_editor relative-caret-position="120">
+            <caret line="8" column="69" lean-forward="true" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
           </first_editor>
           <second_editor />
         </state>
