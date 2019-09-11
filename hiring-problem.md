@@ -30,41 +30,41 @@ In the diagram time flows downward, with candidates being interviewed sequential
 
 When candidate number $$r$$ is interviewed they can either be the best-so-far or not.  If they're not, we pass automatically (as per the heuristic); if they are, we can hire or pass.  If we hire, we're done.
 
-Given that a candidate is better than the best so far, we need to decide if it's best to hire or pass.  This is done by computing two things: the probability of them being rank-1, and the probability of us finding and hiring rank-1 if we pass.  Let's call the first quantity $$P(1 \vert \texttt{bsf})$$ and the second quantity $$V(r+1)$$.  In the parlance of backward induction $$V$$ is called the _value function_ and $$V(r+1)$$ is the value of being in _state_ $$r+1$$.  $$\texttt{bsf}$$ is a binary variable indicating if the current candidate is the best-so-far.
+Given that a candidate is better than the best so far, we need to decide if it's best to hire or pass.  This is done by computing two things: the probability of them being rank-1, and the probability of us finding and hiring rank-1 if we pass.  Let's call the first quantity $$P(1 \vert \text{bsf})$$ and the second quantity $$V(r+1)$$.  In the parlance of backward induction $$V$$ is called the _value function_ and $$V(r+1)$$ is the value of being in _state_ $$r+1$$.  $$\text{bsf}$$ is a binary variable indicating if the current candidate is the best-so-far.
 
-The solution is to hire when $$P(1 \vert \texttt{bsf}) \ge V(r+1)$$, otherwise pass.
+The solution is to hire when $$P(1 \vert \text{bsf}) \ge V(r+1)$$, otherwise pass.
 
 ### Computing P and V
 
 The value function has a term for the best-so-far outcome and a term for the not-best-so-far ourcome:
 
-$$V(r) = V(r \vert \texttt{bsf})P(\texttt{bsf} \vert r) + V(r \vert \neg\texttt{bsf})(1-P(\texttt{bsf} \vert r))$$
+$$V(r) = V(r \vert \text{bsf})P(\text{bsf} \vert r) + V(r \vert \neg\text{bsf})(1-P(\text{bsf} \vert r))$$
 
-Here, $$P(\texttt{bsf} \vert r)$$ is the probability that candidate $$r$$ will be the best-so-far after their interview.  To compute this probability, we need to count the number of ways $$\texttt{bsf}$$ can happen.
+Here, $$P(\text{bsf} \vert r)$$ is the probability that candidate $$r$$ will be the best-so-far after their interview.  To compute this probability, we need to count the number of ways $$\text{bsf}$$ can happen.
 
 Here's an example.  Suppose there are 5 candidates and we're about to interview candidate 3.  The following are possible rank outcomes, ordered left to right by order of interview:
 
-$$\rightarrow \texttt{34152}$$
+$$\rightarrow \text{34152}$$
 
-$$\rightarrow \texttt{43251}$$
+$$\rightarrow \text{43251}$$
 
-$$\texttt{32514}$$
+$$\text{32514}$$
 
-$$\rightarrow \texttt{45312}$$
+$$\rightarrow \text{45312}$$
 
-$$\rightarrow \texttt{45321}$$
+$$\rightarrow \text{45321}$$
 
-$$\texttt{23451}$$
+$$\text{23451}$$
 
 $$\vdots$$
 
-These are the outcomes we would see if we interviewed to the end. If we're at $$r=3$$, the arrowed outcomes are the ones that have $$\texttt{bsf}=True$$. Our job is to count the number of arrowed outcomes and divide by the total number of possible outcomes.
+These are the outcomes we would see if we interviewed to the end. If we're at $$r=3$$, the arrowed outcomes are the ones that have $$\text{bsf}=True$$. Our job is to count the number of arrowed outcomes and divide by the total number of possible outcomes.
 
-To start, observe that $$\texttt{bsf}=True$$ when $$rank(3) \in \{1,2,3\}$$.  For each rank in this set, there are a different number of ways to fill in the other 4 ranks. For example, if $$rank(3)=3$$, then the only ranks that can be to the left are 4 and 5, but if $$rank(3)=2$$, then the ranks that can be to the left are 3, 4, and 5.  Note that the number of possible ranks to the left can exceed the number of spaces to the left, and that the ranks to the left and right of $$r$$ are independently permutable.  For example, both $$\texttt{45312}$$ and $$\texttt{54321}$$ have $$\texttt{bsf}=True$$.
+To start, observe that $$\text{bsf}=True$$ when $$rank(3) \in \{1,2,3\}$$.  For each rank in this set, there are a different number of ways to fill in the other 4 ranks. For example, if $$rank(3)=3$$, then the only ranks that can be to the left are 4 and 5, but if $$rank(3)=2$$, then the ranks that can be to the left are 3, 4, and 5.  Note that the number of possible ranks to the left can exceed the number of spaces to the left, and that the ranks to the left and right of $$r$$ are independently permutable.  For example, both $$\text{45312}$$ and $$\text{54321}$$ have $$\text{bsf}=True$$.
 
 Putting this all together we get
 
-$$P(\texttt{bsf} \vert r )=\frac{1}{R!} \sum_{i=1}^{R-r+1}N(i)$$
+$$P(\text{bsf} \vert r )=\frac{1}{R!} \sum_{i=1}^{R-r+1}N(i)$$
 
 where
 
@@ -74,15 +74,15 @@ The binomial coefficient comes from choosing which ranks to put on the left of $
 
 The probability simplifies conveniently to $$1/r$$.
 
-Next, let's look at $$V(r \vert \neg \texttt{bsf})$$.  This one's much easier.  This is the case where we automatically pass to the next candidate, in otherwords $$V(r \vert \neg \texttt{bsf}) = V(r+1)$$. Easy.
+Next, let's look at $$V(r \vert \neg \text{bsf})$$.  This one's much easier.  This is the case where we automatically pass to the next candidate, in otherwords $$V(r \vert \neg \text{bsf}) = V(r+1)$$. Easy.
 
-Now $$V(r \vert \texttt{bsf})$$.  This is where we know candidate $$r$$ is best-so-far.  So what's the value then?  It's the value of choosing the optimal decision.  If the decision is pass, then we move to $$r+1$$ and the value is $$V(r+1)$$. If the decision is keep, then the value is the probability they're rank-1; this probability we'll call $$P(1 \vert \texttt{bsf})$$.  So we have
+Now $$V(r \vert \text{bsf})$$.  This is where we know candidate $$r$$ is best-so-far.  So what's the value then?  It's the value of choosing the optimal decision.  If the decision is pass, then we move to $$r+1$$ and the value is $$V(r+1)$$. If the decision is keep, then the value is the probability they're rank-1; this probability we'll call $$P(1 \vert \text{bsf})$$.  So we have
 
-$$V(r \vert \texttt{bsf}) = \max \left\{ P(1 \vert \texttt{bsf}), V(r+1) \right\}$$
+$$V(r \vert \text{bsf}) = \max \left\{ P(1 \vert \text{bsf}), V(r+1) \right\}$$
 
-To calculate $$P(1 \vert \texttt{bsf})$$ our job is to count the number of ways a candidate can be rank-1, assuming they're best-so-far, and divide by the total number of ways they can be best-so-far.  $$N(i)$$ does exactly that:
+To calculate $$P(1 \vert \text{bsf})$$ our job is to count the number of ways a candidate can be rank-1, assuming they're best-so-far, and divide by the total number of ways they can be best-so-far.  $$N(i)$$ does exactly that:
 
-$$P(1 \vert \texttt{bsf}) = \frac{N(1)}{\sum_{i=1}^{R-r+1}N(i)}$$
+$$P(1 \vert \text{bsf}) = \frac{N(1)}{\sum_{i=1}^{R-r+1}N(i)}$$
 
 Which simplifies conveniently to $$r/R$$.
 
