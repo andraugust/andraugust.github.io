@@ -4,7 +4,7 @@ layout: default
 
 # The Hiring Problem
 
-Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate, otherwise your company is bound to fail.  The candidates you have lined up are top-notch, but this means they have offers on the table from your competitor, and they'll take those offers unless you hire them on the spot.
+Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate.  The candidates you have lined up are top-notch, but this means they have offers on the table from your competitor, and they'll take those offers unless you hire them on the spot.
 
 Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you either hire or pass to the next candidate.  If you pass on a candidate, you can't go back later and make them an offer; they've already accepted your competitor's offer!
 
