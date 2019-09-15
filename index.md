@@ -6,7 +6,7 @@ layout: default
 
 <p style="opacity:0.5">09/2019</p>
 
-Suppose you're interviewing candidates for a job. Interviews are costly, but they give you information about how good candidates are.  When should you stop interviewing and select a candidate in order to maximize your chance of getting the best one? 
+Suppose you're interviewing candidates for a job. Interviews are costly, but they give information about candidate rank.  How long should you interview for before settling on a candidate?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
