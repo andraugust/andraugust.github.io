@@ -18,7 +18,7 @@ The optimal strategy is to automatically pass on a fixed number of candidates an
 
 The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidates you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might not be better than the first 5, and since you're looking for rank-$$1$$ you should pass, even if this means passing until you get to the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
 
-So the question becomes: what's the cutoff after which you should start looking for the best-so-far, i.e., transition from exploring possibilities to exploiting what you know?
+So the question becomes: what's the cutoff after which you should start looking for the best-so-far, i.e., the transition from exploring possibilities to exploiting what you've learned?
 
 ### Finding the cutoff
 
@@ -104,9 +104,21 @@ Here's the stop-automatically-passing threshold and win probability as a functio
 
 <center><img src="hiring-problem/threshold-probability.svg" type="image/svg+xml"></center>
 
-We see that the threshold is linear in $$R$$ and the win probability converges to a constant. Interestingly, this constant is $$1/e$$, meanwhile the slope of the threshold is about 0.37, close to $$1/e$$.
+We see that the threshold is linear in $$R$$ and the win probability converges to a constant. Interestingly, this constant is $$1/e$$, meanwhile the slope of the threshold is also close to $$1/e$$, it's about 0.37.
 
-So when all is said and done, the first 37% of candidates should be ignored, in which case the probability of choosing the best candidate maximizes at 37% or more, depending on how many total candidates there are.
+### Simulation
+
+To verify the analytic solution, let's simulate a hundred thousand hiring situations for each $$R$$ and see what the win rate is for all possible thresholds.  Here's the result:
+
+<center><img src="hiring-problem/simulation_small.png"></center>
+
+<center><img src="hiring-problem/simulations_big.png"></center>
+
+Looking at the first plot, we see the maximum probabilities have the same value and occur at the same threshold as in the analytic solution, so the analytic solution is validated.
+
+### Conclusion
+
+When all's said and done, the first 37% of candidates should be ignored, in which case the probability of choosing the best candidate maximizes between 37% to 50%, depending on the total number of candidates.
 
 Now you know, so go save your company!
 
