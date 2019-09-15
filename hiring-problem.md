@@ -118,7 +118,7 @@ Looking at the first plot, we see the maximum probabilities have the same value 
 
 ### Conclusion
 
-When all's said and done, the first 37% of candidates should be ignored, in which case the probability of choosing the best candidate maximizes between 37% to 50%, depending on the total number of candidates.
+When all's said and done, the first 37% of candidates should be ignored, in which case the probability of choosing the best candidate maximizes at between 37% and 50% depending on the total number of candidates.
 
 Now you know, so go save your company!
 
