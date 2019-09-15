@@ -24,7 +24,7 @@ So the question becomes: what's the cutoff after which you should start looking 
 
 I'm going to find the cutoff using backward induction.  Like most backward induction problems it helps to look at a state-action diagram:
 
-<center><img src="hiring-problem/state-actiondiagram.pdf"></center>
+<center><img src="hiring-problem/state-actiondiagram.png"></center>
 
 In the diagram time flows downward with candidates being interviewed sequentially. Arrows point to outcomes, which can either be another interview or the option to hire.
 
