@@ -38,7 +38,7 @@ The solution is to hire when $$P(1 \vert \text{bsf}) \ge V(r+1)$$, otherwise pas
 
 The value function has a term for the best-so-far outcome and a term for the not-best-so-far outcome:
 
-$$V(r) = V(r \vert \text{bsf})P(\text{bsf} \vert r) + V(r \vert \neg\text{bsf})(1-P(\text{bsf} \vert r))$$
+<div style="overflow-x: scroll;"> $$V(r) = V(r \vert \text{bsf})P(\text{bsf} \vert r) + V(r \vert \neg\text{bsf})(1-P(\text{bsf} \vert r))$$ </div>
 
 Here, $$P(\text{bsf} \vert r)$$ is the probability that candidate $$r$$ will be the best-so-far before we've interviewed them.  To compute it, we need to count the number of ways $$\text{bsf}$$ can happen.
 
@@ -64,7 +64,7 @@ To start, observe that $$\text{bsf}$$ can only be $$True$$ when $$rank(3) \in \{
 
 Putting this all together we get
 
-$$P(\text{bsf} \vert r )=\frac{1}{R!} \sum_{i=1}^{R-r+1}N(i)$$
+<div style="overflow-x: scroll;"> $$P(\text{bsf} \vert r )=\frac{1}{R!} \sum_{i=1}^{R-r+1}N(i)$$ </div>
 
 where
 

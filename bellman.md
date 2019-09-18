@@ -171,23 +171,26 @@ __Example Game.__ Here's an example game, the winner is Player 2 who used a re-r
 
 #### Player 1
 
+<div style="overflow-x: scroll;">
 | Rolled | Collected | Cumulative Collected | Cumulative Score |
 |:-------:|:--------:|:---------:|:---------:|
 | 4,3,5,3,1 | 3,3 | 3,3 | 0  |
 | 4,3,1 | 3,1 | 3,3,3,1 | 1  |
 | 6 | 6 | 3,3,3,1,6 | 7  |
+</div>
 
 <br />
 
 #### Player 2
 
+<div style="overflow-x: scroll;">
 | Rolled | Collected | Cumulative Collected | Cumulative Score |
 |:-------:|:--------:|:---------:|:---------:|
 | 3,3,1,2,5 | 3,3 | 3,3 |  0  |
 | 6,4,5 | --- | 3,3 | 0  |
 | 4,4,3 | 4,3 | 3,3,4,3 |  4  |
 | 2 | 2 | 3,3,4,3,2 |  6  |
-
+</div>
 <br />
 
 __Questions for the Reader__
