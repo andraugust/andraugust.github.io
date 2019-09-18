@@ -125,7 +125,7 @@ Now you know, so go save your company!
 
 ### References
 
-- https://en.wikipedia.org/wiki/Secretary_problem
-- http://theory.stanford.edu/~sergei/slides/hiring-dagstuhl.pdf
+- [Wikipedia](https://en.wikipedia.org/wiki/Secretary_problem)
+- [Slides](http://theory.stanford.edu/~sergei/slides/hiring-dagstuhl.pdf)
 
 {% include disqus.html %}

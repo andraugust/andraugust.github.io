@@ -10,33 +10,33 @@ layout: default
 
 ### Threes: How to Play
 
-Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice with threes counting as _zero_.  The second player rolls in the same way and the player with the lowest score wins.
+Threes is a dice game for two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice, where threes counting as _zero_.  The second player rolls in the same way and the player with the lowest score wins.
 
-Dice are collected in an interesting way.  Players are supposed to take at least one dice after each roll, but if they roll all high dice (like all fives and sixes) and they don't want to take any, then they can choose to take no dice and re-roll, but with the consequence that they have to take _at least two_ dice on the re-roll.
+Dice are collected in an interesting way.  You're supposed to take at least one dice after each roll, but if you roll all high dice (like all fives and sixes) and you don't want to take any, then you can take no dice and re-roll, but with the consequence that you have to take _at least two_ dice on the re-roll.
 
-Note that players aren't allowed to accumulate re-rolls and they aren't allowed to re-roll the last die---they have to take it.  An example game is shown at the bottom of this post.
+Unortunately you can't accumulate re-rolls, for example by takeing no-dice multiple times, and you can't re-roll the last die---you have to take it.  An example game is worked out at the bottom of this post.
 
 ### Backward Induction
 
-We're going to solve Threes using backward induction.  Backward induction works by identifying the optimal action at the last step of the game, and uses that action to identify the optimal action at the second to last step, etc. until the current step is reached.
+I'm going to find the optimal policy for Threes using backward induction.  Backward induction finds the optimal action at the last step of the game and uses it to find the optimal action at the second to last step, etc. until the current step is reached.
 
-It may seem like this requires us to simulate the game backward every time we want to take an action, but in-fact we can compute so-called _values_ which cache the results of the simulation and eliminate the need to repeat simulations.  All of this will be clearer in the example to come.
+In order to avoid stepping backwards in time at every decision point we compute so-called _values_ which allow us to look-up a number that determines the optimal action at a given point in the game.  The bulk of the challenge in backward induction is computing this so-called value function.  Before doing this though, it helps to lay-out the game representation and introduce some notation.
 
 ### Game Representation
-Let's set up some notation for the game representation:
+The game has three main components:
 
 * __States:__ Game states consist of a list of rolled dice values and a binary take-two indicator.  For example, the state $$ s = ((0,2,4,6),T) $$ indicates a roll of $$(0,2,4,6)$$ with take-two set to True.  The value $$3$$ is written as $$0$$ and the other outcomes are written in sorted order.  Sorting is done because we're going to refer to dice using an index and we want low indices to correspond to low dice values.
 
 * __Actions:__ An action is an integer $$a$$ indicating the number of dice to take.  Since we're trying to minimize score, we'll assume that these are the _lowest_ $$a$$ dice.  Note that $$0 \le a \le len(r)$$, where $$r$$ is the roll-list.
 
-* __Game Dynamics__: Game dynamics are determined by a pseudo-random number generator that gives each dice a uniformly random outcome.  Agent actions are determined by a policy $$a(s)$$ that maps states to actions.  Note that an agent is fully specified by its policy and in this sense the agent _is_ its policy.
+* __Dynamics__: Dynamics are determined by a pseudo-random number generator that gives each dice a uniformly random outcome.  Agent actions are determined by a policy $$a(s)$$ that maps states to actions.  Note that an agent is fully specified by its policy and in this sense the agent _is_ its policy.
 
 ### Rolling First
-If you roll first, you don't know what your opponent's score is going to be, so your best bet is to minimize your final score.
+If you roll first, you don't know what your opponent's score will be, so your best bet is to minimize your final score.
 
-To find the policy that does this, we'll make a probabilistic model of the dice outcomes and use it to predict which actions will result in which scores, then we'll choose an action that minimizes expected score and take that as our policy.
+To find the policy that does this, we'll make a probabilistic model of the dice outcomes and use it to predict which actions will result in which scores, then we'll choose the action that minimizes expected score.
 
-In technical slang we're treating the game as a _Markov decision process_ and we're solving it using _backward induction_ on the _Bellman equation_, but an easier way to understand this is with a few examples.
+In the parlance of backward induction we're treating the game as a _Markov decision process_ and we're solving it using _backward induction_ on the _Bellman equation_.  Here's an example to simplify:
 
 Suppose there are two dice left and we don't have to take two and we roll $$(1,6)$$.  The diagram below shows the decisions we can make.
 
@@ -52,7 +52,7 @@ In this case we can't choose an action because we don't know $$v(len(r)=3, \text
 
 Thus the optimal action is $$a=1$$. Notice that we had to simulate backward starting from the end of the game.  This is the defining property of backward induction.  To prevent redundant simulations, we cache values so we only have to simulate once per state, afterwards we can just look-up the information we no to act.
 
-__The Value Function__. Once we have all the values $$v$$ it's simple to choose the optimal action from an arbitrary state: choose the action that minimizes immediate points _plus_ next-state value.  Notice that $$v$$ depends on the _number_ of dice being rolled and not on the dice values themselves.  This means that the game can be represented more simply in terms of the number of dice rolled $$len(r)$$ and the take-two indicator.  The values are organized in a table called _the value function_.  Here it is:
+__The Value Function__. Once we have all the values $$v$$ it's simple to choose the optimal action from an arbitrary state: choose the action that minimizes immediate points _plus_ next-state value.  Notice that $$v$$ depends on the _number_ of dice being rolled and the dice values themselves.  This means the game can be represented more simply in terms of the number of dice rolled $$len(r)$$ and the take-two indicator.  The values are organized in a table called _the value function_.  Here it is:
 
 | _len(r)_ | _taketwo_ | _v_ |
 |:-------:|:---------:|:---:|
@@ -81,9 +81,9 @@ Here's a comparison between the optimal policy and _my_ policy.  To approximate 
 <center><img src="bellman/human.png"></center>
 
 ### Rolling Second
-If we roll second we know what score to beat, so instead of acting to minimizing final score we'll act to maximize probability of winning.  Again it's helpful to start with an example.
+If you roll second you know what score to beat, so instead of acting to minimizing final score it's best to maximize probability of winning, i.e., get a score lower than your opponent.  Again it's helpful to start with an example.
 
-Suppose we roll two dice, resulting in $$(1,6)$$, and the opponent's score is $$5$$ and our score-so-far is $$3$$, and we don't have to take two.  We'll parameterize the problem in terms of the _gap_ $$g$$ between our score and the opponent's score. __In order to win or tie we have to preserve $$g \ge 0$$__.  In this example $$g=2$$.  The decision tree below shows the actions we can take:
+Suppose you roll two dice, resulting in $$(1,6)$$, and the opponent's score is $$5$$ and your score-so-far is $$3$$, and you don't have to take two.  We'll parameterize the problem in terms of the _gap_ $$g$$ between your score and the opponent's. __In order to win or tie you need $$g \ge 0$$__.  In this example $$g=2$$.  This decision tree shows the available actions:
 
 <center><img src="bellman/roll-second.png"></center>
 
@@ -97,7 +97,7 @@ and
 
 Thus we choose $$a=1$$.  Note we didn't consider $$a=2$$ because it makes $$g < 0$$.
 
-__The Value Function__.  The value function is a little more complicated compared to when we were rolling first; it now depends on $$g$$, which can have up to 30 values.   Instead of listing all the values in a table, we'll put them in a code snippet that also shows how to compute them.
+__The Value Function__.  The value function is a little more complicated compared to when rolling first; it now depends on $$g$$, which can have up to 30 values.   Instead of listing all the values in a table, I'll put them in a code snippet that includes how they're computed.
 
 ```python
 # adjust these as needed
@@ -157,7 +157,7 @@ __The Optimal Policy__.  The optimal policy for rolling second is:
 
 Here $$v$$ is the value/win-probability of the corresponding state-triple; values are listed in the code-snippet above.  To evaluate this equation it's necessary to know the values for all actions being considered.
 
-Initially values are only available for states at the end of the game, so it's necessary to simulate backward from $$len(r)=1$$ to $$len(r)=5$$ and place win-probabilities in the value function as they're discovered.  This is backward induction + value-cacheing.
+Initially values are only available for states at the end of the game, so it's necessary to simulate backward from $$len(r)=1$$ to $$len(r)=5$$ and place win-probabilities in the value function as they're discovered.  This is the backward part of backward induction.
 
 __Experiments__.  To conclude the study, I'll roll first against the AI and see how often I win.  Here's the result:
 
@@ -171,31 +171,23 @@ __Example Game.__ Here's an example game, the winner is Player 2 who used a re-r
 
 #### Player 1
 
-<div style="overflow-x: scroll;">
-| Rolled | Collected | Cumulative Collected | Cumulative Score |
-|:-------:|:--------:|:---------:|:---------:|
-| 4,3,5,3,1 | 3,3 | 3,3 | 0  |
-| 4,3,1 | 3,1 | 3,3,3,1 | 1  |
-| 6 | 6 | 3,3,3,1,6 | 7  |
-</div>
-
-<br />
+|  Rolled   | Collected | Cumulative Collected | Cumulative Score |
+| :-------: | :-------: | :------------------: | :--------------: |
+| 4,3,5,3,1 |    3,3    |         3,3          |        0         |
+|   4,3,1   |    3,1    |       3,3,3,1        |        1         |
+|     6     |     6     |      3,3,3,1,6       |        7         |
 
 #### Player 2
 
-<div style="overflow-x: scroll;">
 | Rolled | Collected | Cumulative Collected | Cumulative Score |
 |:-------:|:--------:|:---------:|:---------:|
 | 3,3,1,2,5 | 3,3 | 3,3 |  0  |
 | 6,4,5 | --- | 3,3 | 0  |
 | 4,4,3 | 4,3 | 3,3,4,3 |  4  |
 | 2 | 2 | 3,3,4,3,2 |  6  |
-</div>
-<br />
 
-__Questions for the Reader__
-* What challenges would be faced if the total number of dice was much larger than 5, say 5000?
-* What would be an interesting format for betting on Threes?  How could the information derived in this post be used to maximize earnings?
+__More questions__
+* Is Threes tractable when the number of dice is much larger than 5, say 5000?
 * How would Threes be solved if it had more than two players?
 
 <br />
