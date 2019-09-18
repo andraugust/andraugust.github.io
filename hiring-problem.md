@@ -78,17 +78,17 @@ Next, let's look at $$V(r \vert \neg \text{bsf})$$.  This one's much easier.  Th
 
 Now $$V(r \vert \text{bsf})$$.  This is where we know candidate $$r$$ is best-so-far.  So what's the value then?  It's the value of choosing the optimal decision.  If the decision is pass, then we move to $$r+1$$ and the value is $$V(r+1)$$. If the decision is keep, then the value is the probability they're rank-1; this probability we've already encountered, it's $$P(1 \vert \text{bsf})$$.  So we have
 
-$$V(r \vert \text{bsf}) = \max \left\{ P(1 \vert \text{bsf}), V(r+1) \right\}$$
+<div style="overflow-x: scroll;"> $$V(r \vert \text{bsf}) = \max \left\{ P(1 \vert \text{bsf}), V(r+1) \right\}$$ </div>
 
 To calculate $$P(1 \vert \text{bsf})$$ our job is to count the number of ways a candidate can be rank-1 given they're best-so-far, and divide by the total number of ways to be best-so-far.  $$N(i)$$ counts exactly these things:
 
-$$P(1 \vert \text{bsf}) = \frac{N(1)}{\sum_{i=1}^{R-r+1}N(i)}$$
+<div style="overflow-x: scroll;"> $$P(1 \vert \text{bsf}) = \frac{N(1)}{\sum_{i=1}^{R-r+1}N(i)}$$ </div>
 
 Which simplifies conveniently to $$r/R$$.
 
 Finally, putting all the pieces together we end up with
 
-$$V(r) = \max \left\{ r/R, V(r+1) \right\} \frac{1}{r} + V(r+1)(1-1/r)$$
+<div style="overflow-x: scroll;"> $$V(r) = \max \left\{ r/R, V(r+1) \right\} \frac{1}{r} + V(r+1)(1-1/r)$$ </div>
 
 And the optimal policy is to hire if $$r$$ is better than the best so-far and  $$r/R  \ge V(r+1)$$.
 

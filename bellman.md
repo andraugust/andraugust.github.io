@@ -89,9 +89,11 @@ Suppose we roll two dice, resulting in $$(1,6)$$, and the opponent's score is $$
 
 The values, i.e., the probabilities of winning, are computed by simulation.  For $$a=0$$ we simulate collecting two dice, and for $$a=1$$ we simulate taking one dice with an update to $$g$$ to account for the dice we took.  The results are 
 
-$$v(len(r)=2,\texttt{taketwo}=T,g=2)=0.166$$ and 
+<div style="overflow-x: scroll;"> $$v(len(r)=2,\texttt{taketwo}=T,g=2)=0.166$$ </div>
 
-$$v(len(r)=1,\texttt{taketwo}=F,g=1)=0.333$$
+and 
+
+<div style="overflow-x: scroll;"> $$v(len(r)=1,\texttt{taketwo}=F,g=1)=0.333$$ </div>
 
 Thus we choose $$a=1$$.  Note we didn't consider $$a=2$$ because it makes $$g < 0$$.
 
