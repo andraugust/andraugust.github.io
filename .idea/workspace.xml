@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bellman.md" beforeDir="false" afterPath="$PROJECT_DIR$/bellman.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tabs_raw/Neil_Young-Harvest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tabs_raw/Neil_Young-Harvest.txt" afterDir="false" />
-    </list>
+    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +37,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="446">
-                <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+                <caret line="101" selection-start-line="101" selection-end-line="101" />
               </first_editor>
               <second_editor />
             </state>
@@ -52,8 +48,8 @@
         <entry file="file://$PROJECT_DIR$/bellman.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="330">
-                <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+              <first_editor relative-caret-position="335">
+                <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
               </first_editor>
               <second_editor />
             </state>
@@ -256,12 +252,12 @@
       <workItem from="1567241587965" duration="5551000" />
       <workItem from="1567747045857" duration="14291000" />
       <workItem from="1568528096649" duration="6245000" />
-      <workItem from="1568824908393" duration="464000" />
+      <workItem from="1568824908393" duration="704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37871000" />
+    <option name="totallyTimeSpent" value="38111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -506,7 +502,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="446">
-            <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+            <caret line="101" selection-start-line="101" selection-end-line="101" />
           </first_editor>
           <second_editor />
         </state>
@@ -515,8 +511,8 @@
     <entry file="file://$PROJECT_DIR$/bellman.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="330">
-            <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+          <first_editor relative-caret-position="335">
+            <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
           </first_editor>
           <second_editor />
         </state>

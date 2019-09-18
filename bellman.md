@@ -68,7 +68,8 @@ __The Value Function__. Once we have all the values $$v$$ it's simple to choose 
 
 __The Optimal Policy__. The value function together with the heuristic "choose the action which minimizes immediate points plus next-state value" defines the optimal policy.  Here's the corresponding formula:
 
-<center> $$a(s) = \arg \min_{a'} \bigl (r[0:a'] + v(len(r)-a',a'==0) \bigr)$$ </center>
+<div style="overflow-x: scroll;"> $$a(s) = \arg \min_{a'} \bigl (r[0:a'] + v(len(r)-a',a'==0) \bigr)$$ </div>
+
 Where $$r[0:a']$$ is the number of points gained from the immediate action, and $$v(len(r)-a',a'==0)$$ is the value of the next state assuming action $$a'$$ is taken.
 
 __Experiments__. Let's do some experiments to see how well the optimal policy does.  Here's a comparison between the optimal policy and a policy that takes one lowest dice on every roll, the "playing it safe" policy. 30,000 games were simulated:
@@ -86,7 +87,13 @@ Suppose we roll two dice, resulting in $$(1,6)$$, and the opponent's score is $$
 
 <center><img src="bellman/roll-second.png"></center>
 
-The values, i.e., the probabilities of winning, are computed by simulation.  For $$a=0$$ we simulate collecting two dice, and for $$a=1$$ we simulate taking one dice with an update to $$g$$ to account for the dice we took.  The results are $$v(len(r)=2,\texttt{taketwo}=T,g=2)=0.166$$ and $$v(len(r)=1,\texttt{taketwo}=F,g=1)=0.333$$.  Thus we choose $$a=1$$.  Note that we didn't consider $$a=2$$ because it makes $$g < 0$$.
+The values, i.e., the probabilities of winning, are computed by simulation.  For $$a=0$$ we simulate collecting two dice, and for $$a=1$$ we simulate taking one dice with an update to $$g$$ to account for the dice we took.  The results are 
+
+$$v(len(r)=2,\texttt{taketwo}=T,g=2)=0.166$$ and 
+
+$$v(len(r)=1,\texttt{taketwo}=F,g=1)=0.333$$
+
+Thus we choose $$a=1$$.  Note we didn't consider $$a=2$$ because it makes $$g < 0$$.
 
 __The Value Function__.  The value function is a little more complicated compared to when we were rolling first; it now depends on $$g$$, which can have up to 30 values.   Instead of listing all the values in a table, we'll put them in a code snippet that also shows how to compute them.
 
