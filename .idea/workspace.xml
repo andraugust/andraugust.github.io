@@ -89,6 +89,7 @@
       <find>|</find>
       <find>center</find>
       <find>texttt</find>
+      <find>script</find>
     </findStrings>
     <replaceStrings>
       <replace>song_name</replace>

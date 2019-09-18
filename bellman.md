@@ -144,7 +144,7 @@ print(avgs)   # the average probabilities of winning
 
 __The Optimal Policy__.  The optimal policy for rolling second is:
 
-<div style="overflow-x:scroll;"> $$a(s,g) = \arg \max_{a'} v(len(r)-a',a==0,g-r[0:a])$$ <div>
+<div style="overflow-x:scroll;"> $$ a(s,g) = \arg \max_{a'} v(len(r)-a',a==0,g-r[0:a]) $$ </div>
 
 Here $$v$$ is the value/win-probability of the corresponding state-triple; values are listed in the code-snippet above.  To evaluate this equation it's necessary to know the values for all actions being considered.
 
