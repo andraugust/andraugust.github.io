@@ -153,7 +153,7 @@ Let's look at some validation misclassifications:
 <center><a href="../airbus/false_positives.png"><img src="airbus/false_positives.png"></a></center>
 False negatives mostly occur when ships are either split, occluded by clouds, or really small; false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
 
-### The Segmetation Model
+### The Segmentation Model
 
 The segmentation model I'll use is a Unet with the same architecture as described in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
 
