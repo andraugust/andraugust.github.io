@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bellman.md" beforeDir="false" afterPath="$PROJECT_DIR$/bellman.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiring-problem.md" beforeDir="false" afterPath="$PROJECT_DIR$/hiring-problem.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,24 +35,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hiring-problem.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="602">
-                <caret line="128" column="73" selection-start-line="128" selection-start-column="73" selection-end-line="128" selection-end-column="73" />
+              <first_editor relative-caret-position="422">
+                <caret line="116" column="30" lean-forward="true" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bellman.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="469">
-                <caret line="188" column="6" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="6" />
+              <first_editor relative-caret-position="2925">
+                <caret line="195" selection-start-line="195" selection-end-line="195" />
               </first_editor>
               <second_editor />
             </state>
@@ -125,8 +124,8 @@
         <option value="$PROJECT_DIR$/optimal_stopping/main.py" />
         <option value="$PROJECT_DIR$/index.md" />
         <option value="$PROJECT_DIR$/hiring-problem/simulation.py" />
-        <option value="$PROJECT_DIR$/hiring-problem.md" />
         <option value="$PROJECT_DIR$/bellman.md" />
+        <option value="$PROJECT_DIR$/hiring-problem.md" />
       </list>
     </option>
   </component>
@@ -258,12 +257,12 @@
       <workItem from="1567241587965" duration="5551000" />
       <workItem from="1567747045857" duration="14291000" />
       <workItem from="1568528096649" duration="6245000" />
-      <workItem from="1568824908393" duration="1614000" />
+      <workItem from="1568824908393" duration="2533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39021000" />
+    <option name="totallyTimeSpent" value="39940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -504,21 +503,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
+    <entry file="file://$PROJECT_DIR$/bellman.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="602">
-            <caret line="128" column="73" selection-start-line="128" selection-start-column="73" selection-end-line="128" selection-end-column="73" />
+          <first_editor relative-caret-position="2925">
+            <caret line="195" selection-start-line="195" selection-end-line="195" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bellman.md">
+    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="469">
-            <caret line="188" column="6" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="6" />
+          <first_editor relative-caret-position="422">
+            <caret line="116" column="30" lean-forward="true" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
           </first_editor>
           <second_editor />
         </state>

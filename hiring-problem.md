@@ -114,7 +114,7 @@ To verify the analytic solution, let's simulate a hundred thousand hiring situat
 
 <center><img src="hiring-problem/simulations_big.png"></center>
 
-Looking at the first plot, we see the maximum probabilities have the same value and occur at the same threshold as in the analytic solution, so the analytic solution is validated.
+Looking at the first plot, we see the maximum probabilities have the same value and occur at the same threshold as in the analytic solution, so the analytic solution is validated.  That felt good to see.
 
 ### Conclusion
 

@@ -6,7 +6,7 @@ layout: default
 
 <center><img src="airbus/banner.png"></center>
 <br />
-Kaggle's [Ship Detection Challenge](https://kaggle.com/c/airbus-ship-detection) provides satellite images of the ocean and ground-truth labels indicating the locations of ships in each image.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my development of such a model.
+Kaggle's [Ship Detection Challenge](https://kaggle.com/c/airbus-ship-detection) provides satellite images of the ocean with ground-truth labels indicating the locations of ships.  The objective is to make a model that accurately segments ships in a set of testing images.  This post follows my development of such a model.
 
 ## Data Exploration
 Getting the data:
@@ -25,7 +25,7 @@ $ find ./data/test_v2/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"
 $ find ./data/train_v2/ -name "*.jpg" | xargs jpeginfo -c | grep "WARNING"
 >>> ./data/train_v2/6384c3e78.jpg  768 x 768  24bit JFIF  N   98304  Premature end of JPEG file  [WARNING]
 ```
-One of the images is corrupt, but it's a training image, so we don't need to predict on it, so we can delete it.
+One of the images is corrupt, but it's a training image, so it won't be predict on, so I'm going to delete it.
 
 How many images are there? 192555 train and 15606 test.
 
@@ -112,15 +112,16 @@ What surface area do ships cover?
 <br />
 The smallest is tiny, only 2 pixels.  The largest is 25,904 pixels, about 4% of the image.  Most are in the hundreds range.  Here's a zoom-in:
 <br />
+
 <center><img src="airbus/ship_areas_zoom.png"></center>
 <br />
 
 ## Modeling
-To model, we'll train a binary classifier to indicate if an image has at least one ship or not, then we'll train a localization model on images with ships only.
+To model, I'll make a binary classifier to find out if an image contains at least one ship, then I'll make a localization model and train it on images that only have ships.
 
-But first, we're going to cut images into square quarters.  This is so the localization model can train on images with a more balanced pixel-wise class distributions, i.e., the ratio of no-ship pixels to ship pixels will be closer to 0.5, though it'll still be far off.  Also, by cutting images into quarters, reasonable batch sizes (32) will fit into GPU memory and it won't be necessary to down-sample images, which would cause resolution loss and erase small ships.
+First, I'll slice each image into (square) quarters.  This will allow the localization model to train on images with a more balanced pixel-wise class distributions, i.e., the ratio of no-ship pixels to ship pixels will be closer to 0.5.  Cutting images into quarters will also allow reasonable batch sizes, such as 32 to fit in GPU memory.
 
-A concern about quartering, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get split:
+A concern about quartering, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get split like this:
 
 ```python
 rles = df['EncodedPixels'].tolist()
@@ -143,22 +144,22 @@ for rle in tqdm(rles):
 print(n_crossing)
 ```
 
-The result is 10,045, so about 12% of ships get split.  That's more than we'd like, but I think the trade-off will be worth it, so we'll do the cutting anyway and check later to see if split ships are indeed harder to detect.
+The result is 10,045, so about 12% of ships get split.  That's more than I'd like, but the trade-off might be worth it, so I'll do the cutting anyway and check later to see if split ships are indeed harder to detect.
 
 The train set now has 706,997 negative instances and 63,223 positive instances.
 
 ### The Binary Model
 
-The set is split 0.75/0.25 train/val, and train images are rotated arbitrarily by 0, 90, 180, or 270 degrees on each epoch with the hope that this will make the model more invariant to rotations.
+The set is split 0.75 train 0.25 val, and train images are rotated arbitrarily by 0, 90, 180, or 270 degrees on each epoch with the hope that this will build rotation robustness into the model.
 
-After playing with several architectures, I settled on Xception with ImageNet weights, global max-pooling applied to the last convolutional output, and one sigmoid node on the end to represent probability of ship.  The first 50 layers of the network were frozen to minimize training time.
+After playing with several architectures, I settled on Xception.  It has ImageNet weights, global max-pooling on the last convolutional layer, and a sigmoid node on the end to represent probability of ship.  The first 50 layers of the network were frozen to decrease training time.
 
 After the third epoch the validation accuracy reaches a maximum of 0.89 and the f-score reaches a maximum of 0.88.  The confusion matrix is
 ```bash
 [[15529   277]
  [ 3177 12629]]
 ```
-where rows are ground-truth and columns are predicted.  We see that there are many more false positives than false negatives.  This is a good thing because the real data, i.e., the testing data, is expected to have many more negative samples than what's used in this validation set, so the testing accuracy should be significantly higher than what's shown here.  In fact, we can approximate the testing accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%. Not bad.
+where rows are ground-truth and columns are predicted. There are many more false positives than false negatives.  This is ok because the real data, i.e., the test set, is expected to have many more negative samples than what's used in this validation set, so the test accuracy should be higher than what's shown here.  In fact, we can approximate the testing accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%. Not bad.
 
 Let's look at some validation misclassifications:
 <br />
@@ -171,40 +172,43 @@ False negatives mostly occur when ships are either split, occluded by clouds, or
 
 ### The Localization Model
 
-The localization model we'll use is a Unet with the same architecture as in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
+The localization model I'll use is a Unet with the same architecture as described in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
 
-We train directly on the 384x384 quarters using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, batch size is 6, and the loss is pixel-wise binary cross entropy.  Here's the validation loss over epochs:
+I train directly on 384x384 quarters using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, batch size 6, and pixel-wise binary cross entropy loss.  Here's the validation loss over epochs:
 <br />
+
 <center><img src="airbus/unet_loss.png"></center>
 <br />
 
-And here are some validation predictions after each epoch, click to enlarge:
+And here are some validation predictions after each epoch (click to enlarge):
 <br />
+
 <center><a href="../airbus/unet_predictions.png"><img src="airbus/unet_predictions.png"></a></center>
 <br />
 
-The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't rectangular.  The model even localizes ship fragments on the edges of images, which is what we were worried about when we did the quartering.
+The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't always rectangular.  The model even localizes ship fragments on the edges of images, which is what I was worried about when I did the quartering.
 
-Let's see where Unet performed poorly.  These validation samples have the biggest loss:
+Let's see where Unet performs poorly.  Here are validation samples that have the biggest loss:
 <br />
+
 <center><a href="../airbus/unet_errors.png"><img src="airbus/unet_errors.png"></a></center>
 <br />
 
-Evidently, docked ships are hardest to detect, they just look like a continuation of the land, especially the yachts, which, in some sense, are.  The second to last column has what appear to be oil rigs that were misclassified.
+Evidently, docked ships are hardest to detect, they just look like a continuation of the land, especially the yachts, which, in some sense, are (good joke?).  The second to last column has what appear to be oil rigs that were misclassified.
 
 ### The Objective Function
 
-The objective function used by Kaggle is somewhat convoluted.  For each image, an intersection-over-union is computed between any predictions and ground-truths that might exist.  The IoU is then thresholded over a set of values to determine if the prediction will be a TP.  Then, f2 score is calculated and averaged for each threshold.  Then, that average f2 score is averaged over all images, and that's your prediction score.  Note that bounding-boxes aren't used as predictions, but instead run-length encoded masks, so really they can look like anything.  It's not entirely clear if a single mask can be TP for multiple ships, or how predictions are assigned to ground-truths when there are multiple predictions and ground-truths per image, but more info on scoring is [here](https://www.kaggle.com/c/airbus-ship-detection#evaluation).
+The objective function used by Kaggle is somewhat convoluted.  For each image, an intersection-over-union is computed between any predictions and ground-truths that might exist.  The IoU is then thresholded over a set of values to determine if the prediction will be a TP.  Then, f2 score is calculated and averaged for each threshold.  Then, that average f2 score is averaged over all images, and that's your prediction score.  Note that bounding-boxes aren't used as predictions, but instead run-length encoded masks, so really they can look like anything.  It's not entirely clear if a single mask can be a TP for multiple ships, or if predictions are assigned to ground-truths when there are multiple predictions and ground-truths per image, but more info on scoring is [here](https://www.kaggle.com/c/airbus-ship-detection#evaluation).
 
-To figure out where to threshold Unet predictions, loop over thresholds and look at average IoUs on the validation set (with error bars of 1 std dev on each side):
+To figure out where to threshold the Unet predictions, I loop over thresholds and look at average IoUs on the validation set (with error bars of 1 std dev on each side):
 <br />
+
 <center><a href="../airbus/iou_v_thresh.png"><img src="airbus/iou_v_thresh.png"></a></center>
-<br />
-We'll use 0.4 as a threshold.
+<br />I'll use a threshold of 0.4.
 
 
 ### Testing
-After a little bit of post processing to remove masks that are too small (<40 pixels), the testing results are:
+After a little post processing to remove masks that are too small (<40 pixels), the test results are:
 
 |       Model       | Score |
 |:-----------------:|:-----:|
@@ -213,18 +217,22 @@ After a little bit of post processing to remove masks that are too small (<40 pi
 |  1 unet, 1 binary | 0.680 |
 |  blank submission | 0.520 |
 
-As was hoped, accuracy increase with ensemble size.
+As expected, accuracy increase with ensemble size.  The top scores for this problem are around 0.84, so I'll call my numbers a 'good' baseline.
 
-To finish up, we'll look at some test predictions made by the best ensemble:
+To finish up, lets see some test predictions from the best ensemble:
 <br />
+
 <center><a href="../airbus/test_prediction_overlay.png"><img src="airbus/test_prediction_overlay.png"></a></center>
 <br />
 
+So even though my model's score isn't that good relative to the top score, it still appears to find all ships at a level of accuracy that would probably be sufficient for most applications.
+
 ### Ways to Improve
-So far the results are pretty good, but if I were to spend more time on this I would do a few extra things:
-- __Hard sample learning__ After initially training the binary model, fine-tune on samples with predict probability in the range 0.3-0.7.  In other words, do extra learning on 'hard' samples.
+
+If I were to spend more time on this problem I would do a few extra things:
+- __Hard sample learning__ After initially training the binary model, I'd re-train only on samples that have predict probability in the range 0.3-0.7.  In other words, do extra learning on 'hard' samples.
 - __More data augmentation__ Do more types of image transformation to augment the training set.  For example, use [imaug](https://github.com/aleju/imgaug) or [Augmentor](https://github.com/mdbloice/Augmentor).
-- __Smart cropping__ Don't let ships get split by a cropping boundary; check if splitting happens before cropping.
+- __Smart cropping__ Don't let ships get split by a cropping boundary; check if splitting happens before cropping and adjust the crop boundary accordingly.
 - __Ground-truth boundary erosion__ Erode the boundaries of ground-truth masks to help distinguish ships that are touching, then extend prediction boundaries to undo the learned erosion.
 
 {% include disqus.html %}
