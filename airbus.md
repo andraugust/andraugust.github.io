@@ -80,15 +80,9 @@ for im_id, rles in rle_dict.items():
         plt.savefig('./figures/train_images_masks.png', dpi=500)
         break
 ```
-<br />
 <center><a href="../airbus/train_image_masks.png"><img src="airbus/train_image_masks.png"></a></center>
-<br />
-
 Some ships are large and easy to distinguish, like the first column, but others are small and hard to detect, like the last column.  Some ships are _very_ close together, making them hard to separate, even when zoomed in:
-<br />
 <center><img src="airbus/train_image_masks_closeup.png"></center>
-<br />
-
 Some images have one ship while others have multiple.  What's the distribution over ships per image, given there are ships?
 ```python
 ship_counts = [len(item[1]) for item in rle_dict.items()]
@@ -100,26 +94,18 @@ plt.xlabel('Number of Ships')
 plt.ylabel('Number of Images')
 plt.savefig('./figures/ship_count_distribution.png')
 ```
-<br />
 <center><img src="airbus/ship_count_distribution.png"></center>
-<br />
-
 Most images have only one ship, and nearly all have less than three.
 
 What surface area do ships cover?
-<br />
 <center><img src="airbus/ship_areas.png"></center>
-<br />
 The smallest is tiny, only 2 pixels.  The largest is 25,904 pixels, about 4% of the image.  Most are in the hundreds range.  Here's a zoom-in:
-<br />
 
 <center><img src="airbus/ship_areas_zoom.png"></center>
-<br />
-
 ## Modeling
-To model, I'll make a binary classifier to find out if an image contains at least one ship, then I'll make a localization model and train it on images that only have ships.
+To model, I'll make a binary classifier to find out if an image contains at least one ship, then I'll make a segmentation model and train it on images that only have ships.
 
-First, I'll slice each image into (square) quarters.  This will allow the localization model to train on images with a more balanced pixel-wise class distributions, i.e., the ratio of no-ship pixels to ship pixels will be closer to 0.5.  Cutting images into quarters will also allow reasonable batch sizes, such as 32 to fit in GPU memory.
+First, I'll slice each image into (square) quarters.  This will allow the segmentaion model to train on images with a more balanced pixel-wise class distributions, i.e., the ratio of no-ship pixels to ship pixels will be closer to 0.5.  Cutting images into quarters will also allow reasonable batch sizes, such as 32 to fit in GPU memory.
 
 A concern about quartering, however, is that ships will get split across quarters, leaving behind a sliver that might be hard to detect.  Let's see how many ships get split like this:
 
@@ -162,38 +148,28 @@ After the third epoch the validation accuracy reaches a maximum of 0.89 and the 
 where rows are ground-truth and columns are predicted. There are many more false positives than false negatives.  This is ok because the real data, i.e., the test set, is expected to have many more negative samples than what's used in this validation set, so the test accuracy should be higher than what's shown here.  In fact, we can approximate the testing accuracy.  If the testing data has the same bias as the training data (0 = 92%, 1 = 8%), and the tp/tn/fp/fn rates are the same between validation and testing, then the testing accuracy will be about 97%. Not bad.
 
 Let's look at some validation misclassifications:
-<br />
 <center><a href="../airbus/false_negatives.png"><img src="airbus/false_negatives.png"></a></center>
-<br />
-<center><a href="../airbus/false_positives.png"><img src="airbus/false_positives.png"></a></center>
-<br />
 
+<center><a href="../airbus/false_positives.png"><img src="airbus/false_positives.png"></a></center>
 False negatives mostly occur when ships are either split, occluded by clouds, or really small; false positives mostly occur when there's a rectangular object in the image or there's a _mislabeled_ image.  _Several training images are mislabelled_.  For example, the bottom right image clearly has a ship, but the ground-truth says it's not there.
 
-### The Localization Model
+### The Segmetation Model
 
-The localization model I'll use is a Unet with the same architecture as described in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
+The segmentation model I'll use is a Unet with the same architecture as described in the original Unet [paper](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/).
 
 I train directly on 384x384 quarters using a 0.75/0.25 train/val split.  The optimizer is Adam with learning-rate 0.0001, batch size 6, and pixel-wise binary cross entropy loss.  Here's the validation loss over epochs:
-<br />
 
 <center><img src="airbus/unet_loss.png"></center>
 <br />
 
 And here are some validation predictions after each epoch (click to enlarge):
-<br />
 
 <center><a href="../airbus/unet_predictions.png"><img src="airbus/unet_predictions.png"></a></center>
-<br />
-
-The results are pretty impressive.  After just the first epoch the model localizes ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't always rectangular.  The model even localizes ship fragments on the edges of images, which is what I was worried about when I did the quartering.
+The results are pretty impressive.  After just the first epoch the model segments ships, and after the second/third epoch it distinguishes ships from their wakes and land.  What's really impressive is that predictions look like genuine _bounding boxes_, even though ships themselves aren't always rectangular.  The model even segments ship fragments on the edges of images, which is what I was worried about when I did the quartering.
 
 Let's see where Unet performs poorly.  Here are validation samples that have the biggest loss:
-<br />
 
 <center><a href="../airbus/unet_errors.png"><img src="airbus/unet_errors.png"></a></center>
-<br />
-
 Evidently, docked ships are hardest to detect, they just look like a continuation of the land, especially the yachts, which, in some sense, are (good joke?).  The second to last column has what appear to be oil rigs that were misclassified.
 
 ### The Objective Function
@@ -201,10 +177,9 @@ Evidently, docked ships are hardest to detect, they just look like a continuatio
 The objective function used by Kaggle is somewhat convoluted.  For each image, an intersection-over-union is computed between any predictions and ground-truths that might exist.  The IoU is then thresholded over a set of values to determine if the prediction will be a TP.  Then, f2 score is calculated and averaged for each threshold.  Then, that average f2 score is averaged over all images, and that's your prediction score.  Note that bounding-boxes aren't used as predictions, but instead run-length encoded masks, so really they can look like anything.  It's not entirely clear if a single mask can be a TP for multiple ships, or if predictions are assigned to ground-truths when there are multiple predictions and ground-truths per image, but more info on scoring is [here](https://www.kaggle.com/c/airbus-ship-detection#evaluation).
 
 To figure out where to threshold the Unet predictions, I loop over thresholds and look at average IoUs on the validation set (with error bars of 1 std dev on each side):
-<br />
 
 <center><a href="../airbus/iou_v_thresh.png"><img src="airbus/iou_v_thresh.png"></a></center>
-<br />I'll use a threshold of 0.4.
+I'll use a threshold of 0.4.
 
 
 ### Testing
@@ -220,11 +195,8 @@ After a little post processing to remove masks that are too small (<40 pixels), 
 As expected, accuracy increase with ensemble size.  The top scores for this problem are around 0.84, so I'll call my numbers a 'good' baseline.
 
 To finish up, lets see some test predictions from the best ensemble:
-<br />
 
 <center><a href="../airbus/test_prediction_overlay.png"><img src="airbus/test_prediction_overlay.png"></a></center>
-<br />
-
 So even though my model's score isn't that good relative to the top score, it still appears to find all ships at a level of accuracy that would probably be sufficient for most applications.
 
 ### Ways to Improve
