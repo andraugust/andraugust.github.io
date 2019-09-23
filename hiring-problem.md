@@ -4,11 +4,13 @@ layout: default
 
 # The Hiring Problem
 
-Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate.  The candidates you have lined up are top-notch, but this means they have offers on the table from your competitor, and they'll take those offers unless you hire them on the spot.
+Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate.  The candidates you have lined up are top-notch, but that means they have offers from your competitor, and they'll take those offers unless you hire them on the spot.
 
-Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you either hire or pass to the next candidate.  If you pass on a candidate, you can't go back later and make them an offer; they've already accepted your competitor's offer!
+Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you have to hire or pass to the next candidate.  If you pass on a candidate, you can't go back later and make them an offer; they've already accepted your competitor's offer!
 
 Your objective is to hire the top-ranking candidate.  What's your strategy?
+
+(Yes, I know this set-up isn't very realistic; hiring staff can and certainly do go back to previous interviewees and hire them.  I'm going to keep the terminology though because in the literature and online I found the problem phrased this way. Personally I like to think of it as a marriage problem, where an interview is a date and you're trying to find the best person to marry; usually you can't go out with someone again if you tell them you want to look at someone else first ;).
 
 ### The optimal strategy
 
@@ -114,11 +116,11 @@ To verify the analytic solution, let's simulate a hundred thousand hiring situat
 
 <center><img src="hiring-problem/simulations_big.png"></center>
 
-Looking at the first plot, we see the maximum probabilities have the same value and occur at the same threshold as in the analytic solution, so the analytic solution is validated.  That felt good to see.
+Looking at the first plot, we see the maximum probabilities have the same values and thresholds as the analytic solution, so the analytic solution is validated, which feels good :).
 
 ### Conclusion
 
-When all's said and done, the first 37% of candidates should be ignored, in which case the probability of choosing the best candidate maximizes at between 37% and 50% depending on the total number of candidates.
+When all's said and done, the first 37% of candidates should be ignored so that the probability of hiring the best candidate will maximize between 37% and 50%, depending on the number of candidates.
 
 Now you know, so go save your company!
 
