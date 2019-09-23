@@ -6,19 +6,19 @@ layout: default
 
 <p style="opacity:0.5">09/2019</p>
 
-Suppose you're interviewing candidates for a job opening. Interviews are costly, but they give information about how good candidates can be.  How many candidates should you interview before settling on a candidate?
+Suppose you're interviewing candidates for a job opening. Interviews are costly, but give you information about candidate ranks.  How many interviews should you do before settling on a candidate?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
 <p style="opacity:0.5">02/2019</p>
 
-Transferring style from one image to another using neural networks.
+About transferring style from one image to another using neural networks.
 
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
 
-This post follows my development of a segmentation model for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship CNN followed by a U-net and some post-processing.
+This my segmentation model for Kaggle's Ship Detection Challenge.  The final pipeline consists of a ship/noship CNN followed by a U-net and some post-processing.
 
 ## [The First-Link Taxonomy of Wikipedia](wikilinks.html)
 
@@ -48,7 +48,7 @@ Here I derive the optimal policy for the dice game _Threes_.
 
 <p style="opacity:0.5">11/2015</p>
 
-Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize such nets?  In this post I implement a GA called Enforced Subpopulations to show that yes they can.
+Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize such nets?  In this post I implement a GA called Enforced Subpopulations to show that yes, yes they can.
 
 ## [Reinforcement Learning IRL](rl.html)
 
