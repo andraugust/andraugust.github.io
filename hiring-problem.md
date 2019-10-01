@@ -4,23 +4,23 @@ layout: default
 
 # The Hiring Problem
 
-Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate.  The candidates you have lined up are top-notch, but that means they have offers from your competitor, and they'll take those offers unless you hire them on the spot.
+Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate.  The candidates you have lined up are top-notch, which means they have offers from your competitors, and they'll take those offers unless you hire them on the spot.
 
 Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you have to hire or pass to the next candidate.  If you pass on a candidate, you can't go back later and make them an offer; they've already accepted your competitor's offer!
 
 Your objective is to hire the top-ranking candidate.  What's your strategy?
 
-(Yes, I know this set-up isn't very realistic; interviewers can and certainly do go back to previous interviewees and hire them.  I'm going to keep the hiring terminology though because in the literature and online I found the problem phrased this way. Personally I like to think of it as a marriage problem, where an interview is a date and you're trying to find the best person to marry; usually you can't go out with someone again if you tell them you want to look at someone else first!)
+(Yes, I know this set-up isn't very realistic; interviewers can and certainly do go back to previous candidates and hire them.  I'm going to keep the "hiring" terminology though because it's what;s in the literature and online. Personally, I think of it as a marriage problem, where an interview is a date and you're trying to find the best person to marry; usually you can't go out with someone again if you tell them you want to look at someone else first!)
 
 ### The optimal strategy
 
-First I'll tell you the optimal strategy, then we'll solve for the details.
+First I'll tell you the optimal strategy, then solve for the details.
 
 The optimal strategy is to automatically pass on a fixed number of candidates and then select the first one who's better than the rest seen so far.  If no better candidate is found, select the last one (you have to, they're the only one left).
 
-The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidates you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might not be better than the first 5, and since you're looking for rank-$$1$$ you should pass, even if this means passing until you get to the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
+The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidates you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might not be better than the first 5, and since you're looking for rank-1 you should pass, even if this means passing until the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
 
-So the question becomes: what's the cutoff after which you should start looking for the best-so-far, i.e., the transition from exploring possibilities to exploiting what you've learned?
+So the question becomes: what's the cutoff after which you should start looking for the best-so-far, i.e., the transition from exploring what's out there to exploiting what you've learned?
 
 ### Finding the cutoff
 
@@ -74,7 +74,7 @@ $$N(i) = \binom{R-i}{r-1}(r-1)!(R-r)!$$
 
 The binomial coefficient comes from choosing which ranks to put on the left of $$r$$, and the factorials come from the permutations.  The normalization constant $$1/R!$$ is the total number of possible rank orderings.
 
-The probability simplifies conveniently to $$1/r$$.
+The probability simplifies conveniently to $$1/r$$. Thanks [Maple](https://en.wikipedia.org/wiki/Maple_(software)).
 
 Next, let's look at $$V(r \vert \neg \text{bsf})$$.  This one's much easier.  This is the case where we automatically pass to the next candidate, in other words $$V(r \vert \neg \text{bsf}) = V(r+1)$$. Easy.
 
@@ -92,11 +92,11 @@ Finally, putting all the pieces together we end up with
 
 <div style="overflow-x: scroll;"> $$V(r) = \max \left\{ r/R, V(r+1) \right\} \frac{1}{r} + V(r+1)(1-1/r)$$ </div>
 
-And the optimal policy is to hire if $$r$$ is better than the best so-far and  $$r/R  \ge V(r+1)$$.
+The optimal policy is to hire if $$\text{rank}(r)$$ is better than the best so-far and  $$r/R  \ge V(r+1)$$, where $$V$$ is numerically computed next.
 
 ### Numeric solution
 
-I wasn't able to find a nice compact way of writing $$V(r)$$ in terms of $$r$$ alone, i.e., without recursion, so the next best thing is to compute it numerically, starting from $$V(R)$$ and working backward.  This is where the _backward_ in backward induction comes from.  Here's the result:
+I wasn't able to find a nice compact way to write $$V(r)$$ in terms of $$r$$ alone, i.e., without recursion, so the next best thing is to compute it numerically, starting from $$V(R)$$ and working backwards to $$V(1)$$.  This is where the _backward_ in backward induction comes from.  Here's the result:
 
 <center><img src="hiring-problem/value-function.png"></center>
 
@@ -120,7 +120,7 @@ Looking at the first plot, we see the maximum probabilities have the same values
 
 ### Conclusion
 
-When all's said and done, the first 37% of candidates should be ignored so that the probability of hiring the best candidate will maximize between 37% and 50%, depending on the number of candidates.
+When all's said and done, the first 37% of candidates should be ignored so that the probability of hiring the best candidate is maximized between 37% and 50%, depending on the number of candidates.
 
 Now you know, so go save your company!
 

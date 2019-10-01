@@ -6,7 +6,7 @@ layout: default
 
 <p style="opacity:0.5">09/2019</p>
 
-Suppose you're interviewing candidates for a job opening. Interviews are costly, but give you information about candidate ranks.  How many interviews should you do before settling on a candidate?
+Suppose you're interviewing candidates for a job opening. Interviews are costly, but they give you information about candidate ranks.  How many candidates should you interview before hiring one?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
