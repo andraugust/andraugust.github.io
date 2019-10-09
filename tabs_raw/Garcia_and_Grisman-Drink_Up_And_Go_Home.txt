@@ -15,13 +15,14 @@ You think you got troubles, my friend listen here
                    IV                               I
 Don't tell me your troubles, I've got enough of my own
 
-                   IV             V         I
+                   IV     V                   I
 Be thankful you're living, drink up and go home
 
 
 [Break]
 IV  I  IV  V
 IV  I  IV V I  
+
 
                  IV                        I
 I'm fresh out of prison, six years in the pen
@@ -32,10 +33,14 @@ Lost my wife and family, no one to call friend
                    IV                               I
 Don't tell me your troubles, I've got enough of my own
 
-                   IV             V         I
+                   IV     V                I
 Be thankful you're living, drink up and go home
 
-IV    I    
+
+[Break]
+IV  I  IV  V
+IV  I  IV V I  
+
 
 I
 Now there sits a blind man, so blind he can't see
@@ -46,19 +51,9 @@ Do you think he's complaining, why should you and me?
                    IV                               I
 Don't tell me your troubles, I've got enough of my own
 
-                   IV             V         I
+                   IV     V                I
+Be thankful you're living, drink up and go home
+                   IV     V                I
 Be thankful you're living, drink up and go home
 
 
-
-
-IV    I
-
-
-I'm fresh out of prison, six years in the pen
-
-Lost my wife and family, no one to call friend
-
-Don't tell me your troubles, I've got enough of my own
-
-Be thankful you're living, drink up and go home
