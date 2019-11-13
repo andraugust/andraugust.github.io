@@ -6,7 +6,7 @@ layout: default
 
 Richard Feynman from [The Character of Physical Law](https://www.youtube.com/watch?v=-2NnquxdWFk)
 
-> Feynman: _Now I'm going to discuss how we would look for a new law.  In general we look for a new law by the following process. First we guessing it._
+> Feynman: _Now I'm going to discuss how we would look for a new law.  In general we look for a new law by the following process. First we guess it._
 >
 > Audience: _Laughter_
 >
