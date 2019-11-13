@@ -9,6 +9,10 @@ layout: default
 > Audience: _Laughter_
 >
 > Feynman: Don't laugh that's really true.
+>
+> [From the lectures on The Character of Physical Law](https://www.youtube.com/watch?v=-2NnquxdWFk)
+
+
 
 
 
