@@ -4,13 +4,13 @@ layout: default
 
 # About
 
-> Feynman: Now I'm going to discuss how we would look for a new law.  In general we look for a new law by the following process. First we guessing it.
+> Feynman: _Now I'm going to discuss how we would look for a new law.  In general we look for a new law by the following process. First we guessing it._
 >
 > Audience: _Laughter_
 >
-> Feynman: Don't laugh that's really true.
->
-> [From the lectures on The Character of Physical Law](https://www.youtube.com/watch?v=-2NnquxdWFk)
+> Feynman: _Don't laugh that's really true._
+
+[From the lectures on The Character of Physical Law](https://www.youtube.com/watch?v=-2NnquxdWFk)
 
 
 
