@@ -18,9 +18,9 @@ First I'll tell you the optimal strategy, then solve for the details.
 
 The optimal strategy is to automatically pass on a fixed number of candidates and then select the first one who's better than the rest seen so far.  If no better candidate is found, select the last one (you have to, they're the only one left).
 
-The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidates you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might not be better than the first 5, and since you're looking for rank-1 you should pass, even if this means passing until the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
+The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidates you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might be worse than the first 5, and since you're looking for the rank-1 you should pass, even if it means passing until the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
 
-So the question becomes: what's the cutoff after which you should start looking for the best-so-far, i.e., the transition from exploring what's out there to exploiting what you've learned?
+So the question becomes: when's the cutoff after which you should start looking for the best-so-far, i.e., the transition from exploring candidates to exploiting what you've learned?
 
 ### Finding the cutoff
 

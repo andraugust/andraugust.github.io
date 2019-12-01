@@ -10,12 +10,12 @@ Suppose you're interviewing candidates for a job opening. Interviews are costly,
 ## [Neural Style Transfer](neural-style-transfer.html)
 
 <p style="opacity:0.5">02/2019</p>
-About transferring style from one image to another using neural networks.
+On transferring style from one image to another using neural networks.
 
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
-This my segmentation model for Kaggle's Ship Detection Challenge.  The final pipeline consists of a ship/noship CNN followed by a U-net and some post-processing.
+My segmentation model for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship classifier followed by a U-net and some post-processing.
 
 ## [The First-Link Taxonomy of Wikipedia](wikilinks.html)
 
@@ -35,7 +35,7 @@ This is an example of how spectral clustering can be applied to a confusion matr
 ## [Solving Threes](bellman.md)
 
 <p style="opacity:0.5">03/2016</p>
-Here I derive the optimal policy for the dice game _Threes_.
+Here I derive the optimal strategy for the almighty dice game known as _Threes_.
 
 ## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
 
@@ -45,7 +45,7 @@ Can neural nets successfully control Artificial Life agents?  Can genetic algori
 ## [Reinforcement Learning IRL](rl.html)
 
 <p style="opacity:0.5">12/2014</p>
-This post documents an Arduino robot I made that learns to crawl with reinforcement learning.  Included is a video and tutorial showing the robot in action.
+This is an Arduino robot I made that learns to crawl with reinforcement learning.  Included is a video and tutorial showing the robot in full-blown learning mode.
 
 ## [Cheatsheet](cheatsheet.html)
 

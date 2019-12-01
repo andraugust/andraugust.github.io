@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="" />
+    <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiring-problem.md" beforeDir="false" afterPath="$PROJECT_DIR$/hiring-problem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_songbook.py" beforeDir="false" afterPath="$PROJECT_DIR$/make_songbook_.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_layouts/default.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="469">
@@ -34,6 +39,35 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="366">
+                <caret line="47" column="161" selection-start-line="47" selection-start-column="161" selection-end-line="47" selection-end-column="161" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/make_songbook_.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/make_songbook.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -87,15 +121,15 @@
         <option value="$PROJECT_DIR$/tabs_raw/Willie_Nelson-City_Of_New_Orleans.txt" />
         <option value="$PROJECT_DIR$/tabs_html/Grateful_Dead-Cassidy.html" />
         <option value="$PROJECT_DIR$/song_template.html" />
-        <option value="$PROJECT_DIR$/make_songbook.py" />
         <option value="$PROJECT_DIR$/about.md" />
         <option value="$PROJECT_DIR$/wikilinks.md" />
         <option value="$PROJECT_DIR$/optimal_stopping/main.py" />
-        <option value="$PROJECT_DIR$/index.md" />
         <option value="$PROJECT_DIR$/hiring-problem/simulation.py" />
         <option value="$PROJECT_DIR$/bellman.md" />
-        <option value="$PROJECT_DIR$/hiring-problem.md" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
+        <option value="$PROJECT_DIR$/hiring-problem.md" />
+        <option value="$PROJECT_DIR$/index.md" />
+        <option value="$PROJECT_DIR$/make_songbook.py" />
       </list>
     </option>
   </component>
@@ -228,12 +262,12 @@
       <workItem from="1567747045857" duration="14291000" />
       <workItem from="1568528096649" duration="6245000" />
       <workItem from="1568824908393" duration="2533000" />
-      <workItem from="1575172181248" duration="215000" />
+      <workItem from="1575172181248" duration="1100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40155000" />
+    <option name="totallyTimeSpent" value="41040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -341,16 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/make_songbook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/song_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -383,16 +407,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="617">
             <caret line="75" selection-start-line="75" selection-end-line="75" selection-end-column="25" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="435">
-            <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           </first_editor>
           <second_editor />
         </state>
@@ -439,16 +453,6 @@
     <entry file="file://$PROJECT_DIR$/assets/images/blacktocat.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="317">
-            <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hiring-problem/simulation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="657">
@@ -492,6 +496,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hiring-problem.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="446">
+            <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
@@ -502,6 +516,29 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="366">
+            <caret line="47" column="161" selection-start-line="47" selection-start-column="161" selection-end-line="47" selection-end-column="161" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/make_songbook_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/make_songbook.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
