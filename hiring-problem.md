@@ -10,7 +10,7 @@ Candidates are rank-able, so they can be sorted ordinally according to how fit t
 
 Your objective is to hire the top-ranking candidate.  What's your strategy?
 
-(Yes, I know this set-up isn't very realistic; interviewers can and certainly do go back to previous candidates and hire them.  I'm going to keep the "hiring" terminology though because it's what;s in the literature and online. Personally, I think of it as a marriage problem, where an interview is a date and you're trying to find the best person to marry; usually you can't go out with someone again if you tell them you want to look at someone else first!)
+(Of course, this set-up isn't very realistic; interviewers in real life can and certainly do go back to previous candidates and hire them.  I'm going to keep the hiring terminology though because it's what's used in the literature and online, but personally I like to think of it as a marriage problem, where instead of an interview it's a date and you're trying to find the best person to marry--usually you can't go back to someone if you tell them you want to date someone else first!)
 
 ### The optimal strategy
 
