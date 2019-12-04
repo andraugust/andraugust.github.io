@@ -53,6 +53,7 @@ print(foo.a)  # 1
 ```
 
 - Call a function using a string
+
 ```python
 def foo(arg):
     pass

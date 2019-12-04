@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cheatsheet.md" beforeDir="false" afterPath="$PROJECT_DIR$/cheatsheet.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +54,8 @@
         <entry file="file://$PROJECT_DIR$/cheatsheet.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="498">
-                <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+              <first_editor relative-caret-position="453">
+                <caret line="56" selection-start-line="56" selection-end-line="56" />
               </first_editor>
               <second_editor />
             </state>
@@ -257,12 +256,12 @@
       <workItem from="1568528096649" duration="6245000" />
       <workItem from="1568824908393" duration="2533000" />
       <workItem from="1575172181248" duration="1296000" />
-      <workItem from="1575438585543" duration="286000" />
+      <workItem from="1575438585543" duration="397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41522000" />
+    <option name="totallyTimeSpent" value="41633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -536,8 +535,8 @@
     <entry file="file://$PROJECT_DIR$/cheatsheet.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="498">
-            <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+          <first_editor relative-caret-position="453">
+            <caret line="56" selection-start-line="56" selection-end-line="56" />
           </first_editor>
           <second_editor />
         </state>
