@@ -41,6 +41,25 @@ K.set_session(sess)
 $ export PYTHONHASHSEED=random
 ```
 
+- Assign arguments of a class to self:
+
+```python
+class Foo():
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+
+foo = Foo(a=1,b=2)
+print(foo.a)  # 1
+```
+
+- Call a function using a string
+```python
+def foo(arg):
+    pass
+
+locals()['foo'](arg)
+```
+
 - Use matplotlib on a server: `plt.switch_backend('agg')` in the import block.
 - Tensorflow/keras control gpu usage:
 
