@@ -116,9 +116,8 @@ video.release()
 - Pretty print h5: `$ h5dump file.h5`.  Use `-H` to only show headers.
 - Force python's output buffer to flush: `-u`, e.g.,  `$ nohup python -u script.py &`.
 - Make video using images in a folder: `$ ffmpeg -r $FPS -pattern_type glob -i '*.jpg' movie.mp4`.
-- sed example: `$ sed -i .bak "s/<find_regex>/<replace_regex>/g" file.txt`.
-- awk example: `$ awk -F, '{ print $1 }' file.csv`.
-- xargs example: `cat file_names.txt | xargs -I % scp remote:% dest/`.
-
-
+- Example sed: `$ sed -i .bak "s/<find_regex>/<replace_regex>/g" file.txt`.
+- Example awk: `$ awk -F, '{ print $1 }' file.csv`.
+- Example xargs: `cat file_names.txt | xargs -I % scp remote:% dest/`.
+- Modify shell behavior: put `set -ue` at the beginning of a script to make an error message occur when an unassigned variable is referenced and to make the script exit when a non-zero exit status is returned by a process.
 
