@@ -120,4 +120,11 @@ video.release()
 - Example awk: `$ awk -F, '{ print $1 }' file.csv`.
 - Example xargs: `cat file_names.txt | xargs -I % scp remote:% dest/`.
 - Modify shell behavior: put `set -ue` at the beginning of a script to make an error message occur when an unassigned variable is referenced and to make the script exit when a non-zero exit status is returned by a process.
+- Parallel processing:
 
+```bash
+cmd1 &
+cmd2 &
+wait
+cmd3
+```
