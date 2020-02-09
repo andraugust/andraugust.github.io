@@ -110,6 +110,7 @@ video.release()
 
   ```python
   import sys
+  import time
   
   CURSOR_UP_ONE = '\x1b[1A'
   ERASE_LINE = '\x1b[2K'
@@ -120,6 +121,7 @@ video.release()
     sys.stdout.write(ERASE_LINE)
     print('Dot dot dot.' + '.'*(iter%3))
     sys.stdout.write(CURSOR_UP_ONE)
+    time.sleep(0.5)
   	
   ```
 
