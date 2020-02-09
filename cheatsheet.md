@@ -106,7 +106,24 @@ for frame in range(nframes):
 video.release()
 ```
 
+- Print over the current line:
 
+  ```python
+  import sys
+  
+  CURSOR_UP_ONE = '\x1b[1A'
+  ERASE_LINE = '\x1b[2K'
+  
+  iter = 0
+  for i in range(1000):
+    iter += 1
+    sys.stdout.write(ERASE_LINE)
+    print('Dot dot dot.' + '.'*(iter%3))
+    sys.stdout.write(CURSOR_UP_ONE)
+  	
+  ```
+
+  
 
 ## Bash
 
