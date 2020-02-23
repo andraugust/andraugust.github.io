@@ -4,6 +4,8 @@ layout: default
 
 # Notes on Using PlatformIO IDE for Arduino
 
+<center><img src="platformio-notes/logos.png"></center>
+
 PlatformIO is a nice IDE for Arduino that allows you to specify environments and upload sketches via the command line, but more importantly it has code completion and real-time code inspections, which the default Arduino IDE doesn't have -- HOW DOES ANYONE CODE WITHOUT CODE COMPLETION OR INSPECTIONS?!?!?!
 
 Note: PlatformIO is an extension to existing editors, and there are a few different editors it can run on top of.  The recommended editor is VS Code, and that's the one I've found to be the best.
@@ -12,7 +14,7 @@ Note: PlatformIO is an extension to existing editors, and there are a few differ
 
 When you initialize a new platformio project, you're given a structured set of directories and files that the IDE uses to compile and upload your code properly.  Here's the default structure:
 
-![im](platformio-notes/directories.png)
+<center><img src="platformio-notes/directories.png"></center>
 
 `src/` is where sketches are kept, `lib/` is where libraries are kept, `include/` is where custom headers are kept, and `platform.ini` is where environments are defined.
 

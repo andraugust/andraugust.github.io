@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9aab373f-d9f1-41c4-990e-2512bb9b6950" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/platformio-notes/directories.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platformio-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/platformio-notes.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,19 +16,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/platformio-notes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="90">
-                <caret line="6" column="306" lean-forward="true" selection-start-line="6" selection-end-line="6" selection-end-column="306" />
+                <caret line="6" column="55" lean-forward="true" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bellman.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="291">
+                <caret line="87" column="52" lean-forward="true" selection-start-line="87" selection-end-line="87" selection-end-column="52" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
@@ -102,8 +112,8 @@
         <option value="$PROJECT_DIR$/hiring-problem.md" />
         <option value="$PROJECT_DIR$/make_songbook.py" />
         <option value="$PROJECT_DIR$/cheatsheet.md" />
-        <option value="$PROJECT_DIR$/platformio-notes.md" />
         <option value="$PROJECT_DIR$/index.md" />
+        <option value="$PROJECT_DIR$/platformio-notes.md" />
       </list>
     </option>
   </component>
@@ -242,12 +252,12 @@
       <workItem from="1576719135836" duration="349000" />
       <workItem from="1576971765651" duration="438000" />
       <workItem from="1578115048273" duration="81000" />
-      <workItem from="1582438729448" duration="4715000" />
+      <workItem from="1582438729448" duration="5080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47868000" />
+    <option name="totallyTimeSpent" value="48233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="23" width="1920" height="1173" extended-state="6" />
@@ -434,16 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bellman.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="678">
-            <caret line="195" selection-start-line="195" selection-end-line="195" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/bg_hr.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -549,21 +549,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platformio-notes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="306" lean-forward="true" selection-start-line="6" selection-end-line="6" selection-end-column="306" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="105">
             <caret line="7" column="194" selection-start-line="7" selection-start-column="194" selection-end-line="7" selection-end-column="194" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformio-notes/vscode.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformio-notes/platformio.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bellman.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="291">
+            <caret line="87" column="52" lean-forward="true" selection-start-line="87" selection-end-line="87" selection-end-column="52" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformio-notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="55" lean-forward="true" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
           </first_editor>
           <second_editor />
         </state>
