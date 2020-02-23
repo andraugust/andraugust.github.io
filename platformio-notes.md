@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Notes on Using PlatformIO IDE for Arduino
+# PlatformIO Notes
 
 <center><img src="platformio-notes/logos.png"></center>
 

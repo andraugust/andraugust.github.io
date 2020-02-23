@@ -10,7 +10,7 @@ PlatformIO is a nice IDE for Arduino that allows you to specify environments and
 ## [The Hiring Problem](hiring-problem.html)
 
 <p style="opacity:0.5">09/2019</p>
-Suppose you're interviewing candidates for a job opening. Interviews come at a cost, but they provide information about candidates ranks. How many candidates should you interview before selecting one?
+Suppose you're interviewing candidates for a job opening. Interviews come at a cost, but they provide useful information about candidates. How many candidates should you interview before selecting one?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
