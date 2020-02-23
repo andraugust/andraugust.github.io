@@ -2,25 +2,30 @@
 layout: default
 ---
 
+## [PlatformIO Notes](platformio-notes.html)
+
+<p style="opacity:0.5">02/2020</p>
+PlatformIO is a nice IDE for Arduino that allows you to specify environments and upload sketches via the command line, but more importantly it has code completion and real-time code inspections, which the default Arduino IDE doesn't have.  Here are some notes on using PlatformIO.
+
 ## [The Hiring Problem](hiring-problem.html)
 
 <p style="opacity:0.5">09/2019</p>
-Suppose you're interviewing candidates for a job opening. Interviews are costly, but they give you information about candidate ranks.  How many candidates should you interview before hiring one?
+Suppose you're interviewing candidates for a job opening. Interviews come at a cost, but they provide information about candidates ranks. How many candidates should you interview before selecting one?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
 <p style="opacity:0.5">02/2019</p>
-On transferring style from one image to another using neural networks.
+This post is about transferring style from one image to another using neural networks.
 
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
-My segmentation model for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship classifier followed by a U-net and some post-processing.
+This is my segmentation model for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship classifier followed by a U-net and some post-processing.
 
 ## [The First-Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-An interesting property of Wikipedia is that most pages have first-links that lead to their immediate superset.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do the first-links eventually go?  And what does the first-link taxonomy look like?
+An interesting property of Wikipedia is that most pages first-link to their immediate superset.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do the first-links eventually go?  And what does the first-link taxonomy look like?
 
 ## [Satellite Image Classification on the fMoW Dataset](fmow.html)
 
@@ -30,7 +35,7 @@ This post is about using CNNs to classify objects in The Functional Map of the W
 ## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
 
 <p style="opacity:0.5">10/2017</p>
-This is an example of how spectral clustering can be applied to a confusion matrix to find class hierarchies.
+This is an example of how spectral clustering can be applied to confusion matrices to find class hierarchies.
 
 ## [Solving Threes](bellman.md)
 
@@ -40,26 +45,26 @@ Here I derive the optimal strategy for the almighty dice game known as _Threes_.
 ## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
 
 <p style="opacity:0.5">11/2015</p>
-Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize such nets?  In this post I implement a GA called Enforced Subpopulations to show that yes, yes they can.
+Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize such nets?  In this post I implement a genetic algorithm called Enforced Subpopulations to show that yes, yes they can.
 
 ## [Reinforcement Learning IRL](rl.html)
 
 <p style="opacity:0.5">12/2014</p>
-This is an Arduino robot I made that learns to crawl with reinforcement learning.  Included is a video and tutorial showing the robot in full-blown learning mode.
+This is an Arduino robot I made that learns how to crawl using reinforcement learning.  Included is a video tutorial about RL and how it was adapted for the robot.
 
 ## [Cheatsheet](cheatsheet.html)
 
-<p style="opacity:0.5">Ongoing</p>
+<p style="opacity:0.5">---</p>
 Code snippets and such.
 
 ## [Songbook](songbook.html)
 
-<p style="opacity:0.5">Ongoing</p>
+<p style="opacity:0.5">---</p>
 What do you do when guitar-chord websites are all covered in ads and pop-ups?  Host your own chords, ad free!
 
 ## [Quotes Notes](quotes-notes.html)
 
-<p style="opacity:0.5">Ongoing</p>
+<p style="opacity:0.5">---</p>
 
 Quoters
 
