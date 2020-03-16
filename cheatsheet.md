@@ -148,7 +148,7 @@ wait
 cmd3
 ```
 
-
+- Display json in terminal: `jq --color-output . file.json | more -R`
 
 ## Other
 
