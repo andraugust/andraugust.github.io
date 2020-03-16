@@ -147,3 +147,9 @@ cmd2 &
 wait
 cmd3
 ```
+
+
+
+## Other
+
+- How to make a continuous approximation of a step function starting at $0$ and ending at $a$, using logistic functions: $$\frac{1}{1+\exp(-kx)} - \frac{1}{1+\exp(-k(x-a))}$$
