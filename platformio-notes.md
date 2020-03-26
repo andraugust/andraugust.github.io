@@ -5,8 +5,7 @@ layout: default
 # PlatformIO Notes
 
 <center><img src="platformio-notes/logos.png"></center>
-
-PlatformIO is a nice IDE for Arduino that allows you to specify environments and upload sketches via the command line, but more importantly it has code completion and real-time code inspections, which the default Arduino IDE doesn't have -- HOW DOES ANYONE CODE WITHOUT CODE COMPLETION OR INSPECTIONS?!?!?!
+PlatformIO is a nice IDE for Arduino that allows you to specify environments and upload sketches via the command line, but more importantly it has code completion and real-time code inspections, which the default Arduino IDE doesn't have -- HOW DOES ANYONE CODE WITHOUT CODE COMPLETION OR INSPECTIONS???
 
 Note: PlatformIO is an extension to existing editors, and there are a few different editors it can run on top of.  The recommended editor is VS Code, and that's the one I've found to be the best.
 
@@ -15,12 +14,18 @@ Note: PlatformIO is an extension to existing editors, and there are a few differ
 When you initialize a new platformio project, you're given a structured set of directories and files that the IDE uses to compile and upload your code properly.  Here's the default structure:
 
 <center><img src="platformio-notes/directories.png"></center>
+- `.pio/` can mostly be ignored
+- `.vscode/` is where vscode stores its bookkeeping information; it can mostly be ignored
+- `src/` is where sketches are kept 
+- `lib/` is where libraries are kept
+- `include/` is where custom headers are kept
+- `platform.ini` is where environments are defined
 
-`src/` is where sketches are kept, `lib/` is where libraries are kept, `include/` is where custom headers are kept, and `platform.ini` is where environments are defined.
+Some of these are intialized with a README containing more info on how to use them.
 
 ## Environments
 
-Environments are defined in `platformio.ini`. In it you specify the board to upload to, the libraries to use, the serial port, and other things.  Here's an example:
+Environments are defined in `platformio.ini`, where you specify the board to upload to, the libraries to use, the serial port, and other things.  Here's an example of two environments, one for an UNO running a radio receiver and one for a Nano running a radio transmitter:
 
 ```ini
 [env:receiver]
@@ -51,7 +56,7 @@ targets = upload, monitor
 src_filter = +<transmitter.cpp>
 ```
 
-There are two environments in this example, one for an uno and one for a nano (the project happens to involve a radio transmitter and a radio receiver).  Properties are mostly evident by their names, except maybe `targets` and `source_filter`.  `targets` are the things to do when the environment is run (more on that later), and `source_filter` selects which cpp sketch in `src/` to upload to the board.  Usually you'll just have one sketch called `main.cpp`, in that case `source_filter` isn't necessary, it'll upload `main.cpp` by default, but if you want to give the sketch a different name, or if you have multiple sketches in `src/`, then you need to set `source_filter` so platformio knows which one to upload.  Note the weird syntax.
+Properties are mostly evident by their names, except maybe `targets` and `source_filter`.  `targets` are the things to do when the environment is run (more on that later), and `source_filter` selects which cpp sketch in `src/` to upload to the board.  Usually you'll just have one sketch called `main.cpp`, in that case `source_filter` isn't necessary, it'll upload `main.cpp` by default, but if you want to give the sketch a different name, or if you have multiple sketches in `src/`, then you need to set `source_filter` so platformio knows which one to upload.  Note the weird syntax.
 
 ## Using Libraries
 
