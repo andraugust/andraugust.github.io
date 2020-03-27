@@ -6,11 +6,11 @@ layout: default
 
 <center><img src="soundcatcher-v1/banner.png"></center>
 
-IoT is all the rage these days, and so are acoustics (right?).  So here I show how to make an IoT-style device for remote monitoring of acoustic signals, specifically, bird chirps.
+IoT is all the rage, and so are acoustics (right?).  So here I show how to make an IoT-style device for remote monitoring of acoustic signals, specifically, bird chirps.
 
-Soundcatcher consists of two devices: one that's deployed to an acoustic environment and one that sits attached to a computer.  The one that's deployed, which we'll call the T-node, records sounds via a small microphone and transmits the recording via a radio transmitter.  The device at the computer, which we'll call the R-node, listens for transmissions and, upon recieveing a signal, writes the data to a playable sound file.
+Soundcatcher consists of two devices: one that's deployed to an acoustic environment of interest and one that sits attached to a base-computer.  The one that's deployed records sounds via a small microphone and transmits recordings via a radio transmitter to the device at the computer, which writes the recording to a playable sound file.
 
-Sound files stack up on the computer where a classifier analyses them to separate bird chirps from, say, someone mowing their lawn, but more about that later.  For now let's look at how to make a Soundcatcher.
+Sound files stack up on the base-computer where a classifier analyses them to separate bird chirps from, say, someone mowing their lawn, but more about that later.  For now let's look at how to make a Soundcatcher.
 
 ## Components
 
@@ -36,8 +36,8 @@ Here's more info about each component:
 - The NRF24L01 sends and receives audio data.  These ones have a larger antenna than some others on the market and are rated at 1000m line-of-sight communication.  I'm also using a voltage regulator module (shown in the image), which takes a 5V power supply and converts it to a voltage which makes the NRF happy.
 - Be sure to order the SD Module from Adafruit.  Originally I bought SD Modules from a company on Amazon, but they were useless because they didn't allow for multiple inputs on the SPI line.  In otherwords, they don't let you de-select them when you want another device (e.g., the transmitter) to send SPI signals.  The Adafruit modules _do_ support multi-module SPI however, so go with them.
 - The micro SD card doesn't need to be big; 16GB is fine.  Each recording over-writes the previous one, and a 3 second recording is only about 96kB.
-- The battery pack comes from a cool company called Voltaics Systems that sells batteries and solar panels marketed toward IoT and outdoorsing. Their batteries are special because they have "always on" mode, which means they don't turn off automatically when current draw goes below a threshold, as some other batteries do.  The model I suggest is the V50, which has 12,800mAh rating.  There's another, cheaper option for 29.00$, but it only has 4,000mAh, so you would probably want a solar panel with it.
-- The mic is an electret one with automatic gain control.  I haven't experimented too much with the auto gain control, but according to Adafruit, "The AGC in the amplifier means that nearby 'loud' sounds will be quieted so they don't overwhelm & 'clip' the amplifier, and even quiet,  far-away sounds will be amplified. This amplifier is great for when you  want to record or detect audio in a setting where levels change and you don't want to have to tweak the amplifier gain all the time."  which is perfect for a mic that lives outside.
+- The battery pack comes from a company called Voltaics Systems that sells batteries and solar panels marketed toward IoT and outdoorsing. Their batteries are special because they have "always on" mode, which means they don't turn off automatically when current draw goes below a threshold, as some other batteries do.  The model I suggest is the V50, which has 12,800mAh rating.  There's another, cheaper option for 29.00$, but it only has 4,000mAh, so you would probably want a solar panel with it.
+- The mic is electret with automatic gain control.  I haven't experimented too much with the auto gain control, but according to Adafruit, "The AGC in the amplifier means that nearby 'loud' sounds will be quieted so they don't overwhelm & 'clip' the amplifier, and even quiet,  far-away sounds will be amplified. This amplifier is great for when you  want to record or detect audio in a setting where levels change and you don't want to have to tweak the amplifier gain all the time."  which is perfect for a mic that lives outside.
 - The rest of the components are basic circuit elements used to run the 'naked' ATMega chip.  Later I'll show how those are used in the circuit diagram.
 
 {% include disqus.html %}
