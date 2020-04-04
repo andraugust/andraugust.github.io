@@ -2,10 +2,10 @@
 layout: default
 ---
 
-# Soundcatcher: A Device for Remote Acoustic Monitoring
+# Soundcatcher
 
 <center><img src="soundcatcher-v1/banner.png"></center>
-Soundcatcher consists of two devices: one that's deployed to an acoustic environment and one that sits attached to a base-computer.  The deployed device records sounds via a small microphone and transmits them to the base-device via a radio transceiver.  The base-device writes the recieved data to playable wav files on the computer and a machine learning algorithm decides which wav files contain bird sounds and which don't.  Lets look at how the devices are made.
+Soundcatcher consists of two devices: one that's deployed to an acoustic environment and one that sits attached to a base-computer.  The deployed device records sounds using a small microphone and then transmits the sound via a radio transceiver to a second device attached to a computer.  That device writes the recieved data to playable wav file on the computer and a machine learning algorithm decides which wav files contain bird sounds and which don't.  Lets look at how the devices are made.
 
 ## Components
 
@@ -23,25 +23,63 @@ Here's the component list:
 |        16MHz Oscillator        |    1     |      [Sparkfun](https://www.sparkfun.com/products/536)       | ![oscillator_image](soundcatcher-nrf/oscillator.png) |    0.95     |
 |        22pf Ceramic Cap        |    2     |      [Sparkfun](https://www.sparkfun.com/products/8571)      |       ![cap_pic](soundcatcher-nrf/22pfcap.png)       |    0.50     |
 |          10k Resistor          |    1     |     [Sparkfun](https://www.sparkfun.com/products/10969)      |    ![resistor_pic](soundcatcher-nrf/resistor.png)    |    0.01     |
+|       Micro USB Breakout       |    1     |     [Sparkfun](https://www.sparkfun.com/products/12035)      |      ![microusb](soundcatcher-nrf/microusb.jpg)      |    2.50     |
 
 The total cost should be between 130-170USD, depending on shipping, taxes, etc.
 
 Here's more info about each component:
 
-- The Uno functions as the reciever and will stay connected to the base-computer.  It isn't strictly necessary to use an Uno here, for example a Nano would work just as well, I used an Uno because I had an extra one lying around.
-- The ATMega328 chip is the brains of the transmitter.  It functions like an full-blown Uno board but consumes less energy and space, which is ideal for remote devices that are connected to a finite battery and which may need to fit in small spaces.
-- The NRF24L01 sends and receives audio data.  These ones have a larger antenna than some others on the market and are rated at 1000m line-of-sight communication.  I'm also using a voltage regulator module (shown in the image), which takes a 5V power supply and converts it to a voltage which makes the NRF happy.
-- Be sure to order the SD Module from Adafruit.  Originally I bought SD Modules from a company on Amazon, but they were useless because they didn't allow for multiple inputs on the SPI line.  In otherwords, they don't let you de-select them when you want another device (e.g., the transmitter) to send SPI signals.  The Adafruit modules _do_ support multi-module SPI however, so go with them.
-- The micro SD card doesn't need to be big; 16GB is fine.  Each recording over-writes the previous one, and a 3 second recording is only about 96kB.
-- The battery pack comes from a company called Voltaics Systems.  They sell batteries and solar panels marketed toward mostly IoT and outdoorsing. Their batteries are special because they have an "always on" mode, which means they don't turn off automatically when current draw goes below a threshold, as some other batteries do.  The model I suggest is the V50, which has 12,800mAh rating.  There's another, cheaper option for 29.00$, but it only has 4,000mAh, so you would probably want a solar panel to go with it.
-- The mic is electret with automatic gain control.  I haven't experimented too much with the auto gain control, but according to Adafruit, "The AGC in the amplifier means that nearby 'loud' sounds will be quieted so they don't overwhelm & 'clip' the amplifier, and even quiet,  far-away sounds will be amplified. This amplifier is great for when you  want to record or detect audio in a setting where levels change and you don't want to have to tweak the amplifier gain all the time."  which is perfect for a mic that lives outside.
+- **Uno**: This functions as the reciever and stays connected to the base-computer.  It isn't strictly necessary to use an Uno, for example a Nano should work just as well.. I used an Uno because I had an extra one lying around.
+- **ATMega328**: This is the brain of the transmitter.  It functions like an full-blown Uno board but consumes less energy and space, which is ideal for remote devices that are connected to a finite battery and which may need to fit in small spaces.
+- **NRF24L01**: This sends and receives audio data.  These ones have a larger antenna than some others on the market and are rated at 1000m line-of-sight communication.  I'm also using a voltage regulator module (shown in the image), which takes a 5V power supply and converts it to a voltage which makes the NRF happy.
+- **SD Module**:  Be sure to order this from Adafruit.  Originally I bought SD Modules from a company on Amazon, but they were useless because they didn't allow for multiple inputs on the SPI line.  In otherwords, they don't let you de-select them when you want another device (e.g., the transmitter) to send SPI signals.  The Adafruit modules _do_ support multi-module SPI however, so go with them.
+- **Micro SD card**: It doesn't need to be big; 16GB is fine.  Each recording over-writes the previous one, and a 3 second recording is only about 96kB.
+- **Battery Pack**: This one comes from a company called Voltaics Systems.  They sell batteries and solar panels marketed toward mostly IoT and outdoorsing. Their batteries are special because they have an "always on" mode, which means they don't turn off automatically when current draw goes below a threshold, as some other batteries do.  The model I suggest is the V50, which has 12,800mAh rating.  There's another, cheaper option for 29.00$, but it only has 4,000mAh, so you would probably want a solar panel to go with it.
+- **Mic**: This is an electret mic with automatic gain control.  I haven't experimented too much with the auto gain control, but according to Adafruit, "The AGC in the amplifier means that nearby 'loud' sounds will be quieted so they don't overwhelm & 'clip' the amplifier, and even quiet,  far-away sounds will be amplified. This amplifier is great for when you  want to record or detect audio in a setting where levels change and you don't want to have to tweak the amplifier gain all the time."  which is perfect for a mic that lives outside.
 - The rest of the components are basic circuit elements used to run the 'naked' ATMega chip. 
 
 ## The Circuit
 
 ![circuit-diagram](soundcatcher-nrf/circuit.png)
 
-The circuit looks somewhat complicated, but once it's on a breadboard it's much simpler.  Here's what mine looks like:
+The circuit might look complicated, but once it's on a breadboard it's straightforward.  Note that the power supply is 5V, and although the wires aren't shown for Vcc and GND on the devices, they're connected to 5V as well.
+
+To upload a sketch to the atmega chip I did the following:
+
+1. Pull the atmega chip out of an uno board
+2. Wire the uno board to the soundcatcher atmega like what's shown in Method 2 of [this link](https://dronebotworkshop.com/arduino-uno-atmega328/)
+3. Connect the uno board to the computer and upload the sketch like normal
+
+There are a couple other ways to upload to the chip, but I found this one to be the most convenient.
+
+## Recording
+
+To record audio I used the [TMRpcm library](https://github.com/TMRh20/TMRpcm).  It has convenient functions for writing audio to the SD card.  For example:
+
+```c++
+#include <TMRpcm.h>
+
+TMRpcm audio;
+audio.startRecording("sound.wav", SAMPLERATE, AUDIO_PIN);
+delay(recording_length);
+audio.stopRecording("sound.wav");
+```
+
+Where `AUDIO_PIN` is the analog pin connected to the mic and `SAMPLERATE` is typically set somewhere between `8000` and `16000` Hz.
+
+To decide _when_ to record, I have the microcontroller check if a sufficiently loud noise is detected:
+
+```c++
+void loop() {
+    delay(200);
+    amplitude = analogRead(AUDIO_PIN);
+    if (amplitude > baseline_amplitude+trigger_delta || amplitude < baseline_amplitude-trigger_delta) {
+      // record
+      // transmit
+}
+```
+
+
 
 
 
