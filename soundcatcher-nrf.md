@@ -54,7 +54,7 @@ There are a couple other ways to upload to the chip, but I found this one to be 
 
 ## Recording
 
-To record audio I used the [TMRpcm library](https://github.com/TMRh20/TMRpcm).  It has convenient functions for writing audio to the SD card.  For example:
+To record audio I used the [TMRpcm library](https://github.com/TMRh20/TMRpcm).  It has convenient functions for writing audio data to the SD card.  For example:
 
 ```c++
 #include <TMRpcm.h>
@@ -73,11 +73,29 @@ To decide _when_ to record, I have the microcontroller check if a sufficiently l
 void loop() {
     delay(200);
     amplitude = analogRead(AUDIO_PIN);
-    if (amplitude > baseline_amplitude+trigger_delta || amplitude < baseline_amplitude-trigger_delta) {
+    if (abs(amplitude-baseline_amplitude) > trigger_delta) {
       // record
       // transmit
+    }
 }
 ```
+
+Where `baseline_amplitude` is the output value of the mic in quiet conditions (I use `250`), and `trigger_delta` is the amplitude deviation that triggers a recording (I use `80`).
+
+## Transmitting
+
+Transmitting is done with the [RF24 library](https://github.com/nRF24/RF24).  The idea is to open the file you want to transmit, load its bytes into a packet and send the packet.  For example:
+
+```c++
+byte data[PAYLOAD_SZ];
+f = SD.open(filename);
+while (f.available()) {
+  f.read(&data, PAYLOAD_SZ);        // Fill up a packet
+  radio.write(&data, PAYLOAD_SZ);   // Send
+}
+```
+
+ [This website](https://lastminuteengineers.com/nrf24l01-arduino-wireless-communication/) is a good resource for learning about the nRF24L01 packet protocol and all the module configurations that are available.
 
 
 
