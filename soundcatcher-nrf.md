@@ -95,7 +95,23 @@ while (f.available()) {
 }
 ```
 
- [This website](https://lastminuteengineers.com/nrf24l01-arduino-wireless-communication/) is a good resource for learning about the nRF24L01 packet protocol and all the module configurations that are available.
+The maximum payload size is 32 bytes, so the file has to be read and sent in a loop.  [This website](https://lastminuteengineers.com/nrf24l01-arduino-wireless-communication/) has a ton of great information about the nRF24L01 packet protocol and all the module configurations that are available.
+
+## Receiving
+
+Finally... getting data on the base computer.  This is done by running a simple sketch on the receiving module. The main loop looks like:
+
+```c++
+byte data[PAYLOAD_SZ];
+void loop() {
+    if (radio.available()) {
+        radio.read(&data, PAYLOAD_SZ);
+        Serial.write(data, PAYLOAD_SZ);
+    }
+}
+```
+
+The `Serial.write` sends the payload bytes through the serial port and onto the computer where they're read by a python script that's listening for data.  The python script assembles the bytes and writes them to a wav file.  The python script is a bit more involved, so I won't go into the weeds describing it, but you can look at it here (link).
 
 
 
