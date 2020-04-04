@@ -41,7 +41,9 @@ Here's more info about each component:
 
 ![circuit-diagram](soundcatcher-nrf/circuit.png)
 
-The circuit looks somewhat complicated, but once it's on a breadboard things are a lot more simple.
+The circuit looks somewhat complicated, but once it's on a breadboard it's much simpler.  Here's what mine looks like:
+
+
 
 
 
