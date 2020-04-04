@@ -39,7 +39,7 @@ Here's more info about each component:
 
 ## The Circuit
 
-![circuit-diagram](soundcatcher-nrf/circuit.png)
+![circuit-diagram](soundcatcher-nrf/circuit.pdf)
 
 The circuit looks somewhat complicated, but once it's on a breadboard it's much simpler.  Here's what mine looks like:
 
