@@ -19,26 +19,6 @@ conda install -c anaconda tensorflow-gpu=1.12
 ```bash
 jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled=True --stdout > notebook_clear.ipynb
 ```
-- Determinism with keras:
-```bash
-$ export PYTHONHASHSEED=10
-```
-```python
-import numpy as np
-np.random.seed(10)
-import tensorflow as tf
-tf.set_random_seed(10)
-from keras import backend as K
-
-session_conf = tf.ConfigProto(intra_op_parallelism_threads=1,
-                              inter_op_parallelism_threads=1)
-sess = tf.Session(graph=tf.get_default_graph(), conf=session_conf)
-K.set_session(sess)
-```
-```bash
-# reset pythonhashseed to normal behavior
-$ export PYTHONHASHSEED=random
-```
 
 - Assign arguments of a class to self:
 ```python
@@ -144,7 +124,6 @@ logging.info('This prints during development and release')
 - Example xargs: `cat file_names.txt | xargs -I % scp remote:% dest/`.
 - Modify shell behavior:  `set -ue` at the top of a script to make an error message occur when an unassigned variable is referenced and exit if a subprocess returns non-zero exit status.
 - Parallel processing:
-
 ```bash
 cmd1 &
 cmd2 &
