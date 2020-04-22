@@ -60,7 +60,7 @@ set_session(tf.Session(config=config))
 ```python
 pool = multiprocessing.Pool(n_processes=4)
 for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)):
-  pass
+    pass
 ```
 
 - Make a movie with opencv.  A list of video codecs is [here](https://gist.github.com/takuma7/44f9ecb028ff00e2132e).
@@ -74,9 +74,9 @@ codec = VideoWriter_fourcc(*'mp4v')
 video = VideoWriter(video_dest, codec, fps, (im_cols,im_rows))
 # Main loop
 for frame in range(nframes):
-  im = np.random.random((im_rows, im_cols, 3))*255
-  im = im.astype(np.uint8)
-  video.write(im)
+    im = np.random.random((im_rows, im_cols, 3))*255
+    im = im.astype(np.uint8)
+    video.write(im)
 video.release()
 ```
 
@@ -90,11 +90,11 @@ ERASE_LINE = '\x1b[2K'
 # Main loop
 iter = 0
 for i in range(1000):
-  iter += 1
-  sys.stdout.write(ERASE_LINE)
-  print('Dot dot dot.' + '.'*(iter%3))
-  sys.stdout.write(CURSOR_UP_ONE)
-  time.sleep(0.5)
+    iter += 1
+    sys.stdout.write(ERASE_LINE)
+    print('Dot dot dot.' + '.'*(iter%3))
+    sys.stdout.write(CURSOR_UP_ONE)
+    time.sleep(0.5)
 ```
 
 - Logging:
