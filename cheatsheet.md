@@ -74,9 +74,9 @@ codec = VideoWriter_fourcc(*'mp4v')
 video = VideoWriter(video_dest, codec, fps, (im_cols,im_rows))
 # Main loop
 for frame in range(nframes):
-    im = np.random.random((im_rows, im_cols, 3))*255
-    im = im.astype(np.uint8)
-    video.write(im)
+  im = np.random.random((im_rows, im_cols, 3))*255
+  im = im.astype(np.uint8)
+  video.write(im)
 video.release()
 ```
 
