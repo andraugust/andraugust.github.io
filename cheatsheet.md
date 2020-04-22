@@ -4,6 +4,8 @@ layout: default
 
 # Cheatsheet
 
+I'll probably forget these are here and look them up on stack exchange... ..sigh..
+
 ## Python
 
 - Best way to install tensorflow such that all cuda dependencies are handled correctly:
@@ -18,11 +20,9 @@ conda install -c anaconda tensorflow-gpu=1.12
 jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled=True --stdout > notebook_clear.ipynb
 ```
 - Determinism with keras:
-
 ```bash
 $ export PYTHONHASHSEED=10
 ```
-
 ```python
 import numpy as np
 np.random.seed(10)
@@ -35,14 +35,12 @@ session_conf = tf.ConfigProto(intra_op_parallelism_threads=1,
 sess = tf.Session(graph=tf.get_default_graph(), conf=session_conf)
 K.set_session(sess)
 ```
-
 ```bash
 # reset pythonhashseed to normal behavior
 $ export PYTHONHASHSEED=random
 ```
 
 - Assign arguments of a class to self:
-
 ```python
 class Foo():
     def __init__(self, **kwargs):
@@ -53,7 +51,6 @@ print(foo.a)  # 1
 ```
 
 - Call a function using a string:
-
 ```python
 def foo(arg):
     pass
@@ -67,7 +64,6 @@ eval('foo')(arg)
 
 - Use matplotlib on a server: `plt.switch_backend('agg')` in the import block.
 - Tensorflow/keras control gpu usage:
-
 ```python
 from keras.backend.tensorflow_backend import set_session
 config = tf.ConfigProto()
@@ -75,7 +71,6 @@ config.gpu_options.allow_growth=True
 sess = tf.Session(config=config)
 set_session(sess)
 ```
-
 ```python
 from keras.backend.tensorflow_backend import set_session
 config = tf.ConfigProto()
@@ -84,7 +79,6 @@ set_session(tf.Session(config=config))
 ```
 
 - Use tqdm with multiprocessing:
-
 ```python
 pool = multiprocessing.Pool(n_processes=4)
 for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)):
@@ -92,7 +86,6 @@ for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)
 ```
 
 - Make a movie with opencv.  A list of video codecs is [here](https://gist.github.com/takuma7/44f9ecb028ff00e2132e).
-
 ```python
 from cv2 import VideoWriter, VideoWriter_fourcc
 
@@ -111,7 +104,6 @@ video.release()
 ```
 
 - Print over the current line:
-
 ```python
 import sys
 import time
@@ -129,7 +121,6 @@ for i in range(1000):
 ```
 
 - Logging:
-
 ```python
 import logging
 
