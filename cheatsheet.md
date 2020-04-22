@@ -25,6 +25,7 @@ jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled
 class Foo():
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
+#
 foo = Foo(a=1,b=2)
 print(foo.a)  # 1
 ```
@@ -59,7 +60,7 @@ set_session(tf.Session(config=config))
 ```python
 pool = multiprocessing.Pool(n_processes=4)
 for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)):
-    pass
+  pass
 ```
 
 - Make a movie with opencv.  A list of video codecs is [here](https://gist.github.com/takuma7/44f9ecb028ff00e2132e).
@@ -83,10 +84,10 @@ video.release()
 ```python
 import sys
 import time
- 
+# Constants
 CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K'
- 
+# Main loop
 iter = 0
 for i in range(1000):
   iter += 1
@@ -99,7 +100,6 @@ for i in range(1000):
 - Logging:
 ```python
 import logging
- 
 mode = 'dev'
 log_level = logging.DEBUG if mode == 'dev' else logging.INFO
 logging.basicConfig(level=log_level, format='%(message)s') # format so the line isn't prefixed with logging info
