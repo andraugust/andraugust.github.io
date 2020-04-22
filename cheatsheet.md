@@ -25,7 +25,6 @@ jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled
 class Foo():
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
-
 foo = Foo(a=1,b=2)
 print(foo.a)  # 1
 ```
@@ -34,10 +33,8 @@ print(foo.a)  # 1
 ```python
 def foo(arg):
     pass
-
 # One way
 locals()['foo'](arg)
-
 # Another way
 eval('foo')(arg)
 ```
@@ -68,18 +65,17 @@ for _ in tqdm(pool.imap(map_function, input_iterable), total=len(input_iterable)
 - Make a movie with opencv.  A list of video codecs is [here](https://gist.github.com/takuma7/44f9ecb028ff00e2132e).
 ```python
 from cv2 import VideoWriter, VideoWriter_fourcc
-
+# Init
 video_dest = 'video.mp4'
 fps = 1
 im_rows, im_cols = 100, 100
 codec = VideoWriter_fourcc(*'mp4v')
 video = VideoWriter(video_dest, codec, fps, (im_cols,im_rows))
-
+# Main loop
 for frame in range(nframes):
     im = np.random.random((im_rows, im_cols, 3))*255
     im = im.astype(np.uint8)
     video.write(im)
-
 video.release()
 ```
 
@@ -87,10 +83,10 @@ video.release()
 ```python
 import sys
 import time
-
+ 
 CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K'
-
+ 
 iter = 0
 for i in range(1000):
   iter += 1
@@ -103,7 +99,7 @@ for i in range(1000):
 - Logging:
 ```python
 import logging
-
+ 
 mode = 'dev'
 log_level = logging.DEBUG if mode == 'dev' else logging.INFO
 logging.basicConfig(level=log_level, format='%(message)s') # format so the line isn't prefixed with logging info
