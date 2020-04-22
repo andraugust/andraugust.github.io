@@ -13,7 +13,7 @@ conda activate tf-env
 conda install -c anaconda tensorflow-gpu=1.12
 ```
 
-- Remove output from a jupyter notebook:
+- Remove output cells from a jupyter notebook:
 ```bash
 jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled=True --stdout > notebook_clear.ipynb
 ```
@@ -52,13 +52,17 @@ foo = Foo(a=1,b=2)
 print(foo.a)  # 1
 ```
 
-- Call a function using a string
+- Call a function using a string:
 
 ```python
 def foo(arg):
     pass
 
+# One way
 locals()['foo'](arg)
+
+# Another way
+eval('foo')(arg)
 ```
 
 - Use matplotlib on a server: `plt.switch_backend('agg')` in the import block.
@@ -108,24 +112,33 @@ video.release()
 
 - Print over the current line:
 
-  ```python
-  import sys
-  import time
-  
-  CURSOR_UP_ONE = '\x1b[1A'
-  ERASE_LINE = '\x1b[2K'
-  
-  iter = 0
-  for i in range(1000):
-    iter += 1
-    sys.stdout.write(ERASE_LINE)
-    print('Dot dot dot.' + '.'*(iter%3))
-    sys.stdout.write(CURSOR_UP_ONE)
-    time.sleep(0.5)
-  	
-  ```
+```python
+import sys
+import time
 
-  
+CURSOR_UP_ONE = '\x1b[1A'
+ERASE_LINE = '\x1b[2K'
+
+iter = 0
+for i in range(1000):
+  iter += 1
+  sys.stdout.write(ERASE_LINE)
+  print('Dot dot dot.' + '.'*(iter%3))
+  sys.stdout.write(CURSOR_UP_ONE)
+  time.sleep(0.5)
+```
+
+- Logging:
+
+```python
+import logging
+
+mode = 'dev'
+log_level = logging.DEBUG if mode == 'dev' else logging.INFO
+logging.basicConfig(level=log_level, format='%(message)s') # format so the line isn't prefixed with logging info
+logging.debug('This prints during development')
+logging.info('This prints during development and release')
+```
 
 ## Bash
 
@@ -138,7 +151,7 @@ video.release()
 - Example sed: `$ sed -i .bak "s/<find_regex>/<replace_regex>/g" file.txt`.
 - Example awk: `$ awk -F, '{ print $1 }' file.csv`.
 - Example xargs: `cat file_names.txt | xargs -I % scp remote:% dest/`.
-- Modify shell behavior: put `set -ue` at the beginning of a script to make an error message occur when an unassigned variable is referenced and to make the script exit when a non-zero exit status is returned by a process.
+- Modify shell behavior:  `set -ue` at the top of a script to make an error message occur when an unassigned variable is referenced and exit if a subprocess returns non-zero exit status.
 - Parallel processing:
 
 ```bash

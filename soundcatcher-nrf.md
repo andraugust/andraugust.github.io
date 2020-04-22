@@ -82,6 +82,8 @@ void loop() {
 
 Where `baseline_amplitude` is the output value of the mic in quiet conditions (I use `250`), and `trigger_delta` is the amplitude deviation that triggers a recording (I use `80`).
 
+This method of detection has its pros and its cons.  On the pros side, it's incredibly simple to implement, it's fast, it's computationally cheap, and it doesn't consume much power.  On the cons side, it's really dumb.  If your neighbor mows their lawn you're going to record it.  If a car drives by you're going to record it, etc.  A smarter solution would be to analyze the waveform more thoroughly and extract features that are more discriminative of bird sounds.  For example, most birds chirp in the 3-8kHz range, which is above many unwanted acoustic sources.  We could collect a window of samples, do a FFT on it and see if any coefficients associated with >3kHz are above a threshold, and if so then start recording.  This on the TODO list.
+
 ## Transmitting
 
 Transmitting is done with the [RF24 library](https://github.com/nRF24/RF24).  The idea is to open the file you want to transmit, load its bytes into a packet and send the packet.  For example:
@@ -111,9 +113,9 @@ void loop() {
 }
 ```
 
-The `Serial.write` sends the payload bytes through the serial port and onto the computer where they're read by a python script that's listening for data.  The python script assembles the bytes and writes them to a wav file.  The python script is a bit more involved, so I won't go into the weeds describing it, but you can look at it here (link).
+The `Serial.write` sends the payload bytes through the serial port and onto the computer where they're read by a listening python script.  The python script assembles the bytes and writes them to a wav file with the help of the `serial` and `wave` libraries.  The python script is a bit more involved, so I won't go into the weeds describing it, but you can find it here (link).
 
-
+##
 
 
 
