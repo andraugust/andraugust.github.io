@@ -10,7 +10,7 @@ Candidates are rank-able, so they can be sorted ordinally according to how fit t
 
 Your objective is to hire the top-ranking candidate.  What's your strategy?
 
-(Of course, this set-up isn't very realistic; interviewers in real life can and certainly do go back to previous candidates and hire them.  I'm going to keep the hiring terminology though because it's what's used in the literature and online, but personally I like to think of it as a marriage problem, where instead of an interview it's a date and you're trying to find the best person to marry--usually you can't go back to someone if you tell them you want to date someone else first!)
+(Of course, this set-up isn't very realistic; interviewers in real life can and certainly do go back to previous candidates and hire them.  I'm going to keep the hiring terminology though because it's what's used in the literature and online, but personally I like to think of it as a marriage problem, where instead of an interview it's a date and you're trying to find the best person to marry (hire)--usually you can't go back to someone if you tell them you want to date (interview) someone else first!)
 
 ### The optimal strategy
 
@@ -27,7 +27,6 @@ So the question becomes: when's the cutoff after which you should start looking 
 I'm going to find the cutoff using backward induction.  Like most backward induction problems it helps to look at a state-action diagram:
 
 <center><img src="hiring-problem/state-action-diagram.svg" type="image/svg+xml"></center>
-
 In the diagram time flows downward with candidates being interviewed sequentially. Arrows point to outcomes, which can either be another interview or the option to hire.
 
 When candidate number $$r$$ is interviewed they can either be the best-so-far or not.  If they're not, we pass automatically (as per the heuristic); if they are, we can hire or pass.  If we hire, we're done.
@@ -41,7 +40,6 @@ The solution is to hire when $$P(1 \vert \text{bsf}) \ge V(r+1)$$, otherwise pas
 The value function has a term for the best-so-far outcome and a term for the not-best-so-far outcome:
 
 <div style="overflow-x: scroll;"> $$V(r) = V(r \vert \text{bsf})P(\text{bsf} \vert r) + V(r \vert \neg\text{bsf})(1-P(\text{bsf} \vert r))$$ </div>
-
 Here, $$P(\text{bsf} \vert r)$$ is the probability that candidate $$r$$ will be the best-so-far before we've interviewed them.  To compute it, we need to count the number of ways $$\text{bsf}$$ can happen.
 
 Here's an example of how to do this.  Suppose there are 5 candidates and we're about to interview candidate 3.  The following are possible rank outcomes, ordered left to right by order of interview:
@@ -67,7 +65,6 @@ To start, observe that $$\text{bsf}$$ can only be $$True$$ when $$rank(3) \in \{
 Putting this all together we get
 
 <div style="overflow-x: scroll;"> $$P(\text{bsf} \vert r )=\frac{1}{R!} \sum_{i=1}^{R-r+1}N(i)$$ </div>
-
 where
 
 $$N(i) = \binom{R-i}{r-1}(r-1)!(R-r)!$$
@@ -81,17 +78,14 @@ Next, let's look at $$V(r \vert \neg \text{bsf})$$.  This one's much easier.  Th
 Now $$V(r \vert \text{bsf})$$.  This is where we know candidate $$r$$ is best-so-far.  So what's the value then?  It's the value of choosing the optimal decision.  If the decision is pass, then we move to $$r+1$$ and the value is $$V(r+1)$$. If the decision is keep, then the value is the probability they're rank-1; this probability we've already encountered, it's $$P(1 \vert \text{bsf})$$.  So we have
 
 <div style="overflow-x: scroll;"> $$V(r \vert \text{bsf}) = \max \left\{ P(1 \vert \text{bsf}), V(r+1) \right\}$$ </div>
-
 To calculate $$P(1 \vert \text{bsf})$$ our job is to count the number of ways a candidate can be rank-1 given they're best-so-far, and divide by the total number of ways to be best-so-far.  $$N(i)$$ counts exactly these things:
 
 <div style="overflow-x: scroll;"> $$P(1 \vert \text{bsf}) = \frac{N(1)}{\sum_{i=1}^{R-r+1}N(i)}$$ </div>
-
 Which simplifies conveniently to $$r/R$$.
 
 Finally, putting all the pieces together we end up with
 
 <div style="overflow-x: scroll;"> $$V(r) = \max \left\{ r/R, V(r+1) \right\} \frac{1}{r} + V(r+1)(1-1/r)$$ </div>
-
 The optimal policy is to hire if $$\text{rank}(r)$$ is better than the best so-far and  $$r/R  \ge V(r+1)$$, where $$V$$ is numerically computed next.
 
 ### Numeric solution
@@ -99,13 +93,11 @@ The optimal policy is to hire if $$\text{rank}(r)$$ is better than the best so-f
 I wasn't able to find a nice compact way to write $$V(r)$$ in terms of $$r$$ alone, i.e., without recursion, so the next best thing is to compute it numerically, starting from $$V(R)$$ and working backwards to $$V(1)$$.  This is where the _backward_ in backward induction comes from.  Here's the result:
 
 <center><img src="hiring-problem/value-function.png"></center>
-
 Value is constant for early states, corresponding to the probability of finding the best candidate.  After this, the value decreases to $$1/R$$.
 
 Here's the stop-automatically-passing threshold and win probability as a function of $$R$$:
 
 <center><img src="hiring-problem/threshold-probability.svg" type="image/svg+xml"></center>
-
 We see that the threshold is linear in $$R$$ and the win probability converges to a constant. Interestingly, this constant is $$1/e$$, meanwhile the slope of the threshold is also close to $$1/e$$, it's about 0.37.
 
 ### Simulation
@@ -113,9 +105,7 @@ We see that the threshold is linear in $$R$$ and the win probability converges t
 To verify the analytic solution, let's simulate a hundred thousand hiring situations for each $$R$$ and see what the win rate is for all possible thresholds.  Here's the result:
 
 <center><img src="hiring-problem/simulation_small.png"></center>
-
 <center><img src="hiring-problem/simulations_big.png"></center>
-
 Looking at the first plot, we see the maximum probabilities have the same values and thresholds as the analytic solution, so the analytic solution is validated, which feels good :).
 
 ### Conclusion
