@@ -4,16 +4,9 @@ layout: default
 
 # Cheatsheet
 
-I'll probably forget these are here and look them up on stack exchange... ..sigh..
+I'll probably forget these are here and look them up on stack exchange anyway... ..sigh..
 
 ## Python
-
-- Best way to install tensorflow such that all cuda dependencies are handled correctly:
-```bash
-conda create tf-env python=3.6
-conda activate tf-env
-conda install -c anaconda tensorflow-gpu=1.12
-```
 
 - Remove output cells from a jupyter notebook:
 ```bash
@@ -25,7 +18,7 @@ jupyter nbconvert notebook.ipynb --to notebook --ClearOutputPreprocessor.enabled
 class Foo():
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
-#
+#--
 foo = Foo(a=1,b=2)
 print(foo.a)  # 1
 ```
@@ -128,6 +121,10 @@ cmd3
 ```
 
 - Display json in terminal: `jq --color-output . file.json | more -R`
+
+- And alternative to `sed` that's probably simpler in most applications is the ampersand and pound operator for replacing parts of strings: [documentation](http://tldp.org/LDP/abs/html/parameter-substitution.html).
+
+  
 
 ## Other
 
