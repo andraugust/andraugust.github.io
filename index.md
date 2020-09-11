@@ -54,18 +54,12 @@ This is an Arduino robot I made that learns how to crawl using reinforcement lea
 
 ## [Cheatsheet](cheatsheet.html)
 
-<p style="opacity:0.5">---</p>
+<p style="opacity:0.5">ongoing</p>
 Code snippets and such.
 
 ## [Songbook](songbook.html)
 
-<p style="opacity:0.5">---</p>
+<p style="opacity:0.5">ongoing</p>
 What do you do when guitar-chord websites are all covered in ads and pop-ups?  Host your own chords, ad free!
-
-## [Quotes Notes](quotes-notes.html)
-
-<p style="opacity:0.5">---</p>
-
-Quoters
 
 <br />
