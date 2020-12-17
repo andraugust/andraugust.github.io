@@ -40,7 +40,7 @@ This is an example of how spectral clustering can be applied to confusion matric
 ## [Solving Threes](bellman.md)
 
 <p style="opacity:0.5">03/2016</p>
-Here I derive the optimal strategy for the almighty dice game known as _Threes_.
+Here I derive the optimal policy for the dice game _Threes_.
 
 ## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
 

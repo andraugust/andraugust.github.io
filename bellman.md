@@ -10,7 +10,7 @@ layout: default
 
 ### Threes: How to Play
 
-Threes is a dice game for two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice, where threes counting as _zero_.  The second player rolls in the same way and the player with the lowest score wins.
+Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice, where threes counting as _zero_.  The second player rolls in the same way and the player with the lowest score wins.
 
 Dice are collected in an interesting way.  You're supposed to take at least one dice after each roll, but if you roll all high dice (like all fives and sixes) and you don't want to take any, then you can take no dice and re-roll, but with the consequence that you have to take _at least two_ dice on the re-roll.
 
