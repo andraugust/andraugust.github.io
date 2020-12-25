@@ -2,9 +2,27 @@
 layout: default
 ---
 
-<center style="font-size:20px;">"Everything is interesting if you go into it deeply enough"</center>
+body {
+  margin: 1em;
+  font: 1.2rem/1.4 Georgia, serif;
+}
+.quote {
+  margin: 0;
+  background: #eee;
+  padding: 1em;
+  border-radius: 1em;
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
+}
 
-&mdash; Richard Feynman, [The Pleasure of Finding Things Out](https://en.wikipedia.org/wiki/The_Pleasure_of_Finding_Things_Out)
+<figure class="quote">
+  <blockquote>Everything is interesting if you go into it deeply enough.</blockquote>
+  <figcaption>
+    &mdash; Richard Feynman, <cite>The Pleasure of Finding Things Out</cite>
+  </figcaption>
+</figure>
 
 ## [PlatformIO Notes](platformio-notes.html)
 
