@@ -2,7 +2,7 @@
 layout: default
 ---
 
-####"Everything is interesting if you go into it deeply enough
+<center style="font-size:25px;">"Everything is interesting if you go into it deeply enough"</center>
 
 &mdash; Richard Feynman, [The Pleasure of Finding Things Out](https://en.wikipedia.org/wiki/The_Pleasure_of_Finding_Things_Out)
 
