@@ -4,13 +4,13 @@ layout: default
 
 # The Hiring Problem
 
-Suppose you're interviewing candidates for a job.  A job that _must_ be filled by the best candidate.  The candidates you have lined up are top-notch, which means they have offers from your competitors, and they'll take those offers unless you hire them on the spot.
+Suppose you're interviewing candidates for a job opening and you want to hire the best one. Your candidates have offers from your competitors, and they'll take those offers unless you hire them right away. This means you can't interview candidates forever and at the end go back to pick the best one--they'll be taken.  You don't know before an interview how fit a given candidate is, so the questions becomes: _What interview strategy maximized your probability of selecting the best candidate?_
 
-Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you have to hire or pass to the next candidate.  If you pass on a candidate, you can't go back later and make them an offer; they've already accepted your competitor's offer!
+Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you have to hire or pass to the next candidate.  If you pass on a candidate we assume that you can't go back later and make them an offer; they've already accepted your competitor's offer.
 
 Your objective is to hire the top-ranking candidate.  What's your strategy?
 
-(Of course, this set-up isn't very realistic; interviewers in real life can and certainly do go back to previous candidates and hire them.  I'm going to keep the hiring terminology though because it's what's used in the literature and online, but personally I like to think of it as a marriage problem, where instead of an interview it's a date and you're trying to find the best person to marry (hire)--usually you can't go back to someone if you tell them you want to date (interview) someone else first!)
+(Clearly this set-up isn't very realistic; hiring managers can generally go back to previous candidates and hire them.  I'm going to keep this narrative though because it's what's used in the literature and online, and it makes for an interesting optimization problem. Perhaps a more fitting narrative is in terms of marriage, where instead of an interview it's a date and you're trying to find the best person to marry (hire)--usually you can't go back to someone if you tell them you want to date (interview) another person first!)
 
 ### The optimal strategy
 
