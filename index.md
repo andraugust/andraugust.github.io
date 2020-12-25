@@ -2,9 +2,9 @@
 layout: default
 ---
 
-> Everything is interesting if you go into it deeply enough
+> ####Everything is interesting if you go into it deeply enough
 >
-> &mdash; Richard Feynman, [The Pleasure of Finding Things Out](https://en.wikipedia.org/wiki/The_Pleasure_of_Finding_Things_Out)
+> ####&mdash; Richard Feynman, [The Pleasure of Finding Things Out](https://en.wikipedia.org/wiki/The_Pleasure_of_Finding_Things_Out)
 
 ## [PlatformIO Notes](platformio-notes.html)
 
