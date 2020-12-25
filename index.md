@@ -2,20 +2,7 @@
 layout: default
 ---
 
-body {
-  margin: 1em;
-  font: 1.2rem/1.4 Georgia, serif;
-}
-.quote {
-  margin: 0;
-  background: #eee;
-  padding: 1em;
-  border-radius: 1em;
-}
-.quote figcaption,
-.quote blockquote {
-  margin: 1em;
-}
+<link rel="stylesheet" type="text/css" media="all" href="tmp.css" />
 
 <figure class="quote">
   <blockquote>Everything is interesting if you go into it deeply enough.</blockquote>
