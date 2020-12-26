@@ -4,12 +4,12 @@ layout: default
 
 <link rel="stylesheet" type="text/css" media="all" href="quote.css" />
 
-# Sattelite Image Classification on the fMoW Dataset
+# Sattelite Image Classification on the FMoW Dataset
 
-The Functional Map of the World dataset (fMoW) is a satellite image dataset recently released by IARPA.  Each image in the dataset contains a bounding box over an object of interest and the goal is to train a classifier to correctly label bounding boxes.  This post lists some observations I've made while working with fMoW.
+The Functional Map of the World dataset (FMoW) is a satellite image dataset recently released by IARPA.  Each image in the dataset contains a bounding box over an object of interest and the goal is to train a classifier to correctly label bounding boxes.  This post lists some observations I've made while working with FMoW.
 
 ### Fine-Tuning Works
-Despite the dissimilarity between satellite images and ImageNet, both VGG and ResNet architectures with Imagenet weights can be fine-tuned to predict fMoW labels reasonably well.  VGG16 turned out to be slightly more accurate than ResNet, so it's what I use from this point forward.
+Despite the dissimilarity between satellite images and ImageNet, both VGG and ResNet architectures with Imagenet weights can be fine-tuned to predict FMoW labels reasonably well.  VGG16 turned out to be slightly more accurate than ResNet, so it's what I use from this point forward.
 
 VGG16 was trained on cropped bounding boxes that were re-shaped to 224x224.  All convolutional blocks except the first were fine-tuned, and a single fully connected layer with 256 nodes was used with a softmax classifier.  I found that the more convolutional blocks that were trained the more accurate the model was, but shallower blocks were less influential than deeper ones.  I also found that increasing the number of fully-connected nodes didn't influence accuracy much and neither did adding a second fully-connected layer.
 
@@ -26,7 +26,7 @@ Below are examples of accurate predictions despite image noise and discoloration
 <br />
 
 ### Small Sample Size Doesn't Imply Small Accuracy
-Some classes in fMoW are hugely underrepresented.  The class `port`, for example, only accounts for about 0.5% of the entire dataset (roughly 500 images), but the accuracy for `port` was one of the highest (about 85%).  Ports have features that easily distinguish them from other classes, so the effects of features can sometimes out-weigh the effects of sample size.
+Some classes in FMoW are hugely underrepresented.  The class `port`, for example, only accounts for about 0.5% of the entire dataset (roughly 500 images), but the accuracy for `port` was one of the highest (about 85%).  Ports have features that easily distinguish them from other classes, so the effects of features can sometimes out-weigh the effects of sample size.
 
 The scatterplot below shows how accuracy relates to sample-size for each class.  Accuracy is positively correlated with sample size, but the correlation is wide.  Furthermore, reducing the sample size of each class to contain about half of the samples only reduces accuracy by a few percent, as shown in the second plot below.
 
@@ -36,7 +36,7 @@ The scatterplot below shows how accuracy relates to sample-size for each class. 
 <center>Above: Validation accuracy for various training set sizes.  Using half of the training set decreases accuracy by only about 5%.</center>
 <br />
 ## Spatial Context is Important
-One of the issues with fMoW bounding boxes is that they don't contain much spatial context.  For example, `airport_terminal` often excludes airplanes and `lighthouse` often excludes water, as shown below, but these are important distinguishing features.
+One of the issues with FMoW bounding boxes is that they don't contain much spatial context.  For example, `airport_terminal` often excludes airplanes and `lighthouse` often excludes water, as shown below, but these are important distinguishing features.
 
 <center><img src="fmow/context.png" width="120%" height="120%"></center>
 <center>Above: Misclassifications when distinguishing context is excluded from bounding boxes.</center>

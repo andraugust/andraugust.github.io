@@ -36,7 +36,7 @@ This is my segmentation model for Kaggle's Ship Detection Challenge.  The pipeli
 <p style="opacity:0.5">04/2018</p>
 An interesting property of Wikipedia is that most pages first-link to their immediate superset.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do the first-links eventually go?  And what does the first-link taxonomy look like?
 
-## [Satellite Image Classification on the fMoW Dataset](fmow.html)
+## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
 <p style="opacity:0.5">12/2017</p>
 This post is about using CNNs to classify objects in The Functional Map of the World dataset. I look at fine-tuning, the effect of sample size distribution, and the effect of including spatial context.

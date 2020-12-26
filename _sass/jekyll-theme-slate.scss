@@ -47,7 +47,7 @@ body {
   box-sizing: border-box;
   color: #24292e; //#373737;
   background: #ffffff;
-  font-size: 1.2rem/1.4; //16px;
+  font-size: 18px;
   font-family: Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -394,7 +394,7 @@ Small Device Styles
 
 @media screen and (max-width: 480px) {
   body {
-    font-size: 1.2rem/1.4; //14px;
+    font-size: 14px;
   }
 
   #downloads {
@@ -442,7 +442,7 @@ Small Device Styles
 
 @media screen and (max-width: 320px) {
   body {
-    font-size: 1.2rem/1.4; //14px;
+    font-size: 14px;
   }
 
   #downloads {
