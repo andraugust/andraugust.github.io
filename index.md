@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<link rel="stylesheet" type="text/css" media="all" href="tmp.css" />
+<link rel="stylesheet" type="text/css" media="all" href="quote.css" />
 
 <figure class="quote">
   <blockquote>Everything is interesting if you go into it deeply enough.</blockquote>
