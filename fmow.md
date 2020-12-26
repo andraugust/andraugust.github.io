@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<link rel="stylesheet" type="text/css" media="all" href="quote.css" />
+
 # Sattelite Image Classification on the fMoW Dataset
 
 The Functional Map of the World dataset (fMoW) is a satellite image dataset recently released by IARPA.  Each image in the dataset contains a bounding box over an object of interest and the goal is to train a classifier to correctly label bounding boxes.  This post lists some observations I've made while working with fMoW.
