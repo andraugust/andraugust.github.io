@@ -20,7 +20,7 @@ Unfortunately you can't accumulate re-rolls (for example by take no-dice multipl
 
 To find the optimal policy I'm going to use backward induction.  Backward induction works by finding the optimal action at the last step of the game and uses it to find the optimal action at the second to last step, continuing all the way to the current step.
 
-To avoid stepping backwards in time at every roll, we compute a so-called _value function_ containing numbers that determines the optimal action at a given point in the game.  The bulk of the challenge in backward induction is computing the value function.  Before doing this, we need to set up the game representation and notation.
+To avoid stepping backwards in time at every roll, we compute a so-called _value function_ containing numbers that determine the optimal action at a given point in the game.  The bulk of the challenge in backward induction is computing the value function.  Before doing this, we need to set up the game representation and notation.
 
 ### Game Representation
 The game has three main components:
