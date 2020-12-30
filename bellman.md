@@ -10,17 +10,17 @@ layout: default
 
 ### Threes: How to Play
 
-Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice, where threes counting as _zero_.  The second player rolls in the same way and the player with the lowest score wins.
+Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice, with threes counting as _zero_.  The second player rolls the same way and whoever has the lowest score wins.
 
-Dice are collected in an interesting way.  You're supposed to take at least one dice after each roll, but if you roll all high dice (like all fives and sixes) and you don't want to take any, then you can take no dice and re-roll, but with the consequence that you have to take _at least two_ dice on the re-roll.
+You're supposed to take at least one dice per roll, but if you roll all high dice (like all fives and sixes) and you don't want to take any, you can take no dice and re-roll, but with the consequence of having to take _at least two_.
 
-Unortunately you can't accumulate re-rolls, for example by takeing no-dice multiple times, and you can't re-roll the last die---you have to take it.  An example game is worked out at the bottom of this post.
+Unfortunately you can't accumulate re-rolls (for example by take no-dice multiple times), and you can't re-roll the last die---you have to take it.  An example game is worked out at the bottom of the page.
 
 ### Backward Induction
 
-I'm going to find the optimal policy for Threes using backward induction.  Backward induction finds the optimal action at the last step of the game and uses it to find the optimal action at the second to last step, etc. until the current step is reached.
+To find the optimal policy I'm going to use backward induction.  Backward induction works by finding the optimal action at the last step of the game and then uses it to find the optimal action at the second to last step, all the way until the current step.
 
-In order to avoid stepping backwards in time at every decision point we compute so-called _values_ which allow us to look-up a number that determines the optimal action at a given point in the game.  The bulk of the challenge in backward induction is computing this so-called value function.  Before doing this though, it helps to lay-out the game representation and introduce some notation.
+To avoid stepping backwards in time at every roll, we compute a so-called _value function_ which allow us to look-up a number that determines the optimal action at a given point in the game.  The bulk of the challenge in backward induction is computing the value function.  Before doing this, we need a game representation and some notation.
 
 ### Game Representation
 The game has three main components:
