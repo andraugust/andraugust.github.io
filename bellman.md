@@ -10,17 +10,17 @@ layout: default
 
 ### Threes: How to Play
 
-Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice, with threes counting as _zero_.  The second player rolls the same way and whoever has the lowest score wins.
+Threes is a dice game played by two or more people. The first player rolls five dice and takes the ones they want to keep, then they roll again and continue taking dice until they've collected them all.  The player's score is the sum of their dice, with threes counting as _zero_. The second player rolls the same way. Whoever has the lowest score wins.
 
-You're supposed to take at least one dice per roll, but if you roll all high dice (like all fives and sixes) and you don't want to take any, you can take no dice and re-roll, but with the consequence of having to take _at least two_.
+You're supposed to take at least one dice per roll, but if you roll all high dice (like all fives and sixes) you can choose to re-roll with the consequence of having to take _at least two_ on the next roll.
 
 Unfortunately you can't accumulate re-rolls (for example by take no-dice multiple times), and you can't re-roll the last die---you have to take it.  An example game is worked out at the bottom of the page.
 
 ### Backward Induction
 
-To find the optimal policy I'm going to use backward induction.  Backward induction works by finding the optimal action at the last step of the game and then uses it to find the optimal action at the second to last step, all the way until the current step.
+To find the optimal policy I'm going to use backward induction.  Backward induction works by finding the optimal action at the last step of the game and uses it to find the optimal action at the second to last step, continuing all the way to the current step.
 
-To avoid stepping backwards in time at every roll, we compute a so-called _value function_ which allow us to look-up a number that determines the optimal action at a given point in the game.  The bulk of the challenge in backward induction is computing the value function.  Before doing this, we need a game representation and some notation.
+To avoid stepping backwards in time at every roll, we compute a so-called _value function_ containing numbers that determines the optimal action at a given point in the game.  The bulk of the challenge in backward induction is computing the value function.  Before doing this, we need to set up the game representation and notation.
 
 ### Game Representation
 The game has three main components:
