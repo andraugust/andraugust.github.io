@@ -14,17 +14,17 @@ $$\textbf{x}(t) = e^{\textbf{A} t}\textbf{x}(0)$$
 
 The factor $$e^{\textbf{A} t}$$ is awkward to explicitly compute, requiring a series expansion unless $$\textbf{A}$$ is diagonal, so it's common to work in $$\textbf{A}$$'s eigenbasis where dynamics are uncoupled.
 
-The eigen-decomposition of $$\textbf{A}$$ returns an eigenvalue matrix $$\mathbf{\Lambda}$$ and eigen-vector matrix $$\textbf{T}$$. The transition matrix in terms of these is $$\textbf{A} = \textbf{T} \textbf{\Lambda} \textbf{T}^{-1}$$ and the state vector is $$\textbf{z} = \textbf{T}^{-1}\textbf{x}$$. The solution in eigenspace is
+The eigen-decomposition of $$\textbf{A}$$ returns an eigenvalue matrix $$\mathbf{\Lambda}$$ and eigen-vector matrix $$\textbf{T}$$. The transition matrix in terms of these is $$\textbf{A} = \textbf{T} \mathbf{\Lambda} \textbf{T}^{-1}$$ and the state vector is $$\textbf{z} = \textbf{T}^{-1}\textbf{x}$$. The solution in eigenspace is
 
-$$\textbf{z}(t) = e^{\boldsybol{\Lambda} t}\textbf{z}(0)$$
+$$\textbf{z}(t) = e^{\mathbf{\Lambda} t}\textbf{z}(0)$$
 
-Because $$\boldsybol{\Lambda}$$ is diagonal (containing the eigenvalues of $$\textbf{A}$$), dynamics are uncoupled and we get the simplification:
+Because $$\mathbf{\Lambda}$$ is diagonal (containing the eigenvalues of $$\textbf{A}$$), dynamics are uncoupled and we get the simplification:
 
 $$z_i(t) = e^{\lambda_i t} z_i(0)$$
 
 In terms of the original state-space where measurements (presumably) occur the solution is
 
-$$\textbf{x}(t) = \textbf{T} e^{\boldsybol{\Lambda}t}\textbf{T}^{-1}\textbf{x}(0)$$
+$$\textbf{x}(t) = \textbf{T} e^{\mathbf{\Lambda}t}\textbf{T}^{-1}\textbf{x}(0)$$
 
 For a discrete-time system the analysis is similar. The dynamics are
 
