@@ -4,7 +4,7 @@ layout: default
 
 ##Notes on Optimal Control
 
-Optimal control usually begins with the analysis of continuous-time linear dynamical systems. These systems are represented by a state vector $${\bf x}(t) \in R^n$$ having dynamics defined by an $n \times n$ transition matrix $${\bf A}$$:
+Optimal control usually begins with the analysis of continuous-time linear dynamical systems. These systems are represented by a state vector $${\bf x}(t) \in R^n$$ having dynamics defined by an $$n \times n$$ transition matrix $${\bf A}$$:
 
 $${\bf \dot x}(t) = {\bf Ax}(t)$$
 
