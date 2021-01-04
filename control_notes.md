@@ -10,9 +10,9 @@ $${\bf \dot x}(t) = {\bf Ax}(t)$$
 
 The solution of which is
 
-$${\bf x}(t) = e^{{\bf A}t}{\bf x}(0)$$
+$${\bf x}(t) = e^{{\bf A} t}{\bf x}(0)$$
 
-The factor $$e^{{\bf A}t}$$ is awkward to explicitly compute, requiring a series expansion unless $${\bf A}$$ is diagonal, so it's common to work in $${\bf A}$$'s eigenbasis where dynamics are uncoupled.
+The factor $$e^{{\bf A} t}$$ is awkward to explicitly compute, requiring a series expansion unless $${\bf A}$$ is diagonal, so it's common to work in $${\bf A}$$'s eigenbasis where dynamics are uncoupled.
 
 The eigen-decomposition of $${\bf A}$$ gives us an eigenvalue matrix $${\bf \Lambda}$$ and eigen-vector matrix $${\bf T}$$. The transition matrix in terms of these is $${\bf A} = {\bf T}{\bf \Lambda}{\bf T}^{-1}$$ and the state vector is $${\bf z} = {\bf T}^{-1}{\bf x}$$. The solution in eigenspace is
 
