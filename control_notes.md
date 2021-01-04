@@ -4,13 +4,13 @@ layout: default
 
 # Notes on Optimal Control
 
-Optimal control usually begins with the analysis of continuous-time linear dynamical systems. These systems are represented by a state vector $$\textbf{x}(t) \in R^n$$ having dynamics defined by an $$n \times n$$ transition matrix $$\textbf{A}$$:
+Optimal control usually begins with the analysis of continuous-time linear dynamical systems. These systems are represented by a state vector $$\textbf{x}(t) \in R^n$$ having dynamics defined by an $$n \times n$$ transition matrix $$A$$:
 
-$$\dot{\textbf{x}}(t) = \textbf{Ax}(t)$$
+$$\dot{\textbf{x}}(t) = A\textbf{x}(t)$$
 
 The solution of which is
 
-$$\textbf{x}(t) = e^{\textbf{A} t}\textbf{x}(0)$$
+$$\textbf{x}(t) = e^{At}\textbf{x}(0)$$
 
 The factor $$e^{\textbf{A} t}$$ is awkward to explicitly compute, requiring a series expansion unless $$\textbf{A}$$ is diagonal, so it's common to work in $$\textbf{A}$$'s eigenbasis where dynamics are uncoupled.
 
