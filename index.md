@@ -19,7 +19,7 @@ PlatformIO is a nice IDE for Arduino that allows you to specify environments and
 ## [The Hiring Problem](hiring-problem.html)
 
 <p style="opacity:0.5">09/2019</p>
-Suppose you're interviewing candidates for a job opening. Interviews come at a cost, but they provide useful information about candidates. How many candidates should you interview before selecting one?
+Suppose you're interviewing candidates for a job. Interviews come at a cost, but they provide useful information about candidates. How many candidates should you interview if you want to select the best one and minimize cost?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
@@ -34,7 +34,7 @@ This is my segmentation model for Kaggle's Ship Detection Challenge.  The pipeli
 ## [The First-Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-An interesting property of Wikipedia is that most pages first-link to their immediate superset.  For example, _poker_ first-links to _card game_ and _card game_ first-links to _game_, etc.  Where do the first-links eventually go?  And what does the first-link taxonomy look like?
+An interesting property of Wikipedia is that the first link on most pages will go to that page's immediate superset.  For example, _poker_ goes to _card game_, _card game_ goes to _game_, etc.  Where do these first-links lead?  And what does the first-link taxonomy look like?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
