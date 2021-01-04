@@ -4,17 +4,17 @@ layout: default
 
 # Notes on Optimal Control
 
-Optimal control usually begins with the analysis of continuous-time linear dynamical systems. These systems are represented by a state vector $$\textbf{x}(t) \in R^n$$ having dynamics defined by an $$n \times n$$ transition matrix $$A$$:
+Optimal control usually begins with the analysis of continuous-time linear dynamical systems. These systems are represented by a state vector $$\textbf{x}(t) \in R^n$$ having dynamics defined by an $$n \times n$$ transition matrix $$\textbf{A}$$:
 
-$$\dot{\textbf{x}}(t) = A\textbf{x}(t)$$
+$$\dot{\textbf{x}}(t) = \textbf{Ax}(t)$$
 
 The solution of which is
 
-$$\textbf{x}(t) = e^{At}\textbf{x}(0)$$
+$$\textbf{x}(t) = e^{\textbf{A} t}\textbf{x}(0)$$
 
 The factor $$e^{\textbf{A} t}$$ is awkward to explicitly compute, requiring a series expansion unless $$\textbf{A}$$ is diagonal, so it's common to work in $$\textbf{A}$$'s eigenbasis where dynamics are uncoupled.
 
-The eigen-decomposition of $$\textbf{A}$$ returns an eigenvalue matrix $$\boldsybol{\Lambda}$$ and eigen-vector matrix $$\textbf{T}$$. The transition matrix in terms of these is $$\textbf{A} = \textbf{T} \boldsybol{\Lambda} \textbf{T}^{-1}$$ and the state vector is $$\textbf{z} = \textbf{T}^{-1}\textbf{x}$$. The solution in eigenspace is
+The eigen-decomposition of $$\textbf{A}$$ returns an eigenvalue matrix $$\mathbf{\Lambda}$$ and eigen-vector matrix $$\textbf{T}$$. The transition matrix in terms of these is $$\textbf{A} = \textbf{T} \textbf{\Lambda} \textbf{T}^{-1}$$ and the state vector is $$\textbf{z} = \textbf{T}^{-1}\textbf{x}$$. The solution in eigenspace is
 
 $$\textbf{z}(t) = e^{\boldsybol{\Lambda} t}\textbf{z}(0)$$
 
