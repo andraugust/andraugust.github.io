@@ -27,7 +27,7 @@ To overcome texture bias (is texture bias a bad thing that needs to be overcome?
 
 These images tend to retain the overall shape of the foreground subject (class label), but certainly not the texture, at least not on average.
 
-As desires, training on SIN reduces texture bias on the cue-conflict images:
+As desired, training on SIN reduces texture bias on the cue-conflict images:
 
 <center><img src="CNNTextureBias/5.png" style="zoom:30%;"></center>
 
