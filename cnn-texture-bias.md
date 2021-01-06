@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# TLDR: ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness, Geirhos et al, 2019
+# TLDR: "ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness", Geirhos et al, 2019
 
 <center><img src="CNNTextureBias/1.png" style="zoom:30%;"></center>
 
@@ -43,7 +43,7 @@ The result is that SIN+IN trained models are almost exactly as accurate on IN as
 
 <center><img src="CNNTextureBias/7.png" style="zoom:30%;"></center>
 
-An analysis which wasn't presented, but which would be interesting to see, is if shape biased models can be adversarially attacked in the same ways that texture biased models can be. Many of the current algorithms for generating attacks yield perturbations that have a texture remniscant of the adversarial target class (see: [toaster sticker](https://arxiv.org/pdf/1712.09665.pdf)). If a model is shape-biased, then these attacks may be less successful.
+An analysis which wasn't presented, but which would be interesting to see, is if shape biased models can be adversarially attacked in the same ways that texture biased models can be. Many of the current algorithms for generating attacks yield perturbations that have a texture remniscant of the adversarial target class (see: [toaster sticker](https://arxiv.org/pdf/1712.09665.pdf)). If a model is shape-biased, then these attacks may be less successful, or they may be forced to modifying shape features which are, as this paper has shown, more salient to people, making the typical adversarial constraint of imperceptibility harder to satisfy. 
 
 
 ## References
