@@ -11,7 +11,7 @@ layout: default
   </figcaption>
 </figure>
 
-## [TLDR CNN Texture Bias](platformio-notes.html)
+## [TLDR CNN Texture Bias](cnn-texture-bias.html)
 
 <p style="opacity:0.5">01/2021</p>
 Notes on the paper "ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness" by Geirhos et al, 2019.
