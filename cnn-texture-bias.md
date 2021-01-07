@@ -6,14 +6,16 @@ layout: default
 
 <center><img src="CNNTextureBias/1.png" style="zoom:30%;"></center>
 
-This paper investigates texture and shape bias in CNNs by looking at how models perform when texture and shape are removed or conflated in images. The image transformations they look at are: 
+This paper investigates texture and shape bias in CNNs by looking at how models perform when texture and shape are removed or conflated in images. "Texture" is hand-wavily defined as "an image region with spatially stationary statistics". What these statistics are exactly is left to the reader as an exercise. Nevertheless, distinguishing texture from shape is generally intuitive and easy for people (e.g., elephant skin vs cat outline), so texture and shape labels can be assigned to images without much ambiguity.
+
+To remove or conflate texture with shape, the authors apply the following transformations to ImageNet images:
 
 - Greyscale: keep shape and texture
 - Silhouette: keep foreground object's outline, remove texture, preserve coarse shape
 - Canny edges: remove texture, preserve fine shape
 - Cue-conflict: transfer texture from one object to another (see the cat-elephant above)
 
-Using the ImageNet set they get the results shown below, suggesting that _humans are shape-biased while CNNs are texture biased_:
+Predicting on these images gives the top-5 accuracies shown below. This suggests that _humans are shape-biased while CNNs are texture biased_.
 
 <center><img src="CNNTextureBias/2.png" style="zoom:30%;"></center>
 
