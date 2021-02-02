@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# TLDR: Data Driven Dynamical Systems
+# Notes on Dynamic Mode Decomposition
 
 ## Overview
 
