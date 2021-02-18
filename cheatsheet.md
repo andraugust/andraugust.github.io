@@ -124,8 +124,10 @@ cmd3
 
 - And alternative to `sed` that's probably simpler in most applications is the ampersand and pound operator for replacing parts of strings: [documentation](http://tldp.org/LDP/abs/html/parameter-substitution.html).
 
+- In git, pulling updates from submodules into the parent repo: `git submodule update --recursive --remote`
+
   
 
 ## Other
 
-- How to make a continuous approximation to a step function starting at $$0$$ and ending at $$a$$, using logistic functions: $$\frac{1}{1+\exp(-kx)} - \frac{1}{1+\exp(-k(x-a))}$$.
+- A continuous approximation to a step function starting at $$0$$ and ending at $$a$$, using logistic functions: $$\frac{1}{1+\exp(-kx)} - \frac{1}{1+\exp(-k(x-a))}$$.
