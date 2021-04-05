@@ -126,8 +126,25 @@ cmd3
 
 - In git, pulling updates from submodules into the parent repo: `git submodule update --recursive --remote`
 
+- Forwarding a remote jupyter server to local
+
+  ```
+  ssh servername
+  cd projectname
+  jupyter notebook --no-browser
+  ```
+
+  ```
+  # Locally
+  ssh -N -L <local_port>:localhost:<remote_port> servername
+  # Jupyter will now serve locally at localhost:<local_port>?token=<token>
+  ```
+
+  
+
   
 
 ## Other
 
 - A continuous approximation to a step function starting at $$0$$ and ending at $$a$$, using logistic functions: $$\frac{1}{1+\exp(-kx)} - \frac{1}{1+\exp(-k(x-a))}$$.
+
