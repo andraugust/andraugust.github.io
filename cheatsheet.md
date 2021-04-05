@@ -140,6 +140,29 @@ cmd3
   # Jupyter will now serve locally at localhost:<local_port>?token=<token>
   ```
 
+- Basic local python package installation. Directory structure
+
+  ```
+  project/
+      project/
+          __init__.py
+          script.py
+      readme.md
+      setup.py
+  ```
+
+  setup.py:
+
+  ```
+  from distutils.core import setup
+  
+  setup(
+      name='project',
+      version='1.0.0',
+      packages=''setuptools.find_packages()
+  )
+  ```
+
   
 
   
