@@ -9,12 +9,14 @@ layout: default
 </div>
 
 ## The Agent
-The agent's body is made of acrylic and has two servos to controlling two arms.  _The agent's goal is to learn how to pull itself forward._ The servos are controlled by an Arduino microcontroller that performs one action at each time-step.  The four possible actions are:
+The agent's body has a 'torso' made of acrylic, four wheels for 'taxis', and an arm with two rotational degrees of freedom. The agent's objective is to learn to pull itself forward using its arm. 
 
-- Rotate servo1 up 4 degrees
-- Rotate servo1 down 4 degrees
-- Rotate servo2 up 14 degrees.
-- Rotate servo2 down 14 degrees.
+The arm's servos are controlled by an Arduino microcontroller that selects and executed one action at each of a sequence of discrete time-step.  The four possible actions are:
+
+- Rotate `servo1` up 4 degrees
+- Rotate `servo1` down 4 degrees
+- Rotate `servo2` up 14 degrees.
+- Rotate `servo2` down 14 degrees.
 
 The "solution" is a sequence of actions that move the agent forward at an efficient rate.
 
