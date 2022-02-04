@@ -2,15 +2,16 @@
 
 Intro:  B  F#  E  |  B  F#  E  F#   (2)
 
+
     B       F#           E         B      F#
 Cherise was brushing her long hair gently down
-                B       F#    E                    B      F#
+F#              B       F#    E         E          B      F#
 It was the afternoon of carnival as she brushes it gently down
 B         F#            E       B    F#
 Rubin was strumming his painted mandolin
-                     B      F#      E
+F#                   B      F#      E
 It was inlaid with a pretty face in jade
-              B    F#    E
+E             B    F#    E
 Played in the carnival parade
 
 Cherise was dressing as Pirouette in white
@@ -18,11 +19,11 @@ When a fatal vision gripped her tight Cherise beware tonight
 Rubin, Rubin tell me truly true
 I feel afraid and I don't know why I do, Is there another girl for you?
 
-C#m                    F#    E            B               Bsus4  B
+C#m                    F#                 B               Bsus4  B
 If you could see in my heart    you would know it's true
 B               E      B         A     A   Asus4  A
 There's none Cherise, except for you,
-           G#    (SN   C   C#  D#)
+           Ab    A   B
 Except for you
     C#m         B     F#   B                     F#        E
 I'd swear to it on my very soul, If I lie, may I fall down cold
@@ -57,3 +58,4 @@ The truth of love an unsung song must tell
 The course of love must follow blind without a look behind
 Rubin walked the streets of New Orleans till dawn
 Cherise so lightly in his arms and her hair hung gently down
+
