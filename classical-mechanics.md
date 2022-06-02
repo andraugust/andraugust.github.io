@@ -86,10 +86,14 @@ $$
 L = m(\dot{r}^2 + r^2\dot{\theta}^2) \,/\, 2
 $$
 The radial and angular momenta are straightforward to calculate:
+
+
 $$
 p_r = \frac{\partial L}{\partial \dot{r}} = m\dot{r} \\
 p_\theta = \frac{\partial L}{\partial \dot{\theta}} = mr^2\dot{\theta}
 $$
+
+
 Note that the right-hand side $$\partial L/\partial \dot{\theta} = 0$$ and therefore $$\dot{p}_\theta=0$$, angular momentum is conserved. 
 
 ### Lecture 7: Symmetries and Conservation Laws
