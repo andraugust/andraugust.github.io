@@ -101,7 +101,7 @@ $$
 
 So we define $$\partial L/\partial \dot{q}$$ as the generalized momentum conjugate. 
 
-Why did we go through this trouble to compute the momentumm which we already knew? Well because sometimes momentum isn't this obvious, and in those cases this formula is practical. For example, consider motion in polar coordinates where
+Why did we go through all of this trouble to compute a momentum which we already knew? Because sometimes momentum isn't this obvious, and in those cases this formula is more practical. For example, consider motion in polar coordinates where
 
 
 $$
