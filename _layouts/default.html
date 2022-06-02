@@ -19,7 +19,7 @@
 </head>
 <body>
 <h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #0000e9; -webkit-text-stroke: #0000e3"><span class="s1"><a href="file:///"><b>{{ site.big_title | default: site.github.repository_name }}</b></a></span></h1>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #0000e9; -webkit-text-stroke: #0000e3"><span class="s1"><a href="file:///"><b>{{ site.little_title }}</b><span class="s2"><b></b></span></a></span></h2>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #0000e9; -webkit-text-stroke: #0000e3"><span class="s1"><a href="file:///"><b>{{ site.little_title | default: site.github.repository_name }}</b><span class="s2"><b></b></span></a></span></h2>
 <p class="p3"><span class="s3">{{ content }}<span class="Apple-converted-space"> </span></span></p>
 <p class="p3"><span class="s3">{% if site.github.is_project_page %}</span></p>
 <p class="p4"><span class="s3">{{ site.title | default: site.github.repository_name }} maintained by <a href="file:///Users/andrew/andraugust.github.io/_layouts/%7B%7B%20site.github.owner_url%20%7D%7D"><span class="s4">{{ site.github.owner_name }}</span></a></span></p>
