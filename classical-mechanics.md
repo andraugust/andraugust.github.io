@@ -12,7 +12,7 @@ The first book in the Theoretical Minimum series is on classical mechanics. It s
 
 Classical mechanics is about identifying and characterizing the motion of objects for which quantum effects are ignorable. The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
 
-Dynamics in CM are defined in terms of states and their transitions. For closed systems, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state (such as an initial condition) and all forces acting on the system are defined, the entire future and past of the system are determined. Leonard calls this the _Minus First Law_, due to the priority it should take in how fundamental it is to physics. 
+Dynamics in CM are defined in terms of states and their transitions. For closed systems (i.e., systems where everything is accounted for and there are no 'external' interactions), all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state, such as an initial condition, and all forces acting on the system are defined, the entire future and past of the system are determined. Leonard calls this the _Minus First Law_, due to the priority it should take in how fundamental it is to physics and because the 1st and 0th laws were already taken. 
 
 CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it fair to say they're deterministic?
 
@@ -22,11 +22,11 @@ This lecture is about basic ODEs and their solutions.
 
 ### Lecture 3: Dynamics
 
-This lecture covers Newton's formulation of motion and gives an intro to PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(0)$$, $$\dot{x}(0)$$ and $$F$$, and then integrating in time. Note that the initial condition time of $$0$$ is arbitrary, it could have been any number; sometimes it's called $$t_0$$ to be explicit about that.
+This lecture covers Newton's formulation of motion and gives an intro to PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(0)$$, $$\dot{x}(0)$$ and $$F$$, and then integrating in time. Note that the initial condition time of $$0$$ is arbitrary, it could have been any number, sometimes it's called $$t_0$$ to be explicit about that.
 
 ### Lecture 4: Systems of More Than One Particle
 
-For a system consisting of a single particle, we define the state at time $$t$$ as the vector $$(x(t),\dot{x}(t))$$. This vector, along with the dynamics law (encoded by $$F = m\ddot{x}$$), tells us everything we need to know about the system's evolution; this vector defines the particle's _state_.
+For a system of one particle, we define its state at time $$t$$ as the vector $$(x(t),\dot{x}(t))$$. This vector along with the dynamics law encoded by $$F = m\ddot{x}$$ tells us everything we need to know about the system's evolution; this vector defines the particle's _state_.
 
 For a system of more than one partice, the approach is the same, but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries, and we can think of the system as following a single trajectory through $$6N$$ dimensional state-space, while each individual particle follows a trajectory through $$6$$ dimensional space. 
 
@@ -34,7 +34,7 @@ As an alternative to expressing a system's state in terms of $$x$$s and $$\dot{x
 
 ### Lecture 5: Energy
 
-A fundamental principal of physics asserts that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ are conserved. Note that in general $$F$$ is a vector field and so is $$x$$, but I'm going to leave them unbolded. 
+A fundamental principle of physics asserts that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ are conserved. Note that in general $$F$$ is a vector field and so is $$x$$, but I'm going to leave them unbolded. 
 
 To verify that energy is conserved, compute $$\dot{E}$$:
 
@@ -55,7 +55,7 @@ Note that there exist so-called _non-conservative_ forces for which the force _i
 
 ### Lecture 6: The Principle of Least Action
 
-The principle of least action states that of all the trajectories a particle can conceivably take, the one it _does_ take is the one that minimizes the integral
+The principle of least action states that of all the trajectories a particle can conceivably take, the one it _does_ take minimizes the integral
 
 
 $$
@@ -63,7 +63,7 @@ A = \int_{t_0}^{t_1} L(x,\dot{x}) \, dt
 $$
 
 
-$$L = T - V$$  is the _Lagrangian_, and $$A$$ is the _action_. Although this is usually called the principal of _least_ action, technically we are solving for the action extrema, which may be a maximum. The extrema trajectory satisfies the Euler-Lagrange equation:
+$$L = T - V$$  is the _Lagrangian_ and $$A$$ is the _action_. Although this is usually called the principle of _least_ action, technically we are solving for the action extrema, which may be a maximum. The extrema trajectory satisfies the Euler-Lagrange equation:
 
 
 $$
@@ -81,7 +81,7 @@ If the least-action formulation is equivalent to Newton's equation, then why sho
 
 Generalized coordinates are what I'm going to use going forward. They allow us to go beyond cartesian coordinates and define coordinates however we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum we could use the first pendulum's angle relative to the vertical and the second pendulum's angle relative to the first pendulum's, instead of the x-y positions of each. 
 
-The convenience of generalized coordinates is furthered by the fact that they seamlessly integrate constraints into motion. For example, if a particle is constrained to move on a manifold, then by choosing generalized coordinates on the manifold we automatically get a dynamics equation written in terms of those coordinates.
+The convenience of generalized coordinates is furthered by the fact that they seamlessly integrate constraints into motion. For example, if a particle is constrained to move on a manifold, then by choosing generalized coordinates on that manifold we automatically get a dynamics equation written in terms of those coordinates.
 
 In terms of notation, we use $$q$$ and $$\dot{q}$$ for generalized position and velocity. The Euler-Lagrange equation becomes
 
@@ -101,7 +101,7 @@ $$
 
 So we define $$\partial L/\partial \dot{q}$$ as the generalized momentum conjugate. 
 
-Why did we go through all of this trouble to compute a momentum which we already knew? Because sometimes momentum isn't this obvious, and in those cases this formula is more practical. For example, consider motion in polar coordinates where
+Why did we go through all of that trouble to compute a momentum which we already knew? Because sometimes momentum isn't this obvious, and in those cases this formula is more practical. For example, consider motion in polar coordinates where
 
 
 $$
@@ -109,7 +109,7 @@ L = m(\dot{r}^2 + r^2\dot{\theta}^2) \,/\, 2
 $$
 
 
-The radial and angular momenta are straightforward to calculate:
+The radial and angular momenta are easy to calculate in the Lagrangian formulation:
 
 
 $$
@@ -118,7 +118,7 @@ p_\theta = \frac{\partial L}{\partial \dot{\theta}} = mr^2\dot{\theta}
 $$
 
 
-Note that the right-hand side $$\partial L/\partial \dot{\theta} = 0$$ and therefore $$\dot{p}_\theta=0$$, angular momentum is conserved. 
+Note that the right-hand side is $$\partial L/\partial \dot{\theta} = 0$$ and therefore $$\dot{p}_\theta=0$$, so angular momentum is conserved. 
 
 ### Lecture 7: Symmetries and Conservation Laws
 
