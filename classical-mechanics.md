@@ -37,6 +37,8 @@ As an alternative to expressing a system's state in terms of $$x$$s and $$\dot{x
 A fundamental principal asserts that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ are conserved. Note that in general $$F$$ is a vector field and so is $$x$$, but I'm going to leave them unbolded. 
 
 To verify that energy is conserved, compute $$\dot{E}$$:
+
+
 $$
 \begin{align}
 \dot{E} &= \dot{T} + \dot{V} \\
@@ -47,18 +49,28 @@ $$
 \end{align}
 $$
 
+
+
 Note that there exist so-called _non-conservative_ forces for which this is not true. For example, friction and air resistance are non-conservative forces. These forces however are not fundamental forces like gravity or electromagnetism and therefore fall outside the domain of application of this rule. Furthermore, when analyzing friction and drag we usually only model the object which is being slowed down and not the individual air molecules which produce the drag, so the system isn't closed. I like to think of non-conservative forces as "convenience" or "phenomenological" forces because they allow us to ignore the complex dynamics of unimportant objects (e.g. the air or ground) while still capturing the dynamics of the things we care about (e.g., a ball moving through the air or rolling across the ground).
 
 ### Lecture 6: The Principle of Least Action
 
 The principle of least action states that of all the trajectories a particle can conceivably take, the one it _does_ take is the one that minimizes the integral
+
+
 $$
 A = \int_{t_0}^{t_1} L(x,\dot{x}) \, dt
 $$
-where $$L = T - V$$  is the _Lagrangian_, and $$A$$ is the _action_. Although this is usually called the principal of _least_ action, technically we are solving for the action extrema, which may be a maximum. The extrema trajectory satisfies the Euler-Lagrange equation:
+
+
+$$L = T - V$$  is the _Lagrangian_, and $$A$$ is the _action_. Although this is usually called the principal of _least_ action, technically we are solving for the action extrema, which may be a maximum. The extrema trajectory satisfies the Euler-Lagrange equation:
+
+
 $$
 \frac{d}{dt}\frac{\partial L}{\partial \dot{x}} = \frac{\partial L}{\partial x}
 $$
+
+
 Plugging in $$L = m\dot{x}^2/2 - V(x)$$ results in Newton's equation $$m\ddot{x} = -\partial V/\partial x$$. For systems with more than one degree of freedom there is a separate Euler-Lagrange equation for each degree of freedom.
 
 If the least-action formulation is equivalent to Newton's equation, then why should we care about it? Leonard lists a few reasons:
@@ -72,19 +84,31 @@ Generalized coordinates are what I'm going to use going forward. They allow us t
 The convenience of generalized coordinates is furthered by the fact that they seamlessly integrate constraints into motion. For example, if a particle is constrained to move on a manifold, then by choosing generalized coordinates on the manifold we automatically get a dynamics equation written in terms of those coordinates.
 
 In terms of notation, we use $$q$$ and $$\dot{q}$$ for generalized position and velocity. The Euler-Lagrange equation becomes
+
+
 $$
 \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} = \frac{\partial L}{\partial q}
 $$
-Each generalized coordinate has an associated generalized momentum called its _conjugate momentum_. To figure out what it is, note that 
+
+
+Each generalized coordinate has an associated generalized momentum called its _conjugate momentum_. To figure out what it is, note that
+
+
 $$
 \frac{\partial L}{\partial \dot{q}} = m\dot{q} = p
 $$
+
+
 And so we define $$\partial L/\partial \dot{q}$$ as the generalized momentum conjugate. 
 
 Why did we go through this trouble to compute the momentumm which we already knew? Well because sometimes momentum isn't this obvious, and in those cases this formula is practical. For example, consider motion in polar coordinates where
+
+
 $$
 L = m(\dot{r}^2 + r^2\dot{\theta}^2) \,/\, 2
 $$
+
+
 The radial and angular momenta are straightforward to calculate:
 
 
