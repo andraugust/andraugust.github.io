@@ -22,7 +22,7 @@ This lecture is about basic ODEs and their solutions.
 
 ### Lecture 3: Dynamics
 
-This lecture covers Newton's formulation of motion and gives an intro to PDEs. Newton's formulation defines motion for a single particle as the solution to the second order ODE $F=m\ddot{x}$. This equation is generally solved by inputing $x(0)$, $\dot{x}(0)$, and $F$, and then integrating forward in time. Note that the initial condition time of $0$ is arbitrary, it could have been any number, and sometimes it's called $t_0$ to make this point more explicit.
+This lecture covers Newton's formulation of motion and gives an intro to PDEs. Newton's formulation defines motion for a single particle as the solution to the second order ODE $$F=m\ddot{x}$$. This equation is generally solved by inputing $x(0)$, $\dot{x}(0)$, and $F$, and then integrating forward in time. Note that the initial condition time of $0$ is arbitrary, it could have been any number, and sometimes it's called $t_0$ to make this point more explicit.
 
 ### Lecture 4: Systems of More Than One Particle
 
