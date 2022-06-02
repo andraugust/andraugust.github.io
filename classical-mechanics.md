@@ -6,7 +6,7 @@ layout: default
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-The first book in the Theoretical Minimum series is on classical mechanics. It starts with a discussion of states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation laws and Liouville's theorem to determinism. In this post I summarize the book and capture the pieces I found most interesting.
+The first book in the Theoretical Minimum series is on classical mechanics. It starts with a discussion of states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation and Liouville's theorem to determinism. Here is a summary of the book with the pieces I found most interesting or important.
 
 ### Lecture 1: The Nature of Classical Physics
 
@@ -99,7 +99,7 @@ $$
 $$
 
 
-And so we define $$\partial L/\partial \dot{q}$$ as the generalized momentum conjugate. 
+So we define $$\partial L/\partial \dot{q}$$ as the generalized momentum conjugate. 
 
 Why did we go through this trouble to compute the momentumm which we already knew? Well because sometimes momentum isn't this obvious, and in those cases this formula is practical. For example, consider motion in polar coordinates where
 
