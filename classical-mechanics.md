@@ -2,33 +2,35 @@
 layout: default
 ---
 
-# TLDR: Classical Mechanics
+# Classical Mechanics
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-The first book in the Theoretical Minimum series is on classical mechanics. It starts with a discussion of states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation and Liouville's theorem to determinism. Here is a summary of the book with the pieces I found most interesting or important.
+The first book in the Theoretical Minimum series is on classical mechanics. It starts with states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation and Liouville's theorem to determinism. Here is a summary of the book with the pieces I found most interesting or important.
 
-### Lecture 1: The Nature of Classical Physics
+### Lecture 1: The Nature of Classical Mechanics
 
-Classical mechanics is about identifying and characterizing the motion of objects for which quantum effects are ignorable. The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
+Classical mechanics is about identifying and characterizing the motion of objects when quantum effects are negligible. Exactly _when_ quantum effects become negligible depends on an object's size and energy, but if it's bigger than a small molecule, then it's probably classical. 
 
-Dynamics in CM are defined in terms of states and their transitions. For closed systems (i.e., systems where everything is accounted for and there are no 'external' interactions), all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state, such as an initial condition, and all forces acting on the system are defined, the entire future and past of the system are determined. Leonard calls this the _Minus First Law_, due to the priority it should take in how fundamental it is to physics and because the 1st and 0th laws were already taken. 
+The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
+
+Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those in which all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state, such as an initial condition, and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this the _Minus First Law_, due to the priority it should take in how fundamental it is to physics, and because the 1st and 0th laws were already taken. 
 
 CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it fair to say they're deterministic?
 
 ### Lecture 2: Motion
 
-This lecture is about basic ODEs and their solutions.
+This lecture is about basic ODEs and their solutions. Nothing that exciting to note.
 
 ### Lecture 3: Dynamics
 
-This lecture covers Newton's formulation of motion and gives an intro to PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(0)$$, $$\dot{x}(0)$$ and $$F$$, and then integrating in time. Note that the initial condition time of $$0$$ is arbitrary, it could have been any number, sometimes it's called $$t_0$$ to be explicit about that.
+This lecture covers Newton's formulation of motion and gives an intro to PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and then integrating in time.
 
 ### Lecture 4: Systems of More Than One Particle
 
-For a system of one particle, we define its state at time $$t$$ as the vector $$(x(t),\dot{x}(t))$$. This vector along with the dynamics law encoded by $$F = m\ddot{x}$$ tells us everything we need to know about the system's evolution; this vector defines the particle's _state_.
+For a system of one particle, we define its state at time $$t$$ as the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics law encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution, and so $$(x(t),\dot{x}(t))$$ defines the particle's _state_.
 
-For a system of more than one partice, the approach is the same, but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries, and we can think of the system as following a single trajectory through $$6N$$ dimensional state-space, while each individual particle follows a trajectory through $$6$$ dimensional space. 
+For a system of more than one partice, the approach is the same, but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries, and so we can think of the system as following a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through $$6$$ dimensional state-space. 
 
 As an alternative to expressing a system's state in terms of $$x$$s and $$\dot{x}$$s, we can express it in terms of $$x$$s and $$p$$s. The reason we can do this is because the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory as $$(x(t),p(t))$$ with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. This space, where one axis is $$x$$ and the other axis is $$p$$ is called _phase_ space. The reason we would want to use phase-space instead of state-space is because sometimes objects don't have mass (e.g. photons) and phase space allows us to avoid defining dynamics explicitly in terms of mass. Also, the Lagrangian and Hamiltonian formulations deal directly with momentum, so it's more natural to work with momentum instead of velocity as a state-defining coordinate.
 
@@ -55,15 +57,17 @@ Note that there exist so-called _non-conservative_ forces for which the force _i
 
 ### Lecture 6: The Principle of Least Action
 
-The principle of least action states that of all the trajectories a particle can conceivably take, the one it _does_ take minimizes the integral
+The principle of least action states that of all the trajectories a particle could conceivably take, the one it _does_ take minimizes the integral
 
 
 $$
-A = \int_{t_0}^{t_1} L(x,\dot{x}) \, dt
+A = \int_{t_0}^{t_1} L(x(t),\dot{x}(t)) \, dt
 $$
 
 
-$$L = T - V$$  is the _Lagrangian_ and $$A$$ is the _action_. Although this is usually called the principle of _least_ action, technically we are solving for the action extrema, which may be a maximum. The extrema trajectory satisfies the Euler-Lagrange equation:
+Here, $$L = T - V$$  is the _Lagrangian_ and $$A$$ is the trajectory's _action_. Although this is usually called the principle of _least_ action, technically we are solving for an extrema, which may be a maximum, so maybe better to call it the principle of _stationary_ action instead. 
+
+The extrema trajectory satisfies the Euler-Lagrange equation:
 
 
 $$
@@ -71,7 +75,7 @@ $$
 $$
 
 
-Plugging in $$L = m\dot{x}^2/2 - V(x)$$ results in Newton's equation $$m\ddot{x} = -\partial V/\partial x$$. For systems with more than one degree of freedom there is a separate Euler-Lagrange equation for each degree of freedom.
+Plugging in $$L = m\dot{x}^2/2 - V(x)$$ produces Newton's equation $$m\ddot{x} = -\partial V/\partial x$$. For systems of more than one degree of freedom there's a separate Euler-Lagrange equation for each degree of freedom.
 
 If the least-action formulation is equivalent to Newton's equation, then why should we care about it? Leonard lists a few reasons:
 
@@ -118,7 +122,7 @@ p_\theta = \frac{\partial L}{\partial \dot{\theta}} = mr^2\dot{\theta}
 $$
 
 
-Note that the right-hand side is $$\partial L/\partial \dot{\theta} = 0$$ and therefore $$\dot{p}_\theta=0$$, so angular momentum is conserved. 
+Note that for $$\theta$$ the right-hand side of the EL equation is $$0$$, therefore $$\dot{p}_\theta=0$$, so we see right away that angular momentum is conserved.
 
 ### Lecture 7: Symmetries and Conservation Laws
 
