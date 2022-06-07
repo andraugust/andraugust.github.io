@@ -11,7 +11,7 @@ layout: default
   </figcaption>
 </figure>
 
-## [TLDR: Classical Mechanics](classical-mechanics.html)
+## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
 Notes on Classical Mechanics from Leonard Susskind's "Theoretical Minimum" book series.
