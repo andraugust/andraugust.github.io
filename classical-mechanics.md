@@ -54,7 +54,6 @@ $$
 $$
 
 
-
 Note that there exist so-called _non-conservative_ forces for which the force _isn't_ the gradient of a potential. For example, friction and air resistance are non-conservative forces. These forces however are not fundamental forces like gravity or electromagnetism and therefore fall outside this rule's jurisdiction. Furthermore, when analyzing friction and drag we usually only model the object which is slowed down and not all of the individual air molecules which produce the drag. So in addition to this force not being fundamental, the system isn't closed. I like to think of non-conservative forces as "convenience" or "phenomenological" forces because they ignore the complex dynamics of unimportant objects (e.g. the air or ground) while still capturing the dynamics of the things we care about (e.g. the ball moving through the air or rolling across the ground).
 
 ### Lecture 6: The Principle of Least Action
@@ -131,10 +130,16 @@ Note that for $$\theta$$ the right-hand side of the EL equation is $$0$$, theref
 We already know that coordinate reference frames are arbitrary and therefore don't influence dynamics, but how do symmetries like this present themself in the Lagrangian formulation? Here's an example:
 
 Consider a two-particle system where the first particle has position $$\textbf{r}$$ and the second has position $$\textbf{s}$$. A typical Lagrangian for the first particle might be
+
+
 $$
 L = \frac{1}{2}m\dot{r}^2 - V(|\textbf{r} - \textbf{s}|)
 $$
+
+
 If we translate the entire system to $$\textbf{r}' = \textbf{r} + \textbf{a}$$ and $$\textbf{s}' = \textbf{s} + \textbf{a}$$, then the new Lagrangian is
+
+
 $$
 \begin{align}
 L' &= \frac{1}{2}m\dot{r}'^2 - V(|\textbf{r}' - \textbf{s}'|) \\
@@ -142,7 +147,11 @@ L' &= \frac{1}{2}m\dot{r}'^2 - V(|\textbf{r}' - \textbf{s}'|) \\
 &= L
 \end{align}
 $$
+
+
 So $$L$$ doesn't change and the system dynamics are unaffected. Similarly, if we rotate the entire system to $$\textbf{r}' = \textbf{Rr}$$ and $$\textbf{s}' = \textbf{Rs}$$, then the new Lagrangian is
+
+
 $$
 \begin{align}
 L' &= \frac{1}{2}m \left(\textbf{R}\dot{\textbf{r}}\right)^T\textbf{R}\dot{\textbf{r}} - V\left(|\textbf{Rr} - \textbf{Rs}|\right) \\
@@ -150,27 +159,47 @@ L' &= \frac{1}{2}m \left(\textbf{R}\dot{\textbf{r}}\right)^T\textbf{R}\dot{\text
 &= L
 \end{align}
 $$
+
+
 The Lagrangian is unchanged again, as expected (note that $$\textbf{R}^T\textbf{R} = \textbf{I}$$).
 
 What about more general transformations, how do they change $$L$$? In general, the change in $$L$$ is
+
+
 $$
 dL = \sum_i \left( \frac{\partial L}{\partial \dot{q}_i}d\dot{q}_i + \frac{\partial L}{\partial q_i}dq_i \right)
 $$
+
+
 Plugging in the EL equation and doing some calculus turns this into
+
+
 $$
 dL = \frac{d}{dt} \sum_i p_i \ dq_i
 $$
+
+
 Where $$dq_i$$ encodes the general (infinitesimal) coordinate transformation in question. Now, if we already know that $L$ is invariant to a particular transformation, then $$dL = 0$$ and we've discovered that there's a corresponding conserved quantity 
+
+
 $$
 \sum_i p_i \ dq_i = \text{const}
 $$
+
+
 How does this work out for the translation and rotation examples above? For translation, the infinitesimal equivalent is 
+
+
 $$
 q'_i = q_i + \epsilon
 $$
+
+
 So $$dq_i = q_i' - q_i = \epsilon$$ and $$\sum_i p_i = \text{const}$$. This says that translational invariance implies linear momentum conservation. 
 
 For rotation, if we consider a particle in 2-dimensions, we get
+
+
 $$
 \begin{align}
 x' &= x\cos(\epsilon) + y\sin(\epsilon) \\
@@ -179,12 +208,18 @@ y' &= -x\sin(\epsilon) + y\cos(\epsilon) \\
 &= -x\epsilon + y
 \end{align}
 $$
+
+
 So $$dx = y\epsilon$$ and $$dy = -x\epsilon$$, and $$p_xy - p_yx = \text{const}$$. This says that rotational invariance imples angular momentum conservation. 
 
 In summary, if the Lagrangian is symmetric under a transformation given by the general form
+
+
 $$
 dq_i = f_i(q)\epsilon
 $$
+
+
 then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. Note that $$\epsilon$$ can be ignored because it's a constant.
 
 ### Lecture 8: Hamiltonian Mechanics
