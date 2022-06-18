@@ -14,7 +14,7 @@ Classical mechanics is about identifying and characterizing the motion of object
 
 The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
 
-Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this the _Minus First Law_, due to the priority it should take over other laws in fundamentality, and because the 1st and 0th laws were already taken. 
+Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this the _Minus First Law_, due to the priority it should take over other laws in terms of fundamentality, and because the 1st and 0th laws were already taken. 
 
 CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it fair to say they're deterministic?
 
@@ -30,7 +30,7 @@ This lecture covers Newton's formulation of motion and gives an intro to PDEs. N
 
 For a system of one particle, we define its state at time $$t$$ as the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics law encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution, so $$(x(t),\dot{x}(t))$$ defines the system's _state_.
 
-For a system of more than one partice, the approach is the same, but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries, so we can think of the system as following a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own $$6$$ dimensional state-space. 
+For a system of more than one partice the approach is the same but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries, so we can think of the system as following a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own $$6$$ dimensional state-space. 
 
 As an alternative to expressing a system's state in terms of $$x$$s and $$\dot{x}$$s, we can express it in terms of $$x$$s and $$p$$s. The reason for this is that the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$ with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
 
@@ -59,7 +59,7 @@ Note that there exist so-called _non-conservative_ forces for which the force _i
 
 ### Lecture 6: The Principle of Least Action
 
-The principle of least action states that of all the trajectories a particle could conceivably take, the one it _does_ take minimizes the integral
+The principle of least action states that of all the trajectories that exist through state-space, the one that's taken by a system minimizes the integral
 
 
 $$
@@ -67,9 +67,9 @@ A = \int_{t_0}^{t_1} L(x(t),\dot{x}(t)) \, dt
 $$
 
 
-Here, $$L = T - V$$  is the _Lagrangian_ and $$A$$ is the trajectory's _action_. Although this is usually called the principle of _least_ action, technically we are solving for an extrema, which may be a maximum, so maybe better to call this the principle of _stationary_ action instead. 
+Here, $$L = T - V$$  is the _Lagrangian_ and $$A$$ is the trajectory's _action_, which is a scalar. Although this is usually called the principle of _least_ action, it's really a statement about trajectories on an action-extrema, so sometimes it's called the principle of _stationary_ action  instead. 
 
-The extrema trajectory satisfies the Euler-Lagrange equation:
+The stationary trajectory satisfies the Euler-Lagrange equation:
 
 
 $$
@@ -77,7 +77,7 @@ $$
 $$
 
 
-Plugging in $$L = m\dot{x}^2/2 - V(x)$$ produces Newton's equation $$m\ddot{x} = -\partial V/\partial x$$. For systems of more than one degree of freedom there's a separate Euler-Lagrange equation for each degree of freedom.
+Plugging in $$L = m\dot{x}^2/2 - V(x)$$ produces Newton's equation $$m\ddot{x} = -\partial V/\partial x$$. For systems of more than one degree of freedom there's a separate EL equation for each degree of freedom.
 
 If the least-action formulation is equivalent to Newton's equation, then why should we care about it? Susskind lists a few reasons:
 
@@ -85,11 +85,11 @@ If the least-action formulation is equivalent to Newton's equation, then why sho
 - It makes coordinate transformations more convenient, such as if we were to move between a stationary and rotating coordinate system.
 - It conveniently allows us to incorporate constraints on trajectories by using _generalized coordinates_.
 
-Generalized coordinates are what I'm going to use going forward. They allow us to go beyond cartesian coordinates and define coordinates however we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum we could use the first pendulum's angle relative to the vertical and the second pendulum's angle relative to the first's, instead of the x-y positions of each. 
+Generalized coordinates are what I'm going to use going forward. They go beyond cartesian coordinates and let us define coordinates however we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum we could use one pendulum's angle relative to the vertical as the first generalized coordinate and the second pendulum's angle relative to the first's as the second, as opposed to using the x-y positions of each. 
 
 The convenience of generalized coordinates is furthered by the fact that they seamlessly integrate constraints into motion. For example, if a particle is constrained to move on a manifold, then by choosing generalized coordinates on that manifold we automatically get a dynamics equation written in terms of those coordinates.
 
-Notationally we use $$q$$ and $$\dot{q}$$ for generalized position and velocity. The Euler-Lagrange equation becomes
+Notationally, $$q$$ and $$\dot{q}$$ are used for generalized position and velocity. The EL equation is then
 
 
 $$
@@ -111,7 +111,7 @@ Why did we go through all of that trouble to compute a momentum which we already
 
 
 $$
-L = m(\dot{r}^2 + r^2\dot{\theta}^2) \,/\, 2
+L = T = m(\dot{r}^2 + r^2\dot{\theta}^2) \,/\, 2
 $$
 
 
@@ -128,7 +128,64 @@ Note that for $$\theta$$ the right-hand side of the EL equation is $$0$$, theref
 
 ### Lecture 7: Symmetries and Conservation Laws
 
-lkj
+We already know that coordinate reference frames are arbitrary and therefore don't influence dynamics, but how do symmetries like this present themself in the Lagrangian formulation? Here's an example:
+
+Consider a two-particle system where the first particle has position $$\textbf{r}$$ and the second has position $$\textbf{s}$$. A typical Lagrangian for the first particle might be
+$$
+L = \frac{1}{2}m\dot{r}^2 - V(|\textbf{r} - \textbf{s}|)
+$$
+If we translate the entire system to $$\textbf{r}' = \textbf{r} + \textbf{a}$$ and $$\textbf{s}' = \textbf{s} + \textbf{a}$$, then the new Lagrangian is
+$$
+\begin{align}
+L' &= \frac{1}{2}m\dot{r}'^2 - V(|\textbf{r}' - \textbf{s}'|) \\
+&= \frac{1}{2}m\dot{r}^2 - V(|\textbf{r} + \textbf{a} - \textbf{s} - \textbf{a}|) \\
+&= L
+\end{align}
+$$
+So $$L$$ doesn't change and the system dynamics are unaffected. Similarly, if we rotate the entire system to $$\textbf{r}' = \textbf{Rr}$$ and $$\textbf{s}' = \textbf{Rs}$$, then the new Lagrangian is
+$$
+\begin{align}
+L' &= \frac{1}{2}m \left(\textbf{R}\dot{\textbf{r}}\right)^T\textbf{R}\dot{\textbf{r}} - V\left(|\textbf{Rr} - \textbf{Rs}|\right) \\
+&= \frac{1}{2}m\dot{r}^2 - V\left(\left(\textbf{R}(\textbf{r}-\textbf{s})\right)^T \textbf{R}(\textbf{r}-\textbf{s}) \right) \\
+&= L
+\end{align}
+$$
+The Lagrangian is unchanged again, as expected (note that $$\textbf{R}^T\textbf{R} = \textbf{I}$$).
+
+What about more general transformations, how do they change $$L$$? In general, the change in $$L$$ is
+$$
+dL = \sum_i \left( \frac{\partial L}{\partial \dot{q}_i}d\dot{q}_i + \frac{\partial L}{\partial q_i}dq_i \right)
+$$
+Plugging in the EL equation and doing some calculus turns this into
+$$
+dL = \frac{d}{dt} \sum_i p_i \ dq_i
+$$
+Where $$dq_i$$ encodes the general (infinitesimal) coordinate transformation in question. Now, if we already know that $L$ is invariant to a particular transformation, then $$dL = 0$$ and we've discovered that there's a corresponding conserved quantity 
+$$
+\sum_i p_i \ dq_i = \text{const}
+$$
+How does this work out for the translation and rotation examples above? For translation, the infinitesimal equivalent is 
+$$
+q'_i = q_i + \epsilon
+$$
+So $$dq_i = q_i' - q_i = \epsilon$$ and $$\sum_i p_i = \text{const}$$. This says that translational invariance implies linear momentum conservation. 
+
+For rotation, if we consider a particle in 2-dimensions, we get
+$$
+\begin{align}
+x' &= x\cos(\epsilon) + y\sin(\epsilon) \\
+&= x + y\epsilon \\
+y' &= -x\sin(\epsilon) + y\cos(\epsilon) \\
+&= -x\epsilon + y
+\end{align}
+$$
+So $$dx = y\epsilon$$ and $$dy = -x\epsilon$$, and $$p_xy - p_yx = \text{const}$$. This says that rotational invariance imples angular momentum conservation. 
+
+In summary, if the Lagrangian is symmetric under a transformation given by the general form
+$$
+dq_i = f_i(q)\epsilon
+$$
+then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. Note that $$\epsilon$$ can be ignored because it's a constant.
 
 ### Lecture 8: Hamiltonian Mechanics
 
