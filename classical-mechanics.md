@@ -6,7 +6,7 @@ layout: default
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-The first book in the Theoretical Minimum series is on classical mechanics. It starts with states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation laws and Liouville's theorem to determinism. Here's a summary of the book with the pieces I found most interesting or important.
+The first book in the Theoretical Minimum series is on classical mechanics. It starts with states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation laws and Liouville's theorem to determinism. Here's a summary of the book with the pieces that I found the most interesting.
 
 ### Lecture 1: The Nature of Classical Mechanics
 
@@ -179,7 +179,7 @@ dL = \frac{d}{dt} \sum_i p_i \ dq_i
 $$
 
 
-Where $$dq_i$$ encodes the general (infinitesimal) coordinate transformation in question. Now, if we already know that $L$ is invariant to a particular transformation, then $$dL = 0$$ and we've discovered that there's a corresponding conserved quantity 
+Where $$dq_i$$ encodes the general (infinitesimal) coordinate transformation in question. Now, if we already know that $$L$$ is invariant to a particular transformation, then $$dL = 0$$ and we discover a corresponding conserved quantity 
 
 
 $$
@@ -212,7 +212,7 @@ $$
 
 So $$dx = y\epsilon$$ and $$dy = -x\epsilon$$, and $$p_xy - p_yx = \text{const}$$. This says that rotational invariance imples angular momentum conservation. 
 
-In summary, if the Lagrangian is symmetric under a transformation given by the general form
+In summary, if the Lagrangian is symmetric under a general transformation
 
 
 $$
@@ -220,7 +220,7 @@ dq_i = f_i(q)\epsilon
 $$
 
 
-then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. Note that $$\epsilon$$ can be ignored because it's a constant.
+then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. Note that $$\epsilon$$ can be ignored in this last equation because it's a constant.
 
 ### Lecture 8: Hamiltonian Mechanics
 
