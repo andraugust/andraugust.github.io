@@ -30,7 +30,7 @@ This lecture covers Newton's formulation of motion and gives an intro to PDEs. N
 
 For a system of one particle, its state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution, so $$(x(t),\dot{x}(t))$$ defines the system's _state_.
 
-For a system of more than one partice the approach is the same but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries and the system follows a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space. 
+For a system of more than one particle the approach is the same but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries and the system follows a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space. 
 
 As an alternative to expressing a system's state in terms of $$x$$s and $$\dot{x}$$s, we can express it in terms of $$x$$s and $$p$$s. The reason for this is that the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$ with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
 
@@ -273,7 +273,7 @@ $$
 
 It's the total energy, and it's conserved. Note that if $$L$$ depended explicitly on time, then the system would not be time-translation invariant and its energy would change according to $$\partial L / \partial t$$.
 
-$$H$$ is called the _Hamiltonian_ and it's yet another way to encode or represent a system. But like the Lagrangian it isn't a dynamics equation defing a trajectory, for that we have the EL equation. Does the Hamiltonian have its own version of the EL equation? To find out let's do what we tend to do when we have a new mathematical object: compute its differential. 
+$$H$$ is called the _Hamiltonian_ and it's yet another way to encode or represent a system. But like the Lagrangian it isn't a dynamics equation defining a trajectory, for that we have the EL equation. Does the Hamiltonian have its own version of the EL equation? To find out let's do what we tend to do when we have a new mathematical object: compute its differential. 
 
 
 $$
@@ -310,13 +310,13 @@ Together these are the dynamics equations for the Hamiltonian. Whereas the EL eq
 
 ### Lecture 9: The Phase Space Fluid
 
-Having found that the Hamiltonian formulation deals in phase space it pays to understand some of this space's properties. First, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with eachother, and a single trajectory never diverges into multiple trajectories; in other words, distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1: all states have unique successor states and unique predecessor states, therefore dynamics are deterministic.
+Having found that the Hamiltonian formulation deals in phase space it pays to understand some of this space's properties. First, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with each other, and a single trajectory never diverges into multiple trajectories; in other words, distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1: all states have unique successor states and unique predecessor states. Dynamics are deterministic.
 
 To see why the $$-1^{\text{st}}$$ Law is true in the context of the Hamiltonian formulation, we'll imagine that trajectories are like particles moving in a phase space 'fluid' and show that the divergence of these 'particles' is everywhere zero. Divergences act on vector fields, and in the case of phase space the vector field in question is a 'velocity' field defining how trajectories change in time:
 
 
 $$
-\textbf{v}(q,p) = (\dot{q},\dot{p}) = \left( \frac{\partial H}{\partial p}, -\frac{\partial H}{\partial q} \right)
+\textbf{v}(q,p) \equiv (\dot{q},\dot{p}) = \left( \frac{\partial H}{\partial p}, -\frac{\partial H}{\partial q} \right)
 $$
 
 
@@ -336,7 +336,7 @@ $$
 $$
 
 
-Because the order of partial differentiation doesn't matter the divergence is zero and phase space is incompressible. Trajectories don't converge or diverge. This result is called the Gibbs-Liouville theorem. A corollary to this result is that trajectory-volumes in phase space are conserved.
+Because the order of partial differentiation doesn't matter the divergence is zero and phase space is incompressible. Trajectories don't converge or diverge. This result is called the Gibbs-Liouville theorem, a corollary to it is that trajectory-volumes in phase space are conserved.
 
 ### Lecture 10: Poisson Brackets
 
@@ -359,7 +359,7 @@ where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. It ha
 - Antisymmetry: $$\{A,B\} = -\{A,B\}$$
 - Linearity: $$\{kA,B\} = k\{A,B\}$$ and $$\{(A+B),C\} = \{A,C\} + \{B,C\}$$
 - Hamilton's equations are reproduced by plugging in $$F = q$$ and $$F = p$$
-- Many more!
+- And many more!
 
 
 
