@@ -14,13 +14,13 @@ Classical mechanics is about identifying and characterizing the motion of object
 
 The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
 
-Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this _The_ $$-1^{\text{st}}$$ _Law_, due to the priority it should take over other laws in terms of fundamentality, and because the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws were already taken. 
+Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this _The_ $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should take over other laws in terms of fundamentality, and because the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws were already taken. 
 
-CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it fair to say they're deterministic?
+CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it accurate to say they're deterministic?
 
 ### Lecture 2: Motion
 
-This lecture is about basic ODEs and their solutions. There's nothing very exciting to note here...
+This lecture is about basic ODEs and their solutions. There's nothing very exciting to note here!
 
 ### Lecture 3: Dynamics
 
@@ -28,9 +28,9 @@ This lecture covers Newton's formulation of motion and gives an intro to PDEs. N
 
 ### Lecture 4: Systems of More Than One Particle
 
-For a system of one particle, we define its state at time $$t$$ as the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics law encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution, so $$(x(t),\dot{x}(t))$$ defines the system's _state_.
+For a system of one particle, its state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution, so $$(x(t),\dot{x}(t))$$ defines the system's _state_.
 
-For a system of more than one partice the approach is the same but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries, so we can think of the system as following a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own $$6$$ dimensional state-space. 
+For a system of more than one partice the approach is the same but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries and the system follows a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space. 
 
 As an alternative to expressing a system's state in terms of $$x$$s and $$\dot{x}$$s, we can express it in terms of $$x$$s and $$p$$s. The reason for this is that the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$ with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
 
@@ -58,7 +58,7 @@ Note that there exist so-called _non-conservative_ forces for which the force _i
 
 ### Lecture 6: The Principle of Least Action
 
-The principle of least action states that of all the trajectories that exist through state-space, the one that's taken by a system minimizes the integral
+The principle of least action states that of all the trajectories that exist through state-space, the one that's actually taken by a system will minimize the integral
 
 
 $$
@@ -66,7 +66,7 @@ A = \int_{t_0}^{t_1} L(x(t),\dot{x}(t)) \, dt
 $$
 
 
-Here, $$L = T - V$$  is the _Lagrangian_ and $$A$$ is the trajectory's _action_, which is a scalar. Although this is usually called the principle of _least_ action, it's really a statement about trajectories on an action-extrema, so sometimes it's called the principle of _stationary_ action  instead. 
+Here, $$L = T - V$$  is the _Lagrangian_ of the system and $$A$$ is the trajectory's _action_, which is a scalar. Although this is usually called the principle of _least_ action, it's really a statement about trajectories on an action-extrema, so sometimes it's called the principle of _stationary_ action  instead. 
 
 The stationary trajectory satisfies the Euler-Lagrange equation:
 
@@ -84,7 +84,7 @@ If the least-action formulation is equivalent to Newton's equation, then why sho
 - It makes coordinate transformations more convenient, such as if we were to move between a stationary and rotating coordinate system.
 - It conveniently allows us to incorporate constraints on trajectories by using _generalized coordinates_.
 
-Generalized coordinates are what I'm going to use going forward. They go beyond cartesian coordinates and let us define coordinates however we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum we could use one pendulum's angle relative to the vertical as the first generalized coordinate and the second pendulum's angle relative to the first's as the second, as opposed to using the x-y positions of each. 
+Generalized coordinates go beyond cartesian coordinates and let us use whatever coordinates we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum then we could use one pendulum's angle relative to the vertical as the first generalized coordinate and the second pendulum's angle relative to the first's as the second, as opposed to using the x-y positions of each. 
 
 The convenience of generalized coordinates is furthered by the fact that they seamlessly integrate constraints into motion. For example, if a particle is constrained to move on a manifold, then by choosing generalized coordinates on that manifold we automatically get a dynamics equation written in terms of those coordinates.
 
@@ -123,7 +123,7 @@ p_\theta = \frac{\partial L}{\partial \dot{\theta}} = mr^2\dot{\theta}
 $$
 
 
-Note that for $$\theta$$ the right-hand side of the EL equation is $$0$$, therefore $$\dot{p}_\theta=0$$ and we see right away that angular momentum is conserved.
+Note that for $$\theta$$ the right-hand side of the EL equation is $$0$$, so $$\dot{p}_\theta=0$$ and we see right away that angular momentum is conserved.
 
 ### Lecture 7: Symmetries and Conservation Laws
 
@@ -195,7 +195,7 @@ q'_i = q_i + \epsilon
 $$
 
 
-So $$dq_i = q_i' - q_i = \epsilon$$ and $$\sum_i p_i = \text{const}$$. This says that translational invariance implies linear momentum conservation. 
+So $$dq_i \equiv q_i' - q_i = \epsilon$$ and $$\sum_i p_i = \text{const}$$. This says that translational invariance implies linear momentum conservation. 
 
 For rotation, if we consider a particle in 2-dimensions, we get
 
@@ -220,7 +220,7 @@ dq_i = f_i(q)\epsilon
 $$
 
 
-then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. Note that $$\epsilon$$ can be ignored in this last equation because it's a constant.
+then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. (Note that $$\epsilon$$ can be ignored in this last equation because it's a constant.)
 
 ### Lecture 8: Hamiltonian Mechanics
 
@@ -258,7 +258,7 @@ H \equiv \sum_ip_i\dot{q}_i - L
 $$
 
 
-What is this quantity? Lets plug in a simple $$L$$ to see:
+What is this quantity? Lets plug in a simple $$L$$ and find out:
 
 
 $$
@@ -271,9 +271,9 @@ H &= p\dot{q} - \frac{1}{2}m\dot{q}^2 + V(q) \\
 $$
 
 
-It's the total energy, and it's conserved. Note that if $$L$$ depended explicitly on time, then the system would not be time-translation invariant and its energy would change by an amount $$\partial L / \partial t$$.
+It's the total energy, and it's conserved. Note that if $$L$$ depended explicitly on time, then the system would not be time-translation invariant and its energy would change according to $$\partial L / \partial t$$.
 
-$$H$$ is called the _Hamiltonian_ and it's yet another way to encode or represent a system. But like the Lagrangian it isn't a dynamical equation which defines a trajectory, for that we have the EL equation. Does the Hamiltonian have its own version of the EL equation? To find out let's do what we tend to do with new things: compute their differential. 
+$$H$$ is called the _Hamiltonian_ and it's yet another way to encode or represent a system. But like the Lagrangian it isn't a dynamics equation defing a trajectory, for that we have the EL equation. Does the Hamiltonian have its own version of the EL equation? To find out let's do what we tend to do when we have a new mathematical object: compute its differential. 
 
 
 $$
@@ -281,7 +281,7 @@ dH = \sum_i \left( p_i d\dot{q}_i + \dot{q}_i dp_i \right) - dL
 $$
 
 
-Using the result for $$dL$$ from above, canceling terms, and using EL identities, this simplifies to
+Using the result for $$dL$$ from above, canceling terms, and using EL identities simplifies this to
 
 
 $$
@@ -310,9 +310,9 @@ Together these are the dynamics equations for the Hamiltonian. Whereas the EL eq
 
 ### Lecture 9: The Phase Space Fluid
 
-Having found that the Hamiltonian formulation deals with trajectories in phase space, it pays to look at some this space's properties. First of all, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions will never converge with eachother, and a single trajectory will never diverge into multiple trajectories; in other words distinct trajectories are always distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1 where we said that all states have unique sucessor states and unique predecessor states, and therefore that dynamics are deterministic.
+Having found that the Hamiltonian formulation deals in phase space it pays to understand some of this space's properties. First, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with eachother, and a single trajectory never diverges into multiple trajectories; in other words, distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1: all states have unique successor states and unique predecessor states, therefore dynamics are deterministic.
 
-To see why the $$-1^{\text{st}}$$ Law is true in the context of the Hamiltonian formulation, we'll imagine trajectories to be like particles moving in the phase space 'fluid' and show that the divergence of these 'particles' is everywhere zero. Divergences act on vector fields, and in the case of phase space that vector field is a 'velocity' field defining how trajectories change in time:
+To see why the $$-1^{\text{st}}$$ Law is true in the context of the Hamiltonian formulation, we'll imagine that trajectories are like particles moving in a phase space 'fluid' and show that the divergence of these 'particles' is everywhere zero. Divergences act on vector fields, and in the case of phase space the vector field in question is a 'velocity' field defining how trajectories change in time:
 
 
 $$
@@ -328,7 +328,7 @@ $$
 $$
 
 
-Therefore the divergence is 
+The divergence is 
 
 
 $$
@@ -336,11 +336,11 @@ $$
 $$
 
 
-The order of partial differentiation doesn't matter, so the divergence is zero, and phase space is incompressible, meaning that trajectories don't converge or diverge. This result is called the Gibbs-Liouville theorem. A corollary to this result is that trajectory-volumes in phase space are conserved.
+Because the order of partial differentiation doesn't matter the divergence is zero and phase space is incompressible. Trajectories don't converge or diverge. This result is called the Gibbs-Liouville theorem. A corollary to this result is that trajectory-volumes in phase space are conserved.
 
 ### Lecture 10: Poisson Brackets
 
-Poisson brackets are the last part of classical mechanics I'm going to summarize for now. They deal with computing time-derivatives of functions over phase space, i.e., $$\dot{F}(q,p)$$. Why compute time-derivatives of functions over phase space? I don't really have a good answer to that, other than a) you can, and b) there's a mathematical object (called the commutator) quantum mechanics that has a really close analogy with poisson brackets, so it's instructive to know how they work classically.
+Poisson brackets are the last part of classical mechanics I'm going to summarize for now. They deal with computing time-derivatives of functions over phase space, i.e. $$\dot{F}(q,p)$$, in terms of the Hamiltonian. Why compute time-derivatives of functions over phase space? I don't really have a good answer to that, other than a) you can, and b) there's a mathematical object in quantum mechanics (called the commutator) that has a very close analogy with poisson brackets, so it's instructive to know how they work classically.
 
 The time derivative of a function over phase space is
 
@@ -354,11 +354,11 @@ $$
 $$
 
 
-where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. It has several interesting properties, which I won't enumerate here, but here's a taste
+where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. It has many interesting properties which I won't enumerate, but to get a taste:
 
 - Antisymmetry: $$\{A,B\} = -\{A,B\}$$
-- Linear: $$\{kA,B\} = k\{A,B\}$$ and $$\{(A+B),C\} = \{A,C\} + \{B,C\}$$
-- Reproduce Hamilton's equations
+- Linearity: $$\{kA,B\} = k\{A,B\}$$ and $$\{(A+B),C\} = \{A,C\} + \{B,C\}$$
+- Hamilton's equations are reproduced by plugging in $$F = q$$ and $$F = p$$
 - Many more!
 
 
