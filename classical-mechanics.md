@@ -163,7 +163,7 @@ $$
 
 The Lagrangian is unchanged again, as expected (note that $$\textbf{R}^T\textbf{R} = \textbf{I}$$).
 
-What about more general transformations, how do they change $$L$$? In general, the change in $$L$$ is
+What about more general transformations, how do they change $$L$$? In general, the change in $$L(q,\dot{q})$$ is
 
 
 $$
@@ -210,9 +210,9 @@ y' &= -x\sin(\epsilon) + y\cos(\epsilon) \\
 $$
 
 
-So $$dx = y\epsilon$$ and $$dy = -x\epsilon$$, and $$p_xy - p_yx = \text{const}$$. This says that rotational invariance imples angular momentum conservation. 
+So $$dx = y\epsilon$$ and $$dy = -x\epsilon$$, and $$p_xy - p_yx = \text{const}$$. This says that rotational invariance implies angular momentum conservation. 
 
-In summary, if the Lagrangian is symmetric under a general transformation
+In summary, if the Lagrangian is symmetric under the general transformation
 
 
 $$
@@ -224,7 +224,89 @@ then a corresponding conserved quantity exists, and that quantity is proportiona
 
 ### Lecture 8: Hamiltonian Mechanics
 
-lkj
+So far we've seen that coordinate invariances leads to momentum conservations. What about energy conservation, where does that come from? Energy conservation comes from time-translation invariance, which physically means that systems behave the same way if they evolve now, in the past, or in the future, as long as the time shift is applied to the entire system.
+
+In general, a Lagrangian $$L(q,\dot{q},t)$$ changes with time according to
+
+
+$$
+\frac{dL}{dt} = \sum_i \left( \frac{\partial L}{\partial q_i} \dot{q}_i + \frac{\partial L}{\partial \dot{q}_i} \ddot{q}_i  \right) + \frac{\partial L}{\partial t}
+$$
+
+
+Inserting the EL equation and rearranging yields
+
+
+$$
+\frac{dL}{dt} = \frac{d}{dt} \sum_i p_i\dot{q}_i + \frac{\partial L}{\partial t}
+$$
+
+
+or
+
+
+$$
+\frac{d}{dt}\left( L - \sum_ip_i\dot{q}_i \right) = \frac{\partial L}{\partial t}
+$$
+
+
+Now, if $$L$$ doesn't explicitly depend on time, that is to say that the Lagrangian is time-translation invariant, then $$\partial L / \partial t = 0$$ and the conserved quantity is
+
+
+$$
+H \equiv \sum_ip_i\dot{q}_i - L
+$$
+
+
+What is this quantity? Lets plug in a simple $$L$$ to see:
+
+
+$$
+\begin{align}
+H &= p\dot{q} - \frac{1}{2}m\dot{q}^2 + V(q) \\
+&= m\dot{q}\dot{q} - \frac{1}{2}m\dot{q}^2 + V(q) \\
+&= T + V \\
+&= E
+\end{align}
+$$
+
+
+It's the total energy, and it's conserved. Note that if $$L$$ depended explicitly on time, then the system would not be time-translation invariant and its energy would change by an amount $$\partial L / \partial t$$.
+
+$$H$$ is called the _Hamiltonian_ and it's yet another way to encode or represent a system. But like the Lagrangian it isn't a dynamical equation which defines a trajectory, for that we have the EL equation. Does the Hamiltonian have its own version of the EL equation? To find out let's do what we tend to do to new things: compute their differential. 
+
+
+$$
+dH = \sum_i \left( p_i d\dot{q}_i + \dot{q}_i dp_i \right) - dL
+$$
+
+
+Using the result for $$dL$$ from above, canceling terms, and using EL identities simplifies this to
+
+
+$$
+dH = \sum_i \left( \dot{q}_i dp_i - \dot{p}_i dq_i \right)
+$$
+
+
+Comparing this to the general differential form
+
+
+$$
+dH(q,p) = \sum_i \left( \frac{\partial H}{\partial q_i}dq_i + \frac{\partial H}{\partial p_i}dp_i \right)
+$$
+
+
+we see that 
+
+
+$$
+\frac{\partial H}{\partial q_i} = -\dot{p}_i \\
+\frac{\partial H}{\partial p_i} = \dot{q}_i
+$$
+
+
+Together these are the dynamics equations for the Hamiltonian. Whereas the EL equation is a single second order equation for $$q$$, the Hamilton equations are two first order equations for $q$ and $p$, and dynamics are defined as trajectories through phase space, as opposed to configuration space.
 
 ### Lecture 9: The Phase Space Fluid
 
