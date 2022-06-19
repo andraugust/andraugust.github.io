@@ -6,7 +6,7 @@ layout: default
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-The first book in the Theoretical Minimum series is on classical mechanics. It starts with states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation laws and Liouville's theorem to determinism. Here's a summary of the book with the pieces that I found the most interesting.
+The first book in the Theoretical Minimum series is on classical mechanics. It starts with a discussion of states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation laws and Liouville's theorem to determinism. Here's a summary of the book with the pieces that I found the most interesting.
 
 ### Lecture 1: The Nature of Classical Mechanics
 
@@ -14,7 +14,7 @@ Classical mechanics is about identifying and characterizing the motion of object
 
 The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
 
-Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this the _Minus First Law_, due to the priority it should take over other laws in terms of fundamentality, and because the 1st and 0th laws were already taken. 
+Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this _The_ $$-1^{\text{st}}$$ _Law_, due to the priority it should take over other laws in terms of fundamentality, and because the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws were already taken. 
 
 CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it fair to say they're deterministic?
 
@@ -171,7 +171,7 @@ dL = \sum_i \left( \frac{\partial L}{\partial \dot{q}_i}d\dot{q}_i + \frac{\part
 $$
 
 
-Plugging in the EL equation and doing some calculus turns this into
+Plugging in the EL equation and re-arranging terms turns this into
 
 
 $$
@@ -273,7 +273,7 @@ $$
 
 It's the total energy, and it's conserved. Note that if $$L$$ depended explicitly on time, then the system would not be time-translation invariant and its energy would change by an amount $$\partial L / \partial t$$.
 
-$$H$$ is called the _Hamiltonian_ and it's yet another way to encode or represent a system. But like the Lagrangian it isn't a dynamical equation which defines a trajectory, for that we have the EL equation. Does the Hamiltonian have its own version of the EL equation? To find out let's do what we tend to do to new things: compute their differential. 
+$$H$$ is called the _Hamiltonian_ and it's yet another way to encode or represent a system. But like the Lagrangian it isn't a dynamical equation which defines a trajectory, for that we have the EL equation. Does the Hamiltonian have its own version of the EL equation? To find out let's do what we tend to do with new things: compute their differential. 
 
 
 $$
@@ -281,7 +281,7 @@ dH = \sum_i \left( p_i d\dot{q}_i + \dot{q}_i dp_i \right) - dL
 $$
 
 
-Using the result for $$dL$$ from above, canceling terms, and using EL identities simplifies this to
+Using the result for $$dL$$ from above, canceling terms, and using EL identities, this simplifies to
 
 
 $$
@@ -289,7 +289,7 @@ dH = \sum_i \left( \dot{q}_i dp_i - \dot{p}_i dq_i \right)
 $$
 
 
-Comparing this to the general differential form
+Comparing this to the general form of the differential
 
 
 $$
@@ -306,15 +306,60 @@ $$
 $$
 
 
-Together these are the dynamics equations for the Hamiltonian. Whereas the EL equation is a single second order equation for $$q$$, the Hamilton equations are two first order equations for $q$ and $p$, and dynamics are defined as trajectories through phase space, as opposed to configuration space.
+Together these are the dynamics equations for the Hamiltonian. Whereas the EL equation is a single second-order equation for $$q$$, the Hamilton equations are two first-order equations for $$q$$ and $$p$$, and dynamics are defined in terms of trajectories through phase space, as opposed to configuration space.
 
 ### Lecture 9: The Phase Space Fluid
 
-lk
+Having found that the Hamiltonian formulation deals with trajectories in phase space, it pays to look at some this space's properties. First of all, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions will never converge with eachother, and a single trajectory will never diverge into multiple trajectories; in other words distinct trajectories are always distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1 where we said that all states have unique sucessor states and unique predecessor states, and therefore that dynamics are deterministic.
+
+To see why the $$-1^{\text{st}}$$ Law is true in the context of the Hamiltonian formulation, we'll imagine trajectories to be like particles moving in the phase space 'fluid' and show that the divergence of these 'particles' is everywhere zero. Divergences act on vector fields, and in the case of phase space that vector field is a 'velocity' field defining how trajectories change in time:
+
+
+$$
+\textbf{v}(q,p) = (\dot{q},\dot{p}) = \left( \frac{\partial H}{\partial p}, -\frac{\partial H}{\partial q} \right)
+$$
+
+
+The gradient operator in phase space is
+
+
+$$
+\nabla = \left( \frac{\partial}{\partial q}, \frac{\partial}{\partial p} \right)
+$$
+
+
+Therefore the divergence is 
+
+
+$$
+\nabla \cdot \textbf{v} = \sum_i \frac{\partial}{\partial q_i}\frac{\partial H}{\partial p_i} - \frac{\partial}{\partial p_i}\frac{\partial H}{\partial q_i}
+$$
+
+
+The order of partial differentiation doesn't matter, so the divergence is zero, and phase space is incompressible, meaning that trajectories don't converge or diverge. This result is called the Gibbs-Liouville theorem. A corollary to this result is that trajectory-volumes in phase space are conserved.
 
 ### Lecture 10: Poisson Brackets
 
-lk
+Poisson brackets are the last part of classical mechanics I'm going to summarize for now. They deal with computing time-derivatives of functions over phase space, i.e., $$\dot{F}(q,p)$$. Why compute time-derivatives of functions over phase space? I don't really have a good answer to that, other than a) you can, and b) there's a mathematical object (called the commutator) quantum mechanics that has a really close analogy with poisson brackets, so it's instructive to know how they work classically.
+
+The time derivative of a function over phase space is
+
+
+$$
+\begin{align}
+\dot{F}(q,p) &= \sum_i \left( \frac{\partial F}{\partial q_i} \dot{q}_i + \frac{\partial F}{\partial p_i} \dot{p}_i \right) \\
+&= \sum_i \left( \frac{\partial F}{\partial q_i} \frac{\partial H}{\partial p_i}  - \frac{\partial F}{\partial p_i} \frac{\partial H}{\partial q_i} \right) \\
+&\equiv \{F,H\}
+\end{align}
+$$
+
+
+where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. It has several interesting properties, which I won't enumerate here, but here's a taste
+
+- Antisymmetry: $$\{A,B\} = -\{A,B\}$$
+- Linear: $$\{kA,B\} = k\{A,B\}$$ and $$\{(A+B),C\} = \{A,C\} + \{B,C\}$$
+- Reproduce Hamilton's equations
+- Many more!
 
 
 
