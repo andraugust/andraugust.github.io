@@ -365,9 +365,9 @@ Thus, to find the time rate of change for any quantity, just compute its PB with
 
 ### Final Thoughts
 
-The principles and foundations of classical mechanics are all laid out. In writing this post I've mostly avoided specific examples, mostly because they involve a level of notational complexity that I didn't think was worth the time typing into Latex, but everything written above should fully capture the dynamics of any classical system.
+The principles and foundations of classical mechanics are all laid out. In writing this post I've avoided specific examples, mostly because they involve a level of notational complexity that I didn't think was worth the time typing into Latex, but everything written above should fully capture the dynamics of any classical system.
 
-It's interesting to note that the Hamiltonian formulation was derived using the Lagrangian formulation, for example to derive the Hamilton equations it was necessary to substitute the EL equation. In this sense the Lagrangian seems to be more fundamental than the Hamiltonian. Likewise, the Lagrangian formulation, more specifically the EL equation, was derived in terms of the action principle, so the action principle appears to be the most fundamental of all. This should make sense though, after all it's a _principle_, so someone made it up! (the original author is disputed, but it's probably either Fermat, Maupertuis or Gauss, back in the mid 1700s)
+It's interesting to note that the Hamiltonian formulation was derived using the Lagrangian formulation, for example to derive the Hamilton equations it was necessary to substitute the EL equation. In this sense the Lagrangian seems to be more fundamental than the Hamiltonian. Likewise, the Lagrangian formulation, more specifically the EL equation, was derived in terms of the action principle, so the action principle appears to be the most fundamental of all. This shouldn't come as a surprise though, after all it's a _principle_, so someone made it up! (the original author is disputed, but it's probably either Fermat, Maupertuis or Gauss, back in the 1740s)
 
 Lastly, here are a few points and equations to wrap things up: 
 
@@ -379,7 +379,7 @@ Lastly, here are a few points and equations to wrap things up:
 
 #### Dynamics Equations
 
-There are different dynamics equations to use, depending how a system is encoded:
+There are different dynamics equations to use, depending on how a system is encoded:
 
 | Encoding    | Dynamics Equation          |
 | ----------- | -------------------------- |
@@ -389,9 +389,9 @@ There are different dynamics equations to use, depending how a system is encoded
 
 #### Definitions
 
-- $$H =\sum_ip_i\dot{q}_i - L$$
-- $$p_i = \partial L/\partial \dot{q}_i$$
-- $$\dot{F} = \{F,H\}$$
+- Hamiltonian: $$H =\sum_ip_i\dot{q}_i - L$$
+- Generalized momentum: $$p_i = \partial L/\partial \dot{q}_i$$
+- Poisson bracket: $$\dot{F} = \{F,H\}$$
 
 
 
