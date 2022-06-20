@@ -14,7 +14,7 @@ layout: default
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
-Notes on Classical Mechanics from Leonard Susskind's "Theoretical Minimum" book series.
+Notes on classical mechanics from Leonard Susskind's "Theoretical Minimum" book series.
 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
