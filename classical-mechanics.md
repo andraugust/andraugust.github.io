@@ -6,7 +6,7 @@ layout: default
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-The first book in the Theoretical Minimum series is on classical mechanics. It starts with a discussion of states and dynamics and then derives the Lagrangian and Hamiltonian formulations. Along the way it connects symmetries to conservation laws and Liouville's theorem to determinism. Here's a summary of the book with the pieces that I found the most interesting.
+This post is a summary of classical mechanics, based closely on Leonard Susskind's first book in his "Theoretical Minimum" series on theoretical physics. It starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism. This is my compressed version of classical mechanics.
 
 ### Lecture 1: The Nature of Classical Mechanics
 
@@ -14,7 +14,7 @@ Classical mechanics is about identifying and characterizing the motion of object
 
 The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
 
-Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this _The_ $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should take over other laws in terms of fundamentality, and because the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws were already taken. 
+Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this the $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should take over other laws in terms of fundamentality, and because the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws are already taken. 
 
 CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it accurate to say they're deterministic?
 
@@ -340,7 +340,7 @@ Because the order of partial differentiation doesn't matter the divergence is ze
 
 ### Lecture 10: Poisson Brackets
 
-Poisson brackets are the last part of classical mechanics I'm going to summarize for now. They deal with computing time-derivatives of functions over phase space, i.e. $$\dot{F}(q,p)$$, in terms of the Hamiltonian. Why compute time-derivatives of functions over phase space? I don't really have a good answer to that, other than a) you can, and b) there's a mathematical object in quantum mechanics (called the commutator) that has a very close analogy with poisson brackets, so it's instructive to know how they work classically.
+Poisson brackets are the last part of classical mechanics I'm going to summarize for now. They deal with computing time-derivatives of functions over phase space, i.e. $$\dot{F}(q,p)$$, in terms of the Hamiltonian. Why compute time-derivatives of functions over phase space? I don't really have a good answer to that question other than a) you can, and b) there's a mathematical object in quantum mechanics (called the commutator) that has a very close analogy with PBs, so it's instructive to know how they work classically.
 
 The time derivative of a function over phase space is
 
@@ -361,7 +361,37 @@ where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. It ha
 - Hamilton's equations are reproduced by plugging in $$F = q$$ and $$F = p$$
 - And many more!
 
+Thus, to find the time rate of change for any quantity, just compute its PB with the Hamiltonian.
 
+### Final Thoughts
+
+The principles and foundations of classical mechanics are all laid out. In writing this post I've mostly avoided specific examples, mostly because they involve a level of notational complexity that I didn't think was worth the time typing into Latex, but everything written above should fully capture the dynamics of any classical system.
+
+It's interesting to note that the Hamiltonian formulation was derived using the Lagrangian formulation, for example to derive the Hamilton equations it was necessary to substitute the EL equation. In this sense the Lagrangian seems to be more fundamental than the Hamiltonian. Likewise, the Lagrangian formulation, more specifically the EL equation, was derived in terms of the action principle, so the action principle appears to be the most fundamental of all. This should make sense though, after all it's a _principle_, so someone made it up! (the original author is disputed, but it's probably either Fermat, Maupertuis or Gauss, back in the mid 1700s)
+
+Lastly, here are a few points and equations to wrap things up: 
+
+#### Properties & Principles
+
+- Classical systems follow state-space trajectories that minimize their action. 
+- Phase space is incompressible and trajectories are deterministic (the $$-1^{\text{st}}$$ Law).
+- If the Lagrangian is symmetric under a transformation, then that transformation has a corresponding conserved quantity.
+
+#### Dynamics Equations
+
+There are different dynamics equations to use, depending how a system is encoded:
+
+| Encoding    | Dynamics Equation          |
+| ----------- | -------------------------- |
+| Forces      | Newton's second law        |
+| Lagrangian  | EL equation                |
+| Hamiltonian | The two Hamilton equations |
+
+#### Definitions
+
+- $$H =\sum_ip_i\dot{q}_i - L$$
+- $$p_i = \partial L/\partial \dot{q}_i$$
+- $$\dot{F} = \{F,H\}$$
 
 
 
