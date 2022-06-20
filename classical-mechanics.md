@@ -379,7 +379,7 @@ Lastly, here are a few points and equations to wrap things up:
 
 #### Dynamics Equations
 
-There are different dynamics equations to use, depending on how a system is encoded:
+There are different dynamics equations to use depending on how a system is encoded:
 
 | Encoding    | Dynamics Equation          |
 | ----------- | -------------------------- |
@@ -391,7 +391,7 @@ There are different dynamics equations to use, depending on how a system is enco
 
 - Hamiltonian: $$H =\sum_ip_i\dot{q}_i - L$$
 - Generalized momentum: $$p_i = \partial L/\partial \dot{q}_i$$
-- Poisson bracket: $$\dot{F} = \{F,H\}$$
+- Poisson bracket: $$\{A,B\}$$, see above for explicit definition
 
 
 
