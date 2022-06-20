@@ -10,7 +10,7 @@ This post is a summary of classical mechanics, based closely on Leonard Susskind
 
 ### Lecture 1: The Nature of Classical Mechanics
 
-Classical mechanics is about identifying and characterizing the motion of objects. More specifically, objects for which quantum effects are negligible. Exactly _when_ quantum effects become negligible depends on the object's size and energy, but if it's bigger than a small molecule, then it's probably classical. 
+Classical mechanics is about identifying and characterizing the motion of objects. More specifically, objects for which quantum effects are negligible. Exactly _when_ quantum effects become negligible depends on the object's size and energy, but if it's bigger than a small molecule it's probably classical. 
 
 The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
 
@@ -310,7 +310,7 @@ Together these are the dynamics equations for the Hamiltonian. Whereas the EL eq
 
 ### Lecture 9: The Phase Space Fluid
 
-Having found that the Hamiltonian formulation deals in phase space it pays to understand some of this space's properties. First, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with each other, and a single trajectory never diverges into multiple trajectories; in other words, distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1: all states have unique successor states and unique predecessor states. Dynamics are deterministic.
+Having found that the Hamiltonian formulation deals in phase space it pays to understand some of its properties. First, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with each other, and a single trajectory never diverges into multiple trajectories; in other words, distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1: all states have unique successor states and unique predecessor states. Dynamics are deterministic.
 
 To see why the $$-1^{\text{st}}$$ Law is true in the context of the Hamiltonian formulation, we'll imagine that trajectories are like particles moving in a phase space 'fluid' and show that the divergence of these 'particles' is everywhere zero. Divergences act on vector fields, and in the case of phase space the vector field in question is a 'velocity' field defining how trajectories change in time:
 
@@ -365,9 +365,9 @@ Thus, to find the time rate of change for any quantity, just compute its PB with
 
 ### Final Thoughts
 
-The principles and foundations of classical mechanics are all laid out. In writing this post I've avoided specific examples, mostly because they involve a level of notational complexity that I didn't think was worth the time typing into Latex, but everything written above should fully capture the dynamics of any classical system.
+The principles and foundations of classical mechanics are all laid out. In writing this post I've avoided specific examples, mostly because examples usually involve a level of notational complexity that I didn't think was worth the time typing into LaTeX, but everything written above should fully capture the dynamics of any classical system.
 
-It's interesting to note that the Hamiltonian formulation was derived using the Lagrangian formulation, for example to derive the Hamilton equations it was necessary to substitute the EL equation. In this sense the Lagrangian seems to be more fundamental than the Hamiltonian. Likewise, the Lagrangian formulation, more specifically the EL equation, was derived in terms of the action principle, so the action principle appears to be the most fundamental of all. This shouldn't come as a surprise though, after all it's a _principle_, so someone made it up! (the original author is disputed, but it's probably either Fermat, Maupertuis or Gauss, back in the 1740s)
+It's interesting to note that the Hamiltonian formulation was derived using the Lagrangian formulation, for example to derive the Hamilton equations it was necessary to substitute the EL equation. In this sense the Lagrangian seems to be more fundamental than the Hamiltonian. Likewise the EL equation was derived in terms of the action principle, so the action principle appears to be the most fundamental of all. This shouldn't come as a surprise though, after all it's a _principle_, so someone made it up! (the original author is disputed, but it's probably either Fermat, Maupertuis or Gauss, back in the 1740s)
 
 Lastly, here are a few points and equations to wrap things up: 
 
