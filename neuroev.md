@@ -11,7 +11,7 @@ layout: default
 
 ## Background
 
-Using neural nets to control AI agents can be challenging because the neural nets are hard to optimize. Neural classifiers and regressors by comparison are easier to optimize because their objective functions are explicitly defined in terms of the NN's inputs and outputs, and they're differentiable so gradient-based methods can be applied.  Meanwhile in agent-based contexts objective functions usually aren't evaluated until after a long sequence of outputs (actions) and it's unclear how individual outputs contributed to the objective function (the so-called credit assignment problem). On top of all that, agent-based objective functions usually aren't differentiable.
+Using neural nets to control AI agents can be challenging because they're hard to optimize. Neural classifiers and regressors by comparison are easier to optimize because their objective functions are explicitly defined in terms of the NN's inputs and outputs, and they're differentiable so gradient-based methods can be used.  Meanwhile in agent-based contexts objective functions usually aren't evaluated until after a long sequence of outputs (actions), so it's unclear how individual outputs contributed to the objective function (the so-called credit assignment problem). On top of all that, agent-based objective functions usually aren't differentiable.
 
 But learning is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I explore a non-gradient based genetic algorithm called enforced subpopulations to learn useful neural net weights in the context of an artificial life agent. The algorithm finds useful weights despite the absence of instantaneous feedback or a differentiable objective function.
 
