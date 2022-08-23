@@ -11,17 +11,17 @@ layout: default
 
 ## Background
 
-One of the challenges of using neural nets to control AI agents is the absence of a suitable learning algorithm. Gradient descent based methods work well for NN classifiers and regressors, but that's because in these cases inputs have well defined desired outputs, and the dependence of the objective function on the input-output mapping is explicit _and_ differentiable.  In many AI contexts, however, objective functions aren't evaluated until after a long sequence of NN outputs (actions) have occurred, so it isn't clear which outputs played what role in shaping the final value of the objective f'n.
+Using neural nets to control AI agents can be challenging because the neural nets are hard to optimize. Neural classifiers and regressors by comparison are easier to optimize because their objective functions are explicitly defined in terms of the NN's inputs and outputs, and they're differentiable so gradient-based methods can be applied.  Meanwhile in agent-based contexts objective functions usually aren't evaluated until after a long sequence of outputs (actions) and it's unclear how individual outputs contributed to the objective function (the so-called credit assignment problem). On top of all that, agent-based objective functions usually aren't differentiable.
 
-Learning, however, is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I use a non-gradient based algorithm called a _genetic algorithm_ to learn good neural net weights, despite the absence of instant-by-instant feedback or a differentiable objective f'n.
+But learning is an optimization task, so any optimization algorithm is candidate to be a learner.  In this post I explore a non-gradient based genetic algorithm called enforced subpopulations to learn useful neural net weights in the context of an artificial life agent. The algorithm finds useful weights despite the absence of instantaneous feedback or a differentiable objective function.
 
 ## Artificial Life: The Setting
 
-The context of the problem is artificial life: an agent moves in a 2-d world and must find food to survive.  But the world is a scary place and contains deadly moving circles that kill on contact, and there's a "metabolic clock" that kills if it reaches 0%, so agents have to find food before they starve.
+The context of the problem is artificial life. An agent moves in a 2-d world where it must find food and avoid moving objects to survive.  The world contains randomly generated moving objects that kill the agent if they touch it, and each agent has a "metabolic clock" that kills it if it reaches 0%, so each agent has to find food before they starve.
 
-Agents are controlled by feed-forward neural nets that convert sensory input into actions.  Actions are based solely on the parameters of the network and the input stimulus from the environment (more about inputs later).  To identify parameters that produce long-living agents, a genetic algorithm is used.  The GA searches through parameter space, and, as we'll see, is able to find good parameters that keep agents alive for progressively longer time-periods.
+Each agent is controlled by a feed-forward neural net that maps inputs to actions, where the inputs are measurements of the environment.  Actions are based solely on the weights of the network and the inputs at a given time.  To identify the network weights that generate long-living agents, a genetic algorithm is used.  The algorithm searches through weight space and finds useful weights that keep agents alive for as long as possible.
 
-The video above shows agents at various stages of optimization, so-called _generations_.  In the beginning, agents move arbitrarily and get killed pretty quickly (the red bar indicates health).  After about 10 generations agents manage to navigate to food, but only sometimes.  By generation 25 agents expertly avoid balls and navigating to food.  Success.
+The video above shows agents at various stages of optimization, so-called _generations_.  In the beginning, agents  have randomly chosen weights, so they move arbitrarily and get killed pretty quickly (the red bar indicates health).  After about 10 generations they manage to navigate to food and by generation 25 they're very effective at avoiding danger and navigating to food quickly.
 
 ## Neural Nets: The Brain
 
@@ -33,10 +33,10 @@ Agents have access to their environment through eight senses:
 * The sine and cosine of the angle between the agent's heading direction and the nearest blue ball.
 * The sine and cosine of the agent's heading direction relative to the world's coordinate system.
 
-These measurements are fed into a single-layer feed-forward neural net that functions as the agent's brain.  The neural net outputs one of the following actions at each time-step:
+These measurements are fed into a single-layer feed-forward network that functions as the agent's brain.  The network outputs one of the following actions at each time-step:
 
-* Rotate by a small pre-defined constant amount.
-* Translate forward by a small pre-defined constant amount.
+* Rotate by a small pre-defined amount.
+* Translate forward by a small pre-defined amount.
 * Sit still.
 
 Here's a diagram of the neural net:
@@ -50,9 +50,9 @@ The action performed at a given timestep is an index into the action-list:
 $$a_t = \arg\max{[W_2\tanh{(W_1s_t)]}}$$
 
 ## Genetic Algorithms: The Optimizer
-Brains are pretty standard neural nets, but they're optimized in an interesting way. Neural nets typically train using backpropagation which requires ground-truth feedback.  In the context of the simulated micro-organism there isn't really any ground-truth.  We do keep track of how long agents live, and use this to measure "error", but the length of time that an agent lives doesn't inform _what_ made the agent live that long.  For instance, if an agent rotates in place every few seconds and then moves towards food every few seconds, then was it the rotating in place that made the agent successful or the moving towards food?  Obviously we know it's the moving towards food, but the lifespan information doesn't make a distinction.  To deal with ambiguous feedback like this we use an optimization procedure that doesn't require continuous feedback, we use a genetic algorithm called Enforced SubPopulations, or ESP.
+Brains are standard feed-forward neural nets, but they're optimized in an interesting way. Neural nets typically train using backpropagation which requires ground-truth feedback.  In the context of the agent there isn't really any ground-truth.  Agent's lifespans are measured and used this to define "error", but the length of time that an agent lives doesn't inform _what_ made the agent live that long.  For instance, if an agent rotates in place every few seconds and then moves towards food every few seconds then was it the rotating in place that made the agent successful or the moving towards food?  Obviously we know it's the moving towards food, but the lifespan measurement doesn't distinguish those.  To deal with ambiguous feedback like this we use an optimization algorithm that doesn't require continuous feedback, we use a genetic algorithm called Enforced SubPopulations, or ESP.
 
-ESP, like most genetic algorithms, finds (or hopes to find) good parameters by combining parameters from networks that have been tested in the past and were successful.  In the context of our agent "tested" means running the network in the world and "successful" means the agent lived for a long time.
+ESP, like most genetic algorithms, finds (or hopes to find) good weights by combining weights from networks that have been tested in the past and were successful.  In the context of our agent "tested" means running the network in the world and "successful" means the agent lived a long time.
 
 ESP is distinguished from other genetic algorithms by its assignments of _subpopulations_ to each network-node.  Subpopulations are a list of weight-lists,  each defined by the parameters going into and outof the corresponding node.  To make a fully-formed network one weight-list is selected from each node's subpopulation and applied the node's edges.  The fully-formed network is then placed "in" an agent and the agent is evaluated in the world.
 

@@ -1,8 +1,8 @@
 title:
 headline:
-description: Andrew August's Technical Archive
+description: Andrew August's Notebook
 show_downloads: true
-google_analytics:
+google_analytics: true
 theme: jekyll-theme-slate
-big_title: Andrew August's Technical Archive
+big_title: Andrew August's Notebook
 little_title: 📚
