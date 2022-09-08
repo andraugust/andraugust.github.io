@@ -42,15 +42,15 @@ Transferring style from one image to another using neural networks.
 <p style="opacity:0.5">11/2018</p>
 This is a segmentation model for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship classifier followed by a U-net and some post-processing.
 
-## [The First-Link Taxonomy of Wikipedia](wikilinks.html)
+## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-An interesting property of Wikipedia is that the first link on most pages will go to that page's immediate superset.  For example, _poker_ goes to _card game_, _card game_ goes to _game_, etc.  Where do these first-links lead?  And what does the first-link taxonomy look like?
+The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" goes to "card game", "card game" goes to "game", "game" goes to "play", etc.  What happens if you repeated click first-links, where do you end up? Is there any stucture to this first-link taxonomy?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
 <p style="opacity:0.5">12/2017</p>
-This post is about CNNs classification on the Functional Map of the World dataset. I look at fine-tuning, the effect of sample size distribution, and the effect of including spatial context.
+This post is about classification on the Functional Map of the World dataset. I look at fine-tuning and the effects of sample size distribution and spatial context.
 
 ## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
 
