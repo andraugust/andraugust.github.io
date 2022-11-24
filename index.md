@@ -19,7 +19,7 @@ Notes on classical mechanics from Leonard Susskind's "Theoretical Minimum" book 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
 <p style="opacity:0.5">01/2021</p>
-Notes on the paper "ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness" by Geirhos et al, 2019.
+Notes on the paper _ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness_ by Geirhos et al, 2019.
 
 
 ## [PlatformIO Notes](platformio-notes.html)
@@ -35,17 +35,17 @@ Suppose you're interviewing candidates for a job. Interviews come at a cost, but
 ## [Neural Style Transfer](neural-style-transfer.html)
 
 <p style="opacity:0.5">02/2019</p>
-Transferring style from one image to another using neural networks.
+What is the _style_ of an image? Is it something that can be encoded in a reasonable way? If so, would it be possible to transfer the style of one image onto another one, like making a selfie look like it was painted by Van Gogh? 
 
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
-This is a segmentation model for Kaggle's Ship Detection Challenge.  The pipeline consists of a ship/noship classifier followed by a U-net and some post-processing.
+Automating the detection ships in satellite imagery using deep learning.
 
 ## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" goes to "card game", "card game" goes to "game", "game" goes to "play", etc.  What happens if you repeated click first-links, where do you end up? Is there any stucture to this first-link taxonomy?
+The first link on most Wikipedia pages goes to the next most general thing. For example, _poker_ links to _card game_, _card game_ links to _game_, _game_ links to _play_, etc.  What happens if you repeated click first-links? Where do you go? Is there any special stucture to Wikipedia's first-link taxonomy?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
@@ -67,15 +67,10 @@ A derivation of the optimal policy for the dice game _Threes_.
 <p style="opacity:0.5">11/2015</p>
 Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize such nets?  In this post I implement a genetic algorithm called Enforced Subpopulations to show that yes, yes they can.
 
-## [Reinforcement Learning IRL](rl.html)
+## [Learning to Crawl, A Physical Implementation of Reinforcement Learning](rl.html)
 
 <p style="opacity:0.5">12/2014</p>
-This is an Arduino robot that learns to crawl using reinforcement learning.  Included is a video tutorial about RL and how it was implemented in the robot.
-
-## [Cheatsheet](cheatsheet.html)
-
-<p style="opacity:0.5">ongoing</p>
-Code snippets and such.
+An Arduino robot learns to crawl using reinforcement learning. Included is a video about RL and how it was implemented in the robot.
 
 ## [Songbook](songbook.html)
 
