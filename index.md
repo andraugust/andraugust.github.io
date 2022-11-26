@@ -67,7 +67,7 @@ A derivation of the optimal policy for the dice game _Threes_.
 <p style="opacity:0.5">11/2015</p>
 Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize such nets?  In this post I implement a genetic algorithm called Enforced Subpopulations to show that yes, yes they can.
 
-## [Learning to Crawl, A Physical Implementation of Reinforcement Learning](rl.html)
+## [Learning to Crawl: A Physical Implementation of Reinforcement Learning](rl.html)
 
 <p style="opacity:0.5">12/2014</p>
 An Arduino robot learns to crawl using reinforcement learning. Included is a video about RL and how it was implemented in the robot.
