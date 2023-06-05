@@ -12,7 +12,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 One way to start learning about quantum mechanics is by comparing it to classical mechanics, and this is how the book begins, with a comparison between a classical spin experiment and its quantum analog.
 
-The experiment is to measure spin using an apparatus that can be oriented arbitrarily in space. In the classical system suppose we do the following: orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Now we orient the apparatus in the $$-z$$ direction, measure the spin and find it to be $$-1$$. How about orienting the apparatus in the $$+x$$ direction? In this case we measure $$0$$. After a few more configurations and measurements we find that spin can be modeled effectively as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$ and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$.
+The experiment is to measure spin using an apparatus that can be oriented arbitrarily in space. In the classical system suppose we do the following: orient the apparatus in the $$+z$$ direction, measure the spin and find it to be $$+1$$. Now we orient the apparatus in the $$-z$$ direction, measure the spin and find it to be $$-1$$. How about orienting the apparatus in the $$+x$$ direction? In this case we measure $$0$$. After a few more configurations and measurements we find that spin can be modeled effectively as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$ and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$.
 
 Now lets do the same experiment on a quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$. Instead we get $$+1$$, different from the classical spin. Let's measure again. Now we get $$-1$$. Measuring again and again we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s and nothing in between. After taking more measurements a pattern emerges. The quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
 
@@ -24,9 +24,11 @@ Quantum states are modeled as vectors in a space called Hilbert space. In Hilber
 
 In general, quantum states are simply denoted by $$\ket{A}$$, but it's often useful to represent them concretely in terms of components:
 
+
 $$
 \ket{A} = \sum_i \alpha_i \ket{i}
 $$
+
 
 where $$\ket{i}$$ are orthonormal basis vectors and $$\alpha_i$$ are complex components. Note that this way of representing $$\ket{A}$$ requires the selection of a particular basis and the values $$\alpha_i$$ will in general change from basis to basis.
 
@@ -38,9 +40,9 @@ $$
 $$
 
 
-Defining $$\ket{u}$$ and $$\ket{d}$$ as orthogonal is important because it encodes the fact that they are distinct states: measuring $$z$$ returns $$\ket{u}$$ or $$\ket{d}$$, never both.
+Defining $$\ket{u}$$ and $$\ket{d}$$ as orthogonal is important because it encodes their distinctness: measuring $$z$$ returns $$\ket{u}$$ or $$\ket{d}$$ and never both.
 
-The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^{*} \alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^{*} \alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. These are probabilities, so they need to be normalized:
+The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^{*} \alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^{*} \alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. Being probabilities, they're normalized:
 
 
 $$
@@ -58,7 +60,7 @@ $$
 
 So, components are related to measurement probabilities. What are they for $$u$$ and $$d$$? It depends on how the system is prepared prior to measurement. If it's prepared in $$\ket{l}$$ the components with have certain values, if it's prepared in $$\ket{r}$$ they may have different values. Same goes for the other bases and how they're prepared prior to measurement. 
 
-To make progress at this point then, and actually find values for components, we have to pick a basis and write components in terms of them. Let's use $$\ket{u}$$ and $$\ket{d}$$.
+To make progress at this point then, and actually find values for components, we have to pick a basis and write components down in terms of them. Let's use $$\ket{u}$$ and $$\ket{d}$$.
 
 Start with the $$x$$ measurement. To capture the 50% measurement outcome from the spin experiment, we simply set 
 
@@ -94,7 +96,7 @@ $$
 The principles of quantum mechanics are formulated around the idea of measureables, that is to say, the outcomes of experiments. They state that:
 
 * Measureables, such as spin, are represented by Hermitian operators.
-* Quantum states, such as $$\ket{u}$$ or $$\ket{d}$$, are the eigenvectors these operators.
+* Quantum states, such as $$\ket{u}$$ and $$\ket{d}$$, are eigenvectors of these operators.
 * The measureable quantities themselves, such as $$\pm1$$ for spin, are the eigenvalues.
 * When a particular eigenvalue is measured, the system is said to be _prepared_ in the corresponding eigenstate.
 * Distinguishable states are represented by orthogonal vectors.
@@ -121,7 +123,8 @@ $$
 \sigma_z \begin{pmatrix} 0 \\ 1 \end{pmatrix} = -\begin{pmatrix} 0 \\ 1 \end{pmatrix}
 $$
 
-Similarly, for $$\sigma_x$$,
+
+For $$\sigma_x$$:
 
 
 $$
@@ -134,7 +137,7 @@ $$
 $$
 
 
-And similar for $$\sigma_y$$. Solving for the components of each matrix we get the so-called Pauli matrices that represent quantum spin:
+And similar for $$\sigma_y$$. Solving for the components of each matrix we get the so-called Pauli matrices representing quantum spin:
 
 
 $$
@@ -155,7 +158,7 @@ $$
 $$
 
 
-So far we've only measured spin along $$x$$, $$y$$, and $$z$$, but the results above enable us to measure spin in any direction $$\hat{n}$$. This is done by taking the dot product of the Pauli matrices with $$\hat{n}$$. The resulting operator describes measurements in any direction. 
+So far we've only measured spin along $$x$$, $$y$$, and $$z$$, but the results above enable us to measure it in any direction $$\hat{n}$$. This is done by taking the dot product of the Pauli matrices with $$\hat{n}$$. The resulting operator describes a measurement in that direction. 
 
 For example, measuring in the direction $$\hat{n}=(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0)$$, the operator is
 
@@ -169,7 +172,7 @@ $$
 $$
 
 
-The eigenvalues are still $$\pm 1$$ but the eigenvectors are now
+Which has eigenvalues  $$\pm 1$$ and eigenvectors
 
 
 $$
@@ -180,7 +183,7 @@ $$
 $$
 
 
-What are the measurement probabilities if the spin starts in $$\ket{u}$$?
+What are the probabilities of measuring each eigenvalue if the spin starts in $$\ket{u}$$?
 
 
 $$
