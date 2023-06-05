@@ -5,7 +5,7 @@ layout: default
 # Notes on Quantum Mechanics
 
 <center><img src="" style="zoom:80%;"></center>
-$$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\braket}[2]{\left<#1\right>}$$
+$$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\braket}[1]{\left<#1\right>}$$
 
 ### 1. Systems and Experiments
 
@@ -37,9 +37,9 @@ $$
 
 Defining $$\ket{u}$$ and $$\ket{d}$$ as orthogonal is important because it encodes the fact that they are distinct states: measuring $$z$$ returns $$\ket{u}$$ or $$\ket{d}$$, never both.
 
-The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^*\alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^*\alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. These are probabilities, so they need to be normalized:
+The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^{*}\alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^{*}\alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. These are probabilities, so they need to be normalized:
 $$
-\sum_i \alpha_i^*\alpha_i = \braket{A|A} = 1
+\sum_i \alpha_i^{*}\alpha_i = \braket{A|A} = 1
 $$
 
 Because $$\alpha_i = \braket{i|A}$$, we can express the probability of preparing $$\ket{i}$$ as
