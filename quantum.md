@@ -7,7 +7,7 @@ layout: default
 <center><img src="" style="zoom:80%;"></center>
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\braket}[1]{\left<#1\right>}$$
 
-### 1. Systems and Experiments
+### Systems and Experiments
 
 One way to start learning about quantum mechanics is by comparing it to classical mechanics, and this is how the book begins, with a comparison between a classical spin experiment and its quantum analog.
 
@@ -17,7 +17,7 @@ Now lets do the same experiment on a quantum spin. Measuring $$\pm z$$ we get th
 
 So between classical and quantum mechanics the notion of determinism changes, as does the notion of measureable states (classical spin measurements are real-values between $$-1$$ and $$+1$$ but quantum spin is binary). What's more, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$: measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original value. To gain intuition for why this is, it's helpful to remember that quantum systems are so fragile that any measurement energetically strong enough to be useful is necessarily strong enough to change the system in a significant, whereas classically the energy used for measurement has negligible impact on the system itself.
 
-### 2. Quantum States
+### Quantum States
 
 Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and infinite dimensional. Vectors are drawn as kets $$\ket{A}$$ and they have complex conjugates, called bras, drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\braket{A|B}^{*} = \braket{B|A}$$, orthogonalities $$\braket{A|B} = 0$$, and unit-normalization $$\braket{A|A} = 1$$. The familiar vector proprties of commutativity, associativity, distributivity and closedness.
 
@@ -71,8 +71,7 @@ $$
 $$
 
 
-
-### 3. Principles of Quantum Mechanics
+### Principles of Quantum Mechanics
 
 The principles of quantum mechanics are formulated around the idea of measureables, that is to say, the outcomes of experiments. They state that:
 
