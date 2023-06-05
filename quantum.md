@@ -22,7 +22,7 @@ So between classical and quantum mechanics the notion of determinism changes, as
 
 ### Quantum States
 
-Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and infinite dimensional. Vectors are drawn as kets $$\ket{A}$$ and they have complex conjugates, called bras, drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\bk{A|B}^{*} = \bk{B|A}$$, orthogonalities $$\bk{A|B} = 0$$, and unit-normalization $$\bk{A|A} = 1$$. The familiar vector proprties of commutativity, associativity, distributivity and closedness.
+Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and infinite dimensional. Vectors are drawn as kets $$\ket{A}$$ and they have complex conjugates, called bras, drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\bk{A}{B}^{*} = \bk{B}{A}$$, orthogonalities $$\bk{A}{B} = 0$$, and unit-normalization $$\bk{A}{A} = 1$$. The familiar vector proprties of commutativity, associativity, distributivity and closedness.
 
 In general, quantum states are simply denoted by $$\ket{A}$$, but it's often useful to represent them concretely in terms of components:
 
@@ -42,12 +42,12 @@ Defining $$\ket{u}$$ and $$\ket{d}$$ as orthogonal is important because it encod
 
 The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^{*} \alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^{*} \alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. These are probabilities, so they need to be normalized:
 $$
-\sum_i \alpha_i^*\alpha_i = \bk{A|A} = 1
+\sum_i \alpha_i^*\alpha_i = \bk{A}{A} = 1
 $$
 
-Because $$\alpha_i = \bk{i|A}$$, we can express the probability of preparing $$\ket{i}$$ as
+Because $$\alpha_i = \bk{i}{A}$$, we can express the probability of preparing $$\ket{i}$$ as
 $$
-p_i = \bk{A|i}\bk{i|A}
+p_i = \bk{A}{i}\bk{i}{A}
 $$
 
 So, components are related to measurement probabilities. What are they for $$u$$ and $$d$$? It depends on how the system is prepared prior to measurement. If it's prepared in $$\ket{l}$$ the components with have certain values, if it's prepared in $$\ket{r}$$ they may have different values. Same goes for the other bases and how they're prepared prior to measurement. 
@@ -59,7 +59,7 @@ $$
 \ket{r} = \frac{1}{\sqrt{2}} \ket{u} + \frac{1}{\sqrt{2}} \ket{d}
 $$
 
-Next, for $$\ket{l}$$, it may seem like we can use the same coefficients because it also has 50% measurement outcomes, but this doesn't satisfy orthogonality $$\bk{r|l} = 0$$. To satisfy orthogonality the solution is
+Next, for $$\ket{l}$$, it may seem like we can use the same coefficients because it also has 50% measurement outcomes, but this doesn't satisfy orthogonality $$\bk{r}{l} = 0$$. To satisfy orthogonality the solution is
 $$
 \ket{l} = \frac{1}{\sqrt{2}} \ket{u} - \frac{1}{\sqrt{2}} \ket{d}
 $$
@@ -83,7 +83,7 @@ The principles of quantum mechanics are formulated around the idea of measureabl
 * The measureable quantities themselves, such as $$\pm1$$ for spin, are the eigenvalues.
 * When a particular eigenvalue is measured, the system is said to be _prepared_ in the corresponding eigenstate.
 * Distinguishable states are represented by orthogonal vectors.
-* If a system is in state $$\ket{A}$$, the probability of measuring $$\lambda$$ is $$\bk{A|\lambda}\bk{\lambda|A}$$.
+* If a system is in state $$\ket{A}$$, the probability of measuring $$\lambda$$ is $$\bk{A}{\lambda}\bk{\lambda}{A}$$.
 
 Why are the operators Hermitian? Because Hermitian operators have certain desireable properties:
 
@@ -150,7 +150,7 @@ $$
 $$
 What are the measurement probabilities if the spin starts in $$\ket{u}$$?
 $$
-P(+1) = \lvert \bk{+1|u} \rvert^2  = \frac{1}{2}
+P(+1) = \lvert \bk{+1}{u} \rvert^2  = \frac{1}{2}
 $$
 The result is the same for $$P(-1)$$, which isn't surprising given the measurement is at 45deg.
 
