@@ -37,9 +37,9 @@ $$
 
 Defining $$\ket{u}$$ and $$\ket{d}$$ as orthogonal is important because it encodes the fact that they are distinct states: measuring $$z$$ returns $$\ket{u}$$ or $$\ket{d}$$, never both.
 
-The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^{*}\alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^{*}\alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. These are probabilities, so they need to be normalized:
+The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^*\alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^*\alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. These are probabilities, so they need to be normalized:
 $$
-\sum_i \alpha_i^{*}\alpha_i = \braket{A|A} = 1
+\sum_i \alpha_i^*\alpha_i = \braket{A|A} = 1
 $$
 
 Because $$\alpha_i = \braket{i|A}$$, we can express the probability of preparing $$\ket{i}$$ as
@@ -92,7 +92,7 @@ Why are the operators Hermitian? Because Hermitian operators have certain desire
 
 Because Hermitian operators implicitly define eigenvectors and eigenvalues we can think of them as "packaging up", or encoding information about observables. The principles, meanwhile, give us a sense for how to use eigenquantities once they've been calculated from such an operator, or, conversely, how to construct an operator if the eigenquantities are known.
 
-As an example, let's construct the spin operators from what we know about its eigenquantities. These operators are $$2\times2$$ matrices we'll call $$\sigma_x$$, $$\sigma_y$$, and $$\sigma_z$$. For $$\sigma_z$$ we know the eigenvalues are $$\pm1$$ and the eigenvectors are $$\ket{u}$$ and $$\ket{d}$$. This means that
+As an example, let's construct the spin operators from their eigenquantities. These operators are $$2\times2$$ matrices we'll call $$\sigma_x$$, $$\sigma_y$$, and $$\sigma_z$$. For $$\sigma_z$$ we know the eigenvalues are $$\pm1$$ and the eigenvectors are $$\ket{u}$$ and $$\ket{d}$$. This means that
 $$
 \sigma_z \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
 $$
