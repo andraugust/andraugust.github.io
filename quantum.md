@@ -5,7 +5,6 @@ layout: default
 # Notes on Quantum Mechanics
 
 <center><img src="" style="zoom:80%;"></center>
-$$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\braket}[1]{\left<#1\right>}$$
 
 ### Systems and Experiments
 
@@ -19,55 +18,55 @@ So between classical and quantum mechanics the notion of determinism changes, as
 
 ### Quantum States
 
-Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and infinite dimensional. Vectors are drawn as kets $$\ket{A}$$ and they have complex conjugates, called bras, drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\braket{A|B}^{*} = \braket{B|A}$$, orthogonalities $$\braket{A|B} = 0$$, and unit-normalization $$\braket{A|A} = 1$$. The familiar vector proprties of commutativity, associativity, distributivity and closedness.
+Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and infinite dimensional. Vectors are drawn as kets $$\Ket{A}$$ and they have complex conjugates, called bras, drawn backward $$\Ket{A}^{*} = \Bra{A}$$. Vectors have inner products $$\Braket{A|B}^{*} = \Braket{B|A}$$, orthogonalities $$\Braket{A|B} = 0$$, and unit-normalization $$\Braket{A|A} = 1$$. The familiar vector proprties of commutativity, associativity, distributivity and closedness.
 
-In general, quantum states are simply denoted by $$\ket{A}$$, but it's often useful to represent them concretely in terms of components:
-
-$$
-\ket{A} = \sum_i \alpha_i \ket{i}
-$$
-
-where $$\ket{i}$$ are orthonormal basis vectors and $$\alpha_i$$ are complex components. Note that this way of representing $$\ket{A}$$ requires the selection of a particular basis and the values $$\alpha_i$$ will in general change from basis to basis.
-
-As an example, let's represent quantum spin in this formalism. Let $$\ket{u}$$ and $$\ket{d}$$ be orthonormal bases for the $$z$$ measurement such that an arbitrary state prior to measurement is represented as
+In general, quantum states are simply denoted by $$\Ket{A}$$, but it's often useful to represent them concretely in terms of components:
 
 $$
-\ket{A} = \alpha_u \ket{u} + \alpha_d \ket{d}
+\Ket{A} = \sum_i \alpha_i \Ket{i}
 $$
 
-Defining $$\ket{u}$$ and $$\ket{d}$$ as orthogonal is important because it encodes the fact that they are distinct states: measuring $$z$$ returns $$\ket{u}$$ or $$\ket{d}$$, never both.
+where $$\Ket{i}$$ are orthonormal basis vectors and $$\alpha_i$$ are complex components. Note that this way of representing $$\Ket{A}$$ requires the selection of a particular basis and the values $$\alpha_i$$ will in general change from basis to basis.
 
-The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^{*} \alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{u}$$, while $$\alpha_d^{*} \alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{d}$$. These are probabilities, so they need to be normalized:
-$$
-\sum_i \alpha_i^*\alpha_i = \braket{A|A} = 1
-$$
+As an example, let's represent quantum spin in this formalism. Let $$\Ket{u}$$ and $$\Ket{d}$$ be orthonormal bases for the $$z$$ measurement such that an arbitrary state prior to measurement is represented as
 
-Because $$\alpha_i = \braket{i|A}$$, we can express the probability of preparing $$\ket{i}$$ as
 $$
-p_i = \braket{A|i}\braket{i|A}
+\Ket{A} = \alpha_u \Ket{u} + \alpha_d \Ket{d}
 $$
 
-So, components are related to measurement probabilities. What are they for $$u$$ and $$d$$? It depends on how the system is prepared prior to measurement. If it's prepared in $$\ket{l}$$ the components with have certain values, if it's prepared in $$\ket{r}$$ they may have different values. Same goes for the other bases and how they're prepared prior to measurement. 
+Defining $$\Ket{u}$$ and $$\Ket{d}$$ as orthogonal is important because it encodes the fact that they are distinct states: measuring $$z$$ returns $$\Ket{u}$$ or $$\Ket{d}$$, never both.
 
-To make progress at this point then, and actually find values for components, we have to pick a basis and write components in terms of them. Let's use $$\ket{u}$$ and $$\ket{d}$$.
+The values of $$\alpha_u$$ and $$\alpha_d$$, when squared and normalized, represent measurement probabilities. In other words, $$\alpha_u^{*} \alpha_u$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\Ket{u}$$, while $$\alpha_d^{*} \alpha_d$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\Ket{d}$$. These are probabilities, so they need to be normalized:
+$$
+\sum_i \alpha_i^*\alpha_i = \Braket{A|A} = 1
+$$
+
+Because $$\alpha_i = \Braket{i|A}$$, we can express the probability of preparing $$\Ket{i}$$ as
+$$
+p_i = \Braket{A|i}\Braket{i|A}
+$$
+
+So, components are related to measurement probabilities. What are they for $$u$$ and $$d$$? It depends on how the system is prepared prior to measurement. If it's prepared in $$\Ket{l}$$ the components with have certain values, if it's prepared in $$\Ket{r}$$ they may have different values. Same goes for the other bases and how they're prepared prior to measurement. 
+
+To make progress at this point then, and actually find values for components, we have to pick a basis and write components in terms of them. Let's use $$\Ket{u}$$ and $$\Ket{d}$$.
 
 Start with the $$x$$ measurement. To capture the 50% measurement outcome from the spin experiment, we simply set 
 $$
-\ket{r} = \frac{1}{\sqrt{2}} \ket{u} + \frac{1}{\sqrt{2}} \ket{d}
+\Ket{r} = \frac{1}{\sqrt{2}} \Ket{u} + \frac{1}{\sqrt{2}} \Ket{d}
 $$
 
-Next, for $$\ket{l}$$, it may seem like we can use the same coefficients because it also has 50% measurement outcomes, but this doesn't satisfy orthogonality $$\braket{r|l} = 0$$. To satisfy orthogonality the solution is
+Next, for $$\Ket{l}$$, it may seem like we can use the same coefficients because it also has 50% measurement outcomes, but this doesn't satisfy orthogonality $$\Braket{r|l} = 0$$. To satisfy orthogonality the solution is
 $$
-\ket{l} = \frac{1}{\sqrt{2}} \ket{u} - \frac{1}{\sqrt{2}} \ket{d}
-$$
-
-Similar logic applies for the $$y$$ measurement and the states $$\ket{i}$$ and $$\ket{o}$$. This time, however, we have to consider the fact that the 50% measurement outcome is true both when the system is prepared in a $$z$$ state _or_ an $$x$$ state. The results are
-$$
-\ket{i} = \frac{1}{\sqrt{2}} \ket{u} + \frac{i}{\sqrt{2}} \ket{d}
+\Ket{l} = \frac{1}{\sqrt{2}} \Ket{u} - \frac{1}{\sqrt{2}} \Ket{d}
 $$
 
+Similar logic applies for the $$y$$ measurement and the states $$\Ket{i}$$ and $$\Ket{o}$$. This time, however, we have to consider the fact that the 50% measurement outcome is true both when the system is prepared in a $$z$$ state _or_ an $$x$$ state. The results are
 $$
-\ket{o} = \frac{1}{\sqrt{2}} \ket{u} - \frac{i}{\sqrt{2}} \ket{d}
+\Ket{i} = \frac{1}{\sqrt{2}} \Ket{u} + \frac{i}{\sqrt{2}} \Ket{d}
+$$
+
+$$
+\Ket{o} = \frac{1}{\sqrt{2}} \Ket{u} - \frac{i}{\sqrt{2}} \Ket{d}
 $$
 
 
@@ -76,11 +75,11 @@ $$
 The principles of quantum mechanics are formulated around the idea of measureables, that is to say, the outcomes of experiments. They state that:
 
 * Measureables, such as spin, are represented by Hermitian operators.
-* Quantum states, such as $$\ket{u}$$ or $$\ket{d}$$, are the eigenvectors these operators.
+* Quantum states, such as $$\Ket{u}$$ or $$\Ket{d}$$, are the eigenvectors these operators.
 * The measureable quantities themselves, such as $$\pm1$$ for spin, are the eigenvalues.
 * When a particular eigenvalue is measured, the system is said to be _prepared_ in the corresponding eigenstate.
 * Distinguishable states are represented by orthogonal vectors.
-* If a system is in state $$\ket{A}$$, the probability of measuring $$\lambda$$ is $$\braket{A|\lambda}\braket{\lambda|A}$$.
+* If a system is in state $$\Ket{A}$$, the probability of measuring $$\lambda$$ is $$\Braket{A|\lambda}\Braket{\lambda|A}$$.
 
 Why are the operators Hermitian? Because Hermitian operators have certain desireable properties:
 
@@ -91,7 +90,7 @@ Why are the operators Hermitian? Because Hermitian operators have certain desire
 
 Because Hermitian operators implicitly define eigenvectors and eigenvalues we can think of them as "packaging up", or encoding information about observables. The principles, meanwhile, give us a sense for how to use eigenquantities once they've been calculated from such an operator, or, conversely, how to construct an operator if the eigenquantities are known.
 
-As an example, let's construct the spin operators from their eigenquantities. These operators are $$2\times2$$ matrices we'll call $$\sigma_x$$, $$\sigma_y$$, and $$\sigma_z$$. For $$\sigma_z$$ we know the eigenvalues are $$\pm1$$ and the eigenvectors are $$\ket{u}$$ and $$\ket{d}$$. This means that
+As an example, let's construct the spin operators from their eigenquantities. These operators are $$2\times2$$ matrices we'll call $$\sigma_x$$, $$\sigma_y$$, and $$\sigma_z$$. For $$\sigma_z$$ we know the eigenvalues are $$\pm1$$ and the eigenvectors are $$\Ket{u}$$ and $$\Ket{d}$$. This means that
 $$
 \sigma_z \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
 $$
@@ -141,13 +140,13 @@ $$
 The eigenvalues are still $$\pm 1$$ but the eigenvectors are now
 $$
 \begin{align*}
-	\ket{+1} &= \frac{1}{2}\begin{pmatrix} 1-i \\ \sqrt{2} \end{pmatrix} \\
-	\ket{-1} &= \frac{1}{2}\begin{pmatrix} -1+i \\ \sqrt{2} \end{pmatrix} \\
+	\Ket{+1} &= \frac{1}{2}\begin{pmatrix} 1-i \\ \sqrt{2} \end{pmatrix} \\
+	\Ket{-1} &= \frac{1}{2}\begin{pmatrix} -1+i \\ \sqrt{2} \end{pmatrix} \\
 \end{align*}
 $$
-What are the measurement probabilities if the spin starts in $$\ket{u}$$?
+What are the measurement probabilities if the spin starts in $$\Ket{u}$$?
 $$
-P(+1) = \lvert \braket{+1|u} \rvert^2  = \frac{1}{2}
+P(+1) = \lvert \Braket{+1|u} \rvert^2  = \frac{1}{2}
 $$
 The result is the same for $$P(-1)$$, which isn't surprising given the measurement is at 45deg.
 
