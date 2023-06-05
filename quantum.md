@@ -6,13 +6,9 @@ layout: default
 
 <center><img src="" style="zoom:80%;"></center>
 
-$$\def{\ket}[1]{\left|{#1}\right\rangle}$$
-$$\def{\bra}[1]{\left\langle{#1}\right|}$$
-$$\def{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
+$$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
 ### Systems and Experiments
-
-
 
 $$\braket{1}{2}$$
 
