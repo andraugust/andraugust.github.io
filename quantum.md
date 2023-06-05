@@ -5,6 +5,7 @@ layout: default
 # Notes on Quantum Mechanics
 
 <center><img src="" style="zoom:80%;"></center>
+$$\usepackage{braket}$$
 
 ### Systems and Experiments
 
