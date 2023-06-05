@@ -6,9 +6,9 @@ layout: default
 
 <center><img src="" style="zoom:80%;"></center>
 
-$$\newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
-$$\newcommand{\bra}[1]{\left\langle{#1}\right|}$$
-$$\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
+$$\def{\ket}[1]{\left|{#1}\right\rangle}$$
+$$\def{\bra}[1]{\left\langle{#1}\right|}$$
+$$\def{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
 
 ### Systems and Experiments
 
