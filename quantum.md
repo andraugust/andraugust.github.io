@@ -5,12 +5,13 @@ layout: default
 # Notes on Quantum Mechanics
 
 <center><img src="" style="zoom:80%;"></center>
+$$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
 ### 1. Systems and Experiments
 
 One way to start learning about quantum mechanics is by comparing it to classical mechanics, and this is how the book begins, with a comparison between a classical spin experiment and its quantum analog.
 
-The experiment is to measure spin using an apparatus that can be oriented arbitrarily in space. In the classical system we do the following: orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Now we orient the apparatus in the $$-z$$ direction, measure the spin and find it to be $$-1$$. How about orienting the apparatus in the $$+x$$ direction? In this case we measure $$0$$. After a few more configurations and measurements we find that spin can be modeled effectively as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$ and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$.
+The experiment is to measure spin using an apparatus that can be oriented arbitrarily in space. In the classical system suppose we do the following: orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Now we orient the apparatus in the $$-z$$ direction, measure the spin and find it to be $$-1$$. How about orienting the apparatus in the $$+x$$ direction? In this case we measure $$0$$. After a few more configurations and measurements we find that spin can be modeled effectively as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$ and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$.
 
 Now lets do the same experiment on a quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$. Instead we get $$+1$$, different from the classical spin. Let's measure again. Now we get $$-1$$. Measuring again and again we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s and nothing in between. After taking more measurements a pattern emerges. The quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
 
