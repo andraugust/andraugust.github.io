@@ -340,7 +340,7 @@ Because the order of partial differentiation doesn't matter the divergence is ze
 
 ### Lecture 10: Poisson Brackets
 
-Poisson brackets are the last part of classical mechanics I'm going to summarize for now. They deal with computing time-derivatives of functions over phase space, i.e. $$\dot{F}(q,p)$$, in terms of the Hamiltonian. Why compute time-derivatives of functions over phase space? I don't really have a good answer to that question other than a) you can, and b) there's a mathematical object in quantum mechanics (called the commutator) that has a very close analogy with PBs, so it's instructive to know how they work classically.
+Poisson brackets are the last part of classical mechanics I'll summarize. They deal with computing time-derivatives of functions over phase space $$\dot{F}(q,p)$$ in terms of the Hamiltonian.
 
 The time derivative of a function over phase space is
 
@@ -354,7 +354,7 @@ $$
 $$
 
 
-where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. It has many interesting properties which I won't enumerate, but to get a taste:
+where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. PBs have several identities assosiated with them, which I won't enumerate, but to get a taste:
 
 - Antisymmetry: $$\{A,B\} = -\{A,B\}$$
 - Linearity: $$\{kA,B\} = k\{A,B\}$$ and $$\{(A+B),C\} = \{A,C\} + \{B,C\}$$
