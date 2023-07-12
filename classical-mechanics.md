@@ -354,7 +354,7 @@ $$
 $$
 
 
-where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. PBs have several identities assosiated with them, which I won't enumerate, but to get a taste:
+where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. PBs have several identities associated with them, which I won't enumerate, but to get a taste:
 
 - Antisymmetry: $$\{A,B\} = -\{A,B\}$$
 - Linearity: $$\{kA,B\} = k\{A,B\}$$ and $$\{(A+B),C\} = \{A,C\} + \{B,C\}$$

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Notes on Quantum Mechanics
+# Quantum Mechanics Part 1: Systems, States, and Principles
 
 <center><img src="" style="zoom:80%;"></center>
 
@@ -14,7 +14,7 @@ One way to start learning about quantum mechanics is by comparing it to classica
 
 The experiment is to measure spin using an apparatus that can be oriented arbitrarily in space. For the classical system, suppose we do the following: orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Now, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Now, orient in the $$+x$$ direction we measure $$0$$. After more configurations and measurements we find that spin can accurately be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$.
 
-Now lets do the same experiment on a quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$, instead we get $$+1$$. Let's measure again. Now we get $$-1$$. Measuring again and again we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s and no other numbers in between. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
+Now let's do the same experiment on a quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$, instead we get $$+1$$. Let's measure again. Now we get $$-1$$. Measuring again and again we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s and no other numbers in between. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
 
 So between classical and quantum mechanics the notion of determinism changes, as does the notion of measureable states: classical spin is real-valued between $$-1$$ and $$+1$$, but quantum spin is binary. Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$—measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original value. To develop intuition for why this is, it's helpful to remember that quantum systems are so fragile that any measurement that's energetically strong enough to be useful is necessarily strong enough to change the system significantly, whereas classically the energy used to measure a system has negligible impact on the system itself.
 
@@ -63,7 +63,7 @@ So, components are related to measurement probabilities. What are they for $$+$$
 
 To actually find values for components at this point then, we have to pick a basis and write components down in terms of them. $$\ket{+z}$$ and $$\ket{-z}$$ are orthogonal, so lets use them as bases.
 
-Starting with the $$\ket{+x}$$ measurement, the 50% measurement outcome from the spin experiment is captured by writting it as
+Starting with the $$\ket{+x}$$ measurement, the 50% measurement outcome from the spin experiment is captured by writing it as
 
 
 $$
@@ -91,7 +91,7 @@ $$
 \ket{-y} = \frac{1}{\sqrt{2}} \ket{+z} - \frac{i}{\sqrt{2}} \ket{-z}
 $$
 
-It's important to point out that states in QM have a very different interperetation compared to states in classical mechanics. In CM, states and measurements are the same thing: measuring the state $$(q,p)$$ returns the measurement $$(q,p)$$. In QM measuring the state $$\ket{+z}$$ does not return the measurement $$\ket{+z}$$, instead it returns a number, namely $$+1$$.
+It's important to point out that states in QM have a very different interpretation compared to states in classical mechanics. In CM, states and measurements are the same thing: measuring the state $$(q,p)$$ returns the measurement $$(q,p)$$. In QM measuring the state $$\ket{+z}$$ does not return the measurement $$\ket{+z}$$, instead it returns a number, namely $$+1$$.
 
 As a final comment on states, note that multiplying them by a phase factor $$e^{i\theta}$$, where $$\theta$$ is real, does nothing to change outcome probabilities.
 
@@ -106,7 +106,7 @@ The principles of QM are formulated around the idea of measureables, i.e., the o
 * Distinguishable states are represented by orthogonal vectors.
 * If a system is in state $$\ket{A}$$ the probability of measuring $$\lambda$$ is $$p(\lambda)=\bk{A}{\lambda}\bk{\lambda}{A}$$.
 
-Why Hermitian operators? Because Hermitian operators have a few desireable mathematical properties:
+Why Hermitian operators? Because Hermitian operators have a few desirable mathematical properties:
 
 * They're linear, which is appropriate because states are vectors in a linear vector space. 
 * Their eigenvalues are always real, meaning that measurements always return real numbers (no one has ever measured a complex-valued length or spin or velocity etc).
@@ -204,7 +204,7 @@ __Time Evolution Operator.__ To answer this, start by modeling state dynamics ge
 $$
 \ket{\psi(t)}=\mathbf{U}(t) \ket{\psi(0)}
 $$
-where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states over time. In otherwords, $$\braket{\psi(t)}{\phi(t)} = \braket{\psi(0)}{\phi(0)}$$, which is the same as saying
+where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states over time. In other words, $$\braket{\psi(t)}{\phi(t)} = \braket{\psi(0)}{\phi(0)}$$, which is the same as saying
 $$
 \bra{\psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\phi(0)} = \braket{\psi(0)}{\phi(0)}
 $$
@@ -275,7 +275,7 @@ $$
 
 ## 5. Particle States
 
-So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by the principles of QM. The trick is to observe that nothing in the principles requires states to be discrete, the principles only define conditions and physical interperetations about _vectors_, which can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they are what we'll use to model particles.
+So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by the principles of QM. The trick is to observe that nothing in the principles requires states to be discrete, the principles only define conditions and physical interpretations about _vectors_, which can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they are what we'll use to model particles.
 
 In terms of notation, a continuous vector is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a particular basis just as discrete vectors are, and their form can change from one basis to the next, just as discrete vectors can. The bra-ket notation is as useful for wave-functions as it is for discrete vectors. The discrete representation
 $$
@@ -327,7 +327,7 @@ $$
 &= \ket{x_0}
 \end{align*}
 $$
-__Eigenfunctions of Momentum.__ What are the eigenfunctions of momentum? For momentum the set-up and solution are the same, but now $$\bar\psi$$ is used to denote the wave funtion in momentum space:
+__Eigenfunctions of Momentum.__ What are the eigenfunctions of momentum? For momentum the set-up and solution are the same, but now $$\bar\psi$$ is used to denote the wave function in momentum space:
 $$
 p\bar\psi(p) = p_0\bar\psi(p) \\
 \rarr\bar\psi(p) = \delta(p-p_0)
@@ -348,38 +348,50 @@ But this gives
 $$
 |A|^2\int_{-\infty}^{\infty} \,dx = 1
 $$
-Which is undefined. This reflects the fact that when particles are unconstrained in space the planewave solution $$\exp(ipx/\hbar)$$ is physically unrealistic. In practice, particles are either constrained in space such that the integration limits are finite, or, if they are un-constrained in space, they're acted on by a potential such that they form a localized wave-packet.
+Which is undefined. This reflects the fact that when particles are unconstrained in space the planewave solution $$\exp(ipx/\hbar)$$ is physically unrealistic. In practice, particles are either constrained in space such that the integration limits are finite, or, if they are un-constrained in space, they're acted on by a potential such that they form a localized wave-packet and the integral converges.
 
 __Changing Basis.__ Generally speaking, an abstract state vector $$\ket{\Psi}$$ can be represented in any basis. For example, in the $$x$$ basis $$\psi(x) = \bk{x}{\Psi}$$, in the momentum basis $$\bar\psi(p) = \bk{p}{\Psi}$$, etc. Because these different representations ultimately correspond to the same thing, namely $$\ket{\Psi}$$, there must be a way to transform between them. How do we transform between the $$x$$ and $$p$$ basis? The trick is to use the identity operator:
 $$
 I = \int \ket{x}\bra{x} \cdot \,dx
 $$
-Where $$\cdot$$ is a placeholder for the vector which the operator acts on. Inserting this into the momentum-space representation gives
+Where "$$\cdot$$" is a placeholder for the vector which the operator acts on. Inserting this into the momentum-space representation gives
 $$
 \begin{align*}
 \bar\psi(p) &= \bk{p}{\Psi} \\
 &= \bke{p}{I}{\Psi} \\
 &= \int \bk{p}{x}\bk{x}{\Psi}\,dx \\
-&= \frac{1}{\sqrt{2\pi}} \int e^{-ipx/\hbar} \psi(x) \,dx
 \end{align*}
+$$
+But
+$$
+\begin{align*}
+\braket{p}{x} &= \int A e^{-ipx'/\hbar} \delta(x'-x) \,dx' \\
+&= Ae^{-ipx/\hbar}
+\end{align*}
+$$
+And $$\braket{x}{\Psi} = \psi(x)$$, so
+$$
+\bar\psi(p) = A\int e^{-ipx/\hbar} \psi(x) \, dx
 $$
 Which is the formula for computing a momentum-space wave function given its position-space complement. The derivation of the inverse operation is similar. The result is
 $$
-\psi(x) = \frac{1}{\sqrt{2\pi}} \int e^{ipx/\hbar} \bar\psi(p) \,dp
+\psi(x) = A \int e^{ipx/\hbar} \bar\psi(p) \,dp
 $$
-So position and momentum wave-functions are Fourier transforms of eachother.
+So position and momentum wave-functions are Fourier transforms of each other.
 
 __Position-Momentum Uncertainty.__ Going back to the discussion of commutators, we found that two observables are simultaneously knowable iff their operators commute. Do the operators for $$x$$ and $$p$$ commute? The answer is no. Given $$\mathbf{X}=x$$ and $$\mathbf{P}=-i\hbar d/dx $$ the commutator is
 $$
 [\mathbf{X}, \mathbf{P}] = i\hbar
 $$
-Which means that position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. How unknowable are they together? Defining unknowability in terms of the standard deviation $$\Delta$$ of an operator we find from the general uncertainty principal that
+Which means that position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. How unknowable are they together? Defining unknowability in terms of the standard deviation $$\Delta$$ of an operator we find from the general uncertainty principle that
 $$
 \Delta \mathbf{X} \Delta \mathbf{P} \ge \frac{\hbar}{2}
 $$
 The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function.
 
+## 6. Particle Dynamics
 
+The previous section looked at 
 
 
 
