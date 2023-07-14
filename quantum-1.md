@@ -4,7 +4,7 @@ layout: default
 
 # Quantum Mechanics Part 1: Systems, States and Principles
 
-<center><img src="quantum/dalle-square.jpg" style="object-fit:contain;"></center>
+<center><img src="quantum/dalle-square-840.jpg" style="object-fit:contain;"></center>
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
@@ -14,7 +14,7 @@ One way to start understanding quantum mechanics is by comparing it to classical
 
 The experiment is to measure the spin of a particle using an apparatus that can be oriented arbitrarily in space. The goal is to develop a model which captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement it returns. 
 
-For the classical system, suppose we orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Next, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Next, orient in the $$+x$$ direction and measure $$0$$. After more configurations and measurements we find that spin can accurately be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement is $$\hat{a} \cdot \hat{\sigma}$$. Note that we've assumed spin to be unaffected by all measurements—spin is a physical state existing independent of the apparatus and any measurement we take leaves it unchanged. As we'll see, this is not the case in QM.
+For the classical system, suppose we orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Next, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Next, orient in the $$+x$$ direction and measure $$0$$. After more configurations and measurements we find that spin can be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement is $$\hat{a} \cdot \hat{\sigma}$$. Note that we've assumed spin to be unaffected by all measurements—spin is a physical state existing independent of the apparatus and any measurement we take leaves it unchanged. As we'll see, this is not the case in QM.
 
 Now let's do the same experiment on quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$ like in the classical experiment, instead we get $$+1$$. Starting the experiment over and taking the same measurements to verify results, we now find that $$x$$ has spin $$-1$$. If we restart the experiment several times we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s and no other numbers in between. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
 
@@ -116,7 +116,7 @@ Why Hermitian operators? Hermitian operators have a few desirable mathematical p
 * Unique eigenvalues have orthogonal eigenvectors, which means there's an unambiguously distinct state associated with each unique measurement outcome (for a given operator).
 * Their eigenvectors form a complete set, meaning that any vector the operator can generate can be written as a linear combination of its eigenvectors.
 
-Hermitian operators implicitly define eigenvectors and eigenvalues such that they "package up" or encode the information about observables. The principles, meanwhile, describe how eigenquantities can be used to calculate measurement probabilities once they're calculated from an operator, or, conversely, how to construct an operator if its eigenquantities are known.
+Hermitian operators implicitly define eigenvectors and eigenvalues such that they "package up" or encode the information about observables. The principles, meanwhile, describe how eigenquantities are used to calculate measurement probabilities once they're calculated from an operator, or, conversely, how to construct an operator if its eigenquantities are known.
 
 __Spin Operators.__ How are spin operators constructed from their eigenvalues and eigenvectors? The answer is by using the matrix identity $$\mathbf{X} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{-1}$$, where $$\mathbf{P}$$'s columns are the eigenvectors of $$\mathbf{X}$$ and $$\mathbf{\Lambda}$$ is diagonal with eigenvalues of $$\mathbf{X}$$. 
 

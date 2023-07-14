@@ -24,8 +24,7 @@ Notes on classical mechanics from Leonard Susskind's "Theoretical Minimum" book 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
 <p style="opacity:0.5">01/2021</p>
-Notes on the paper _ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness_ by Geirhos et al, 2019.
-
+Notes on the paper "ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness" by Geirhos et al, 2019.
 
 ## [PlatformIO Notes](platformio-notes.html)
 
@@ -35,7 +34,7 @@ PlatformIO is a nice IDE for Arduino that supports environments and command-line
 ## [The Hiring Problem](hiring-problem.html)
 
 <p style="opacity:0.5">09/2019</p>
-Suppose you're interviewing candidates for a job. Interviews come at a cost, but they provide useful information about candidates. How many candidates should you interview to get the best one at minimum cost?
+Suppose you're interviewing candidates for a job. Interviews come at a cost, but they provide valueable information about candidates. How many candidates should you interview before commiting to one?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
@@ -50,17 +49,17 @@ Automating the detection ships in satellite imagery using deep learning.
 ## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-The first link on most Wikipedia pages goes to the next most general thing. For example, _poker_ links to _card game_, _card game_ links to _game_, _game_ links to _play_, etc.  What happens if you repeated click first-links? Where do you go? Is there any special stucture to Wikipedia's first-link taxonomy?
+The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game", "card game" links to "game", "game" links to "play", etc.  What happens if you repeated click first-links? Where do you go? Is there any special stucture to Wikipedia's first-link taxonomy?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
 <p style="opacity:0.5">12/2017</p>
-This post is about classification on the Functional Map of the World dataset. I look at fine-tuning and the effects of sample size distribution and spatial context.
+Classification on the Functional Map of the World dataset, a look at fine-tuning and the effects of sample size distribution and spatial context.
 
 ## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
 
 <p style="opacity:0.5">10/2017</p>
-This is an example of how spectral clustering can be applied to confusion matrices to find class hierarchies.
+An example of how spectral clustering finds class hierarhies within confusion matrices.
 
 ## [Solving Threes](bellman.md)
 
@@ -70,16 +69,16 @@ A derivation of the optimal policy for the dice game _Threes_.
 ## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
 
 <p style="opacity:0.5">11/2015</p>
-Can neural nets successfully control Artificial Life agents?  Can genetic algorithms optimize such nets?  In this post I implement a genetic algorithm called Enforced Subpopulations to show that yes, yes they can.
+Can neural nets control Artificial Life agents?  Can genetic algorithms optimize these nets?  In this post I implement a genetic algorithm called Enforced Subpopulations to show that yes, yes they can.
 
 ## [Learning to Crawl: A Physical Implementation of Reinforcement Learning](rl.html)
 
 <p style="opacity:0.5">12/2014</p>
-An Arduino robot learns to crawl using reinforcement learning. Included is a video about RL and how it was implemented in the robot.
+An Arduino robot learning to crawl using reinforcement learning, with a video about RL and how it's implemented in the robot.
 
 ## [Songbook](songbook.html)
 
 <p style="opacity:0.5">ongoing</p>
-What do you do when guitar-chord websites are all covered in ads and pop-ups?  Host your own chords, ad free!
+When guitar chord websites are all covered in ads and pop-ups, what do you do? Host your own chords, ad free!
 
 <br />
