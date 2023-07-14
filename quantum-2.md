@@ -16,9 +16,9 @@ __Time Evolution Operator.__ To answer this, start by modeling state dynamics ge
 $$
 \ket{\psi(t)}=\mathbf{U}(t) \ket{\psi(0)}
 $$
-where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states over time. In other words, $$\braket{\psi(t)}{\phi(t)} = \braket{\psi(0)}{\phi(0)}$$, which is the same as saying
+where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states over time. In other words, $$\bk{\psi(t)}{\phi(t)} = \bk{\psi(0)}{\phi(0)}$$, which is the same as saying
 $$
-\bra{\psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\phi(0)} = \braket{\psi(0)}{\phi(0)}
+\bra{\psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\phi(0)} = \bk{\psi(0)}{\phi(0)}
 $$
 Implying that $$\mathbf{U}^{\dagger}\mathbf{U} = I$$. This property is called unitarity.
 
@@ -79,9 +79,9 @@ a_i(t) = a_i(0) e^{-iE_it/\hbar}
 $$
 Compared to the general form of an oscillator $$\exp(-i \omega t)$$ we see that $$E/\hbar$$ plays the role of frequency in QM.
 
-This solution assumes we're working in the energy basis. What if we're given a state vector in a different basis and want to compute dynamics? The solution is to do a change of basis. Given a general state vector $$\ket{\Psi}$$ in a non-energy basis (such as the $$\ket{u}$$ and $$\ket{d}$$ basis), factor the Hamiltonian according to $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, then the state in the energy basis is $$\mathbf{P}^{\dagger}\ket{\Psi}$$.  In terms of components $$a_i = \braket{E_i}{\Psi}$$, where $$a_i$$ is the $$i$$th component of $$\ket{\Psi}$$ in the energy basis. This is all summarized by the formula
+This solution assumes we're working in the energy basis. What if we're given a state vector in a different basis and want to compute dynamics? The solution is to do a change of basis. Given a general state vector $$\ket{\Psi}$$ in a non-energy basis (such as the $$\ket{u}$$ and $$\ket{d}$$ basis), factor the Hamiltonian according to $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, then the state in the energy basis is $$\mathbf{P}^{\dagger}\ket{\Psi}$$.  In terms of components $$a_i = \bk{E_i}{\Psi}$$, where $$a_i$$ is the $$i$$th component of $$\ket{\Psi}$$ in the energy basis. This is all summarized by the formula
 $$
-\ket{\Psi(t)} = \sum_i \braket{E_i}{\Psi(0)} e^{-iE_it/\hbar} \ket{E_i}
+\ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-iE_it/\hbar} \ket{E_i}
 $$
 
 
@@ -95,7 +95,7 @@ $$
 $$
 becomes
 $$
-\ket{\psi} = \int \psi(x) \ket{x} \,dx
+\ket{\Psi} = \int \psi(x) \ket{x} \,dx
 $$
 for continuous vectors, where $$x$$ labels eigenvalues and $$\ket{x}$$ is the basis associated with the eigenvalue $$x$$. In this analogy, $$\psi(x)$$ is like a continuous set of coefficients.
 
@@ -179,11 +179,11 @@ $$
 But
 $$
 \begin{align*}
-\braket{p}{x} &= \int A e^{-ipx'/\hbar} \delta(x'-x) \,dx' \\
+\bk{p}{x} &= \int A e^{-ipx'/\hbar} \delta(x'-x) \,dx' \\
 &= Ae^{-ipx/\hbar}
 \end{align*}
 $$
-And $$\braket{x}{\Psi} = \psi(x)$$, so
+And $$\bk{x}{\Psi} = \psi(x)$$, so
 $$
 \bar\psi(p) = A\int e^{-ipx/\hbar} \psi(x) \, dx
 $$

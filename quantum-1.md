@@ -233,7 +233,7 @@ $$
 
 ## 4. Last
 
-States, operators, and principals wrap up the first part of QM. They lay the foundation for modeling more interesting systems involving particles, forces, dynamics, and entanglement, which will all be covered in the posts to follow. To be continued…
+States, operators, and principals wrap up the first part of QM. They lay the foundation over which more  interesting systems can be modeling, such as particles, forces, dynamics, and entanglement, all of which will be covered in the posts to follow. To be continued…
 
 
 
