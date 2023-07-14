@@ -4,7 +4,7 @@ layout: default
 
 # Quantum Mechanics Part 1: Systems, States and Principles
 
-<center><img src="quantum/dalle.jpg" style="zoom:80%;"></center>
+<center><img src="quantum/dalle-square.jpg" style="zoom:100%;"></center>
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
@@ -64,7 +64,7 @@ $$
 
 So, components are related to measurement probabilities, what are they for $$+$$ and $$-$$? It depends on how the system is prepared prior to measurement. If a $$y$$ state is prepared then the components will have certain values and if a $$x$$ state is prepared then they may have different values. 
 
-To actually find values for components we have to pick a basis and write components down in terms of them. $$\ket{+z}$$ and $$\ket{-z}$$ are orthogonal they can be used as bases.
+To actually find values for components we have to pick a basis and write components down in terms of them. $$\ket{+z}$$ and $$\ket{-z}$$ are orthogonal, so they can be used as bases.
 
 Starting with the $$\ket{+x}$$ measurement, the 50% measurement outcome from the spin experiment is captured by defining it as
 
@@ -166,7 +166,7 @@ $$
 $$
 
 
-What can we do with these? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to take measurements in any direction. This is accomplished by taking the dot product of the Pauli matrices with the measurement-direction vector $$\hat{n}$$.
+What can we do with these? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to make measurements in any direction. This is done by taking the dot product of the Pauli matrices with the measurement-direction vector $$\hat{n}$$.
 
 For example, measuring along $$\hat{n}=(1/\sqrt{2},1/\sqrt{2},0)$$, the operator is
 
@@ -233,7 +233,7 @@ $$
 
 ## 4. Last
 
-States, operators, and principals wrap up the first part of QM. They lay the foundation for modeling more interesting systems such as particles, forces, dynamics, and entanglement, which will all be covered in the next few posts. To be continued…
+States, operators, and principals wrap up the first part of QM. They lay the foundation for modeling more interesting systems involving particles, forces, dynamics, and entanglement, which will all be covered in the posts to follow. To be continued…
 
 
 
