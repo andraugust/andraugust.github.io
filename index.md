@@ -11,6 +11,11 @@ layout: default
   </figcaption>
 </figure>
 
+## [Quantum Mechanics Part 1: Systems, States, Principles](quantum-1.html)
+
+<p style="opacity:0.5">06/2023</p>
+Notes on quantum mechanics from Leonard Susskind's "Theoretical Minimum" book series.
+
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
