@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Quantum Mechanics Part 1: Systems, States, Principles
+# Quantum Mechanics Part 1: Systems, States and Principles
 
 <center><img src="quantum/dalle.jpg" style="zoom:80%;"></center>
 
@@ -58,7 +58,7 @@ Because $$a_i = \bk{i}{A}$$, the probability of preparing $$\ket{i}$$ can be exp
 
 
 $$
-p_i = \abs{\bk{i}{A}}^2 = \bk{A}{i}\bk{i}{A}
+p_i = \lvert\bk{i}{A}\rvert^2 = \bk{A}{i}\bk{i}{A}
 $$
 
 
@@ -107,7 +107,7 @@ The principles of QM are formulated around the idea of measureables, i.e., the o
 * Measurement outcomes (such as $$\pm1$$) are eigenvalues of these operators.
 * When an eigenvalue is measured the system is said to be _prepared_ in the corresponding eigenstate.
 * Distinguishable states are represented by orthogonal vectors.
-* If a system is in state $$\ket{A}$$ the probability of measuring $$\lambda$$ is $$p(\lambda)=  \abs{\bk{\lambda}{A}}^2$$.
+* If a system is in state $$\ket{A}$$ the probability of measuring $$\lambda$$ is $$p(\lambda)=  \lvert\bk{\lambda}{A}\rvert^2$$.
 
 Why Hermitian operators? Hermitian operators have a few desirable mathematical properties:
 
@@ -216,7 +216,7 @@ If $$\sigma_x$$ is measured then the outcome probabilities prior to measurement 
 
 $$
 \begin{align*}
-P(\sigma_x = +1) &= \abs{\bk{+x}{A}}^2  = \frac{1}{2}(1+a^*b+ab^*) \\
+P(\sigma_x = +1) &= \lvert\bk{+x}{A}\rvert^2  = \frac{1}{2}(1+a^*b+ab^*) \\
 P(\sigma_x = -1) &= 1 - P(+1) = \frac{1}{2}(1-a^*b-ab^*)
 \end{align*}
 $$
@@ -226,8 +226,8 @@ Immediately after measuring the state collapses to either $$\ket{+x}$$ or $$\ket
 
 
 $$
-P(\sigma_z = +1) = \abs{\braket{+z}{+x}}^2 = 1/2 \\
-P(\sigma_z = -1) = \abs{\braket{-z}{+x}}^2 = 1/2
+P(\sigma_z = +1) = \lvert\bk{+z}{+x}\rvert^2 = 1/2 \\
+P(\sigma_z = -1) = \lvert\bk{-z}{+x}\rvert^2 = 1/2
 $$
 
 
