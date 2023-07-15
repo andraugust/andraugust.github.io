@@ -14,11 +14,11 @@ In CM states are real numbers that change under the influence of forces. In QM s
 
 __Time Evolution Operator.__ To answer this, start by modeling state dynamics generically as
 $$
-\ket{\psi(t)}=\mathbf{U}(t) \ket{\psi(0)}
+\ket{\Psi(t)}=\mathbf{U}(t) \ket{\Psi(0)}
 $$
-where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states over time. In other words, $$\bk{\psi(t)}{\phi(t)} = \bk{\psi(0)}{\phi(0)}$$, which is the same as saying
+where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states over time. "Relationship" here is defined as the inner product, or "overlap", which is to say $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 $$
-\bra{\psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\phi(0)} = \bk{\psi(0)}{\phi(0)}
+\bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
 $$
 Implying that $$\mathbf{U}^{\dagger}\mathbf{U} = I$$. This property is called unitarity.
 
@@ -26,21 +26,21 @@ Next, lets see what infinitesimal change looks like for $$\mathbf{U}$$. To first
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
 $$
-Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added with hindsight for how the results turn out and correspond to experiments. What does this operator do to $$\ket{\psi}$$?
+Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added with hindsight from how the math turn out and correspond to experimental results. What does this operator do to $$\ket{\Psi}$$?
 $$
 \begin{align*}
-\ket{\psi(\epsilon)} &= \mathbf{U}(\epsilon) \ket{\psi(0)} \\
-\ket{\psi(\epsilon)} &= (I - \epsilon i \mathbf{H}) \ket{\psi(0)} \\
-\frac{\ket{\psi(\epsilon)} - \ket{\psi(0)}}{\epsilon} &= -i\mathbf{H} \ket{\psi(0)} \\
+\ket{\Psi(\epsilon)} &= \mathbf{U}(\epsilon) \ket{\Psi(0)} \\
+\ket{\Psi(\epsilon)} &= (I - \epsilon i \mathbf{H}) \ket{\Psi(0)} \\
+\frac{\ket{\Psi(\epsilon)} - \ket{\Psi(0)}}{\epsilon} &= -i\mathbf{H} \ket{\Psi(0)} \\
 \end{align*}
 $$
 As $$\epsilon \rightarrow 0$$,
 $$
-\frac{\partial \ket{\psi}}{\partial t} = -\frac{i}{\hbar}\mathbf{H}\ket{\psi}
+\frac{\partial \ket{\Psi}}{\partial t} = -\frac{i}{\hbar}\mathbf{H}\ket{\Psi}
 $$
 where $$\hbar$$ is added so the units are correct. It's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the generalized Schrodinger equation.
 
-Before moving on, we can learn about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies about it:
+Before moving on, we can learn a little bit about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies about it:
 $$
 \begin{align*}
 \mathbf{U}(\epsilon)^\dagger \mathbf{U}(\epsilon) &= (I - \epsilon i \mathbf{H})^\dagger (I - \epsilon i \mathbf{H}) \\
@@ -48,9 +48,9 @@ $$
 &= I - \epsilon i \mathbf{H} + \epsilon i \mathbf{H}^\dagger = I \\
 \end{align*}
 $$
-So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore can represent an observable, which, as we'll see is the Hamiltonian in QM.
+So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore can represent an observable, which, as we'll see is the QM version of the Hamiltonian.
 
-In CM the Hamiltonian represents the total energy of a system and relates to its dynamics through Poisson brackets:
+In CM, Hamiltonians represent the total energy of a system and relate to dynamics through the Poisson bracket:
 $$
 \dot{L}=\{L,H\}
 $$
@@ -58,13 +58,13 @@ Where $$L$$ is any quantity defined over phase space $$L(q,p)$$. A similar relat
 $$
 \frac{d}{dt}\left<\mathbf{L}\right> = -\frac{i}{\hbar}\left<\left[\mathbf{L},\mathbf{H}\right]\right>
 $$
-Where $$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{L}$$ is called the commutator. From it we see that if a quantity commutes with $$\mathbf{H}$$ then it is conserved (in expectation), and more generally any function of a quantity that commutes with $$\mathbf{H}$$ is conserved (in expectation).
+Where $$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{L}$$ is called the commutator. From it we see that if a quantity commutes with $$\mathbf{H}$$ then it is conserved (in expectation), and more generally any function of a quantity that commutes with $$\mathbf{H}$$ is conserved (in expectation). This is much like how in CM $$L$$ is conserved when the PB is $$0$$.
 
-Note that in QM expected values don't change due to measurement outcomes changing, those are fixed for a given operator (for example $$\pm 1$$ for spin), instead, they change because the associated measurement _probabilities_ change, and to calculate how those change we have to solve the generalized Schrodinger equation.
+Note that in QM expected values don't change due to measurement outcomes changing, those are fixed for a given operator (for example $$\pm 1$$ for spin), instead, they change because measurement _probabilities_ change, and to calculate how those change we have to solve the generalized Schrodinger equation.
 
 __Solving the GSE.__ Solving the generalized Schrodinger equation is easiest in the energy basis where $$\mathbf{H}$$ is diagonal and a general state vector can be written as
 $$
-\ket{\psi(t)} = \sum_i a_i(t) \ket{E_i}
+\ket{\Psi(t)} = \sum_i a_i(t) \ket{E_i}
 $$
 where $$\ket{E_i}$$ is an energy eigenvector satisfying $$\mathbf{H}\ket{E_i} = E_i\ket{E_i}$$. Inserting into the GSE gives
 $$
@@ -79,17 +79,16 @@ a_i(t) = a_i(0) e^{-iE_it/\hbar}
 $$
 Compared to the general form of an oscillator $$\exp(-i \omega t)$$ we see that $$E/\hbar$$ plays the role of frequency in QM.
 
-This solution assumes we're working in the energy basis. What if we're given a state vector in a different basis and want to compute dynamics? The solution is to do a change of basis. Given a general state vector $$\ket{\Psi}$$ in a non-energy basis (such as the $$\ket{u}$$ and $$\ket{d}$$ basis), factor the Hamiltonian according to $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, then the state in the energy basis is $$\mathbf{P}^{\dagger}\ket{\Psi}$$.  In terms of components $$a_i = \bk{E_i}{\Psi}$$, where $$a_i$$ is the $$i$$th component of $$\ket{\Psi}$$ in the energy basis. This is all summarized by the formula
+This solution assumes we're working in the energy basis. What if we're given a state vector in a different basis and want to compute dynamics? The solution is to do a change of basis. Given a general state vector $$\ket{\Psi}$$ in a non-energy basis (such as the spin basis $$\ket{+z}$$, $$\ket{-z}$$), factor the Hamiltonian according to $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, then the state in the energy basis is $$\mathbf{P}^{\dagger}\ket{\Psi}$$.  In terms of components $$a_i = \bk{E_i}{\Psi}$$, where $$a_i$$ is the $$i$$th component of $$\ket{\Psi}$$ in the energy basis. This is all summarized by the general solution to the GSE:
 $$
 \ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-iE_it/\hbar} \ket{E_i}
 $$
 
-
 ## 2. Particle States
 
-So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by the principles of QM. The trick is to observe that nothing in the principles requires states to be discrete, the principles only define conditions and physical interpretations about _vectors_, which can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they are what we'll use to model particles.
+So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by using the principles of QM. The trick is to observe that nothing in the principles requires states to be discrete—the principles only define conditions and physical interpretations related to _vectors_, which can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they are what we'll use to model particles.
 
-In terms of notation, a continuous vector is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a particular basis just as discrete vectors are, and their form can change from one basis to the next, just as discrete vectors can. The bra-ket notation is as useful for wave-functions as it is for discrete vectors. The discrete representation
+__Continuous States.__ In terms of notation, a continuous state vector is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a particular basis just as discrete vectors are, and their form can change from one basis to the next, just as discrete vectors can. The bra-ket notation is as useful for wave-functions as it is for discrete vectors. The discrete representation
 $$
 \ket{A} = \sum_i a_i \ket{i}
 $$
@@ -97,15 +96,17 @@ becomes
 $$
 \ket{\Psi} = \int \psi(x) \ket{x} \,dx
 $$
-for continuous vectors, where $$x$$ labels eigenvalues and $$\ket{x}$$ is the basis associated with the eigenvalue $$x$$. In this analogy, $$\psi(x)$$ is like a continuous set of coefficients.
-
-__Operators on Functions.__ Operators on functions are similar to operators on discrete vectors: they need to be linear and Hermitian. They're linear when they distribute over the sum of functions and when constants factor out of the operator. In other words
+for continuous vectors, where $$x$$ labels eigenvalues and $$\ket{x}$$ is the basis associated with the eigenvalue $$x$$. In this analogy, $$\psi(x)$$ is like a continuous set of coefficients. Another way to think of wave functions is in terms of a general state vector's projection onto a basis. For example, if the basis is $$x$$ then the wave function is defined as
+$$
+\psi(x) = \bk{x}{\Psi}
+$$
+__Continuous Operators.__ Operators on continuous functions are similar to operators on discrete vectors: they need to be linear and Hermitian. They're linear when they distribute over the sum of functions and when constants factor out of the operator. In other words
 $$
 \mathbf{L}(a\psi(x)+b\phi(x)) = a\mathbf{L}\psi(x) + b\mathbf{L}\phi(x)
 $$
 Examples of linear operators include multiplication by $$x$$ and differentiation by $$d/dx$$.
 
-Hermiticity is a bit more involved. It occurs when
+Hermiticity is a bit more involved to verify. It occurs when
 $$
 \bke{\psi}{\mathbf{L}}{\phi} = \bke{\phi}{\mathbf{L}}{\psi}^{*}
 $$
@@ -117,7 +118,7 @@ For $$\mathbf{L}=x$$ this is
 $$
 \bke{\psi}{x}{\phi} = \int \psi^*(x) x \phi(x) \,dx = \left( \int \psi(x) x \phi^*(x) \,dx \right)^* = \bke{\phi}{x}{\psi}^*
 $$
-Therefore the operator $$x$$ is Hermitian. Note that $$\dagger$$ from discrete operators gets replaced by $$*$$ for functions because there are no transposes for functions. Applying the same test to $$d/dx$$ we find that it's not Hermitian, but if we multiply by $$i$$ it is.
+Therefore the operator $$x$$ is Hermitian. Note that $$\dagger$$ from discrete operators gets replaced by $$*$$ for functions because there are no transposes for functions. Applying the same test to $$d/dx$$ we find that it's not Hermitian, but if we multiply it by $$i$$ it is.
 
 __Eigenfunctions of Position.__ How are eigenvalues and eigenfunctions computed for continuous operators? For position the operator is $$x$$ and its eigenvalues are denoted by $$x_0$$. The eigenequation is
 $$
@@ -134,17 +135,17 @@ $$
 This states the obvious fact that if a particle is measured at $$x_0$$ then it's only at $$x_0$$. It's important to note that $$\delta$$ is not a function, it's a distribution, and as such belongs inside an integral as
 $$
 \begin{align*}
-\ket{\psi} &= \int \psi(x) \ket{x} \,dx \\
+\ket{\Psi} &= \int \psi(x) \ket{x} \,dx \\
 &= \int \delta(x-x_0) \ket{x} dx \\
 &= \ket{x_0}
 \end{align*}
 $$
-__Eigenfunctions of Momentum.__ What are the eigenfunctions of momentum? For momentum the set-up and solution are the same, but now $$\bar\psi$$ is used to denote the wave function in momentum space:
+__Eigenfunctions of Momentum.__ What are the eigenfunctions of momentum? For momentum the set-up and solution are the same, but now $$\bar\psi$$ is used to denote a wave function in momentum space:
 $$
 p\bar\psi(p) = p_0\bar\psi(p) \\
 \rarr\bar\psi(p) = \delta(p-p_0)
 $$
-The $$\delta$$ function solution here and for position are not especially insightful, but when we look at momentum in the $$x$$ basis things are more interesting. In the $$x$$ basis the momentum operator changes from $$p$$ to $$-i\hbar d/dx$$, so the eigenequation is
+The $$\delta$$ function solution here and for position are not especially insightful, but when we look at momentum in the $$x$$ basis things are more interesting. In the $$x$$ basis, from experimental insight, the momentum operator changes from $$p$$ to $$-i\hbar \, d/dx$$. The eigenequation is
 $$
 -i\hbar \frac{d}{dx}\psi(x) = p \psi(x)
 $$
@@ -152,7 +153,7 @@ The solution is
 $$
 \psi(x) = Ae^{ipx/\hbar}
 $$
-Note that because this is a wavefunction in the $$x$$-basis it's considered a function of $$x$$ and not $$p$$. The $$p$$ appears because each value of momentum has a different wavefunction, so $$p$$ acts more like a parameter or index.
+Note that because this is a wavefunction in the $$x$$-basis it's considered a function of $$x$$ and not $$p$$. The $$p$$ appears because each value of momentum has a different wavefunction associated with it, so $$p$$ acts more like a parameter or index.
 
 The constant $$A$$ is determined by normalization:
 $$
@@ -162,13 +163,15 @@ But this gives
 $$
 |A|^2\int_{-\infty}^{\infty} \,dx = 1
 $$
-Which is undefined. This reflects the fact that when particles are unconstrained in space the planewave solution $$\exp(ipx/\hbar)$$ is physically unrealistic. In practice, particles are either constrained in space such that the integration limits are finite, or, if they are un-constrained in space, they're acted on by a potential such that they form a localized wave-packet and the integral converges.
+Which is undefined. This reflects the fact that when particles are unconstrained in space the planewave solution $$\exp(ipx/\hbar)$$ is physically unrealistic. In practice, particles are either constrained in space such that the integration limits are finite, or, if they are un-constrained in space, they're acted on by a potential such that they're localized and the integral converges.
 
-__Changing Basis.__ Generally speaking, an abstract state vector $$\ket{\Psi}$$ can be represented in any basis. For example, in the $$x$$ basis $$\psi(x) = \bk{x}{\Psi}$$, in the momentum basis $$\bar\psi(p) = \bk{p}{\Psi}$$, etc. Because these different representations ultimately correspond to the same thing, namely $$\ket{\Psi}$$, there must be a way to transform between them. How do we transform between the $$x$$ and $$p$$ basis? The trick is to use the identity operator:
+A convenient model of a localized wave is a so-called Gaussian wave-packet. A GWP has $$\psi(x)$$ such that $$\psi^*(x)\psi(x) \sim N(x;\mu,\sigma)$$, where $$N$$ is a normal distribution. 
+
+__Changing Basis.__ Generally speaking, a state vector $$\ket{\Psi}$$ can be represented in any basis. For example, in the $$x$$ basis $$\psi(x) = \bk{x}{\Psi}$$, in the momentum basis $$\bar\psi(p) = \bk{p}{\Psi}$$, etc. Because these different representations ultimately correspond to the same thing, namely $$\ket{\Psi}$$, there must be a way to transform between them. How do we transform between the $$x$$ and $$p$$ basis? The trick is to use the identity operator:
 $$
 I = \int \ket{x}\bra{x} \cdot \,dx
 $$
-Where "$$\cdot$$" is a placeholder for the vector which the operator acts on. Inserting this into the momentum-space representation gives
+Where "$$\cdot$$" is a placeholder for the vector which the operator acts on. Inserting this into the momentum-representation gives
 $$
 \begin{align*}
 \bar\psi(p) &= \bk{p}{\Psi} \\
@@ -187,17 +190,34 @@ And $$\bk{x}{\Psi} = \psi(x)$$, so
 $$
 \bar\psi(p) = A\int e^{-ipx/\hbar} \psi(x) \, dx
 $$
-Which is the formula for computing a momentum-space wave function given its position-space complement. The derivation of the inverse operation is similar. The result is
+Which is the formula for converting a momentum-space wave function into its position-space complement. The derivation of the inverse operation is similar. The result is
 $$
 \psi(x) = A \int e^{ipx/\hbar} \bar\psi(p) \,dp
 $$
-So position and momentum wave-functions are Fourier transforms of each other.
+So position and momentum space are related by Fourier transforms, which leads to the interpretation that momentum space is the spatial frequeny domain of position space, and spatial frequency is associated with the wavenumber $$k=p/\hbar$$.
+
+__Changing Basis: Operators.__ How do operators change basis? In the same way operators change basis when they're represented by matrices: using the formula $$\mathbf{L' = \mathbf{U} \mathbf{L} \mathbf{U}^{-1}}$$, where $$\mathbf{L}$$ is the operator of interest, $$\mathbf{L}'$$ is the transformed operator, and $$\mathbf{U}$$ is a unitary change-of-basis operator. Because $$\mathbf{U}$$ is unitary and we're working with continuous operators we can set $$\mathbf{U}^{-1} = \mathbf{U}^*$$.
+
+How does this work out for position and momentum? The relevant change-of-basis transformation is the Fourier transform $$\mathbf{F}$$. Is it unitary? Yes, because $$\mathbf{F}^*\mathbf{F}\psi(x) = \psi(x)$$. Let's use it to derive the position operator in momentum space, call it $$\mathbf{\bar X}$$.
+$$
+\begin{align*}
+\mathbf{\bar X} \bar\psi(p) &= \mathbf{F}\mathbf{X}\mathbf{F}^* \bar \psi(p) \\
+&= \mathbf{F} \mathbf{X} \psi(x) \\
+&= \mathbf{F} x \psi(x) \\
+&= i\hbar \frac{d}{dp} \bar \psi(p)
+\end{align*}
+$$
+Where the last step comes from a Fourier transform identity. So the position operator in momentum-space has the same form as the momentum operator in position space, namely $$i\hbar d/dp$$.
+
+Another way to determine (or at least verify) an operator in a new basis is through the use of commutators. The reason is that commutators are _basis independent_. For example, $$[\mathbf{X}, \mathbf{P}] = [\mathbf{\bar X}, \mathbf{\bar P}] = i\hbar$$.
+
+As a practical note, when working with operators, it's helpful to supply them with a test function to act on, otherwise it isn't necessarily clear how they behave or simplify notationally.
 
 __Position-Momentum Uncertainty.__ Going back to the discussion of commutators, we found that two observables are simultaneously knowable iff their operators commute. Do the operators for $$x$$ and $$p$$ commute? The answer is no. Given $$\mathbf{X}=x$$ and $$\mathbf{P}=-i\hbar d/dx $$ the commutator is
 $$
 [\mathbf{X}, \mathbf{P}] = i\hbar
 $$
-Which means that position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. How unknowable are they together? Defining unknowability in terms of the standard deviation $$\Delta$$ of an operator we find from the general uncertainty principle that
+Which means that position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. How unknowable are they together? Defining unknowability in terms of the standard deviation $$\Delta$$ of an operator we find (from the general uncertainty principle) that
 $$
 \Delta \mathbf{X} \Delta \mathbf{P} \ge \frac{\hbar}{2}
 $$
@@ -205,7 +225,44 @@ The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $
 
 ## 3. Particle Dynamics
 
-The previous section looked at 
+The first section of this post covered the dynamics of state vectors, and the second section covered wavefunctions and continuous states. The rest of this post puts those two ideas together to model the dynamics of particles, starting in this section with the description of a particle under the influence of no forces, and then moving on to potentials etc.
+
+__Free Particle.__ A free particle has no forces acting on it. It's Hamiltonian is
+$$
+\mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
+$$
+Plugging this into the GSE gives
+$$
+\frac{\partial \psi(x,t)}{\partial t} = \frac{i\hbar}{2m} \frac{\partial^2 \psi(x,t)}{\partial x^2}
+$$
+Which has the form of a diffusion equation but with a complex diffusivity coefficient. To solve this equation we just use the formula from earlier:
+$$
+\ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-iE_it/\hbar} \ket{E_i}
+$$
+But now we need to convert this to its continuous version, which is
+$$
+\psi(x,t) = \int \left( \int \psi_E^*(x) \psi(x,0) \,dx \right) e^{-iEt/\hbar} \psi_E(x) \, dE
+$$
+Where $$\psi_E(x)$$ is an energy eigenvector in the $$x$$-basis. To find $$\psi_E$$, we solve the eigenvalue equation
+$$
+\begin{align*}
+\mathbf{H}\psi_E(x) &= E\psi_E(x) \\
+\rarr -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi_E(x) &= E \psi_E(x)
+\end{align*}
+$$
+The general solution is
+$$
+\psi_E(x) = Ae^{ix\sqrt{2mE}/\hbar}
+$$
+Or equivalently, in terms of momentum,
+$$
+\psi_p(x) = Ae^{ipx/\hbar}
+$$
+Plugging this into the general solution above and writing everything in terms of $$p$$ instead of $$E$$ gives
+$$
+\psi(x,t) = \int \bar\psi(p,0) \exp(i \left( \frac{p}{\hbar}x-\frac{p^2}{2m\hbar}t \right)) dp
+$$
+This solution can be interpereted as the sum of plane waves $$\exp i(kx-\omega t)$$ weighted by how much of each wave is in the initial state $$\bar \psi(p,0)$$. Each wave oscillates with wavenumber $$k=p/\hbar$$ and frequency $$\omega=p^2/2m\hbar=E/\hbar$$, and has velocity $$v = \omega/k = E/p = p/2m$$. Due to velocity varying with momentum, an initially localized wave-packet will spread out over space, as the next example shows.
 
 
 
