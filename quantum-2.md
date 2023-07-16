@@ -188,7 +188,11 @@ For $$\mathbf{L}=x$$ this is
 
 
 $$
-\bke{\psi}{x}{\phi} = \int \psi^*(x) x \phi(x) \,dx = \left( \int \psi(x) x \phi^*(x) \,dx \right)^* = \bke{\phi}{x}{\psi}^*
+\begin{align*}
+\bke{\psi}{x}{\phi} &= \int \psi^*(x) x \phi(x) \,dx \\
+&= \left( \int \psi(x) x \phi^*(x) \,dx \right)^* \\
+&= \bke{\phi}{x}{\psi}^*
+\end{align*}
 $$
 
 
