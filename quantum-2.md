@@ -16,17 +16,17 @@ __Time Evolution Operator.__ To answer this, start by modeling state dynamics ge
 $$
 \ket{\Psi(t)}=\mathbf{U}(t) \ket{\Psi(0)}
 $$
-where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states over time. "Relationship" here is defined as the inner product, or "overlap", which is to say $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states. "Relationship" here being defined as the inner product, or "overlap", which is to say $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 $$
 \bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
 $$
-Implying that $$\mathbf{U}^{\dagger}\mathbf{U} = I$$. This property is called unitarity.
+Which implies that $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, a property called unitarity.
 
 Next, lets see what infinitesimal change looks like for $$\mathbf{U}$$. To first order,
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
 $$
-Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added with hindsight from how the math turn out and correspond to experimental results. What does this operator do to $$\ket{\Psi}$$?
+Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added with hindsight from how the math turn out and correspond to physical experiments. What does this operator do to $$\ket{\Psi}$$?
 $$
 \begin{align*}
 \ket{\Psi(\epsilon)} &= \mathbf{U}(\epsilon) \ket{\Psi(0)} \\
@@ -165,8 +165,6 @@ $$
 $$
 Which is undefined. This reflects the fact that when particles are unconstrained in space the planewave solution $$\exp(ipx/\hbar)$$ is physically unrealistic. In practice, particles are either constrained in space such that the integration limits are finite, or, if they are un-constrained in space, they're acted on by a potential such that they're localized and the integral converges.
 
-A convenient model of a localized wave is a so-called Gaussian wave-packet. A GWP has $$\psi(x)$$ such that $$\psi^*(x)\psi(x) \sim N(x;\mu,\sigma)$$, where $$N$$ is a normal distribution. 
-
 __Changing Basis.__ Generally speaking, a state vector $$\ket{\Psi}$$ can be represented in any basis. For example, in the $$x$$ basis $$\psi(x) = \bk{x}{\Psi}$$, in the momentum basis $$\bar\psi(p) = \bk{p}{\Psi}$$, etc. Because these different representations ultimately correspond to the same thing, namely $$\ket{\Psi}$$, there must be a way to transform between them. How do we transform between the $$x$$ and $$p$$ basis? The trick is to use the identity operator:
 $$
 I = \int \ket{x}\bra{x} \cdot \,dx
@@ -225,9 +223,9 @@ The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $
 
 ## 3. Particle Dynamics
 
-The first section of this post covered the dynamics of state vectors, and the second section covered wavefunctions and continuous states. The rest of this post puts those two ideas together to model the dynamics of particles, starting in this section with the description of a particle under the influence of no forces, and then moving on to potentials etc.
+In the first section of this post we derived the general Schrodinger equation and solved it to uncover the dynamics of discrete-state systems. In the second section of this post we covered wavefunctions and showed how particles are represented in terms of them. The rest of this post combines those results to model the dynamics of particles, starting with a free particle, and then moving on to potentials etc.
 
-__Free Particle.__ A free particle has no forces acting on it. It's Hamiltonian is
+__Free Particle.__ A free particle is defined as a particle with no forces acting on it. In the absence of forces there are no potentials, so the Hamiltonian is
 $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
 $$
@@ -235,15 +233,15 @@ Plugging this into the GSE gives
 $$
 \frac{\partial \psi(x,t)}{\partial t} = \frac{i\hbar}{2m} \frac{\partial^2 \psi(x,t)}{\partial x^2}
 $$
-Which has the form of a diffusion equation but with a complex diffusivity coefficient. To solve this equation we just use the formula from earlier:
+This is the PDE governing free-particle dynamics. It has the form of a diffusion equation but with a complex diffusion coefficient. To solve it we use the solution derived earlier for discrete state vectors:
 $$
 \ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-iE_it/\hbar} \ket{E_i}
 $$
-But now we need to convert this to its continuous version, which is
+Converting this to continuous space gives
 $$
 \psi(x,t) = \int \left( \int \psi_E^*(x) \psi(x,0) \,dx \right) e^{-iEt/\hbar} \psi_E(x) \, dE
 $$
-Where $$\psi_E(x)$$ is an energy eigenvector in the $$x$$-basis. To find $$\psi_E$$, we solve the eigenvalue equation
+Where $$\psi_E(x)$$ is an energy eigenfunction in the $$x$$-basis. To find $$\psi_E$$ we solve the eigenvalue equation
 $$
 \begin{align*}
 \mathbf{H}\psi_E(x) &= E\psi_E(x) \\
@@ -254,17 +252,38 @@ The general solution is
 $$
 \psi_E(x) = Ae^{ix\sqrt{2mE}/\hbar}
 $$
-Or equivalently, in terms of momentum,
+Or, in terms of momentum,
 $$
 \psi_p(x) = Ae^{ipx/\hbar}
 $$
-Plugging this into the general solution above and writing everything in terms of $$p$$ instead of $$E$$ gives
+Plugging this into the continuous form of the general solution, and writing everything in terms of $$p$$ instead of $$E$$, gives
 $$
-\psi(x,t) = \int \bar\psi(p,0) \exp(i \left( \frac{p}{\hbar}x-\frac{p^2}{2m\hbar}t \right)) dp
+\begin{align*}
+\psi(x,t) &= \int \left( \mathbf{F}\psi(x,0) \right) \, e^{-iEt/\hbar} \, e^{ipx/\hbar} \, dp \\
+&= \int \bar\psi(p,0) \exp(i \left( \frac{p}{\hbar}x-\frac{p^2}{2m\hbar}t \right)) dp
+\end{align*}
 $$
-This solution can be interpereted as the sum of plane waves $$\exp i(kx-\omega t)$$ weighted by how much of each wave is in the initial state $$\bar \psi(p,0)$$. Each wave oscillates with wavenumber $$k=p/\hbar$$ and frequency $$\omega=p^2/2m\hbar=E/\hbar$$, and has velocity $$v = \omega/k = E/p = p/2m$$. Due to velocity varying with momentum, an initially localized wave-packet will spread out over space, as the next example shows.
+Which is the general solution of the SE for a free particle. 
 
+At this point it's reasonable to ask why there are any dynamics at all, given the absence of forces.  The reason for dynamics is that the solution can be thought of as a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$. The waves oscillate with wavenumber $$k=p/\hbar$$ and frequency $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$, and have phase velocity $$v = \omega/k = E/p = p/2m =\hbar k/2m$$. Due to the phase velocity dependence on wavelength, each wave composing the initial state moves at a different speed, causing the wavefunction to change over time, in particular it spreads out, as the following example demonstrates.
 
+Note that $$k$$ and $$\omega$$ are not independent quantities, but instead have dispersion relation
+$$
+\omega (k) = \frac{\hbar k^2}{2m}
+$$
+__Gaussian Wavepackets.__ A Gaussian wavepacket is a wave function such that $$\psi^*\psi \sim N$$, where $$N$$ is a Gaussian distribution. Distributions like this are interesting because unlike planewaves they're localized in space. Consider the following wavepacket:
+$$
+\psi(x,0) = \frac{1}{(2\pi)^{1/4}} e^{-x^2/4} e^{ik_0x}
+$$
+Which is a planewave with Gaussian amplitude. Plugging this into the SE we find that it is __not__ a solution (which shouldn't come as a surprise because we already found that the solution is $$A \exp i(kx-\omega t)$$), and therefore it doesn't describe a single particle. We can, however, _construct_ a Gaussian wavepacket by adding several planewaves—which are solutions of the SE—together such that their superposition is a wavepacket.
+
+Doing so, we find the wavepacket density to be
+$$
+\lvert \psi(x,t) \rvert^2 \sim \frac{1}{\sqrt{1+4t^2}}\exp(-\frac{2(x-k_0t)^2}{1+4t^2})
+$$
+Which is a Gaussian function with mean $$x-k_0t$$ standard deviation $$1+4t^2$$. Qualitatively this means that the packet moves to the right with velocity $$k_0$$ 
+
+## WIP
 
 
 

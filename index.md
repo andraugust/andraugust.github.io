@@ -11,6 +11,11 @@ layout: default
   </figcaption>
 </figure>
 
+## [Quantum Mechanics Part 2: Particles and Dynamics](quantum-2.html)
+
+<p style="opacity:0.5">06/2023</p>
+Notes on quantum mechanics from Leonard Susskind's "Theoretical Minimum" book series.
+
 ## [Quantum Mechanics Part 1: Systems, States and Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
