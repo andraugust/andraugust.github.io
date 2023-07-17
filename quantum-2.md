@@ -10,17 +10,17 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. Time and Change
 
-In CM states are real numbers that change under the influence of forces. In QM states are vectors in  Hilbert space—how do they change?
+In CM states are real numbers that change under the influence of forces. In QM states are vectors in  Hilbert space—how and what causes them to change?
 
 __Time Evolution Operator.__ To answer this, start by modeling state dynamics generically as
 
 
 $$
-\ket{\Psi(t)}=\mathbf{U}(t) \ket{\Psi(0)}
+\ket{\Psi(t_2)}=\mathbf{U}(t_2,t_1) \ket{\Psi(t_1)}
 $$
 
 
-where $$\mathbf{U}$$ is called the time evolution operator—it maps states across time. One thing we want $$\mathbf{U}$$ to do is conserve the relationship between states. "Relationship" here being defined as the inner product, or "overlap", which is to say $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+where $$\mathbf{U}$$ is the "time evolution operator" that maps states from one point in time to another. In general we'll set $$t_1=0$$ and $$t_2=t$$. One constraint we place on $$\mathbf{U}$$ is conservation of overlap, where overlap is defined as the inner product of two states. In otherwords for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
 
 $$
@@ -30,15 +30,18 @@ $$
 
 Which implies that $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, a property called unitarity.
 
-Next, lets see what infinitesimal change looks like for $$\mathbf{U}$$. To first order,
-
+Any finite time-evolution can be buit up from the composition of several intermediate evolutions, for example:
+$$
+\mathbf{U}(t_3,t_0) = \mathbf{U}(t_3,t_2)\mathbf{U}(t_2,t_1)\mathbf{U}(t_1,t_0)
+$$
+In the limit of infintesimal intermediates we get
 
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
 $$
 
 
-Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added with hindsight from how the math turn out and correspond to physical experiments. What does this operator do to $$\ket{\Psi}$$?
+Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added to make the results match physical experiments. What does this operator do to $$\ket{\Psi}$$?
 
 
 $$
@@ -60,7 +63,7 @@ $$
 
 where $$\hbar$$ is added so the units are correct. It's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the generalized Schrodinger equation.
 
-Before moving on, we can learn a little bit about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies about it:
+Before moving on, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies:
 
 
 $$
@@ -72,9 +75,9 @@ $$
 $$
 
 
-So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore can represent an observable, which, as we'll see is the QM version of the Hamiltonian.
+So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore can represent an observable, which, as we'll show, is the QM Hamiltonian.
 
-In CM, Hamiltonians represent the total energy of a system and relate to dynamics through the Poisson bracket:
+In CM, Hamiltonians represent the total energy of a system and relate to its dynamics through the Poisson bracket:
 
 
 $$
@@ -82,7 +85,7 @@ $$
 $$
 
 
-Where $$L$$ is any quantity defined over phase space $$L(q,p)$$. A similar relation exists in QM for expected values:
+Where $$L$$ is any quantity defined on phase space $$L(q,p)$$. A similar relation exists in QM, but for expected values:
 
 
 $$
@@ -90,11 +93,11 @@ $$
 $$
 
 
-Where $$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{L}$$ is called the commutator. From it we see that if a quantity commutes with $$\mathbf{H}$$ then it is conserved (in expectation), and more generally any function of a quantity that commutes with $$\mathbf{H}$$ is conserved (in expectation). This is much like how in CM $$L$$ is conserved when the PB is $$0$$.
+$$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{L}$$ is called the commutator. From it we see that if a quantity commutes with $$\mathbf{H}$$ then it is conserved (in expectation), and more generally any function of a quantity that commutes with $$\mathbf{H}$$ is conserved (in expectation). This is like in CM where if the PB is $$0$$ then $$L$$ is conserved.
 
-Note that in QM expected values don't change due to measurement outcomes changing, those are fixed for a given operator (for example $$\pm 1$$ for spin), instead, they change because measurement _probabilities_ change, and to calculate how those change we have to solve the generalized Schrodinger equation.
+Note that in QM expected values don't change due to measurement outcomes changing, those are fixed for a given operator (for example $$\pm 1$$ for spin), instead, expected values change because measurement _probabilities_ change, and to calculate how measurement probabilities change we have to solve the generalized Schrodinger equation.
 
-__Solving the GSE.__ Solving the generalized Schrodinger equation is easiest in the energy basis where $$\mathbf{H}$$ is diagonal and a general state vector can be written as
+__Solving the GSE.__ Solving the generalized Schrodinger equation is easiest in the energy basis where $$\mathbf{H}$$ is diagonal and the state vector is
 
 
 $$
@@ -102,7 +105,7 @@ $$
 $$
 
 
-where $$\ket{E_i}$$ is an energy eigenvector satisfying $$\mathbf{H}\ket{E_i} = E_i\ket{E_i}$$. Inserting into the GSE gives
+where $$\ket{E_i}$$ is an energy eigenvector satisfying $$\mathbf{H}\ket{E_i} = E_i\ket{E_i}$$. Inserting this into the GSE gives
 
 
 $$
@@ -132,9 +135,9 @@ $$
 
 ## 2. Particle States
 
-So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by using the principles of QM. The trick is to observe that nothing in the principles requires states to be discrete—the principles only define conditions and physical interpretations related to _vectors_, which can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they are what we'll use to model particles.
+So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by using the principles of QM. The trick is to observe that nothing in the principles requires states to be discrete—the principles only define conditions and physical interpretations related to _vectors_, which can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they're what we'll use to model particles.
 
-__Continuous States.__ In terms of notation, a continuous state vector is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a particular basis just as discrete vectors are, and their form can change from one basis to the next, just as discrete vectors can. The bra-ket notation is as useful for wave-functions as it is for discrete vectors. The discrete representation
+__Continuous States.__ In terms of notation, a continuous state vector is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a particular basis just as discrete vectors are, and their form can change from one basis to the next, just as discrete vectors can. The bra-ket notation is useful for wave-functions like it is for discrete vectors. The discrete representation
 
 
 $$
@@ -150,7 +153,7 @@ $$
 $$
 
 
-for continuous vectors, where $$x$$ labels eigenvalues and $$\ket{x}$$ is the basis associated with the eigenvalue $$x$$. In this analogy, $$\psi(x)$$ is like a continuous set of coefficients. Another way to think of wave functions is in terms of a general state vector's projection onto a basis. For example, if the basis is $$x$$ then the wave function is defined as
+where $$x$$ labels eigenvalues and $$\ket{x}$$ is the associated eigenvector. In this analogy, $$\psi(x)$$ is like a continuous set of coefficients. Another way to think of wave functions is in terms of them being a state vector's projection onto a basis. For example, in the $$x$$ basis the wave function is
 
 
 $$
@@ -158,7 +161,7 @@ $$
 $$
 
 
-__Continuous Operators.__ Operators on continuous functions are similar to operators on discrete vectors: they need to be linear and Hermitian. They're linear when they distribute over the sum of functions and when constants factor out of the operator. In other words
+__Continuous Operators.__ Operators on continuous vectors are similar to operators on discrete vectors: they need to be linear and Hermitian. They're linear when they distribute over the sum of functions with constants factoring out. In other words,
 
 
 $$
@@ -168,7 +171,7 @@ $$
 
 Examples of linear operators include multiplication by $$x$$ and differentiation by $$d/dx$$.
 
-Hermiticity is a bit more involved to verify. It occurs when
+Hermiticity is a bit trickier. It occurs when
 
 
 $$
@@ -184,7 +187,7 @@ $$
 $$
 
 
-For $$\mathbf{L}=x$$ this is
+For example, if $$\mathbf{L}=x$$ this is
 
 
 $$
@@ -196,9 +199,9 @@ $$
 $$
 
 
-Therefore the operator $$x$$ is Hermitian. Note that $$\dagger$$ from discrete operators gets replaced by $$*$$ for functions because there are no transposes for functions. Applying the same test to $$d/dx$$ we find that it's not Hermitian, but if we multiply it by $$i$$ it is.
+Therefore the operator $$x$$ is Hermitian. Note that $$\dagger$$ from discrete operators gets replaced by $$*$$ for functions because there are no transposes for functions. Applying the same test to $$d/dx$$ we find that it's not Hermitian, but if we multiply by $$i$$ it is.
 
-__Eigenfunctions of Position.__ How are eigenvalues and eigenfunctions computed for continuous operators? For position the operator is $$x$$ and its eigenvalues are denoted by $$x_0$$. The eigenequation is
+__Eigenfunctions of Position.__ How are eigenvalues and eigenvectors computed for continuous operators? For position the operator is $$x$$ and its eigenvalues are denoted by $$x_0$$. The eigenequation is
 
 
 $$
@@ -239,7 +242,7 @@ __Eigenfunctions of Momentum.__ What are the eigenfunctions of momentum? For mom
 
 $$
 p\bar\psi(p) = p_0\bar\psi(p) \\
-\rarr\bar\psi(p) = \delta(p-p_0)
+\rightarrow \bar\psi(p) = \delta(p-p_0)
 $$
 
 
@@ -279,7 +282,7 @@ $$
 
 Which is undefined. This reflects the fact that when particles are unconstrained in space the planewave solution $$\exp(ipx/\hbar)$$ is physically unrealistic. In practice, particles are either constrained in space such that the integration limits are finite, or, if they are un-constrained in space, they're acted on by a potential such that they're localized and the integral converges.
 
-__Changing Basis.__ Generally speaking, a state vector $$\ket{\Psi}$$ can be represented in any basis. For example, in the $$x$$ basis $$\psi(x) = \bk{x}{\Psi}$$, in the momentum basis $$\bar\psi(p) = \bk{p}{\Psi}$$, etc. Because these different representations ultimately correspond to the same thing, namely $$\ket{\Psi}$$, there must be a way to transform between them. How do we transform between the $$x$$ and $$p$$ basis? The trick is to use the identity operator:
+__Changing Basis.__ Generally speaking, a state vector $$\ket{\Psi}$$ can be represented in any basis. For example, in the $$x$$ basis $$\psi(x) = \bk{x}{\Psi}$$, in the momentum basis $$\bar\psi(p) = \bk{p}{\Psi}$$, etc. Because these representations ultimately correspond to the same thing, namely $$\ket{\Psi}$$, there must be a way to transform between them. How do we transform between the $$x$$ and $$p$$ basis? The trick is to use the identity operator:
 
 
 $$
@@ -326,9 +329,9 @@ $$
 $$
 
 
-So position and momentum space are related by Fourier transforms, which leads to the interpretation that momentum space is the spatial frequeny domain of position space, and spatial frequency is associated with the wavenumber $$k=p/\hbar$$.
+So position and momentum space are related by the Fourier. This leads to the interpretation that momentum space is the spatial frequency domain of position space, where spatial frequency is given by $$k=p/\hbar$$.
 
-__Changing Basis: Operators.__ How do operators change basis? In the same way operators change basis when they're represented by matrices: using the formula $$\mathbf{L' = \mathbf{U} \mathbf{L} \mathbf{U}^{-1}}$$, where $$\mathbf{L}$$ is the operator of interest, $$\mathbf{L}'$$ is the transformed operator, and $$\mathbf{U}$$ is a unitary change-of-basis operator. Because $$\mathbf{U}$$ is unitary and we're working with continuous operators we can set $$\mathbf{U}^{-1} = \mathbf{U}^*$$.
+__Changing Basis: Operators.__ How do operators change basis? In the same way they change basis when they're matrices—using the formula $$\mathbf{L' = \mathbf{U} \mathbf{L} \mathbf{U}^{-1}}$$, where $$\mathbf{L}$$ is the operator of interest, $$\mathbf{L}'$$ is the transformed operator, and $$\mathbf{U}$$ is a unitary change-of-basis operator. Because $$\mathbf{U}$$ is unitary and we're working with continuous operators we can set $$\mathbf{U}^{-1} = \mathbf{U}^*$$.
 
 How does this work out for position and momentum? The relevant change-of-basis transformation is the Fourier transform $$\mathbf{F}$$. Is it unitary? Yes, because $$\mathbf{F}^*\mathbf{F}\psi(x) = \psi(x)$$. Let's use it to derive the position operator in momentum space, call it $$\mathbf{\bar X}$$.
 
@@ -369,11 +372,10 @@ The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $
 
 ## 3. Particle Dynamics
 
-In the first section of this post we derived the general Schrodinger equation and solved it to uncover the dynamics of discrete-state systems. In the second section of this post we covered wavefunctions and showed how particles are represented in terms of them. The rest of this post combines those results to model the dynamics of particles, starting with a free particle, and then moving on to potentials etc.
+In the first section we derived the general Schrodinger equation and solved it for the dynamics of discrete-state systems. In the second section we defined wavefunctions and showed how to represent particles in terms of them. The rest of this post combines those two sections to model the dynamics of particles, starting with a free particle, and then moving on to potentials etc.
 
 __Free Particle.__ A free particle is defined as a particle with no forces acting on it. In the 
 absence of forces there are no potentials, so the Hamiltonian is
-
 
 $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
