@@ -10,9 +10,9 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. Time and Change
 
-In CM states are real numbers that change under the influence of forces. In QM states are vectors in  Hilbert space—how and what causes them to change?
+In classical mechanics states are represented by points in phase space that change under the influence of forces. In quantum mechanics states are complex vectors in Hilbert space. How and what causes them to change?
 
-__Time Evolution Operator.__ To answer this, start by modeling state dynamics generically as
+__Time Evolution Operator.__ To answer this, start by modeling dynamics generally as
 
 
 $$
@@ -20,7 +20,7 @@ $$
 $$
 
 
-where $$\mathbf{U}$$ is the "time evolution operator" that maps states from one point in time to another. In general we'll set $$t_1=0$$ and $$t_2=t$$. One constraint we place on $$\mathbf{U}$$ is conservation of overlap, where overlap is defined as the inner product of two states. In otherwords for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+where $$\mathbf{U}$$ is the "time evolution operator" that maps states from one point in time to another. In general we'll set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. One constraint we place on $$\mathbf{U}$$ is conservation of overlap, where overlap is defined as the inner product of two states. In otherwords for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
 
 $$
@@ -30,18 +30,18 @@ $$
 
 Which implies that $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, a property called unitarity.
 
-Any finite time-evolution can be buit up from the composition of several intermediate evolutions, for example:
+Any finite time evolution can be buit up from the composition of several intermediate evolutions, for example:
 $$
 \mathbf{U}(t_3,t_0) = \mathbf{U}(t_3,t_2)\mathbf{U}(t_2,t_1)\mathbf{U}(t_1,t_0)
 $$
-In the limit of infintesimal intermediates we get
+In the limit we get
 
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
 $$
 
 
-Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added to make the results match physical experiments. What does this operator do to $$\ket{\Psi}$$?
+Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added to make the results fit experimental results. What does this operator do to $$\ket{\Psi}$$?
 
 
 $$
@@ -61,9 +61,9 @@ $$
 $$
 
 
-where $$\hbar$$ is added so the units are correct. It's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the generalized Schrodinger equation.
+where $$\hbar$$ is added so that units are correct; it's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the generalized Schrodinger equation.
 
-Before moving on, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies:
+Before moving on, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies about it:
 
 
 $$
@@ -368,13 +368,13 @@ $$
 $$
 
 
-The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function.
+The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function (as shown later in the section on Gaussian wavepackets).
 
 ## 3. Particle Dynamics
 
 In the first section we derived the general Schrodinger equation and solved it for the dynamics of discrete-state systems. In the second section we defined wavefunctions and showed how to represent particles in terms of them. The rest of this post combines those two sections to model the dynamics of particles, starting with a free particle, and then moving on to potentials etc.
 
-__Free Particle.__ A free particle is defined as a particle with no forces acting on it. In the 
+__Free Particle.__ A free particle is defined as having no forces act on it. In the 
 absence of forces there are no potentials, so the Hamiltonian is
 
 $$
@@ -390,7 +390,7 @@ $$
 $$
 
 
-This is the PDE governing free-particle dynamics. It has the form of a diffusion equation but with a complex diffusion coefficient. To solve it we use the solution derived earlier for discrete state vectors:
+This PDE governs free-particle dynamics. It has the form of a diffusion equation but with a complex diffusion coefficient. To solve it we use the solution derived earlier for discrete state vectors:
 
 
 $$
@@ -412,7 +412,7 @@ Where $$\psi_E(x)$$ is an energy eigenfunction in the $$x$$-basis. To find $$\ps
 $$
 \begin{align*}
 \mathbf{H}\psi_E(x) &= E\psi_E(x) \\
-\rarr -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi_E(x) &= E \psi_E(x)
+\rightarrow -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi_E(x) &= E \psi_E(x)
 \end{align*}
 $$
 
@@ -444,11 +444,17 @@ $$
 $$
 
 
-Which is the general solution of the SE for a free particle. 
+This is the general solution of the SE for a free particle. 
 
-At this point it's reasonable to ask why there are any dynamics at all, given the absence of forces.  The reason for dynamics is that the solution can be thought of as a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$. The waves oscillate with wavenumber $$k=p/\hbar$$ and frequency $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$, and have phase velocity $$v = \omega/k = E/p = p/2m =\hbar k/2m$$. Due to the phase velocity dependence on wavelength, each wave composing the initial state moves at a different speed, causing the wavefunction to change over time, in particular it spreads out, as the following example demonstrates.
+At this point it's reasonable to ask why there are dynamics, given there are no forces.  The reason is that the solution is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$, but each wave moves at a different speed, causing the initial wavefunction to spread out over time. 
 
-Note that $$k$$ and $$\omega$$ are not independent quantities, but instead have dispersion relation
+The speed of each wave is defined by its "phase velocity"
+$$
+v(k) = \omega/k = E/p = p/2m =\hbar k/2m
+$$
+Where $$k=p/\hbar$$ and $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$. So smaller wavelength waves move faster.
+
+Note that $$k$$ and $$\omega$$ are not independent quantities, but instead have a dispersion relation given by
 
 
 $$
@@ -456,28 +462,61 @@ $$
 $$
 
 
-__Gaussian Wavepackets.__ A Gaussian wavepacket is a wave function such that $$\psi^*\psi \sim N$$, where $$N$$ is a Gaussian distribution. Distributions like this are interesting because unlike planewaves they're localized in space. Consider the following wavepacket:
+__The Gaussian Wavepacket.__ A Gaussian wavepacket is a wave function having Gaussian, or Normal, density $$\psi^*\psi \sim N$$. Such distributions are interesting because unlike planewaves they're localized in space. Consider the following wavepacket in momentum-space:
 
 
 $$
-\psi(x,0) = \frac{1}{(2\pi)^{1/4}} e^{-x^2/4} e^{ik_0x}
+\bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
 $$
 
-
-Which is a planewave with Gaussian amplitude. Plugging this into the SE we find that it is __not__ a solution (which shouldn't come as a surprise because we already found that the solution is $$A \exp i(kx-\omega t)$$), and therefore it doesn't describe a single particle. We can, however, _construct_ a Gaussian wavepacket by adding several planewaves—which are solutions of the SE—together such that their superposition is a wavepacket.
-
-Doing so, we find the wavepacket density to be
-
-
+This wavepacket, when squared, is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position-space its wavefunction is
 $$
-\lvert \psi(x,t) \rvert^2 \sim \frac{1}{\sqrt{1+4t^2}}\exp(-\frac{2(x-k_0t)^2}{1+4t^2})
+\psi(x,0) = \left( \frac{4 \sigma_p^2 \hbar^2}{2\pi} \right)^{1/4} \exp(-\sigma_p^2 x^2 /\hbar^2) \exp(ip_0x/\hbar)
 $$
+By inspection, the position-space uncertainty is related to the momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is the lower limit on simultaneous uncertainty.
+
+Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution. This shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wave-packets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution to the SE, so in this sense wavepackets are physically realistic.
+
+Plugging $$\bar \psi(p,0)$$ into the general solution and taking the integral gives
+$$
+\psi(x,t) = (2\pi\sigma_x^2)^{-1/4} \left(1+i\frac{\hbar}{2m\sigma_x^2}t\right)^{-1/2}\exp \frac{-x^2+\frac{i}{\hbar}(4\sigma_x p_0 x + 2\sigma_x^2p_0^2t)}{4\sigma_x^2(1+i\frac{\hbar}{2m\sigma_x^2}t)}
+$$
+This wavefunction is complicated, but its density is a simple Gaussian:
+$$
+\lvert \psi(x,t) \rvert^2 = \frac{1}{\sqrt{2\pi\sigma_x^2(t)}} \exp -\frac{\left( x-\mu(t) \right)^2}{2\sigma^2_x(t)}
+$$
+Where
+$$
+\begin{align*}
+\mu(t) &= \frac{p_0}{m}t \\
+\sigma_x(t) &= \sigma_x \sqrt{1+\left(\frac{\hbar}{2m\sigma_x^2}t\right)^2}
+\end{align*}
+$$
+So the wavepacket moves to the right with speed $$p_0/m$$, just like in classical mechanics. It's interesting to note that this "group velocity" is different from the phase velocity of the individual waves comprising the Gaussian—their velocity is only $$p/2m$$. The dispersion of the constituent waves causes the wavepacket to spread out as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time.
+
+__The Classical Connection.__ Is the classical result $$v_g = p_0/m$$ true more generally? The classical notion of velocity in QM corresponds to 
+$$
+v = \frac{d}{dt} \left< \mathbf{X} \right>
+$$
+Where the time-derivative is determined using
+$$
+\frac{d}{dt}\left<\mathbf{X}\right> = -\frac{i}{\hbar}\left<\left[\mathbf{X},\mathbf{H}\right]\right>
+$$
+For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, as expected. What about for a non-free particle? What happens if the particle is influenced by a force?
 
 
-Which is a Gaussian function with mean $$x-k_0t$$ standard deviation $$1+4t^2$$. Qualitatively this means that the packet moves to the right with velocity $$k_0$$ 
-
-## WIP
 
 
+
+
+
+
+
+
+
+## References
+
+* Gaussian wavepacket integrals: [1](https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/235adf962a3ef4772b2f494261e00d4b_chapter4.pdf), [2](https://here.isnew.info/inverse-fourier-transform-of-the-gaussian-function.html)
+* 
 
 {% include disqus.html %}
