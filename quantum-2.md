@@ -470,38 +470,62 @@ $$
 $$
 
 This wavepacket, when squared, is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position-space its wavefunction is
+
+
 $$
 \psi(x,0) = \left( \frac{4 \sigma_p^2 \hbar^2}{2\pi} \right)^{1/4} \exp(-\sigma_p^2 x^2 /\hbar^2) \exp(ip_0x/\hbar)
 $$
+
+
 By inspection, the position-space uncertainty is related to the momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is the lower limit on simultaneous uncertainty.
 
 Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution. This shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wave-packets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution to the SE, so in this sense wavepackets are physically realistic.
 
 Plugging $$\bar \psi(p,0)$$ into the general solution and taking the integral gives
+
+
 $$
 \psi(x,t) = (2\pi\sigma_x^2)^{-1/4} \left(1+i\frac{\hbar}{2m\sigma_x^2}t\right)^{-1/2}\exp \frac{-x^2+\frac{i}{\hbar}(4\sigma_x p_0 x + 2\sigma_x^2p_0^2t)}{4\sigma_x^2(1+i\frac{\hbar}{2m\sigma_x^2}t)}
 $$
+
+
 This wavefunction is complicated, but its density is a simple Gaussian:
+
+
 $$
 \lvert \psi(x,t) \rvert^2 = \frac{1}{\sqrt{2\pi\sigma_x^2(t)}} \exp -\frac{\left( x-\mu(t) \right)^2}{2\sigma^2_x(t)}
 $$
+
+
 Where
+
+
 $$
 \begin{align*}
 \mu(t) &= \frac{p_0}{m}t \\
 \sigma_x(t) &= \sigma_x \sqrt{1+\left(\frac{\hbar}{2m\sigma_x^2}t\right)^2}
 \end{align*}
 $$
+
+
 So the wavepacket moves to the right with speed $$p_0/m$$, just like in classical mechanics. It's interesting to note that this "group velocity" is different from the phase velocity of the individual waves comprising the Gaussian—their velocity is only $$p/2m$$. The dispersion of the constituent waves causes the wavepacket to spread out as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time.
 
 __The Classical Connection.__ Is the classical result $$v_g = p_0/m$$ true more generally? The classical notion of velocity in QM corresponds to 
+
+
 $$
 v = \frac{d}{dt} \left< \mathbf{X} \right>
 $$
+
+
 Where the time-derivative is determined using
+
+
 $$
 \frac{d}{dt}\left<\mathbf{X}\right> = -\frac{i}{\hbar}\left<\left[\mathbf{X},\mathbf{H}\right]\right>
 $$
+
+
 For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, as expected. What about for a non-free particle? What happens if the particle is influenced by a force?
 
 
