@@ -10,16 +10,16 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. Time and Change
 
-In classical mechanics states are represented by points in phase space that change under the influence of forces. In quantum mechanics states are complex vectors in Hilbert space. How and what causes them to change?
+In classical mechanics states are represented by points in phase space and they change under the influence of forces. In quantum mechanics states are complex vectors in Hilbert space. How and what causes them to change?
 
-__Time Evolution Operator.__ State dynamics can generally be modeled as
+__Time Evolution Operator.__ Dynamics for vectors can generically be modeled as
 
 
 $$
 \ket{\Psi(t_2)}=\mathbf{U}(t_2,t_1) \ket{\Psi(t_1)}
 $$
 
-where $$\mathbf{U}$$ is a "time evolution operator", it maps states from one point in time to another. Usually we'll set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
+where $$\mathbf{U}$$ is the "time evolution operator", it maps states from one point in time to another. Usually we'll set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
 
 One thing we want $$\mathbf{U}$$ to do is conserve inner products. In otherwords for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
@@ -30,7 +30,7 @@ $$
 
 Which implies $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, so $$\mathbf{U}$$ is unitary .
 
-Any finite evolution can be buit up by composing many intermediates, for example:
+Any finite evolution can be buit up by composing several intermediate evolutions. For example
 
 
 $$
@@ -38,7 +38,7 @@ $$
 $$
 
 
-So if we have an infinitesimal operator we can create whatever dynamics we like by applying it repeatedly. In the limit, the infinitesimal operator is
+In general we'll assume $$\mathbf{U}$$ doesn't explicitly depend on time, so $$\mathbf{U}(t_2,t_1)=\mathbf{U}(t_2-t_1)$$. Thus, if we have an infinitesimal operator we can create whatever dynamics we like by applying it repeatedly. In the limit, the infinitesimal operator is
 
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
@@ -65,7 +65,7 @@ $$
 $$
 
 
-where $$\hbar$$ is added so that units are correct; it's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the generalized Schrodinger equation.
+where $$\hbar$$ is added so units are correct, it's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the generalized Schrodinger equation.
 
 Before moving on, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies about it:
 
@@ -101,7 +101,7 @@ $$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{
 
 Note that in QM expected values don't change due to measurement outcomes changing, those are fixed for a given operator (for example $$\pm 1$$ for spin), instead, expected values change because measurement _probabilities_ change, and to calculate how measurement probabilities change we have to solve the generalized Schrodinger equation.
 
-__Solving the GSE.__ Solving the generalized Schrodinger equation is easiest in the energy basis where $$\mathbf{H}$$ is diagonal and the state vector is
+__Solving the SE.__ Solving the SE is easiest in the energy basis where $$\mathbf{H}$$ is diagonal and a state vector is
 
 
 $$
@@ -109,7 +109,7 @@ $$
 $$
 
 
-where $$\ket{E_i}$$ is an energy eigenvector satisfying $$\mathbf{H}\ket{E_i} = E_i\ket{E_i}$$. Inserting this into the GSE gives
+$$\ket{E_i}$$ is an energy eigenvector satisfying $$\mathbf{H}\ket{E_i} = E_i\ket{E_i}$$. Inserting this into the SE gives
 
 
 $$
@@ -130,7 +130,7 @@ $$
 
 Compared to the general form of an oscillator $$\exp(-i \omega t)$$ we see that $$E/\hbar$$ plays the role of frequency in QM.
 
-This solution assumes we're working in the energy basis. What if we're given a state vector in a different basis and want to compute dynamics? The solution is to do a change of basis. Given a general state vector $$\ket{\Psi}$$ in a non-energy basis (such as the spin basis $$\ket{+z}$$, $$\ket{-z}$$), factor the Hamiltonian according to $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, then the state in the energy basis is $$\mathbf{P}^{\dagger}\ket{\Psi}$$.  In terms of components $$a_i = \bk{E_i}{\Psi}$$, where $$a_i$$ is the $$i$$th component of $$\ket{\Psi}$$ in the energy basis. This is all summarized by the general solution to the GSE:
+This solution assumes we're working in the energy basis. What if we're given a state vector in a different basis and want to compute dynamics? The solution is to do a change of basis. Given a general state vector $$\ket{\Psi}$$ in a non-energy basis (such as the spin basis $$\ket{+z}$$, $$\ket{-z}$$), factor the Hamiltonian according to $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, then the state in the energy basis is $$\mathbf{P}^{\dagger}\ket{\Psi}$$.  In terms of components $$a_i = \bk{E_i}{\Psi}$$, where $$a_i$$ is the $$i$$th component of $$\ket{\Psi}$$ in the energy basis. This is all summarized by the general solution to the SE:
 
 
 $$
@@ -139,7 +139,7 @@ $$
 
 ## 2. Particle States
 
-So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by using the principles of QM. The trick is to observe that nothing in the principles requires states to be discrete—the principles only define conditions and physical interpretations related to _vectors_, which can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they're what we'll use to model particles.
+So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by using the principles of QM. The trick is to see that nothing in the principles requires states to be discrete—the principles only define conditions and physical interpretations related to _vectors_, and vectors can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they're what we'll use to model particles.
 
 __Continuous States.__ In terms of notation, a continuous state vector is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a particular basis just as discrete vectors are, and their form can change from one basis to the next, just as discrete vectors can. The bra-ket notation is useful for wave-functions like it is for discrete vectors. The discrete representation
 
@@ -335,9 +335,9 @@ $$
 
 So position and momentum space are related by the Fourier. This leads to the interpretation that momentum space is the spatial frequency domain of position space, where spatial frequency is given by $$k=p/\hbar$$.
 
-__Changing Basis: Operators.__ How do operators change basis? In the same way they change basis when they're matrices—using the formula $$\mathbf{L' = \mathbf{U} \mathbf{L} \mathbf{U}^{-1}}$$, where $$\mathbf{L}$$ is the operator of interest, $$\mathbf{L}'$$ is the transformed operator, and $$\mathbf{U}$$ is a unitary change-of-basis operator. Because $$\mathbf{U}$$ is unitary and we're working with continuous operators we can set $$\mathbf{U}^{-1} = \mathbf{U}^*$$.
+__Changing Basis: Operators.__ How do operators change basis? In the same way as when they're matrices—using $$\mathbf{L' = \mathbf{U} \mathbf{L} \mathbf{U}^{-1}}$$, where $$\mathbf{L}$$ is the operator of interest, $$\mathbf{L}'$$ is the transformed operator, and $$\mathbf{U}$$ is a unitary change-of-basis operator. Because $$\mathbf{U}$$ is unitary and we're working with continuous operators we can set $$\mathbf{U}^{-1} = \mathbf{U}^*$$.
 
-How does this work out for position and momentum? The relevant change-of-basis transformation is the Fourier transform $$\mathbf{F}$$. Is it unitary? Yes, because $$\mathbf{F}^*\mathbf{F}\psi(x) = \psi(x)$$. Let's use it to derive the position operator in momentum space, call it $$\mathbf{\bar X}$$.
+How does this work for position and momentum? The relevant change-of-basis transformation is the Fourier transform $$\mathbf{F}$$. Is it unitary? Yes because $$\mathbf{F}^*\mathbf{F}\psi(x) = \psi(x)$$. Let's use it to derive the position operator in momentum space, call it $$\mathbf{\bar X}$$.
 
 
 $$
@@ -352,9 +352,9 @@ $$
 
 Where the last step comes from a Fourier transform identity. So the position operator in momentum-space has the same form as the momentum operator in position space, namely $$i\hbar d/dp$$.
 
-Another way to determine (or at least verify) an operator in a new basis is through the use of commutators. The reason is that commutators are _basis independent_. For example, $$[\mathbf{X}, \mathbf{P}] = [\mathbf{\bar X}, \mathbf{\bar P}] = i\hbar$$.
+Another way to determine or verify an operator in a new basis is through the use of commutators. The reason is that commutators are _basis independent_. For example, $$[\mathbf{X}, \mathbf{P}] = [\mathbf{\bar X}, \mathbf{\bar P}] = i\hbar$$. This method may require some guessing and checking, whereas the unitary method is an explicit calculation.
 
-As a practical note, when working with operators, it's helpful to supply them with a test function to act on, otherwise it isn't necessarily clear how they behave or simplify notationally.
+As a practical note, when working with operators it's helpful to supply them with a test function to act on, otherwise it isn't necessarily clear how they behave or simplify.
 
 __Position-Momentum Uncertainty.__ Going back to the discussion of commutators, we found that two observables are simultaneously knowable iff their operators commute. Do the operators for $$x$$ and $$p$$ commute? The answer is no. Given $$\mathbf{X}=x$$ and $$\mathbf{P}=-i\hbar d/dx $$ the commutator is
 
@@ -364,22 +364,21 @@ $$
 $$
 
 
-Which means that position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. How unknowable are they together? Defining unknowability in terms of the standard deviation $$\Delta$$ of an operator we find (from the general uncertainty principle) that
+Which means position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. How unknowable are they together? Defining unknowability in terms of the standard deviation $$\sigma$$ of an operator we find (from the general uncertainty principle) that
 
 
 $$
-\Delta \mathbf{X} \Delta \mathbf{P} \ge \frac{\hbar}{2}
+\sigma_x \sigma_p \ge \frac{\hbar}{2}
 $$
 
 
-The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function (as shown later in the section on Gaussian wavepackets).
+The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function, as is shown later in the section on wavepackets.
 
 ## 3. Particle Dynamics
 
-In the first section we derived the general Schrodinger equation and solved it for the dynamics of discrete-state systems. In the second section we defined wavefunctions and showed how to represent particles in terms of them. The rest of this post combines those two sections to model the dynamics of particles, starting with a free particle, and then moving on to potentials etc.
+In the first section we derived the general Schrodinger equation and solved it for the dynamics of discrete-state systems. In the second section we defined wavefunctions and showed how to represent particles in terms of them. The rest of this post combines those two sections to model the dynamics of particles, starting with the free particle and then moving on to potentials and oscillators.
 
-__Free Particle.__ A particle is said to be "free" when it has no forces acting on it. In the 
-absence of forces there are no potentials, so the Hamiltonian is
+__Free Particle.__ A particle is said to be "free" when no forces act on it. In the absence of forces there are no potentials, so the Hamiltonian is
 $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
 $$
@@ -393,7 +392,7 @@ $$
 $$
 
 
-This PDE has the form of a diffusion equation but with a complex diffusion coefficient. To solve it we use the solution derived earlier for discrete vectors:
+This PDE has the form of a diffusion equation but with complex diffusion coefficient. To solve it we use the solution derived earlier for discrete vectors:
 
 
 $$
@@ -401,7 +400,7 @@ $$
 $$
 
 
-Converting this to continuous space gives
+Converting to continuous space gives
 
 
 $$
@@ -436,7 +435,7 @@ $$
 $$
 
 
-Plugging this into the continuous form of the general solution, and writing everything in terms of $$p$$ instead of $$E$$, gives
+Plugging this into the general solution and writing everything in terms of $$p$$ instead of $$E$$ gives
 
 
 $$
@@ -447,11 +446,11 @@ $$
 $$
 
 
-This is the general solution of the SE for a free particle. 
+This is the general solution to the SE for a free particle. 
 
-At this point it's reasonable to ask why there are any dynamics at all given there are no forces.  The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its phase velocity, and so the shape of the initial wavefunction changes over time, creating dynamics. 
+At this point it's reasonable to ask why there are any dynamics at all given there are no forces. The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its phase velocity, and this causes the shape of the wavefunction to change over time. If instead the phase waves all moved at the same speed then the initial wavefunction shape would be preserved.
 
-The speed of each wave is defined by
+The speed of each phase wave is given by
 
 
 $$
@@ -476,7 +475,7 @@ $$
 \bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
 $$
 
-This wavepacket, when squared, is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position-space its wavefunction is
+This wavepacket, when squared, is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position-space it's wavefunction is
 
 
 $$
@@ -484,15 +483,15 @@ $$
 $$
 
 
-Which is also a Gaussian, but with a wave factor. By inspection, the position-space uncertainty is related to the momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is the lower limit of the Heisenberg uncertainty relation.
+Which is also Gaussian, but multiplied by a wave factor. By inspection, the position-space uncertainty is related to the momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit from the Heisenberg uncertainty relation.
 
-Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution. This shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wave-packets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution of the SE, and in this sense wavepackets are physically realistic.
+Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution. This shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wave-packets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution to the SE, so in this sense wavepackets are physically realistic.
 
-Plugging $$\bar \psi(p,0)$$ into the general solution and taking the integral gives
+Plugging $$\bar \psi(p,0)$$ into the general SE solution and taking the integral gives
 
 
 $$
-\psi(x,t) = (2\pi\sigma_x^2)^{-1/4} \left(1+i\frac{\hbar}{2m\sigma_x^2}t\right)^{-1/2}\exp \frac{-x^2+\frac{i}{\hbar}(4\sigma_x p_0 x + 2\sigma_x^2p_0^2t)}{4\sigma_x^2(1+i\frac{\hbar}{2m\sigma_x^2}t)}
+\psi(x,t) = \frac{(2\pi\sigma_x^2)^{-1/4}}{\left(1+i\frac{\hbar}{2m\sigma_x^2}\right)^{1/2}}\exp \frac{-x^2+\frac{i}{\hbar}(4\sigma_x p_0 x + 2\sigma_x^2p_0^2t)}{4\sigma_x^2(1+i\frac{\hbar}{2m\sigma_x^2}t)}
 $$
 
 
@@ -515,9 +514,9 @@ $$
 $$
 
 
-So the wavepacket moves to the right with speed $$p_0/m$$, like it does in classical mechanics. It's interesting to note that this "group velocity" is different from the phase velocity of the individual waves of the Gaussian—their velocity is only $$p/2m$$. The dispersion of the constituent waves causes the wavepacket to spread out as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time but the overall Gaussian shape is preserved.
+So the wavepacket moves to the right with "group velocity" $$p_0/m$$, just like a classical particle. It's interesting to note that group velocity is different from phase velocity. The dispersion of the phase waves causes the wavepacket to spread as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time.
 
-__The Classical Connection.__ Is the wavepacket result $$v_g = p_0/m$$ true more generally? The classical notion of velocity in QM corresponds to 
+__The Classical Connection.__ Is the wavepacket result $$v_g = p_0/m$$ true more generally? In QM the classical notion of velocity corresponds to 
 
 
 $$
@@ -525,15 +524,36 @@ v = \frac{d}{dt} \left< \mathbf{X} \right>
 $$
 
 
-Where the time-derivative is determined using
+Where the time-derivative is determined by
 
 
 $$
 \frac{d}{dt}\left<\mathbf{X}\right> = -\frac{i}{\hbar}\left<\left[\mathbf{X},\mathbf{H}\right]\right>
 $$
 
+For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, so the result does in fact generalize beyond wavepackets.
 
-For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, so the result generalizes beyond wavepackets. What about for a non-free particle? What happens if the particle is influenced by a force?
+What about non-free particles? In CM when there's a potential the dynamics are
+$$
+\frac{dp}{dt} = -\frac{dV}{dx}
+$$
+In QM the left side becomes
+$$
+\frac{d}{dt}\left<\mathbf{P}\right> = -\frac{i}{\hbar}\left<[\mathbf{P},\mathbf{H}]\right>
+$$
+The Hamiltonian is
+$$
+\mathbf{H} = \frac{1}{2m}\mathbf{P}^2 + \mathbf{V}(x)
+$$
+Which leads to
+$$
+\frac{d}{dt}\left<\mathbf{P}\right> = -\left<\frac{d\mathbf{V}}{dx}\right>
+$$
+So the quantum result is similar to the classical result, but it's important to note that on the right side the expectation is taken over the entire derivative, which in general is different from taking it over $$x$$ first and then differentiating. In otherwords,
+$$
+\left<\frac{d\mathbf{V}}{dx}\right> \neq \frac{d\mathbf{V}(\left<x\right>)}{d\left<x\right>}
+$$
+
 
 
 
