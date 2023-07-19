@@ -12,36 +12,40 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 In classical mechanics states are represented by points in phase space that change under the influence of forces. In quantum mechanics states are complex vectors in Hilbert space. How and what causes them to change?
 
-__Time Evolution Operator.__ To answer this, start by modeling dynamics generally as
+__Time Evolution Operator.__ State dynamics can generally be modeled as
 
 
 $$
 \ket{\Psi(t_2)}=\mathbf{U}(t_2,t_1) \ket{\Psi(t_1)}
 $$
 
+where $$\mathbf{U}$$ is a "time evolution operator", it maps states from one point in time to another. Usually we'll set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
 
-where $$\mathbf{U}$$ is the "time evolution operator" that maps states from one point in time to another. In general we'll set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. One constraint we place on $$\mathbf{U}$$ is conservation of overlap, where overlap is defined as the inner product of two states. In otherwords for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
-
+One thing we want $$\mathbf{U}$$ to do is conserve inner products. In otherwords for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
 $$
 \bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
 $$
 
 
-Which implies that $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, a property called unitarity.
+Which implies $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, so $$\mathbf{U}$$ is unitary .
 
-Any finite time evolution can be buit up from the composition of several intermediate evolutions, for example:
+Any finite evolution can be buit up by composing many intermediates, for example:
+
+
 $$
 \mathbf{U}(t_3,t_0) = \mathbf{U}(t_3,t_2)\mathbf{U}(t_2,t_1)\mathbf{U}(t_1,t_0)
 $$
-In the limit we get
+
+
+So if we have an infinitesimal operator we can create whatever dynamics we like by applying it repeatedly. In the limit, the infinitesimal operator is
 
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
 $$
 
 
-Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added to make the results fit experimental results. What does this operator do to $$\ket{\Psi}$$?
+Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added so that results fit experiment. What does this operator do to $$\ket{\Psi}$$?
 
 
 $$
@@ -75,7 +79,7 @@ $$
 $$
 
 
-So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore can represent an observable, which, as we'll show, is the QM Hamiltonian.
+So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore represents an observable, which, as we'll show, is the QM Hamiltonian.
 
 In CM, Hamiltonians represent the total energy of a system and relate to its dynamics through the Poisson bracket:
 
@@ -374,15 +378,14 @@ The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $
 
 In the first section we derived the general Schrodinger equation and solved it for the dynamics of discrete-state systems. In the second section we defined wavefunctions and showed how to represent particles in terms of them. The rest of this post combines those two sections to model the dynamics of particles, starting with a free particle, and then moving on to potentials etc.
 
-__Free Particle.__ A free particle is defined as having no forces act on it. In the 
+__Free Particle.__ A particle is said to be "free" when it has no forces acting on it. In the 
 absence of forces there are no potentials, so the Hamiltonian is
-
 $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
 $$
 
 
-Plugging this into the GSE gives
+Plugging this into the GSE gives the PDE governing free particle dynamics:
 
 
 $$
@@ -390,7 +393,7 @@ $$
 $$
 
 
-This PDE governs free-particle dynamics. It has the form of a diffusion equation but with a complex diffusion coefficient. To solve it we use the solution derived earlier for discrete state vectors:
+This PDE has the form of a diffusion equation but with a complex diffusion coefficient. To solve it we use the solution derived earlier for discrete vectors:
 
 
 $$
@@ -446,15 +449,19 @@ $$
 
 This is the general solution of the SE for a free particle. 
 
-At this point it's reasonable to ask why there are dynamics, given there are no forces.  The reason is that the solution is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$, but each wave moves at a different speed, causing the initial wavefunction to spread out over time. 
+At this point it's reasonable to ask why there are any dynamics at all given there are no forces.  The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its phase velocity, and so the shape of the initial wavefunction changes over time, creating dynamics. 
 
-The speed of each wave is defined by its "phase velocity"
+The speed of each wave is defined by
+
+
 $$
 v(k) = \omega/k = E/p = p/2m =\hbar k/2m
 $$
-Where $$k=p/\hbar$$ and $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$. So smaller wavelength waves move faster.
 
-Note that $$k$$ and $$\omega$$ are not independent quantities, but instead have a dispersion relation given by
+
+Where $$k=p/\hbar$$ and $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$. So waves with smaller wavelength move faster—they have more energy.
+
+Note that $$k$$ and $$\omega$$ are not independent quantities, but instead have a dispersion relation
 
 
 $$
@@ -477,9 +484,9 @@ $$
 $$
 
 
-By inspection, the position-space uncertainty is related to the momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is the lower limit on simultaneous uncertainty.
+Which is also a Gaussian, but with a wave factor. By inspection, the position-space uncertainty is related to the momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is the lower limit of the Heisenberg uncertainty relation.
 
-Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution. This shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wave-packets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution to the SE, so in this sense wavepackets are physically realistic.
+Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution. This shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wave-packets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution of the SE, and in this sense wavepackets are physically realistic.
 
 Plugging $$\bar \psi(p,0)$$ into the general solution and taking the integral gives
 
@@ -508,9 +515,9 @@ $$
 $$
 
 
-So the wavepacket moves to the right with speed $$p_0/m$$, just like in classical mechanics. It's interesting to note that this "group velocity" is different from the phase velocity of the individual waves comprising the Gaussian—their velocity is only $$p/2m$$. The dispersion of the constituent waves causes the wavepacket to spread out as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time.
+So the wavepacket moves to the right with speed $$p_0/m$$, like it does in classical mechanics. It's interesting to note that this "group velocity" is different from the phase velocity of the individual waves of the Gaussian—their velocity is only $$p/2m$$. The dispersion of the constituent waves causes the wavepacket to spread out as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time but the overall Gaussian shape is preserved.
 
-__The Classical Connection.__ Is the classical result $$v_g = p_0/m$$ true more generally? The classical notion of velocity in QM corresponds to 
+__The Classical Connection.__ Is the wavepacket result $$v_g = p_0/m$$ true more generally? The classical notion of velocity in QM corresponds to 
 
 
 $$
@@ -526,7 +533,7 @@ $$
 $$
 
 
-For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, as expected. What about for a non-free particle? What happens if the particle is influenced by a force?
+For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, so the result generalizes beyond wavepackets. What about for a non-free particle? What happens if the particle is influenced by a force?
 
 
 
