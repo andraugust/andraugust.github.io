@@ -575,9 +575,9 @@ $$
 
 ## Last
 
-This concludes the summary of dynamics and continuous states in quantum mechanics. Some natural applications at this point would be the hydrogen atom and the quantum harmonic oscillator. I won't cover those here but will mention that they're especially interesting systems because their solutions are discrete despite their potentials and wavefunctions being continuous. For example, the quantum harmonic oscillator has a discrete set of eigen-energies and therefore _can't_ have any energy, unlike wavepackets or classical oscillators. This is yet another result demonstrating the strangeness of the quantum world.
+This concludes the summary of dynamics & continuous states. Some applications that follow from here are the hydrogen atom and the quantum harmonic oscillator. I won't cover them here but will mention they're especially interesting because their solutions are discrete despite their potentials and wavefunctions being continuous. For example, the quantum harmonic oscillator has a discrete set of eigen-energies and therefore _can't_ have any energy it wants, unlike wavepackets or classical oscillators. This gives insight into how energy can come in discrete units at quantum scales, and is yet another result demonstrating the strangeness of the quantum world.
 
-The next post will cover entanglement, which will be a good stepping stone into quantum computing. To be continued…
+The next post covers entanglement. To be continued…
 
 
 
