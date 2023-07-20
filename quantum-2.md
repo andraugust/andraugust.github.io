@@ -38,7 +38,7 @@ $$
 $$
 
 
-But in general we'll assume $$\mathbf{U}$$ doesn't explicitly depend on time, so $$\mathbf{U}(t_2,t_1)=\mathbf{U}(t_2-t_1)$$. Thus, if we have an infinitesimal operator we can create whatever dynamics we like by applying it repeatedly. In the limit, the infinitesimal operator is
+But in general we'll assume $$\mathbf{U}$$ doesn't explicitly depend on time, so $$\mathbf{U}(t_2,t_1)=\mathbf{U}(t_2-t_1)$$. Thus, if we have an infinitesimal operator we can create whatever dynamics we want by applying it repeatedly. In the limit, the infinitesimal operator is
 
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
@@ -572,9 +572,10 @@ $$
 \left<\frac{d\mathbf{V}}{dx}\right> \neq \frac{d\mathbf{V}(\left<x\right>)}{d\left<x\right>}
 $$
 
+
 ## Last
 
-This concludes the summary of dynamics and continuous states in quantum mechanics. Some natural applications at this point would be the hydrogen atom and the quantum harmonic oscillator. I won't cover those here but will mention that they're especially interesting systems because their solutions are discrete, even though their potentials and wavefunctions are continuous. For example, the quantum harmonic oscillator has a discrete set of eigen-energies and therefore _can't_ have any energy, unlike wavepackets or classical oscillators. This is yet another result demonstrating quantum strangeness.
+This concludes the summary of dynamics and continuous states in quantum mechanics. Some natural applications at this point would be the hydrogen atom and the quantum harmonic oscillator. I won't cover those here but will mention that they're especially interesting systems because their solutions are discrete despite their potentials and wavefunctions being continuous. For example, the quantum harmonic oscillator has a discrete set of eigen-energies and therefore _can't_ have any energy, unlike wavepackets or classical oscillators. This is yet another result demonstrating the strangeness of the quantum world.
 
 The next post will cover entanglement, which will be a good stepping stone into quantum computing. To be continued…
 
