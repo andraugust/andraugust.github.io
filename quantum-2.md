@@ -21,16 +21,16 @@ $$
 
 where $$\mathbf{U}$$ is the "time evolution operator", it maps states from one point in time to another. Usually we'll set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
 
-One thing we want $$\mathbf{U}$$ to do is conserve inner products. In otherwords for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+One thing we want $$\mathbf{U}$$ to do is conserve inner products. In other words for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
 $$
 \bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
 $$
 
 
-Which implies $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, so $$\mathbf{U}$$ is unitary .
+Which implies $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, so $$\mathbf{U}$$ is unitary.
 
-Any finite evolution can be buit up by composing several intermediate evolutions. For example
+Any finite evolution can be built up by composing several intermediate evolutions. For example
 
 
 $$
@@ -38,7 +38,7 @@ $$
 $$
 
 
-In general we'll assume $$\mathbf{U}$$ doesn't explicitly depend on time, so $$\mathbf{U}(t_2,t_1)=\mathbf{U}(t_2-t_1)$$. Thus, if we have an infinitesimal operator we can create whatever dynamics we like by applying it repeatedly. In the limit, the infinitesimal operator is
+But in general we'll assume $$\mathbf{U}$$ doesn't explicitly depend on time, so $$\mathbf{U}(t_2,t_1)=\mathbf{U}(t_2-t_1)$$. Thus, if we have an infinitesimal operator we can create whatever dynamics we like by applying it repeatedly. In the limit, the infinitesimal operator is
 
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
@@ -376,7 +376,7 @@ The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $
 
 ## 3. Particle Dynamics
 
-In the first section we derived the general Schrodinger equation and solved it for the dynamics of discrete-state systems. In the second section we defined wavefunctions and showed how to represent particles in terms of them. The rest of this post combines those two sections to model the dynamics of particles, starting with the free particle and then moving on to potentials and oscillators.
+In the first section of this post we derived the general Schrodinger equation and solved it for the dynamics of discrete-state systems. In the second section we defined wavefunctions and showed that particles can be represented in terms of them. The rest of this post combines those two sections to model particle dynamics.
 
 __Free Particle.__ A particle is said to be "free" when no forces act on it. In the absence of forces there are no potentials, so the Hamiltonian is
 $$
@@ -384,7 +384,7 @@ $$
 $$
 
 
-Plugging this into the GSE gives the PDE governing free particle dynamics:
+Plugging this into the GSE gives the free particle PDE:
 
 
 $$
@@ -400,7 +400,7 @@ $$
 $$
 
 
-Converting to continuous space gives
+Converting this to continuous space gives
 
 
 $$
@@ -448,7 +448,7 @@ $$
 
 This is the general solution to the SE for a free particle. 
 
-At this point it's reasonable to ask why there are any dynamics at all given there are no forces. The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its phase velocity, and this causes the shape of the wavefunction to change over time. If instead the phase waves all moved at the same speed then the initial wavefunction shape would be preserved.
+At this point it's reasonable to ask why there are any dynamics at all given that there are no forces. The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial state $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its phase velocity, and this causes the shape of the wavefunction to change over time. If instead the phase waves all moved at the same speed then the initial wavefunction would be preserved and there wouldn't be any dynamics beyond motion at constant velocity.
 
 The speed of each phase wave is given by
 
@@ -460,7 +460,7 @@ $$
 
 Where $$k=p/\hbar$$ and $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$. So waves with smaller wavelength move faster—they have more energy.
 
-Note that $$k$$ and $$\omega$$ are not independent quantities, but instead have a dispersion relation
+Note that $$k$$ and $$\omega$$ are not independent quantities. They have a dispersion relation
 
 
 $$
@@ -468,7 +468,7 @@ $$
 $$
 
 
-__The Gaussian Wavepacket.__ A Gaussian wavepacket is a wave function having Gaussian, or Normal, density $$\psi^*\psi \sim N$$. Such distributions are interesting because unlike planewaves they're localized in space. Consider the following wavepacket in momentum-space:
+__The Gaussian Wavepacket.__ A Gaussian wavepacket is a wavefunction having Gaussian, or Normal, density $$\psi^*\psi \sim N$$. Such distributions are interesting because unlike planewaves they're localized in space. Consider the following wavepacket in momentum-space:
 
 
 $$
@@ -514,7 +514,7 @@ $$
 $$
 
 
-So the wavepacket moves to the right with "group velocity" $$p_0/m$$, just like a classical particle. It's interesting to note that group velocity is different from phase velocity. The dispersion of the phase waves causes the wavepacket to spread as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time.
+So the wavepacket moves to the right with "group velocity" $$p_0/m$$, just like a classical particle. It's interesting to note that group velocity is different from phase velocity. The dispersion of the phase waves causes the wavepacket to spread as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time and the product $$\sigma_x\sigma_p$$ goes above the uncertainty lower limit.
 
 __The Classical Connection.__ Is the wavepacket result $$v_g = p_0/m$$ true more generally? In QM the classical notion of velocity corresponds to 
 
@@ -534,33 +534,49 @@ $$
 For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, so the result does in fact generalize beyond wavepackets.
 
 What about non-free particles? In CM when there's a potential the dynamics are
+
+
 $$
 \frac{dp}{dt} = -\frac{dV}{dx}
 $$
+
+
 In QM the left side becomes
+
+
 $$
 \frac{d}{dt}\left<\mathbf{P}\right> = -\frac{i}{\hbar}\left<[\mathbf{P},\mathbf{H}]\right>
 $$
+
+
 The Hamiltonian is
+
+
 $$
 \mathbf{H} = \frac{1}{2m}\mathbf{P}^2 + \mathbf{V}(x)
 $$
+
+
 Which leads to
+
+
 $$
 \frac{d}{dt}\left<\mathbf{P}\right> = -\left<\frac{d\mathbf{V}}{dx}\right>
 $$
-So the quantum result is similar to the classical result, but it's important to note that on the right side the expectation is taken over the entire derivative, which in general is different from taking it over $$x$$ first and then differentiating. In otherwords,
+
+
+So the quantum result is similar to the classical result, but note that on the right side the expectation is taken over the entire derivative, which in general is different from taking it over $$x$$ first and then differentiating. In other words,
+
+
 $$
 \left<\frac{d\mathbf{V}}{dx}\right> \neq \frac{d\mathbf{V}(\left<x\right>)}{d\left<x\right>}
 $$
 
+## Last
 
+This concludes the summary of dynamics and continuous states in quantum mechanics. Some natural applications at this point would be the hydrogen atom and the quantum harmonic oscillator. I won't cover those here but will mention that they're especially interesting systems because their solutions are discrete, even though their potentials and wavefunctions are continuous. For example, the quantum harmonic oscillator has a discrete set of eigen-energies and therefore _can't_ have any energy, unlike wavepackets or classical oscillators. This is yet another result demonstrating quantum strangeness.
 
-
-
-
-
-
+The next post will cover entanglement, which will be a good stepping stone into quantum computing. To be continued…
 
 
 
@@ -568,6 +584,7 @@ $$
 ## References
 
 * Gaussian wavepacket integrals: [1](https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/235adf962a3ef4772b2f494261e00d4b_chapter4.pdf), [2](https://here.isnew.info/inverse-fourier-transform-of-the-gaussian-function.html)
-* 
+
+
 
 {% include disqus.html %}
