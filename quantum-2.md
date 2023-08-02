@@ -21,7 +21,7 @@ $$
 
 where $$\mathbf{U}$$ is the "time evolution operator" that maps states from one time to another. Usually we set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
 
-One desireable propert of $$\mathbf{U}$$ is conserve inner products. Susskind calls this property "conservation of information". It implies that for arbitrary $$t$$ we get $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+One thing we want $$\mathbf{U}$$ to do is conserve inner products. Susskind calls this "conservation of information". It implies that for arbitrary $$t$$ we get $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
 $$
 \bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
@@ -522,6 +522,7 @@ Where the time-derivative is determined by
 $$
 \frac{d}{dt}\left<\mathbf{X}\right> = -\frac{i}{\hbar}\left<\left[\mathbf{X},\mathbf{H}\right]\right>
 $$
+
 
 For a free-particle this simplifies to $$\left< \mathbf{P} \right> = mv$$, so the result does in fact generalize beyond wavepackets.
 
