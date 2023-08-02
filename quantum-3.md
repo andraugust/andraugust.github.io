@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Quantum Mechanics Part 3: Entanglement
+# Quantum Mechanics Part 3: Applications
 
 <center><img src="" style="zoom:80%;"></center>
 
