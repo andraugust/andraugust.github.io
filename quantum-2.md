@@ -378,16 +378,16 @@ $$
 \end{align*}
 $$
 
-__The Classical Connection.__ In CM momentum is mass times velocity, while in QM it's represented by a differentiation operator.  How are these two connected, and is there a general way to connect the results of CM to QM? 
+__The Classical Connection.__ In CM momentum is mass times velocity, while in QM it's represented by a differentiation operator.  How are these two connected, and is there a general way to connect CM and QM? 
 
 The classical-quantum connection is made through expectation values. For example, in QM the classical notion of velocity corresponds to 
 
 $$
-v = \frac{d}{dt} \left< \mathbf{X} \right>
+v \leftrightarrow \frac{d}{dt} \left< \mathbf{X} \right>
 $$
 
 
-The time-derivative here can be written in terms of the Hamiltonian commutator (see result from the discussion of the time evolution operator):
+The time-derivative here can be written in terms of the Hamiltonian commutator (see the result from time evolution operators):
 
 
 $$
@@ -429,7 +429,7 @@ $$
 $$
 
 
-So the quantum result is similar to the classical result, but note that on the right side the expectation is taken over the entire derivative, which in general is different from taking it over $$x$$ and then differentiating. In other words,
+So the quantum result matches the classical result in expectation, but note that on the right side the expectation is taken over the entire derivative, which in general is different from taking it over $$x$$ and then differentiating. In other words,
 
 
 $$

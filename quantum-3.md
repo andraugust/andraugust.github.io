@@ -8,11 +8,9 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-
-
 ## 1. Free Particle
 
-A particle is said to be "free" when no forces act on it. In the absence of forces there are no potentials, so the Hamiltonian is
+A particle is said to be "free" when no forces act on it. In the absence of forces there are no potentials and the Hamiltonian is
 
 
 $$
@@ -113,7 +111,7 @@ $$
 \bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
 $$
 
-This wavepacket, when squared, is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position-space it's wavefunction is
+This wavepacket, when squared, is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position-space this wavefunction is
 
 
 $$
@@ -121,7 +119,7 @@ $$
 $$
 
 
-Which is also Gaussian, but multiplied by a wave factor. By inspection, the position-space uncertainty is related to the momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit from the Heisenberg uncertainty relation.
+Which is a Gaussian multiplied by a wave factor. By inspection, position-space uncertainty is related to momentum-space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation.
 
 Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution, which shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wave-packets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution to the SE, so in this sense wavepackets are physically realistic.
 
@@ -152,7 +150,7 @@ $$
 $$
 
 
-So the wavepacket moves to the right with "group velocity" $$p_0/m$$, just like a classical particle. It's interesting to note that group velocity is different from phase velocity. The dispersion of the phase waves causes the wavepacket to spread as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time and the product $$\sigma_x\sigma_p$$ goes above the uncertainty lower limit.
+So the wavepacket moves to the right with "group velocity" $$p_0/m$$, just like a classical particle. It's interesting to note that group velocity is different from phase velocity. The dispersion of the phase waves causes the wavepacket to spread as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time and the product $$\sigma_x\sigma_p$$ increases above the uncertainty lower limit.
 
 
 
