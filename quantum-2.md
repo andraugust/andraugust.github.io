@@ -2,50 +2,42 @@
 layout: default
 ---
 
-# Quantum Mechanics Part 2: Particles and Dynamics
+# Quantum Mechanics Part 2: Dynamics & Continuous States
 
 <center><img src="quantum/banner-2.png" style="object-fit:contain;"></center>
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-## 1. Time and Change
+## 1. Dynamics
 
-In classical mechanics states are represented by points in phase space and they change under the influence of forces. In quantum mechanics states are complex vectors in Hilbert space. How and what causes them to change?
+In classical mechanics states are represented by points in phase space that change under the influence of forces. In quantum mechanics states are complex vectors in Hilbert space. How and what causes them to change?
 
-__Time Evolution Operator.__ Dynamics for vectors can generically be modeled as
+__Time Evolution Operator.__ Dynamics for vectors, including those in Hilbert space, can generically be modeled as
 
 
 $$
 \ket{\Psi(t_2)}=\mathbf{U}(t_2,t_1) \ket{\Psi(t_1)}
 $$
 
-where $$\mathbf{U}$$ is the "time evolution operator", it maps states from one point in time to another. Usually we'll set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
+where $$\mathbf{U}$$ is the "time evolution operator" that maps states from one time to another. Usually we set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
 
-One thing we want $$\mathbf{U}$$ to do is conserve inner products. In other words for arbitrary $$t$$ we want $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+One desireable propert of $$\mathbf{U}$$ is conserve inner products. Susskind calls this property "conservation of information". It implies that for arbitrary $$t$$ we get $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
 $$
 \bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
 $$
 
 
-Which implies $$\mathbf{U}^{\dagger}\mathbf{U} = I$$, so $$\mathbf{U}$$ is unitary.
+So $$\mathbf{U}^{\dagger}\mathbf{U} = I$$ and therefore $$\mathbf{U}$$ is unitary.
 
-Any finite evolution can be built up by composing several intermediate evolutions. For example
-
-
-$$
-\mathbf{U}(t_3,t_0) = \mathbf{U}(t_3,t_2)\mathbf{U}(t_2,t_1)\mathbf{U}(t_1,t_0)
-$$
-
-
-But in general we'll assume $$\mathbf{U}$$ doesn't explicitly depend on time, so $$\mathbf{U}(t_2,t_1)=\mathbf{U}(t_2-t_1)$$. Thus, if we have an infinitesimal operator we can create whatever dynamics we want by applying it repeatedly. In the limit, the infinitesimal operator is
+That's for finite evolutions. What about infinitesimal ones? In the limit, the linear infinitesimal approximation of $$\mathbf{U}$$ is
 
 $$
 \mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
 $$
 
 
-Where $$\epsilon$$ is an infinitesimal time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added so that results fit experiment. What does this operator do to $$\ket{\Psi}$$?
+Where $$\epsilon$$ is a very small time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is added so results fit experiment. What does this operator do to $$\ket{\Psi}$$?
 
 
 $$
@@ -67,7 +59,7 @@ $$
 
 where $$\hbar$$ is added so units are correct, it's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the generalized Schrodinger equation.
 
-Before moving on, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary constraint on $$\mathbf{U}$$ implies about it:
+Before moving on, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary property of $$\mathbf{U}$$ implies about it:
 
 
 $$
@@ -79,9 +71,9 @@ $$
 $$
 
 
-So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore represents an observable, which, as we'll show, is the QM Hamiltonian.
+So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore represents an observable, which, as we'll see, is the quantum Hamiltonian.
 
-In CM, Hamiltonians represent the total energy of a system and relate to its dynamics through the Poisson bracket:
+In CM recall that Hamiltonians represent the total energy of a system and relate to its dynamics through the Poisson bracket:
 
 
 $$
@@ -89,7 +81,7 @@ $$
 $$
 
 
-Where $$L$$ is any quantity defined on phase space $$L(q,p)$$. A similar relation exists in QM, but for expected values:
+Where $$L$$ is any quantity defined on phase space $$L(q,p)$$. Using the generalized Schroding equation it's straightforward to show that a similar relation exists in QM for expected values:
 
 
 $$
@@ -97,7 +89,7 @@ $$
 $$
 
 
-$$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{L}$$ is called the commutator. From it we see that if a quantity commutes with $$\mathbf{H}$$ then it is conserved (in expectation), and more generally any function of a quantity that commutes with $$\mathbf{H}$$ is conserved (in expectation). This is like in CM where if the PB is $$0$$ then $$L$$ is conserved.
+$$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{L}$$ is called the commutator. From it we see that if a quantity commutes with $$\mathbf{H}$$ then it is conserved (in expectation), and more generally any function of a quantity that commutes with $$\mathbf{H}$$ is conserved (in expectation). This is like in CM where if $$L$$ is conserved then its PB is $$0$$.
 
 Note that in QM expected values don't change due to measurement outcomes changing, those are fixed for a given operator (for example $$\pm 1$$ for spin), instead, expected values change because measurement _probabilities_ change, and to calculate how measurement probabilities change we have to solve the generalized Schrodinger equation.
 
@@ -137,11 +129,11 @@ $$
 \ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-iE_it/\hbar} \ket{E_i}
 $$
 
-## 2. Particle States
+## 2. Continuous States
 
-So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. In this section we're going to model particles, which have continuous states for position and momentum. How are continuous states modeled? The answer is in the same way that discrete states are modeled: by using the principles of QM. The trick is to see that nothing in the principles requires states to be discrete—the principles only define conditions and physical interpretations related to _vectors_, and vectors can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions, as it turns out, are vectors, and they're what we'll use to model particles.
+So far the states we've looked at have all been discrete—they're represented by a finite sum over basis vectors. Eventually we'd like to model particles that have continuous states for position and momentum, how are continuous states modeled? The answer is in the same way that discrete states are modeled: by the principles of QM. The trick is seeing that the principles don't require states to be discrete—they only define conditions and physical interpretations related to _vectors_, and vectors can be anything, continuous or discrete, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions in this sense are vectors and are exactly what we'll use to model continuous states.
 
-__Continuous States.__ In terms of notation, a continuous state vector is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a particular basis just as discrete vectors are, and their form can change from one basis to the next, just as discrete vectors can. The bra-ket notation is useful for wave-functions like it is for discrete vectors. The discrete representation
+__Wave Functions.__ In terms of notation, continuous states are associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a basis just as discrete vectors are, and their form can change from one basis to another, just as discrete vectors can. The bra-ket notation is useful for wave-functions as it is for discrete vectors. The discrete representation
 
 
 $$
