@@ -84,9 +84,9 @@ $$
 
 This is the general solution to the SE for a free particle. 
 
-At this point it's reasonable to ask why there are any dynamics at all given that there are no forces. The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each such "phase wave" in the initial state $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its phase velocity, and this causes the shape of the wavefunction to change over time. If instead the phase waves all moved at the same speed then the initial wavefunction would be preserved and there wouldn't be any dynamics beyond motion at constant velocity.
+At this point it's reasonable to ask why there are any dynamics at all, given there aren't any forces. The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each such "phase wave" in the initial state $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its phase velocity, and this causes the shape of the wavefunction to change over time. If instead the phase waves all moved at the same speed then the initial wavefunction would be preserved and there wouldn't be any dynamics beyond motion at constant velocity.
 
-The speed of each phase wave is given by
+The speed of each phase wave is
 
 
 $$
@@ -151,6 +151,10 @@ $$
 
 
 So the wavepacket moves to the right with "group velocity" $$p_0/m$$, just like a classical particle. It's interesting to note that group velocity is different from phase velocity. The dispersion of the phase waves causes the wavepacket to spread as it travels. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized with time and the product $$\sigma_x\sigma_p$$ increases above the uncertainty lower limit.
+
+
+
+## 2. Harmonic Oscillator
 
 
 
