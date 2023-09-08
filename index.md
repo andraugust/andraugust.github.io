@@ -14,17 +14,17 @@ layout: default
 ## [Quantum Mechanics Part 2: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
-Notes on quantum mechanics from Leonard Susskind's "Theoretical Minimum" book series.
+In classical mechanics states are represented by points in phase space that evolve under the influence of forces, but in quantum mechanics states are a little bit different—they're complex vectors in Hilbert space. How do they evolve? And can continuous states be modeled under the same framework that was designed for discrete states in the previous post?
 
 ## [Quantum Mechanics Part 1: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
-Notes on quantum mechanics from Leonard Susskind's "Theoretical Minimum" book series.
+The first round of notes on quantum mechanics based on Leonard Susskind's treatment in his _Theoretical Minimum_ series.
 
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
-Notes on classical mechanics from Leonard Susskind's "Theoretical Minimum" book series.
+Notes on Classical Mechanics based on Leonard Susskind's treatment in his _Theoretical Minimum_ series.
 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 

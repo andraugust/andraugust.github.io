@@ -8,9 +8,9 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-## 1. Dynamics
+In classical mechanics states are represented by points in phase space that evolve under the influence of forces, but in quantum mechanics states are a little bit different—they're complex vectors in Hilbert space. How do they evolve? And can continuous states be modeled under the same framework that was designed for discrete states in the previous post?
 
-In classical mechanics states are represented by points in phase space that change under the influence of forces. In quantum mechanics states are complex vectors in Hilbert space. How and what causes them to change is the subject of this second post on QM.
+## 1. Dynamics
 
 __Time Evolution Operator.__ Dynamics for vectors, including those in Hilbert space, can generically be modeled as
 
@@ -21,14 +21,14 @@ $$
 
 where $$\mathbf{U}$$ is a "time evolution operator" that maps states from one time to another. Usually we set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
 
-At this point $$\mathbf{U}$$ could be anything, but there's one thing we want $$\mathbf{U}$$ to do, and that's conserve inner products. Susskind calls this "conservation of information" and it implies that for arbitrary $$t$$ it be true that $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+At this point $$\mathbf{U}$$ could be anything, but there's one thing we want $$\mathbf{U}$$ to do, and that's conserve inner products. Susskind calls this "conservation of information" and it implies that for arbitrary $$t$$ it's true that $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
 
 $$
 \bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
 $$
 
 
-So $$\mathbf{U}^{\dagger}\mathbf{U} = I$$ and therefore $$\mathbf{U}$$ is unitary. A corollary is that the magnitude of state vectors is conserved through time.
+So $$\mathbf{U}^{\dagger}\mathbf{U} = I$$ and therefore $$\mathbf{U}$$ is unitary. A corollary to this is that the magnitude of state vectors is conserved through time.
 
 These results are for finite evolutions. What about infinitesimal ones? In the limit, the linear infinitesimal approximation of $$\mathbf{U}$$ is
 
@@ -37,7 +37,7 @@ $$
 $$
 
 
-Where $$\epsilon$$ is a very small time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is included so the results fit experiments. What does this operator do to $$\ket{\Psi}$$?
+Where $$\epsilon$$ is a very small time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is factored in so that the predictions of this model match experimental measurements. What does this operator do to $$\ket{\Psi}$$?
 
 
 $$
@@ -57,7 +57,7 @@ $$
 $$
 
 
-where $$\hbar$$ is included to make units work, it's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the _generalized Schrodinger equation_.
+where $$\hbar$$ is factored in to make units work, it's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the _generalized Schrodinger equation_.
 
 Before moving on to solve the GSE, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary condition on $$\mathbf{U}$$ implies about it:
 
