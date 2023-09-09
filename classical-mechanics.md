@@ -6,41 +6,39 @@ layout: default
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-This post is a summary of classical mechanics, based closely on Leonard Susskind's first book in his "Theoretical Minimum" series on theoretical physics. It starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism. This is my compressed version of classical mechanics.
+This post is a summary of classical mechanics based closely on Leonard Susskind's first book in his _Theoretical Minimum_ series. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
-### Lecture 1: The Nature of Classical Mechanics
+### 1. The Nature of Classical Mechanics
 
-Classical mechanics is about identifying and characterizing the motion of objects. More specifically, objects for which quantum effects are negligible. Exactly _when_ quantum effects become negligible depends on the object's size and energy, but if it's bigger than a small molecule it's probably classical. 
+Classical mechanics is about forces and motion. The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
 
-The main subfields of CM are Newtonian motion, classical electromagnetism, and general relativity. This book covers Newtonian motion and a little bit of classical electromagnetism.
+Dynamics in CM is defined in terms of states and their transitions. For so-called _closed systems_ where all matter and energy is accounted for and no external interactions exist, all states have unique predecessor states and unique successor states. In other words, dynamics are deterministic—once a state is defined along with it's transitions (usually via a set of forces), the entire future and past of the system are determined. Susskind calls this the $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should have over the other fundamental laws of physics, namely the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws in thermodynamics. 
 
-Dynamics in CM are defined in terms of states and their transitions. For closed systems, i.e. those where all matter and energy are accounted for and no external interactions exist, all states within a trajectory have a unique predecessor state and a unique successor state. In other words, dynamics are deterministic and information is conserved. Once a state such as an initial condition and all forces acting on the system are defined, the entire future and past of the system are determined. Susskind calls this the $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should take over other laws in terms of fundamentality, and because the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws are already taken. 
+It's interesting to note that CM systems can be _chaotic_ despite their determinism, so if an initial state isn't known with sufficiently high precision then _in practice_ it's perhaps more practical to call the system non-deterministic.
 
-CM systems are deterministic. But many are chaotic. So if initial states and forces can't be known with sufficiently high precision, then _in practice_ is it accurate to say they're deterministic?
+### 2. Motion
 
-### Lecture 2: Motion
+This chapter in the book is about basic ODEs and their solutions. There's nothing too exciting to note here!
 
-This lecture is about basic ODEs and their solutions. There's nothing very exciting to note here!
+### 3. Dynamics
 
-### Lecture 3: Dynamics
+This chapter covers Newton's formulation of motion and gives introduces PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and then integrating in time to get the trajectory.
 
-This lecture covers Newton's formulation of motion and gives an intro to PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and then integrating in time.
+### 4. Systems of More Than One Particle
 
-### Lecture 4: Systems of More Than One Particle
+For a system consisting of one particle, its state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector, and the dynamics encoded by $$F = m\ddot{x}$$, tell us everything we need to know about the system's evolution, so we say that $$(x(t),\dot{x}(t))$$ is the system's _state_.
 
-For a system of one particle, its state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution, so $$(x(t),\dot{x}(t))$$ defines the system's _state_.
+For a system consisting of more than one particle there's an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles in 3-space the state vector has $$6N$$ values, and the system follows a single trajectory through $$6N$$ dimensional state-space (even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space). 
 
-For a system of more than one particle the approach is the same but now we have an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles moving in 3-space, the state vector has $$6N$$ entries and the system follows a single trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space. 
+As an alternative to expressing a system's state in terms of $$x$$ and $$\dot{x}$$, we can express it in terms of $$x$$ and it's momentum $$p$$. The reason this works is because the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$, with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
 
-As an alternative to expressing a system's state in terms of $$x$$s and $$\dot{x}$$s, we can express it in terms of $$x$$s and $$p$$s. The reason for this is that the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$ with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
+This space—where one axis is $$x$$ and the other is $$p$$—is called _phase space_. The reason we might want to use phase space instead of state space is because sometimes objects don't have masses (such as photons) and phase space allows us to avoid defining dynamics explicitly in terms of mass. Also, the Lagrangian and Hamiltonian formulations that we'll look at later deal directly with momentum, so it's more natural to work with momentum instead of velocity as a state-defining variable.
 
-This space, where one axis is $$x$$ and the other is $$p$$ is called _phase_ space. The reason we might want to use phase-space instead of state-space is because sometimes objects don't have mass (e.g. photons) and phase space allows us to avoid defining dynamics explicitly in terms of mass. Also, the Lagrangian and Hamiltonian formulations deal directly with momentum, so it's more natural to work with momentum instead of velocity as a state-defining variable.
+### 5. Energy
 
-### Lecture 5: Energy
+A fundamental principle of physics says that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ is conserved. Note that in general $$F$$ is a vector and so is $$x$$, but I'm going to leave them unbolded. 
 
-A fundamental principle of physics asserts that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ are conserved. Note that in general $$F$$ is a vector field and so is $$x$$, but I'm going to leave them unbolded. 
-
-To verify that energy is conserved, compute $$\dot{E}$$:
+To verify that energy is conserved we have to show that $$\dot{E} = 0$$:
 
 
 $$
@@ -54,11 +52,11 @@ $$
 $$
 
 
-Note that there exist so-called _non-conservative_ forces for which the force _isn't_ the gradient of a potential. For example, friction and air resistance are non-conservative forces. These forces however are not fundamental forces like gravity or electromagnetism and therefore fall outside this rule's jurisdiction. Furthermore, when analyzing friction and drag we usually only model the object which is slowed down and not all of the individual air molecules which produce the drag. So in addition to this force not being fundamental, the system isn't closed. I like to think of non-conservative forces as "convenience" or "phenomenological" forces because they ignore the complex dynamics of unimportant objects (e.g. the air or ground) while still capturing the dynamics of the things we care about (e.g. the ball moving through the air or rolling across the ground).
+Note that there exist so-called _non-conservative_ forces for which force _isn't_ the gradient of a potential. For example, friction and air resistance are non-conservative forces. These forces however are not fundamental forces like gravity or electromagnetism and therefore fall outside this rule's jurisdiction. Furthermore, when analyzing friction and drag we usually only model the object which is slowed down and not all of the individual air molecules which produce the drag. So in addition to this force not being fundamental, the system isn't closed. I like to think of non-conservative forces as "convenience" or "phenomenological".
 
-### Lecture 6: The Principle of Least Action
+### 6. The Principle of Least Action
 
-The principle of least action states that of all the trajectories that exist through state-space, the one that's actually taken by a system will minimize the integral
+The principle of least action states that of all the trajectories that exist in state space, the one that's actually taken by a system minimizes the integral
 
 
 $$
@@ -66,7 +64,7 @@ A = \int_{t_0}^{t_1} L(x(t),\dot{x}(t)) \, dt
 $$
 
 
-Here, $$L = T - V$$  is the _Lagrangian_ of the system and $$A$$ is the trajectory's _action_, which is a scalar. Although this is usually called the principle of _least_ action, it's really a statement about trajectories on an action-extrema, so sometimes it's called the principle of _stationary_ action  instead. 
+Where $$L = T - V$$  is called the _Lagrangian_ of the system, and $$A$$ is the trajectory's _action_ (a scalar). Although this is usually called the principle of _least_ action, it's really a statement about trajectories on an action-extrema, so sometimes it's called the principle of _stationary_ action instead. 
 
 The stationary trajectory satisfies the Euler-Lagrange equation:
 
@@ -76,15 +74,15 @@ $$
 $$
 
 
-Plugging in $$L = m\dot{x}^2/2 - V(x)$$ produces Newton's equation $$m\ddot{x} = -\partial V/\partial x$$. For systems of more than one degree of freedom there's a separate EL equation for each degree of freedom.
+To verify this result, we can plug in $$L = m\dot{x}^2/2 - V(x)$$ and find that it produces Newton's equation $$m\ddot{x} = -\partial V/\partial x$$. For systems of more than one degree of freedom there's a separate EL equation for each degree of freedom.
 
 If the least-action formulation is equivalent to Newton's equation, then why should we care about it? Susskind lists a few reasons:
 
-- Entire theories, such as electrodynamics, Einstein's gravity, and the standard model of elementary particles are described by a Lagrangian.
-- It makes coordinate transformations more convenient, such as if we were to move between a stationary and rotating coordinate system.
-- It conveniently allows us to incorporate constraints on trajectories by using _generalized coordinates_.
+- Entire theories, such as electrodynamics, Einstein's gravity, and the standard model of elementary particles are described by Lagrangians.
+- It makes coordinate transformations more convenient, such as if we move between a stationary and rotating coordinate system.
+- It allows us to conveniently incorporate constraints on trajectories through the use of _generalized coordinates_.
 
-Generalized coordinates go beyond cartesian coordinates and let us use whatever coordinates we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum then we could use one pendulum's angle relative to the vertical as the first generalized coordinate and the second pendulum's angle relative to the first's as the second, as opposed to using the x-y positions of each. 
+Generalized coordinates let us step away from Cartesian coordinates and use whatever coordinates we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum we could use one pendulum's angle relative to the vertical as the first generalized coordinate and the second pendulum's angle relative to the first's as the second, as opposed to using the x-y positions of each. 
 
 The convenience of generalized coordinates is furthered by the fact that they seamlessly integrate constraints into motion. For example, if a particle is constrained to move on a manifold, then by choosing generalized coordinates on that manifold we automatically get a dynamics equation written in terms of those coordinates.
 
@@ -125,9 +123,9 @@ $$
 
 Note that for $$\theta$$ the right-hand side of the EL equation is $$0$$, so $$\dot{p}_\theta=0$$ and we see right away that angular momentum is conserved.
 
-### Lecture 7: Symmetries and Conservation Laws
+### 7. Symmetries and Conservation Laws
 
-We already know that coordinate reference frames are arbitrary and therefore don't influence dynamics, but how do symmetries like this present themself in the Lagrangian formulation? Here's an example:
+We already know that coordinate reference frames are arbitrary and therefore don't influence dynamics, but how do symmetries such as this appear in the Lagrangian formulation? Here's an example:
 
 Consider a two-particle system where the first particle has position $$\textbf{r}$$ and the second has position $$\textbf{s}$$. A typical Lagrangian for the first particle might be
 
@@ -222,9 +220,9 @@ $$
 
 then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. (Note that $$\epsilon$$ can be ignored in this last equation because it's a constant.)
 
-### Lecture 8: Hamiltonian Mechanics
+### 8. Hamiltonian Mechanics
 
-So far we've seen that coordinate invariances leads to momentum conservations. What about energy conservation, where does that come from? Energy conservation comes from time-translation invariance, which physically means that systems behave the same way if they evolve now, in the past, or in the future, as long as the time shift is applied to the entire system.
+So far we've seen how coordinate invariances leads to momentum conservations. What about energy conservation? Energy conservation comes from time-translation invariance, which physically means that systems behave the same way if they evolve now, in the past, or in the future, as long as the time shift is applied to the entire system.
 
 In general, a Lagrangian $$L(q,\dot{q},t)$$ changes with time according to
 
@@ -308,9 +306,9 @@ $$
 
 Together these are the dynamics equations for the Hamiltonian. Whereas the EL equation is a single second-order equation for $$q$$, the Hamilton equations are two first-order equations for $$q$$ and $$p$$, and dynamics are defined in terms of trajectories through phase space, as opposed to configuration space.
 
-### Lecture 9: The Phase Space Fluid
+### 9. The Phase Space Fluid
 
-Having found that the Hamiltonian formulation deals in phase space it pays to understand some of its properties. First, trajectories in phase space move along contours of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with each other, and a single trajectory never diverges into multiple trajectories; in other words, distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from back in Lecture 1: all states have unique successor states and unique predecessor states. Dynamics are deterministic.
+What are trajectories like in phase space? Firstly, they each define a contour of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with each other, and a single trajectory never diverges into multiple trajectories. In other words distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from earlier: all states have unique successor states and unique predecessor states. Dynamics are deterministic.
 
 To see why the $$-1^{\text{st}}$$ Law is true in the context of the Hamiltonian formulation, we'll imagine that trajectories are like particles moving in a phase space 'fluid' and show that the divergence of these 'particles' is everywhere zero. Divergences act on vector fields, and in the case of phase space the vector field in question is a 'velocity' field defining how trajectories change in time:
 
@@ -338,7 +336,7 @@ $$
 
 Because the order of partial differentiation doesn't matter the divergence is zero and phase space is incompressible. Trajectories don't converge or diverge. This result is called the Gibbs-Liouville theorem, a corollary to it is that trajectory-volumes in phase space are conserved.
 
-### Lecture 10: Poisson Brackets
+### 10. Poisson Brackets
 
 Poisson brackets are the last part of classical mechanics I'll summarize. They deal with computing time-derivatives of functions over phase space $$\dot{F}(q,p)$$ in terms of the Hamiltonian.
 
@@ -363,13 +361,11 @@ where $$\{F,H\}$$ is defined as the _Poisson bracket_ of $$F$$ with $$H$$. PBs h
 
 Thus, to find the time rate of change for any quantity, just compute its PB with the Hamiltonian.
 
-### Final Thoughts
+### 11. Last
 
-The principles and foundations of classical mechanics are all laid out. In writing this post I've avoided specific examples, mostly because examples usually involve a level of notational complexity that I didn't think was worth the time typing into LaTeX, but everything written above should fully capture the dynamics of any classical system.
+It's interesting to note that the Hamiltonian formulation was derived using the Lagrangian formulation, for example to derive the Hamilton equations it was necessary to substitute the EL equation. In this sense the Lagrangian seems to be more fundamental than the Hamiltonian. Likewise the EL equation was derived in terms of the action principle, so the action principle appears to be the most fundamental of all. This shouldn't come as a surprise though, after all it's a _principle_, so someone made it up! (the original author is disputed, but it's probably either Fermat, Maupertuis or Gauss, back in the 1740s).
 
-It's interesting to note that the Hamiltonian formulation was derived using the Lagrangian formulation, for example to derive the Hamilton equations it was necessary to substitute the EL equation. In this sense the Lagrangian seems to be more fundamental than the Hamiltonian. Likewise the EL equation was derived in terms of the action principle, so the action principle appears to be the most fundamental of all. This shouldn't come as a surprise though, after all it's a _principle_, so someone made it up! (the original author is disputed, but it's probably either Fermat, Maupertuis or Gauss, back in the 1740s)
-
-Lastly, here are a few points and equations to wrap things up: 
+Here are a few points and equations to wrap things up: 
 
 #### Properties & Principles
 
