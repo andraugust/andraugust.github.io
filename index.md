@@ -19,12 +19,12 @@ In classical mechanics states are represented by points in phase space and they 
 ## [Quantum Mechanics Part 1: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
-The first round of notes on quantum mechanics based on Leonard Susskind's _Theoretical Minimum_ book series.
+The first round of notes on quantum mechanics based on Leonard Susskind's _Theoretical Minimum_ series.
 
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
-This post is a summary of classical mechanics based closely on Leonard Susskind's first book in his _Theoretical Minimum_ series. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
+A summary of classical mechanics from Leonard Susskind's _Theoretical Minimum_ series. The post starts with states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
