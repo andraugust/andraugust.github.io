@@ -8,7 +8,7 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-In classical mechanics states are represented by points in phase space that evolve under the influence of forces, but in quantum mechanics states are a little bit different—they're complex vectors in Hilbert space. How do they evolve? And can continuous states be modeled under the same framework that was designed for discrete states in the previous post?
+In classical mechanics states are represented by points in phase space and they evolve under the influence of forces. In quantum mechanics states are a bit different—they're complex vectors in Hilbert space. How do they evolve? And how are continuous states such as position and momentum modeled?
 
 ## 1. Dynamics
 
@@ -368,7 +368,7 @@ $$
 
 The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function, as is shown later in the section on wavepackets.
 
-__What happened to y and z?__ For the sake of simplicity I've focused this post on measurements in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straighforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. Same goes for $$z$$. Note the change from total derivatives to partials.
+__What happened to y and z?__ For the sake of simplicity I've focused this post on measurements in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straighforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. Same goes for $$z$$. Just note that the derivatives change from totals to partials.
 
 Are measurements compatible across dimensions? The answer is yes. Using $$i$$ and $$j$$ to index spatial dimensions we get
 
