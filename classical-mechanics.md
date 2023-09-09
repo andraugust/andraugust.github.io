@@ -10,9 +10,9 @@ This post is a summary of classical mechanics based closely on Leonard Susskind'
 
 ### 1. The Nature of Classical Mechanics
 
-Classical mechanics is about forces and motion in system where quantum effects are negligible and nothing moves anywhere close to the speed of light.
+Classical mechanics is about forces and motion in systems where quantum effects are negligible and nothing moves anywhere near the speed of light.
 
-A fundamental property of classical systems is that each state within a system has a unique predecessor state and a unique successor state. Susskind calls this the $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should have over other fundamental laws of physics (namely the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws of thermodynamics). This law implies that all past and future states of a system are uniquely determined once a single state is specified along with the forces acting on it. 
+A fundamental property of classical systems is that each state within a system has a unique predecessor state and a unique successor state. Susskind calls this the $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should take over other numbered laws (namely the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws of thermodynamics). This law implies that all past and future states of a system are uniquely determined once a single state is specified with the forces acting on it.
 
 It's interesting to note that CM systems can have _chaotic_ dynamics despite their determinism—if an initial state isn't known with sufficiently high precision then _in practice_ it's perhaps more practical to call the system non-deterministic, but in _theory_ CM is modeled as being deterministic.
 
