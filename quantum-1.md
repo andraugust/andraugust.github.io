@@ -18,13 +18,13 @@ For the classical system, suppose we orient the apparatus in the $$+z$$ directio
 
 Now let's do the same experiment on quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$ like in the classical experiment, instead we get $$+1$$. Starting the experiment over and taking the same measurements to verify results, we find that $$x$$ has spin $$-1$$. If we restart the experiment several times we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s or any other values. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
 
-So between CM and QM the notion of determinism changes, as does the notion of measureable states: classical spin is real-valued between $$-1$$ and $$+1$$, but quantum spin is binary. Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$. In other words measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original result. To develop intuition for why this is, it's helpful to remember that quantum systems are so small that any measurement energetically strong enough to be useful is necessarily strong enough to change the system in a significant way, whereas classically the energy used to measure a system has negligible impact on the system itself.
+So between CM and QM the notion of determinism changes, as does the notion of measureable states: classical spin is real-valued between $$-1$$ and $$+1$$, but quantum spin is binary. Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$. In other words measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original result. To develop intuition for why this is, it's helpful to remember that quantum systems are so small that any measurement energetically strong enough to be useful is necessarily strong enough to change the system in a significant way, whereas classically the energy used to measure a system usually has negligible impact on the system itself.
 
 ## 2. Quantum States
 
 Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and have finite or infinite dimension. An example of an infinite-dimensional vector is a continuous-valued function.
 
-Notationally, vectors in Hilbert space are drawn as kets $$\ket{A}$$ and have complex conjugates—called bras—drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\bk{A}{B}^{*} = \bk{B}{A}$$, orthogonalities $$\bk{A}{B} = 0$$, and unit-normalization $$\bk{A}{A} = 1$$. The familiar vector properties of commutativity, associativity, distributivity and closedness all hold. 
+Notationally, vectors in Hilbert space are drawn as kets $$\ket{A}$$ and have complex conjugates—called bras—drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\bk{A}{B}^{*} = \bk{B}{A}$$, orthogonalities $$\bk{A}{B} = 0$$, and unit-normalization $$\bk{A}{A} = 1$$. The familiar vector properties of commutativity, associativity, distributivity and closedness are required to hold in order for a ket to be considered a proper vector. 
 
 A general quantum states is simply denoted as $$\ket{A}$$, but it's often useful to represent them explicitly in terms of components:
 
@@ -165,8 +165,27 @@ $$
 \end{align*}
 $$
 
+These matrices are interesting because they, along with the 2x2 identity matrix, form a basis with which any 2x2 Hermitian matrix can be expressed. In otherwords if $$\sigma_i$$ denotes a Pauli matrix (including the identity) and $$a_i$$ is a real coefficient, then
 
-What can we do with these? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to make measurements in any direction. This is done by taking the dot product of the Pauli matrices with the unit vector $$\hat{n}$$ along which the measurement is taken.
+
+$$
+\sum_i a_i \sigma_i
+$$
+
+
+is guaranteed to be Hermitian. Note that the $$\sigma_i$$ are not mutually orthogonal in the same sense as mutually orthogonal vectors. Namely,
+
+
+$$
+\sigma_i \sigma_j \neq \delta_{ij}
+$$
+
+
+But instead their products can be summarized by the following table:
+
+<center><img src="quantum/pauli.png" style="object-fit:contain;"></center>
+
+What can we do with these matrices? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to make measurements in any direction. This is done by taking the dot product of the Pauli matrices with the unit vector $$\hat{n}$$ along which the measurement is taken.
 
 For example, measuring along $$\hat{n}=(1/\sqrt{2},1/\sqrt{2},0)$$, the operator is
 
