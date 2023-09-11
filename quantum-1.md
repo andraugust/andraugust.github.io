@@ -10,19 +10,19 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. Systems and Experiments
 
-One way to start understanding quantum mechanics is by comparing it to classical mechanics, and this is how Susskind and Friedman's book begins—with a comparison between a classical spin experiment and its quantum analog.
+One way to start understanding quantum mechanics is by comparing it to classical mechanics, and this is how Susskind's book begins—with a comparison between classical spin and its quantum analog, through a thought experiment.
 
-The experiment is to measure the spin of a particle using an apparatus that can be oriented arbitrarily in space. The goal is to develop a model which captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement it returns. 
+The experiment involves measure the spin of a particle using an apparatus that can be oriented in an arbitrary direction. The goal is to develop a model which captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement it returns. 
 
-For the classical system, suppose we orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Next, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Next, orient in the $$+x$$ direction and measure $$0$$. After more configurations and measurements we find that spin can be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement is $$\hat{a} \cdot \hat{\sigma}$$. Note that we've assumed spin to be unaffected by all measurements—spin is a physical state existing independent of the apparatus and any measurement we take leaves it unchanged. As we'll see, this is not the case in QM.
+For the classical system, suppose we orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Next, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Next, orient in the $$+x$$ direction and measure $$0$$. After more configurations and measurements we find that spin can be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$. Note we've assumed that spin is unaffected by measurements—spin is a physical state existing independent of the apparatus and measurements leave it unchanged. As we'll see this is not necessarily true in QM.
 
-Now let's do the same experiment on quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$ like in the classical experiment, instead we get $$+1$$. Starting the experiment over and taking the same measurements to verify results, we now find that $$x$$ has spin $$-1$$. If we restart the experiment several times we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s and no other numbers in between. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
+Now let's do the same experiment on quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$ like in the classical experiment, instead we get $$+1$$. Starting the experiment over and taking the same measurements to verify results, we find that $$x$$ has spin $$-1$$. If we restart the experiment several times we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s or any other values. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
 
-So between CM and QM the notion of determinism changes, as does the notion of measureable states: classical spin is real-valued between $$-1$$ and $$+1$$, but quantum spin is binary. Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$—measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original measurement. To develop intuition for why this is, it's helpful to remember that quantum systems are so small that any measurement energetically strong enough to be useful is necessarily strong enough to change the system in a significant way, whereas classically the energy used to measure a system has negligible impact on the system itself.
+So between CM and QM the notion of determinism changes, as does the notion of measureable states: classical spin is real-valued between $$-1$$ and $$+1$$, but quantum spin is binary. Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$. In other words measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original result. To develop intuition for why this is, it's helpful to remember that quantum systems are so small that any measurement energetically strong enough to be useful is necessarily strong enough to change the system in a significant way, whereas classically the energy used to measure a system has negligible impact on the system itself.
 
 ## 2. Quantum States
 
-Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and have finite or infinite dimensionality. An example of an infinite-dimensional vector is a continuous-valued function.
+Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and have finite or infinite dimension. An example of an infinite-dimensional vector is a continuous-valued function.
 
 Notationally, vectors in Hilbert space are drawn as kets $$\ket{A}$$ and have complex conjugates—called bras—drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\bk{A}{B}^{*} = \bk{B}{A}$$, orthogonalities $$\bk{A}{B} = 0$$, and unit-normalization $$\bk{A}{A} = 1$$. The familiar vector properties of commutativity, associativity, distributivity and closedness all hold. 
 
@@ -36,7 +36,7 @@ $$
 
 where $$\ket{i}$$ are orthonormal basis vectors and $$a_i$$ are complex components. Note that this way of representing $$\ket{A}$$ requires selecting a specific basis, and the values $$a_i$$ in general change from one basis to another.
 
-__Spin States.__ How is quantum spin represented in this formalism? Let $$\ket{+z}$$ and $$\ket{-z}$$ be orthonormal bases for the $$z$$ measurement such that an arbitrary state prior to measurement is
+__Spin States.__ How is quantum spin represented in this formalism? Let $$\ket{+z}$$ and $$\ket{-z}$$ be orthonormal bases for the $$z$$ measurement such that an arbitrary state prior to measurement can be expressed as
 
 
 $$
@@ -46,7 +46,7 @@ $$
 
 Defining $$\ket{+z}$$ and $$\ket{-z}$$ as orthonormal is important because it encodes the fact that they are distinct: measuring $$z$$ returns $$\ket{+z}$$ or $$\ket{-z}$$ but never both.
 
-The values of $$a_+$$ and $$a_-$$ when squared and normalized represent measurement probabilities—this is a principle of QM. In other words, $$a_+^{*}a_+$$ is the probability of measuring $$\sigma_z = +1$$ and configuring the system to $$\ket{+z}$$, while $$a_-^{*} a_-$$ is the probability of measuring $$\sigma_z = -1$$ and configuring the system to $$\ket{-z}$$. As probabilities, they normalize:
+The values of $$a_+$$ and $$a_-$$ when squared and normalized represent measurement probabilities—this is a principle of QM. In other words, $$a_+^{*}a_+$$ is the probability of measuring $$\sigma_z = +1$$ and configuring the system to $$\ket{+z}$$, while $$a_-^{*} a_-$$ is the probability of measuring $$\sigma_z = -1$$ and configuring the system to $$\ket{-z}$$. These are probabilities so they normalize:
 
 
 $$
@@ -82,7 +82,7 @@ $$
 $$
 
 
-Similar logic applies for the $$y$$ measurement and the states $$\ket{+y}$$ and $$\ket{-y}$$. This time, however, we have to consider the fact that the 50% measurement outcome is true when the system is prepared in a $$z$$ state _or_ an $$x$$ state. The results are
+Similar logic applies to the $$y$$ measurement and the states $$\ket{+y}$$ and $$\ket{-y}$$. This time, however, we have to consider the fact that the 50% measurement outcome is true when the system is prepared in a $$z$$ state _or_ an $$x$$ state. The results are
 
 
 $$
@@ -120,7 +120,7 @@ Hermitian operators implicitly define eigenvectors and eigenvalues such that the
 
 __Spin Operators.__ How are spin operators constructed from their eigenvalues and eigenvectors? The answer is by using the matrix identity $$\mathbf{X} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{-1}$$, where $$\mathbf{P}$$'s columns are the eigenvectors of $$\mathbf{X}$$ and $$\mathbf{\Lambda}$$ is diagonal with eigenvalues of $$\mathbf{X}$$. 
 
-Spin operators are $$2\times2$$ matrices called $$\mathbf{\sigma}_x$$, $$\sigma_y$$, and $$\sigma_z$$. For example, $$\sigma_y$$ is
+Spin has two eigenvalues, so its operators are $$2\times2$$ matrices called $$\mathbf{\sigma}_x$$, $$\sigma_y$$, and $$\sigma_z$$. For example, $$\sigma_y$$ is
 
 
 $$
@@ -145,7 +145,7 @@ $$
 $$
 
 
-The rest of the results are the so-called Pauli matrices:
+The rest are the so-called Pauli matrices:
 
 
 $$
@@ -166,7 +166,7 @@ $$
 $$
 
 
-What can we do with these? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to make measurements in any direction. This is done by taking the dot product of the Pauli matrices with the measurement-direction vector $$\hat{n}$$.
+What can we do with these? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to make measurements in any direction. This is done by taking the dot product of the Pauli matrices with the unit vector $$\hat{n}$$ along which the measurement is taken.
 
 For example, measuring along $$\hat{n}=(1/\sqrt{2},1/\sqrt{2},0)$$, the operator is
 
@@ -222,7 +222,7 @@ P(\sigma_x = -1) &= 1 - P(+1) = \frac{1}{2}(1-a^*b-ab^*)
 $$
 
 
-Immediately after measuring the state collapses to either $$\ket{+x}$$ or $$\ket{-x}$$. If $$\sigma_x$$ is measured again it's guaranteed to return the same state. On the other hand, if a different spin is measured, then the outcome probabilities are all $$1/2$$, as per the definition of each state. For example, if the first measurement returned $$\sigma_x = +1$$ and we measure $$\sigma_z$$, then the outcome probabilities are
+After measuring the state collapses to either $$\ket{+x}$$ or $$\ket{-x}$$. If $$\sigma_x$$ is measured again it's guaranteed to return the same state. On the other hand, if a different spin is measured, then the outcome probabilities are all $$1/2$$, as per the definition of each state. For example, if the first measurement returned $$\sigma_x = +1$$ and we measure $$\sigma_z$$, then the outcome probabilities are
 
 
 $$
