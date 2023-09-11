@@ -220,7 +220,7 @@ $$
 
 The two probabilities are equal because the measurement is taken at 45 degrees.
 
-__Sequential Measurement.__ What happens after a measurement is made? The answer is that the particle "collapses to", or becomes "prepared in", one of the eigenstates of the operater being measured. 
+__Sequential Measurement.__ What happens _after_ a measurement is made? The answer is that the particle "collapses to", or becomes "prepared in", one of the eigenstates of the corresponding operater. 
 
 For example, consider a particle with initial spin state (in the $$z$$ basis)
 
@@ -252,7 +252,7 @@ $$
 
 ## 4. Last
 
-States, operators, and principals wrap up the first part of QM. They lay the foundation over which more  interesting systems can be modeling, such as particles, forces, dynamics, and entanglement, all of which will be covered in the posts to follow. To be continued…
+States, operators, and principals wrap up the first part of QM. They lay the foundation over which more  interesting systems can be modeling, such as particles, forces, dynamics, and entanglement, all of which will be covered in the posts that follow. To be continued…
 
 
 
