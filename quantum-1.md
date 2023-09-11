@@ -181,7 +181,7 @@ $$
 $$
 
 
-But instead their products can be summarized by the following table:
+Instead, their pairwise products are summarized in the following table:
 
 <center><img src="quantum/pauli.png" style="object-fit:contain;"></center>
 
