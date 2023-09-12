@@ -131,9 +131,9 @@ $$
 
 ## 2. Continuous States
 
-So far the states we've looked at are finite in the sense that they can be written as a finite sum over basis vectors. Eventually we'd like to model measureables that have continuous eigenvalues, such as position and momentum. How are such infinite-dimensional states modeled? 
+So far we've looked at what I'm going to call _discrete_ states. Discrete in the sense that their eigenvalues are countable and their states are written as a finite sum over basis vectors. But we'd also like to model continuous quantities, like position and momentum. How are such _continuous_ states modeled? 
 
-The answer is that they're modeled in the same way that finite states are modeled: by the principles of QM. The trick is to keep in mind that the principles don't require states to be finite—they only define conditions and physical interpretations related to _vectors_, and vectors can be anything, finite or infinite, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions in this sense are infinite-dimensional vectors and they're exactly what are used to model continuous states.
+The answer is that they're modeled in the same way as discrete states: by the principles of QM. The trick is to keep in mind that the principles don't require states to be discrete—they only require them to be _vectors_, and vectors can be anything, discrete or continuous, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions in this sense are continuous vectors and they're exactly what are used to model continuous states.
 
 __Wave Functions.__ In terms of notation, a continuous state is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a basis just as discrete vectors are, and their form can change from one basis to another, just as discrete vectors can. The bra-ket notation is useful for wave-functions as it is for discrete vectors. The discrete representation
 
@@ -381,7 +381,7 @@ $$
 \end{align*}
 $$
 
-__The Classical Connection.__ In CM momentum is mass times velocity, while in QM it's represented by a differentiation operator.  How are these two connected, and is there a general way to connect CM to QM? 
+__The Classical Connection.__ In CM momentum is mass times velocity, while in QM momentum is a differential operator.  How are these two connected, and is there a general way to connect CM to QM? 
 
 The classical-quantum connection is made through expected values. For example, in QM the classical notion of velocity corresponds to 
 
@@ -439,18 +439,10 @@ $$
 \left<\frac{d\mathbf{V}}{dx}\right> \neq \frac{d\mathbf{V}(\left<x\right>)}{d\left<x\right>}
 $$
 
-Susskind points out that 
 
 ## Last
 
 This concludes the summary of dynamics & continuous states in quantum mechanics. The framework has been laid to model realistic systems, such as free particles, spatially constrained particles, harmonic oscillators, and hydrogen atoms, all of which are covered in the next section. To be continued…
-
-
-
-
-## References
-
-* Gaussian wavepacket integrals: [1](https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/235adf962a3ef4772b2f494261e00d4b_chapter4.pdf), [2](https://here.isnew.info/inverse-fourier-transform-of-the-gaussian-function.html)
 
 
 
