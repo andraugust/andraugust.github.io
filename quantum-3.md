@@ -84,7 +84,7 @@ $$
 
 This is the general solution to the SE for a free particle. 
 
-At this point it's reasonable to ask why there would be any dynamics at all, given the absence of forces. The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each such wave in the initial condition $$\bar \psi(p,0)$$. Each wave moves at a different speed, called its _phase velocity_, and this causes the shape of the overall wavefunction to change over time. If instead the phase waves all moved at the same speed then the initial wavefunction shape would be preserved and there wouldn't be any dynamics (besides motion at constant velocity).
+At this point it's reasonable to ask why, given the absence of forces, there are any dynamics. The reason is that the wavefunction is a sum of plane waves $$\exp i(kx-\omega t)$$ weighted by the amount of each wave in the initial condition $$\bar \psi(p,0)$$. The individual waves move at _different_ speeds, called their _phase velocity_, and this causes the shape of the overall wavefunction to change over time. If the phase waves instead all moved at the same speed then the initial wavefunction shape would be preserved and there wouldn't be any dynamics (besides motion at constant velocity).
 
 The speed of each phase wave is
 
@@ -96,14 +96,14 @@ $$
 
 Where $$k=p/\hbar$$ and $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$. So waves with smaller wavelength move faster—they have more energy.
 
-Note that $$k$$ and $$\omega$$ are not independent quantities—they have a dispersion relation
+Note that $$k$$ and $$\omega$$ are not independent quantities—they have a dispersion relation given by
 
 
 $$
 \omega (k) = \frac{\hbar k^2}{2m}
 $$
 
-__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model free particles. It's a wavefunction having Gaussian, or Normal, density $$\psi^*\psi \sim N$$, which makes for an interesting initial condition because in contrast to planewaves it's localized in space. 
+__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction to use as a free particle model. It's wavefunction has Gaussian, or Normal, density $$\psi^*\psi \sim N$$, which makes it ideal for modeling localized objects. 
 
 Consider the following initial wavepacket in momentum-space:
 
@@ -188,7 +188,7 @@ $$
 $$
 
 
-As it turns out this equation has solutions for every value of $$E$$, including complex $$E$$, but interestingly only a small few of those are normalizable, the rest diverge and therefore don't represent physically realistic states. 
+As it turns out this equation has solutions for every value of $$E$$, including complex $$E$$, but only a small few of them normalize, the rest diverge and therefore don't represent physical states. 
 
 I won't derive the solution to this ODE for the normalizable states, but the result is that for each $$n \ge 0$$ the $$n$$th energy eigenvalue is
 

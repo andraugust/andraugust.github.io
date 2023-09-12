@@ -131,11 +131,11 @@ $$
 
 ## 2. Continuous States
 
-So far we've looked at what I'm going to call _discrete_ states. Discrete in the sense that their eigenvalues are countable and their states are written as a finite sum over basis vectors. But we'd also like to model continuous quantities, like position and momentum. How are such _continuous_ states modeled? 
+So far we've looked at what I'm going to call _discrete_ states—discrete in the sense that eigenvalues are countable and states are written as a finite sum over basis vectors. But we'd also like to model continuous quantities, like position and momentum. How are _continuous_ states modeled? 
 
 The answer is that they're modeled in the same way as discrete states: by the principles of QM. The trick is to keep in mind that the principles don't require states to be discrete—they only require them to be _vectors_, and vectors can be anything, discrete or continuous, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions in this sense are continuous vectors and they're exactly what are used to model continuous states.
 
-__Wave Functions.__ In terms of notation, a continuous state is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a basis just as discrete vectors are, and their form can change from one basis to another, just as discrete vectors can. The bra-ket notation is useful for wave-functions as it is for discrete vectors. The discrete representation
+__Wave Functions.__ In terms of notation, a continuous state is associated with a _wave function_ $$\psi(x)$$ which takes a complex input and returns a complex output. Wave functions are defined with respect to a basis just as discrete vectors are, and their values can change from one basis to another, just as discrete vectors can. The bra-ket notation is useful for wave-functions like it is for discrete vectors. The discrete representation
 
 
 $$
@@ -151,7 +151,7 @@ $$
 $$
 
 
-where $$x$$ labels eigenvalues and $$\ket{x}$$ is the associated eigenvector. In this analogy, $$\psi(x)$$ is like a continuous set of coefficients. Another way to think of wave functions is in terms of them being a state vector's projection onto a basis. For example, in the $$x$$ basis the wave function is
+where $$x$$ labels eigenvalues and $$\ket{x}$$ is the associated eigenvector. In the analogy with discrete states, $$\psi(x)$$ is like a continuous set of coefficients $$a_i$$. Another way to think of wave functions is in terms of a state vector's projection onto a basis. For example, in the $$x$$ basis the wave function is
 
 
 $$
