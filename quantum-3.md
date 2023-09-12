@@ -214,17 +214,17 @@ a = \sqrt{\omega m / \hbar}
 $$
 
 
-and $$H_n$$ are called _Hermite polynomials_. The probability density for the first few energy levels is shown below along with the potential energy function.
+and $$H_n$$ are called _Hermite polynomials_. The probability densities of the first few energy levels are shown below along with the potential energy function.
 
 <center><img src="quantum/harmonic_oscillator_probabilities.png" style="object-fit:contain;"></center>
 
 
-There are a few interesting things to point out here:
+There are a few interesting things to notice…
 
 * The minimum energy is not zero—it's $$\hbar \omega /2$$. So for an oscillator to even exist in the first place some energy is involved. This can be understood in terms of the uncertainty principle: suppose we try to make the energy zero by closely localizing the particle to $$x=0$$ where the potential energy is zero. In this case the momentum will be very spread out, and momentum has energy associated with it. On the other hand if we try to set the particle at rest so it has no momentum then the position will be spread out, in particular it will be spread out away from $$x=0$$ and therefore have potential energy. So either way the oscillator has _some_ energy.
 * Hermite polynomials are orthogonal. They better be—they're eigenvectors!
-* The probability density is non-zero outside the potential energy curve, so the particle can be found _beyond_ the classically allowed region.
-* There are points within the classically allowed region where the density is zero, so the particle will _never_ be measured there even though classically it can be.
+* The probability density is non-zero outside the potential energy curve, so the particle can be found _beyond_ the classical region.
+* There are points in the classical region where the density is zero, so the particle will _never_ be measured there even though classically it can be.
 * In the limit of large $$n$$ the quantum density approaches the classical density.
 
 
