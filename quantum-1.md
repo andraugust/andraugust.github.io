@@ -185,9 +185,9 @@ Instead, their pairwise products are summarized in the following table:
 
 <center><img src="quantum/pauli.png" style="object-fit:contain;"></center>
 
-What can we do with these matrices? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to make measurements in any direction. This is done by taking the dot product of the Pauli matrices with the unit vector $$\hat{n}$$ along which the measurement is taken.
+What can we do with these matrices? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to measure along any direction. This is done by taking the dot product of the Pauli matrices with the unit vector $$\hat{n}$$ that points in the direction of the measurement.
 
-For example, measuring along $$\hat{n}=(1/\sqrt{2},1/\sqrt{2},0)$$, the operator is
+For example, measuring in the direction $$\hat{n}=(1/\sqrt{2},1/\sqrt{2},0)$$, the operator is
 
 
 $$
@@ -210,7 +210,7 @@ $$
 $$
 
 
-These eigenvectors can be used to calculate measurement probabilities. For example, if the spin starts in $$\ket{+z}$$ the measurement probabilities are
+These eigenvectors can be used to calculate the probability of measurement outcomes. For example, if the spin starts in $$\ket{+z}$$ the measurement probabilities are
 
 
 $$

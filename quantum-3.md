@@ -96,14 +96,14 @@ $$
 
 Where $$k=p/\hbar$$ and $$\omega=p^2/2m\hbar = \hbar k^2/2m =E/\hbar$$. So waves with smaller wavelength move faster—they have more energy.
 
-Note that $$k$$ and $$\omega$$ are not independent quantities—they have a dispersion relation given by
+Note that $$k$$ and $$\omega$$ are not independent quantities but have a dispersion relation given by
 
 
 $$
 \omega (k) = \frac{\hbar k^2}{2m}
 $$
 
-__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction to use as a free particle model. It's wavefunction has Gaussian, or Normal, density $$\psi^*\psi \sim N$$, which makes it ideal for modeling localized objects. 
+__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model a free particle. It's wavefunction has Gaussian, or Normal, density $$\psi^*\psi \sim N$$, which makes it ideal for modeling localized objects. 
 
 Consider the following initial wavepacket in momentum-space:
 
@@ -112,16 +112,13 @@ $$
 \bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
 $$
 
-
 When squared, this wavepacket is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position space the corresponding wavefunction is
-
 
 $$
 \psi(x,0) = \left( \frac{4 \sigma_p^2 \hbar^2}{2\pi} \right)^{1/4} \exp(-\sigma_p^2 x^2 /\hbar^2) \exp(ip_0x/\hbar)
 $$
 
-
-Which is a Gaussian multiplied by a wave factor. By inspection, position space uncertainty is related to momentum space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation.
+Which is a Gaussian function multiplied by a wave factor. By inspection, position space uncertainty is related to momentum space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation.
 
 Plugging $$\psi(x,0)$$ into the SE we find that it's actually _not_ a solution, which shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wavepackets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution to the SE, so in this sense wavepackets are realistic.
 
