@@ -8,7 +8,7 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-In classical mechanics states are points in phase space that evolve under the influence of forces, but in quantum mechanics states are complex vectors in Hilbert space. How do they evolve? And how are continuous states such as position and momentum modeled?
+In classical mechanics states are points in phase space that evolve under the influence of forces, but in quantum mechanics states are complex vectors in Hilbert space. How do they evolve? And how are continuous quantities such as position and momentum modeled?
 
 ## 1. Dynamics
 
@@ -234,9 +234,9 @@ $$
 \end{align*}
 $$
 
+It's also important to note that the delta-function model of a position measurement is a mathematical idealization. If wavefunctions in fact collapsed to delta-functions when position was measured, then the uncertainty in position would be zero and, because of the position-momentum uncertainty relation, this would imply that momentum uncertainty be infinity, which isn't physically meaningful.
 
 __Eigenfunctions of Momentum.__ What are the eigenfunctions of momentum? For momentum the set-up and solution are the same, but now $$\bar\psi$$ is used to denote a wave function in momentum space:
-
 
 $$
 p\bar\psi(p) = p_0\bar\psi(p) \\

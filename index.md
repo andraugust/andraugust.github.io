@@ -14,7 +14,7 @@ layout: default
 ## [Quantum Mechanics II: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
-In classical mechanics states are points in phase space that evolve under the influence of forces, but in quantum mechanics states are complex vectors in Hilbert space. How do they evolve? And how are continuous states such as position and momentum modeled?
+In classical mechanics states are points in phase space that evolve under the influence of forces, but in quantum mechanics states are complex vectors in Hilbert space. How do they evolve? And how are continuous quantities such as position and momentum modeled?
 
 ## [Quantum Mechanics I: States & Principles](quantum-1.html)
 
