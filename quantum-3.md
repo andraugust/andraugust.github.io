@@ -58,7 +58,7 @@ $$
 $$
 
 
-In terms of normalization, the free particle wavefunction only normalizes when a particle is _bounded_. For example if a particle is _un_-bounded such that it can exist freely in $$(-\infty,\infty)$$ or $$(0,\infty)$$ etc, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, physical free particles have to be bounded.
+In terms of normalization, the free particle wavefunction only normalizes when it's _bounded_. For example, if a particle is _un_-bounded such that it can exist freely in $$(-\infty,\infty)$$ or $$(0,\infty)$$ etc, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles have to be bounded.
 
 __Particle in a box.__ An example of a bounded free particle is the so-called particle in a box. Consider the potential
 
@@ -69,7 +69,7 @@ V(x < 0) = V(x>L) = \infty
 $$
 
 
-This is a "potential well" bounding the particle between $$0$$ and $$L$$. The boundary conditions imply that $$\psi(0)=\psi(L)=0$$, which, together with the normalization constraint yields the solution
+This is a "potential well" that bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$, which, together with the normalization constraint, yields the solution
 
 
 $$
@@ -79,12 +79,13 @@ E_n &= \frac{\hbar^2 \pi^2}{2mL^2}n^2
 \end{align*}
 $$
 
+where $$n\in \{0,1,2,...\}$$. 
 
-Where $$n\in \{0,1,2,...\}$$. The first few wavefunctions are shown below on the left (at $$t=0$$) with their probability densities on the right. Interestingly, the boundary conditions force solutions to be countable, having a discrete _spectrum_ of energies.
+The first few wavefunctions are shown below on the left (at $$t=0$$) with their probability densities on the right. Interestingly, the boundary conditions lead to countable solutions and discrete energy spectra.
 
 <center><img src="quantum/particle_in_box.png" style="object-fit:contain;"></center>
 
-Because the Schrodinger equation is linear, any linear combination of the $$\psi_n$$ is also a solution, so the general solution to the particle in a box is
+Because the Schrodinger equation is linear, any linear combination of the $$\psi_n$$ is a solution, so the general solution is
 
 
 $$
@@ -92,7 +93,7 @@ $$
 $$
 
 
-where $$a_n(0)$$ is the "amount" of $$\psi_n$$ in the initial condition, and is subject to the constraint
+where $$a_n(0)$$ is the "amount" of $$\psi_n$$ in the initial condition, subject to the constraint
 
 
 $$
@@ -124,9 +125,7 @@ $$
 $$
 
 
-which _is_ time-dependent. This time-dependency causes the PDF to oscillate with a beat.
-
-Keep in mind that if the energy of the combined system is measured, it always returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$). After measurement, the wavefunction collapses and the PDF becomes stationary.
+which _is_ time-dependent. But keep in mind that if the energy of the combined system is measured, it returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$). After measurement, the wavefunction collapses and the PDF becomes stationary.
 
 __The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model a free particle. It's wavefunction has a Gaussian shape, so the density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles. 
 
@@ -199,7 +198,7 @@ i\frac{\partial \psi}{\partial t} = -\frac{\hbar}{2m} \frac{\partial^2 \psi}{\pa
 $$
 
 
-This PDE can be simplified by recalling that the solution is the sum of energy eigenvectors multiplied by the time-dependant factor $$\exp(-iE_it/\hbar)$$. So the first step is to find the eigenvectors and eigenvalues of 
+This PDE can be simplified by recalling that the solution is the sum of energy eigenvectors multiplied by the time-dependant factor $$\exp(-iE_it/\hbar)$$. So the first step is finding the eigenvectors and eigenvalues of 
 
 
 $$
@@ -215,9 +214,9 @@ $$
 $$
 
 
-It turns out that this equation has solutions for every value of $$E$$, including complex $$E$$, but only a small few of them normalize, the rest diverge and therefore don't represent physical states. The ones that converge _do_ represent physical states, and it's these states we're looking for.
+It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a small few of them normalize, the rest diverge and therefore don't represent physically meaningful states. The ones that converge _do_ represent physical states, and these are the states we're looking for.
 
-Deriving the normalizable states requires a lot of math that isn't especially relevant to the physics, so I'll just present the results: for each $$0 \le n$$ the $$n$$th energy eigenvalue is
+Deriving the normalizable states requires quite a bit of technical math that isn't especially relevant to the physics, so I'll just present the results: for each $$0 \le n$$ the $$n$$th energy eigenvalue is
 
 
 $$
@@ -233,36 +232,24 @@ $$
 $$
 
 
-where $$a = \sqrt{\omega m / \hbar}$$ and $$H_n$$ are _Hermite polynomials_. The probability densities of the first few energies are shown below along with the potential energy function. Any harmonic oscillator wavefunction can be written as a sum of these eigenfunctions, weighted by a coefficient that can be interpereted as "the amount" of each energy level in the initial condition. 
+where $$a = \sqrt{\omega m / \hbar}$$ and $$H_n$$ are _Hermite polynomials_. The probability densities of the first few energies are shown below along with the potential energy function. 
 
 <center><img src="quantum/harmonic_oscillator_probabilities.png" style="object-fit:contain;"></center>
 
 
 There are a few interesting things to notice…
 
-* The minimum energy is not zero—it's $$\hbar \omega /2$$. So for an oscillator to even exist in the first place some energy is involved. This can be understood in terms of the uncertainty principle: suppose we try to make the energy zero by closely localizing the particle to $$x=0$$ where the potential energy is zero. In this case the momentum will be very spread out, and momentum has energy associated with it. On the other hand if we try to set the particle at rest so it has no momentum then the position will be spread out, in particular it will be spread out away from $$x=0$$ and therefore have potential energy. So either way the oscillator has _some_ energy.
-* Hermite polynomials are orthogonal. They better be—they're eigenvectors!
-* The probability density is non-zero outside the potential energy curve, so the particle can be found _beyond_ the classical region.
-* There are points in the classical region where the density is zero, so the particle will _never_ be measured there even though classically it can be.
+* The minimum energy is not zero—it's $$\hbar \omega /2$$. So for an oscillator to exist at all some energy is required. This can be understood in terms of the uncertainty principle: suppose we try to make the total energy zero by closely localizing the particle to $$x=0$$. In this case the potential energy will be approximately zero, but the momentum will be very spread out, and momentum has energy associated with it. On the other hand if we try to set the particle at rest so it has no momentum then the position will be spread out, in particular it will be spread out away from $$x=0$$ and therefore have potential energy. So either way the oscillator has _some_ energy.
+* The energy levels don't depend on mass (in constrast to particle in a box). 
+* Hermite polynomials are orthogonal (they better be—they're eigenvectors!).
+* The probability density is non-zero outside the potential energy curve, so the particle can be found _beyond_ the classically allowed region.
+* Inside the classical region there are points where the density is zero, so the particle will _never_ be measured there even though it can be classically.
 * In the limit of large $$n$$ the quantum density approaches the classical density.
 
 
 
 ## 3. Particle in a Box
 
-The _particle in a box_ models a particle constrained within a volume. As always the solution approach is to write a Hamiltonian and then find it's eigenfunctions and eigenvalues. This time, however, the potential isn't continuous—it's piecewise. Specifically, it's zero inside the box and infinity outside. The infinite potential outside the box models the walls that the particle isn't allowed to cross.
-
-Already we know the wavefunction is zero outside the box, and inside it's that of a free particle. But what about the walls? At the walls the wavefunction has to be continuous, and outside the box the wavefunction is $$0$$, therefore $$\psi(0) = \psi(L) = 0$$. This constraint enables the wavefunction to normalize, unlike the free particle.
-
-Inside the box the solution is 
-$$
-\psi(x) = e^{ix\sqrt{2mE}/\hbar}
-$$
-
-
-
-
-, which normalizes to
 
 
 
