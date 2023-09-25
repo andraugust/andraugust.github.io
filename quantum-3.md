@@ -10,7 +10,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. The Free Particle
 
-Conceivably the simples particle to model is one that has no forces acting on it. This is the so-called _free particle_. Without forces there is no potential, so the Hamiltonian becomes
+Conceivably the simples particle to model is one with no forces acting on it. This is the so-called _free particle_. Without forces there is no potential, so the Hamiltonian is
 
 
 $$
@@ -39,54 +39,91 @@ $$
 \end{align*}
 $$
 
-where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a specific configuration, and $$k \coloneqq \sqrt{2mE}/\hbar$$ and $$\omega \coloneqq E/\hbar$$. 
+
+where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a specific configuration, and $$k = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
 By inspection, the solution consists of two identical planewaves moving in opposite directions. The waves' phase velocity is
+
+
 $$
 v = \omega/k = E/p = p/2m =\hbar k/2m
 $$
+
+
 And their dispersion relation is
+
+
 $$
 \omega (k) = \frac{\hbar k^2}{2m}
 $$
+
+
 In terms of normalization, the free particle wavefunction only normalizes when a particle is _bounded_. For example if a particle is _un_-bounded such that it can exist freely in $$(-\infty,\infty)$$ or $$(0,\infty)$$ etc, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, physical free particles have to be bounded.
 
 __Particle in a box.__ An example of a bounded free particle is the so-called particle in a box. Consider the potential
+
+
 $$
 V(0\le x \le L) = 0 \\
 V(x < 0) = V(x>L) = \infty
 $$
+
+
 This is a "potential well" bounding the particle between $$0$$ and $$L$$. The boundary conditions imply that $$\psi(0)=\psi(L)=0$$, which, together with the normalization constraint yields the solution
+
+
 $$
 \begin{align*}
 \psi_n(x,t) &= \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right) e^{-iE_nt/\hbar} \\
 E_n &= \frac{\hbar^2 \pi^2}{2mL^2}n^2
 \end{align*}
+
+
 $$
 Where $$n\in \{0,1,2,...\}$$. The first few wavefunctions are shown below on the left (at $$t=0$$) with their probability densities on the right. Interestingly, the boundary conditions force solutions to be countable, having a discrete _spectrum_ of energies.
 
 <center><img src="quantum/particle_in_box.png" style="object-fit:contain;"></center>
 
 Because the Schrodinger equation is linear, any linear combination of the $$\psi_n$$ is also a solution, so the general solution to the particle in a box is
+
+
 $$
 \sum_n a_n (0) \psi_n
 $$
+
+
 where $$a_n(0)$$ is the "amount" of $$\psi_n$$ in the initial condition, and is subject to the constraint
+
+
 $$
 \sum_n a_n^*(0)a_n(0) = 1
 $$
+
+
 __Stationary states.__ Eigenfunctions of the Schrodinger equation are sometimes called _stationary states_. "Stationary" because their PDFs are time-independent. For example, if $$\psi(x)$$ is an eigenfunction, then the wavefunction at time $$t$$ is
+
+
 $$
 \psi(x)e^{-iEt/\hbar}
 $$
+
+
 which depends on time, but the PDF $$\psi^*\psi$$ doesn't. Note that the _sum_ of stationary states _isn't_ stationary. For example, if $$\psi_1$$ and $$\psi_2$$ are stationary and normalized individually, then the sum
+
+
 $$
 a\psi_1(x) e^{i\omega_1t} + b\psi_2(x) e^{i\omega_2t}
 $$
+
+
 has PDF
+
+
 $$
 \left| a\psi_1 \right|^2 + \left| b\psi_2 \right|^2 + a^*b\psi_1^*\psi_2\cos((\omega_1-\omega_2)t) + ab^*\psi_1\psi_2^*\sin((\omega_1-\omega_2)t)
 $$
+
+
 which _is_ time-dependent. This time-dependency causes the PDF to oscillate with a beat.
 
 Keep in mind that if the energy of the combined system is measured, it always returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$). After measurement, the wavefunction collapses and the PDF becomes stationary.
@@ -100,11 +137,14 @@ $$
 \bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
 $$
 
+
 When squared, this wavepacket is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position space the corresponding wavefunction is
+
 
 $$
 \psi(x,0) = \left( \frac{4 \sigma_p^2 \hbar^2}{2\pi} \right)^{1/4} \exp(-\sigma_p^2 x^2 /\hbar^2) \exp(ip_0x/\hbar)
 $$
+
 
 Which is a Gaussian function multiplied by a wave factor. By inspection, position space uncertainty is related to momentum space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation.
 
@@ -135,6 +175,7 @@ $$
 \sigma_x(t) &= \sigma_x \sqrt{1+\left(\frac{\hbar}{2m\sigma_x^2}t\right)^2}
 \end{align*}
 $$
+
 
 So the center of the wavepacket moves with "group velocity" $$p_0/m$$ just like a classical particle, and the dispersion of the phase waves causes the packet to spread over time. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized and the product $$\sigma_x\sigma_p$$ rises above the Heisenberg lower limit.
 
