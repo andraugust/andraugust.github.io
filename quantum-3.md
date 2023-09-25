@@ -77,9 +77,9 @@ $$
 \psi_n(x,t) &= \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right) e^{-iE_nt/\hbar} \\
 E_n &= \frac{\hbar^2 \pi^2}{2mL^2}n^2
 \end{align*}
-
-
 $$
+
+
 Where $$n\in \{0,1,2,...\}$$. The first few wavefunctions are shown below on the left (at $$t=0$$) with their probability densities on the right. Interestingly, the boundary conditions force solutions to be countable, having a discrete _spectrum_ of energies.
 
 <center><img src="quantum/particle_in_box.png" style="object-fit:contain;"></center>
