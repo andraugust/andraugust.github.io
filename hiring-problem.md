@@ -4,19 +4,19 @@ layout: default
 
 # The Hiring Problem
 
-Suppose you're interviewing candidates for a job opening and you want to hire the best one. Your candidates have offers from your competitors, and they'll take those offers unless you hire them right away. This means you can't interview candidates forever and at the end go back to pick the best one--they'll be taken.  You don't know before an interview how fit a given candidate is, so the questions becomes: _What interview strategy maximized your probability of selecting the best candidate?_
+Suppose you're interviewing candidates for a job and you want to hire the one that's most qualified. Due to obscure circumstances (that happen to make this an interesting math problem) you can only offer candidates a position immediately after you've interviewed them—you can't interview all candidates and return to the one you liked the best. 
 
-Candidates are rank-able, so they can be sorted ordinally according to how fit they are.  A candidate's fitness is determined after you interview them, at which time you have to hire or pass to the next candidate.  If you pass on a candidate we assume that you can't go back later and make them an offer; they've already accepted your competitor's offer.
+In otherwords, as you're interviewing candidates you know how they each rank relative to those you've already seen, but not relative to everyone. Furthermore, if you decline to hire a candidate because you think a better candidate will come along after them and you're wrong, well, there's nothing you can do about it!
 
-Your objective is to hire the top-ranking candidate.  What's your strategy?
+If you're objective is to hire the top-ranking candidate, the question is: _What strategy maximized your probability of selecting the best candidate?_
 
-(Clearly this set-up isn't very realistic; hiring managers can generally go back to previous candidates and hire them.  I'm going to keep this narrative though because it's what's used in the literature and online, and it makes for an interesting optimization problem. Perhaps a more fitting narrative is in terms of marriage, where instead of an interview it's a date and you're trying to find the best person to marry (hire)--usually you can't go back to someone if you tell them you want to date (interview) another person first!)
+(Clearly this set-up isn't realistic; hiring managers can generally go back to previous candidates and hire them.  I'm going to keep this narrative though because it's what's used in the literature and online, and it makes for an interesting optimization problem. Perhaps a more fitting narrative is in terms of marriage, where instead of an interview it's a date and you're trying to find the best person to marry (hire) where usually you can't go back to someone if you tell them you want to date (interview) another person first!)
 
 ### The optimal strategy
 
-First I'll tell you the optimal strategy, then solve for the details.
+First I'll tell you the optimal strategy, then solve for it.
 
-The optimal strategy is to automatically pass on a fixed number of candidates and then select the first one who's better than the rest seen so far.  If no better candidate is found, select the last one (you have to, they're the only one left).
+The optimal strategy is to automatically pass on a fixed number of candidates and then select the first one who's better than the best seen so far.  If no better candidate is found, select the last one (you have to, they're the only one left!).
 
 The intuition is as follows: All ranks are independent, and candidate order is uniformly random, so knowing the relative rank of the cadidates you've interviewed doesn't help predict the relative rank of candidates to come, so the best strategy is to pass on the first several candidates (possibly only one) and hope to find the best after this.  As for _when_ to choose, if you did something like "choose the 6th candidate always", you'd ignore the fact that the 6th candidate might be worse than the first 5, and since you're looking for the rank-1 you should pass, even if it means passing until the last candidate (in this version of the problem selecting rank-2 is equally as bad as selecting the bottom-ranked candidate).
 

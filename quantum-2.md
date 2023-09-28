@@ -8,8 +8,6 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-In classical mechanics states are points in phase space that evolve under the influence of forces, but in quantum mechanics states are complex vectors in Hilbert space. How do they evolve? And how are continuous quantities such as position and momentum modeled?
-
 ## 1. Dynamics
 
 __Time Evolution Operator.__ Dynamics for vectors, including those in Hilbert space, can generically be modeled as

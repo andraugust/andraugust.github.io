@@ -14,17 +14,17 @@ layout: default
 ## [Quantum Mechanics II: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
-In classical mechanics states are points in phase space that evolve under the influence of forces, but in quantum mechanics states are complex vectors in Hilbert space. How do they evolve? And how are continuous quantities such as position and momentum modeled?
+Dynamics and the representation of continuous states in Quantum Mechanics.
 
 ## [Quantum Mechanics I: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
-The first round of notes on quantum mechanics based on Leonard Susskind's _Theoretical Minimum_ series.
+The first round of notes on quantum mechanics based on Leonard Susskind's _Theoretical Minimum_ series on theoretical physics.
 
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
-A summary of classical mechanics from Leonard Susskind's _Theoretical Minimum_ series. The post starts with states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
+A summary of classical mechanics from Leonard Susskind's _Theoretical Minimum_ series on theoretical physics. The post starts with states and dynamics and then derives various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
@@ -34,17 +34,17 @@ Notes on the paper "ImageNet-trained CNNs are biased toward texture; increasing 
 ## [PlatformIO Notes](platformio-notes.html)
 
 <p style="opacity:0.5">02/2020</p>
-PlatformIO is a nice IDE for Arduino that supports environments and command-line uploads, but more importantly it has code completion and inspections, which the default Arduino IDE doesn't have.
+PlatformIO is an IDE for Arduino that supports environments and command-line uploads, but more importantly it has code completion and inspections, which the default Arduino IDE doesn't have.
 
 ## [The Hiring Problem](hiring-problem.html)
 
 <p style="opacity:0.5">09/2019</p>
-Suppose you're interviewing candidates for a job. Interviews come at a cost, but they provide valueable information about candidates. How many candidates should you interview before commiting to one?
+Suppose you're interviewing candidates for a job. Interviews come at a cost, but they provide useful information about candidates. How many candidates should you interview before commiting to one?
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
 <p style="opacity:0.5">02/2019</p>
-What is the _style_ of an image? Is it something that can be encoded in a reasonable way? If so, would it be possible to transfer the style of one image onto another one, like making a selfie look like it was painted by Van Gogh? 
+What defines the _style_ of an image? Can it be captured computationally? If so, is it possible to transfer styles from one image another, like making a selfie appear as if it were painted by Van Gogh? 
 
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
@@ -54,12 +54,12 @@ Automating the detection ships in satellite imagery using deep learning.
 ## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game", "card game" links to "game", "game" links to "play", etc.  What happens if you repeated click first-links? Where do you go? Is there any special stucture to Wikipedia's first-link taxonomy?
+The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game" and "card game" links to "game", etc.  Where do these first links eventually go? Does Wikipedia have anything that resembles a first-link taxonomy?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
 <p style="opacity:0.5">12/2017</p>
-Classification on the Functional Map of the World dataset, a look at fine-tuning and the effects of sample size distribution and spatial context.
+Image classification on the Functional Map of the World dataset with a look at fine-tuning and the effects of sample size distribution and spatial context.
 
 ## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
 

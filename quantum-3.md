@@ -40,7 +40,7 @@ $$
 $$
 
 
-where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a specific configuration, and $$k = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
+where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a specific configuration, and $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
 By inspection, the solution consists of two identical planewaves moving in opposite directions. The waves' phase velocity is
 
@@ -50,7 +50,7 @@ v = \omega/k = E/p = p/2m =\hbar k/2m
 $$
 
 
-And their dispersion relation is
+Their dispersion relation is
 
 
 $$
@@ -69,7 +69,7 @@ V(x < 0) = V(x>L) = \infty
 $$
 
 
-This is a "potential well" that bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$, which, together with the normalization constraint, yields the solution
+This is a "potential well" which bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$, which, together with the normalization constraint, yields the solution
 
 
 $$
@@ -81,7 +81,7 @@ $$
 
 where $$n\in \{0,1,2,...\}$$. 
 
-The first few wavefunctions are shown below on the left (at $$t=0$$) with their probability densities on the right. Interestingly, the boundary conditions lead to countable solutions and discrete energy spectra.
+The first few wavefunctions at $$t=0$$ are shown below on the left with their probability densities on the right. Interestingly, the boundary conditions force solutions to be countable and have discrete energy spectra.
 
 <center><img src="quantum/particle_in_box.png" style="object-fit:contain;"></center>
 
@@ -93,7 +93,7 @@ $$
 $$
 
 
-where $$a_n(0)$$ is the "amount" of $$\psi_n$$ in the initial condition, subject to the constraint
+where $$a_n(0)$$ can be thought of as the "amount" of $$\psi_n$$ in the initial condition, subject to the constraint
 
 
 $$
@@ -101,15 +101,15 @@ $$
 $$
 
 
-__Stationary states.__ Eigenfunctions of the Schrodinger equation are sometimes called _stationary states_. "Stationary" because their PDFs are time-independent. For example, if $$\psi(x)$$ is an eigenfunction, then the wavefunction at time $$t$$ is
+__Stationary states.__ Eigenfunctions of the Schrodinger equation are sometimes called _stationary states_. "Stationary" because their PDFs are time-independent. For example, if $$\psi_E(x)$$ is an eigenfunction of $$\mathbf{H}$$, then the wavefunction at time $$t$$ is
 
 
 $$
-\psi(x)e^{-iEt/\hbar}
+\psi_E(x)e^{-iEt/\hbar}
 $$
 
 
-which depends on time, but the PDF $$\psi^*\psi$$ doesn't. Note that the _sum_ of stationary states _isn't_ stationary. For example, if $$\psi_1$$ and $$\psi_2$$ are stationary and normalized individually, then the sum
+which depends on time, but the PDF doesn't. Note that the _sum_ of stationary states _isn't_ stationary. For example, if $$\psi_1$$ and $$\psi_2$$ are stationary and normalized individually, then the sum
 
 
 $$
@@ -124,20 +124,73 @@ $$
 \left| a\psi_1 \right|^2 + \left| b\psi_2 \right|^2 + a^*b\psi_1^*\psi_2\cos((\omega_1-\omega_2)t) + ab^*\psi_1\psi_2^*\sin((\omega_1-\omega_2)t)
 $$
 
+which is time-dependent. But keep in mind that if the energy of this system is measured, it returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$) and the wavefunction collapses to become stationary.
 
-which _is_ time-dependent. But keep in mind that if the energy of the combined system is measured, it returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$). After measurement, the wavefunction collapses and the PDF becomes stationary.
+__Mutual Information.__ Looking at the PDFs for the particle in a box, it's evident that some position measurements provide more information about the system's energy than others. For example, if position is measured to be near $$L/2$$, then energy is unlikely to be an even level. The reason is that $$\psi_n^*\psi_n(L/2) \approx 0$$ when $$n$$ is even.
 
-__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model a free particle. It's wavefunction has a Gaussian shape, so the density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles. 
+The reduction in uncertainty (or equivalently the gain in information) when energy or position is measured is calculated in terms of mutual information. Mutual information is
+$$
+\begin{align*}
+I(X;E) &= H(X) + H(E) - H(X,E) \\
+&= \sum_n \int_x P(x, E_n)\log\left( \frac{P(x,E_n)}{P(x)P(E_n)} \right)
+\end{align*}
+$$
+Where $$X$$ and $$E$$ represent random variables for position and energy, and $$H$$ is entropy. This is the reduction in uncertainty averaged over all $$x$$, but as a function of $$x$$ it's simply
+$$
+I(X=x; E) = \sum_n P(x,E_n)\log\left( \frac{P(x,E_n)}{P(x)P(E_n)} \right)
+$$
+For the particle in a box, the wavefunction defines $$P(X=x)$$, and for $$P(E=E_n)$$ we can use the Boltzmann distribution:
+$$
+\begin{align*}
+P(E_n) &\sim e^{-n^2} \\
+P(x|E_n) &\sim \sin^2(n\pi x/L) \\
+P(x) &= \sum_n P(x|E_n) P(E_n) \\
+P(x,E_n) &= P(x|E_n)P(E_n)
+\end{align*}
+$$
+The resulting calculation of mutual information isn't especially clean, but in principal these equations enable it to be carried out.
 
-Consider the following initial wavepacket in momentum-space:
+__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model unbound free particles. It's a wavefunction having Gaussian shape, so its density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles.
 
+It may seem like this wavefunction isn't physical because unbound wavefunctions doesn't normalize:
+$$
+\begin{align*}
+\psi(x,t) &= \psi_E(x)e^{-i\omega t} \\
+&= (Ae^{ik x } + Be^{-ik x})e^{-i\omega t}
+\end{align*}
+$$
+And this is true—if the particle has a single definite energy then the wavefunction doesn't normalize. But linear combinations of such solutions, when weighted appropriately for many energies _can_ normalize, and this is the way in which unbound free particles are modeled.
+
+How does this work? Consider the general solution of the SE derived earlier for discrete vectors:
+$$
+\ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-i E_i t/\hbar} \ket{E_i}
+$$
+The continuous version is
+$$
+\psi(x,t) = \int \left( \int \psi_E^*(x) \psi(x,0) \,dx \right) e^{-iEt/\hbar} \psi_E(x) \, dE
+$$
+Where $$\psi(x,0)$$ is an arbitrary intial condition and the integrals run from $$-\infty$$ to $$+\infty$$. Normally,
+$$
+\psi_E(x) = Ae^{ik x } + Be^{-ik x}
+$$
+but because the integral covers negative and positive values of $$x$$ we can drop one of the terms. We'll drop the second term to get
+$$
+\begin{align*}
+\psi(x,t) &= \int \left( \int e^{-ipx/\hbar} \psi(x,0) \,dx \right) e^{-iEt/\hbar} e^{ipx/\hbar} \, dp \\
+&= \int \left(\mathbf{F}\psi(x,0)\right) e^{i(kx-\omega t)} dk \\
+&=\int \bar\psi(k,0)e^{i(kx-\omega t)}dk
+\end{align*}
+$$
+So the general solution is a sum of planewaves weighted by the "amount" of each wave present in the initial condition.
+
+Consider the following initial condition in momentum-space:
 
 $$
 \bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
 $$
 
 
-When squared, this wavepacket is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position space the corresponding wavefunction is
+When squared this wavepacket is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position space the corresponding wavefunction is
 
 
 $$
@@ -145,9 +198,7 @@ $$
 $$
 
 
-Which is a Gaussian function multiplied by a wave factor. By inspection, position space uncertainty is related to momentum space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation.
-
-Plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution, but this shouldn't come as a surprise—we already showed that solutions are planewaves of the form $$A \exp i(kx-\omega t)$$. So technically wavepackets don't describe single particles, _but_ we can add several planewaves together such that their superposition _approximates_ a wavepacket, and the sum of planewaves _is_ a solution to the SE, so in this sense wavepackets are realistic.
+Which is a Gaussian function multiplied by a wave factor. By inspection, position space uncertainty is related to momentum space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation. Note that plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution.
 
 Plugging $$\bar \psi(p,0)$$ into the GSE solution and taking the integral gives
 
@@ -157,7 +208,7 @@ $$
 $$
 
 
-This is a complicated looking wavefunction, but its density is a simple Gaussian:
+This is a complicated looking wavefunction, but its density is a Gaussian:
 
 
 $$
@@ -178,11 +229,11 @@ $$
 
 So the center of the wavepacket moves with "group velocity" $$p_0/m$$ just like a classical particle, and the dispersion of the phase waves causes the packet to spread over time. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized and the product $$\sigma_x\sigma_p$$ rises above the Heisenberg lower limit.
 
-What happens when a Gaussian wavepacket is measured? If its energy is measured to be, say, $$E_0$$ then the wavefunction collapses to the eigenfunction corresponding to that energy, namely $$\exp(ix\sqrt{2mE_0}/\hbar)$$. But recall that this eigenfunction isn't normalizable, so this wavepacket model comes with a warning regarding its realism. 
+What happens when a Gaussian wavepacket is measured? If its energy is measured to be, say, $$E_0$$ then the wavefunction collapses to the eigenfunction corresponding to that energy, namely $$\exp(ix\sqrt{2mE_0}/\hbar)$$.
 
 ## 2. Harmonic Oscillator
 
-The quantum harmonic oscillator is modeled like the classical harmonic oscillator—with a quadratic potential. The Hamiltonian is
+The quantum harmonic oscillator is modeled with a quadratic potential like the classical harmonic oscillator is. The Hamiltonian becomes
 
 
 $$
@@ -245,10 +296,6 @@ There are a few interesting things to notice…
 * The probability density is non-zero outside the potential energy curve, so the particle can be found _beyond_ the classically allowed region.
 * Inside the classical region there are points where the density is zero, so the particle will _never_ be measured there even though it can be classically.
 * In the limit of large $$n$$ the quantum density approaches the classical density.
-
-
-
-## 3. Particle in a Box
 
 
 
