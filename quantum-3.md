@@ -26,9 +26,9 @@ i\hbar\frac{\partial \psi(x,t)}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial
 $$
 
 
-This has the form of a diffusion equation with a complex coefficient, which, as we'll show, gives rise to wave-like solutions that spread out over time. 
+This has the form of a diffusion equation with a complex coefficient, which we'll show gives rise to wave-like solutions that spread out over time.
 
-To solve the PDE we use separation of variables. The result can be written several ways:
+Separation of variables is used to solve the PDE. The result can be written several ways:
 
 
 $$
@@ -40,9 +40,9 @@ $$
 $$
 
 
-where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a specific configuration, and $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
+where $$A$$ and $$B$$ are constants chosen to fit initial and/or boundary conditions, and $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
-By inspection, the solution consists of two identical planewaves moving in opposite directions. The waves' phase velocity is
+By inspection, the solution contains two identical planewaves moving in opposite direction. The waves' phase velocity is
 
 
 $$
@@ -58,9 +58,9 @@ $$
 $$
 
 
-In terms of normalization, the free particle wavefunction only normalizes when it's _bounded_. For example, if a particle is _un_-bounded such that it can exist freely in $$(-\infty,\infty)$$ or $$(0,\infty)$$ etc, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles have to be bounded.
+In terms of normalization, the wavefunction only normalizes when the particle is _bound_ by a potential. For example, if a particle is _un_-bound such that it can exist freely in $$(-\infty,\infty)$$, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles must be bound.
 
-__Particle in a box.__ An example of a bounded free particle is the so-called particle in a box. Consider the potential
+__Particle in a box.__ An example of a bound free particle is the so-called particle in a box. Consider the potential
 
 
 $$
@@ -81,7 +81,7 @@ $$
 
 where $$n\in \{0,1,2,...\}$$. 
 
-The first few wavefunctions at $$t=0$$ are shown below on the left with their probability densities on the right. Interestingly, the boundary conditions force solutions to be countable and have discrete energy spectra.
+The first few wavefunctions at $$t=0$$ are shown below on the left with their probability densities on the right. Interestingly, the boundary conditions force solutions to be countable and have discrete energy levels.
 
 <center><img src="quantum/particle_in_box.png" style="object-fit:contain;"></center>
 
@@ -93,7 +93,7 @@ $$
 $$
 
 
-where $$a_n(0)$$ can be thought of as the "amount" of $$\psi_n$$ in the initial condition, subject to the constraint
+where $$a_n(0)$$ captures the "amount" of $$\psi_n$$ in the initial condition, subject to the constraint
 
 
 $$
@@ -109,7 +109,7 @@ $$
 $$
 
 
-which depends on time, but the PDF doesn't. Note that the _sum_ of stationary states _isn't_ stationary. For example, if $$\psi_1$$ and $$\psi_2$$ are stationary and normalized individually, then the sum
+which depends on time, but the PDF doesn't. Note however that the _sum_ of stationary states _isn't_ stationary. For example, if $$\psi_1$$ and $$\psi_2$$ are stationary and normalized individually, then the sum
 
 
 $$
@@ -124,11 +124,11 @@ $$
 \left| a\psi_1 \right|^2 + \left| b\psi_2 \right|^2 + a^*b\psi_1^*\psi_2\cos((\omega_1-\omega_2)t) + ab^*\psi_1\psi_2^*\sin((\omega_1-\omega_2)t)
 $$
 
-which is time-dependent. But keep in mind that if the energy of this system is measured, it returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$) and the wavefunction collapses to become stationary.
+which _is_ time-dependent. But keep in mind that if the energy of this system is measured, it returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$) and the wavefunction collapses to  stationarity.
 
 __Mutual Information.__ Looking at the PDFs for the particle in a box, it's evident that some position measurements provide more information about the system's energy than others. For example, if position is measured to be near $$L/2$$, then energy is unlikely to be an even level. The reason is that $$\psi_n^*\psi_n(L/2) \approx 0$$ when $$n$$ is even.
 
-The reduction in uncertainty (or equivalently the gain in information) when energy or position is measured is calculated in terms of mutual information. Mutual information is
+The reduction in uncertainty (or equivalently the gain in information) when energy or position is measured can be defined in terms of mutual information. Mutual information is
 $$
 \begin{align*}
 I(X;E) &= H(X) + H(E) - H(X,E) \\
@@ -137,43 +137,39 @@ I(X;E) &= H(X) + H(E) - H(X,E) \\
 $$
 Where $$X$$ and $$E$$ represent random variables for position and energy, and $$H$$ is entropy. This is the reduction in uncertainty averaged over all $$x$$, but as a function of $$x$$ it's simply
 $$
-I(X=x; E) = \sum_n P(x,E_n)\log\left( \frac{P(x,E_n)}{P(x)P(E_n)} \right)
+\begin{align*}
+I(X=x; E) &= \sum_n P(x,E_n)\log\left( \frac{P(x,E_n)}{P(x)P(E_n)} \right) \\
+&= \sum_n P(x,E_n)\log\left( \frac{P(x|E_n)}{P(x)} \right)
+\end{align*}
 $$
-For the particle in a box, the wavefunction defines $$P(X=x)$$, and for $$P(E=E_n)$$ we can use the Boltzmann distribution:
+For the probabilities the wavefunction defines $$P(X=x)$$ and the Boltzmann distribution can be used to model $$P(E=E_n)$$:
 $$
 \begin{align*}
 P(E_n) &\sim e^{-n^2} \\
 P(x|E_n) &\sim \sin^2(n\pi x/L) \\
-P(x) &= \sum_n P(x|E_n) P(E_n) \\
-P(x,E_n) &= P(x|E_n)P(E_n)
+P(x,E_n) &= P(x|E_n)P(E_n) \\
+P(x) &= \sum_n P(x, E_n) \\
 \end{align*}
 $$
-The resulting calculation of mutual information isn't especially clean, but in principal these equations enable it to be carried out.
+The resulting calculation of mutual information isn't neat, but in principal these equations enable it.
 
-__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model unbound free particles. It's a wavefunction having Gaussian shape, so its density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles.
+__The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model unbound free particles. The wavefunction has Gaussian shape so its density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles.
 
-It may seem like this wavefunction isn't physical because unbound wavefunctions doesn't normalize:
-$$
-\begin{align*}
-\psi(x,t) &= \psi_E(x)e^{-i\omega t} \\
-&= (Ae^{ik x } + Be^{-ik x})e^{-i\omega t}
-\end{align*}
-$$
-And this is true—if the particle has a single definite energy then the wavefunction doesn't normalize. But linear combinations of such solutions, when weighted appropriately for many energies _can_ normalize, and this is the way in which unbound free particles are modeled.
+It may seem like Gaussian wavepackets aren't physical because unbound wavefunctions don't normalize, and this is true—if the particle has a single definite energy then the wavefunction doesn't normalize. But linear combinations of wavefunctions weighted properly over many different energies _can_ normalize, and this is the way unbound free particles are constructed mathematically.
 
 How does this work? Consider the general solution of the SE derived earlier for discrete vectors:
 $$
-\ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-i E_i t/\hbar} \ket{E_i}
+\ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} \ket{E_i} e^{-i E_i t/\hbar}
 $$
 The continuous version is
 $$
-\psi(x,t) = \int \left( \int \psi_E^*(x) \psi(x,0) \,dx \right) e^{-iEt/\hbar} \psi_E(x) \, dE
+\psi(x,t) = \int \left( \int \psi_E^*(x) \psi(x,0) \,dx \right) \psi_E(x) e^{-iEt/\hbar} \, dp
 $$
 Where $$\psi(x,0)$$ is an arbitrary intial condition and the integrals run from $$-\infty$$ to $$+\infty$$. Normally,
 $$
 \psi_E(x) = Ae^{ik x } + Be^{-ik x}
 $$
-but because the integral covers negative and positive values of $$x$$ we can drop one of the terms. We'll drop the second term to get
+but because the integral covers negative and positive values of $$x$$ we can just focus on one of the terms. We'll focus on the first term to get
 $$
 \begin{align*}
 \psi(x,t) &= \int \left( \int e^{-ipx/\hbar} \psi(x,0) \,dx \right) e^{-iEt/\hbar} e^{ipx/\hbar} \, dp \\
@@ -181,24 +177,25 @@ $$
 &=\int \bar\psi(k,0)e^{i(kx-\omega t)}dk
 \end{align*}
 $$
-So the general solution is a sum of planewaves weighted by the "amount" of each wave present in the initial condition.
+So the general solution is a sum of planewaves weighted by the "amount" of each wave present in the initial condition. Because each planewave moves at a different speed—its _phase speed_—the initial waveform spreads out over time, with the higher frequencies moving faster.
 
-Consider the following initial condition in momentum-space:
+To make a Gaussian wavepacket consider the following initial condition in momentum-space:
 
 $$
 \bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
 $$
 
 
-When squared this wavepacket is a Gaussian centered around $$p_0$$ with spread $$\sigma_p$$. In position space the corresponding wavefunction is
+When squared this wavepacket is Gaussian centered at $$p_0$$ with spread $$\sigma_p$$. In position space this wavefunction is
 
 
 $$
 \psi(x,0) = \left( \frac{4 \sigma_p^2 \hbar^2}{2\pi} \right)^{1/4} \exp(-\sigma_p^2 x^2 /\hbar^2) \exp(ip_0x/\hbar)
 $$
 
+Which is a Gaussian multiplied by a wave factor. By inspection, the position space uncertainty is related to the momentum space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation. 
 
-Which is a Gaussian function multiplied by a wave factor. By inspection, position space uncertainty is related to momentum space uncertainty by $$\sigma_x \sigma_p = \hbar/2$$, which is exactly the lower limit of the Heisenberg uncertainty relation. Note that plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution.
+Note that plugging $$\psi(x,0)$$ into the SE we find that it's _not_ a solution.
 
 Plugging $$\bar \psi(p,0)$$ into the GSE solution and taking the integral gives
 
@@ -227,13 +224,13 @@ $$
 $$
 
 
-So the center of the wavepacket moves with "group velocity" $$p_0/m$$ just like a classical particle, and the dispersion of the phase waves causes the packet to spread over time. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized and the product $$\sigma_x\sigma_p$$ rises above the Heisenberg lower limit.
+So the center of the wavepacket moves with group velocity $$p_0/m$$ just like a classical particle, and the phase waves disperse causing the packet to spread over time. The spread increases like $$\sqrt{1+t^2}$$, so the particle becomes less localized and the product $$\sigma_x\sigma_p$$ rises above the Heisenberg lower limit.
 
 What happens when a Gaussian wavepacket is measured? If its energy is measured to be, say, $$E_0$$ then the wavefunction collapses to the eigenfunction corresponding to that energy, namely $$\exp(ix\sqrt{2mE_0}/\hbar)$$.
 
 ## 2. Harmonic Oscillator
 
-The quantum harmonic oscillator is modeled with a quadratic potential like the classical harmonic oscillator is. The Hamiltonian becomes
+The quantum harmonic oscillator is modeled with a quadratic potential energy function, just as the classical harmonic oscillator is. The Hamiltonian is
 
 
 $$
@@ -241,23 +238,17 @@ $$
 $$
 
 
-where $$\omega$$ is the oscillator's frequency parameter. Plugging this into the GSE gives
+where $$\omega$$ is the oscillator's frequency parameter (not to be confused with a phase wave frequency). Plugging this into the GSE gives
 
 
 $$
 i\frac{\partial \psi}{\partial t} = -\frac{\hbar}{2m} \frac{\partial^2 \psi}{\partial x^2} + \frac{m \omega^2}{2\hbar}x^2\psi
 $$
 
-
-This PDE can be simplified by recalling that the solution is the sum of energy eigenvectors multiplied by the time-dependant factor $$\exp(-iE_it/\hbar)$$. So the first step is finding the eigenvectors and eigenvalues of 
-
-
-$$
-\mathbf{H}\psi_E = E\psi_E
-$$
+As usual the solution approach is to find the energy eigenfunctions and then multiply them by the time-dependency factor $$\exp(-iE_it/\hbar)$$ and sum them up to make a general solution. 
 
 
-where $$\psi_E$$ is an energy eigenvector corresponding to the energy eigenvalue $$E$$. The ODE this produces is
+The energy eigen-equation is
 
 
 $$
@@ -265,9 +256,9 @@ $$
 $$
 
 
-It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a small few of them normalize, the rest diverge and therefore don't represent physically meaningful states. The ones that converge _do_ represent physical states, and these are the states we're looking for.
+It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as they need to in order to represent physically meaningful states.
 
-Deriving the normalizable states requires quite a bit of technical math that isn't especially relevant to the physics, so I'll just present the results: for each $$0 \le n$$ the $$n$$th energy eigenvalue is
+Deriving the normalizable states requires a bit of math that isn't necessarily relevant to the physics, so I'll just present the results. The result is that for each $$0 \le n$$ the $$n$$th normalizable energy is
 
 
 $$
@@ -283,7 +274,7 @@ $$
 $$
 
 
-where $$a = \sqrt{\omega m / \hbar}$$ and $$H_n$$ are _Hermite polynomials_. The probability densities of the first few energies are shown below along with the potential energy function. 
+where $$a = \sqrt{\omega m / \hbar}$$ and $$H_n$$ are _Hermite polynomials_. The probability densities of the first few energies are shown below along with the quadratic oscillator potential. 
 
 <center><img src="quantum/harmonic_oscillator_probabilities.png" style="object-fit:contain;"></center>
 
@@ -291,10 +282,10 @@ where $$a = \sqrt{\omega m / \hbar}$$ and $$H_n$$ are _Hermite polynomials_. The
 There are a few interesting things to notice…
 
 * The minimum energy is not zero—it's $$\hbar \omega /2$$. So for an oscillator to exist at all some energy is required. This can be understood in terms of the uncertainty principle: suppose we try to make the total energy zero by closely localizing the particle to $$x=0$$. In this case the potential energy will be approximately zero, but the momentum will be very spread out, and momentum has energy associated with it. On the other hand if we try to set the particle at rest so it has no momentum then the position will be spread out, in particular it will be spread out away from $$x=0$$ and therefore have potential energy. So either way the oscillator has _some_ energy.
-* The energy levels don't depend on mass (in constrast to particle in a box). 
+* Energy levels don't depend on mass (in constrast to particle in a box). 
 * Hermite polynomials are orthogonal (they better be—they're eigenvectors!).
-* The probability density is non-zero outside the potential energy curve, so the particle can be found _beyond_ the classically allowed region.
-* Inside the classical region there are points where the density is zero, so the particle will _never_ be measured there even though it can be classically.
+* Probability densities are non-zero outside the potential energy curve, so the particle can be found _beyond_ the classically allowed region.
+* Inside the classically allowed region there are points where the density is zero, so the particle will _never_ be measured there even though it can be classically.
 * In the limit of large $$n$$ the quantum density approaches the classical density.
 
 

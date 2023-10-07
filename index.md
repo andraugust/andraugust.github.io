@@ -49,7 +49,7 @@ What defines the _style_ of an image? Can it be captured computationally? If so,
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
-Automating the detection ships in satellite imagery using deep learning.
+Ship detection in satellite images using a Kaggle dataset.
 
 ## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
