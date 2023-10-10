@@ -26,7 +26,7 @@ $$
 $$
 
 
-So $$\mathbf{U}^{\dagger}\mathbf{U} = I$$ and therefore $$\mathbf{U}$$ is unitary. A corollary to this is that the magnitude of state vectors is conserved through time.
+So $$\mathbf{U}^{\dagger}\mathbf{U} = I$$ and therefore $$\mathbf{U}$$ is unitary. A corollary to this is that the magnitude of state vectors is conserved over time.
 
 These results are for finite evolutions. What about infinitesimal ones? In the limit, the linear infinitesimal approximation of $$\mathbf{U}$$ is
 
@@ -156,9 +156,9 @@ $$
 \psi(x) = \bk{x}{\Psi}
 $$
 
+The probability of measuring a continuous eigenvalue $$x$$ is analogous to the discrete case—it's $$\psi^*(x)\psi(x)$$, which can be interpereted as a probability density function for the random variable $$x$$. Keep in mind though that this is a probability _density_ and therefore we technically shouldn't say things like "the probability of measuring $$x$$" because the probability of a single value on a pdf is $$0$$. Instead, we should talk about the probability of measuring $$x\,dx$$, which is the value of $$x$$ around some small region $$dx$$, this gives a non-zero number for the probability.
 
 __Continuous Operators.__ Operators on continuous vectors are similar to operators on discrete vectors: they're linear and Hermitian. To verify linearity you check that they distribute over the sum of functions with constants factoring out. In other words,
-
 
 $$
 \mathbf{L}(a\psi(x)+b\phi(x)) = a\mathbf{L}\psi(x) + b\mathbf{L}\phi(x)
@@ -221,7 +221,7 @@ $$
 $$
 
 
-This states the obvious fact that if a particle is measured at $$x_0$$ then it's only at $$x_0$$. It's important to note that $$\delta$$ is not a function, it's a distribution, and as such belongs inside an integral as
+This states the obvious fact that if a particle is measured at $$x_0$$ then it's only at $$x_0$$. It's important to note that $$\delta$$ is not a function, it's a distribution, and as such belongs inside an integral:
 
 
 $$
@@ -232,7 +232,7 @@ $$
 \end{align*}
 $$
 
-It's also important to note that the delta-function model of a position measurement is a mathematical idealization. If wavefunctions in fact collapsed to delta-functions when position was measured, then the uncertainty in position would be zero and, because of the position-momentum uncertainty relation, this would imply that momentum uncertainty be infinity, which isn't physically meaningful.
+It's also important to note that this delta-function model of position is a mathematical idealization. If wavefunctions did in-fact collapse to delta-functions when position was measured, the uncertainty in position would be zero and, because of the position-momentum uncertainty relation, this would force momentum uncertainty be infinity, which isn't physically meaningful.
 
 __Eigenfunctions of Momentum.__ What are the eigenfunctions of momentum? For momentum the set-up and solution are the same, but now $$\bar\psi$$ is used to denote a wave function in momentum space:
 
@@ -366,7 +366,7 @@ $$
 
 The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function, as is shown later in the section on wavepackets.
 
-__What happened to y and z?__ For the sake of simplicity I've focused this post on measurements in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straighforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. Same goes for $$z$$. Just note that the derivatives change from totals to partials.
+__What happened to y and z?__ For the sake of simplicity I've focused this post on measurements in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straighforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. Similar for $$z$$. Just note that the derivatives change from totals to partials, and the momentum operator as a whole can be represented as $$-i\hbar \nabla$$.
 
 Are measurements compatible across dimensions? The answer is yes. Using $$i$$ and $$j$$ to index spatial dimensions we get
 
@@ -379,16 +379,16 @@ $$
 \end{align*}
 $$
 
-__The Classical Connection.__ In CM momentum is mass times velocity, while in QM momentum is a differential operator.  How are these two connected, and is there a general way to connect CM to QM? 
+__The Classical Connection.__ In CM momentum is mass times velocity, while in QM momentum is a differential operator. How are these two connected, and is there a way to connect CM to QM in general? 
 
-The classical-quantum connection is made through expected values. For example, in QM the classical notion of velocity corresponds to 
+The closest we come to a classical-quantum connection is through expected values. For example, in QM the classical notion of velocity corresponds to 
 
 $$
 v \leftrightarrow \frac{d}{dt} \left< \mathbf{X} \right>
 $$
 
 
-To see why this is true, start by looking at the time-derivative in terms of the Hamiltonian commutator:
+To see why, start by looking at the time-derivative in terms of the Hamiltonian commutator:
 
 
 $$
@@ -396,7 +396,7 @@ $$
 $$
 
 
-In the absence of a potential the right side simplifies to $$\left< \mathbf{P} \right>/m$$, which is the classical result for velocity.
+In the absence of a potential the right side simplifies to $$\left< \mathbf{P} \right>/m$$, which is the classical result for velocity. It's interesting that in QM momentum is emphasized over velocity, and that velocity doesn't appear explicitly like in CM.
 
 What about when a potential _is_ present? In CM the dynamics are
 
@@ -426,17 +426,18 @@ Which leads to
 
 
 $$
-\frac{d}{dt}\left<\mathbf{P}\right> = -\left<\frac{d\mathbf{V}}{dx}\right>
+\frac{d}{dt}\left<\mathbf{P}\right> = -\left<\frac{dV}{dx}\right>
 $$
 
 
-So the quantum result matches the classical result in expectation, but note that on the right side the expectation is taken with respect to the entire derivative, which in general is different from taking it over $$x$$ and then differentiating. In other words,
+So the quantum result looks like the classical result in expectation, except that the right side takes the expectation over the entire derivative, which in general is different from taking it over $$x$$ and then differentiating. In other words,
 
 
 $$
-\left<\frac{d\mathbf{V}}{dx}\right> \neq \frac{d\mathbf{V}(\left<x\right>)}{d\left<x\right>}
+\left<\frac{dV}{dx}\right> \neq \frac{dV}{dx} \bigg|_{x=\left<x\right>}
 $$
 
+If the latter were true, we could think of a particle as classically "being" at $$\left<x\right>$$ and moving according to the potential it "feels" there, just like a classical particle does, but this is not the case. In QM, wavefunctions are spread-out in space and therefore feel potentials in a distributed way, so the entire potential function need be considered. If, however, the potential varies slowly relative to the width of a particle's wavefunction, then the particle will feel approximately the same potential throught and the $$\neq$$ above can be replaced by $$=$$, which is the classical limit.
 
 ## Last
 

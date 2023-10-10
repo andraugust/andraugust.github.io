@@ -10,23 +10,23 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. The Free Particle
 
-Conceivably the simples particle to model is one with no forces acting on it. This is the so-called _free particle_. Without forces there is no potential, so the Hamiltonian is
+Conceivably the simples particle to model is one with no forces acting on it. This is the so-called _free particle_. Without forces the Hamiltonian is
 
 
 $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
 $$
 
+Note that mass is treated as a fixed parameter, instead of as an operator like position or momentum. The reason is that mass, as far as has been experimentally shown, doesn't have measureable uncertainty associated with it, instead, it behaves like charge in the sense that it's an intrinsic propert of the particle, independent of measurement.
 
-Plugging this into the GSE gives
-
+Plugging $$\mathbf{H}$$ into the GSE yields the free particle PDE
 
 $$
 i\hbar\frac{\partial \psi(x,t)}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial^2 \psi(x,t)}{\partial x^2}
 $$
 
 
-This has the form of a diffusion equation with a complex coefficient, which we'll show gives rise to wave-like solutions that spread out over time.
+This has the form of a diffusion equation but with a complex coefficient, which we'll show gives rise to wave-like solutions that spread out over time.
 
 Separation of variables is used to solve the PDE. The result can be written several ways:
 
@@ -34,15 +34,15 @@ Separation of variables is used to solve the PDE. The result can be written seve
 $$
 \begin{align*}
 \psi(x,t) &= \left(Ae^{ix\sqrt{2mE}/\hbar} + Be^{-ix\sqrt{2mE}/\hbar}\right) e^{-iEt/\hbar} \\
-&= Ae^{i\left(k x - \omega t\right)} + Be^{-i\left(k x - \omega t\right)} \\
+&= Ae^{i\left(k x - \omega t\right)} + Be^{-i\left(k x + \omega t\right)} \\
 &= \left(A\cos\left(kx\right) + B\sin\left(kx\right)\right) e^{-i\omega t}
 \end{align*}
 $$
 
 
-where $$A$$ and $$B$$ are constants chosen to fit initial and/or boundary conditions, and $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
+where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a particular configuration, and $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
-By inspection, the solution contains two identical planewaves moving in opposite direction. The waves' phase velocity is
+By inspection, the solution contains two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The waves' phase velocity is
 
 
 $$
@@ -58,7 +58,7 @@ $$
 $$
 
 
-In terms of normalization, the wavefunction only normalizes when the particle is _bound_ by a potential. For example, if a particle is _un_-bound such that it can exist freely in $$(-\infty,\infty)$$, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles must be bound.
+In terms of normalization, this wavefunction only normalizes when the particle is _bound_ by a potential. For example, if a particle is _un_-bound such that it can exist freely in $$(-\infty,\infty)$$, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles must be bound.
 
 __Particle in a box.__ An example of a bound free particle is the so-called particle in a box. Consider the potential
 
@@ -69,7 +69,7 @@ V(x < 0) = V(x>L) = \infty
 $$
 
 
-This is a "potential well" which bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$, which, together with the normalization constraint, yields the solution
+This is a so-called potential well which bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$. This and normalization yields the solution
 
 
 $$
@@ -79,7 +79,7 @@ E_n &= \frac{\hbar^2 \pi^2}{2mL^2}n^2
 \end{align*}
 $$
 
-where $$n\in \{0,1,2,...\}$$. 
+where $$n\in \{1,2,...\}$$. 
 
 The first few wavefunctions at $$t=0$$ are shown below on the left with their probability densities on the right. Interestingly, the boundary conditions force solutions to be countable and have discrete energy levels.
 
@@ -100,9 +100,9 @@ $$
 \sum_n a_n^*(0)a_n(0) = 1
 $$
 
+Because the $$\psi_n$$ are an orthogonal set of functions, they can be summed to create an arbitrary wavefunction (up to the boundary conditions) shape within the well. 
 
 __Stationary states.__ Eigenfunctions of the Schrodinger equation are sometimes called _stationary states_. "Stationary" because their PDFs are time-independent. For example, if $$\psi_E(x)$$ is an eigenfunction of $$\mathbf{H}$$, then the wavefunction at time $$t$$ is
-
 
 $$
 \psi_E(x)e^{-iEt/\hbar}
@@ -124,7 +124,7 @@ $$
 \left| a\psi_1 \right|^2 + \left| b\psi_2 \right|^2 + a^*b\psi_1^*\psi_2\cos((\omega_1-\omega_2)t) + ab^*\psi_1\psi_2^*\sin((\omega_1-\omega_2)t)
 $$
 
-which _is_ time-dependent. But keep in mind that if the energy of this system is measured, it returns just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$) and the wavefunction collapses to  stationarity.
+which depends on time. But keep in mind that if the energy of this system is measured it will return just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$) and the wavefunction will collapse to the corresponding stationary state.
 
 __Mutual Information.__ Looking at the PDFs for the particle in a box, it's evident that some position measurements provide more information about the system's energy than others. For example, if position is measured to be near $$L/2$$, then energy is unlikely to be an even level. The reason is that $$\psi_n^*\psi_n(L/2) \approx 0$$ when $$n$$ is even.
 
@@ -142,7 +142,7 @@ I(X=x; E) &= \sum_n P(x,E_n)\log\left( \frac{P(x,E_n)}{P(x)P(E_n)} \right) \\
 &= \sum_n P(x,E_n)\log\left( \frac{P(x|E_n)}{P(x)} \right)
 \end{align*}
 $$
-For the probabilities the wavefunction defines $$P(X=x)$$ and the Boltzmann distribution can be used to model $$P(E=E_n)$$:
+The probability densities are as follows: the Boltzmann distribution can be used to model $$P(E=E_n)$$:
 $$
 \begin{align*}
 P(E_n) &\sim e^{-n^2} \\
@@ -151,11 +151,11 @@ P(x,E_n) &= P(x|E_n)P(E_n) \\
 P(x) &= \sum_n P(x, E_n) \\
 \end{align*}
 $$
-The resulting calculation of mutual information isn't neat, but in principal these equations enable it.
+Where the Boltzmann distribution is used to model $$P(E=E_n)$$.
 
 __The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model unbound free particles. The wavefunction has Gaussian shape so its density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles.
 
-It may seem like Gaussian wavepackets aren't physical because unbound wavefunctions don't normalize, and this is true—if the particle has a single definite energy then the wavefunction doesn't normalize. But linear combinations of wavefunctions weighted properly over many different energies _can_ normalize, and this is the way unbound free particles are constructed mathematically.
+It may seem that Gaussian wavepackets aren't physical because unbound wavefunctions don't normalize, and that's true—if an unbound free particle has a single definite energy then the wavefunction doesn't normalize. However, linear combinations of wavefunctions weighted properly over many different energies _can_ normalize, and this is the way unbound free particles are constructed mathematically.
 
 How does this work? Consider the general solution of the SE derived earlier for discrete vectors:
 $$
@@ -165,11 +165,11 @@ The continuous version is
 $$
 \psi(x,t) = \int \left( \int \psi_E^*(x) \psi(x,0) \,dx \right) \psi_E(x) e^{-iEt/\hbar} \, dp
 $$
-Where $$\psi(x,0)$$ is an arbitrary intial condition and the integrals run from $$-\infty$$ to $$+\infty$$. Normally,
+Where $$\psi(x,0)$$ is an intial condition and the integrals run from $$-\infty$$ to $$+\infty$$. Normally,
 $$
 \psi_E(x) = Ae^{ik x } + Be^{-ik x}
 $$
-but because the integral covers negative and positive values of $$x$$ we can just focus on one of the terms. We'll focus on the first term to get
+but because the integral covers negative and positive values of $$x$$ we can just focus on one of the terms without loss of generality. We'll focus on the first term. The result is
 $$
 \begin{align*}
 \psi(x,t) &= \int \left( \int e^{-ipx/\hbar} \psi(x,0) \,dx \right) e^{-iEt/\hbar} e^{ipx/\hbar} \, dp \\
@@ -177,9 +177,9 @@ $$
 &=\int \bar\psi(k,0)e^{i(kx-\omega t)}dk
 \end{align*}
 $$
-So the general solution is a sum of planewaves weighted by the "amount" of each wave present in the initial condition. Because each planewave moves at a different speed—its _phase speed_—the initial waveform spreads out over time, with the higher frequencies moving faster.
+So the general solution is a sum of planewaves weighted by the "amount" of each wave present in the initial condition. Because each planewave moves at a different speed—its _phase speed_—the initial waveform spreads out over time.
 
-To make a Gaussian wavepacket consider the following initial condition in momentum-space:
+To make a Gaussian wavepacket, consider the following initial condition in momentum-space:
 
 $$
 \bar\psi(p,0) = \frac{1}{(2\pi \sigma_p^2)^{1/4}} \exp (-\frac{(p-p_0)^2}{4\sigma_p^2})
@@ -245,7 +245,7 @@ $$
 i\frac{\partial \psi}{\partial t} = -\frac{\hbar}{2m} \frac{\partial^2 \psi}{\partial x^2} + \frac{m \omega^2}{2\hbar}x^2\psi
 $$
 
-As usual the solution approach is to find the energy eigenfunctions and then multiply them by the time-dependency factor $$\exp(-iE_it/\hbar)$$ and sum them up to make a general solution. 
+As usual the solution approach is to find the energy eigenfunctions and multiply them by the time-dependency factor $$\exp(-iE_it/\hbar)$$, then sum them to make a general solution. 
 
 
 The energy eigen-equation is
@@ -256,9 +256,9 @@ $$
 $$
 
 
-It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as they need to in order to represent physically meaningful states.
+It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as they need to in order for the wavfunction to represent physically meaningful states.
 
-Deriving the normalizable states requires a bit of math that isn't necessarily relevant to the physics, so I'll just present the results. The result is that for each $$0 \le n$$ the $$n$$th normalizable energy is
+Deriving the normalizable solutions requires a bit of math that isn't necessarily relevant to the physics, so I'll just present the result. The result is that for each $$0 \le n$$ the $$n$$th normalizable energy is
 
 
 $$
@@ -296,6 +296,8 @@ There are a few interesting things to notice…
 
 
 ## 5. Hydrogen atom
+
+
 
 
 
