@@ -28,8 +28,11 @@ $$
 
 This has the form of a diffusion equation but with a complex coefficient, which we'll show gives rise to wave-like solutions that spread out over time.
 
-Separation of variables is used to solve the PDE. The result can be written several ways:
-
+The PDE is solved using separation of variables. The solution is postulated to have the form 
+$$
+\psi(x,t) = X(x)T(t)
+$$
+Plugging this into the PDE and separating $$t$$ from $$x$$ yields two ODEs, one for each variable, along with a separation constant. The separation constant turns out to be $$E$$, and the resulting ODE solutions, when multiplied yield the overall solution which can be written several ways:
 
 $$
 \begin{align*}
@@ -42,7 +45,7 @@ $$
 
 where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a particular configuration, and $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
-By inspection, the solution contains two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The waves' phase velocity is
+By inspection, the solution consists of two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The waves' phase velocity is
 
 
 $$
@@ -155,7 +158,7 @@ Where the Boltzmann distribution is used to model $$P(E=E_n)$$.
 
 __The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model unbound free particles. The wavefunction has Gaussian shape so its density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles.
 
-It may seem that Gaussian wavepackets aren't physical because unbound wavefunctions don't normalize, and that's true—if an unbound free particle has a single definite energy then the wavefunction doesn't normalize. However, linear combinations of wavefunctions weighted properly over many different energies _can_ normalize, and this is the way unbound free particles are constructed mathematically.
+It may seem that Gaussian wavepackets aren't physical because unbound wavefunctions don't normalize, and that's true—if an unbound free particle has a single definite energy then the wavefunction doesn't normalize. However, linear combinations of wavefunctions weighted properly over many different energies _can_ normalize, and this is the way that unbound free particles are constructed mathematically.
 
 How does this work? Consider the general solution of the SE derived earlier for discrete vectors:
 $$
@@ -238,17 +241,17 @@ $$
 $$
 
 
-where $$\omega$$ is the oscillator's frequency parameter (not to be confused with a phase wave frequency). Plugging this into the GSE gives
+where $$\omega$$ is the oscillator's frequency parameter (not to be confused with a phase-wave frequency). Plugging this into the GSE gives
 
 
 $$
 i\frac{\partial \psi}{\partial t} = -\frac{\hbar}{2m} \frac{\partial^2 \psi}{\partial x^2} + \frac{m \omega^2}{2\hbar}x^2\psi
 $$
 
-As usual the solution approach is to find the energy eigenfunctions and multiply them by the time-dependency factor $$\exp(-iE_it/\hbar)$$, then sum them to make a general solution. 
+As usual the solution approach is to find the energy eigenfunctions and multiply them by the time-dependency factor $$\exp(-iE_it/\hbar)$$, then sum them up to make a general solution. 
 
 
-The energy eigen-equation is
+The energy eigen-equation (also called the "time-independent schrodinger equation") is
 
 
 $$
@@ -256,7 +259,7 @@ $$
 $$
 
 
-It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as they need to in order for the wavfunction to represent physically meaningful states.
+It turns out that this equation has a solution for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as is required for the wavfunction to represent physically meaningful states.
 
 Deriving the normalizable solutions requires a bit of math that isn't necessarily relevant to the physics, so I'll just present the result. The result is that for each $$0 \le n$$ the $$n$$th normalizable energy is
 
@@ -295,7 +298,48 @@ There are a few interesting things to notice…
 
 
 
-## 5. Hydrogen atom
+## 5. The Spherical Equation
+
+When it's natural to describe a quantum system in terms of sperical coordinates we can use $$r,\theta,\phi$$ instead of $$x,y,z$$. For spherical coordinates we use the convention
+$$
+0\le r < \infty \\
+0 \le \theta \le \pi \\
+0 \le \phi \le 2\pi
+$$
+
+The spherical TISE is
+$$
+\left(-\frac{\hbar^2}{2m}\nabla^2 + V(r)\right)\psi(r,\theta,\phi) = E\psi(r,\theta,\phi)
+$$
+where $$V$$ is assumed to depend only on $$r$$. Note that we need not consider the temporal component of the SE when changing coordinates. The reason is that the temporal factor is $$\exp(-iE_i t/\hbar)$$, regardless of which spatial coordinates we use. So the time-dependent part is already solved, we just need to solve the spatial part.
+
+The next step is to transforming $$\nabla^2$$ into spherical coordinates. The result is
+$$
+-\frac{\hbar^2}{2m}\frac{1}{r^2}\left[ \partial_r(r^2\,\partial_r\psi) + \frac{1}{\sin\theta} \, \partial_\theta(\sin\theta\,\partial_\theta\psi) +\frac{1}{\sin^2\theta}\,\partial_\phi^2\psi \right] + V(r)\psi = E\psi
+$$
+To solve this PDE we can use separation of variables, where we write $$\psi(r,\theta,\phi)=R(r)\Theta(\theta)\Phi(\phi)$$. This leads to three ODEs, one for each spatial dimension:
+$$
+\Phi''=m^2\Phi \\
+k\sin^2\theta-\frac{\sin^2\theta}{\Theta}(\Theta''+\cos\theta\sin\theta\,\Theta')=m^2 \\
+\frac{2rR'+r^2R''}{R} +\frac{2m}{\hbar^2}r^2(E-V(r))=k
+$$
+Here, $$m$$ and $$k$$ are constants that arise from separating the variables ($$m$$ is squared for convenience, the alternative is to not square $$m$$ and instead write a square-root everywhere it appears, but square-roots are annoying to draw and look at and I think there's pretty good consensus on that!). 
+
+The solution for $$\Phi$$ is a sinusoid, and because it's periodic, $$m$$ is forced to be an integer. 
+
+The solution for $$\Theta$$ is more involved. For now I'll just say that it only converges when $$k=l(l+1)$$, $$l \in \{0,1,2,...\}$$, and $$m \in \{-l,-l+1,...,l-1,l\}$$. So for a given $$l$$ there are $$2l+1$$ allowed values of $$m$$.
+
+Multiplied together, the angular functions are the so-called spherical harmonics $$Y_l^m(\theta,\phi)=\Theta(\theta)\Phi(\phi)$$, where $$l$$ and $$m$$ are quantum numbers. When building a solution, $$l$$ is generally chosen before $$m$$ (because the allowed values of $$m$$ depend on which $$l$$ was chosen). Spherical harmonics generally arise when the Laplacian is solved in polar coordinates, but note that they don't encode any real physics (other than perhaps angular periodicity). Everything physical—mass, energy, Plank's constant—is contained in the $$R$$ equation, so regardless of the potential we're working with we can just focus on solving for $$R$$ and then multiply $$R$$ by $$Y$$ to get the final solution.
+
+The $$R$$ ODE is simplified by defining $$u(r)=rR$$. The result is
+$$
+\left[-\frac{\hbar^2}{2m}\frac{d}{dr} + \frac{\hbar^2l(l+1)}{2m}\frac{1}{r^2} + V(r) \right]u(r) = Eu(r)
+$$
+If we interpret the effective potential as
+$$
+V_{\textnormal{eff}} = \frac{\hbar^2l(l+1)}{2m}\frac{1}{r^2} + V(r)
+$$
+then the radial equation looks just like the Cartesian SE, but with an extra term related to angular momentum. Keep in mind that $$u$$ must be zero as $$r \rarr 0$$, and $$u$$ needs to be divided by $$r$$ before being interpereted physically.
 
 
 
