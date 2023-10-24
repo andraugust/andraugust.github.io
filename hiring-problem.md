@@ -4,7 +4,7 @@ layout: default
 
 # The Hiring Problem
 
-Suppose you're interviewing candidates for a job and you want to hire the one that's most qualified. Due to obscure circumstances (that happen to make this an interesting math problem) you can only offer candidates a position immediately after you've interviewed them—you can't interview them all and return to the one you liked most—they've moved on, sorry. 
+Suppose you're interviewing candidates for a job and you want to hire the one that's most qualified. Due to obscure circumstances that happen to make this an interesting math problem, you can only offer candidates a position immediately after you've interviewed them—you can't interview everyone then return to the one you liked most—they've moved on. Sorry :( 
 
 In otherwords, as you're interviewing candidates you know how they each rank relative to those you've already seen, but not relative to everyone. Furthermore, if you decline to hire a candidate because you think a better candidate will come along after them and you're wrong, well, there's nothing you can do about it!
 
