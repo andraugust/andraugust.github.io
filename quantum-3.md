@@ -10,14 +10,14 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. The Free Particle
 
-Conceivably the simples particle to model is one with no forces acting on it. This is the so-called _free particle_. Without forces the Hamiltonian is
+Conceivably the simples particle to model is one with no forces on it. This is the so-called _free particle_. Without forces the Hamiltonian is
 
 
 $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
 $$
 
-Note that mass is treated as a fixed parameter, instead of as an operator like position or momentum. The reason is that mass, as far as has been experimentally shown, doesn't have measureable uncertainty associated with it, instead, it behaves like charge in the sense that it's an intrinsic propert of the particle, independent of measurement.
+Mass here is treated as a fixed parameter, instead of as an operator like position or momentum. The reason is that mass doesn't (seem to) have uncertainty associated with it. Instead, it behaves like charge in that it's intrinsic to the particle, independent of measurement.
 
 Plugging $$\mathbf{H}$$ into the GSE yields the free particle PDE
 
@@ -28,7 +28,7 @@ $$
 
 This has the form of a diffusion equation but with a complex coefficient, which we'll show gives rise to wave-like solutions that spread out over time.
 
-The PDE is solved using separation of variables. The solution is postulated to have the form 
+The PDE is solved using separation of variables, where the solution is assumed to have the form 
 $$
 \psi(x,t) = X(x)T(t)
 $$
@@ -43,9 +43,9 @@ $$
 $$
 
 
-where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a particular configuration, and $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
+where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a particular configuration. The wave parameters are $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
-By inspection, the solution consists of two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The waves' phase velocity is
+By inspection, the solution contains two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The waves' phase velocity is
 
 
 $$
@@ -61,7 +61,7 @@ $$
 $$
 
 
-In terms of normalization, this wavefunction only normalizes when the particle is _bound_ by a potential. For example, if a particle is _un_-bound such that it can exist freely in $$(-\infty,\infty)$$, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles must be bound.
+In terms of normalization, the wavefunction only normalizes when the particle in question is _bound_ by a potential. For example, if the particle is _un_-bound such that it can exist freely in $$(-\infty,\infty)$$, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles must be bound.
 
 __Particle in a box.__ An example of a bound free particle is the so-called particle in a box. Consider the potential
 
@@ -72,7 +72,7 @@ V(x < 0) = V(x>L) = \infty
 $$
 
 
-This is a so-called potential well which bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$. This and normalization yields the solution
+This is the so-called "potential well" because it bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$. Using this BC and normalizing yields
 
 
 $$
@@ -112,7 +112,7 @@ $$
 $$
 
 
-which depends on time, but the PDF doesn't. Note however that the _sum_ of stationary states _isn't_ stationary. For example, if $$\psi_1$$ and $$\psi_2$$ are stationary and normalized individually, then the sum
+which depends on time, but the PDF doesn't. Note however that the superposition of stationary states _isn't_ stationary. For example, if $$\psi_1$$ and $$\psi_2$$ are stationary and normalized individually, then the superposition
 
 
 $$
@@ -127,7 +127,7 @@ $$
 \left| a\psi_1 \right|^2 + \left| b\psi_2 \right|^2 + a^*b\psi_1^*\psi_2\cos((\omega_1-\omega_2)t) + ab^*\psi_1\psi_2^*\sin((\omega_1-\omega_2)t)
 $$
 
-which depends on time. But keep in mind that if the energy of this system is measured it will return just one of the energy eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$) and the wavefunction will collapse to the corresponding stationary state.
+which depends on time. But keep in mind that if the energy of the system is measured it returns just one of the eigenvalues $$E_1$$ or $$E_2$$ (corresponding to $$\omega_1$$ and $$\omega_2$$) and the wavefunction collapses to the corresponding stationary state.
 
 __Mutual Information.__ Looking at the PDFs for the particle in a box, it's evident that some position measurements provide more information about the system's energy than others. For example, if position is measured to be near $$L/2$$, then energy is unlikely to be an even level. The reason is that $$\psi_n^*\psi_n(L/2) \approx 0$$ when $$n$$ is even.
 
@@ -158,7 +158,7 @@ Where the Boltzmann distribution is used to model $$P(E=E_n)$$.
 
 __The Gaussian Wavepacket.__  The _Gaussian wavepacket_ is a common wavefunction used to model unbound free particles. The wavefunction has Gaussian shape so its density is Normal $$\psi^*\psi \sim N$$. This makes it ideal for modeling localized particles.
 
-It may seem that Gaussian wavepackets aren't physical because unbound wavefunctions don't normalize, and that's true—if an unbound free particle has a single definite energy then the wavefunction doesn't normalize. However, linear combinations of wavefunctions weighted properly over many different energies _can_ normalize, and this is the way that unbound free particles are constructed mathematically.
+It may seem like Gaussian wavepackets aren't physical because unbound wavefunctions don't normalize, and that's true—if an unbound free particle has a single definite energy then the wavefunction doesn't normalize. However, linear combinations of wavefunctions weighted properly over many different energies _can_ normalize, and this is how unbound free particles are constructed mathematically.
 
 How does this work? Consider the general solution of the SE derived earlier for discrete vectors:
 $$
@@ -168,7 +168,7 @@ The continuous version is
 $$
 \psi(x,t) = \int \left( \int \psi_E^*(x) \psi(x,0) \,dx \right) \psi_E(x) e^{-iEt/\hbar} \, dp
 $$
-Where $$\psi(x,0)$$ is an intial condition and the integrals run from $$-\infty$$ to $$+\infty$$. Normally,
+Where $$\psi(x,0)$$ is an intial condition and the integrals run from $$-\infty$$ to $$+\infty$$. Normally we have
 $$
 \psi_E(x) = Ae^{ik x } + Be^{-ik x}
 $$
@@ -233,7 +233,7 @@ What happens when a Gaussian wavepacket is measured? If its energy is measured t
 
 ## 2. Harmonic Oscillator
 
-The quantum harmonic oscillator is modeled with a quadratic potential energy function, just as the classical harmonic oscillator is. The Hamiltonian is
+The quantum harmonic oscillator is modeled with a quadratic potential just like its classical counterpart. The Hamiltonian is
 
 
 $$
@@ -241,17 +241,17 @@ $$
 $$
 
 
-where $$\omega$$ is the oscillator's frequency parameter (not to be confused with a phase-wave frequency). Plugging this into the GSE gives
+where $$\omega$$ is the oscillator's frequency parameter (not to be confused with phase frequency). Plugging this into the GSE gives
 
 
 $$
 i\frac{\partial \psi}{\partial t} = -\frac{\hbar}{2m} \frac{\partial^2 \psi}{\partial x^2} + \frac{m \omega^2}{2\hbar}x^2\psi
 $$
 
-As usual the solution approach is to find the energy eigenfunctions and multiply them by the time-dependency factor $$\exp(-iE_it/\hbar)$$, then sum them up to make a general solution. 
+As usual the solution approach is to find the energy eigenfunctions and multiply them by the time-dependent factor $$\exp(-iE_it/\hbar)$$, then sum the eigenfunctions to make a general solution. 
 
 
-The energy eigen-equation (also called the "time-independent schrodinger equation") is
+The energy eigenequation (also called the time-independent schrodinger equation TISE) is
 
 
 $$
@@ -259,7 +259,7 @@ $$
 $$
 
 
-It turns out that this equation has a solution for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as is required for the wavfunction to represent physically meaningful states.
+It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as needed for the wavfunction to be physically meaningful.
 
 Deriving the normalizable solutions requires a bit of math that isn't necessarily relevant to the physics, so I'll just present the result. The result is that for each $$0 \le n$$ the $$n$$th normalizable energy is
 
@@ -269,7 +269,7 @@ E_n = \left( n + \frac{1}{2} \right)\hbar\omega
 $$
 
 
-and the corresponding wavefunction is
+and the wavefunction is
 
 
 $$
@@ -290,6 +290,7 @@ There are a few interesting things to notice…
 * Probability densities are non-zero outside the potential energy curve, so the particle can be found _beyond_ the classically allowed region.
 * Inside the classically allowed region there are points where the density is zero, so the particle will _never_ be measured there even though it can be classically.
 * In the limit of large $$n$$ the quantum density approaches the classical density.
+* Succesive energy levels add one "bump" to the probability density.
 
 
 
@@ -300,7 +301,7 @@ There are a few interesting things to notice…
 
 ## 5. The Spherical Equation
 
-When it's natural to describe a quantum system in terms of sperical coordinates we can use $$r,\theta,\phi$$ instead of $$x,y,z$$. For spherical coordinates we use the convention
+When it's natural to describe a quantum system in terms of sperical coordinates we can use $$r,\theta,\phi$$ instead of $$x,y,z$$. For spherical coordinates the physics convention is
 $$
 0\le r < \infty \\
 0 \le \theta \le \pi \\
@@ -311,25 +312,25 @@ The spherical TISE is
 $$
 \left(-\frac{\hbar^2}{2m}\nabla^2 + V(r)\right)\psi(r,\theta,\phi) = E\psi(r,\theta,\phi)
 $$
-where $$V$$ is assumed to depend only on $$r$$. Note that we need not consider the temporal component of the SE when changing coordinates. The reason is that the temporal factor is $$\exp(-iE_i t/\hbar)$$, regardless of which spatial coordinates we use. So the time-dependent part is already solved, we just need to solve the spatial part.
+where $$V$$ is assumed to depend only on $$r$$. Note that we don't need to re-consider the temporal component of the SE when changing coordinates. The reason is that the temporal factor is $$\exp(-iE_i t/\hbar)$$, regardless of which spatial coordinates we use. So the time-dependent part is already solved, we just need to solve the spatial part and multiply it by this time factor to get the final wavefunction.
 
-The next step is to transforming $$\nabla^2$$ into spherical coordinates. The result is
+The next step is transforming $$\nabla^2$$ into spherical coordinates. The result is
 $$
 -\frac{\hbar^2}{2m}\frac{1}{r^2}\left[ \partial_r(r^2\,\partial_r\psi) + \frac{1}{\sin\theta} \, \partial_\theta(\sin\theta\,\partial_\theta\psi) +\frac{1}{\sin^2\theta}\,\partial_\phi^2\psi \right] + V(r)\psi = E\psi
 $$
-To solve this PDE we can use separation of variables, where we write $$\psi(r,\theta,\phi)=R(r)\Theta(\theta)\Phi(\phi)$$. This leads to three ODEs, one for each spatial dimension:
+To solve this PDE we can use separation of variables, where we assume $$\psi(r,\theta,\phi)=R(r)\Theta(\theta)\Phi(\phi)$$. This leads to three ODEs, one for each coordinate:
 $$
 \Phi''=m^2\Phi \\
 k\sin^2\theta-\frac{\sin^2\theta}{\Theta}(\Theta''+\cos\theta\sin\theta\,\Theta')=m^2 \\
 \frac{2rR'+r^2R''}{R} +\frac{2m}{\hbar^2}r^2(E-V(r))=k
 $$
-Here, $$m$$ and $$k$$ are constants that arise from separating the variables ($$m$$ is squared for convenience, the alternative is to not square $$m$$ and instead write a square-root everywhere it appears, but square-roots are annoying to draw and look at and I think there's pretty good consensus on that!). 
+Here, $$m$$ and $$k$$ are constants arising from the variable separation ($$m$$ is squared for convenience, the alternative is to not square $$m$$ and instead write a square-root everywhere it appears, but square-roots are annoying to draw and look at and I think there's pretty good consensus on that!). 
 
-The solution for $$\Phi$$ is a sinusoid, and because it's periodic, $$m$$ is forced to be an integer. 
+The solution for $$\Phi$$ is sinusoidal, and because it's periodic $$m$$ is forced to be an integer. 
 
-The solution for $$\Theta$$ is more involved. For now I'll just say that it only converges when $$k=l(l+1)$$, $$l \in \{0,1,2,...\}$$, and $$m \in \{-l,-l+1,...,l-1,l\}$$. So for a given $$l$$ there are $$2l+1$$ allowed values of $$m$$.
+The solution for $$\Theta$$ is more involved. I'll just say that it only converges when $$k=l(l+1)$$ where $$l \in \{0,1,2,...\}$$ and $$m \in \{-l,-l+1,...,l-1,l\}$$. So for a given $$l$$ there are $$2l+1$$ allowed values of $$m$$.
 
-Multiplied together, the angular functions are the so-called spherical harmonics $$Y_l^m(\theta,\phi)=\Theta(\theta)\Phi(\phi)$$, where $$l$$ and $$m$$ are quantum numbers. When building a solution, $$l$$ is generally chosen before $$m$$ (because the allowed values of $$m$$ depend on which $$l$$ was chosen). Spherical harmonics generally arise when the Laplacian is solved in polar coordinates, but note that they don't encode any real physics (other than perhaps angular periodicity). Everything physical—mass, energy, Plank's constant—is contained in the $$R$$ equation, so regardless of the potential we're working with we can just focus on solving for $$R$$ and then multiply $$R$$ by $$Y$$ to get the final solution.
+Multiplied together, the angular functions are the so-called spherical harmonics $$Y_l^m(\theta,\phi)=\Theta(\theta)\Phi(\phi)$$, where $$l$$ and $$m$$ are quantum numbers. When building a solution, $$l$$ is generally chosen before $$m$$ because the allowed values of $$m$$ depend on which $$l$$ was chosen. Spherical harmonics generally arise when the Laplacian is solved in polar coordinates, but note that they don't encode any real physics (other than perhaps angular periodicity). Everything physical—mass, energy, Plank's constant—is contained in the $$R$$ equation, so regardless of the potential we're working with we can focus on solving the $$R$$ ODE and then multiply the solution by $$Y$$ to get the overall spatial solution.
 
 The $$R$$ ODE is simplified by defining $$u(r)=rR$$. The result is
 $$
@@ -339,7 +340,7 @@ If we interpret the effective potential as
 $$
 V_{\textnormal{eff}} = \frac{\hbar^2l(l+1)}{2m}\frac{1}{r^2} + V(r)
 $$
-then the radial equation looks just like the Cartesian SE, but with an extra term related to angular momentum. Keep in mind that $$u$$ must be zero as $$r \rarr 0$$, and $$u$$ needs to be divided by $$r$$ before being interpereted physically.
+then the radial equation looks like the Cartesian SE, but with an extra term for angular momentum. Keep in mind that $$u$$ must be zero as $$r \rarr 0$$, and $$u$$ needs to be divided by $$r$$ before being interpereted physically.
 
 
 
