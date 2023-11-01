@@ -17,9 +17,9 @@ $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
 $$
 
-Mass here is treated as a fixed parameter, instead of as an operator like position or momentum. The reason is that mass doesn't (seem to) have uncertainty associated with it. Instead, it behaves like charge in that it's intrinsic to the particle, independent of measurement.
+Note that mass is treated as a fixed parameter instead of as an operator, like position or momentum. The reason is that the mass doesn't have measurement uncertainty associated with it. Instead, it behaves like charge in that it's intrinsic to the particle and independent of measurement.
 
-Plugging $$\mathbf{H}$$ into the GSE yields the free particle PDE
+Plugging $$\mathbf{H}$$ into the GSE yields the free particle TDSE
 
 $$
 i\hbar\frac{\partial \psi(x,t)}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial^2 \psi(x,t)}{\partial x^2}
@@ -330,9 +330,9 @@ The solution for $$\Phi$$ is sinusoidal, and because it's periodic $$m$$ is forc
 
 The solution for $$\Theta$$ is more involved. I'll just say that it only converges when $$k=l(l+1)$$ where $$l \in \{0,1,2,...\}$$ and $$m \in \{-l,-l+1,...,l-1,l\}$$. So for a given $$l$$ there are $$2l+1$$ allowed values of $$m$$.
 
-Multiplied together, the angular functions are the so-called spherical harmonics $$Y_l^m(\theta,\phi)=\Theta(\theta)\Phi(\phi)$$, where $$l$$ and $$m$$ are quantum numbers. When building a solution, $$l$$ is generally chosen before $$m$$ because the allowed values of $$m$$ depend on which $$l$$ was chosen. Spherical harmonics generally arise when the Laplacian is solved in polar coordinates, but note that they don't encode any real physics (other than perhaps angular periodicity). Everything physical—mass, energy, Plank's constant—is contained in the $$R$$ equation, so regardless of the potential we're working with we can focus on solving the $$R$$ ODE and then multiply the solution by $$Y$$ to get the overall spatial solution.
+Multiplied together, the angular functions are the so-called spherical harmonics $$Y_l^m(\theta,\phi)=\Theta(\theta)\Phi(\phi)$$, where $$l$$ and $$m$$ are quantum numbers. When building a solution, $$l$$ is generally chosen before $$m$$ because the allowed values of $$m$$ depend on which $$l$$ was chosen. Spherical harmonics generally arise when the Laplacian is solved in polar coordinates, but note that they don't encode any real physics (other than perhaps angular periodicity). Everything physical—mass, energy, Plank's constant—is in the $$R$$ equation. So regardless of the potential we're working with we can focus on solving the $$R$$ ODE and then multiply the solution by $$Y$$ to get the overall (spatial) solution.
 
-The $$R$$ ODE is simplified by defining $$u(r)=rR$$. The result is
+The $$R$$ ODE is simplified by changing variables $$u(r)=rR$$. The result is
 $$
 \left[-\frac{\hbar^2}{2m}\frac{d}{dr} + \frac{\hbar^2l(l+1)}{2m}\frac{1}{r^2} + V(r) \right]u(r) = Eu(r)
 $$

@@ -437,7 +437,7 @@ $$
 \left<\frac{dV}{dx}\right> \neq \frac{dV}{dx} \bigg|_{x=\left<x\right>}
 $$
 
-If the latter were true, we could think of a particle as classically "being" at $$\left<x\right>$$ and moving according to the potential it "feels" there, just like a classical particle does, but this is not the case. In QM, wavefunctions are spread-out in space and therefore feel potentials in a distributed way, so the entire potential function need be considered. If, however, the potential varies slowly relative to the width of a particle's wavefunction, then the particle will feel approximately the same potential throught and the $$\neq$$ above can be replaced by $$=$$, which is the classical limit.
+If the right-side were true, we could think of a particle as classically "being" at $$\left<x\right>$$ and moving according to the potential there, just like a classical particle does, but this isn't the case. In QM, wavefunctions are spread-out in space and therefore "feel" potentials as a distribution—the entire potential function needs to be considered. If, however, the potential is approximately the same across the width of the wavefunction then the $$\neq$$ can be replaced by $$=$$, which is the classical limit.
 
 ## Last
 

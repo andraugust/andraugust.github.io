@@ -1,0 +1,6 @@
+- Maxwell's demon is a thought experiment designed to demonstrate how work can be extracted from fluctuations in small (atomic scale) systems.
+- The existence of a demon suggests that heat can be converted to work at no energy cost, in contradiction to the second law of thermodynamics.
+- The contradiction can be resolved by proposing that there's an inherent energy cost to run the engine. The engine runs by 1) measuring the fluctuating system, 2) implementing an operation on the system, and 
+- …apparently measurements aren't necessarily dissipative, but erasing the demon's memory (?) is, and that resolves the apparent contradiction with the second law..
+- The demon collects information about the system and "processes" it, so it's important to know how energy and information processing are related. 
+- A state transition is said to be _reversible_ when the state at t is uniquely determined by the state at t+1. In otherwords, the state transition diagram has no arrows colliding.
