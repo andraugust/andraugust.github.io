@@ -24,23 +24,23 @@ So between CM and QM the notion of determinism changes, as does the notion of me
 
 Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and have finite or infinite dimension. An example of an infinite-dimensional vector is a continuous-valued function.
 
-Notationally, vectors in Hilbert space are drawn as kets $$\ket{A}$$ and have complex conjugates—called bras—drawn backward $$\ket{A}^{*} = \bra{A}$$. Vectors have inner products $$\bk{A}{B}^{*} = \bk{B}{A}$$, orthogonalities $$\bk{A}{B} = 0$$, and unit-normalization $$\bk{A}{A} = 1$$. The familiar vector properties of commutativity, associativity, distributivity and closedness are required to hold in order for a ket to be considered a proper vector. 
+In terms of notation, vectors in Hilbert space are drawn as kets $$\ket{\psi}$$ and have complex conjugates called bras that are drawn backward $$\ket{\psi}^{*} = \bra{\psi}$$. Vectors have inner products $$\bk{\psi}{\phi}^{*} = \bk{\phi}{\psi}$$, orthogonalities $$\bk{\psi}{\phi} = 0$$, and unit-normalization $$\bk{\psi}{\psi} = 1$$. The familiar vector properties of commutativity, associativity, distributivity and closedness are required to hold in order for a ket to be considered a proper vector. 
 
-A general quantum states is simply denoted as $$\ket{A}$$, but it's often useful to represent them explicitly in terms of components:
-
-
-$$
-\ket{A} = \sum_i a_i \ket{i}
-$$
-
-
-where $$\ket{i}$$ are orthonormal basis vectors and $$a_i$$ are complex components. Note that this way of representing $$\ket{A}$$ requires selecting a specific basis, and the values $$a_i$$ in general change from one basis to another.
-
-__Spin States.__ How is quantum spin represented in this formalism? Let $$\ket{+z}$$ and $$\ket{-z}$$ be orthonormal bases for the $$z$$ measurement such that an arbitrary state prior to measurement can be expressed as
+A general quantum state is simply denoted by $$\ket{\psi}$$, but it's often useful to represent them explicitly in terms of components:
 
 
 $$
-\ket{A} = a_+ \ket{+z} + a_- \ket{-z}
+\ket{\psi} = \sum_i a_i \ket{i}
+$$
+
+
+where $$\ket{i}$$ are orthonormal basis vectors and $$a_i$$ are complex components. Note that this way of representing $$\ket{\psi}$$ requires specifying a basis, and the value of each $$a_i$$ can change from one basis to another.
+
+__Spin States.__ How is spin represented with this notation? Let $$\ket{+z}$$ and $$\ket{-z}$$ be orthonormal bases for the $$z$$ measurement such that an arbitrary state prior to measurement is given by
+
+
+$$
+\ket{\psi} = a_+ \ket{+z} + a_- \ket{-z}
 $$
 
 
@@ -50,15 +50,15 @@ The values of $$a_+$$ and $$a_-$$ when squared and normalized represent measurem
 
 
 $$
-\sum_i a_i^*a_i = \bk{A}{A} = 1
+\sum_i a_i^*a_i = \bk{\psi}{\psi} = 1
 $$
 
 
-Because $$a_i = \bk{i}{A}$$, the probability of preparing $$\ket{i}$$ can be expressed as
+Because $$a_i = \bk{i}{\psi}$$, the probability of preparing $$\ket{i}$$ can be expressed as
 
 
 $$
-p_i = \lvert\bk{i}{A}\rvert^2 = \bk{A}{i}\bk{i}{A}
+p_i = \lvert\bk{i}{\psi}\rvert^2 = \bk{\psi}{i}\bk{i}{\psi}
 $$
 
 
@@ -107,7 +107,7 @@ The principles of QM are formulated around the idea of measureables, i.e., the o
 * Measurement outcomes (such as $$\pm1$$) are eigenvalues of these operators.
 * When an eigenvalue is measured the system is said to be _prepared_ in the corresponding eigenstate.
 * Distinguishable states are represented by orthogonal vectors.
-* If a system is in state $$\ket{A}$$ the probability of measuring $$\lambda$$ is $$p(\lambda)=  \lvert\bk{\lambda}{A}\rvert^2$$.
+* If a system is in state $$\ket{\psi}$$ the probability of measuring $$\lambda$$ is $$\lvert\bk{\lambda}{\psi}\rvert^2$$.
 
 Why Hermitian operators? Hermitian operators have a few desirable mathematical properties:
 
@@ -165,7 +165,7 @@ $$
 \end{align*}
 $$
 
-These matrices are interesting because they, along with the 2x2 identity matrix, form a basis with which any 2x2 Hermitian matrix can be expressed. In otherwords if $$\sigma_i$$ denotes a Pauli matrix (including the identity) and $$a_i$$ is a real coefficient, then
+These matrices are interesting because along with the 2x2 identity matrix they form a basis in which any 2x2 Hermitian matrix can be expressed. In otherwords if $$\sigma_i$$ denotes a Pauli matrix (including the identity) and $$a_i$$ is a real coefficient, then
 
 
 $$
@@ -185,7 +185,7 @@ Instead, their pairwise products are summarized in the following table:
 
 <center><img src="quantum/pauli.png" style="object-fit:contain;"></center>
 
-What can we do with these matrices? So far we've only measured spin along $$x$$, $$y$$, and $$z$$. These operators allow us to measure along any direction. This is done by taking the dot product of the Pauli matrices with the unit vector $$\hat{n}$$ that points in the direction of the measurement.
+What can we do with these matrices? So far we've only measured spin along $$x$$, $$y$$, and $$z$$, but these operators allow us to measure it along any direction. This is done by taking the dot product of the Pauli matrices with the unit vector $$\hat{n}$$ which points in the direction of measurement.
 
 For example, measuring in the direction $$\hat{n}=(1/\sqrt{2},1/\sqrt{2},0)$$, the operator is
 
@@ -199,7 +199,7 @@ $$
 $$
 
 
-Which has eigenvalues  $$\pm 1$$ and eigenvectors
+This operator has eigenvalues  $$\pm 1$$ and eigenvectors
 
 
 $$
@@ -210,7 +210,7 @@ $$
 $$
 
 
-These eigenvectors can be used to calculate the probability of measurement outcomes. For example, if the spin starts in $$\ket{+z}$$ the measurement probabilities are
+These eigenvectors can be used to calculate measurement outcome probabilities. For example, if the spin starts in $$\ket{+z}$$ the measurement probabilities are
 
 
 $$
@@ -218,30 +218,30 @@ P(+1) = \lvert \bk{+n}{+z} \rvert^2  = 1/2 \\
 P(-1) = \lvert \bk{-n}{+z} \rvert^2  = 1/2
 $$
 
-The two probabilities are equal because the measurement is taken at 45 degrees.
+These two probabilities are equal because the measurement happens to be taken at 45 degrees.
 
-__Sequential Measurement.__ What happens _after_ a measurement is made? The answer is that the particle "collapses to", or becomes "prepared in", one of the eigenstates of the corresponding operater. 
+__Sequential Measurement.__ What happens _after_ a measurement is made? The answer is that the particle "collapses to" or becomes "prepared in" one of the eigenstates of the corresponding operater. 
 
 For example, consider a particle with initial spin state (in the $$z$$ basis)
 
 
 $$
-\ket{A} = \begin{pmatrix} a \\ b \end{pmatrix}
+\ket{\psi} = \begin{pmatrix} a \\ b \end{pmatrix}
 $$
 
 
-If $$\sigma_x$$ is measured then the outcome probabilities prior to measurement are
+If $$\sigma_x$$ is measured, the outcome probabilities prior to measurement are
 
 
 $$
 \begin{align*}
-P(\sigma_x = +1) &= \lvert\bk{+x}{A}\rvert^2  = \frac{1}{2}(1+a^*b+ab^*) \\
+P(\sigma_x = +1) &= \lvert\bk{+x}{\psi}\rvert^2  = \frac{1}{2}(1+a^*b+ab^*) \\
 P(\sigma_x = -1) &= 1 - P(+1) = \frac{1}{2}(1-a^*b-ab^*)
 \end{align*}
 $$
 
 
-After measuring the state collapses to either $$\ket{+x}$$ or $$\ket{-x}$$. If $$\sigma_x$$ is measured again it's guaranteed to return the same state. On the other hand, if a different spin is measured, then the outcome probabilities are all $$1/2$$, as per the definition of each state. For example, if the first measurement returned $$\sigma_x = +1$$ and we measure $$\sigma_z$$, then the outcome probabilities are
+After measuring the state collapses to either $$\ket{+x}$$ or $$\ket{-x}$$. If $$\sigma_x$$ is measured again it's guaranteed to return the same state. On the other hand, if afterward the spin is measured in a different direction, then the outcome probabilities are all $$1/2$$, as per the definition of each state. For example, if the first measurement returned $$\sigma_x = +1$$ and we measure $$\sigma_z$$, then the outcome probabilities are
 
 
 $$
