@@ -1,12 +1,10 @@
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-$$\usepackage[table,xcdraw]{xcolor}$$
-
 ## Composite Systems & Entanglement
 
-__States.__ To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed state vectors. For example, if a composite system consists of two objects, one having 3 possible states and another having 2, then the composite system is spanned by $$3*2$$ basis vectors: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. Here, the first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together, two sub-system states describe a _single_ state of their composite system. 
+__States.__ To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed state vectors. For example, if a composite system consists of two objects, one having 3 possible states and another having 2, then the composite system is spanned by $$3*2$$ basis vectors: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. Here, the first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together, they describe a _single_ state of the composite system. 
 
-As with non-composite systems, a composite system's state is written as the linear combination of basis vectors. For example, if a composite system has two sub-systems (which is the number we'll exclusively look at), we get
+As with non-composite systems, states are linear combinations of basis vectors. For example, if a composite system has two subsystems (which is the number of subsystems we'll exclusively look at), we get
 $$
 \ket{\psi}=\sum_{ij}a_{ij}\ket{ij}
 $$
@@ -16,9 +14,9 @@ $$
 $$
 and coefficients have the usual probabilistic interperetation that $$\abs{a_{ij}}^2$$ is the probability that a measurement of the first system returns state $$i$$ and a measurement the second system returns state $$j$$.
 
-In terms of naming sub-systems, it's standard to call the first one Alice and the second one Bob, and if there's a third it's usually called Charlie.
+In terms of naming subsystems, it's standard to call the first one Alice and the second one Bob, and if there's a third it's usually called Charlie.
 
-__Observables.__ How are observables represented for composite systems? They're represented in the same way as for isolated systems—with operators. But now each sub-system has its own set of operators which act independently on the corresponding part of the sub-system.
+__Observables.__ How are observables represented for composite systems? They're represented in the same way as for isolated systems—with operators. But now each subsystem has its own set of operators which act independently on the corresponding part of the subsystem.
 
 For example, consider a sytem of two spins. The most general state is
 $$
@@ -36,18 +34,11 @@ $$
 \sigma_x \ket{\psi} &= a\ket{10} + b\ket{11} + c\ket{00} + d\ket{01} \\
 \end{align*}
 $$
-The pattern is that $$\sigma$$ acts according to what's in the first entry of the basis vector, and $$\tau$$ acts according to what's in the second entry. The full set of actions are shown below
-$$
-\begin{table}[]
-\begin{tabular}{
->{\columncolor[HTML]{C0C0C0}}l llll}
-x & \cellcolor[HTML]{C0C0C0}\ket{11} & \cellcolor[HTML]{C0C0C0}0 & \cellcolor[HTML]{C0C0C0}0 & \cellcolor[HTML]{C0C0C0}0 \\
-\sigma_z & \ket{11} & 0 & 0 & 0 \\
-1        & 2        & 3 & 4 & 5 \\
-0        & 0        & 0 & 0 & 0 \\
-0        & 0        & 0 & 0 & 0 \\
-0        & 0        & 0 & 0 & 0 \\
-0        & 0        & 0 & 0 & 0
-\end{tabular}
-\end{table}
-$$
+The pattern is that $$\sigma$$ acts according to what's in the first entry of the basis vector, and $$\tau$$ acts according to what's in the second entry. The table below summarizes the action of $$\sigma$$ on each basis
+
+| x            | $$\ket{0}$$ | $$\ket{1}$$ |
+| ------------ | ----------- | ----------- |
+| $$\sigma_x$$ | $$\ket{1}$$ | 2           |
+| $$\sigma_y$$ | 2           | 2           |
+| $$\sigma_z$$ | 2           | 2           |
+
