@@ -180,8 +180,9 @@ $$
 \sigma_i \sigma_j \neq \delta_{ij}
 $$
 
-
 Instead, their pairwise products are summarized in the following table:
+
+
 
 <center><img src="quantum/pauli.png" style="object-fit:contain;"></center>
 
