@@ -63,7 +63,7 @@ To calculate the probability that Alice or Bob measure a certain outcome, we sum
 
 $$
 \begin{align*}
-P(\sigma_z=-1) &= \sum_j \lvert \bke{0j}{\psi} \rvert^2 \\
+P(\sigma_z=-1) &= \sum_j \lvert \bk{0j}{\psi} \rvert^2 \\
 &= \lvert \bk{00}{\psi} \rvert^2 + \lvert \bk{01}{\psi} \rvert^2 \\
 &= \lvert a \rvert^2 + \lvert b \rvert^2 \\
 P(\sigma_z=+1) &= \sum_j \lvert \bk{1j}{\psi} \rvert^2 \\
@@ -103,5 +103,6 @@ $$
 a\ket{00} + b\ket{01}+c\ket{10}+d\ket{11}
 $$
 
+and Bob's probability calculations will be based on _this_ vector, while Alice's will be based on the updated vector $$\ket{\psi'}$$. It's important to note that this difference in knowledge between Alice and Bob is not due to Alice's measurement changing Bob's spin in any way, it's simply a matter of Alice knowing which of Bob's outcomes are still feasible given her knowledge of her system, information that Bob doesn't have access to.
 
-and Bob's probability calculations will be based on _this_ vector, while Alice's will be based on the updated vector $$\ket{\psi'}$$. It's important to note that this difference in knowledge between Alice and Bob is not due to Alice's measurement changing Bob's spin in any way, it's simply a matter of Alice knowing which of Bob's outcomes are still feasible given her knowledge of her system, while Bob is unaware. 
+When Bob measures his half of the system state collapses to one of the basis vectors and the measurement of the composite
