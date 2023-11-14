@@ -98,11 +98,11 @@ It's important to point out that states in QM have a very different interpretati
 
 The table below summarizes the respresentation of each spin component in the $$z$$-basis.
 
-|       | $$+$$                                                        | $$-$$                                                        |
-| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+|       |                            $$+$$                             |                            $$-$$                             |
+| :---: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | $$x$$ | $$\frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1  \end{pmatrix}$$  | $$\frac{1}{\sqrt{2}}\begin{pmatrix}  1 \\ -1  \end{pmatrix}$$ |
 | $$y$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix}$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}1 \\ -i  \end{pmatrix}$$ |
-| $$z$$ | $$\begin{pmatrix}1 \\ 0  \end{pmatrix}$$                     | $$\begin{pmatrix}0 \\ 1  \end{pmatrix}$$                     |
+| $$z$$ |           $$\begin{pmatrix}1 \\ 0  \end{pmatrix}$$           |           $$\begin{pmatrix}0 \\ 1  \end{pmatrix}$$           |
 
 As a final comment, note that multiplying states by a phase factor $$e^{i\theta}$$ where $$\theta$$ is real does nothing to change measurement probabilities.
 
