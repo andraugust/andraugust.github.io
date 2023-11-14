@@ -96,13 +96,29 @@ $$
 $$
 
 
-where the denominator is a normalization factor. Note that unless Alice tells Bob about her measurement result, this new state vector _belongs only to Alice_. Bob's model of the system is still the original vector
+where the denominator is a normalization factor. Note that unless Alice tells Bob about her measurement result, this new state _belongs only to Alice_. Bob's model of the system is still the original vector
 
 
 $$
 a\ket{00} + b\ket{01}+c\ket{10}+d\ket{11}
 $$
 
-and Bob's probability calculations will be based on _this_ vector, while Alice's will be based on the updated vector $$\ket{\psi'}$$. It's important to note that this difference in knowledge between Alice and Bob is not due to Alice's measurement changing Bob's spin in any way, it's simply a matter of Alice knowing which of Bob's outcomes are still feasible given her knowledge of her system, information that Bob doesn't have access to.
 
-When Bob measures his half of the system state collapses to one of the basis vectors and the measurement of the composite
+and Bob's probability calculations will be based on _this_ vector, while Alice's will be based on the updated $$\ket{\psi'}$$. It's important to note that this difference in knowledge between Alice and Bob is not due to Alice's measurement changing Bob's spin in any way, it's simply a matter of Alice knowing which of Bob's outcomes are still feasible given her knowledge of her system—information that Bob doesn't have access to.
+
+When Bob measures his half of the system, and Alice and Bob exchange measurement results, the state collapses to one of the basis vectors and the measurement of the composite system is complete.
+
+__Entanglement.__ The previous example raises an interesting question—do Alice and Bob always have to exchange measurements to determine the complete state of the system? The answer is no. For example, consider the state
+
+
+$$
+\frac{1}{\sqrt{2}} \left( \ket{10}-\ket{01} \right)
+$$
+
+
+In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and it sounds like the following classical scenario: Charlie has two cards, one with a $$0$$ on it and one with a $$1$$ on it. He shuffles the cards and gives one to Alice and the other to Bob. When Alice or Bob look at their card, they immediately know what the other person has. 
+
+Although this analogy sounds correct, it's wrong. The reason is that in quantum mechanics states aren't determined until they're measured, while in classical mechanics they are. For example, in classical mechanics it makes sense to say "Alice's card was $$0$$ before she looked at it", while in quantum mechanics this statement makes no sense—her card (or spin, or whatever) only acquires its value when she measures it. Furthermore, because Alice's spin and Bob's spin are entangled, Alice's measurement determines Bob's, and vice versa. 
+
+
+
