@@ -104,7 +104,7 @@ The table below summarizes the respresentation of each spin component in the $$z
 | $$y$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix}$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}1 \\ -i  \end{pmatrix}$$ |
 | $$z$$ |           $$\begin{pmatrix}1 \\ 0  \end{pmatrix}$$           |           $$\begin{pmatrix}0 \\ 1  \end{pmatrix}$$           |
 
-As a final comment, note that multiplying states by a phase factor $$e^{i\theta}$$ where $$\theta$$ is real does nothing to change measurement probabilities.
+As a final comment, note that multiplying any state by a factor of $$e^{i\theta}$$, where $$\theta$$ is real, does nothing to change measurement probabilities.
 
 ## 3. Principles
 
