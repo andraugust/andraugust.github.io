@@ -12,7 +12,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 One way to start understanding quantum mechanics is by comparing it to classical mechanics, and this is how Susskind's book begins—with a comparison between classical spin and its quantum analog, through a thought experiment.
 
-The experiment involves measure the spin of a particle using an apparatus that can be oriented in an arbitrary direction. The goal is to develop a model which captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement it returns. 
+The experiment involves measure the spin of a pamrticle using an apparatus that can be oriented in an arbitrary direction. The goal is to develop a model which captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement it returns. 
 
 For the classical system, suppose we orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Next, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Next, orient in the $$+x$$ direction and measure $$0$$. After more configurations and measurements we find that spin can be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$. Note we've assumed that spin is unaffected by measurements—spin is a physical state existing independent of the apparatus and measurements leave it unchanged. As we'll see this is not necessarily true in QM.
 
@@ -96,7 +96,15 @@ $$
 
 It's important to point out that states in QM have a very different interpretation compared to states in classical mechanics. In CM, states and measurements are the same thing: measuring the state $$(q,p)$$ returns the measurement $$(q,p)$$. In QM measuring the state $$\ket{+z}$$ does not return the measurement $$\ket{+z}$$, instead it returns a number, namely $$+1$$.
 
-As a final comment on states, note that multiplying them by a phase factor $$e^{i\theta}$$, where $$\theta$$ is real, does nothing to change outcome probabilities.
+The table below summarizes the respresentation of each spin component in the $$z$$-basis.
+
+|       | $$+$$                                                        | $$-$$                                                        |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| $$x$$ | $$\frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1  \end{pmatrix}$$  | $$\frac{1}{\sqrt{2}}\begin{pmatrix}  1 \\ -1  \end{pmatrix}$$ |
+| $$y$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix}$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}1 \\ -i  \end{pmatrix}$$ |
+| $$z$$ | $$\begin{pmatrix}1 \\ 0  \end{pmatrix}$$                     | $$\begin{pmatrix}0 \\ 1  \end{pmatrix}$$                     |
+
+As a final comment, note that multiplying states by a phase factor $$e^{i\theta}$$ where $$\theta$$ is real does nothing to change measurement probabilities.
 
 ## 3. Principles
 
