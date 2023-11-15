@@ -2,7 +2,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## Joint Systems & Entanglement
 
-To describe quantum systems composed of otherwise isolated systems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
+To describe quantum systems composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
 
 As with isolated systems, joint systems are represented by linear combinations of basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll exclusively look at in this post), we get
 
@@ -108,7 +108,7 @@ and Bob's probability calculations are based on _this_ vector, while Alice's are
 
 When Bob measures his half of the system, and Alice and Bob exchange measurement results, the state collapses to one of the basis vectors and the measurement of the joint system is complete.
 
-__Entanglement.__ Do Alice and Bob always have to come together and exchange measurement outcomes to know the complete state of the system? Interestingly, the answer is no. For example, consider the state
+__Entanglement.__ Do Alice and Bob always have to exchange measurement outcomes to know the complete state of the system? Interestingly, the answer is no. For example, consider the state
 
 
 $$
@@ -116,9 +116,9 @@ $$
 $$
 
 
-In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and it resembles the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, giving one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know which card the other person has. 
+In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and it resembles the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice, the other to Bob. When Alice or Bob look at their card they immediately know what the other person has. 
 
-Although this scenario seems the same as the quantum scenario, it's not. The reason is that in quantum mechanics states aren't determined until they're measured, while in classical mechanics they are. For example, in classical mechanics it makes sense to say "Alice's card was $$0$$ before she looked at it", while in quantum mechanics this statement makes no sense—her card (or spin, or whatever) only acquires its value when she measures it. Furthermore, because Alice's spin and Bob's spin are entangled, Alice's measurement _determines_ Bob's as well, and vice versa.
+Although this scenario seems the same as the quantum scenario, it's not. The reason is that in quantum mechanics states aren't determined until they're measured, while in classical mechanics they are. For example, in classical mechanics it makes sense to say "Alice's card was $$0$$ before she looked at it", while in quantum mechanics this statement makes no sense—her card (or spin, or whatever) only acquires its value when she measures it. Furthermore, because Alice's spin and Bob's spin are entangled, Alice's measurement _determines_ Bob's, as if Bob had measured his himself.
 
 Here are the other three entangled states…
 
@@ -156,7 +156,7 @@ $$
 
 Taking this inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but we can't do that because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need tensor products.
 
-Tensor products, specifically Kronecker products, are a type of matrix multiplication. For two $$2\cross2$$ matrices the tensor product is
+Tensor products, specifically Kronecker products, are a type of matrix multiplication. For two $$2\times2$$ matrices the tensor product is
 
 
 $$
@@ -167,7 +167,7 @@ a_{21}\mathbf{B} & a_{22}\mathbf{B}
 $$
 
 
-which is a $$4\cross4$$ matrix. For two $$2\cross1$$ vectors the tensor product is
+which is a $$4\times4$$ matrix. For two $$2\times1$$ vectors the tensor product is
 
 
 $$
@@ -178,7 +178,7 @@ $$
 Here's a short-list of tensor product properties:
 
 * The Kronecker product is a _type_ of tensor product. Tensor products are more general, but for the purpose of this discussion the Kronecker product does everything we need, so we simply refer to it as if it were _the_ tensor product.
-* If the first matrix is $$m\cross n$$ and the second is $$p\cross q$$, the tensor product is $$mp \cross nq$$.
+* If the first matrix is $$m\times n$$ and the second is $$p\times q$$, the tensor product is $$mp \times nq$$.
 * They don't commute in general.
 * They're associative.
 * They're distributive.
