@@ -121,36 +121,60 @@ In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$
 Although this scenario seems the same as the quantum scenario, it's not. The reason is that in quantum mechanics states aren't determined until they're measured, while in classical mechanics they are. For example, in classical mechanics it makes sense to say "Alice's card was $$0$$ before she looked at it", while in quantum mechanics this statement makes no sense—her card (or spin, or whatever) only acquires its value when she measures it. Furthermore, because Alice's spin and Bob's spin are entangled, Alice's measurement _determines_ Bob's as well, and vice versa.
 
 Here are the other three entangled states…
+
+
 $$
 \frac{1}{\sqrt{2}} \left( \ket{01}+\ket{10} \right) \\
 \frac{1}{\sqrt{2}} \left( \ket{00}+\ket{11} \right) \\
 \frac{1}{\sqrt{2}} \left( \ket{11}-\ket{00} \right)
 $$
+
+
 __Tensor Products.__ Going back to probabilities, suppose we want to calculate $$P(\sigma_y=+1)$$. If the system is non-joint we know how to do this. We just calculate
+
+
 $$
 \lvert \bk{+y}{\psi} \rvert^2
 $$
+
+
 where
+
+
 $$
 \ket{\psi} = a\ket{0} + b\ket{1} = \begin{pmatrix}  b \\ a  \end{pmatrix}
 $$
+
+
 and
+
+
 $$
 \ket{+y} = \frac{1}{\sqrt{2}}\left( i\ket{0} + \ket{1} \right) = \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix}
 $$
+
+
 Taking this inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but we can't do that because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need tensor products.
 
 Tensor products, specifically Kronecker products, are a type of matrix multiplication. For two $$2\cross2$$ matrices the tensor product is
+
+
 $$
 \mathbf{A} \otimes \mathbf{B} = \begin{pmatrix}
 a_{11}\mathbf{B} & a_{12}\mathbf{B} \\ 
 a_{21}\mathbf{B} & a_{22}\mathbf{B} 
 \end{pmatrix}
 $$
- which is a $$4\cross4$$ matrix. For two $$2\cross1$$ vectors the tensor product is
+
+
+which is a $$4\cross4$$ matrix. For two $$2\cross1$$ vectors the tensor product is
+
+
 $$
 \ket{\psi} \otimes \ket{\phi} = \begin{pmatrix}  \psi_1 \\ \psi_2  \end{pmatrix} \otimes \begin{pmatrix}  \phi_1 \\ \phi_2  \end{pmatrix} = \begin{pmatrix}  \psi_1\phi_1 \\ \psi_1\phi_2 \\ \psi_2\phi_1 \\ \psi_2\phi_2 \end{pmatrix}
 $$
+
+
 Here's a short-list of tensor product properties:
 
 * The Kronecker product is a _type_ of tensor product. Tensor products are more general, but for the purpose of this discussion the Kronecker product does everything we need, so we simply refer to it as if it were _the_ tensor product.
@@ -164,6 +188,8 @@ Here's a short-list of tensor product properties:
 How does this relate back to quantum mechanics? The answer is that joint quantum states are really tensor product states. For example, what we've called $$\ket{01}$$ is really $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma$$ is really $$\sigma \otimes I$$, and $$\tau$$ is really $$I \otimes \tau$$. 
 
 Looked at in terms of tensor products we see why Alice's operator acts only on her part of the system. For example,
+
+
 $$
 \begin{align*}
 \sigma\ket{ab} &\rarr (\sigma \otimes I)(\ket{a} \otimes \ket{b}) \\
@@ -171,11 +197,19 @@ $$
 &= (\sigma \ket{a}) \otimes \ket{b}
 \end{align*}
 $$
+
+
 The same is true for Bob. Tensor products also capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute:
+
+
 $$
 [\sigma_i,\sigma_j] = 2i\epsilon_{ijk}\sigma_k
 $$
+
+
 so it seems that Alice and Bob's measurements _aren't_ compatible, and they inherently disturb the other's spin when they measure their own. But spin tensors _do_ commute:
+
+
 $$
 \begin{align*}
 [\cdot,\cdot] &= (\sigma \otimes I)(I\otimes \tau)-(I\otimes \tau)(\sigma\otimes I) \\
@@ -185,6 +219,8 @@ $$
 \end{align*}
 $$
 
+
+So Alice and Bob can in-fact take independent measurements.
 
 
 
