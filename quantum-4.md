@@ -108,7 +108,7 @@ and Bob's probability calculations are based on _this_ vector, while Alice's are
 
 When Bob measures his half of the system, and Alice and Bob exchange measurement results, the state collapses to one of the basis vectors and the measurement of the joint system is complete.
 
-__Entanglement.__ Do Alice and Bob always have to exchange measurement outcomes to know the complete state of the system? Interestingly, the answer is no. For example, consider the state
+__Entanglement.__ Do Alice and Bob always have to exchange measurement outcomes to know the complete state? Interestingly, the answer is no. For example, consider the state
 
 
 $$
@@ -154,9 +154,9 @@ $$
 $$
 
 
-Taking this inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but we can't do that because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need tensor products.
+Taking this inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but we can't do that because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need a mathematical thing called _tensor products_.
 
-Tensor products, specifically Kronecker products, are a type of matrix multiplication. For two $$2\times2$$ matrices the tensor product is
+Tensor products, specifically Kronecker products, are a type of matrix multiplication. For two $$2\times2$$ matrices the tensor product is defined as
 
 
 $$
@@ -185,34 +185,34 @@ Here's a short-list of tensor product properties:
 * Transpose and conjugate transpose distribute: $$(\mathbf{A} \otimes \mathbf{B})^\dagger = \mathbf{A}^\dagger \otimes \mathbf{B}^\dagger$$
 * They have a so-called mixed product where $$(\mathbf{A} \otimes \mathbf{B})(\mathbf{C} \otimes \mathbf{D}) = (\mathbf{A}\mathbf{C}) \otimes (\mathbf{B}\mathbf{D})$$ 
 
-How does this relate back to quantum mechanics? The answer is that joint quantum states are really tensor product states. For example, what we've called $$\ket{01}$$ is really $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma$$ is really $$\sigma \otimes I$$, and $$\tau$$ is really $$I \otimes \tau$$. 
+So what does this have to do with quantum mechanics? The answer is that joint quantum states are really tensor product states. For example, what we've called $$\ket{01}$$ is really $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma$$ is really $$\sigma \otimes I$$, and $$\tau$$ is really $$I \otimes \tau$$. 
 
 Looked at in terms of tensor products we see why Alice's operator acts only on her part of the system. For example,
 
 
 $$
 \begin{align*}
-\sigma\ket{ab} &\rarr (\sigma \otimes I)(\ket{a} \otimes \ket{b}) \\
+\sigma\ket{ab} &\rightarrow (\sigma \otimes I)(\ket{a} \otimes \ket{b}) \\
 &= (\sigma \ket{a}) \otimes (I \ket{b}) \\
 &= (\sigma \ket{a}) \otimes \ket{b}
 \end{align*}
 $$
 
+The same is true for Bob. 
 
-The same is true for Bob. Tensor products also capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute:
-
+Tensor products also capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute:
 
 $$
 [\sigma_i,\sigma_j] = 2i\epsilon_{ijk}\sigma_k
 $$
 
 
-so it seems that Alice and Bob's measurements _aren't_ compatible, and they inherently disturb the other's spin when they measure their own. But spin tensors _do_ commute:
+so it seems that Alice and Bob's measurements _aren't_ compatible, and they inherently disturb eachother's spin. But spin tensors _do_ commute:
 
 
 $$
 \begin{align*}
-[\cdot,\cdot] &= (\sigma \otimes I)(I\otimes \tau)-(I\otimes \tau)(\sigma\otimes I) \\
+[\sigma,\tau] &\rightarrow (\sigma \otimes I)(I\otimes \tau)-(I\otimes \tau)(\sigma\otimes I) \\
 &= \sigma I \otimes I\tau - I\sigma \otimes \tau I \\
 &= \sigma \otimes\tau - \sigma\otimes \tau \\
 &= 0
