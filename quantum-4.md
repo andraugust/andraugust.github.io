@@ -1,8 +1,8 @@
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-## Joint Systems & Entanglement
+## Quantum Mechanics III: Joint Systems & Entanglement
 
-To describe quantum systems composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
+To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
 
 As with isolated systems, joint systems are represented by linear combinations of basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll exclusively look at in this post), we get
 
@@ -187,7 +187,7 @@ Here's a short-list of tensor product properties:
 
 So what does this have to do with quantum mechanics? The answer is that joint quantum states are really tensor product states. For example, what we've called $$\ket{01}$$ is really $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma$$ is really $$\sigma \otimes I$$, and $$\tau$$ is really $$I \otimes \tau$$. 
 
-Looked at in terms of tensor products we see why Alice's operator acts only on her part of the system. For example,
+Looked at in terms of tensor products we see that Alice's operator acts only on her part of the system. For example,
 
 
 $$
@@ -198,6 +198,7 @@ $$
 \end{align*}
 $$
 
+
 The same is true for Bob. 
 
 Tensor products also capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute:
@@ -207,7 +208,7 @@ $$
 $$
 
 
-so it seems that Alice and Bob's measurements _aren't_ compatible, and they inherently disturb eachother's spin. But spin tensors _do_ commute:
+So it seems that Alice and Bob's measurements _aren't_ compatible and inherently disturb eachother, but spin tensors _do_ commute:
 
 
 $$
@@ -220,7 +221,47 @@ $$
 $$
 
 
-So Alice and Bob can in-fact take independent measurements.
+Therefore Alice and Bob do in-fact make independent measurements.
+
+Going back to the probability calculation, now armed with tensor products, we get:
+
+
+$$
+P(\sigma_y = +1) = \lvert (\bra{+y} \otimes \bra{0}) \ket{\psi} \rvert^2 + \lvert (\bra{+y} \otimes \bra{1}) \ket{\psi} \rvert^2
+$$
+
+
+where
+
+
+$$
+\begin{align*}
+\ket{+y} \otimes \ket{0} &= \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1  \end{pmatrix} \\ \\
+&= \frac{1}{\sqrt{2}} \begin{pmatrix}  0 \\ 1 \\ 0 \\ i  \end{pmatrix}
+\end{align*}
+$$
+
+
+and
+
+
+$$
+\begin{align*}
+\ket{+y} \otimes \ket{1} &= \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0  \end{pmatrix} \\ \\
+&= \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ 0 \\ i \\ 0  \end{pmatrix}
+\end{align*}
+$$
+
+
+Using $$\ket{\psi} = \begin{pmatrix} d & c & b & a \end{pmatrix}^T$$ the result is
+
+
+$$
+P(\sigma_y = +1) = \frac{1}{2}\lvert c-ia \rvert^2 + \frac{1}{2}\lvert d-ib \rvert^2
+$$
+
+
+Computing the probability of the opposite measurement, we find that $$P(\sigma_y=+1) + P(\sigma_y=-1) =1$$, as expected.
 
 
 
