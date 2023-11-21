@@ -96,9 +96,9 @@ $$
 
 It's important to point out that states in QM have a very different interpretation compared to states in classical mechanics. In CM, states and measurements are the same thing: measuring the state $$(q,p)$$ returns the measurement $$(q,p)$$. In QM measuring the state $$\ket{+z}$$ does not return the measurement $$\ket{+z}$$, instead it returns a number, namely $$+1$$.
 
-The table below summarizes the respresentation of each spin component in the $$z$$-basis.
+The table below lists each spin eigenvector represented in the $$z$$-basis, the header is the corresponding eigenvalue.
 
-|       |                            $$+$$                             |                            $$-$$                             |
+|       |                            $$+1$$                            |                            $$-1$$                            |
 | :---: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | $$x$$ | $$\frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1  \end{pmatrix}$$  | $$\frac{1}{\sqrt{2}}\begin{pmatrix}  1 \\ -1  \end{pmatrix}$$ |
 | $$y$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix}$$ | $$\frac{1}{\sqrt{2}} \begin{pmatrix}1 \\ -i  \end{pmatrix}$$ |

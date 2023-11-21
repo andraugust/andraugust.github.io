@@ -20,7 +20,7 @@ $$
 $$
 
 
-and coefficients have the usual probabilistic interperetation: $$\lvert a_{ij} \rvert^2$$ is the probability that a measurement of the first system returns state $$i$$ and a measurement the second system returns state $$j$$.
+and coefficients have the usual probabilistic interpretation: $$\lvert a_{ij} \rvert^2$$ is the probability that a measurement of the first system returns state $$i$$ and a measurement the second system returns state $$j$$.
 
 In terms of naming conventions, it's standard to call the first subsystem Alice and the second subsystem Bob, and if there's a third it's called Charlie.
 
@@ -36,37 +36,35 @@ $$
 
 In terms of notation I'm using $$0$$ to represent spin-down and $$1$$ to represent spin-up. Also, I'm working in the $$z$$-basis, so what I called $$\ket{+z}$$ in the first set of notes I'm now calling $$\ket{1}$$. The reason for this change is that it's much easier to write $$\ket{11}$$ instead of $$\ket{+z+z}$$, etc.
 
-Alice and Bob have their own separate operaters, corresponding to their observables. In particular, Alice has $$\sigma_x$$, $$\sigma_y$$, $$\sigma_z$$, and Bob has $$\tau_x$$, $$\tau_y$$, $$\tau_z$$. In terms of notation, $$\sigma$$ and $$\tau$$ both represent spin observables, but different symbols are needed to distinguish Alice's from Bob's. An alternative notation is $$\sigma_x^A$$ and $$\sigma_y^B$$, but I prefer writing it without superscripts.
-
-So what do these operators do to states? Here are a few examples:
+Alice and Bob have their own separate operators, corresponding to their observables. In particular, Alice has $$\sigma_x^A$$, $$\sigma_y^A$$, $$\sigma_z^A$$, and Bob has $$\sigma_x^B$$, $$\sigma_y^B$$, $$\sigma_z^B$$. So what do these operators do to states? Here are a few examples:
 
 
 $$
 \begin{align*}
-\sigma_z \ket{\psi} &= -a\ket{00} - b\ket{01} + c\ket{10} + d\ket{11} \\
-\tau_z \ket{\psi} &= -a\ket{00} + b\ket{01} - c\ket{10} + d\ket{11} \\
-\sigma_x \ket{\psi} &= a\ket{10} + b\ket{11} + c\ket{00} + d\ket{01} \\
+\sigma_z^A \ket{\psi} &= -a\ket{00} - b\ket{01} + c\ket{10} + d\ket{11} \\
+\sigma_x^A \ket{\psi} &= a\ket{10} + b\ket{11} + c\ket{00} + d\ket{01} \\
+\sigma_z^B \ket{\psi} &= -a\ket{00} + b\ket{01} - c\ket{10} + d\ket{11} \\
 \end{align*}
 $$
 
 
-The pattern is that $$\sigma$$ acts only on Alice's part of each basis vector and $$\tau$$ acts only on Bob's part. The table below summarizes the action of each operator on each basis. 
+The pattern is that $$\sigma^A$$ acts only on Alice's part of each basis vector and $$\sigma^B$$ acts only on Bob's part. The table below summarizes the action of each operator on each basis. 
 
-|                            |  $$\ket{0}$$  | $$\ket{1}$$  |
-| :------------------------: | :-----------: | :----------: |
-| $$\sigma_x$$ or $$\tau_x$$ |  $$\ket{1}$$  | $$\ket{0}$$  |
-| $$\sigma_y$$ or $$\tau_y$$ | $$-i\ket{1}$$ | $$i\ket{0}$$ |
-| $$\sigma_z$$ or $$\tau_z$$ | $$-\ket{0}$$  | $$\ket{1}$$  |
+|              |  $$\ket{0}$$  | $$\ket{1}$$  |
+| :----------: | :-----------: | :----------: |
+| $$\sigma_x$$ |  $$\ket{1}$$  | $$\ket{0}$$  |
+| $$\sigma_y$$ | $$-i\ket{1}$$ | $$i\ket{0}$$ |
+| $$\sigma_z$$ | $$-\ket{0}$$  | $$\ket{1}$$  |
 
 To calculate the probability that Alice or Bob measure a certain outcome, we sum the probabilities over all the ways the outcome can be measured. For example, for Alice
 
 
 $$
 \begin{align*}
-P(\sigma_z=-1) &= \sum_j \lvert \bk{0j}{\psi} \rvert^2 \\
+P_z(-1) &= \sum_j \lvert \bk{0j}{\psi} \rvert^2 \\
 &= \lvert \bk{00}{\psi} \rvert^2 + \lvert \bk{01}{\psi} \rvert^2 \\
 &= \lvert a \rvert^2 + \lvert b \rvert^2 \\
-P(\sigma_z=+1) &= \sum_j \lvert \bk{1j}{\psi} \rvert^2 \\
+P_z(+1) &= \sum_j \lvert \bk{1j}{\psi} \rvert^2 \\
 &= \lvert \bk{10}{\psi} \rvert^2 + \lvert \bk{11}{\psi} \rvert^2 \\
 &= \lvert c \rvert^2 + \lvert d \rvert^2
 \end{align*}
@@ -78,10 +76,10 @@ For Bob
 
 $$
 \begin{align*}
-P(\tau_z=-1) &= \sum_j \lvert \bk{j0}{\psi} \rvert^2 \\
+P_z(-1) &= \sum_j \lvert \bk{j0}{\psi} \rvert^2 \\
 &= \lvert \bk{00}{\psi} \rvert^2 + \lvert \bk{10}{\psi} \rvert^2 \\
 &= \lvert a \rvert^2 + \lvert c \rvert^2 \\
-P(\tau_z=+1) &= \sum_j \lvert \bk{j1}{\psi} \rvert^2 \\
+P_z(+1) &= \sum_j \lvert \bk{j1}{\psi} \rvert^2 \\
 &= \lvert \bk{01}{\psi} \rvert^2 + \lvert \bk{11}{\psi} \rvert^2 \\
 &= \lvert b \rvert^2 + \lvert d \rvert^2
 \end{align*}
@@ -118,9 +116,9 @@ $$
 
 In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and it resembles the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know what the other person has. 
 
-Although this scenario seems the same as the quantum scenario, it's not. The reason is that in quantum mechanics states aren't determined until they're measured, while in classical mechanics they are. For example, in classical mechanics it makes sense to say "Alice's card was $$0$$ before she looked at it", while in quantum mechanics this statement makes no sense—her card (or spin, or whatever) only acquires its value when she measures it. Furthermore, because the spins are entangled, Alice's measurement _determines_ Bob's, just as if Bob had measured his himself.
+Although this "classical entanglement" scenario seems the same as its quantum analog, it really isn't. The reason is because in quantum mechanics measurements influence states, while in classical mechanics they don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, something that doesn't happen in classical mechanics. Furthermore, because the spins are entangled, Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so Alice gets two bits for the price of one.
 
-Here are the other three possible entangled states for a two-spin system, they're called the _triplet states_
+Here are the other possible entangled states for a two-spin system, they're called the _triplet states_
 
 
 $$
@@ -130,7 +128,7 @@ $$
 $$
 
 
-__Tensor Products.__ Going back to probability calculations, suppose we want to know $$P(\sigma_y=+1)$$. If the system is isolated we know how to calculate this. It's just
+__Tensor Products.__ Going back to probability calculations, suppose we want to know $$P_y(+1)$$. If the system is isolated then we know how to calculate this, it's just
 
 
 $$
@@ -185,14 +183,14 @@ Here's a short-list of tensor product properties:
 * Transpose and conjugate transpose distribute: $$(\mathbf{A} \otimes \mathbf{B})^\dagger = \mathbf{A}^\dagger \otimes \mathbf{B}^\dagger$$
 * They have a so-called mixed product where $$(\mathbf{A} \otimes \mathbf{B})(\mathbf{C} \otimes \mathbf{D}) = (\mathbf{A}\mathbf{C}) \otimes (\mathbf{B}\mathbf{D})$$ 
 
-So what does this have to do with quantum mechanics? The answer is that it's really useful to represent joint quantum states as tensor products. For example, what we've called $$\ket{01}$$ can be written $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma$$ can be written $$\sigma \otimes I$$, and $$\tau$$ can be written $$I \otimes \tau$$. 
+So what does this have to do with quantum mechanics? The answer is that it's very useful to represent joint quantum states as tensor products. For example, what we've called $$\ket{01}$$ can be written $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma^A$$ can be written $$\sigma \otimes I$$, and $$\sigma^B$$ can be written $$I \otimes \sigma$$. 
 
-Looked at in terms of tensor products we see that indeed Alice's operator acts only on her part of the system. For example,
+Looked at in terms of tensor products we see that Alice's operator indeed acts only on her part of the system. For example,
 
 
 $$
 \begin{align*}
-\sigma\ket{ab} &\rightarrow (\sigma \otimes I)(\ket{a} \otimes \ket{b}) \\
+\sigma^A\ket{ab} &\rightarrow (\sigma \otimes I)(\ket{a} \otimes \ket{b}) \\
 &= (\sigma \ket{a}) \otimes (I \ket{b}) \\
 &= (\sigma \ket{a}) \otimes \ket{b}
 \end{align*}
@@ -207,14 +205,14 @@ $$
 $$
 
 
-So it seems that Alice and Bob's measurements _aren't_ compatible and inherently disturb eachother, but spin tensors _do_ commute:
+So it seems that Alice and Bob's measurements _aren't_ compatible and inherently disturb each other, but the tensor versions _do_ commute:
 
 
 $$
 \begin{align*}
-[\sigma,\tau] &\rightarrow (\sigma \otimes I)(I\otimes \tau)-(I\otimes \tau)(\sigma\otimes I) \\
-&= \sigma I \otimes I\tau - I\sigma \otimes \tau I \\
-&= \sigma \otimes\tau - \sigma\otimes \tau \\
+[\sigma^A,\sigma^B] &\rightarrow (\sigma \otimes I)(I\otimes \sigma)-(I\otimes \sigma)(\sigma\otimes I) \\
+&= \sigma I \otimes I\sigma - I\sigma \otimes \sigma I \\
+&= \sigma \otimes\sigma - \sigma\otimes \sigma \\
 &= 0
 \end{align*}
 $$
@@ -222,11 +220,11 @@ $$
 
 Therefore Alice and Bob do in-fact make independent measurements.
 
-Going back to the probability calculation, now armed with tensor products, we get:
+Going back to the probability calculation, now armed with tensor products, we can write
 
 
 $$
-P(\sigma_y = +1) = \lvert (\bra{+y} \otimes \bra{0}) \ket{\psi} \rvert^2 + \lvert (\bra{+y} \otimes \bra{1}) \ket{\psi} \rvert^2
+P_y(+1) = \lvert (\bra{+y} \otimes \bra{0}) \ket{\psi} \rvert^2 + \lvert (\bra{+y} \otimes \bra{1}) \ket{\psi} \rvert^2
 $$
 
 
@@ -234,10 +232,7 @@ where
 
 
 $$
-\begin{align*}
-\ket{+y} \otimes \ket{0} &= \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1  \end{pmatrix} \\ \\
-&= \frac{1}{\sqrt{2}} \begin{pmatrix}  0 \\ 1 \\ 0 \\ i  \end{pmatrix}
-\end{align*}
+\ket{+y} \otimes \ket{0} = \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1  \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix}  0 \\ 1 \\ 0 \\ i  \end{pmatrix}
 $$
 
 
@@ -245,22 +240,77 @@ and
 
 
 $$
+\ket{+y} \otimes \ket{1} = \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0  \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ 0 \\ i \\ 0  \end{pmatrix}
+$$
+
+
+Using $$\ket{\psi} = \begin{pmatrix} d & c & b & a \end{pmatrix}^T$$ we get
+
+
+$$
+P_y(+1) = \frac{1}{2}\lvert c-ia \rvert^2 + \frac{1}{2}\lvert d-ib \rvert^2
+$$
+
+
+As a sanity check, we can compute $$P_y(-1)$$ by this same method and find that $$P_y(+1) + P_y(-1) =1$$, as expected.
+
+In terms of tensor-product vectors the entangled states are
+
+
+$$
+\ket{S} = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ -1 \\0 \end{pmatrix},\ \ket{T_1}=\frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ 1 \\0 \end{pmatrix},\ \ket{T_2}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\1 \end{pmatrix},\ \ket{T_3}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\-1 \end{pmatrix}
+$$
+
+__Composite Operators.__ Composite operators are operators representing quantities that can only be measured by combining Alice and Bob's separate measurements. Here are a few examples:
+
+* The total $$i$$th component of spin: $$\sigma_i^A + \sigma_i^B = \sigma_i \otimes I + I \otimes \sigma_i$$
+* The product of pairs of components: $$\sigma_i^A\sigma_j^B = \sigma_i \otimes \sigma_j$$
+
+Composite operators, like non-composite operators, have eigenvalues and eigenvectors associated with them that define their measurable outcomes and corresponding states to which an initial state-vector will collapse when a given outcome is observed.
+
+__Product States.__ What's the opposite of an entangled state? A product state. Product states are composed of separately prepared sub-systems. Mathematically this means the sub-systems are normalized separately and then combined via a tensor product. For example, for binary sub-systems $$\ket{A}$$ and $$\ket{B}$$ we have
+
+
+$$
 \begin{align*}
-\ket{+y} \otimes \ket{1} &= \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ i  \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0  \end{pmatrix} \\ \\
-&= \frac{1}{\sqrt{2}} \begin{pmatrix}  1 \\ 0 \\ i \\ 0  \end{pmatrix}
+\ket{A} &= a_0\ket{0} + a_1\ket{1} \\
+\ket{B} &= b_0\ket{0} + b_1\ket{1}
 \end{align*}
 $$
 
 
-Using $$\ket{\psi} = \begin{pmatrix} d & c & b & a \end{pmatrix}^T$$ the result is
+where $$\bk{A}{A}=1$$ and $$\bk{B}{B}=1$$. The joint state is
 
 
 $$
-P(\sigma_y = +1) = \frac{1}{2}\lvert c-ia \rvert^2 + \frac{1}{2}\lvert d-ib \rvert^2
+\ket{A} \otimes \ket{B} = a_0b_0\ket{00} + a_0b_1\ket{01} + a_1b_0\ket{10} + a_1b_1\ket{11}
 $$
 
 
-As a sanity check, we can compute $$P(\sigma_y=-1)$$ by this same method and find that $$P(\sigma_y=+1) + P(\sigma_y=-1) =1$$, as expected.
+A few interesting properties of products states are listed below.
+
+* Product states are automatically normalized:
 
 
+$$
+(\bra{A} \otimes \bra{B})(\ket{A} \otimes \ket{B}) = \bk{A}{A} \otimes \bk{B}{B} =1
+$$
 
+
+* If Alice's or Bob's spin operator acts on a product state, the result is still a product state. For example, for Alice:
+
+
+$$
+(\sigma \ket{A})^\dagger \sigma \ket{A} = \bra{A} \sigma^\dagger \sigma \ket{A} = \bk{A}{A} = 1
+$$
+
+
+* The expected value of any spin is the same as it would be in an individual spin state. For example, for Alice:
+
+
+$$
+\left< \sigma^A \right> = (\bra{A} \otimes \bra{B}) \sigma^A (\ket{A} \otimes \ket{B}) = \bke{A}{\sigma}{A} \otimes \bk{B}{B} = \left< \sigma \right>
+$$
+
+
+So for product states any prediction about one half of the system gives the same result as if the other half wasn't there, exactly the opposite of entanglement.
