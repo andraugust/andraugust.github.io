@@ -86,7 +86,7 @@ P_z(+1) &= \sum_j \lvert \bk{j1}{\psi} \rvert^2 \\
 $$
 
 
-If for example Alice measures her spin to be $$-1$$ then the overall state collapses to
+For example, if Alice measures her spin to be $$-1$$ then the overall state collapses to
 
 
 $$
@@ -94,7 +94,7 @@ $$
 $$
 
 
-where the denominator is a normalization factor. At this point, unless Alice tells Bob about her measurement outcome, this new state _belongs only to Alice_. Bob's model of the system is still the original vector
+where the denominator is a new normalization factor. At this point, unless Alice tells Bob about her measurement outcome, this new state _belongs only to Alice_. Bob's model of the system is still the original vector
 
 
 $$
@@ -113,10 +113,9 @@ $$
 \frac{1}{\sqrt{2}} \left( \ket{10}-\ket{01} \right)
 $$
 
+In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and because the spins are entangled Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so Alice gets two bits for the price of one.
 
-In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and it resembles the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know what the other person has. 
-
-Although this "classical entanglement" scenario seems the same as its quantum analog, it really isn't. The reason is because in quantum mechanics measurements influence states, while in classical mechanics they don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, something that doesn't happen in classical mechanics. Furthermore, because the spins are entangled, Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so Alice gets two bits for the price of one.
+Quantum entanglement sounds like the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know what the other person has. Although such "classical entanglement" seems the same as its quantum analog, it really isn't. The reason is that quantum measurements influence states, while classical measurements don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, which doesn't happen classicaly. 
 
 Here are the other possible entangled states for a two-spin system, they're called the _triplet states_
 
@@ -266,7 +265,7 @@ __Composite Operators.__ Composite operators are operators representing quantiti
 * The total $$i$$th component of spin: $$\sigma_i^A + \sigma_i^B = \sigma_i \otimes I + I \otimes \sigma_i$$
 * The product of pairs of components: $$\sigma_i^A\sigma_j^B = \sigma_i \otimes \sigma_j$$
 
-Composite operators, like non-composite operators, have eigenvalues and eigenvectors associated with them that define their measurable outcomes and corresponding states to which an initial state-vector will collapse when a given outcome is observed.
+Composite operators, like non-composite operators, have eigenvalues and eigenvectors associated with them that define their measurable outcomes and corresponding states to which a state-vector will collapse when an outcome is measured.
 
 __Product States.__ What's the opposite of an entangled state? A product state. Product states are composed of separately prepared sub-systems. Mathematically this means the sub-systems are normalized separately and then combined via a tensor product. For example, for binary sub-systems $$\ket{A}$$ and $$\ket{B}$$ we have
 
