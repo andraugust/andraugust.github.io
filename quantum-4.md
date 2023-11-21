@@ -118,7 +118,7 @@ $$
 
 In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and it resembles the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice, the other to Bob. When Alice or Bob look at their card they immediately know what the other person has. 
 
-Although this scenario seems the same as the quantum scenario, it's not. The reason is that in quantum mechanics states aren't determined until they're measured, while in classical mechanics they are. For example, in classical mechanics it makes sense to say "Alice's card was $$0$$ before she looked at it", while in quantum mechanics this statement makes no sense—her card (or spin, or whatever) only acquires its value when she measures it. Furthermore, because Alice's spin and Bob's spin are entangled, Alice's measurement _determines_ Bob's, as if Bob had measured his himself.
+Although this scenario seems the same as the quantum scenario, it's not. The reason is that in quantum mechanics states aren't determined until they're measured, while in classical mechanics they are. For example, in classical mechanics it makes sense to say "Alice's card was $$0$$ before she looked at it", while in quantum mechanics this statement makes no sense—her card (or spin, or whatever) only acquires its value when she measures it. Furthermore, because the spins are entangled, Alice's measurement _determines_ Bob's, as if Bob had measured his himself.
 
 Here are the other three entangled states…
 
@@ -187,7 +187,7 @@ Here's a short-list of tensor product properties:
 
 So what does this have to do with quantum mechanics? The answer is that joint quantum states are really tensor product states. For example, what we've called $$\ket{01}$$ is really $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma$$ is really $$\sigma \otimes I$$, and $$\tau$$ is really $$I \otimes \tau$$. 
 
-Looked at in terms of tensor products we see that Alice's operator acts only on her part of the system. For example,
+Looked at in terms of tensor products we see that indeed Alice's operator acts only on her part of the system. For example,
 
 
 $$
@@ -199,9 +199,8 @@ $$
 $$
 
 
-The same is true for Bob. 
+Tensor products capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute:
 
-Tensor products also capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute:
 
 $$
 [\sigma_i,\sigma_j] = 2i\epsilon_{ijk}\sigma_k
@@ -261,7 +260,7 @@ P(\sigma_y = +1) = \frac{1}{2}\lvert c-ia \rvert^2 + \frac{1}{2}\lvert d-ib \rve
 $$
 
 
-Computing the probability of the opposite measurement, we find that $$P(\sigma_y=+1) + P(\sigma_y=-1) =1$$, as expected.
+As a sanity check, we can compute $$P(\sigma_y=-1)$$ by this same method and show that $$P(\sigma_y=+1) + P(\sigma_y=-1) =1$$, as expected.
 
 
 
