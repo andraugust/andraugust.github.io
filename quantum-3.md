@@ -260,14 +260,14 @@ $$
 \ket{S} = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ -1 \\0 \end{pmatrix},\ \ket{T_1}=\frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ 1 \\0 \end{pmatrix},\ \ket{T_2}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\1 \end{pmatrix},\ \ket{T_3}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\-1 \end{pmatrix}
 $$
 
-__Composite Operators.__ Composite operators are operators representing quantities that can only be measured by combining Alice and Bob's separate measurements. Here are a few examples:
+__Composite Observables.__ Composite observables are observables that depend on the outcome of both Alice's and Bob's measurements. Here are a few examples:
 
 * The total $$i$$th component of spin: $$\sigma_i^A + \sigma_i^B = \sigma_i \otimes I + I \otimes \sigma_i$$
-* The product of pairs of components: $$\sigma_i^A\sigma_j^B = \sigma_i \otimes \sigma_j$$
+* The product of a pair of spins: $$\sigma_i^A\sigma_j^B = \sigma_i \otimes \sigma_j$$
 
-Composite operators, like non-composite operators, have eigenvalues and eigenvectors associated with them that define their measurable outcomes and corresponding states to which a state-vector will collapse when an outcome is measured.
+Composite observables, like isolated observables, are represented by operators and have eigenvalues and eigenvectors associated with them. These eigenquantities define their measurable outcomes and the corresponding states to which a state-vector will collapse when an outcome is measured.
 
-__Product States.__ What's the opposite of an entangled state? A product state. Product states are composed of separately prepared sub-systems. Mathematically this means the sub-systems are normalized separately and then combined via a tensor product. For example, for binary sub-systems $$\ket{A}$$ and $$\ket{B}$$ we have
+__Product States.__ What's the opposite of an entangled state? A product state. Product states are composed of separately prepared sub-systems. Mathematically this means the sub-systems are normalized individually and then combined via a tensor product. For example, for binary sub-systems $$\ket{A}$$ and $$\ket{B}$$ we have
 
 
 $$
@@ -312,4 +312,4 @@ $$
 $$
 
 
-So for product states any prediction about one half of the system gives the same result as if the other half wasn't there, exactly the opposite of entanglement.
+These properties imply that any prediction about one half of the system gives the same result as if the other half wasn't there, in contrast to entangled systems.
