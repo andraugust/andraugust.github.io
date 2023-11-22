@@ -115,7 +115,7 @@ $$
 \frac{1}{\sqrt{2}} \left( \ket{10}-\ket{01} \right)
 $$
 
-In this state, if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and because the spins are entangled Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so Alice gets two bits for the price of one.
+In this state if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and because the spins are entangled Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so Alice gets two bits for the price of one.
 
 Quantum entanglement sounds like the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know what the other person has. Although such "classical entanglement" seems the same as its quantum analog, it really isn't. The reason is that quantum measurements influence states, while classical measurements don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, which doesn't happen classicaly. 
 
