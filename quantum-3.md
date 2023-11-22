@@ -2,6 +2,8 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## Quantum Mechanics III: Joint Systems & Entanglement
 
+<center><img src="quantum/DALLE-Alice-Bob.jpg" style="object-fit:contain;"></center>
+
 To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
 
 As with isolated systems, joint systems are represented by linear combinations of basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll look at exclusively in this post), the most general state is given by
@@ -288,7 +290,7 @@ $$
 
 A few interesting properties of products states are listed below.
 
-* Product states are automatically normalized:
+* Normalization of the sub-systems implies normalization of the joint system:
 
 
 $$
@@ -304,7 +306,7 @@ $$
 $$
 
 
-* The expected value of any spin is the same as it would be in an individual spin state. For example, for Alice:
+* The expected value of any spin measurement is the same as if the composite system were an individual spin. For example, for Alice:
 
 
 $$
@@ -313,3 +315,42 @@ $$
 
 
 These properties imply that any prediction about one half of the system gives the same result as if the other half wasn't there, in contrast to entangled systems.
+
+__Mixed States.__ In practical situations we may not know exactly what state a system is in. By this I don't just mean that we don't know if it's in $$\ket{01}$$ or $$\ket{10}$$, but more generally we may not know if it's in, say,
+
+
+$$
+a\ket{01} + b\ket{10}
+$$
+
+
+or, say,
+
+
+$$
+c\ket{11} + d\ket{10}
+$$
+
+
+But if we know the system is in one of these states, we can assign statistical probabilities to each of them and make calculations from there.
+
+Is there a convenient way to represent these so-called _mixed states_ mathematically? A naive approach is to add the separate so-called _pure states_ together and weight them by their respective probabilities. However, this doesn't produce consistent probability calculations. The correct approach is to use something called a _density matrix_.
+
+For a set of pure states $$\ket{\psi_i}$$ having associated probabilities $$p_i$$, the density matrix is defined as
+
+
+$$
+\boldsymbol{\rho} = \sum_ip_i\ket{\psi_i}\bra{\psi_i}
+$$
+
+
+This representation is convenient because it can be used to calculate expected values with the simple formula
+
+
+$$
+\left< \mathbf{L} \right> = Tr(\boldsymbol{\rho} \mathbf{L})
+$$
+
+
+
+{% include disqus.html %}

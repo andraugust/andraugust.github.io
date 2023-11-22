@@ -51,7 +51,7 @@ As $$\epsilon \rightarrow 0$$,
 
 
 $$
-\frac{\partial \ket{\Psi}}{\partial t} = -\frac{i}{\hbar}\mathbf{H}\ket{\Psi}
+i \hbar \frac{\partial \ket{\Psi}}{\partial t} = \mathbf{H}\ket{\Psi}
 $$
 
 
@@ -83,7 +83,7 @@ $$L$$ here is any quantity defined over phase space $$L(q,p)$$. Using the GSE it
 
 
 $$
-\frac{d}{dt}\left<\mathbf{L}\right> = -\frac{i}{\hbar}\left<\left[\mathbf{L},\mathbf{H}\right]\right>
+i \hbar \frac{d}{dt}\left<\mathbf{L}\right> = \left<\left[\mathbf{L},\mathbf{H}\right]\right>
 $$
 
 
