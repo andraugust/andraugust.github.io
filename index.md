@@ -14,17 +14,17 @@ layout: default
 ## [Quantum Mechanics III: Joint Systems & Entanglement](quantum-3.html)
 
 <p style="opacity:0.5">11/2023</p>
-What happens when you combine systems in Quantum Mechanics; the third round of notes on QM based around Leonard Susskind's book _The Theoretical Minimum_.
+What happens when you combine systems in Quantum Mechanics; the third set of notes on QM, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics II: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
-Dynamics and the representation of continuous states in Quantum Mechanics; the second round of notes on QM based around Leonard Susskind's book _The Theoretical Minimum_.
+Dynamics and the representation of continuous states in Quantum Mechanics; the second set of notes on QM, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics I: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
-Foundational ideas in quantum mechanics; the first round of notes on QM based around Leonard Susskind's book _The Theoretical Minimum_.
+Foundational ideas in quantum mechanics; the first set of notes on QM, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Classical Mechanics](classical-mechanics.html)
 
