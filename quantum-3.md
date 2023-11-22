@@ -269,7 +269,7 @@ __Composite Observables.__ Composite observables are observables that depend on 
 
 Composite observables, like isolated observables, are represented by operators and have eigenvalues and eigenvectors associated with them. These eigenquantities define their measurable outcomes and the corresponding states to which a state-vector will collapse when an outcome is measured.
 
-__Product States.__ What's the opposite of an entangled state? A product state. Product states are composed of separately prepared sub-systems. Mathematically this means the sub-systems are normalized individually and then combined via a tensor product. For example, for binary sub-systems $$\ket{A}$$ and $$\ket{B}$$ we have
+__Product States.__ In terms of correlatedness, the opposite of an entangled state is called a _product state_. A product states is what you get when a joint state factors into the tensor product of states that are individually normalized. In a product state we can think of the sub-systems as having been separately prepared, and measurements on one part of the system leave the other part unchanged. For example, consider the binary sub-systems $$\ket{A}$$ and $$\ket{B}$$
 
 
 $$
@@ -280,7 +280,7 @@ $$
 $$
 
 
-where $$\bk{A}{A}=1$$ and $$\bk{B}{B}=1$$. The joint state is
+where $$\bk{A}{A}=1$$ and $$\bk{B}{B}=1$$. The product state state is
 
 
 $$
@@ -288,9 +288,9 @@ $$
 $$
 
 
-A few interesting properties of products states are listed below.
+A few properties of products states are listed below.
 
-* Normalization of the sub-systems implies normalization of the joint system:
+* Normalization of the parts implies normalization of the whole:
 
 
 $$
@@ -298,7 +298,7 @@ $$
 $$
 
 
-* If Alice's or Bob's spin operator acts on a product state, the result is still a product state. For example, for Alice:
+* The action of spin operators preserves product-ness. For example, for Alice:
 
 
 $$
@@ -314,13 +314,13 @@ $$
 $$
 
 
-These properties imply that any prediction about one half of the system gives the same result as if the other half wasn't there, in contrast to entangled systems.
+These properties imply that any prediction about one half of the system gives the same result as if the other half wasn't there, in contrast to entanglement.
 
-__Mixed States.__ In practical situations we may not know exactly what state a system is in. By this I don't just mean that we don't know if it's in $$\ket{01}$$ or $$\ket{10}$$, but more generally we may not know if it's in, say,
+__Mixed States.__ In practice we may not know exactly which state a system is in. By this I don't just mean that we don't know if it's in $$\ket{0}$$ or $$\ket{1}$$, but more generally we may not know if it's in, say,
 
 
 $$
-a\ket{01} + b\ket{10}
+\ket{\psi_1} = a\ket{0} + b\ket{1}
 $$
 
 
@@ -328,15 +328,39 @@ or, say,
 
 
 $$
-c\ket{11} + d\ket{10}
+\ket{\psi_2} = c\ket{0} + d\ket{1}
 $$
 
 
-But if we know the system is in one of these states, we can assign statistical probabilities to each of them and make calculations from there.
+But if we know the system is in one of these states we can assign statistical probabilities, or likelihoods, to each and make calculations from there. For example, to calculate the probability of measuring an observable to be $$\lambda$$, we use
 
-Is there a convenient way to represent these so-called _mixed states_ mathematically? A naive approach is to add the separate so-called _pure states_ together and weight them by their respective probabilities. However, this doesn't produce consistent probability calculations. The correct approach is to use something called a _density matrix_.
 
-For a set of pure states $$\ket{\psi_i}$$ having associated probabilities $$p_i$$, the density matrix is defined as
+$$
+P(\lambda) = \sum_i p_i \left| \bk{\lambda}{\psi_i} \right|^2
+$$
+
+
+To calculate the expected value of an observable in a mixed state, we can use the following trick. Suppose the system is in a pure state, say, $$\ket{\psi}$$. It turns out that the expected value of an observable can be written as
+
+
+$$
+\left< \mathbf{L} \right> = \Tr (\ket{\psi}\bra{\psi}\mathbf{L})
+$$
+
+
+If the state is mixed,
+
+
+$$
+\begin{align*}
+\left< \mathbf{L} \right> &= \sum_i p_i \Tr (\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
+&= \sum_i \Tr (p_i\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
+&= \sum_i \Tr (\boldsymbol{\rho}\mathbf{L})
+\end{align*}
+$$
+
+
+Where the _density matrix_ is defined as
 
 
 $$
@@ -344,12 +368,34 @@ $$
 $$
 
 
-This representation is convenient because it can be used to calculate expected values with the simple formula
+As a concrete example of what a density matrix can look like, consider two pure states
 
 
 $$
-\left< \mathbf{L} \right> = Tr(\boldsymbol{\rho} \mathbf{L})
+(\ket{0} + \ket{1})/\sqrt{2} \\
+(\ket{1} - \ket{0})/\sqrt{2}
 $$
+
+
+If they're mixed with proportions $$p$$ and $$1-p$$, their density matrix turns out to be
+
+
+$$
+\begin{pmatrix}
+1/2 & p-1/2 \\
+p-1/2 & 1/2
+\end{pmatrix}
+$$
+
+
+Some general properties of density matrices include:
+
+* $$\Tr(\boldsymbol{\rho})=1$$
+* $$\boldsymbol{\rho}^\dagger = \boldsymbol{\rho}$$
+* Eigenvalues are all between $$0$$ and $$1$$.
+* Eigenvalues sum to $$1$$.
+* For pure states $$\boldsymbol{\rho}^2 = \boldsymbol{\rho}$$ and $$\Tr(\boldsymbol{\rho^2}) = 1$$
+* For mixed or entangled states $$\boldsymbol{\rho}^2 \neq \boldsymbol{\rho}$$ and $$\Tr(\boldsymbol{\rho^2}) < 1$$
 
 
 
