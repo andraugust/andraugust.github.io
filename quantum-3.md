@@ -4,6 +4,8 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 <center><img src="quantum/DALLE-Alice-Bob.jpg" style="object-fit:contain;"></center>
 
+<center>Alice and Bob—two quantum systems all tangled up.</center>
+
 To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
 
 As with isolated systems, joint systems are represented by linear combinations of basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll look at exclusively in this post), the most general state is given by
