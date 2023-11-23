@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Quantum Mechanics Part 1: States & Principles
+# Quantum Mechanics I: States & Principles
 
 <center><img src="quantum/dalle-square-840.jpg" style="object-fit:contain;"></center>
 

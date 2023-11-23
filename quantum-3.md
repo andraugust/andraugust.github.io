@@ -344,7 +344,7 @@ To calculate the expected value of an observable in a mixed state, we can use th
 
 
 $$
-\left< \mathbf{L} \right> = \Tr (\ket{\psi}\bra{\psi}\mathbf{L})
+\left< \mathbf{L} \right> = \text{Tr} (\ket{\psi}\bra{\psi}\mathbf{L})
 $$
 
 
@@ -353,9 +353,9 @@ If the state is mixed,
 
 $$
 \begin{align*}
-\left< \mathbf{L} \right> &= \sum_i p_i \Tr (\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
-&= \sum_i \Tr (p_i\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
-&= \sum_i \Tr (\boldsymbol{\rho}\mathbf{L})
+\left< \mathbf{L} \right> &= \sum_i p_i \text{Tr} (\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
+&= \sum_i \text{Tr} (p_i\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
+&= \sum_i \text{Tr} (\boldsymbol{\rho}\mathbf{L})
 \end{align*}
 $$
 
@@ -390,12 +390,12 @@ $$
 
 Some general properties of density matrices include:
 
-* $$\Tr(\boldsymbol{\rho})=1$$
+* $$\text{Tr}(\boldsymbol{\rho})=1$$
 * $$\boldsymbol{\rho}^\dagger = \boldsymbol{\rho}$$
 * Eigenvalues are all between $$0$$ and $$1$$.
 * Eigenvalues sum to $$1$$.
-* For pure states $$\boldsymbol{\rho}^2 = \boldsymbol{\rho}$$ and $$\Tr(\boldsymbol{\rho^2}) = 1$$
-* For mixed or entangled states $$\boldsymbol{\rho}^2 \neq \boldsymbol{\rho}$$ and $$\Tr(\boldsymbol{\rho^2}) < 1$$
+* For pure states $$\boldsymbol{\rho}^2 = \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) = 1$$
+* For mixed or entangled states $$\boldsymbol{\rho}^2 \neq \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) < 1$$
 
 
 
