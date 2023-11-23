@@ -390,8 +390,8 @@ $$
 
 Some general properties of density matrices include:
 
-* $$\text{Tr}(\boldsymbol{\rho})=1$$
-* $$\boldsymbol{\rho}^\dagger = \boldsymbol{\rho}$$
+* Unit trace: $$\text{Tr}(\boldsymbol{\rho})=1$$
+* Hermiticity: $$\boldsymbol{\rho}^\dagger = \boldsymbol{\rho}$$
 * Eigenvalues are all between $$0$$ and $$1$$.
 * Eigenvalues sum to $$1$$.
 * For pure states $$\boldsymbol{\rho}^2 = \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) = 1$$
