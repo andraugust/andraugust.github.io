@@ -14,27 +14,27 @@ layout: default
 ## [Quantum Mechanics III: Joint Systems & Entanglement](quantum-3.html)
 
 <p style="opacity:0.5">11/2023</p>
-Combining systems in Quantum Mechanics, notes based on Leonard Susskind's book _The Theoretical Minimum_.
+Combining systems in quantum mechanics, based mostly on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics II: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
-Dynamics and the representation of continuous states in Quantum Mechanics, notes based on Leonard Susskind's book _The Theoretical Minimum_.
+Dynamics and the representation of continuous states in quantum mechanics, based mostly on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics I: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
-Foundational ideas in quantum mechanics, notes based on Leonard Susskind's book _The Theoretical Minimum_.
+Foundational ideas in quantum mechanics, based mostly on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
-A summary of classical mechanics based on Leonard Susskind's book _The Theoretical Minimum_. The notes start with states and dynamics and then derives various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
+Notes on classical mechanics based on Leonard Susskind's book _The Theoretical Minimum_. The notes start with states and dynamics and then derives various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
 <p style="opacity:0.5">01/2021</p>
-Notes on the paper "ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness" by Geirhos et al, 2019.
+A summary of the paper _ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness_ by Geirhos et al, 2019.
 
 ## [PlatformIO Notes](platformio-notes.html)
 
