@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Quantum Mechanics II: Dynamics & Continuous States
+# Quantum Mechanics Part 2: Dynamics & Continuous States
 
 <center><img src="quantum/banner-2.png" style="object-fit:contain;"></center>
 

@@ -1,6 +1,6 @@
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-## Quantum Mechanics III: Joint Systems & Entanglement
+## Quantum Mechanics Part 3: Joint Systems & Entanglement
 
 <center><img src="quantum/DALLE-Alice-Bob.jpg" style="object-fit:contain;"></center>
 
@@ -261,7 +261,7 @@ In terms of tensor-product vectors the entangled states are
 
 
 $$
-\ket{S} = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ -1 \\0 \end{pmatrix},\ \ket{T_1}=\frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ 1 \\0 \end{pmatrix},\ \ket{T_2}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\1 \end{pmatrix},\ \ket{T_3}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\-1 \end{pmatrix}
+\ket{S} = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ -1 \\0 \end{pmatrix} \\\ket{T_1}=\frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ 1 \\0 \end{pmatrix},\ \ket{T_2}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\1 \end{pmatrix},\ \ket{T_3}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\-1 \end{pmatrix}
 $$
 
 __Composite Observables.__ Composite observables are observables that depend on the outcome of both Alice's and Bob's measurements. Here are a few examples:
