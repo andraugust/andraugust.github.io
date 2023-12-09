@@ -6,9 +6,9 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 <center>Alice and Bob—two quantum systems all tangled up.</center>
 
-To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
+To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if such a joint system contains two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
 
-As with isolated systems, joint systems are represented by linear combinations of basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll look at exclusively in this post), the most general state is given by
+As with isolated systems, joint systems are represented by linear combinations of independent basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll look at exclusively in this post), the most general state is given by
 
 
 $$
@@ -106,20 +106,20 @@ a\ket{00} + b\ket{01}+c\ket{10}+d\ket{11}
 $$
 
 
-and Bob's probability calculations are based on _this_ vector, while Alice's are based on $$\ket{\psi'}$$. It's important to note that this difference in knowledge between Alice and Bob is not due to Alice's measurement changing Bob's spin in any way, it's simply a matter of Alice knowing which of Bob's outcomes are still feasible given her knowledge of her system—information that Bob doesn't have access to at this point.
+and Bob's probability calculations are based on _this_ vector, while Alice's are based on $$\ket{\psi'}$$. Note that this difference in knowledge between Alice and Bob is not due to Alice's measurement changing Bob's spin in any way, it's simply a matter of Alice knowing which of Bob's outcomes are still feasible given her knowledge of her system—information that Bob doesn't have access to at this point.
 
-When Bob measures his half of the system, and Alice and Bob exchange measurement results, the state collapses to one of the basis vectors and the measurement of the joint system is complete.
+When Bob measures his half of the system, and Alice and Bob exchange measurement results, the state collapses to the corresponding basis vector and the measurement of the joint system is complete.
 
-__Entanglement.__ Do Alice and Bob always have to exchange measurement outcomes to know the complete state? Interestingly, the answer is no. For example, consider the so-called _singlet state_
+__Entanglement.__ Do Alice and Bob always have to exchange measurement outcomes to know the complete state? Sometimes the answer is no. For example, consider the so-called _singlet state_
 
 
 $$
 \frac{1}{\sqrt{2}} \left( \ket{10}-\ket{01} \right)
 $$
 
-In this state if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and because the spins are entangled Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so Alice gets two bits for the price of one.
+In this state if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and because the spins are entangled Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so in some sense Alice gets two bits for the price of one.
 
-Quantum entanglement sounds like the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know what the other person has. Although such "classical entanglement" seems the same as its quantum analog, it really isn't. The reason is that quantum measurements influence states, while classical measurements don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, which doesn't happen classicaly. 
+Quantum entanglement sounds like the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know which card the other person has. Although such "classical entanglement" seems the same as its quantum analog, it really isn't. The reason is that quantum measurements influence states, while classical measurements don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, which doesn't happen classicaly. 
 
 Here are the other possible entangled states for a two-spin system, they're called the _triplet states_
 
@@ -155,7 +155,7 @@ $$
 $$
 
 
-Taking this inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but we can't do that because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces, $$\ket{11}$$ is in the joint space while $$\ket{+y}$$ is in the isolated space. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need a mathematical thing called _tensor products_.
+Taking this inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but this doesn't work because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces, $$\ket{11}$$ is in the joint space while $$\ket{+y}$$ is in the isolated space. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need a mathematical thing called _tensor products_.
 
 Tensor products, specifically the type called Kronecker products, are a form of matrix multiplication. For two $$2\times2$$ matrices the tensor product is defined as
 
@@ -200,7 +200,7 @@ $$
 $$
 
 
-Tensor products capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute:
+Tensor products capture the experimental observation that Alice and Bob's measurements _are_ compatible. Without tensor products, Alice and Bob's operators don't commute—they're both spin operators, and spin operators don't commute:
 
 
 $$
@@ -208,7 +208,7 @@ $$
 $$
 
 
-So it seems that Alice and Bob's measurements _aren't_ compatible and inherently disturb each other, but the tensor versions _do_ commute:
+So it seems that Alice and Bob's measurements _aren't_ compatible, but the tensor versions _do_ commute:
 
 
 $$
@@ -271,7 +271,7 @@ __Composite Observables.__ Composite observables are observables that depend on 
 
 Composite observables, like isolated observables, are represented by operators and have eigenvalues and eigenvectors associated with them. These eigenquantities define their measurable outcomes and the corresponding states to which a state-vector will collapse when an outcome is measured.
 
-__Product States.__ In terms of correlatedness, the opposite of an entangled state is called a _product state_. A product states is what you get when a joint state factors into the tensor product of states that are individually normalized. In a product state we can think of the sub-systems as having been separately prepared, and measurements on one part of the system leave the other part unchanged. For example, consider the binary sub-systems $$\ket{A}$$ and $$\ket{B}$$
+__Product States.__ In terms of correlatedness, the opposite of an entangled state is a _product state_. A product states is what you get when a joint state factors into the tensor product of states that are individually normalized. In a product state we can think of the sub-systems as having been separately prepared, and measurements on one part of the system leave the other part unchanged. For example, consider the binary sub-systems $$\ket{A}$$ and $$\ket{B}$$
 
 
 $$
@@ -334,7 +334,7 @@ $$
 $$
 
 
-But if we know the system is in one of these states we can assign statistical probabilities, or likelihoods, to each and make calculations from there. For example, to calculate the probability of measuring an observable to be $$\lambda$$, we use
+But if we know the system is in one of these states we can assign statistical probabilities, or likelihoods, to each and make calculations from there. For example, to calculate the probability of measuring $$\lambda$$, we use
 
 
 $$
@@ -342,7 +342,7 @@ P(\lambda) = \sum_i p_i \left| \bk{\lambda}{\psi_i} \right|^2
 $$
 
 
-To calculate the expected value of an observable in a mixed state, we can use the following trick. Suppose the system is in a pure state, say, $$\ket{\psi}$$. It turns out that the expected value of an observable can be written as
+To calculate the expected value of an observable in a mixed state, we can use the following trick: Suppose the system is in a pure state, say, $$\ket{\psi}$$. It turns out that the expected value of an observable can be written as
 
 
 $$
@@ -357,7 +357,8 @@ $$
 \begin{align*}
 \left< \mathbf{L} \right> &= \sum_i p_i \text{Tr} (\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
 &= \sum_i \text{Tr} (p_i\ket{\psi_i}\bra{\psi_i}\mathbf{L}) \\
-&= \sum_i \text{Tr} (\boldsymbol{\rho}\mathbf{L})
+&= \text{Tr} \left( \sum_i p_i\ket{\psi_i}\bra{\psi_i}\mathbf{L} \right) \\
+&= \text{Tr} (\boldsymbol{\rho}\mathbf{L})
 \end{align*}
 $$
 
@@ -399,6 +400,6 @@ Some general properties of density matrices include:
 * For pure states $$\boldsymbol{\rho}^2 = \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) = 1$$
 * For mixed or entangled states $$\boldsymbol{\rho}^2 \neq \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) < 1$$
 
-
+More to be added later!
 
 {% include disqus.html %}

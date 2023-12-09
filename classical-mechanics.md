@@ -10,11 +10,11 @@ This post is a summary of classical mechanics based closely on Leonard Susskind'
 
 ### 1. The Nature of Classical Mechanics
 
-Classical mechanics is about forces and motion in systems where quantum effects are negligible and nothing moves anywhere near the speed of light.
+Classical mechanics is about forces and motion in systems where quantum effects are negligible and nothing moves near the speed of light.
 
 A fundamental property of classical systems is that each state within a system has a unique predecessor state and a unique successor state. Susskind calls this the $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should take over other numbered laws (namely the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws of thermodynamics). This law implies that all past and future states of a system are uniquely determined once a single state is specified with the forces acting on it.
 
-It's interesting to note that CM systems can have _chaotic_ dynamics despite their determinism—if an initial state isn't known with sufficiently high precision then _in practice_ it's perhaps more practical to call the system non-deterministic, but in _theory_ CM is modeled as being deterministic.
+It's interesting to note that CM systems can have _chaotic_ dynamics despite their determinism—if an initial state isn't known with sufficiently high precision then _in practice_ it's perhaps more practical to call the system non-deterministic, but in _theory_ CM is a deterministic model.
 
 ### 2. Motion
 
@@ -22,21 +22,21 @@ This chapter in the book is about basic ODEs and their solutions. There's nothin
 
 ### 3. Dynamics
 
-This chapter covers Newton's formulation of motion and gives introduces PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and then integrating in time to get the trajectory.
+This chapter covers Newton's formulation of motion and introduces PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, then integrating in time to get the trajectory.
 
 ### 4. Systems of More Than One Particle
 
-For a system consisting of one particle, its state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector, and the dynamics encoded by $$F = m\ddot{x}$$, tell us everything we need to know about the system's evolution, so we say that $$(x(t),\dot{x}(t))$$ is the system's _state_.
+For a system consisting of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector, and the dynamics encoded by $$F = m\ddot{x}$$, tell us everything we need to know about the system's evolution, so we say that $$(x(t),\dot{x}(t))$$ is the system's _state_.
 
 For a system consisting of more than one particle there's an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles in 3-space the state vector has $$6N$$ values, and the system follows a single trajectory through $$6N$$ dimensional state-space (even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space). 
 
-As an alternative to expressing a system's state in terms of $$x$$ and $$\dot{x}$$, we can express it in terms of $$x$$ and it's momentum $$p$$. The reason this works is because the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$, with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
+As an alternative to expressing a system's state in terms of $$x$$ and $$\dot{x}$$, we can express it in terms of $$x$$ and it's momentum $$p$$. The reason is because the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$, with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
 
 This space—where one axis is $$x$$ and the other is $$p$$—is called _phase space_. The reason we might want to use phase space instead of state space is because sometimes objects don't have masses (such as photons) and phase space allows us to avoid defining dynamics explicitly in terms of mass. Also, the Lagrangian and Hamiltonian formulations that we'll look at later deal directly with momentum, so it's more natural to work with momentum instead of velocity as a state-defining variable.
 
 ### 5. Energy
 
-A fundamental principle of physics says that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ is conserved. Note that in general $$F$$ is a vector and so is $$x$$, but I'm going to leave them unbolded. 
+A fundamental principle of physics states that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ is conserved. Note that in general $$F$$ is a vector and so is $$x$$, but I'm leaving them unbolded. 
 
 To verify that energy is conserved we have to show that $$\dot{E} = 0$$:
 
@@ -104,7 +104,7 @@ $$
 
 So we define $$\partial L/\partial \dot{q}$$ as the generalized momentum conjugate. 
 
-Why did we go through all of that trouble to compute a momentum which we already knew? Because sometimes momentum isn't so obvious, and in those cases this formula is more practical. For example, consider motion in polar coordinates where
+Why did we go through all of the trouble to compute a momentum which we already knew? Because sometimes momentum isn't obvious, and in such cases this formula is more practical. For example, consider motion in polar coordinates where
 
 
 $$
@@ -147,7 +147,7 @@ L' &= \frac{1}{2}m\dot{r}'^2 - V(|\textbf{r}' - \textbf{s}'|) \\
 $$
 
 
-So $$L$$ doesn't change and the system dynamics are unaffected. Similarly, if we rotate the entire system to $$\textbf{r}' = \textbf{Rr}$$ and $$\textbf{s}' = \textbf{Rs}$$, then the new Lagrangian is
+So $$L$$ doesn't change and the system's dynamics are unaffected. Similarly, if we rotate the entire system to $$\textbf{r}' = \textbf{Rr}$$ and $$\textbf{s}' = \textbf{Rs}$$, then the new Lagrangian is
 
 
 $$
