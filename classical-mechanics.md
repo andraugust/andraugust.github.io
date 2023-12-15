@@ -8,7 +8,7 @@ layout: default
 
 This post is a summary of classical mechanics based closely on Leonard Susskind's first book in his _Theoretical Minimum_ series. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
-### 1. The Nature of Classical Mechanics
+### The Nature of Classical Mechanics
 
 Classical mechanics is about forces and motion in systems where quantum effects are negligible and nothing moves near the speed of light.
 
@@ -16,15 +16,11 @@ A fundamental property of classical systems is that each state within a system h
 
 It's interesting to note that CM systems can have _chaotic_ dynamics despite their determinism—if an initial state isn't known with sufficiently high precision then _in practice_ it's perhaps more practical to call the system non-deterministic, but in _theory_ CM is a deterministic model.
 
-### 2. Motion
-
-This chapter in the book is about basic ODEs and their solutions. There's nothing too exciting to note here!
-
-### 3. Dynamics
+### Dynamics
 
 This chapter covers Newton's formulation of motion and introduces PDEs. Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is generally solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, then integrating in time to get the trajectory.
 
-### 4. Systems of More Than One Particle
+### Systems of More Than One Particle
 
 For a system consisting of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector, and the dynamics encoded by $$F = m\ddot{x}$$, tell us everything we need to know about the system's evolution, so we say that $$(x(t),\dot{x}(t))$$ is the system's _state_.
 
@@ -34,7 +30,7 @@ As an alternative to expressing a system's state in terms of $$x$$ and $$\dot{x}
 
 This space—where one axis is $$x$$ and the other is $$p$$—is called _phase space_. The reason we might want to use phase space instead of state space is because sometimes objects don't have masses (such as photons) and phase space allows us to avoid defining dynamics explicitly in terms of mass. Also, the Lagrangian and Hamiltonian formulations that we'll look at later deal directly with momentum, so it's more natural to work with momentum instead of velocity as a state-defining variable.
 
-### 5. Energy
+### Energy
 
 A fundamental principle of physics states that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ is conserved. Note that in general $$F$$ is a vector and so is $$x$$, but I'm leaving them unbolded. 
 
@@ -54,7 +50,7 @@ $$
 
 Note that there exist so-called _non-conservative_ forces for which force _isn't_ the gradient of a potential. For example, friction and air resistance are non-conservative forces. These forces however are not fundamental forces like gravity or electromagnetism and therefore fall outside this rule's jurisdiction. Furthermore, when analyzing friction and drag we usually only model the object which is slowed down and not all of the individual air molecules which produce the drag. So in addition to this force not being fundamental, the system isn't closed. I like to think of non-conservative forces as "convenience" or "phenomenological".
 
-### 6. The Principle of Least Action
+### The Principle of Least Action
 
 The principle of least action states that of all the trajectories that exist in state space, the one that's actually taken by a system minimizes the integral
 
@@ -123,7 +119,7 @@ $$
 
 Note that for $$\theta$$ the right-hand side of the EL equation is $$0$$, so $$\dot{p}_\theta=0$$ and we see right away that angular momentum is conserved.
 
-### 7. Symmetries and Conservation Laws
+### Symmetries and Conservation Laws
 
 We already know that coordinate reference frames are arbitrary and therefore don't influence dynamics, but how do symmetries such as this appear in the Lagrangian formulation? Here's an example:
 
@@ -220,7 +216,7 @@ $$
 
 then a corresponding conserved quantity exists, and that quantity is proportional to $$\sum_i p_i \ dq_i = \sum_i p_i f_i(q)$$. (Note that $$\epsilon$$ can be ignored in this last equation because it's a constant.)
 
-### 8. Hamiltonian Mechanics
+### Hamiltonian Mechanics
 
 So far we've seen how coordinate invariances leads to momentum conservations. What about energy conservation? Energy conservation comes from time-translation invariance, which physically means that systems behave the same way if they evolve now, in the past, or in the future, as long as the time shift is applied to the entire system.
 
@@ -306,7 +302,7 @@ $$
 
 Together these are the dynamics equations for the Hamiltonian. Whereas the EL equation is a single second-order equation for $$q$$, the Hamilton equations are two first-order equations for $$q$$ and $$p$$, and dynamics are defined in terms of trajectories through phase space, as opposed to configuration space.
 
-### 9. The Phase Space Fluid
+### The Phase Space Fluid
 
 What are trajectories like in phase space? Firstly, they each define a contour of constant energy, if they didn't then energy wouldn't be conserved. Second, trajectories with different initial conditions never converge with each other, and a single trajectory never diverges into multiple trajectories. In other words distinct trajectories stay distinct. This is a re-statement of the $$-1^{\text{st}}$$ Law from earlier: all states have unique successor states and unique predecessor states. Dynamics are deterministic.
 
@@ -336,7 +332,7 @@ $$
 
 Because the order of partial differentiation doesn't matter the divergence is zero and phase space is incompressible. Trajectories don't converge or diverge. This result is called the Gibbs-Liouville theorem, a corollary to it is that trajectory-volumes in phase space are conserved.
 
-### 10. Poisson Brackets
+### Poisson Brackets
 
 Poisson brackets are the last part of classical mechanics I'll summarize. They deal with computing time-derivatives of functions over phase space $$\dot{F}(q,p)$$ in terms of the Hamiltonian.
 

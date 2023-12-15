@@ -12,7 +12,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 One way to start understanding quantum mechanics is by comparing it to classical mechanics, and this is how Susskind's book begins—with a comparison between classical spin and its quantum analog, through a thought experiment.
 
-The experiment involves measure the spin of a pamrticle using an apparatus that can be oriented in an arbitrary direction. The goal is to develop a model which captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement it returns. 
+The experiment involves measure the spin of a particle using an apparatus that can be oriented in an arbitrary direction. The goal is to develop a model which captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement it returns. 
 
 For the classical system, suppose we orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Next, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Next, orient in the $$+x$$ direction and measure $$0$$. After more configurations and measurements we find that spin can be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$. Note we've assumed that spin is unaffected by measurements—spin is a physical state existing independent of the apparatus and measurements leave it unchanged. As we'll see this is not necessarily true in QM.
 
