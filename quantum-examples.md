@@ -43,7 +43,7 @@ $$
 $$
 
 
-where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions of a particular configuration. The wave parameters are $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
+where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions. The wave parameters are $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
 By inspection, the solution contains two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The waves' phase velocity is
 
@@ -78,7 +78,7 @@ This is the so-called "potential well" because it bounds the particle between $$
 $$
 \begin{align*}
 \psi_n(x,t) &= \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right) e^{-iE_nt/\hbar} \\
-E_n &= \frac{\hbar^2 \pi^2}{2mL^2}n^2
+E_n &= \frac{h^2}{4mL^2}n^2
 \end{align*}
 $$
 
