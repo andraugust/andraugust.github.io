@@ -14,22 +14,22 @@ layout: default
 ## [Quantum Mechanics Part 3: Joint Systems & Entanglement](quantum-3.html)
 
 <p style="opacity:0.5">11/2023</p>
-Notes on combining systems in quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
+Notes on how to model combined systems in quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part 2: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
-Notes on dynamics and the representation of continuous states in quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
+Notes on the dynamics and representation of continuous states in quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part 1: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
-Notes on foundational ideas in quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
+Notes on the foundations of quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
-Notes on classical mechanics based on Leonard Susskind's book _The Theoretical Minimum_. The notes start with states and dynamics and then derives various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
+Notes on classical mechanics from Leonard Susskind's book _The Theoretical Minimum_. The notes start with states and dynamics and then derives various formulations of CM, touching on symmetries, conservation laws and determinism.
 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
@@ -59,7 +59,7 @@ Ship detection in satellite images using a Kaggle dataset.
 ## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game" and "card game" links to "game", etc.  Where do these first links eventually go? Does Wikipedia have anything that resembles a first-link taxonomy?
+The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game", and "card game" links to "game", etc.  Where do all these first links lead? Does Wikipedia's have something like a first-link taxonomy?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
