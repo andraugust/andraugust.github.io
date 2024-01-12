@@ -1,6 +1,8 @@
 ## Thermo Notes
 
-Thermal physics is the study of systems having a very large number of states or objects, so many that we can't practically study them directly. Instead, we study them at a macroscopic scale where two things are true:
+* Thermodynamics vs statistical thermodynamics vs statistical mechanics vs nonequilibrium 
+
+Thermal physics is the study of systems having a very large number of elementary objects, so many that we can't practically study them directly. Instead, we study them at a macroscopic scale where two things are true:
 
 1. The exact details of the system's underlying states don't need to be known in order to make useful predictions about the system's bulk properties.
 2. The statistical properties of the system fluctuate so minimally that we can treat them as fixed and make useful statistic predictions (such how often two atoms in a gas collide, or how likely they are to have a certain speed).
@@ -23,42 +25,59 @@ To get some intuition for thermal equilibrium I like to think of a gas in a box.
 
 ### Isolated Systems
 
-Isolated systems are a simple starting point. What can we say about them? Not a lot—we can talk about their total energy $$U$$, number of particles $$N$$, and the number of ways $$U$$ can be split amongst the $$N$$ particles. This last quantity is the number of microstates available to the system, called its multiplicity $$\Omega$$. In the next section when we look at two interacting systems $$\Omega$$ will be key to understanding how the systems exchange energy and "choose" which equilibrium macrostate to occupy. So let's get a feel for $$\Omega$$ by calculating it for three example systems: a magnet, a solid, and a gas.
+Isolated systems are a simple starting point. What can we say about them? We can talk about their total energy $$U$$, number of particles $$N$$, and number of ways $$U$$ can be split amongst the $$N$$ particles. This last quantity is the number of microstates available to the system, called its multiplicity $$\Omega$$. In the next section when we look at multiple systemt interacting $$\Omega$$ will be key to understanding how the systems exchange energy and "choose" which equilibrium macrostate to occupy. So let's get a feel for $$\Omega$$ by calculating it for three examples: a magnet, a solid, and a gas.
 
-__The Magnet.__ The two-state paramagnet's "particles" are dipole moments that align either with or against an external magnetic field. If we work in energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment and $$B$$ is the exteral field, the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
+__The Magnet.__ A simple model of a magnet is the two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$ where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
 
 The total energy is
 $$
 U = N_\downarrow-N_\uparrow = N-2N_\uparrow
 $$
-where $$N_\uparrow$$ and $$N_\downarrow$$ are the number of aligned and anti-aligned dipoles, respectively, and $$N=N_\downarrow+N_\uparrow$$ is the total number of dipoles.
+where $$N_\uparrow$$ and $$N_\downarrow$$ are the number of aligned and anti-aligned dipoles, and $$N=N_\downarrow+N_\uparrow$$ is the total number of dipoles.
 
-A microstate for this system is a binary list of each dipole's alignment, for example $$[\uparrow,\downarrow,...,\downarrow]$$. Macrostates are things like $$U$$, $$N_\uparrow$$, and the total magnetization $$M$$—ggregate functions of the microstate.
+A microstate for this system is a binary list of each dipole's alignment, for example $$[\uparrow,\downarrow,...,\downarrow]$$. Macrostates are things like $$U$$, $$N_\uparrow$$, and the total magnetization $$M$$—aggregate functions of microstate.
 
 The multiplicity is
 $$
 \Omega(N_\uparrow) = \begin{pmatrix} N \\ N_\uparrow \end{pmatrix} = \frac{N!}{N_\uparrow ! (N-N_\uparrow)!}
 $$
-In terms of energy and number of particles,
+or in terms of energy and number of particles,
 $$
 \Omega(U,N) = \frac{N!}{\frac{N-U}{2}!\frac{N+U}{2}!}
 $$
-__The Solid.__ The Einstein solid is a simple model of a solid where "particles" are spring-like oscillators connecting atoms in a cubic lattice. Oscillators are defined as identical so they have the same frequency parameter, and they're treated quantum mechanically so their energy is discretized in units of $$\hbar \omega$$.
+Note that the fractions in the denominator actually work out to be integers because adding or subtracting a particle always changes the energy by one unit. 
 
-The total energy of the oscillators (relative to the ground state and in units of $$\hbar\omega$$) is just the total number of energy units in the system: $$U$$.
+__The Solid.__ A simple model of a solid is the Einstein solid. Its "particles" are spring-like oscillators connecting atoms in a cubic lattice. Oscillators are defined as identical so they have the same frequency parameter $$\omega$$, and they're treated quantum mechanically so their energy is in units of $$\hbar \omega$$.
 
-A microstate is specified by listing each oscillator's energy. For example, if there are 5 energy units and 3 oscillators, microstates can be $$[2,0,3]$$ or $$[1,1,3]$$, etc. 
+The total energy of the oscillators (relative to the ground state) is just the total number of discrete energy units in the system: $$U$$.
 
-The multiplicity is
+A microstate is specified by listing each oscillator's energy. For example, if there are 5 energy units and 3 oscillators, possible microstates are $$[2,0,3]$$ or $$[1,1,3]$$, etc. 
+
+The multiplicity of this system is
 $$
 \Omega(U,N) = \begin{pmatrix} U+N-1 \\ U \end{pmatrix}
 $$
-__The Gas.__ The ideal gas is an interesting example. Classically it's modeled as a collection of monatomic atoms that scatter elastically off each other and off the walls of the volume they're in. (For this to be accurate the gas needs to be at a low enough density and high enough energy that the atoms spend their time either far apart, where inter-atomic forces are zero, or really close, where inter-atomic forces are strongly repulsive). How are states counted here? Classically, the gas's state is a list of each atom's position and momentum. But these are continuous quantities that can't be counted—there are an infinite number of them. If, on the other hand, the gas is modeled quantum mechanically, states become discritized and they can be counted. So let's look at a quantum gas.
+__The Gas.__ A simple model of a gas is the ideal gas. It's particles are monatomic atoms that scatter elastically off each other and off the walls of the volume they're in. The reason for the monatomic assumption is that we don't want to have to model the rotational and vibrational energies of the atoms, at least not yet. The ideal gas is also assumed to be at low density and high energy such that the atoms usually spend their time far apart where inter-atomic forces are zero, and when they do get close together, they get _really_ close, so that inter-atomic forces are strongly repulsive like an elastic scatterer—there's no getting stuck in potential wells for these atoms.
 
-In the quantum model, one atom's energy is
+The energy of atoms in an ideal 
+
+
+
+The ideal gas multiplicity is a bit more complicated to derive than the previous two examples. We have to treat it quantum mechanically and we have to be careful how we count states. The reason to treat the gas quantumly is because classically its state is defined by continuous variables (positions and momenta) of which there are an infinite number, so they can't be counted. On the other hand, if we think of each atom as a particle in a 3-d box, its state becomes discritized and therefore countable. So let's look at the quantum ideal gas.
+
+The energy of one particle in a cubic box is
 $$
-U = 
+U = \frac{h^2}{8mV^{2/3}} (n_x^2 + n_y^2 + n_z^2)
 $$
+
+where the $$n$$s are positive integers starting at $$1$$. 
+
+* Distinguishable vs indistinguishable particles
+
+
+
+
+
 
 
 ### Interacting Systems
