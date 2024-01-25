@@ -120,7 +120,7 @@ $$
 $$
 
 
-If the atoms switch places, another, distinct, microstate is
+If the atoms switch places they'll have another, distinct, microstate such as
 
 
 $$
@@ -145,15 +145,15 @@ $$
 f(N) = \frac{(2\pi m)^{3N/2}}{h^{3N}N!(3N/2)!}
 $$
 
-So much for isolated systems, on to interactions. 
+That's it for isolated systems, on to interactions. 
 
 ### Interacting Systems
 
-Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to the macrostate during this exchange?
+Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to each system's macrostate during the exchange?
 
-__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by passing energy back and forth between each other. At one moment their energies could be $$(U_1-u, U_2+u)$$, while at another moment they could be $$(U_1-u', U_2+u')$$, etc., and always $$U_1+U_2 = \text{const.}$$
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by passing energy back and forth between each other. At one moment their energies could be $$(U_1-u, U_2+u)$$, while at another moment their energies could be $$(U_1-u', U_2+u')$$, etc., and always $$U_1+U_2 = U$$
 
-After the systems interact for a while, what pair of energies will they have? According to the uniformity assumption, the probability of observing a pair of energies is
+After the systems interact for a while, what will the energies be? According to the uniformity assumption, the probability of observing a pair of energies is
 
 
 $$
@@ -169,7 +169,7 @@ $$
 $$
 
 
-So the more microstates associated with a pair of energies, the more likely the system is to have those energies.
+So the more microstates that are associated with a pair of energies, the more likely the system is to have those energies.
 
 
 
