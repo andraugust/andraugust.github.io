@@ -24,9 +24,9 @@ To get some intuition for thermal equilibrium I like to think of a gas in a box.
 
 ### Isolated Systems
 
-Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system be within a volume $$V$$. Given these things we can calculate (or approximate) the number of possible ways to split $$U$$ amongst the particles while satisfying their constraints. 
+Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system be within a volume $$V$$. 
 
-This number, called the system's multiplicity $$\Omega$$, is the number of microstates available to the system. It plays an important role in determining which equilibrium macrostate the system will settle to when it's allowed to interact with another system. To get a feel for $$\Omega$$ lets calculate it for three example systems and then in the next section I'll show how it determines equilibrium states. The three example systems are a magnet, a solid, and a gas.
+Given these things we can calculate (or approximate) the number of possible ways to split $$U$$ amongst the particles while satisfying their constraints. This number, called the system's multiplicity $$\Omega$$, is the number of microstates available to the system, it plays an important role in determining which equilibrium macrostate the system will settle to when it's allowed to interact with another system. To get a feel for $$\Omega$$ lets calculate it for three example systems and then in the next section see how it determines equilibrium states. The three example systems are a magnet, a solid, and a gas.
 
 __The Magnet.__ A simple model of a magnet is the two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, then the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
 
@@ -74,7 +74,7 @@ $$
 $$
 
 
-__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off each other and the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
+__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off each other and off the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
 
 To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to energy by
 
@@ -151,10 +151,9 @@ That's it for isolated systems, on to interactions.
 
 Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to each system's macrostate during the exchange?
 
-__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by passing energy back and forth between each other. At one moment their energies could be $$(U_1-u, U_2+u)$$, while at another moment their energies could be $$(U_1-u', U_2+u')$$, etc., and always $$U_1+U_2 = U$$
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by passing energy back and forth between each other. The energy of each system continuously fluctuates while $$U_1+U_2$$ remains constant. After the systems interact for a while, what will their energies be? 
 
-After the systems interact for a while, what will the energies be? According to the uniformity assumption, the probability of observing a pair of energies is
-
+According to the uniformity assumption, the probability of observing a pair of energies is
 
 $$
 P(U_1,U_2) \propto \Omega(U_1, U_2)
@@ -169,7 +168,7 @@ $$
 $$
 
 
-So the more microstates that are associated with a pair of energies, the more likely the system is to have those energies.
+So the more microstates associated with a pair of energies, the more likely the system is to have those energies.
 
 
 
