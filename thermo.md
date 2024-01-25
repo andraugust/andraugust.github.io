@@ -30,21 +30,33 @@ Isolated systems are a simple starting point. What can we say about them? For a 
 __The Magnet.__ A simple model of a magnet is the two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, then the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
 
 The total energy is
+
+
 $$
 U = N_\downarrow-N_\uparrow = N-2N_\uparrow
 $$
+
+
 where $$N_\uparrow$$ and $$N_\downarrow$$ are the number of aligned and anti-aligned dipoles, and $$N=N_\downarrow+N_\uparrow$$ is the total number of dipoles.
 
 A microstate for this system is specified by a binary list of each dipole's alignment, for example $$(\uparrow,\downarrow,...,\downarrow)$$. Macrostates are aggregate functions of microstates—things like $$U$$, $$N_\uparrow$$, and the total magnetization $$M$$ are macrostates.
 
 The multiplicity is
+
+
 $$
 \Omega(N_\uparrow) = \begin{pmatrix} N \\ N_\uparrow \end{pmatrix} = \frac{N!}{N_\uparrow ! (N-N_\uparrow)!}
 $$
+
+
 or in terms of energy and number of particles,
+
+
 $$
 \Omega(U,N) = \frac{N!}{\frac{N-U}{2}!\frac{N+U}{2}!}
 $$
+
+
 Note that the fractions in the denominator actually work out to be integers because adding or subtracting a particle always changes the energy by one unit. 
 
 __The Solid.__ A simple model of a solid is the Einstein solid. Its "particles" are spring-like oscillators that connect atoms into a cubic lattice. Oscillators are defined as identical so they have the same frequency parameter $$\omega$$, and they're treated quantum mechanically so their energy is in units of $$\hbar \omega$$.
@@ -54,47 +66,80 @@ The total energy of the oscillators (relative to the ground state) is just the t
 A microstate is specified by listing each oscillator's energy. For example, if there are 5 energy units and 3 oscillators, possible microstates are $$(2,0,3)$$ or $$(1,1,3)$$, etc. 
 
 The multiplicity is
+
+
 $$
 \Omega(U,N) = \begin{pmatrix} U+N-1 \\ U \end{pmatrix}
 $$
+
+
 __The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off of eachother and the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
 
 To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the gas's microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to the system's energy by
+
+
 $$
 U = \frac{1}{2m}\lvert \mathbf{p} \rvert ^2
 $$
+
+
 We're going to assume for now that the atoms have no internal energy-bearing degrees of freedom like rotations or vibrations—they're assumed to be monatonic.
 
 Classically the single particle can occupy a continuously infinite number of positions and momenta while satisfying the energy and volume constraints, so it seems like the multiplicity should likewise be continuously infinite. Quantumly, however, there's a limit to the simultaneous "resolution" of $$\mathbf{x}$$ and $$\mathbf{p}$$. In particular, they can only be known together up to the Heisenberg limit $$\Delta x_i \Delta p_i = \hbar/2$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped up into a grid of $$\Delta x$$s and $$\Delta p$$s that are at this limit, then we can count the number of microstates in a finite, discrete way. Let's see what happens.
 
 The number of position states is
+
+
 $$
 \Omega_x = \frac{V}{\Delta x_1 \Delta x_2 \Delta x_3}
 $$
+
+
 The number of momentum states is
+
+
 $$
 \Omega_p = \frac{S_d(r)}{\Delta p_1 \Delta p_2 \Delta p_3}
 $$
+
+
 Here, $$S_d(r)$$ is the surface area of a sphere of radius $$r$$ and dimension $$d$$. Why the surface area of a sphere? Because the energy-momentum relation is the equation of a sphere, and the momenta satisfying the energy constraint lie on its surface. For one particle, $$d = 3$$ and $$r = \sqrt{2mU}$$. The total multiplicity is
+
 
 $$
 \Omega = \Omega_x \Omega_p
 $$
+
+
 For $$N$$ particles we use the same approach, but now the position-space volume is $$V^N$$ and the momentum-space dimensionality is $$d=3N$$. Also, we have to account for the fact that the atoms are indistinguishable. To see why, consider a _distinguishable_ three-atom gas. One of its microstate might be
+
+
 $$
 ((\mathbf{x},\mathbf{p})_1,(\mathbf{x},\mathbf{p})_2,(\mathbf{x},\mathbf{p})_3)
 $$
+
+
 If the atoms switch places, another, distinct, microstate is
+
+
 $$
 ((\mathbf{x},\mathbf{p})_3,(\mathbf{x},\mathbf{p})_1,(\mathbf{x},\mathbf{p})_2)
 $$
+
+
 In this case there are two states to count, but if the particles are indistinguishable then there are no subscripts on these states and the first state is the same as the second. The way we're calculating $$\Omega$$, however, doesn't account for such _permutation redundancy_, that is unless $$\Omega$$ is divided by $$N!$$ to un-count the redundant states. So really the multiplicity is $$\Omega_x \Omega_p/N!$$.
 
 The final result after dividing by $$N!$$ and approximating for large $$N$$ is
+
+
 $$
 \Omega(U,V,N) = f(N) V^N U^{3N/2}
 $$
+
+
 where 
+
+
 $$
 f(N) = \frac{(2\pi m)^{3N/2}}{h^{3N}N!(3N/2)!}
 $$
