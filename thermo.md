@@ -21,7 +21,6 @@ This is a major assumption. From a classical mechanics perspective microstates f
 
 To get some intuition for thermal equilibrium I like to think of a gas in a box. Imagine the gas starts far from equilibrium, with initial conditions such that its atoms are all bunched up together in the upper left corner of the box and move together with the same velocity to the right. A moment later the atoms are still bunched up together, but shifted slightly. This is a very specific trajectory, one that's not uniform, but that's ok because the system isn't in equilibrium yet. If we wait longer, the atoms eventually hit the wall of the box, bouncing backward into each other, some before others, some later, some transferring lots of energy to their collision partner, some transferring less. Eventually, the distribution of atomic speeds, for example, becomes stationary (despite each individual atom's speed changing in each of its collisions). Similarly, the force per unit area exerted on the walls of the box by the atoms, i.e., the box's pressure, becomes constant. Now the gas is in equilibrium where the assumption holds and we can model it thermodynamically.
 
----
 
 ### Isolated Systems
 
