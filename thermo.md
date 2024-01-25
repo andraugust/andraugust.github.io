@@ -156,13 +156,21 @@ __Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and 
 It turns out that some energy configurations, i.e. macrostates, have more microstates associated with them than others, and because microstates are all equally likely (as per the uniformity assumption), it will ultimately be the macrostate with the most microstates that the system equilibrates to. So let's look at multiplicities.
 
 The multiplicity of the joint system is
+
+
 $$
 \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
+
+
 and because of the uniformity assumption, the probability of observing a pair of energies is
+
+
 $$
 P(U_1,U_2) \propto \Omega(U_1, U_2)
 $$
+
+
 If $$\Omega$$ were to be constant, then all macrostates would be equally likely, but remarkably, for systems like those three examples above, $$\Omega$$ tends to be very sharply peaked around a _single_ pair of energies, and the peak is so sharp that no matter when we observe the system we're basically guarantted to observe that pair of energies, despite the fact that the systems continue to exchange energy.
 
 
