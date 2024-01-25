@@ -24,9 +24,9 @@ To get some intuition for thermal equilibrium I like to think of a gas in a box.
 
 ## Isolated Systems
 
-Isolated systems are a simple starting point. What can we say about them? For a given system we can say it has a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that it occupies a volume $$V$$. Given these things we can calculate (or approximate) the number of possible ways to split $$U$$ amongst the particles while satisfying their constraints. 
+Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system be within a volume $$V$$. Given these things we can calculate (or approximate) the number of possible ways to split $$U$$ amongst the particles while satisfying their constraints. 
 
-This number, called the system's multiplicity $$\Omega$$, plays an important role in determining which equilibrium macrostate the system settles to when it's allowed to interact with another system. To get a feel for $$\Omega$$ lets calculate it for three example systems and then in the next section I'll show how it's used to compute equilibrium states. The three example systems are a magnet, a solid, and a gas.
+This number, called the system's multiplicity $$\Omega$$, is the number of microstates available to the system. It plays an important role in determining which equilibrium macrostate the system will settle to when it's allowed to interact with another system. To get a feel for $$\Omega$$ lets calculate it for three example systems and then in the next section I'll show how it determines equilibrium states. The three example systems are a magnet, a solid, and a gas.
 
 __The Magnet.__ A simple model of a magnet is the two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, then the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
 
@@ -149,11 +149,9 @@ So much for isolated systems, on to interactions.
 
 ## Interacting Systems
 
-Suppose that two thermodynamic systems interact by exchanging something with eachother. "Something" could be energy, particles, volume, or anything else that's macroscopic. The big question of this section is: what macroscopic states do the systems equilibrate to, and why?
+Suppose that two thermodynamic systems interact by exchanging something with eachother. "Something" could be energy, particles, volume, or anything else that's macroscopic. The big question of this section is: what macroscopic state does each system equilibrate to, and why?
 
-To start, consider two systems having energies $$U_1$$ and $$U_2$$. As they interact they pass energy back and forth (by assumption), so that at one point in time their energies may be $$(U_1-a, U_2+a)$$, while at another point in time they may be $$(U_1-a', U_2+a')$$, etc. but always $$U_1+U_2 = \text{const.}$$ 
-
-We want to know what the equilibrium state is. 
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$. As they interact they pass energy back and forth (by assumption), so that at one point in time their energies may be $$(U_1-a, U_2+a)$$, while at another point in time they may be $$(U_1-a', U_2+a')$$, etc. but always $$U_1+U_2 = \text{const.}$$ Do the energies fluctuate forever, or do they reach an equilibrium state?
 
 It turns out that some energy configurations, i.e. macrostates, have more microstates associated with them than others, and because microstates are all equally likely (as per the uniformity assumption), it will ultimately be the macrostate with the most microstates that the system equilibrates to. So let's look at multiplicities.
 
