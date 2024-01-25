@@ -22,7 +22,7 @@ This is a major assumption. From a classical mechanics perspective microstates f
 To get some intuition for thermal equilibrium I like to think of a gas in a box. Imagine the gas starts far from equilibrium, with initial conditions such that its atoms are all bunched up together in the upper left corner of the box and move together with the same velocity to the right. A moment later the atoms are still bunched up together, but shifted slightly. This is a very specific trajectory, one that's not uniform, but that's ok because the system isn't in equilibrium yet. If we wait longer, the atoms eventually hit the wall of the box, bouncing backward into each other, some before others, some later, some transferring lots of energy to their collision partner, some transferring less. Eventually, the distribution of atomic speeds, for example, becomes stationary (despite each individual atom's speed changing in each of its collisions). Similarly, the force per unit area exerted on the walls of the box by the atoms, i.e., the box's pressure, becomes constant. Now the gas is in equilibrium where the assumption holds and we can model it thermodynamically.
 
 
-## Isolated Systems
+### Isolated Systems
 
 Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system be within a volume $$V$$. Given these things we can calculate (or approximate) the number of possible ways to split $$U$$ amongst the particles while satisfying their constraints. 
 
@@ -74,7 +74,7 @@ $$
 $$
 
 
-__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off eachother and the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
+__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off each other and the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
 
 To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to energy by
 
@@ -147,15 +147,21 @@ $$
 
 So much for isolated systems, on to interactions. 
 
-## Interacting Systems
+### Interacting Systems
 
-Suppose that two thermodynamic systems interact by exchanging something with eachother. "Something" could be energy, particles, volume, or anything else that's macroscopic. The big question of this section is: what macroscopic state does each system equilibrate to, and why?
+Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to the macrostate during this exchange?
 
-__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$. As they interact they pass energy back and forth (by assumption), so that at one point in time their energies may be $$(U_1-a, U_2+a)$$, while at another point in time they may be $$(U_1-a', U_2+a')$$, etc. but always $$U_1+U_2 = \text{const.}$$ Do the energies fluctuate forever, or do they reach an equilibrium state?
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by passing energy back and forth between each other. At one moment their energies could be $$(U_1-u, U_2+u)$$, while at another moment they could be $$(U_1-u', U_2+u')$$, etc., and always $$U_1+U_2 = \text{const.}$$
 
-It turns out that some energy configurations, i.e. macrostates, have more microstates associated with them than others, and because microstates are all equally likely (as per the uniformity assumption), it will ultimately be the macrostate with the most microstates that the system equilibrates to. So let's look at multiplicities.
+After the systems interact for a while, what pair of energies will they have? According to the uniformity assumption, the probability of observing a pair of energies is
 
-The multiplicity of the joint system is
+
+$$
+P(U_1,U_2) \propto \Omega(U_1, U_2)
+$$
+
+
+where
 
 
 $$
@@ -163,11 +169,19 @@ $$
 $$
 
 
-and because of the uniformity assumption, the probability of observing a pair of energies is
+So the more microstates associated with a pair of energies, the more likely the system is to have those energies.
+
+
+
+
+
+It turns out that some pairs have more microstates associated with them than others, and because microstates are all equally à la the uniformity assumption, it is ultimately the macrostate with the most microstates that the system equilibrates to. So let's look at multiplicities.
+
+The multiplicity of the joint system is
 
 
 $$
-P(U_1,U_2) \propto \Omega(U_1, U_2)
+\Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
