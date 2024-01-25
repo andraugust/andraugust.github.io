@@ -13,7 +13,7 @@ As an example, a mole of a gas is a system that falls within the jurisdiction of
 
 Instead of tracking every atom in the gas, it's much more practical to compute a small number of _functions of its state_ and get a manageable number of bulk properties such as temperature, pressure and energy. But this approach raises a question: if we're calculating functions of state, don't we need to know the state? The answer is technically yes, but practically no. Practically no because, as we'll see, when thermal systems come to equilibrium, quantities such as pressure, temperature and energy are effectively constant even as the underlying states change, allowing us to ignore the state's specific details.
 
-Before going further, I should mention that the word _state_ is ambiguous in thermal physics. Sometimes it refers to the state of macroscopic variables and sometimes it refers to the configuration of the system, which is what I've been calling "the state" so far. To disambiguate, configurations get called _microstates_ (even though they may be bigger or smaller than a micron), and macroscopic states get called _macrostates_. I'll use these words from now on.
+Before going further, I should mention that the word _state_ is ambiguous in thermal physics. Sometimes it refers to the state of macroscopic variables and sometimes it refers to the configuration of the system, which is what I've been calling "the state" so far. To disambiguate, configurations are called _microstates_ (even though they may be bigger or smaller than a micron), and macroscopic states are called _macrostates_.
 
 Now, in order to start _doing_ thermodynamics, I have to state its fundamental assumption: _when a system is in thermal equilibrium, microstates transition between each other uniformly randomly such that each microstate is equally likely to be observed at any given time_.
 
@@ -22,9 +22,11 @@ This is a major assumption. From a classical mechanics perspective microstates f
 To get some intuition for thermal equilibrium I like to think of a gas in a box. Imagine the gas starts far from equilibrium, with initial conditions such that its atoms are all bunched up together in the upper left corner of the box and move together with the same velocity to the right. A moment later the atoms are still bunched up together, but shifted slightly. This is a very specific trajectory, one that's not uniform, but that's ok because the system isn't in equilibrium yet. If we wait longer, the atoms eventually hit the wall of the box, bouncing backward into each other, some before others, some later, some transferring lots of energy to their collision partner, some transferring less. Eventually, the distribution of atomic speeds, for example, becomes stationary (despite each individual atom's speed changing in each of its collisions). Similarly, the force per unit area exerted on the walls of the box by the atoms, i.e., the box's pressure, becomes constant. Now the gas is in equilibrium where the assumption holds and we can model it thermodynamically.
 
 
-### Isolated Systems
+## Isolated Systems
 
-Isolated systems are a simple starting point. What can we say about them? For a given system, we can say it has a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that it occupies a volume $$V$$. Given these things we can calculate (or approximate) the number of ways that $$U$$ can be split amongst the particles while satisfying any constraints. This number, called the system's multiplicity $$\Omega$$, plays an important role in determining which equilibrium macrostate the system settles to when it's allowed to interact with another system. To get a feel for $$\Omega$$ lets calculate it for three example systems and then in the next section we'll look at how it's used to compute equilibrium states. The three examples are a magnet, a solid, and a gas.
+Isolated systems are a simple starting point. What can we say about them? For a given system we can say it has a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that it occupies a volume $$V$$. Given these things we can calculate (or approximate) the number of possible ways to split $$U$$ amongst the particles while satisfying their constraints. 
+
+This number, called the system's multiplicity $$\Omega$$, plays an important role in determining which equilibrium macrostate the system settles to when it's allowed to interact with another system. To get a feel for $$\Omega$$ lets calculate it for three example systems and then in the next section I'll show how it's used to compute equilibrium states. The three example systems are a magnet, a solid, and a gas.
 
 __The Magnet.__ A simple model of a magnet is the two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, then the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
 
@@ -72,9 +74,9 @@ $$
 $$
 
 
-__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off of eachother and the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
+__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off eachother and the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
 
-To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the gas's microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to the system's energy by
+To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to energy by
 
 
 $$
@@ -82,9 +84,9 @@ U = \frac{1}{2m}\lvert \mathbf{p} \rvert ^2
 $$
 
 
-We're going to assume for now that the atoms have no internal energy-bearing degrees of freedom like rotations or vibrations—they're assumed to be monatonic.
+We're going to assume for now that the atoms have no internal energy-bearing degrees of freedom, such as rotations or vibrations—they're assumed to be monatonic atoms.
 
-Classically the single particle can occupy a continuously infinite number of positions and momenta while satisfying the energy and volume constraints, so it seems like the multiplicity should likewise be continuously infinite. Quantumly, however, there's a limit to the simultaneous "resolution" of $$\mathbf{x}$$ and $$\mathbf{p}$$. In particular, they can only be known together up to the Heisenberg limit $$\Delta x_i \Delta p_i = \hbar/2$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped up into a grid of $$\Delta x$$s and $$\Delta p$$s that are at this limit, then we can count the number of microstates in a finite, discrete way. Let's see what happens.
+Classically a single particle can occupy a continuously infinite number of positions and momenta while satisfying the energy and volume constraints, so it seems like the multiplicity should likewise be continuously infinite. Quantumly, however, there's a limit to the simultaneous "resolution" of $$\mathbf{x}$$ and $$\mathbf{p}$$. In particular, they can only be known together up to the Heisenberg limit $$\Delta x_i \Delta p_i = \hbar/2$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped up into a grid of $$\Delta x$$s and $$\Delta p$$s that are at this limit, then we can count the number of microstates in a finite, discrete way. Let's see what happens.
 
 The number of position states is
 
@@ -126,7 +128,7 @@ $$
 $$
 
 
-In this case there are two states to count, but if the particles are indistinguishable then there are no subscripts on these states and the first state is the same as the second. The way we're calculating $$\Omega$$, however, doesn't account for such _permutation redundancy_, that is unless $$\Omega$$ is divided by $$N!$$ to un-count the redundant states. So really the multiplicity is $$\Omega_x \Omega_p/N!$$.
+In this case there are two states to count, but if the particles are indistinguishable then there are no subscripts on the individual states and the first overall state is the same as the second. The way we're calculating $$\Omega$$, however, doesn't account for such _permutation redundancy_, that is unless $$\Omega$$ is divided by $$N!$$ to un-count the redundant states. So really the multiplicity is $$\Omega_x \Omega_p/N!$$.
 
 The final result after dividing by $$N!$$ and approximating for large $$N$$ is
 
@@ -143,11 +145,11 @@ $$
 f(N) = \frac{(2\pi m)^{3N/2}}{h^{3N}N!(3N/2)!}
 $$
 
-Great, now for the fun part—letting systems interact. 
+So much for isolated systems, on to interactions. 
 
-### Interacting Systems
+## Interacting Systems
 
-Suppose that two thermodynamic systems interact by exchanging something with eachother. "Something" could be energy, particles, volume, for example. The big question of this section is: what macroscopic states do the systems eventually equilibrate to, and why?
+Suppose that two thermodynamic systems interact by exchanging something with eachother. "Something" could be energy, particles, volume, or anything else that's macroscopic. The big question of this section is: what macroscopic states do the systems equilibrate to, and why?
 
 To start, consider two systems having energies $$U_1$$ and $$U_2$$. As they interact they pass energy back and forth (by assumption), so that at one point in time their energies may be $$(U_1-a, U_2+a)$$, while at another point in time they may be $$(U_1-a', U_2+a')$$, etc. but always $$U_1+U_2 = \text{const.}$$ 
 
@@ -174,6 +176,8 @@ The answer is of course, yes, and the way it's done is based on the uniformity a
 
 
 BIG SYSTEMS
+
+
 $$
 \ln \binom{n}{k} \approx \frac{1}{2}\ln(\frac{n}{2\pi k(n-k)}) + n\ln n - k\ln k - (n-k)\ln (n-k)
 $$
