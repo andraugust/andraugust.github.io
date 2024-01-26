@@ -34,11 +34,11 @@ The total energy is
 
 
 $$
-U = N_\downarrow-N_\uparrow = N-2N_\uparrow
+U = N_\uparrow-N_\downarrow = N-2N_\downarrow
 $$
 
 
-where $$N_\uparrow$$ and $$N_\downarrow$$ are the number of aligned and anti-aligned dipoles, and $$N=N_\downarrow+N_\uparrow$$ is the total number of dipoles.
+where $$N_\downarrow$$ and $$N_\uparrow$$ are the number of aligned and anti-aligned dipoles, and $$N=N_\downarrow+N_\uparrow$$ is the total number of dipoles.
 
 A microstate for this system is specified by a binary list of each dipole's alignment, for example $$(\uparrow,\downarrow,...,\downarrow)$$. Macrostates are aggregate functions of microstates—things like $$U$$, $$N_\uparrow$$, and the total magnetization $$M$$ are macrostates.
 
@@ -46,7 +46,7 @@ The multiplicity is
 
 
 $$
-\Omega(N_\uparrow) = \begin{pmatrix} N \\ N_\uparrow \end{pmatrix} = \frac{N!}{N_\uparrow ! (N-N_\uparrow)!}
+\Omega(N_\downarrow) = \begin{pmatrix} N \\ N_\downarrow \end{pmatrix}
 $$
 
 
@@ -57,9 +57,12 @@ $$
 \Omega(U,N) = \frac{N!}{\frac{N-U}{2}!\frac{N+U}{2}!}
 $$
 
+Note that the fractions in the denominator actually work out to be integers because adding or subtracting a particle always changes the energy by one unit.
 
-Note that the fractions in the denominator actually work out to be integers because adding or subtracting a particle always changes the energy by one unit. 
-
+For large $$N$$ and $$N \gg N_\downarrow$$ (the high energy limit) this simplifies to
+$$
+\left( \frac{Ne}{N_\downarrow} \right)^{N_\downarrow}
+$$
 __The Solid.__ A simple model of a solid is the Einstein solid. Its "particles" are spring-like oscillators that connect atoms into a cubic lattice. Oscillators are defined as identical so they have the same frequency parameter $$\omega$$, and they're treated quantum mechanically so their energy is in units of $$\hbar \omega$$.
 
 The total energy of the oscillators (relative to the ground state) is just the total number of energy units in the system: $$U$$.
@@ -187,7 +190,7 @@ $$
 \Omega(U_1, U_2) = \left( \frac{e}{N} \right)^{2N} (U_1 U_2)^N
 $$
 
-This multiplicity function turns out to be shaped like a Gaussian that's peaked around $$U_1 = U_2 = U/2$$. How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find it has standard deviation $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the energy scale though it's just $$1/\sqrt{N}$$. So for one mole, only about $$10^{-9}$$ percent of the possible macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, $$(U_1,U_2)=(U/2,U/2)$$ is the answer to our question "After the systems interact for a while, what are their energies?".
+This multiplicity function turns out to be shaped like a Gaussian that's peaked around $$U_1 = U_2 = U/2$$. How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find its standard deviation to be $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's just $$1/\sqrt{N}$$. So for one mole, only about $$10^{-9}$$ percent of the possible macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, $$(U_1,U_2)=(U/2,U/2)$$ is the answer to our question "After the systems interact for a while, what are their energies?".
 
 
 
