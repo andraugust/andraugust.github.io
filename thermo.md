@@ -73,14 +73,23 @@ $$
 \Omega(U,N) = \begin{pmatrix} U+N-1 \\ U \end{pmatrix}
 $$
 
+
 For large $$N$$ and $$U$$ this is approximately
+
+
 $$
 \Omega(U,N) \approx \frac{(U+N)^{U+N}}{U^U N^N}
 $$
+
+
 And in the high-energy limit where $$U \gg N$$ this simplifies to
+
+
 $$
 \left( \frac{Ue}{N} \right)^N
 $$
+
+
 __The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off each other and off the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
 
 To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to energy by
@@ -152,6 +161,7 @@ $$
 f(N) = \frac{(2\pi m)^{3N/2}}{h^{3N}N!(3N/2)!}
 $$
 
+
 That's it for isolated systems, on to interactions. 
 
 ### Interacting Systems
@@ -162,16 +172,22 @@ __Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and 
 
 According to the uniformity assumption, the probability of observing a pair of energies is
 
+
 $$
 P(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
+
 So the more microstates associated with a pair of energies, the more likely the system is to have those energies. 
 
 For example, the joint multiplicity of two Einstein solids having the same number of particles is
+
+
 $$
 \left( \frac{e}{N} \right)^{2N} (U_1 U_2)^N
 $$
+
+
 For $$N$$ on the order of a mole, this quantity is _very_ sharply peaked around an equal split of energy between the two systems $$U_1 = U_2 = U/2$$. In fact, it's so sharply peaked that the probability of finding the system in any other macrostate is basically zero. 
 
 For example, if we fit a Gaussian function at the peak of the joint multiplicity function (which is actually a good fit) we find its standard deviation to be $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the system is expected to occupy. Relative to the energy scale though it's just $$1/\sqrt{N}$$. So for one mole, it's $$10^{-11}$$. In otherwords, for one mole of particles in a two-Einstein solid system, only $$10^{-9}$$ percent of the possible macrostates actually get occupied. This is the equilibrium macrostate.
