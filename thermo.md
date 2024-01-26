@@ -184,13 +184,14 @@ The joint multiplicity of two Einstein solids having the same number of particle
 
 
 $$
-\left( \frac{e}{N} \right)^{2N} (U_1 U_2)^N
+\Omega(U_1, U_2) = \left( \frac{e}{N} \right)^{2N} (U_1 U_2)^N
 $$
 
+This multiplicity function turns out to be shaped like a Gaussian that's peaked around $$U_1 = U_2 = U/2$$. How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find it has standard deviation $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the energy scale though it's just $$1/\sqrt{N}$$. So for one mole, only about $$10^{-9}$$ percent of the possible macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, $$(U_1,U_2)=(U/2,U/2)$$ is the answer to our question "After the systems interact for a while, what are their energies?".
 
-This multiplicity function turns out to be shaped like a Gaussian, and for $$N$$ on the order of a mole, it's _very_ sharply peaked around $$U_1 = U_2 = U/2$$. In fact, it's so sharply peaked that the probability of finding the system in any other macrostate is basically zero.
 
-To show this quantitatively, we fit a Gaussian at the peak of the joint multiplicity function and find its standard deviation to be $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the system is expected to occupy. Relative to the energy scale though it's just $$1/\sqrt{N}$$. So for one mole, only about $$10^{-9}$$ percent of the possible macrostates actually get occupied. This is the equilibrium macrostate.
+
+
 
 
 
