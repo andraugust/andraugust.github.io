@@ -168,7 +168,7 @@ That's it for isolated systems, on to interactions.
 
 Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to each system's macrostate during the exchange?
 
-__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by exchanging energy. Throughout their interaction each system's energy fluctuates due to their giving and gaining of energy back and forth to each other, but the total energy $$U=U_1+U_2$$ remains constant. After the systems interact for a while, what are their energies? 
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by exchanging energy. Throughout their interaction each system's energy fluctuates due to their giving and gaining of energy back and forth to each other, but all the while the total energy $$U=U_1+U_2$$ is constant. After the systems interact for a while, what are their energies? 
 
 According to the uniformity assumption, the probability of observing a pair of energies is
 
@@ -188,9 +188,9 @@ $$
 $$
 
 
-This multiplicity function turns out to be shaped like a Gaussian, and for $$N$$ on the order of a mole, it's _very_ sharply peaked around $$U_1 = U_2 = U/2$$. In fact, it's so sharply peaked that the probability of finding the system in any other macrostate is basically zero. 
+This multiplicity function turns out to be shaped like a Gaussian, and for $$N$$ on the order of a mole, it's _very_ sharply peaked around $$U_1 = U_2 = U/2$$. In fact, it's so sharply peaked that the probability of finding the system in any other macrostate is basically zero.
 
-For example, if we fit a Gaussian function at the peak of the joint multiplicity function (which is actually a good fit) we find its standard deviation to be $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the system is expected to occupy. Relative to the energy scale though it's just $$1/\sqrt{N}$$. So for one mole, it's $$10^{-11}$$. In otherwords, for one mole of particles in a two-Einstein solid system, only $$10^{-9}$$ percent of the possible macrostates actually get occupied. This is the equilibrium macrostate.
+To show this quantitatively, we fit a Gaussian at the peak of the joint multiplicity function and find its standard deviation to be $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the system is expected to occupy. Relative to the energy scale though it's just $$1/\sqrt{N}$$. So for one mole, only about $$10^{-9}$$ percent of the possible macrostates actually get occupied. This is the equilibrium macrostate.
 
 
 
