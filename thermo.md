@@ -73,7 +73,14 @@ $$
 \Omega(U,N) = \begin{pmatrix} U+N-1 \\ U \end{pmatrix}
 $$
 
-
+For large $$N$$ and $$U$$ this is approximately
+$$
+\Omega(U,N) \approx \frac{(U+N)^{U+N}}{U^U N^N}
+$$
+And in the high-energy limit where $$U \gg N$$ this simplifies to
+$$
+\left( \frac{Ue}{N} \right)^N
+$$
 __The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off each other and off the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
 
 To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to energy by
@@ -151,44 +158,27 @@ That's it for isolated systems, on to interactions.
 
 Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to each system's macrostate during the exchange?
 
-__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by passing energy back and forth between each other. The energy of each system continuously fluctuates while $$U_1+U_2$$ remains constant. After the systems interact for a while, what will their energies be? 
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by passing energy back and forth to each other. Throughout their interaction each system's energy fluctuates but $$U_1+U_2$$ remains constant. After the systems interact for a while, what are their energies? 
 
 According to the uniformity assumption, the probability of observing a pair of energies is
 
 $$
-P(U_1,U_2) \propto \Omega(U_1, U_2)
+P(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
+So the more microstates associated with a pair of energies, the more likely the system is to have those energies. 
 
-where
-
-
+For example, the joint multiplicity of two Einstein solids having the same number of particles is
 $$
-\Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
+\left( \frac{e}{N} \right)^{2N} (U_1 U_2)^N
 $$
+For $$N$$ on the order of a mole, this quantity is _very_ sharply peaked around an equal split of energy between the two systems $$U_1 = U_2 = U/2$$. In fact, it's so sharply peaked that the probability of finding the system in any other macrostate is basically zero. 
 
-
-So the more microstates associated with a pair of energies, the more likely the system is to have those energies.
-
-
-
-
-
-It turns out that some pairs have more microstates associated with them than others, and because microstates are all equally à la the uniformity assumption, it is ultimately the macrostate with the most microstates that the system equilibrates to. So let's look at multiplicities.
-
-The multiplicity of the joint system is
-
-
-$$
-\Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
-$$
-
-
-If $$\Omega$$ were to be constant, then all macrostates would be equally likely, but remarkably, for systems like those three examples above, $$\Omega$$ tends to be very sharply peaked around a _single_ pair of energies, and the peak is so sharp that no matter when we observe the system we're basically guarantted to observe that pair of energies, despite the fact that the systems continue to exchange energy.
+For example, if we fit a Gaussian function at the peak of the joint multiplicity function (which is actually a good fit) we find its standard deviation to be $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the system is expected to occupy. Relative to the energy scale though it's just $$1/\sqrt{N}$$. So for one mole, it's $$10^{-11}$$. In otherwords, for one mole of particles in a two-Einstein solid system, only $$10^{-9}$$ percent of the possible macrostates actually get occupied. This is the equilibrium macrostate.
 
 
 
-The answer is of course, yes, and the way it's done is based on the uniformity assumption. Recall that the uniformity assumption states that if a system is in equilibrium, then each of its allowed microstates are equally likely to be occupied. This means that if a system's energy value can be associated with more microstates can be used to 
+
 
 
 
