@@ -1,8 +1,20 @@
-## Thermo Notes
+## Statistical Thermodynamics
 
-* Thermodynamics vs statistical thermodynamics vs statistical mechanics vs nonequilibrium 
+Statistical thermodynamics explores the emergence of a system's thermal properties from the physics of its elementary objects. If the system is the air inside a balloon, for example, it's thermal properties are things like temperature, pressure and volume, and its elementary objects are the atoms and molecules it's filled with.
 
-Statistical mechanics is the study of systems having a very large number of elementary objects, so many that we can't practically study them directly. Instead, we study them at a macroscopic scale where two things are true:
+Thermal properties are relatively intuitive—we can feel the difference between hot and cold, we can see steam rise off a boiling pot, and we can watch a helium-filled balloon pull on whatever it's attached to. But that these things should occur due to the motion of atoms is far from obvious, and if we were to try and predict any of them by applying classical or quantum mechanics directly, we wouldn't get very far—there are just too many objects to consider.
+
+How many objects are we considering? A mole is the typical scale used to measure the number of objects in thermal systems, it's about $$10^{23}$$. To get a feel for this number, a mole of gas occupies about $$22$$ liters at standard temperature and pressure. Now, to classically represent a mole of gas, we would have to list each of its atom's positions and momenta—about $$10^{23}$$ numbers in total. This is an absurdly large number of numbers. It would take about $$10^9$$ supercomputers-worth of storage space to represent them all. Imagine the energy required to propogate the state one step forward in time, let alone accurately model all of the relevant forces—it's not happening.
+
+Instead of tracking every atom in the gas, it's much more practical to compute a small number of _functions of its state_ and get a manageable number of bulk properties such as temperature, pressure and energy. But this raises a question: if we're calculating functions of state, don't we need to know the state? The answer is technically yes, but practically no. Practically no because, as we'll see, when thermal systems come to equilibrium, quantities such as pressure, temperature and energy are effectively constant even as the underlying states change, and because of this we can ignore the state's specific details.
+
+Before going further, some terminology. The word _state_ can be ambiguous in statistical thermo. It could refer to the state of macroscopic variables or it could refer to the configuration of the system, which is what I've been calling state so far. To disambiguate, configurations are called _microstates_ (even though they may be bigger or smaller than a micron) and macroscopic states are called _macrostates_. If I say "state" without a prefix, it should be clear from the context which one I mean, but I'll always try to include micro and macro.
+
+Also, the word _thermodynamics_ calls for definition. Thermodynamics is about thermal things changing, like when energy is absorbed or given up, or when volume expands or contracts, etc. But changes are assumed to happen in a special way, a way where their effects are transmitted uniformly throughout the system and slowly enough that the system has time to come to equiilibrium before being subjected to more change. Such a process is called "quasi-static", and strictly speaking it takes infinitely long to do, but in practice we can get close enough over practical time scales.  (Side note—although it's tempting to synonymize "dynamic equilibrium" with quasistatic due to the system being in equilibrium throughout its dynamics, really dynamic equilibrium means something else.)
+
+
+
+Statistical thermodynamics is the study of systems having a very large number of elementary objects, so many that we can't practically study them directly. Instead, we study them at a macroscopic scale where two things are true:
 
 1. The details of the elementary objects don't need to be known in order to make useful predictions about the system's macroscopic properties.
 2. The statistical properties of the system fluctuate so minimally that they can be treated as constant, and we can make meaningful statistic predictions (such how often two atoms in a gas collide, or how likely they are to have a certain energy).
@@ -85,7 +97,7 @@ $$
 $$
 
 
-And in the high-energy limit where $$U \gg N$$ this further approximates to
+In the high-energy limit where $$U \gg N$$ this further approximates to
 
 
 $$
@@ -171,7 +183,7 @@ That's it for isolated systems, on to interactions.
 
 Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to each system's macrostate during the exchange?
 
-__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by exchanging energy. Throughout their interaction each system's energy fluctuates due to their giving and gaining of energy back and forth to each other, but all the while the total energy $$U=U_1+U_2$$ is constant. After the systems interact for a while, what are their energies? 
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by exchanging energy. Throughout their interaction each system's energy fluctuates due to each one giving and gaining energy to the other randomly, but in a way which conserves the total $$U=U_1+U_2 = \text{const}$$. After the systems interact for a while, what are their energies? 
 
 According to the uniformity assumption, the probability of observing a pair of energies is
 
@@ -181,31 +193,48 @@ P(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
-So the more microstates associated with a pair of energies, the more likely the system is to have those energies. Let's see how this works out for a pair of Einstein solids.
+So the more microstates associated with an energy macrostate, the more likely the system is to have that macrostate. Let's see how this works out for a pair of Einstein solids.
 
-The joint multiplicity of two Einstein solids having the same number of particles is
+The joint multiplicity of two Einstein solids is
 
 
 $$
-\Omega(U_1, U_2) = \left( \frac{e}{N} \right)^{2N} (U_1 U_2)^N
+\Omega(U_1, U_2) = \left( \frac{U_1e}{N_1} \right)^{N_1} \left( \frac{U_2e}{N_2} \right)^{N_2}
 $$
 
-This multiplicity function turns out to be shaped like a Gaussian that's peaked around $$U_1 = U_2 = U/2$$. How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find its standard deviation to be $$\sigma=U/\sqrt{N}$$. This is the number of distinct macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's just $$1/\sqrt{N}$$. So for one mole, only about $$10^{-9}$$ percent of the possible macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, $$(U_1,U_2)=(U/2,U/2)$$ is the answer to our question "After the systems interact for a while, what are their energies?".
+This multiplicity function turns out to be shaped like a Gaussian that's peaked around the point where 
+$$
+\frac{N_1}{N_2} = \frac{U_1}{U_2}
+$$
+So energy is shared equally when the systems have the same number of particles, otherwise it's biased toward the system having more particles. 
+
+How sharp is the Gaussian peak? Fitting a Gaussian to $$\Omega$$, we find that it has a standard deviation of $$\sigma=U/\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's  $$1/\sqrt{N}$$, so for one mole only about $$10^{-9}$$ percent of macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, eq. 18 is the answer to the question "after the systems interact for a while, what are their energies?".
 
 
 
 
 
+* Do the same thing for ideal gas and paramagnet
+* Volume exchange and particle exchange
+
+* Conclusion: there's one equilibrium state. 
+* For a general exchange, do differentiation and get the thermodynamic identity.
+* Free energies
+* Boltzmann distribution
+* Partition functions
+* Quantum
 
 
 
 
 
+### Approximations
 
-
-
-BIG SYSTEMS
-
+For large $$n$$
+$$
+n! \approx \sqrt{2\pi n} \left(\frac{n}{e}\right)^n
+$$
+For large $$n$$ and $$k$$
 
 $$
 \ln \binom{n}{k} \approx \frac{1}{2}\ln(\frac{n}{2\pi k(n-k)}) + n\ln n - k\ln k - (n-k)\ln (n-k)
@@ -213,18 +242,7 @@ $$
 
 
 
-
 __Temperature & Energy.__ Temperature is defined as the willingness of a system to exchange energy with another system. Energy exchanged in this way is called _heat_. Any other form of energy transfer is called _work_. Heat and work describe energy _in transit_, so it doesn't make sense to say something like "the coffee cup has a lot of heat", but you can say "the coffee cup has a lot of energy".
 
 
 
-__Thermodynamic limit.__ The _thermodynamic limit_ is the regime where fluctuations are negligable relative to the average of whatever quantity is being considered.
-
-__Ensembles.__ Consider two systems $$A$$ and $$B$$ that exchange energy with each other but are otherwise isolated. $$A$$ is in a state $$x_A$$ whose specific details we do not know. For example $$A$$ could be a mole of gas, in which case $$x_A$$ is the position and momenta of all the constituent particles. What we'll assume we do know, however, is the state's energy $$E_A$$. In addition we know that there are many _other_ states that have this same energy, and we denote the number of them by $$\Omega(E_A)$$.
-
-What does this have to do with thermodynamics? There's a principal in thermodynamics which states that:
-
-1. When a system has $$E$$, all of the states having $$E$$ are equally likely to be the one the system is actually in.
-2. State transitions are uniformly random.
-
-What this implies is that the system spends a disproportionately large amount of time in states that  $$\Omega(E_A)\Omega(E_B)$$.  
