@@ -21,9 +21,9 @@ From a classical mechanics perspective this can't be right. In CM, microstates f
 
 ### Isolated Systems
 
-Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system be within a volume $$V$$. 
+Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system is inside a volume $$V$$. Given these things we can calculate (or try to calculate) the number of ways that $$U$$ can be split amongst the system's particles while satisfying any constraints. This number, called the system's multiplicity $$\Omega$$, is the number of microstates available to the system, it plays an important role in determining which macrostate the system equilibrates to when it undergoes dynamics.
 
-Given these things we can calculate (or approximate) the number of possible ways to split $$U$$ amongst the particles while satisfying their constraints. This number, called the system's multiplicity $$\Omega$$, is the number of microstates available to the system, it plays an important role in determining which equilibrium macrostate the system will settle to when it's allowed to interact with another system. To get a feel for $$\Omega$$ lets calculate it for three example systems and then in the next section see how it determines equilibrium states. The three example systems are a magnet, a solid, and a gas.
+To get a feel for $$\Omega$$ I'll calculate it for three example systems, then in the next section I'll show how it determines equilibrium states. The three example systems are a magnet, a solid, and a gas.
 
 __The Magnet.__ A simple model of a magnet is the two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, then the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
 
@@ -166,7 +166,7 @@ That's it for isolated systems, on to interactions.
 
 ### Interacting Systems
 
-Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or anything else that's exchangeable. The big question of this section is: what happens to each system's macrostate during the exchange?
+Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or any other macro-variable that's exchangeable. The question of this section is: do the systems equilibrate, and if so what's the equilibrium macrostate?
 
 __Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by exchanging energy. Throughout their interaction each system's energy fluctuates due to each one giving and gaining energy to the other randomly, but in a way which conserves the total $$U=U_1+U_2 = \text{const}$$. After the systems interact for a while, what are their energies? 
 
@@ -187,13 +187,18 @@ $$
 \Omega(U_1, U_2) = \left( \frac{U_1e}{N_1} \right)^{N_1} \left( \frac{U_2e}{N_2} \right)^{N_2}
 $$
 
+
 This multiplicity function turns out to be shaped like a Gaussian that's peaked around the point where 
+
+
 $$
 \frac{N_1}{N_2} = \frac{U_1}{U_2}
 $$
-So energy is shared equally when the systems have the same number of particles, otherwise it's biased toward the system having more particles. 
 
-How sharp is the Gaussian peak? Fitting a Gaussian to $$\Omega$$, we find that it has a standard deviation of $$\sigma=U/\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's  $$1/\sqrt{N}$$, so for one mole only about $$10^{-9}$$ percent of macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, eq. 18 is the answer to the question "after the systems interact for a while, what are their energies?".
+
+So energy is shared equally when the systems have the same number of particles, otherwise it's biased toward the system having more particles—remember these "particles" are quantum oscillators, and this result shows that the equilibrium energy per oscillator is constant.
+
+How sharp is the Gaussian's peak? Fitting a Gaussian to $$\Omega$$, we find that it has a standard deviation of $$\sigma=U/\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's just $$1/\sqrt{N}$$, so for one mole only about $$10^{-9}$$ percent of macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, eq. 18 is the answer to the question "after the systems interact for a while, what are their energies?".
 
 
 
@@ -216,10 +221,15 @@ How sharp is the Gaussian peak? Fitting a Gaussian to $$\Omega$$, we find that i
 ### Approximations
 
 For large $$n$$
+
+
 $$
 n! \approx \sqrt{2\pi n} \left(\frac{n}{e}\right)^n
 $$
+
+
 For large $$n$$ and $$k$$
+
 
 $$
 \ln \binom{n}{k} \approx \frac{1}{2}\ln(\frac{n}{2\pi k(n-k)}) + n\ln n - k\ln k - (n-k)\ln (n-k)
