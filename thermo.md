@@ -12,11 +12,11 @@ Before going further, I'll mention that the word _state_ can be ambiguous in the
 
 Also, the word _thermodynamics_ should be defined. Thermodynamics is about thermal things changing, like when energy is absorbed or given up, or when volume expands or contracts, etc. But changes are assumed to happen in a very special way, a way where their effects are transmitted throughout the entire system and at a rate where the system can come to equilibrium before moving on to change further. Such a process is called "quasi-static". Strictly speaking, it takes infinitely long to do something quasi-statically, but in practice we can get close enough over practical time scales.  (Side note—although it's tempting to synonymize "dynamic equilibrium" with quasistatic due to the system being in equilibrium throughout its dynamics, really dynamic equilibrium means something different.)
 
-Now, in order to start _doing_ thermodynamics, I have to state its fundamental postulate: 
+Now, in order to start _doing_ thermodynamics, we need its fundamental postulate: 
 
-> When a system is in thermal equilibrium, microstates transition between each other uniformly randomly such that each microstate is equally likely to be observed at any given time.
+> When a system is in thermal equilibrium, each microstate is equally likely to be observed at all times.
 
-From a classical mechanics perspective, this can't be right. In CM, microstates follow a single deterministic trajectory through phase space, one determined by the system's initial conditions and whatever forces are involved. Classically, transition probabilities are delta functions along the system's one and only trajectory, not uniform distributions over phase space. How do we get away with the postulate? Well, it's a postulate, so it can be whatever it wants to be…as long as it works. And as I'll show throughout this post, for large systems like those in thermodynamics, it does.
+From a classical mechanics perspective this can't be right. In CM, microstates follow a single deterministic trajectory through phase space, one determined by the system's initial conditions and whatever forces are involved—state-transition probabilities are delta functions along the system's one and only trajectory, not uniform distributions over phase space. How do we get away with this postulate? Well, it's a postulate, so it can say whatever it wants to say…just as long as it corresponds with physical reality. And as I'll show throughout this post, for large systems like those in thermodynamics, it does.
 
 
 ### Isolated Systems
