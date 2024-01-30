@@ -58,7 +58,7 @@ Note that the fractions in the denominator actually work out to be integers beca
 
 For large $$N$$ and $$N \gg N_\downarrow$$ (the high energy limit) this simplifies to
 $$
-\left( \frac{Ne}{N_\downarrow} \right)^{N_\downarrow}
+\left( \frac{Ne}{N_\downarrow} \right)^{N_\downarrow} = \left( \frac{2Ne}{N-U}\right)^{(N-U)/2}
 $$
 __The Solid.__ A simple model of a solid is the Einstein solid. Its "particles" are spring-like oscillators that connect atoms into a cubic lattice. Oscillators are defined as identical so they have the same frequency parameter $$\omega$$, and they're treated quantum mechanically so their energy is in units of $$\hbar \omega$$.
 
@@ -166,9 +166,9 @@ That's it for isolated systems, on to interactions.
 
 ### Interacting Systems
 
-Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or any other macro-variable that's exchangeable. The question of this section is: do the systems equilibrate, and if so what's the equilibrium macrostate?
+Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or any other macro-variable that's exchangeable. The question of this section is: what's the equilibrium macrostate?
 
-__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by exchanging energy. Throughout their interaction each system's energy fluctuates due to each one giving and gaining energy to the other randomly, but in a way which conserves the total $$U=U_1+U_2 = \text{const}$$. After the systems interact for a while, what are their energies? 
+__Energy Exchange.__ To start, consider two systems having energies $$U_1$$ and $$U_2$$ that interact by exchanging energy with each other. Throughout their interaction each system's energy fluctuates, but in a way which conserves $$U=U_1+U_2$$. After the systems interact for a while, what are their energies? 
 
 According to the uniformity assumption, the probability of observing a pair of energies is
 
@@ -178,9 +178,9 @@ P(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
-So the more microstates associated with an energy macrostate, the more likely the system is to have that macrostate. Let's see how this works out for a pair of Einstein solids.
+So the more microstates associated with a macrostate, the more likely the system is to have that macrostate. Let's see how this works out for a pair of Einstein solids.
 
-The joint multiplicity of two Einstein solids is
+The multiplicity of two Einstein solids is
 
 
 $$
@@ -188,17 +188,21 @@ $$
 $$
 
 
-This multiplicity function turns out to be shaped like a Gaussian that's peaked around the point where 
+This function turns out to be shaped like a Gaussian that's peaked around the point where 
 
 
 $$
-\frac{N_1}{N_2} = \frac{U_1}{U_2}
+\frac{N_1}{N_2} = \frac{\bar{U}_1}{\bar{U}_2}
 $$
 
 
-So energy is shared equally when the systems have the same number of particles, otherwise it's biased toward the system having more particles—remember these "particles" are quantum oscillators, and this result shows that the equilibrium energy per oscillator is constant.
+Here I'm using over-bars to indicate max values. This says that the most likely macrostate is the one where energy is shared between the systems in proportion to their number of particles. If they have the same number of particles, for example, they're most likely to be found with equal energy, regardless of how unbalanced the energies were prior to the interaction.
 
-How sharp is the Gaussian's peak? Fitting a Gaussian to $$\Omega$$, we find that it has a standard deviation of $$\sigma=U/\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's just $$1/\sqrt{N}$$, so for one mole only about $$10^{-9}$$ percent of macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, eq. 18 is the answer to the question "after the systems interact for a while, what are their energies?".
+How sharp is the Gaussian's peak? By taking the logarithm of $$\Omega$$ and applying a couple approximations we can get $$\Omega$$ into a Gaussian form. The Gaussian turns out to have a standard deviation of $$\sigma=U/\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's just $$1/\sqrt{N}$$. For $$N=10^{23}$$, only about $$10^{-9}$$ percent of macrostates actually get occupied, making the peak effectively the _only_ macrostate we expect to observe. In otherwords, eq. 18 is the answer to the question "what's the equilibrium macrostate?".
+
+If we apply the same analysis to the two-state paramagnet, the result is the same
+
+
 
 
 
