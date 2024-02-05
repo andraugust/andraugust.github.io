@@ -4,30 +4,30 @@ Statistical thermodynamics explores the way in which the thermal properties of a
 
 Thermal properties are relatively intuitive—we can feel the difference between hot and cold, we can see steam rising from a boiling pot of water, and we can warm ourselves by a fire. But that these things should occur due to the motion of atoms is far from obvious, and if we tried to predict any of them using classical or quantum mechanics directly we wouldn't get very far—there are just too many objects to consider.
 
-How many objects? A mole is the typical scale used to measure the number of objects in thermal systems, it's about $$10^{23}$$. To get a feel for this number, a mole of gas occupies about $$22$$ liters at standard temperature and pressure. To classically represent a mole of gas we have to list each atom's position and momentum—about $$10^{23}$$ numbers in total. This is an absurdly large number of numbers. It would take about $$10^9$$ supercomputers-worth of storage space to represent them all. Imagine the energy required to propogate the state one step forward in time, let alone accurately capture all relevant interactions—it's not happening.
+How many objects? A mole is the typical scale used to measure the number of objects in thermal systems, it's about $$10^{23}$$. To get a feel for this number, a mole of gas fills about $$22$$ liters at standard temperature and pressure. To classically represent a mole of gas we would have to list each atom's position and momentum—about $$10^{23}$$ numbers in total. This is an absurdly large number of numbers. It would take about $$10^9$$ supercomputers-worth of storage space to represent them all. Imagine the computational energy required to propogate the state one step forward in time, let alone accurately capture all relevant interactions—it's not happening.
 
 Instead of tracking every object, it's much more practical to compute a small number of functions of state to get macroscopic properties such as temperature, pressure and energy. But this raises a question: if we're calculating functions of state, don't we need to know the state? The answer is technically yes, but practically no. Practically no because, as we'll see, when thermal systems come to equilibrium, quantities such as pressure, temperature and energy are effectively constant even though the underlying states that define them are continuously changing.
 
-Before going further, I'll mention that the word _state_ can be ambiguous in thermodynamics. It could refer to the state of macroscopic variables, like temperature and pressure, or it could refer to the configuration of the system, like the position and momenum of atoms (which is what I've been calling state so far). To disambiguate, configurations are called _microstates_ (even though they may be bigger or smaller than a micron) and macroscopic states are called _macrostates_.
+Before going further, I'll mention that the word _state_ can be ambiguous in thermodynamics. It could refer to the state of macroscopic variables, like temperature and pressure, or it could refer to the configuration of the system, like the position and momenum of atoms (which is what I've been calling state so far). To disambiguate, configurations are called _microstates_ (even though they may be bigger or smaller than a micron) and macroscopic states are called _macrostates_. If I don't include the prefix it should be clear from context what I mean.
 
 Also, the word _thermodynamics_ should be defined. Thermodynamics is about thermal things changing, like when energy is absorbed, or pressure increases, etc. But changes are assumed to happen in a special way. They happen such that the system can be _treated_ like it's in equilibrium at all times, even though it really is changing. The way to accomplish this so-called "quasi-static" change is by evolving the system _very_ slowy so that after every infinitesimal change the system has enough time to settle to equilibrium before further changes are applied. 
 
 The reason for making changes quasi-statically is because we want to treat thermal properties as constant throughout the system. For example, if a gas's volume decreases due to it's container contracting, initially its pressure will be higher near the container's surface, so pressure becomes a function of position, which is ok except that thermodynamics associates _a_ (one) pressure, volume, etc., with the system, so we let the new pressure spread uniformly throughout the gas before doing any kind of thermal analysis on it. There's an entire branch of physics dedicated to non-quasistatic change that's called non-equilibrium thermodynamics, but I won't say much about it in this post. (Footnote—I was tempted to synonymize  "quasi-static" with "dynamic equilibrium" due to the system being in equilibrium throughout its dynamics, but really dynamic equilibrium means something different.)
 
-Now, to start _doing_ thermodynamics requires its fundamental postulate: 
+Now, to start _doing_ thermodynamics we need its fundamental postulate, sometimes called the "ergodic hypothesis": 
 
-> In thermal equilibrium, each microstate of a system is equally likely to be observed at all times.
+> For a many-particle system in thermal equilibrium, each accessable microstate is equally likely to be observed at all times.
 
 From a classical mechanics perspective this sounds wrong. In CM, microstates follow a single deterministic trajectory through phase space, one determined by the system's initial conditions and whatever forces are involved—state-transition probabilities are delta functions along the system's one and only trajectory, not uniform distributions over phase space. How do we get away with this postulate? Well, it's a postulate, so really it can say whatever it wants…just as long as it corresponds to physical reality, which, as I'll show throughout this post, for large systems like those in thermodynamics, it does.
 
 
 ### Isolated Systems
 
-Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system is inside a volume $$V$$. Given these things we can try to figure out the number of ways that $$U$$ can be split amongst the particles while satisfying any constraints. This number, called the system's multiplicity $$\Omega$$, is the number of microstates available to the system, it plays an important role in determining which macrostate a system equilibrates to when it interacts with another system.
+Isolated systems are a simple starting point. What can we say about them? We can say they have a number of particles $$N$$, a total energy $$U$$, and perhaps there are some constraints, like that the system is inside a volume $$V$$. Given these things we can try to figure out the number of ways that $$U$$ can be split amongst the particles while satisfying constraints. This number, called the system's multiplicity $$\Omega$$, is the number of microstates available to the system, it plays an important role in determining which macrostate a system equilibrates to when it interacts with another system.
 
 To get a feel for $$\Omega$$ I'll calculate it below for three example systems, then in the next section I'll show how it determines equilibrium states.
 
-__The Magnet.__ A simple model of a magnet is the two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, then the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
+__The Paramagnet.__ A simple model of a paramagnet is the ideal two-state paramagnet. Its "particles" are dipole moments that align either with or against an external magnetic field. If we use energy units of $$\mu B$$, where $$\mu$$ is each dipole's moment (the same for all dipoles) and $$B$$ is the exteral field, then the energy of an aligned dipole is $$-1$$ and the energy of an anti-aligned dipole is $$+1$$ (so dipoles want to align with the field).
 
 The total energy is
 
@@ -39,7 +39,7 @@ $$
 
 where $$N_-$$ and $$N_+$$ are the number of aligned and anti-aligned dipoles, and $$N=N_++N_-$$ is the total number of dipoles. Note that $$N_{-} \le U \le N_+$$ and $$N_{-} \le U \le N-N_{-}$$.
 
-A microstate for this system is specified by a binary list of each dipole's alignment, for example $$(+,-,...,+)$$. Macrostates are aggregate functions of microstate, such as $$U$$, $$N_+$$, and the total magnetization $$M$$.
+A microstate for this system is a binary list of each dipole's alignment, for example $$(+,-,...,+)$$. Macrostates are aggregate functions of microstate, such as $$U$$, $$N_+$$, and the total magnetization $$M$$.
 
 The multiplicity is
 
@@ -69,7 +69,7 @@ $$
 
 __The Solid.__ A simple model of a solid is the Einstein solid. Its "particles" are spring-like oscillators that connect atoms into a cubic lattice. Oscillators are defined as identical, so they have the same frequency parameter $$\omega$$, and they're treated quantum mechanically so their energy is in units of $$\hbar \omega$$.
 
-The total energy of the oscillators (relative to the ground state) is just the total number of energy units in the system: $$U$$. Note that unlike the paramagnet, the solid's $$U$$ and $$N$$ are independent—a particle can be added without necessarily changing the energy (relative to the ground state).
+The total energy of the oscillators (relative to the ground state) is just the total number of energy units in the system: $$U$$. Note that unlike the paramagnet, the solid's $$U$$ and $$N$$ are independent—a particle can be added without necessarily changing the system's energy (relative to the ground state).
 
 
 
@@ -99,7 +99,7 @@ $$
 $$
 
 
-__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off each other and off the walls of the container they're in. As it turns out, many gases fall within this regime, so it's an incredibly useful model.
+__The Gas.__ A simple model of a gas is the ideal gas. It's a gas at low density and high energy such that its atoms scatter elastically off each other and off the walls of the container they're in. As it turns out, many gases fall within this regime, so it's a really useful model.
 
 To derive the multiplicity of an ideal gas containing $$N$$ atoms, it's easiest to start by thinking about what happens when $$N=1$$. With one atom the microstate is given by that atom's position and momentum 3-vectors $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is bound within a volume $$V$$, and $$\mathbf{p}$$ is related to energy by
 
@@ -109,7 +109,7 @@ U = \frac{1}{2m}\lvert \mathbf{p} \rvert ^2
 $$
 
 
-We're going to assume for now that the atoms have no internal energy-bearing degrees of freedom, such as rotations or vibrations—they're assumed to be monatonic atoms.
+We're going to assume for now that the atoms have no internal energy-bearing degrees of freedom, such as rotations or vibrations—this is a reasonable assumption when the atoms are, well, atoms and not molecules.
 
 Classically a single particle can occupy a continuously infinite number of positions and momenta while satisfying the energy and volume constraints, so it seems like the multiplicity should likewise be continuously infinite. Quantumly, however, there's a limit to the simultaneous "resolution" of $$\mathbf{x}$$ and $$\mathbf{p}$$. In particular, they can only be known together up to the Heisenberg limit $$\Delta x_i \Delta p_i = \hbar/2$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped up into a grid of $$\Delta x$$s and $$\Delta p$$s that are at this limit, then we can count the number of microstates in a finite, discrete way. Let's see what happens.
 
@@ -141,7 +141,7 @@ For $$N$$ particles we use the same approach, but now the position-space volume 
 
 
 $$
-((\mathbf{x},\mathbf{p})_1,(\mathbf{x},\mathbf{p})_2,(\mathbf{x},\mathbf{p})_3)
+((\mathbf{x}_1,\mathbf{p}_1),(\mathbf{x}_2,\mathbf{p}_2),(\mathbf{x}_3,\mathbf{p}_3))
 $$
 
 
@@ -149,7 +149,7 @@ If the atoms switch places they'll have another, distinct, microstate such as
 
 
 $$
-((\mathbf{x},\mathbf{p})_3,(\mathbf{x},\mathbf{p})_1,(\mathbf{x},\mathbf{p})_2)
+((\mathbf{x}_3,\mathbf{p}_3),(\mathbf{x}_1,\mathbf{p}_1),(\mathbf{x}_2,\mathbf{p}_2))
 $$
 
 
@@ -171,15 +171,20 @@ f(N) = \frac{(2\pi m)^{3N/2}}{h^{3N}N!(3N/2)!}
 $$
 
 
-As a last comment about these three models I'll highlight the fact that none of them capture any inter-particle interactions. For example, the paramagnet treats each dipole as independent, even though really each one exerts a small magnetic field on each other one. Similarly, the solid treats oscillators as independent, and the gas treats atoms as independent. These are first order models which are usefu toy models that actually go surprisingly far as to predicting what happens in real life.
+As a last comment about these three models I'll highlight the fact that none of them capture any inter-particle interactions. For example, the paramagnet treats each dipole as independent, even though really each one exerts a small magnetic field on each other one. Similarly, the solid treats oscillators as independent, and the gas treats atoms as independent. These are "ideal", or "first order" approximations that make for instructive toy models, but they still capture a fair amount of real physics under the right circumstances.
 
 ### Interacting Systems
 
 Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or any other macroscopic variable that's exchangeable. The question of this section is: after the system's interact for a while, what's their equilibrium macrostate?
 
-__Energy Exchange.__ To start, consider two systems that exchange energy. The energy could be exchanged in any number of ways at the microscopic level, but for the purposes of this analysis all we care about is that 1) it is exchanged, 2) it's the only thing that's exchanged (each system retains its particles and volume), 3) total energy $$U=U_1+U_2$$ is conserved, and 4) the microstate associated with each energy macrostate is uniformly random in the sense of the fundamental postulate. After the systems interact for a while, what's the equilibrium energy?
+__Energy Exchange.__ To start, consider two systems that exchange energy. The energy could be exchanged in any number of ways at the microscopic level, but for the purposes of this analysis all we care about is that
 
-According to the uniformity assumption, the probability of $$U_1$$ and $$U_2$$ is
+* It's exchanged ergodically
+* It's the only thing that's exchanged (particles and volume, for example are constant). 
+* Total energy $$U=U_1+U_2$$ is conserved
+* The microstate associated with each energy macrostate is uniformly random in the sense of the fundamental postulate. 
+
+After the systems interact in this way for a while, what's the equilibrium energy? According to the uniformity assumption, the probability of $$U_1$$ and $$U_2$$ is
 
 
 $$
@@ -187,7 +192,7 @@ P(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
-So the more microstates associated with a macrostate, the more likely the macrostate is. Let's see how this works out for two Einstein solids.
+So the more microstates associated with a macrostate, the more likely the macrostate is to be observed. Let's see how this works out for two Einstein solids.
 
 The multiplicity of two Einstein solids is
 
@@ -197,7 +202,7 @@ $$
 $$
 
 
-This function turns out to be shaped like a Gaussian that's peaked where 
+This function turns out to be shaped like a Gaussian with a peak at 
 
 
 $$
@@ -207,7 +212,7 @@ $$
 
 So the most likely macrostate has the energies split in the same proportion as the number of particles.
 
-How sharp is the Gaussian's peak? Fitting a Gaussian to $$\Omega$$, we find that the standard deviation is $$\sigma=U/2\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's $$1/2\sqrt{N}$$, so for a mole of particles only about $$10^{-9}$$ percent of macrostates have a reasonable chance of occupation, making the peak effectively the _only_ macrostate we expect to observe. This justifies calling it the "equilibrium" macrostate, and as such is the answer to the question we set out to answer.
+How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find that the standard deviation is $$\sigma=U/2\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's $$1/2\sqrt{N}$$, so for a mole of particles only about $$10^{-9}$$ percent of macrostates have a reasonable chance of occupation, making the peak effectively the _only_ macrostate we expect to observe. This justifies calling it the "equilibrium" macrostate, and as such is the answer to the question asking what the systems equilibrate to.
 
 Apply the same analysis to an ideal gas, we get the same result. This is because the gas's multiplicity has the same energy dependence as the solid, namely $$\Omega \sim U^{aN}$$, where $$a > 0$$ is a constant that doesn't qualitatively change the shape of $$\Omega$$.
 
@@ -219,7 +224,7 @@ $$
 $$
 
 
-This result is a bit harder to interperet directly, due to the paramagnet's unusual relationship between $$U$$ and $$N$$, but qualitatively the result is the same: multiplicity has one _very_ sharp peak for large systems. In fact, the same is true when other quanities like volume or number of particles are exchanged. This prompts us to look for a general relationship between $$\Omega$$ and the equilibrium state of _all_ thermal variables it depends on.
+This result is a bit harder to interperet directly, due to the paramagnet's unusual relationship between $$U$$ and $$N$$, but qualitatively the result is the same: multiplicity has one _very_ sharp peak for large systems. In fact, the same is true when other quanities like volume or number of particles are exchanged. This observation prompts us to look for a general relationship between $$\Omega$$ and the equilibrium state of _all_ thermal variables it depends on.
 
 __General Equilibrium.__ Going back to energy exchange, we know that thermal equilibrium happens when
 
@@ -237,7 +242,7 @@ $$
 $$
 
 
-If we define entropy as
+If we define _entropy_ as
 
 
 $$
@@ -255,7 +260,7 @@ $$
 
 then we get an experimentally consistent relationship between temperature and multiplicity. 
 
-Similarly, for volume exchange there's _mechanical_ equilibrium. Mechanical equilibrium happens when
+We can apply a similar analysis to volume exchange. In this case the equilibrating quantity is pressure, and the type of equilibrium is called _mechanical_ equilibrium. Starting with
 
 
 $$
@@ -263,7 +268,7 @@ d\Omega = \frac{\partial\Omega}{\partial V_1}dV_1 + \frac{\partial\Omega}{\parti
 $$
 
 
-and the quantity that's the same at this kind of equilibrium is pressure. It's defined as
+leads to
 
 
 $$
@@ -273,7 +278,7 @@ $$
 
 where the factor of $$T$$ is included to make units work out properly and to ensure that the relationship between pressure and multiplicity is experimentally consistent.
 
-Finally, there's particle exchange. When particles are exchanged between systems they eventually reach _diffusive_ equilibrium. The associated thermal variable is chemical potential $$\mu$$ defined as
+Finally, there's particle exchange. When particles are exchanged between systems they eventually reach _diffusive_ equilibrium. The associated thermal variable is called chemical potential $$\mu$$ and it's defined as
 
 
 $$
@@ -283,7 +288,7 @@ $$
 
 Chemical potential has units of energy and is a measure of how willing a system is to gain or give up a particle. 
 
-From these equations it's clear that $$S$$ is a more natural quantity to work with than $$\Omega$$ in the context of thermodynamics, and as such it makes sense to define thermal quantities in terms of it. We can do this easily by taking the total derivative of $$S$$ and inserting the three identities above. The result is
+From these equations it's clear that in the context of thermodynamics $$S$$ is a more natural quantity to work with than $$\Omega$$. As such it makes sense to define thermal quantities in terms of it. We can do this easily by taking the total derivative of $$S$$ and inserting the three identities above. The result is
 
 
 $$
@@ -294,8 +299,8 @@ $$
 This equation is called the _thermodynamic identity_.
 
 
-* Conclusion: there's one equilibrium state. 
-* For a general exchange, do differentiation and get the thermodynamic identity.
+
+
 * Free energies
 * Boltzmann distribution
 * Partition functions
