@@ -14,11 +14,11 @@ Also, the word _thermodynamics_ should be defined. Thermodynamics is about therm
 
 The reason for making changes quasi-statically is because we want to treat thermal properties as constant throughout the system. For example, if a gas's volume decreases due to it's container contracting, initially its pressure will be higher near the container's surface, so pressure becomes a function of position, which is ok except that thermodynamics associates _a_ (one) pressure, volume, etc., with the system, so we let the new pressure spread uniformly throughout the gas before doing any kind of thermal analysis on it. There's an entire branch of physics dedicated to non-quasistatic change that's called non-equilibrium thermodynamics, but I won't say much about it in this post. (Footnote—I was tempted to synonymize  "quasi-static" with "dynamic equilibrium" due to the system being in equilibrium throughout its dynamics, but really dynamic equilibrium means something different.)
 
-Now, to start _doing_ thermodynamics we need its fundamental postulate, sometimes called the "ergodic hypothesis": 
+Now, to start deriving how macroscopic thermal properties emerge from microscopic physics, we need a fundamental postulate called the _ergodic hypothesis_: 
 
 > For a many-particle system in thermal equilibrium, each accessible microstate is equally likely to be observed at all times.
 
-From a classical mechanics perspective this sounds wrong. In CM, microstates follow a single deterministic trajectory through phase space, one determined by the system's initial conditions and whatever forces are involved—state-transition probabilities are delta functions along the system's one and only trajectory, not uniform distributions over phase space. How do we get away with this postulate? Well, it's a postulate, so really it can say whatever it wants…just as long as it corresponds to physical reality, which, as I'll show throughout this post, for large systems like those in thermodynamics, it does.
+From a classical mechanics perspective this sounds wrong. In CM, microstates follow a single deterministic trajectory through state space, one determined by the system's initial conditions and whatever forces are involved—state-transition probabilities are delta functions along the system's one and only trajectory, not uniform distributions over phase space. How do we get away with this postulate? Well, it's a postulate, so really it can say whatever it wants…just as long as it corresponds to physical reality, which, as I'll show throughout this post, for large systems like those in thermodynamics, it does.
 
 
 ### Isolated Systems
@@ -212,7 +212,7 @@ $$
 
 So the most likely macrostate has the energies split in the same proportion as the number of particles.
 
-How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find that the standard deviation is $$\sigma=U/2\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's $$1/2\sqrt{N}$$, so for a mole of particles only about $$10^{-9}$$ percent of macrostates have a reasonable chance of occupation, making the peak effectively the _only_ macrostate we expect to observe. This justifies calling it the "equilibrium" macrostate, and as such is the answer to the question we set out to answer.
+How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find that the standard deviation is $$\sigma=U/2\sqrt{N}$$, where $$N=N_1+N_2$$. This is the number of macrostates the joint system is expected to occupy as the two sub-systems exchange energy. Relative to the entire energy scale it's $$1/2\sqrt{N}$$, so for a mole of particles only about $$10^{-9}$$ percent of macrostates have a reasonable chance of occupation, making the peak effectively the _only_ macrostate we expect to observe, so we call it the equilibrium state.
 
 Apply the same analysis to an ideal gas, we get the same result. This is because the gas's multiplicity has the same energy dependence as the solid, namely $$\Omega \sim U^{aN}$$, where $$a > 0$$ is a constant that doesn't qualitatively change the shape of $$\Omega$$.
 
@@ -242,23 +242,16 @@ $$
 $$
 
 
-If we define _entropy_ as
-
-
-$$
-S = k \ln \Omega
-$$
-
-
-where $$k \approx 10^{-23} \text{J/K}$$ is Boltzmann's constant, and define temperature as 
+If we define _entropy_ as $$S = k \ln \Omega$$ where $$k \approx 10^{-23} \text{J/K}$$ is the Boltzmann constant, and define temperature as 
 
 
 $$
 \frac{1}{T} = \frac{\partial S}{\partial U}
 $$
 
+then we get an experimentally consistent relationship between temperature and multiplicity. When energy equilibrates, the system is said to have _thermalized_, and the type of energy that's associated with thermalization is called _heat_. Note that the word "heat" here means something different from what it means when we casually say something like "the oven is hot". "The oven is hot" suggests that a system can _contain_ heat, whereas in thermal physics heat is thermal energy _in transit_ (due to temperature difference), not a property of a system.
 
-then we get an experimentally consistent relationship between temperature and multiplicity. 
+Note that entropy increases monotonically with multiplicity, so higher entropy states are more likely to be occupied. This gives rise to the second law of thermodynamics: _entropy tends to increase_. And this last equation captures the observation that high-temperature systems give energy to low-temperature onesand not vice versa—heat flowing from hot to cold increases entropy, while the opposite 
 
 We can apply a similar analysis to volume exchange. In this case the equilibrating quantity is pressure, and the type of equilibrium is called _mechanical_ equilibrium. Starting with
 
