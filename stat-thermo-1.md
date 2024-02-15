@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Stat-Thermo 1: Micro to Macro
+# Statistical Thermodynamics 1: Micro to Macro
 
 <center><img src="stat-thermo/banner1.png" style="zoom:100%;"></center>
 
@@ -304,7 +304,7 @@ This equation is called the _thermodynamic identity_, and it's useful for unders
 
 ### Last
 
-The thermodynamic identity is firmly in the territory of thermodynamics and over the horizon away from the statistical models that led to its derivation. The next natural topic from here seems to be thermodynamics proper, so I'll discuss that in the next post where I'll go over things like engines, free energy, and the thermodynamic definition of entropy.
+The thermodynamic identity is firmly in the territory of thermodynamics and over the horizon from the statistical models that led to its derivation. The next natural topic from here seems to be thermodynamics proper, so I'll discuss that in the next post where I'll go over things like engines, free energy, and the thermodynamic definition of entropy.
 
 {% include disqus.html %}
 
