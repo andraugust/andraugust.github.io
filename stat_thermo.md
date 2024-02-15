@@ -1,4 +1,12 @@
-## Statistical Thermodynamics
+---
+layout: default
+---
+
+## Stat-Thermo 1: Micro to Macro
+
+<center><img src="stat-thermo/banner1.png" style="zoom:100%;"></center>
+
+
 
 Statistical thermodynamics explores the way in which thermal properties of a system emerge from the elementary objects that make it up. If the system is an air-filled balloon, for example, its thermal properties are things like temperature and pressure, while its elementary objects are the atoms and molecules that make up the gas and the balloon itself.
 
