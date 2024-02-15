@@ -12,15 +12,15 @@ Before going further, I'll mention that the word _state_ can be ambiguous in the
 
 Also, the word _thermodynamics_ should be defined. Thermodynamics is about thermal things changing, like when energy is absorbed, or pressure increases, etc. But changes are assumed to happen in a special way. They happen such that the system can be _treated_ like it's in equilibrium at all times, even though it really is changing. The way to accomplish this is through so-called "quasi-static" change, where the system is evolved so slowly that after every infinitesimal change the system has enough time to settle to equilibrium before further changes are applied.
 
-The reason for making changes quasi-statically is because we want to treat thermal properties as constant throughout the system. For example, if a gas's volume decreases due to it's container contracting, initially its pressure will be higher near the container's surface, so pressure becomes a function of position, which is ok of course except that thermodynamic models associates _a_ (one) pressure, volume, etc., with the system, so we let the new pressure spread uniformly throughout the gas before doing any kind of thermal analysis on it. There's an entire branch of physics dedicated to non-quasistatic change that's called non-equilibrium thermodynamics, but I won't say much about it in this post. (Footnote—I was tempted to synonymize  "quasi-static" with "dynamic equilibrium" due to the system being in equilibrium throughout its dynamics, but really dynamic equilibrium means something different.)
+The reason for making changes quasi-statically is because we want to treat thermal properties as uniform and stationary throughout the system. For example, if a volume of gas decreases, initially the gas's pressure will be higher near its container's surface, so pressure becomes a function of position. Thermodynamics, however, associate one pressure, volume, etc., with the system, so we let the new pressure spread uniformly throughout the gas, dissipating transients, before doing any kind of thermal analysis on it. There's a branch of physics dedicated to non-quasistatic change called non-equilibrium thermodynamics, but I'll save its discussion for another post. (Footnote—I was tempted to synonymize  "quasi-static" with "dynamic equilibrium" due to the system being in equilibrium throughout its dynamics, but this is wrong, dynamic equilibrium means something different.)
 
 Now, to start deriving macroscopic thermal properties from microscopic physics, we need the fundamental postulate of thermodynamics called the _ergodic hypothesis_: 
 
 > For a many-particle system in thermal equilibrium, each accessible microstate is equally likely to be observed at all times.
 
-From a classical mechanics perspective this sounds weird. In CM, microstates follow a single deterministic trajectory through state space, so the microstate we expect to observe seems like it should be uniquely determined, not random...but that's only if we know the system's initial conditions with infinite precision (see: chaos theory), which is absolutely impossible for $$O(10^{23})$$ particles. For so many particles, over long time scales, it makes more sense to talk about the probability that a system occupies a volume of state space, and, without any priors, the postulate says we should assign a probability that's proportional to the volume of that region, which seems reasonable.
+From a classical mechanics perspective this sounds weird. In CM, microstates follow a single deterministic trajectory through state space, so the microstate we expect to observe seems like it should be uniquely determined, not random...but that's only if we know the system's initial conditions with infinite precision, which is absolutely impossible for $$O(10^{23})$$ particles (see: chaos theory). For so many particles, over long time scales, it makes more sense to talk about the probability that a system occupies a volume of state space, and, without any priors, the postulate says we should assign a probability that's proportional to the volume of that region, which seems reasonable.
 
-Another way to breakdown the postulate is to just not—it's a postulate, it can say whatever it wants to…just as long as it predicts experimental measurements, which, as I'll show throughout this post, for large systems like those in thermodynamics, it does.
+Another way to break the postulate down is to simply not—it's a postulate, it can say whatever it wants…just as long as it predicts experimental measurements, which, as I'll show throughout this post, for large systems like those in thermodynamics, it does.
 
 
 ### Isolated Systems
@@ -177,11 +177,11 @@ As a last comment about these three models I'll highlight the fact that none of 
 
 ### Interacting Systems
 
-Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or any other macroscopic quantity that's exchangeable. The question of this section is: after the systems interact for a while, what's their macrostate?
+Suppose that two thermodynamic systems interact by exchanging something with each other. "Something" could be energy, particles, volume, or any other macroscopic quantity that's exchangeable. The question of this section is: after the systems interact for a while, what macrostate do we expect to observe for each of them?
 
-__Energy Exchange.__ To start, consider two systems that exchange energy. The energy could be exchanged in any number of ways at the microscopic level, but for the purposes of this analysis all we care about is that
+__Energy Exchange.__ To start, consider two systems that exchange energy. Energy could be exchanged in any number of ways at the microscopic level, but for the purposes of this analysis all we care about is that
 
-* It's the only thing that's exchanged (particles and volume, for example, stay constant). 
+* Energy is the only thing exchanged (particles and volume, for example, stay constant). 
 * Total energy is conserved.
 * The microstate associated with each energy macrostate is uniformly random in the sense of the ergodic hypothesis.
 
@@ -193,7 +193,7 @@ P(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
-So the more microstates associated with a macrostate, the more likely the macrostate is to be observed. Let's see how this works out for two Einstein solids.
+So the more microstates associated with a macrostate, the more likely that macrostate is to be observed. Let's see how this works out for two Einstein solids.
 
 The multiplicity of two Einstein solids is
 
@@ -213,11 +213,11 @@ $$
 
 So the most likely macrostate has the energies split in the same proportion as the number of particles.
 
-How sharp is the peak? Fitting a Gaussian to $$\Omega$$, we find that the standard deviation width parameter is $$\sigma=U/2\sqrt{N}$$, where $$N$$ is the total number of particles and $$U$$ is the total energy. This is the number of macrostates the joint system most likely occupies as the two sub-systems exchange energy. Relative to the entire energy scale it's $$1/2\sqrt{N}$$, so for a mole of particles only about $$10^{-9}$$ percent of macrostates have a reasonable chance of occupation, making the peak effectively the _only_ macrostate we expect to observe, therefore we call it the _equilibrium_ state.
+How sharp is the multiplicity's peak? Fitting a Gaussian to $$\Omega$$, we find that its width parameter is $$\sigma=U/2\sqrt{N}$$, where $$N$$ is the total number of particles and $$U$$ is the total energy. This is the number of macrostates the joint system most likely occupies as the two sub-systems exchange energy. Relative to the entire energy scale it's $$1/2\sqrt{N}$$, so for a mole of particles only about $$10^{-9}$$ percent of macrostates have a reasonable chance of occupation, making the peak effectively the _only_ macrostate we expect to observe, therefore we call it the _equilibrium_ state.
 
 Applying the same analysis to the ideal gas, we get the same result. This is because the gas's multiplicity function depends on energy in the same way, namely $$\Omega \sim U^{aN}$$, where $$a > 0$$ is a constant that doesn't qualitatively change the shape of $$\Omega$$.
 
-Applying the same analysis to the paramagnet gives a slightly different result. The magnet's multiplicity maximizes at
+Applying the same analysis to the paramagnet gives a slightly different result. The magnet's multiplicity maximizes when
 
 
 $$
@@ -225,7 +225,7 @@ $$
 $$
 
 
-This result is a bit harder to interpret directly, due to the paramagnet's unusual relationship between $$U$$ and $$N$$, but qualitatively the result is the same: multiplicity has one _very_ sharp peak for large systems. In fact, the same is true when other quantities like volume or number of particles are exchanged. This observation prompts us to look for a general relationship between $$\Omega$$ and the equilibrium state of _all_ thermal variables it depends on.
+In the high-energy-per-particle limit this result is qualitatively the same: multiplicity has one _very_ sharp peak for large systems (at high enough energy). In fact, the same is true when other quantities like volume or number of particles are exchanged. This observation prompts us to look for a general relationship between $$\Omega$$ and the equilibrium state of _all_ the thermal variables it depends on.
 
 __General Equilibrium.__ Going back to energy exchange, we know that thermal equilibrium happens when
 
@@ -250,11 +250,12 @@ $$
 \frac{1}{T} = \frac{\partial S}{\partial U}
 $$
 
-then we get an experimentally consistent relationship between temperature and multiplicity. 
 
-When energy equilibrates, the system is said to have _thermalized_, and the _type_ of energy associated with thermalization is called _heat_. Note that the word "heat" here means something different from what it means when we casually say something like "the oven is hot". "The oven is hot" suggests that a system can _contain_ heat, whereas in thermal physics heat is energy _in transit_ due to temperature differences, not a property of a system. Technically we should say "the oven has a lot of internal energy, and the oven-me system gains entropy if the oven heats my body, so it does, which I feel". But that's not very practical to say!
+then we get an experimentally consistent relationship between temperature and multiplicity. In fact, this is one way to define temperature.
 
-Note that entropy increases monotonically with multiplicity, so higher entropy states are more likely to be occupied. This gives rise to the second law of thermodynamics: _entropy tends to increase_. This captures the observation that high-temperature systems give energy to low-temperature ones and not vice versa—heat flowing from hot to cold increases entropy, while the opposite decreases it.
+When energy equilibrates, the system is said to have _thermalized_, and the _type_ of energy associated with thermalization is called _heat_. Note that the word "heat" here means something different from what it means when we casually say something like "the oven is hot". "The oven is hot" suggests that a system can _contain_ heat, whereas in thermal physics heat is energy _in transit_ due to temperature differences, not a property of a system. Technically we should say "the oven transfers heat to my body".
+
+Note that entropy increases monotonically with multiplicity, so higher entropy implies higher state-occupation probability, and vice-versa. This gives rise to the second law of thermodynamics: _entropy tends to increase_. This can be used to explain the fact that captures the observation that high-temperature systems give energy to low-temperature ones and not vice versa—heat flowing from hot to cold increases entropy, while the opposite decreases it.
 
 We can apply a similar analysis to volume exchange. For volume exchange the equilibrating quantity is pressure, and the type of equilibrium is called _mechanical_ equilibrium. Starting with
 
@@ -282,9 +283,9 @@ $$
 $$
 
 
-Chemical potential has units of energy, it measures how willing a system is to gain or give up a particle. 
+Chemical potential has units of energy, it measures how willing a system is to give or gain a particle. 
 
-From these equations it's clear that in the context of thermodynamics $$S$$ is a more natural quantity to work with than $$\Omega$$, which isn't a surprise given that historically $$S$$ was defined thermodynamically and only later connected to $$\Omega$$, so it makes sense to define thermal quantities _together_ in terms of $$S$$. We can do this easily by taking the total derivative of $$S$$ and inserting the three partial derivatives above. Rearranging for $$U$$, the result is
+From these equations it's clear that in the context of thermodynamics $$S$$ is a more natural quantity to work with than $$\Omega$$, which isn't a surprise given that historically $$S$$ was defined thermodynamically and only later connected to $$\Omega$$, so it makes sense to define thermal quantities _together_ in terms of $$S$$. We can do this easily by taking the total derivative of $$S$$ and inserting the three partial derivatives above. Rearranging for $$U$$ gives
 
 
 $$
@@ -301,7 +302,4 @@ This equation is called the _thermodynamic identity_.
 * Boltzmann distribution
 * Partition functions
 * Quantum
-
-
-__Temperature & Energy.__ Temperature is defined as the willingness of a system to exchange energy with another system. Energy exchanged in this way is called _heat_. Any other form of energy transfer is called _work_. Heat and work describe energy _in transit_, so it doesn't make sense to say something like "the coffee cup has a lot of heat", but you can say "the coffee cup has a lot of energy".
 
