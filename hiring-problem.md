@@ -112,7 +112,7 @@ Looking at the first plot, we see the maximum probabilities have the same values
 
 When all's said and done, the first 37% of candidates should be ignored so that the probability of hiring the best candidate is maximized between 37% and 50%, depending on the number of candidates.
 
-Now you know, so go save your company!
+Now you know, so go make some interviews!
 
 
 ### References

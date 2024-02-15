@@ -139,7 +139,7 @@ $$
 $$
 
 
-For $$N$$ particles we use the same approach, but now the position-space volume is $$V^N$$ and the momentum-space dimensionality is $$d=3N$$. Also, we have to account for the fact that the atoms are indistinguishable. To see why, consider a _distinguishable_ three-atom gas. One of its microstate might be
+For $$N$$ particles we use the same approach, but now the position-space volume is $$V^N$$ and the momentum-space dimensionality is $$d=3N$$. Also, we have to account for the fact that the atoms are indistinguishable. To see why, consider a _distinguishable_ three-atom gas. One of its microstate is
 
 
 $$
@@ -155,7 +155,7 @@ $$
 $$
 
 
-In this case there are two states to count, but if the particles are indistinguishable then there are no subscripts on the individual states and the first overall state is the same as the second. The way we're calculating $$\Omega$$, however, doesn't account for such _permutation redundancy_, that is unless $$\Omega$$ is divided by $$N!$$ to un-count the redundant states. So really the multiplicity is $$\Omega_x \Omega_p/N!$$.
+In this case there are two states to count, but if the particles are indistinguishable then there are no subscripts on the individual states and the first overall state is the same as the second. The way we're calculating $$\Omega$$, however, doesn't account for such _permutation redundancy_, that is unless $$\Omega$$ is divided by $$N!$$ to "un-count" the redundant states. So really the multiplicity is $$\Omega_x \Omega_p/N!$$.
 
 The final result after dividing by $$N!$$ and approximating for large $$N$$ is
 
@@ -173,7 +173,7 @@ f(N) = \frac{(2\pi m)^{3N/2}}{h^{3N}N!(3N/2)!}
 $$
 
 
-As a last comment about these three models I'll highlight the fact that none of them capture any inter-particle interactions. For example, the paramagnet treats each dipole as independent, even though really each one exerts a small magnetic field on each other one. Similarly, the solid treats oscillators as independent, and the gas treats atoms as independent. These are "ideal", or "first order" approximations that make for instructive toy models that manage to match experimental results in a wide range of settings.
+As a last comment about these three models I'll highlight the fact that none of them capture any inter-particle interactions. For example, the paramagnet treats each dipole as independent, even though really each one exerts a small magnetic field on each other one. Similarly, the solid treats oscillators as independent, and the gas treats atoms as independent. These are "ideal" approximations that make for instructive toy models, but they actually do manage to match experimental measurements over a wide range of parameters, so we go ahead and use them.
 
 ### Interacting Systems
 
@@ -189,7 +189,7 @@ After the systems interact in this way for a while, what are their energies? Acc
 
 
 $$
-P(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
+p(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
@@ -250,14 +250,13 @@ $$
 \frac{1}{T} = \frac{\partial S}{\partial U}
 $$
 
+then we get a relationship between temperature and multiplicity that's consistent with the thermodynamic definition of entropy (more on that in the next post). This equation is therefore the statistical definition of temperature.
 
-then we get an experimentally consistent relationship between temperature and multiplicity. In fact, this is one way to define temperature.
+Entropy increases monotonically with multiplicity, therefore higher entropy states are more likely to be occupied, and two systems initially out of thermal equilibrium with each other will eventually equilibrate to the highest entropy macrostate. This gives rise to the second law of thermodynamics: _entropy tends to increase_. Note that entropy is a logarithm, therefore the total entropy of two systems is the sum of their individual entropies.
 
-When energy equilibrates, the system is said to have _thermalized_, and the _type_ of energy associated with thermalization is called _heat_. Note that the word "heat" here means something different from what it means when we casually say something like "the oven is hot". "The oven is hot" suggests that a system can _contain_ heat, whereas in thermal physics heat is energy _in transit_ due to temperature differences, not a property of a system. Technically we should say "the oven transfers heat to my body".
+When energy equilibrates, the system is said to have _thermalized_, and the type of energy associated with thermalization is called _heat_. Note that the word "heat" here means something different from what it means when we casually say something like "the oven is hot". "The oven is hot" suggests that a system _contains_ heat, whereas in thermal physics heat is defined as energy _in transit_. It's not a property of a system. So technically we should say "the oven _transfers_ heat to my body, and subsequently my body doesn't "have" that heat, it just has more $$U$$.)".
 
-Note that entropy increases monotonically with multiplicity, so higher entropy implies higher state-occupation probability, and vice-versa. This gives rise to the second law of thermodynamics: _entropy tends to increase_. This can be used to explain the fact that captures the observation that high-temperature systems give energy to low-temperature ones and not vice versa—heat flowing from hot to cold increases entropy, while the opposite decreases it.
-
-We can apply a similar analysis to volume exchange. For volume exchange the equilibrating quantity is pressure, and the type of equilibrium is called _mechanical_ equilibrium. Starting with
+We can apply a similar analysis to volume exchange. For volume exchange the equilibrating quantity is pressure, and the type of equilibrium that's reached is called _mechanical_ equilibrium. Starting with
 
 
 $$
@@ -283,9 +282,9 @@ $$
 $$
 
 
-Chemical potential has units of energy, it measures how willing a system is to give or gain a particle. 
+Chemical potential has units of energy, it measures how willing a system is to give or gain a particle. The minus sign captures the fact that systems at higher $$\mu$$ tend to give particles to systems at lower $$\mu$$. 
 
-From these equations it's clear that in the context of thermodynamics $$S$$ is a more natural quantity to work with than $$\Omega$$, which isn't a surprise given that historically $$S$$ was defined thermodynamically and only later connected to $$\Omega$$, so it makes sense to define thermal quantities _together_ in terms of $$S$$. We can do this easily by taking the total derivative of $$S$$ and inserting the three partial derivatives above. Rearranging for $$U$$ gives
+From these equations it's clear that in the context of thermodynamics $$S$$ is a more natural quantity to work with than $$\Omega$$, which isn't a surprise given that historically $$S$$ was defined thermodynamically and only later connected to $$\Omega$$, so it makes sense to start using $$S$$ at this point. And what's really useful is to now define thermal quantities _together_ in terms of it. We can do this easily by taking the total derivative of $$S$$ and insert the three partial derivatives above. Rearranging for $$U$$ gives
 
 
 $$
@@ -293,13 +292,11 @@ dU = T\,dS - P\,dV + \mu\,dN
 $$
 
 
-This equation is called the _thermodynamic identity_.
+This equation is called the _thermodynamic identity_, and it's useful for understanding the interconnectedness of the various thermodynamic variables. Each term has units of energy. The first is heat, the second is mechanical work, and the third is chemical work. 
 
+### Last
 
+The thermodynamic identity puts us firmly in the territory of thermodynamics and over the horizon away from the statistical models that led do its derivation. The next natural topic from here seems to be thermodynamics proper, so I'll discuss that in the next post. I'll go over things like engines, free energy, and the thermodynamic definition of entropy.
 
-
-* Free energies
-* Boltzmann distribution
-* Partition functions
-* Quantum
+{% include disqus.html %}
 
