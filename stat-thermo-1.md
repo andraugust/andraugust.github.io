@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Stat-Thermo 1: Micro to Macro
+# Stat-Thermo 1: Micro to Macro
 
 <center><img src="stat-thermo/banner1.png" style="zoom:100%;"></center>
 
@@ -300,11 +300,11 @@ dU = T\,dS - P\,dV + \mu\,dN
 $$
 
 
-This equation is called the _thermodynamic identity_, and it's useful for understanding the interconnectedness of the various thermodynamic variables. Each term has units of energy. The first is heat, the second is mechanical work, and the third is chemical work. 
+This equation is called the _thermodynamic identity_, and it's useful for understanding the interconnectedness of the various thermodynamic variables. Each of its terms has units of energy. The first is heat, the second mechanical work, and the third chemical work. 
 
 ### Last
 
-The thermodynamic identity puts us firmly in the territory of thermodynamics and over the horizon away from the statistical models that led do its derivation. The next natural topic from here seems to be thermodynamics proper, so I'll discuss that in the next post. I'll go over things like engines, free energy, and the thermodynamic definition of entropy.
+The thermodynamic identity is firmly in the territory of thermodynamics and over the horizon away from the statistical models that led to its derivation. The next natural topic from here seems to be thermodynamics proper, so I'll discuss that in the next post where I'll go over things like engines, free energy, and the thermodynamic definition of entropy.
 
 {% include disqus.html %}
 
