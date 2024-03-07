@@ -8,7 +8,7 @@ layout: default
 
 
 
-Statistical thermodynamics explores the way in which thermal properties of a system emerge from the elementary objects that make it up. If the system is an air-filled balloon, for example, its thermal properties are things like temperature and pressure, while its elementary objects are the atoms and molecules that make up the gas and the balloon itself.
+Statistical thermodynamics explores the way in which thermal properties of a system emerge from the elementary objects that make it up. If the system is an air-filled cylinder, for example, its thermal properties are things like temperature and pressure, while its elementary objects are the atoms and molecules that make up the gas and the cylinder itself.
 
 Thermal properties are relatively intuitive—we can feel the difference between hot and cold, we can see steam rising from boiling water, and we can warm ourselves by a fire. But that these things should occur due to the motion of atoms is far from obvious, and if we tried to predict any of them using classical or quantum mechanics directly we wouldn't get very far—there are just too many objects to consider.
 
@@ -233,7 +233,7 @@ $$
 $$
 
 
-In the high-energy-per-particle limit this result is qualitatively the same: multiplicity has one _very_ sharp peak for large systems (at high enough energy). In fact, the same is true when other quantities like volume or number of particles are exchanged. This observation prompts us to look for a general relationship between $$\Omega$$ and the equilibrium state of _all_ the thermal variables it depends on.
+In the high-energy-per-particle limit this result is qualitatively the same: multiplicity has one _very_ sharp peak for large systems (at high enough energy). In fact, the same is true when other quantities like volume or number of particles are exchanged. This observation prompts us to look for a general relationship between $$\Omega$$ and the equilibrium state of _all_ macroscopic variables it depends on.
 
 __General Equilibrium.__ Going back to energy exchange, we know that thermal equilibrium happens when
 
@@ -262,7 +262,7 @@ then we get a relationship between temperature and multiplicity that's consisten
 
 Entropy increases monotonically with multiplicity, therefore higher entropy states are more likely to be occupied, and two systems initially out of thermal equilibrium with each other will eventually equilibrate to the highest entropy macrostate. This gives rise to the second law of thermodynamics: _entropy tends to increase_. Note that entropy is a logarithm, therefore the total entropy of two systems is the sum of their individual entropies.
 
-When energy equilibrates, the system is said to have _thermalized_, and the type of energy associated with thermalization is called _heat_. Note that the word "heat" here means something different from what it means when we casually say something like "the oven is hot". "The oven is hot" suggests that a system _contains_ heat, whereas in thermal physics heat is defined as energy _in transit_. It's not a property of a system. So technically we should say "the oven _transfers_ heat to my body, and subsequently my body doesn't "have" that heat, it just has more $$U$$.)".
+When energy equilibrates the system is said to have _thermalized_, and the type of energy associated with thermalization is called _heat_. Note that the word "heat" here means something different from what it means when we casually say something like "the oven is hot". "The oven is hot" suggests that a system _contains_ heat, whereas in thermal physics heat is defined as energy _in transit_. It's not a property of a system. So technically we should say "the oven _transfers_ heat to my body, and subsequently my body doesn't "have" that heat, it just has more $$U$$.)".
 
 We can apply a similar analysis to volume exchange. For volume exchange the equilibrating quantity is pressure, and the type of equilibrium that's reached is called _mechanical_ equilibrium. Starting with
 
