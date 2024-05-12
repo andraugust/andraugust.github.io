@@ -8,7 +8,7 @@ layout: default
 
 
 
-Statistical thermodynamics connects the thermal properties of objects to the motion of elementary objects like atoms. Thermal properties like hot and cold are relatively intuitive, but that they should occur due to the motion of atoms is far from obvious, and if we tried to predict any of them directly using classical or quantum mechanics we wouldn't get very far—there are just too many objects to keep track of.
+statistical thermodynamics connects the thermal properties of objects to the motion of elementary objects like atoms. Thermal properties like hot and cold are relatively intuitive, but that they should occur due to the motion of atoms is far from obvious, and if we tried to predict any of them directly using classical or quantum mechanics we wouldn't get very far—there are just too many objects to keep track of.
 
 How many objects? A mole is the typical scale used to measure the number of objects in thermal systems, it's about $$10^{23}$$. To get a feel for this number, a mole of gas fills about $$22$$ liters at standard temperature and pressure. To classically represent a mole of gas we would have to list each atom's position and momentum—about $$10^{23}$$ numbers in total. This is an absurdly large number of numbers. It would take about $$10^9$$ supercomputers-worth of storage space to represent them all. Imagine the computational energy required to propagate the state one step forward in time, let alone accurately capture all relevant interactions—it's not happening.
 
