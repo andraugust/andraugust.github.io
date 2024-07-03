@@ -6,11 +6,11 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 <center>Alice and Bob—two quantum systems all tangled up.</center>
 
-### Joint systems
+### Joint Systems
 
-To describe a quantum system made of several subsystems, we use multiply-indexed basis vectors. For example, if such a joint system contains two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined by six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
+To describe a quantum system made of several subsystems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined by six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
 
-As with isolated systems, joint systems are represented by linear combinations of independent basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll look at in this post for simplicity), the most general state is given by
+As with isolated systems, joint systems are represented by linear combinations of independent basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems I'll look at in this post, for simplicity), the most general state is given by
 
 
 $$
@@ -124,9 +124,9 @@ $$
 
 In this state if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and because the spins are entangled Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so in some sense Alice gets two bits for the price of one.
 
-Quantum entanglement sounds like the following classical scenario: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know which card the other person has. Although such "classical entanglement" seems the same as its quantum analog, it really isn't. The reason is that quantum measurements influence states, while classical measurements don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, which doesn't happen classicaly. 
+This may sound like the "classical entanglement" scenario that goes as follows: Charlie has two cards, one marked $$0$$ and the other marked $$1$$. He shuffles the cards, gives one to Alice and the other to Bob. When Alice or Bob look at their card they immediately know which card the other has. This is distinctly different from quantum entanglement. The reason is that quantum measurements influence states, while classical measurements don't. If Charlie measures the entangled quantum system before giving it to Alice and Bob, he inherently changes the outcome by collapsing the state, which doesn't happen classicaly.
 
-Here are the other possible entangled states for a two-spin system, they're called the _triplet states_
+Here are the other possible entangled states for a two-spin system, they're called _triplet states_
 
 
 $$
