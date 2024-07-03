@@ -112,7 +112,7 @@ $$
 $$
 
 
-Which is a simple first-order ODE for each component. The solution is
+This is a simple first-order ODE for each component. The solution is
 
 
 $$
