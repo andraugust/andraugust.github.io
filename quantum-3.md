@@ -32,7 +32,7 @@ In terms of naming conventions, it's standard to call the first subsystem Alice 
 
 ### Observables
 
-How are observables represented for joint systems? The same way they are for isolated systems—with operators, but now each subsystem has its own set of operators which act independently on the corresponding part of the system.
+How are observables represented for joint systems? In the same way as for isolated systems—with operators, but now each subsystem has its own set of operators that act independently on the corresponding part of the system.
 
 For example, consider two spins. The most general state is
 
@@ -114,8 +114,9 @@ and Bob's probability calculations are based on _this_ vector, while Alice's are
 
 When Bob measures his half of the system, and Alice and Bob exchange measurement results, the state collapses to the corresponding basis vector and the measurement of the joint system is complete.
 
-__Entanglement.__ Do Alice and Bob always have to exchange measurement outcomes to know the complete state? Sometimes the answer is no. For example, consider the so-called _singlet state_
+### Entanglement
 
+Do Alice and Bob always have to exchange measurement outcomes to know the complete state? Sometimes the answer is no. For example, consider the so-called _singlet state_
 
 $$
 \frac{1}{\sqrt{2}} \left( \ket{10}-\ket{01} \right)
@@ -134,9 +135,9 @@ $$
 \frac{1}{\sqrt{2}} \left( \ket{11}-\ket{00} \right)
 $$
 
+### Tensor Products
 
-__Tensor Products.__ Going back to probability calculations, suppose we want to know $$P_y(+1)$$. If the system is isolated then we know how to calculate this, it's just
-
+Going back to probability calculations, suppose we want to know $$P_y(+1)$$. If the system is isolated then we know how to calculate this, it's just
 
 $$
 \lvert \bk{+y}{\psi} \rvert^2
@@ -268,7 +269,9 @@ $$
 \ket{S} = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ -1 \\0 \end{pmatrix} \\\ket{T_1}=\frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ 1 \\0 \end{pmatrix},\ \ket{T_2}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\1 \end{pmatrix},\ \ket{T_3}=\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 0 \\ 0 \\-1 \end{pmatrix}
 $$
 
-__Composite Observables.__ Composite observables are observables that depend on the outcome of both Alice's and Bob's measurements. Here are a few examples:
+### Composite Observables
+
+Composite observables are observables that depend on the outcome of both Alice's and Bob's measurements. Here are a few examples:
 
 * The total $$i$$th component of spin: $$\sigma_i^A + \sigma_i^B = \sigma_i \otimes I + I \otimes \sigma_i$$
 * The product of a pair of spins: $$\sigma_i^A\sigma_j^B = \sigma_i \otimes \sigma_j$$
@@ -322,8 +325,9 @@ $$
 
 These properties imply that any prediction about one half of the system gives the same result as if the other half wasn't there, in contrast to entanglement.
 
-__Mixed States.__ In practice we may not know exactly which state a system is in. By this I don't just mean that we don't know if it's in $$\ket{0}$$ or $$\ket{1}$$, but more generally we may not know if it's in, say,
+### Mixed States
 
+In practice we may not know exactly which state a system is in. By this I don't just mean that we don't know if it's in $$\ket{0}$$ or $$\ket{1}$$, but more generally we may not know if it's in, say,
 
 $$
 \ket{\psi_1} = a\ket{0} + b\ket{1}
