@@ -357,16 +357,16 @@ $$
 $$
 
 
-Which means position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. They are said to be _incompatible_. Just how unknowable are they together? Defining unknowability in terms of the standard deviation $$\sigma$$ of an operator we find (from the general uncertainty principle) that
+Which means position and momentum aren't simultaneously knowable—measuring one destroys information about the other, and vice versa. They are said to be _incompatible_. Just how incompatible? Defining incompatibility in terms of the standard deviation $$\sigma$$ of an operator we find from the general uncertainty principle that
 
 
 $$
 \sigma_x \sigma_p \ge \frac{\hbar}{2}
 $$
 
-The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function, as is shown later in the section on wavepackets.
+The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function.
 
-__What happened to y and z?__ For the sake of simplicity I've focused this post on measurements in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straighforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. Similar for $$z$$. Just note that the derivatives change from totals to partials, and the momentum operator as a whole can be represented as $$-i\hbar \nabla$$.
+__What happened to y and z?__ For the sake of simplicity I've focused on measurements taken in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straighforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. And similar applies to $$z$$. Just note that the derivatives change from totals to partials, and the momentum operator as a whole becomes $$-i\hbar \nabla$$.
 
 Are measurements compatible across dimensions? The answer is yes. Using $$i$$ and $$j$$ to index spatial dimensions we get
 
@@ -441,7 +441,7 @@ If the right-side were true, we could think of a particle as classically "being"
 
 ## Last
 
-This concludes the summary of dynamics & continuous states in quantum mechanics. The framework has been laid to model realistic systems, such as free particles, spatially constrained particles, harmonic oscillators, and hydrogen atoms, all of which are covered in the next section. To be continued…
+This ends the summary of dynamics & continuous states in quantum mechanics. The framework laid here provides a basis for modeling realistic systems such as free particles, spatially constrained particles, harmonic oscillators, and hydrogen atoms, all of which are covered in the next section. To be continued…
 
 
 

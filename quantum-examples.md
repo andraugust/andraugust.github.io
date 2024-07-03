@@ -10,14 +10,14 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## 1. The Free Particle
 
-Conceivably the simples particle to model is one with no forces on it. This is the so-called _free particle_. Without forces the Hamiltonian is
+Presumably the simples particle to model is one with no forces on it. This is the so-called _free particle_. Without any forces the Hamiltonian is
 
 
 $$
 \mathbf{H} = \frac{\mathbf{P}^2}{2m} = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
 $$
 
-Note that mass is treated as a fixed parameter instead of as an operator, like position or momentum. The reason is that the mass doesn't have measurement uncertainty associated with it. Instead, it behaves like charge in that it's intrinsic to the particle and independent of measurement.
+Note that mass is treated as a fixed parameter instead of an operator like position or momentum. The reason is that mass doesn't have measurement uncertainty associated with it, it behaves like charge in that it's intrinsic to the particle and independent of measurement.
 
 Plugging $$\mathbf{H}$$ into the GSE yields the free particle TDSE
 
@@ -26,9 +26,9 @@ i\hbar\frac{\partial \psi(x,t)}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial
 $$
 
 
-This has the form of a diffusion equation but with a complex coefficient, which we'll show gives rise to wave-like solutions that spread out over time.
+This has the form of a diffusion equation but with a complex coefficient, which we'll see gives rise to wave-like solutions that spread out over time.
 
-The PDE is solved using separation of variables, where the solution is assumed to have the form 
+The PDE is solved using separation of variables--the solution is assumed to have the form 
 $$
 \psi(x,t) = X(x)T(t)
 $$
@@ -43,9 +43,9 @@ $$
 $$
 
 
-where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions. The wave parameters are $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
+where $$A$$ and $$B$$ are constants chosen to fit the initial and/or boundary conditions, and the wave parameters are $$k = p/\hbar = \sqrt{2mE}/\hbar$$ and $$\omega = E/\hbar$$. 
 
-By inspection, the solution contains two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The waves' phase velocity is
+By inspection, the solution is two planewaves moving in opposite directions and oscillating together at frequency $$\omega$$. The phase velocity is
 
 
 $$
@@ -53,7 +53,7 @@ v = \omega/k = E/p = p/2m =\hbar k/2m
 $$
 
 
-Their dispersion relation is
+The dispersion relation is
 
 
 $$
@@ -61,7 +61,7 @@ $$
 $$
 
 
-In terms of normalization, the wavefunction only normalizes when the particle in question is _bound_ by a potential. For example, if the particle is _un_-bound such that it can exist freely in $$(-\infty,\infty)$$, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles must be bound.
+In terms of normalization, the wavefunction only normalizes when the particle is _bound_ by a potential. For example, if the particle is _un_-bound such that it can exist freely in $$(-\infty,\infty)$$, then there's no way to set $$A$$ and $$B$$ such that $$\int\psi^*\psi = 1$$. Thus, to be physically meaningful free particles must be bound.
 
 __Particle in a box.__ An example of a bound free particle is the so-called particle in a box. Consider the potential
 
@@ -72,7 +72,7 @@ V(x < 0) = V(x>L) = \infty
 $$
 
 
-This is the so-called "potential well" because it bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$. Using this BC and normalizing yields
+This is the so-called "potential well" because it bounds the particle between $$0$$ and $$L$$. The boundary conditions imply $$\psi(0)=\psi(L)=0$$. Enforcing the boundary condition and normalization yields the solution
 
 
 $$
@@ -88,7 +88,7 @@ The first few wavefunctions at $$t=0$$ are shown below on the left with their pr
 
 <center><img src="quantum/particle_in_box.png" style="object-fit:contain;"></center>
 
-Because the Schrodinger equation is linear, any linear combination of the $$\psi_n$$ is a solution, so the general solution is
+Because the Schrodinger equation is linear any linear combination of the $$\psi_n$$ is a solution, so the general solution is
 
 
 $$
@@ -96,7 +96,7 @@ $$
 $$
 
 
-where $$a_n(0)$$ captures the "amount" of $$\psi_n$$ in the initial condition, subject to the constraint
+where $$a_n(0)$$ is the "amount" of $$\psi_n$$ in the initial condition, subject to the constraint
 
 
 $$
@@ -105,7 +105,7 @@ $$
 
 Because the $$\psi_n$$ are an orthogonal set of functions, they can be summed to create an arbitrary wavefunction (up to the boundary conditions) shape within the well. 
 
-__Stationary states.__ Eigenfunctions of the Schrodinger equation are sometimes called _stationary states_. "Stationary" because their PDFs are time-independent. For example, if $$\psi_E(x)$$ is an eigenfunction of $$\mathbf{H}$$, then the wavefunction at time $$t$$ is
+__Stationary states.__ Eigenfunctions are sometimes called _stationary states_. "Stationary" because their PDFs are time-independent. For example, if $$\psi_E(x)$$ is an eigenfunction of $$\mathbf{H}$$, the wavefunction at time $$t$$ is
 
 $$
 \psi_E(x)e^{-iEt/\hbar}
@@ -248,7 +248,7 @@ $$
 i\frac{\partial \psi}{\partial t} = -\frac{\hbar}{2m} \frac{\partial^2 \psi}{\partial x^2} + \frac{m \omega^2}{2\hbar}x^2\psi
 $$
 
-As usual the solution approach is to find the energy eigenfunctions and multiply them by the time-dependent factor $$\exp(-iE_it/\hbar)$$, then sum the eigenfunctions to make a general solution. 
+As usual, the approach is to find the energy eigenfunctions then multiply them by the time-dependent factor $$\exp(-iE_it/\hbar)$$ and sum the eigenfunctions to make a general solution. 
 
 
 The energy eigenequation (also called the time-independent schrodinger equation TISE) is
@@ -259,9 +259,9 @@ $$
 $$
 
 
-It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as needed for the wavfunction to be physically meaningful.
+It turns out that this equation has solutions for every value of $$E$$ (including complex $$E$$) but only a few solutions normalize as required for the wavfunction to be physically meaningful.
 
-Deriving the normalizable solutions requires a bit of math that isn't necessarily relevant to the physics, so I'll just present the result. The result is that for each $$0 \le n$$ the $$n$$th normalizable energy is
+Deriving the normalizable solutions requires a bit of math that isn't necessarily relevant to the physics, so I'll just present the result. The result is that for each $$n \ge 0$$ the $$n$$th normalizable energy is
 
 
 $$

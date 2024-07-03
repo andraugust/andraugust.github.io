@@ -13,7 +13,8 @@ layout: default
 
 ## [Quantum Mechanics Part 3: Joint Systems & Entanglement](quantum-3.html)
 
-<p style="opacity:0.5">11 /2023</p>
+<p style="opacity:0.5">11/2023</p>
+
 Notes on combining quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part 2: Dynamics & Continuous States](quantum-2.html)
@@ -64,12 +65,12 @@ The first link on most Wikipedia pages goes to the next most general thing. For 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
 <p style="opacity:0.5">12/2017</p>
-Image classification on the Functional Map of the World dataset with a look at fine-tuning and the effects of sample size distribution and spatial context.
+Image classification on the Functional Map of the World dataset.
 
 ## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
 
 <p style="opacity:0.5">10/2017</p>
-An example of how spectral clustering finds class hierarhies within confusion matrices.
+An example of finding class hierarchies by applying spectral clustering to confusion matrices.
 
 ## [Solving Threes](bellman.md)
 

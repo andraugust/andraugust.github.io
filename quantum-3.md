@@ -6,9 +6,11 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 <center>Alice and Bob—two quantum systems all tangled up.</center>
 
-To describe a quantum system composed of several otherwise isolated systems, we use multiply-indexed basis vectors. For example, if such a joint system contains two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined in terms of six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol in the ket denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
+### Joint systems
 
-As with isolated systems, joint systems are represented by linear combinations of independent basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll look at exclusively in this post), the most general state is given by
+To describe a quantum system made of several subsystems, we use multiply-indexed basis vectors. For example, if such a joint system contains two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined by six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
+
+As with isolated systems, joint systems are represented by linear combinations of independent basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems we'll look at in this post for simplicity), the most general state is given by
 
 
 $$
@@ -16,7 +18,7 @@ $$
 $$
 
 
-States are subject to the usual normalization constraint
+States are subject to the normalization constraint
 
 
 $$
@@ -24,11 +26,13 @@ $$
 $$
 
 
-and coefficients have the usual probabilistic interpretation: $$\lvert a_{ij} \rvert^2$$ is the probability that a measurement of the first system returns state $$i$$ and a measurement the second system returns state $$j$$.
+and coefficients have the usual probabilistic interpretation where $$\lvert a_{ij} \rvert^2$$ is the probability that a measurement of the first system returns state $$i$$ and a measurement the second system returns state $$j$$.
 
-In terms of naming conventions, it's standard to call the first subsystem Alice and the second subsystem Bob, and if there's a third it's called Charlie.
+In terms of naming conventions, it's standard to call the first subsystem Alice and the second subsystem Bob, and if there's a third it's called Charlie, and so on down the alphabet.
 
-__Observables.__ How are observables represented for joint systems? The same way they are for isolated systems—with operators, but now each subsystem has its own set of operators which act independently on the corresponding part of the system.
+### Observables
+
+How are observables represented for joint systems? The same way they are for isolated systems—with operators, but now each subsystem has its own set of operators which act independently on the corresponding part of the system.
 
 For example, consider two spins. The most general state is
 
