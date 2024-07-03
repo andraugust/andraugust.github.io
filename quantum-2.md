@@ -8,7 +8,7 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-## 1. Dynamics
+## Dynamics
 
 ### The Time Evolution Operator
 
@@ -129,7 +129,7 @@ $$
 \ket{\Psi(t)} = \sum_i \bk{E_i}{\Psi(0)} e^{-iE_it/\hbar} \ket{E_i}
 $$
 
-## 2. Continuous States
+## Continuous States
 
 ### Making the Transition
 
@@ -451,7 +451,7 @@ $$
 
 If the right-side were true, we could think of a particle as classically "being" at $$\left<x\right>$$ and moving according to the potential there, just like a classical particle does, but this isn't the case. In QM, wavefunctions are spread-out in space and therefore "feel" potentials as a distribution—the entire potential function needs to be considered. If, however, the potential is approximately the same across the width of the wavefunction then the $$\neq$$ can be replaced by $$=$$, which is the classical limit.
 
-### Last
+## Last
 
 This ends the summary of dynamics & continuous states in quantum mechanics. The framework laid here provides a basis for modeling realistic systems such as free particles, spatially constrained particles, harmonic oscillators, and hydrogen atoms, all of which are covered in the next section. To be continued…
 

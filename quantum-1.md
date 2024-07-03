@@ -8,7 +8,7 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-## 1. Systems and Experiments
+## Systems and Experiments
 
 One way to start understanding quantum mechanics is by comparing it to classical mechanics, and this is how Susskind's book begins—with a comparison between classical spin and its quantum analog, through a thought experiment.
 
@@ -20,7 +20,7 @@ Now let's do the same experiment on quantum spin. Measuring $$\pm z$$ we get the
 
 So between CM and QM the notion of determinism changes, as does the notion of measureable states: classical spin is real-valued between $$-1$$ and $$+1$$, but quantum spin is binary. Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$. In other words measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original result. To develop intuition for why this is, it's helpful to remember that quantum systems are so small that any measurement energetically strong enough to be useful is necessarily strong enough to change the system in a significant way, whereas classically the energy used to measure a system usually has negligible impact on the system itself.
 
-## 2. Quantum States
+## States
 
 Quantum states are modeled as vectors in a space called Hilbert space. In Hilbert space vectors can be real or complex and have finite or infinite dimension. An example of an infinite-dimensional vector is a continuous-valued function.
 
@@ -106,7 +106,7 @@ The table below lists each spin eigenvector represented in the $$z$$-basis, the 
 
 As a final comment, note that multiplying any state by a factor of $$e^{i\theta}$$, where $$\theta$$ is real, does nothing to change measurement probabilities.
 
-## 3. Principles
+## Principles
 
 The principles of QM are formulated around the idea of measureables, i.e., the outcomes of experiments. They state that:
 
@@ -259,7 +259,7 @@ P(\sigma_z = -1) = \lvert\bk{-z}{+x}\rvert^2 = 1/2
 $$
 
 
-## 4. Last
+## Last
 
 States, operators, and principals wrap up the first part of QM. They lay the foundation over which more  interesting systems can be modeling, such as particles, forces, dynamics, and entanglement, all of which will be covered in the posts that follow. To be continued…
 

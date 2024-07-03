@@ -1,6 +1,6 @@
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-## Quantum Mechanics Part 3: Joint Systems & Entanglement
+# Quantum Mechanics Part 3: Joint Systems & Entanglement
 
 <center><img src="quantum/DALLE-Alice-Bob.jpg" style="object-fit:contain;"></center>
 
@@ -408,6 +408,6 @@ Some general properties of density matrices include:
 * For pure states $$\boldsymbol{\rho}^2 = \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) = 1$$
 * For mixed or entangled states $$\boldsymbol{\rho}^2 \neq \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) < 1$$
 
-More to be added later!
+More to add later!
 
 {% include disqus.html %}
