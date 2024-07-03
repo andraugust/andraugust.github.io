@@ -160,7 +160,7 @@ $$
 $$
 
 
-Taking this inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but this doesn't work because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces, $$\ket{11}$$ is in the joint space while $$\ket{+y}$$ is in the isolated space. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need a mathematical thing called _tensor products_.
+Taking the inner product is straightforward, but how do we do it when $$\ket{\psi}$$ is joint? When $$\ket{\psi}$$ is joint we would have to compute terms like $$\bk{+y}{01}$$ and $$\bk{+y}{11}$$, etc, but this doesn't work because $$\ket{+y}$$ and, say, $$\ket{11}$$ live in two different vector spaces, $$\ket{11}$$ is in the joint space while $$\ket{+y}$$ is in the isolated space. We need to represent $$\ket{+y}$$ in the joint space to take the inner product, and to do that we need a mathematical thing called _tensor products_.
 
 Tensor products, specifically the type called Kronecker products, are a form of matrix multiplication. For two $$2\times2$$ matrices the tensor product is defined as
 
@@ -191,9 +191,9 @@ Here's a short-list of tensor product properties:
 * Transpose and conjugate transpose distribute: $$(\mathbf{A} \otimes \mathbf{B})^\dagger = \mathbf{A}^\dagger \otimes \mathbf{B}^\dagger$$
 * They have a so-called mixed product where $$(\mathbf{A} \otimes \mathbf{B})(\mathbf{C} \otimes \mathbf{D}) = (\mathbf{A}\mathbf{C}) \otimes (\mathbf{B}\mathbf{D})$$ 
 
-So what does this have to do with quantum mechanics? The answer is that it's very useful to represent joint quantum states as tensor products. For example, what we've called $$\ket{01}$$ can be written $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma^A$$ can be written $$\sigma \otimes I$$, and $$\sigma^B$$ can be written $$I \otimes \sigma$$. 
+So what does this have to do with quantum mechanics? The answer is that it's very useful to represent joint quantum states and operators as tensor products. For example, what I've called $$\ket{01}$$ can be written as $$\ket{0} \otimes \ket{1}$$, what we've called $$\sigma^A$$ can be written $$\sigma \otimes I$$, and $$\sigma^B$$ can be written $$I \otimes \sigma$$. 
 
-Looked at in terms of tensor products we see that Alice's operator indeed acts only on her part of the system. For example,
+Looked at in terms of tensor products, Alice's operator indeed acts only on her part of the system. For example,
 
 
 $$
@@ -228,7 +228,7 @@ $$
 
 Therefore Alice and Bob do in-fact make independent measurements.
 
-Going back to the probability calculation, now armed with tensor products, we can write
+Going back to the probability calculation, now with tensor products, we can write
 
 
 $$
