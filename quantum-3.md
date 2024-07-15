@@ -118,9 +118,11 @@ When Bob measures his half of the system, and Alice and Bob exchange measurement
 
 Do Alice and Bob always have to exchange measurement outcomes to know the complete state? Sometimes the answer is no. For example, consider the so-called _singlet state_
 
+
 $$
 \frac{1}{\sqrt{2}} \left( \ket{10}-\ket{01} \right)
 $$
+
 
 In this state if Alice measures $$1$$ she immediately knows Bob's state is $$0$$, and vice-versa. This is called _entanglement_, and because the spins are entangled Alice's measurement effectively _determines_ Bob's, just as if Bob had measured his himself, so in some sense Alice gets two bits for the price of one.
 
@@ -135,9 +137,11 @@ $$
 \frac{1}{\sqrt{2}} \left( \ket{11}-\ket{00} \right)
 $$
 
+
 ### Tensor Products
 
 Going back to probability calculations, suppose we want to know $$P_y(+1)$$. If the system is isolated then we know how to calculate this, it's just
+
 
 $$
 \lvert \bk{+y}{\psi} \rvert^2
@@ -329,6 +333,7 @@ These properties imply that any prediction about one half of the system gives th
 
 In practice we may not know exactly which state a system is in. By this I don't just mean that we don't know if it's in $$\ket{0}$$ or $$\ket{1}$$, but more generally we may not know if it's in, say,
 
+
 $$
 \ket{\psi_1} = a\ket{0} + b\ket{1}
 $$
@@ -413,5 +418,3 @@ More to add later!
 ### Footnotes
 
 [^1]: Alice "telling" Bob her measurement outcome physically amounts to Bob measuring a property of Alice that has stored her measurement outcome. In otherwords, Alice acts like a detector whose state equals her measurement result, and Bob measures that result. 
-
-{% include disqus.html %}
