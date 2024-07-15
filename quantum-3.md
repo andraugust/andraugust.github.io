@@ -6,7 +6,14 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 <center>Alice and Bob—two quantum systems all tangled up.</center>
 
-<!-- toc -->
+- [Quantum Mechanics Part 3: Joint Systems \& Entanglement](#quantum-mechanics-part-3-joint-systems--entanglement)
+    - [Joint Systems](#joint-systems)
+    - [Observables](#observables)
+    - [Entanglement](#entanglement)
+    - [Tensor Products](#tensor-products)
+    - [Composite Observables](#composite-observables)
+    - [Mixed States](#mixed-states)
+    - [Footnotes](#footnotes)
 
 ### Joint Systems
 
