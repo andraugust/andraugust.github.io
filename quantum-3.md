@@ -5,6 +5,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 <center><img src="quantum/DALLE-Alice-Bob.jpg" style="object-fit:contain;"></center>
 
 <center>Alice and Bob—two quantum systems all tangled up.</center>
+<p>&nbsp;</p>
 
 - [Quantum Mechanics Part 3: Joint Systems \& Entanglement](#quantum-mechanics-part-3-joint-systems--entanglement)
     - [Joint Systems](#joint-systems)
@@ -12,8 +13,10 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
     - [Entanglement](#entanglement)
     - [Tensor Products](#tensor-products)
     - [Composite Observables](#composite-observables)
+    - [Product States](#product-states)
     - [Mixed States](#mixed-states)
     - [Footnotes](#footnotes)
+
 
 ### Joint Systems
 
@@ -291,7 +294,9 @@ Composite observables are observables that depend on the outcome of both Alice's
 
 Composite observables, like isolated observables, are represented by operators and have eigenvalues and eigenvectors associated with them. These eigenquantities define their measurable outcomes and the corresponding states to which a state-vector will collapse when an outcome is measured.
 
-__Product States.__ In terms of correlatedness, the opposite of an entangled state is a _product state_. A product states is what you get when a joint state factors into the tensor product of states that are individually normalized. In a product state we can think of the sub-systems as having been separately prepared, and measurements on one part of the system leave the other part unchanged. For example, consider the binary sub-systems $$\ket{A}$$ and $$\ket{B}$$
+### Product States
+
+In terms of correlatedness, the opposite of an entangled state is a _product state_. A product states is what you get when a joint state factors into the tensor product of states that are individually normalized. In a product state we can think of the sub-systems as having been separately prepared, and measurements on one part of the system leave the other part unchanged. For example, consider the binary sub-systems $$\ket{A}$$ and $$\ket{B}$$
 
 
 $$
