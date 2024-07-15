@@ -8,7 +8,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ### Joint Systems
 
-To describe a quantum system made of several subsystems, we use multiply-indexed basis vectors. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined by six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
+To describe a quantum system composed of several subsystems, we use basis vectors that are multiply-indexed. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined by six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
 
 As with isolated systems, joint systems are represented by linear combinations of independent basis vectors. For example, if a joint system has two subsystems (which is the number of subsystems I'll look at in this post, for simplicity), the most general state is given by
 
@@ -102,7 +102,7 @@ $$
 $$
 
 
-where the denominator is a new normalization factor. At this point, unless Alice tells Bob about her measurement outcome, this new state _belongs only to Alice_. Bob's model of the system is still the original vector
+where the denominator is a new normalization factor. At this point, unless Alice tells Bob about her measurement outcome, this new state _belongs only to Alice_[^1]. Bob's model of the system is still the original vector
 
 
 $$
@@ -409,5 +409,9 @@ Some general properties of density matrices include:
 * For mixed or entangled states $$\boldsymbol{\rho}^2 \neq \boldsymbol{\rho}$$ and $$\text{Tr}(\boldsymbol{\rho^2}) < 1$$
 
 More to add later!
+
+### Footnotes
+
+[^1]: Alice "telling" Bob her measurement outcome physically amounts to Bob measuring a property of Alice that has stored her measurement outcome. In otherwords, Alice acts like a detector whose state equals her measurement result, and Bob measures that result. 
 
 {% include disqus.html %}
