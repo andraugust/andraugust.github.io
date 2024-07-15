@@ -6,6 +6,8 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 <center>Alice and Bob—two quantum systems all tangled up.</center>
 
+<!-- toc -->
+
 ### Joint Systems
 
 To describe a quantum system composed of several subsystems, we use basis vectors that are multiply-indexed. For example, if a joint system consists of two objects, one having 3 possible measurement outcomes and another having 2, the joint system is defined by six bases: $$\ket{00}$$, $$\ket{01}$$, $$\ket{02}$$, $$\ket{10}$$, $$\ket{11}$$, $$\ket{12}$$. The first symbol denotes the first object's contribution to the overall state and the second symbol denotes the second object's contribution. Together they describe a _single_ measurement possibility of the joint system.
