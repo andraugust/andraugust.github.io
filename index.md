@@ -60,7 +60,7 @@ Ship detection in satellite images using a Kaggle dataset.
 ## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game", and "card game" links to "game", etc.  Where do all these first links lead? Does Wikipedia's have something like a first-link taxonomy?
+The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game", and "card game" links to "game", etc.  Where do all these first links lead? Does Wikipedia's have something resembling a first-link taxonomy?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
