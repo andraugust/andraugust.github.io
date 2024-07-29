@@ -245,7 +245,7 @@ These two probabilities are equal because the measurement happens to be taken at
 
 ### Sequential Measurement
 
-What happens _after_ a measurement? Looking back at the principles, the the particle "collapses to" or becomes "prepared in" the eigenstate of the measurement result.
+What happens _after_ a measurement? Looking back at the principles, the particle "collapses to" or becomes "prepared in" the eigenstate of the measurement result.
 
 For example, consider a spin particle with initial state (in the $$z$$ basis)
 

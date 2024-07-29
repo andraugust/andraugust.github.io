@@ -8,6 +8,21 @@ layout: default
 
 This post is a summary of classical mechanics based closely on Leonard Susskind's first book in his _Theoretical Minimum_ series. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
+- [Classical Mechanics](#classical-mechanics)
+    - [The Nature of It](#the-nature-of-it)
+    - [Newton's Formulation](#newtons-formulation)
+    - [More Than One Particle](#more-than-one-particle)
+    - [Energy](#energy)
+    - [The Action Principle](#the-action-principle)
+    - [Symmetry and Conservation](#symmetry-and-conservation)
+    - [The Hamiltonian Formulation](#the-hamiltonian-formulation)
+    - [The Phase Space Fluid](#the-phase-space-fluid)
+    - [Poisson Brackets](#poisson-brackets)
+    - [Last](#last)
+      - [Properties \& Principles](#properties--principles)
+      - [Dynamics Equations](#dynamics-equations)
+      - [Definitions](#definitions)
+
 ### The Nature of It
 
 Classical mechanics is about forces and motion when quantum effects are negligible and nothing moves near the speed of light.
