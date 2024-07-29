@@ -431,4 +431,4 @@ More to add later!
 
 ### Footnotes
 
-[^1]: Alice "telling" Bob her measurement outcome physically amounts to Bob measuring a property of Alice that has stored her measurement outcome. In otherwords, Alice acts like a detector whose state equals her measurement result, and Bob measures that result. 
+[^1]: Alice "telling" Bob her measurement outcome physically amounts to Bob measuring a property of Alice that stores her measurement outcome. In otherwords, Alice acts like a detector whose state equals her measurement result, and Bob measures that result. 

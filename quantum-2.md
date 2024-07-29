@@ -2,11 +2,25 @@
 layout: default
 ---
 
+$$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
+
 # Quantum Mechanics Part 2: Dynamics & Continuous States
 
 <center><img src="quantum/banner-2.png" style="object-fit:contain;"></center>
 
-$$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
+- [Quantum Mechanics Part 2: Dynamics \& Continuous States](#quantum-mechanics-part-2-dynamics--continuous-states)
+  - [Dynamics](#dynamics)
+    - [The Time Evolution Operator](#the-time-evolution-operator)
+    - [Solving the Generalized Schrodinger Equation](#solving-the-generalized-schrodinger-equation)
+  - [Continuous States](#continuous-states)
+    - [Making the Transition](#making-the-transition)
+    - [Wave Functions](#wave-functions)
+    - [Continuous Operators](#continuous-operators)
+    - [Position \& Momentum](#position--momentum)
+    - [Changing Basis](#changing-basis)
+    - [Uncertainty](#uncertainty)
+    - [The Classical Connection](#the-classical-connection)
+  - [Last](#last)
 
 ## Dynamics
 
@@ -454,7 +468,5 @@ If the right-side were true, we could think of a particle as classically "being"
 ## Last
 
 This ends the summary of dynamics & continuous states in quantum mechanics. The framework laid here provides a basis for modeling realistic systems such as free particles, spatially constrained particles, harmonic oscillators, and hydrogen atoms, all of which are covered in the next section. To be continued…
-
-
 
 {% include disqus.html %}
