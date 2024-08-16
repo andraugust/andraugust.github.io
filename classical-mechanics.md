@@ -6,7 +6,7 @@ layout: default
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-This post is a summary of classical mechanics based closely on Leonard Susskind's first book in his _Theoretical Minimum_ series. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
+This is a summary of classical mechanics based closely on Leonard Susskind's first book in the _Theoretical Minimum_ series. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
 - [Classical Mechanics](#classical-mechanics)
     - [The Nature of It](#the-nature-of-it)
@@ -33,7 +33,15 @@ In terms of dynamics, all states within a system have a unique predecessor state
 
 ### Newton's Formulation
 
-Newton's formulation defines dynamics as the solution to a second order ODE given by $$F(x) = m\ddot{x}$$, where $$F$$ is a transition rule that's encoded in terms of a force acting on a particle of mass $$m$$. Usually this equation is solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and integrating over time to get the particle's trajectory. For a system of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution.
+Newton's formulation defines dynamics as the solution to a second order ODE given by 
+
+
+$$
+F(x) = m\ddot{x}
+$$
+
+
+Where $$F$$ is a transition rule that's encoded in terms of a force acting on a particle of mass $$m$$. Usually this equation is solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and integrating over time to get the particle's trajectory. For a system of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution.
 
 ### More Than One Particle
 
