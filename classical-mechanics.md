@@ -25,15 +25,13 @@ This post is a summary of classical mechanics based closely on Leonard Susskind'
 
 ### The Nature of It
 
-Classical mechanics is about forces and motion when quantum effects are negligible and nothing moves near the speed of light.
+Classical mechanics is the study of dynamical systems in nature that are big enough for quantum effects to be ignored and slow enough for relativistic effects to be ignored.
 
-A fundamental property of classical systems is that each state within a system has a unique predecessor state and a unique successor state. Susskind calls this the $$-1^{\text{st}}$$ _Law_, due to the priority he thinks it should take over other ordinal laws (namely the $$1^{\text{st}}$$ and $$0^{\text{th}}$$ laws of thermodynamics). This law implies that all past and future states of a system are uniquely determined once a single state is specified with the forces acting on it.
-
-It's interesting to note that CM systems can have _chaotic_ dynamics despite their determinism—if an initial state isn't known with sufficiently high precision then _in practice_ it's perhaps more practical to call the system non-deterministic, but in _theory_ CM is a deterministic model.
+A fundamental principal of classical mechanics is that all states within a system have a unique predecessor state and a unique successor state, and as time ticks forward the system's state transitions from one to the next according to some state-transition, or dynamics, rule. The consequence of this being that once a state is specified along with it's state-transition rule, all past and future states of the system are uniquely determined. In practice, state-transition rules are usually encoded in terms of forces, but more about that later. For now suffice it to say that classical mechanics is a deterministic model of the universe defined in terms of states and their transition rules.
 
 ### Newton's Formulation
 
-Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is usually solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, then integrating in time to get a trajectory.
+Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is usually solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ as the initial state and $$F$$ as the force encoding state transitions, then integrating in time to get a trajectory $$x(t)$$ specifying state at an arbitrary time.
 
 ### More Than One Particle
 
@@ -47,7 +45,7 @@ This space—where one axis is $$x$$ and the other is $$p$$—is called _phase s
 
 ### Energy
 
-A fundamental principle of physics is that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ is conserved. Note that in general $$F$$ is a vector and so is $$x$$, but I'm leaving them unbolded (out of laziness).
+A fundamental principle of physics is that all fundamental forces derive from a scalar function called _potential energy_: $$F(x) = -\nabla V(x)$$, and that the sum of potential and kinetic energy $$T = mv^2/2$$ is conserved. Note that in general $$F$$ is a vector and so is $$x$$, but I'm leaving them unbolded for now since we can easily generalize from one dimension if needed.
 
 To verify that energy is conserved we have to show that $$\dot{E} = 0$$:
 

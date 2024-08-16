@@ -71,7 +71,7 @@ $$N(i) = \binom{R-i}{r-1}(r-1)!(R-r)!$$
 
 The binomial coefficient comes from choosing which ranks to put on the left of $$r$$, and the factorials come from the permutations. The normalization constant $$1/R!$$ is the total number of possible rank orderings.
 
-The probability simplifies conveniently to $$1/r$$. Thanks [Maple](https://en.wikipedia.org/wiki/Maple_(software)).
+The probability simplifies to $$1/r$$.
 
 Next, let's look at $$V(r \vert \neg \text{bsf})$$. This one's much easier. This is the case where we automatically pass to the next candidate, in other words $$V(r \vert \neg \text{bsf}) = V(r+1)$$. Easy.
 
