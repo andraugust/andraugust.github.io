@@ -33,7 +33,7 @@ In terms of dynamics, all states within a system have a unique predecessor state
 
 ### Newton's Formulation
 
-Newton's formulation defines dynamics as the solution to a second order ODE given by 
+Newton's formulation defines dynamics as the solution to the second order ODE given by 
 
 
 $$
@@ -41,7 +41,7 @@ F(x) = m\ddot{x}
 $$
 
 
-Where $$F$$ is a transition rule that's encoded in terms of a force acting on a particle of mass $$m$$. Usually this equation is solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and integrating over time to get the particle's trajectory. For a system of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution.
+where $$F$$ is the sum of the force acting on a particle of mass $$m$$. Usually this equation is solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and integrating over time to get the particle's trajectory. For a system of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the state-transition rule encoded by $$F = m\ddot{x}$$ tell us everything we need to know to determine the system's evolution.
 
 ### More Than One Particle
 
