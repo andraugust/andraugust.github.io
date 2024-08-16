@@ -29,7 +29,7 @@ Classical mechanics is about the dynamics of systems that operate on relatively 
 
 A fundamental concept in CM, and perhaps all of physics, is that of a _state_. States define how a system is configured at a given point in time and encode everything there is to know about the system in order to predict its subsequent state.
 
-In terms of dynamics, all states within a system have a unique predecessor state and a unique successor state. As time ticks forward states transition from one to the next according to a state-transition rule, which can be encoded in various ways as we'll see. The consequence of such unique transitions is that once a state is specified along with the transition rule, all past and future states are uniquely determined. In other words, classical mechanics is a deterministic model of the universe.
+In terms of dynamics, all states within a system have a unique predecessor state and a unique successor state. As time ticks forward states transition from one to the next according to a state-transition rule, which can be encoded in various ways as we'll see. The consequence of such transitions being unique is that once a state is specified along with a transition rule, all past and future states are uniquely determined. In other words, classical mechanics is a deterministic model of the universe.
 
 ### Newton's Formulation
 
