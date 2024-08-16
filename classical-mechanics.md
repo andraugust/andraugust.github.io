@@ -25,19 +25,19 @@ This post is a summary of classical mechanics based closely on Leonard Susskind'
 
 ### The Nature of It
 
-Classical mechanics is the study of dynamical systems in nature that are big enough for quantum effects to be ignored and slow enough for relativistic effects to be ignored.
+Classical mechanics is about the dynamics of systems that operate on relatively intuitive scales. Nothing is so small that quantum effects matter and nothing is so fast or massive that relativity has to be accounted for. Typically when you think of classical mechanics you think of masses on springs, planets orbiting stars, or waves propagating through water.
 
-A fundamental principal of classical mechanics is that all states within a system have a unique predecessor state and a unique successor state, and as time ticks forward the system's state transitions from one to the next according to some state-transition, or dynamics, rule. The consequence of this being that once a state is specified along with it's state-transition rule, all past and future states of the system are uniquely determined. In practice, state-transition rules are usually encoded in terms of forces, but more about that later. For now suffice it to say that classical mechanics is a deterministic model of the universe defined in terms of states and their transition rules.
+A fundamental concept in CM, and perhaps all of physics, is that of a _state_. States define how a system is configured at a given point in time and encode everything there is to know about the system in order to predict its subsequent state.
+
+In terms of dynamics, all states within a system have a unique predecessor state and a unique successor state. As time ticks forward states transition from one to the next according to a state-transition rule, which can be encoded in various ways as we'll see. The consequence of such unique transitions is that once a state is specified along with the transition rule, all past and future states are uniquely determined. In other words, classical mechanics is a deterministic model of the universe.
 
 ### Newton's Formulation
 
-Newton's formulation defines motion as the solution to the second order ODE $$F=m\ddot{x}$$, which is usually solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ as the initial state and $$F$$ as the force encoding state transitions, then integrating in time to get a trajectory $$x(t)$$ specifying state at an arbitrary time.
+Newton's formulation defines dynamics as the solution to a second order ODE given by $$F(x) = m\ddot{x}$$, where $$F$$ is a transition rule that's encoded in terms of a force acting on a particle of mass $$m$$. Usually this equation is solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and integrating over time to get the particle's trajectory. For a system of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the dynamics encoded by $$F = m\ddot{x}$$ tell us everything we need to know about the system's evolution.
 
 ### More Than One Particle
 
-For a system of one particle the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector, and the dynamics encoded by $$F = m\ddot{x}$$, tell us everything we need to know about the system's evolution, so we say that $$(x(t),\dot{x}(t))$$ is the system's _state_.
-
-For a system of more than one particle there's an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles in 3-space the state vector has $$6N$$ entries, and the system as a whole follows a trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space. 
+For systems with more than one particle there's an $$x$$ and an $$\dot{x}$$ for each particle. For a system of $$N$$ particles in 3-space the state vector has $$6N$$ entries, and the system as a whole follows a trajectory through $$6N$$ dimensional state-space, even though each individual particle follows a trajectory through its own individual $$6$$ dimensional state-space. 
 
 As an alternative to expressing a system's state in terms of $$x$$ and $$\dot{x}$$, we can express it in terms of $$x$$ and $$p$$. The reason is because the dynamics equation $$F=m\ddot{x}$$ is equivalent to $$F=\dot{p}$$, which formulates a particle's trajectory in terms of the vector $$(x(t),p(t))$$, with initial conditions $$x(0)$$ and $$p(0)=\dot{x}(0)/m$$. 
 
@@ -91,7 +91,7 @@ If the least-action formulation is equivalent to Newton's equation, then why sho
 - It makes coordinate transformations more convenient, such as if we move between a stationary and rotating coordinate system.
 - It allows us to conveniently incorporate constraints on trajectories through the use of _generalized coordinates_.
 
-Generalized coordinates let us step away from Cartesian coordinates and use whatever coordinates we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum we could use one pendulum's angle relative to the vertical as the first generalized coordinate and the second pendulum's angle relative to the first's as the second, as opposed to aawkwardly using the x-y positions of each. 
+Generalized coordinates let us step away from Cartesian coordinates and use whatever coordinates we want as long as they uniquely specify a system's state. For example, if we were modeling a double pendulum we could use one pendulum's angle relative to the vertical as the first generalized coordinate and the second pendulum's angle relative to the first's as the second, as opposed to awkwardly using the x-y positions of each. 
 
 The convenience of generalized coordinates is furthered by the fact that they seamlessly integrate constraints into motion. For example, if a particle is constrained to move on a manifold, then by choosing generalized coordinates on that manifold we automatically get dynamics equations in terms of those coordinates.
 
