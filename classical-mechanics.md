@@ -6,7 +6,7 @@ layout: default
 
 <center><img src="classical-mechanics/banner.png" style="zoom:80%;"></center>
 
-This is a summary of classical mechanics based closely on Leonard Susskind's first book in the _Theoretical Minimum_ series. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
+This is a summary of classical mechanics based on Leonard Susskind's first book in his series called _The Theoretical Minimum_. The post starts with a discussion of states and dynamics and then derives the various formulations of classical mechanics, touching on symmetries, conservation laws and determinism.
 
 - [Classical Mechanics](#classical-mechanics)
     - [The Nature of It](#the-nature-of-it)
@@ -27,7 +27,7 @@ This is a summary of classical mechanics based closely on Leonard Susskind's fir
 
 Classical mechanics deals with systems that behave in more or less intuitive ways. When we think of classical systems, we imagine things like masses oscillating on springs, planets orbiting stars, or waves moving through water. In terms of size and energy scales, classical objects are always big enough to ignore quantum effects and slow enough (relative to light) to ignore relativistic effects. 
 
-A fundamental concept in CM, and really physics in general, is that of a _state_. States define how a system is configured at a given point in time and encode everything there is to know about the system in order to predict its subsequent state.
+A fundamental concept in CM, and really physics in general, is that of a _state_. States define how a system is configured at a given point in time and encode everything there is to know about a system in order to predict its subsequent states.
 
 In terms of dynamics, all states within a system have a unique predecessor state and a unique successor state. As time ticks forward states transition from one to the next according to a transition rule, which can be encoded in various ways, as we'll see. The uniqueness of transitions implies that once a state is specified with a transition rule, all past and future states are determined. In other words, classical mechanics is a deterministic model of the universe.
 
@@ -41,7 +41,7 @@ F(x) = m\ddot{x}
 $$
 
 
-where $$F$$ is the sum of the force acting on a particle of mass $$m$$. Usually this equation is solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and then integrating over time to get the particle's trajectory. For a system of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the state-transition rule encoded by $$F = m\ddot{x}$$ tell us everything we need to know to determine the system's evolution.
+where $$F$$ is the sum of the forces acting on a particle of mass $$m$$. Usually this equation is solved by inputing $$x(t_0)$$, $$\dot{x}(t_0)$$ and $$F$$, and then integrating over time to get the particle's trajectory. For a system of one particle, the state at time $$t$$ is defined by the vector $$(x(t),\dot{x}(t))$$. This vector and the state-transition rule encoded by $$F = m\ddot{x}$$ tell us everything we need to know to determine the system's evolution.
 
 ### More Than One Particle
 
