@@ -5,7 +5,9 @@ layout: default
 <link rel="stylesheet" type="text/css" media="all" href="quote.css" />
 
 <figure class="quote" style="background-color: #212426;">
-  <blockquote>Everything is interesting if you go into it deeply enough.</blockquote>
+  <blockquote style="color: #a7a095;">
+    Everything is interesting if you go into it deeply enough.
+  </blockquote>
   <figcaption>
     &mdash; Richard Feynman, <cite>The Pleasure of Finding Things Out</cite>
   </figcaption>
