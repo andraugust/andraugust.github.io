@@ -17,7 +17,7 @@ layout: default
 
 <p style="opacity:0.5">11/2023</p>
 
-Notes on combining quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
+Notes on what happens when quantum systems interact with each other, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part 2: Dynamics & Continuous States](quantum-2.html)
 
@@ -47,27 +47,27 @@ PlatformIO is an IDE for Arduino that supports environments and command-line upl
 ## [The Hiring Problem](hiring-problem.html)
 
 <p style="opacity:0.5">09/2019</p>
-Suppose you're interviewing candidates for a job. Interviews come at a cost, but they provide useful information about candidates. How many candidates should you interview before commiting to one?
+A toy problem about optimizing the trade-off between information collection and lost opportunity, in the context of hiring job applicants.
 
 ## [Neural Style Transfer](neural-style-transfer.html)
 
 <p style="opacity:0.5">02/2019</p>
-What defines the _style_ of an image? Can it be captured computationally? If so, is it possible to transfer styles from one image another, like making a selfie appear as if it were painted by Van Gogh? 
+What defines the _style_ of an image? Can it be captured computationally? If so, is it possible to transfer styles from one image another, like making a selfie appear to be painted by Van Gogh? 
 
 ## [Kaggle Ship Detection Challenge](airbus.html)
 
 <p style="opacity:0.5">11/2018</p>
-Ship detection in satellite images using a Kaggle dataset.
+Detecting ships in sattelite images, from a Kaggle challenge.
 
 ## [The First Link Taxonomy of Wikipedia](wikilinks.html)
 
 <p style="opacity:0.5">04/2018</p>
-The first link on most Wikipedia pages goes to the next most general thing. For example, "poker" links to "card game", and "card game" links to "game", etc.  Where do all these first links lead? Does Wikipedia's have something resembling a first-link taxonomy?
+The first link on most Wikipedia pages goes to the next most general thing. "Poker" goes to "card game", "card game" goes to "game", etc.  Where do all these first links finally lead? Does Wikipedia's have something like a first-link taxonomy?
 
 ## [Satellite Image Classification on the FMoW Dataset](fmow.html)
 
 <p style="opacity:0.5">12/2017</p>
-Image classification on the Functional Map of the World dataset.
+Classifying objects in satellite images, from the Functional Map of the World dataset.
 
 ## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
 
