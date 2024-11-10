@@ -17,7 +17,7 @@ layout: default
 
 <p style="opacity:0.5">11/2023</p>
 
-Notes on what happens when quantum systems interact with each other, based on Leonard Susskind's book _The Theoretical Minimum_.
+Notes on interacting quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part 2: Dynamics & Continuous States](quantum-2.html)
 
