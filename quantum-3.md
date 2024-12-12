@@ -2,10 +2,7 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 # Quantum Mechanics Part 3: Joint Systems & Entanglement
 
-<center><img src="quantum/DALLE-Alice-Bob.jpg" style="object-fit:contain;"></center>
-
-<center>Alice and Bob—two quantum systems all tangled up.</center>
-<p>&nbsp;</p>
+<center><img src="quantum/banner-wavefunction.jpg" style="object-fit:contain;"></center>
 
 - [Quantum Mechanics Part 3: Joint Systems \& Entanglement](#quantum-mechanics-part-3-joint-systems--entanglement)
     - [Joint Systems](#joint-systems)
