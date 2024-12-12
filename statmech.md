@@ -4,6 +4,8 @@ layout: default
 
 # Notes on Statistical Mechanics
 
+<center><img src="statmech/banner.png" style="zoom:100%;"></center>
+
 ### High Level
 
 
