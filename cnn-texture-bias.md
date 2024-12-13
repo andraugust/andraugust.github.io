@@ -4,7 +4,7 @@ layout: default
 
 # TLDR: "ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness", Geirhos et al, 2019
 
-<center><img src="CNNTextureBias/1.png"></center>
+<center><img src="CNNTextureBias/banner.png"></center>
 
 This paper investigates texture and shape bias in CNNs by looking at how models perform when texture and shape are removed or conflated in images. "Texture" is hand-wavily defined as "an image region with spatially stationary statistics". What these statistics are exactly is left to the reader as an exercise. Nevertheless, distinguishing texture from shape is generally intuitive and easy for people (e.g., elephant skin vs cat outline), so texture and shape labels can be assigned to images without much ambiguity.
 
