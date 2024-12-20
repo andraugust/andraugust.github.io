@@ -16,7 +16,7 @@ layout: default
 ## [Notes on Statistical Mechanics](statmech.html)
 
 <p style="opacity:0.5">12/2024</p>
-Notes on statistical mechanics: multiplicities, boltzmann factors, molecules, etc etc
+Multiplicities, boltzmann factors, molecules, etc, etc
 
 ## [Quantum Mechanics Part 3: Joint Systems & Entanglement](quantum-3.html)
 
