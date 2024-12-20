@@ -13,10 +13,14 @@ layout: default
   </figcaption>
 </figure>
 
+## [Notes on Statistical Mechanics](statmech.html)
+
+<p style="opacity:0.5">12/2024</p>
+Notes on statistical mechanics: multiplicities, boltzmann factors, molecules, etc etc
+
 ## [Quantum Mechanics Part 3: Joint Systems & Entanglement](quantum-3.html)
 
 <p style="opacity:0.5">11/2023</p>
-
 Notes on interacting quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part 2: Dynamics & Continuous States](quantum-2.html)
