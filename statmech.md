@@ -618,4 +618,6 @@ This is the so-called _thermodynamic identity_. It demonstrates how the change i
 
 In the next set of notes I'll talk about thermodynamics proper. Stay tuned...
 
+
+
 {% include disqus.html %}
