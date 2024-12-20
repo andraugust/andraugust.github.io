@@ -359,7 +359,7 @@ In cases where $$u$$ has discrete values the integral becomes a sum.
 
 $$p(u)$$ is the energy distribution of the small system (sometimes just one particle), $$\Omega(u)$$ is the so-called _density of states_ which counts the degeneracy of $$u$$, and $$\exp(-u/kT)$$ is the so-called _Boltzmann factor_ which implies that high energy states are less likely. Let's apply this formula to one atom in a gas.
 
-An atom's energy degeneracy comes from the fact that different momentum states can have the same energy: $$p_x^2+p_y^2+p_z^2 = 2mu$$. This equation defines the surface of a sphere whose radius is $$R = \sqrt{2mu}$$. This means that the volume of states centered at a given energy is $$A\ dR$$, where $$A$$ is the surface area of the sphere. In terms of energy this means
+An atom's energy degeneracy comes from the fact that it has many momentum states with the same energy: $$p_x^2+p_y^2+p_z^2 = 2mu$$. This equation defines the surface of a sphere having radius $$R = \sqrt{2mu}$$, so the volume of states centered at a given energy is $$A\ dR$$, where $$A$$ is the surface area of the sphere. In terms of energy this means
 
 
 $$
@@ -391,29 +391,28 @@ $$
 $$
 
 
-which is the same result as in the temperature derivation, but now with $$\langle u \rangle$$ in place of $$U/N$$.
+This is exactly the same result as in the temperature derivation but with $$\langle u \rangle$$ in place of $$U/N$$.
 
-This derivation is based on the classical model of an atom. If instead we use a quantum model we should get the same result in the high energy limit, so let's verify this. In the quantum model the atom's energy is given by
-
-
-$$
-u(n_x, n_y, n_z) \propto n_x^2 + n_y^2 + n_z^2
-$$
-
-
-where each $$n$$ is a positive integer starting at $$1$$. Energy degeneracy comes from the fact that different values of these integers can produce the same energy. For example, $$u(2, 1, 1) = u(1,2,1) = u(1,1,2) = 6$$, so $$\Omega(6)=3$$. Similarly, $$\Omega(7)=0$$ and $$\Omega(12) = 1$$.  Strangely enough there's no way for an atom to accept certain amounts of energy (such as $$7$$), and the quantum multiplicity isn't smooth at all, while the classical multiplicity is. What gives?
-
-To make the classical connection, notice that the quantum energy function has the same form as the classical one: the surface of a sphere. The only difference is that the coordinates are now integers. At low energy a continuous sphere poorly approximates the discrete one, but at high energy the number of points falling on or near the continuous sphere's surface is enough for the approximation to work. More specifically, for large $$u$$
+This derivation is based on the classical model of an atom's energy. Is it consistent with the quantum model? In the quantum model the atom's energy is given by
 
 
 $$
-\frac{\Omega(u(n_x,n_y,n_z)) - \sqrt{u}}{u} \rightarrow 0
+u(n_x, n_y, n_z) = n_x^2 + n_y^2 + n_z^2
+$$
+
+where each $$n$$ is a positive integer starting at $$1$$ and the energy units are $$h^2/8mV^{2/3}$$. 
+
+Degeneracy comes from the fact that different integer combinations can produce the same energy. For example, $$u(2, 1, 1) = u(1,2,1) = u(1,1,2) = 6$$, so $$\Omega(6)=3$$. Similarly $$\Omega(7)=0$$, $$\Omega(12) = 1$$, etc. The quantum multiplicity is not smooth like the classical one, but the difference between consecutive energy levels is only about one energy unit (depending on the level), so if 
+
+
+$$
+kT \gg \frac{h^2}{8 m V^{2/3}}
 $$
 
 
-and therefore the quantum energy converges to the classical one.
+then quantization won't be noticeable. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT \approx 10^{-21}\ \text{J}$$, while $$h^2/8mV^{2/3} \approx 10^{-41}\ \text{J}$$, so the atom is definitely classical.
 
-So much for atoms. How about oscillators, like in the Einstein solid? Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero (in units of $$\hbar \omega$$). This system doesn't have energy degeneracy, so $$\Omega = 1$$. The normalized density turns out to be
+The next example is oscillator, like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero (and energy is in units of $$\hbar \omega$$). Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging these into the energy probability formula yields
 
 
 $$
@@ -421,7 +420,7 @@ p(n) = (1-e^{-1/kT})e^{-n/kT}
 $$
 
 
-and the average energy is
+and using this to compute the average energy yields
 
 
 $$
@@ -429,9 +428,9 @@ $$
 $$
 
 
-In the high-temperature limit the right side becomes $$kT+1/2$$, which, aside from the ground-state offset, is the same as the solid.
+In the high-temperature limit this becomes $$kT+1/2$$, which, aside from the ground-state offset, is the same result we obtained for the Einstein solid oscillators.
 
-At this point it's clear that $$1/kT$$ appears frequently to deserve its own label:
+At this point $$1/kT$$ has appeared frequently enough to get its own label:
 
 
 $$
@@ -443,7 +442,78 @@ With this definition there's a nice trick for calculating $$\langle u \rangle$$ 
 
 
 $$
-\langle u \rangle = -\frac{\partial \ln Z}{\partial \beta}
+\langle u \rangle = - \frac{1}{Z}\frac{\partial Z}{\partial \beta}
+$$
+
+
+## Molecules
+
+We now have the tools we need to model simple molecules. In the context of statistical mechanics the main difference between molecules and atoms is that molecules have more places to "put" their energy: they can rotate, oscillate and translation, while atoms can only translate. For example, if we model a diatomic molecule classically as two point masses connected by a spring, its energy is
+
+
+$$
+u = \sum_{x,y,z}\frac{p_i^2}{2m} + \sum_{i=1}^3 \frac{L_i^2}{2I_i} + \frac{1}{2}\mu \dot r^2 + \frac{1}{2}\mu \omega^2 (r - r_0)^2
+$$
+
+
+where
+
+* $$L_i$$ are the three principal angular momenta, and $$I_i$$ are the corresponding interial moments
+* $$\mu$$ is the reduced mass of the two atoms, and $$\omega$$ is the spring oscillation parameter
+* $$r$$ is the separation between the two atoms, and $$r_0$$ is their resting (non-vibrating) separation
+
+This is a complicated formula compared to a single atom, and counting the number of degenerate energies is difficult: we now need to find the surface area of an $$d$$-dimensional spheroide, which unfortunately doesn't have a convenient formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the sphereoide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the sphereoid's radius parameter.
+
+Looking at the formula for energy, $$\sqrt{u}$$ plays the role of $$\rho$$, and $$d$$ is the number of quadratic terms on the right side of the equation. As for the geometry constant $$G$$, we don't have to worry about it because it ends up canceling.
+
+Starting with
+
+
+$$
+Z = \int_0^\infty \Omega(u)\ e^{-\beta u}\ \text{d}u
+$$
+
+
+We have 
+
+
+$$
+\begin{align}
+\Omega(u)\ \text{d}u &= (\text{Surface Area}) *d(\text{Radius}) \\
+&= u^{(d-1)/2} u^{-1/2} \text{d}u\\
+&= u^{(d-2)/2} \text{d}u
+\end{align}
+$$
+
+
+The partition function becomes
+
+
+$$
+\begin{align}
+Z &= \int_0^\infty u^{(d-2)/2} e^{-\beta u} du \\
+&= \Gamma(d/2)\ \beta^{-d/2}
+\end{align}
+$$
+
+
+Plugging this into the formula at the end of the previous section gives the result:
+
+
+$$
+\langle u \rangle = \frac{d}{2}kT
+$$
+
+
+Interestingly, this says that on average energy gets distributed evenly to each of the particle's quadratic "degrees of freedom", despite each of these degrees having unique characteristics like inertial moments and reduced mass: they each get the same $$kT/2$$ worth of energy on average. 
+
+This result is called the _equipartition theorem_, and it gives insight into the observation that different substances can require different amounts of energy to change their temperature by the same amount. For example, to raise the temperature of monatomic $$\text{He}$$ gas by $$1\text{K}$$, you have to add $$3k/2$$ units of energy per particle, whereas $$\text{O}_2$$ gas needs more---$$5k/2$$ units per particle. The helium is monatonic, having only three degrees of freedom, while the $$\text{O}_2$$ is diatomic and has three translational plus two rotational degrees of freedom. The diatomic gas has more ways to store energy, a property called _heat capacity_.
+
+In this example, for the $$\text{O}_2$$ molecule, I didn't count its third rotational degree of freedom or its two spring degrees of freedom. The reason is that the third rotation axis is co-linear with the atomic bond, and due to quantum mechanics this means it doesn't store energy. Meanwhile, the spring degrees of freedom went uncounted because at room temperature nearly all molecules are "frozen" in the ground-state: the gap between oscillation energies for $$\text{O}_2$$ is about $$0.6\ \text{eV}$$, while room temperature thermal energy is much lower, $$kT_\text{room} \approx 0.025\ \text{eV}$$, so the number of molecules in the first excited-state relative to the number in the ground-state is
+
+
+$$
+\frac{N_1}{N_0} = e^{-(u_1-u_0)/kT_\text{room}} \approx 10^{-11}
 $$
 
 
