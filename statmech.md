@@ -6,6 +6,19 @@ layout: default
 
 <center><img src="statmech/banner.png" style="zoom:100%;"></center>
 
+
+- [Notes on Statistical Mechanics](#notes-on-statistical-mechanics)
+  - [Pressure \& The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
+  - [Temperature](#temperature)
+  - [The Multiplicity of a Gas](#the-multiplicity-of-a-gas)
+  - [The Multiplicity of a Solid](#the-multiplicity-of-a-solid)
+  - [The Stability of Equilibrium](#the-stability-of-equilibrium)
+  - [The Energy Distribution of a Single Particle](#the-energy-distribution-of-a-single-particle)
+  - [Molecules](#molecules)
+  - [Exchanging More Than Energy](#exchanging-more-than-energy)
+  - [Entropy and a Glimpse of Thermodynamics](#entropy-and-a-glimpse-of-thermodynamics)
+
+
 ## Pressure & The Kinetic Theory of Gases
 
 The kinetic theory of gases was one of the first attempts to model gases as large collections of small moving objects. The theory proposes that:
