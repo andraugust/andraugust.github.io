@@ -11,10 +11,9 @@ layout: default
 The kinetic theory of gases was one of the first attempts to model gases as large collections of small moving objects. The theory proposes that:
 
 * Gases contain lots of very small particles moving in constant motion
-* The particles interact by colliding elastically with each other and the walls of whatever container they're in
+* The particles interact by colliding elastically with each other and the walls of the container they're in
 * Macroscopic properties like pressure emerge through the collective interaction of the particles, specifically through momentum transfer
-* The particles are at high enough energy and low enough density that Coulomb forces and complicated quantum effects can be safely ignored
-* "Particle" is a somewhat generic term for the microscopic constituents of bulk matter. Depending on the context, a particle could be an atom, molecule, photon, etc
+* "Particle" is a somewhat generic term for the microscopic constituents of bulk matter. Depending on context, a particle can be an atom, molecule, photon, etc
 
 Let's see if we can use these assumptions to connect microscopic particle motion with macroscopic pressure.
 
@@ -28,7 +27,7 @@ $$
 
 where $$F_x$$ is the force over an area $$\Delta A$$ perpendicular to a direction $$x$$. Force is related to momentum by $$F_x = \Delta p_x / \Delta t $$, where $$\Delta p_x$$ is the change in a particles $$x$$-momentum when it collides with a wall, and $$\Delta t$$ is the time over which one collision occurs. 
 
-The next step is to calculate $$\Delta t$$ and $$\Delta A$$, and plug them in to get pressure, but collisions happen nearly instantaneously, so $$\Delta t \rightarrow 0 $$, and collision areas are nearly points, so $$\Delta A \rightarrow 0$$, suggesting that pressure isn't well defined. For one particle yes, but for a continuous density of particles we can get a well defined formula for pressure.
+The next step is to calculate $$\Delta t$$ and $$\Delta A$$, and plug them in to get pressure. But collisions happen nearly instantaneously, so $$\Delta t \rightarrow 0 $$, and collision areas are nearly points, so $$\Delta A \rightarrow 0$$, suggesting that pressure isn't well defined. For one particle this is true, but for a continuous density of particles we can create a well defined formula for pressure.
 
 Instead of a single particle, consider a density of particles $$n = N/V$$ having speed density distribution $$f(v_x)$$. The number of particles with speed $$v_x$$ hitting area $$\Delta A$$ over time $$\Delta t$$ is
 
@@ -67,9 +66,7 @@ P = \frac{1}{3} \frac{N}{V} m \langle v^2 \rangle
 $$
 
 
-This is the formula we were after, it connects microscopic particle motion to macroscopic pressure. 
-
-Taking things a step further, we can associate $$m \langle v^2 \rangle$$ with twice the average kinetic energy of a particle and write 
+This is the formula we're after, it connects microscopic particle motion to macroscopic pressure. Taking things a step further, we can associate $$m \langle v^2 \rangle$$ with twice the average kinetic energy of a particle and write 
 
 
 $$
@@ -91,9 +88,9 @@ So for a photon gas $$PV = U/3$$.
 
 ## Temperature
 
-Of all the quantities in thermodynamics, temperature has to be the most intuitive---we experience it constantly. But what is temperature objectively? Well, we know that when two systems are allowed to exchange energy for long enough they eventually come to a point where the thing we call "temperature" is the same for both of them. So let's imagine what happens when two gases exchange energy and then see if we can derive something about their equilibrium state.
+Of all the quantities in thermodynamics, temperature has to be the most intuitive---we experience it constantly. But what is temperature objectively? Well, we know that when two systems are allowed to exchange energy for long enough they eventually come to a point where the thing we call "temperature" is the same for both. So let's imagine what happens when two gases exchange energy and then see if we can derive something useful about their equilibrium state.
 
-Picture two gases separated by a wall. Assume the wall allows energy to pass from one gas to the other through random particle collisions but without absorbing or dissipating any energy itself. Also assume that each gas has a fixed population and volume, so they only differ (at least initially) in how much energy they have. If their energies are $$U_1$$ and $$U_2$$, the total system energy is
+Picture two gases separated by a wall. Assume the wall allows energy to pass between gases through random particle collisions, but without absorbing or dissipating any energy itself---it's an idealized partition. Also assume that each gas has a fixed population and volume, so they only differ (at least initially) in how much energy they have. If their energies are $$U_1$$ and $$U_2$$, the total system energy is
 
 
 $$
@@ -101,7 +98,7 @@ U = U_1 + U_2
 $$
 
 
-To figure out what happens to $$U_1$$ and $$U_2$$ over time, we need to introduce the concept of a _microstate_. A microstate is a complete specification of a system's parts. For example, if the system is a gas, its microstate is a list of each atom's position and conjugate momentum---it's a point in phase space.
+To figure out what happens to $$U_1$$ and $$U_2$$ over time, we need to introduce the concept of a _microstate_. A microstate is a complete specification of a system's parts. For example, if the system is a gas, its microstate is a list of each atom's position and conjugate momentum. In otherwords, it's a point in phase space.
 
 With the concept of a microstate in hand, we can state the fundamental assumptions of statistical mechanics:
 
@@ -121,7 +118,7 @@ where $$p(U_1,U_2)$$ is the probability that the total energy $$U$$ is divided s
 
 Now, although the gases can divide their energy in any way that satisfies $$U_1 + U_2 = U$$, some divisions have more microstates associated with them and are therefore more likely to be observed. As it turns out, $$p$$ is very sharply peaked around one specific energy division which is called, not surprisingly, _thermal equilibrium_. Let's find this division.
 
-The multiplicity extrema is found through differentiation:
+The multiplicity maximum is found through differentiation:
 
 
 $$
@@ -141,7 +138,7 @@ $$
 $$
 
 
-I've switched to partial derivatives because in general $$\Omega$$ can depend on $$N$$ and $$V$$, but those are held constant through the interaction. This equation defines the energy division where the joint system has the most microstates. As such, it's the most likely energy division, and therefore this condition _is_ thermal equilibrium. It follows that temperature should be defined as
+I've switched to partial derivatives because in general $$\Omega$$ can depend on $$N$$ and $$V$$, but those quantities are held constant through the interaction. This equation defines the energy division where the joint system has the most microstates. As such, it's the most likely energy division, and therefore _defines_ thermal equilibrium. It follows that temperature should be defined as
 
 
 $$
@@ -163,7 +160,7 @@ U = \frac{1}{2m}\lvert \mathbf{p} \rvert ^2
 $$
 
 
-Here I'm assuming the atom doesn't rotate or vibrate: all its energy is translational. If we were modeling a gas of molecules we would have to account for rotations and vibrations, which I'll do later on.
+Here I'm assuming the atom doesn't rotate or vibrate: all its energy is translational. If we were modeling molecules we would have to account for rotations and vibrations, which I'll do later on.
 
 Since $$\mathbf{x}$$ and $$\mathbf{p}$$ are independent, the total multiplicity factors into
 
@@ -173,7 +170,7 @@ $$
 $$
 
 
-Classically, a single particle can occupy continuous positions and momenta as long as the energy and volume constraints are satisfied. But this would imply that multiplicity is infinite. Quantum mechanically, however, there's a limit to the simultaneous "resolution" of $$\mathbf{x}$$ and $$\mathbf{p}$$. In particular, they're limited to have $$\Delta x_i \Delta p_i = \hbar/2$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped into a grid of $$\Delta x$$s and $$\Delta p$$s at this limit, then microstates become countable and finite.
+Classically, a single particle can occupy continuous positions and momenta as long as the energy and volume constraints are satisfied. But this would imply that multiplicity is infinite. Quantum mechanically, however, there's a limit to the simultaneous "resolution" of $$\mathbf{x}$$ and $$\mathbf{p}$$. In particular, they're limited to have $$\Delta x_i \Delta p_i = \hbar/2$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped into a grid of $$\Delta x$$s and $$\Delta p$$s at this limit, then microstates become countable and finite (even though there may be _a lot_ of them).
 
 With this quantization, the number of position states is
 
@@ -247,7 +244,7 @@ The first equality is the so-called _ideal gas law_, and the second equality say
 
 ## The Multiplicity of a Solid
 
-Another good example is a simple model of a solid, called an *Einstein solid*. In the model, atoms are connected in a cubic lattice via spring-like oscillators. The oscillators are assumed to be identical so their frequency parameter $$\omega$$ is the same, and they're treated quantum mechanically so their energy is an integer multiple of $$\hbar \omega$$, which we'll take to be the energy units.
+Another good example involving multiplicity, temperature and energy is a simple model of a solid, called the *Einstein solid*. In the model, atoms are connected in a cubic lattice via spring-like oscillators. The oscillators are assumed to be identical so their frequency parameter $$\omega$$ is the same, and they're treated quantum mechanically so their energy is an integer multiple of $$\hbar \omega$$, which we'll take to be the energy units.
 
 Since each atom has three degrees of freedom, there are three oscillators per atom. We'll let $$N$$ refer to the number of oscillators instead of the number of atoms because the oscillators are what "have" the energy. The total energy $$U$$ of the solid (relative to the ground state) is just the total number of energy units in all the oscillators.
 
@@ -275,20 +272,20 @@ kT \approx \frac{U}{N}
 $$
 
 
-So temperature is again proportional to the average energy per particle (at high energy).
+So at high energy the temperature is again proportional to the average energy per particle.
 
 ## The Stability of Equilibrium
 
-Earlier I claimed that the joint multiplicity of two systems is sharply peaked around one energy division, which we decided to call thermal equilibrium. The reason it's called equilibrium is because the number of microstates around this particular division is so large that the system is basically always there. Now that we have the gas's multiplicity function let's see how many states are actually near thermal equilibrium. 
+Earlier I claimed that the joint multiplicity of two systems is sharply peaked around one energy division, which we called thermal equilibrium. The reason it's called _equilibrium_ is because the number of microstates around this particular division is so large that the system is basically spends all of its life there. Now that we have the gas's multiplicity function let's verify this. 
 
-To simplify, assume the two gases have the same population and volume. The joint multiplicity is then
+To simplify, assume that the two interacting gases have the same population and volume, so the joint multiplicity is
 
 $$
 \Omega(u) = f(N)^2V^{2N}(u\ (U-u))^{3N/2}
 $$
 
 
-In terms of notation I'm calling system $$1$$'s energy $$u$$ instead of $$U_1$$ just to clarify the fact that it's an independent variable. Taking the derivative of $$\Omega$$ with respect to $$u$$ and setting it equal to zero gives the equilibrium point at $$u = U/2$$, which is an equal division of energy. This is intuitive because the gases have the same volume and population. Less intuitive is how sharply peaked the multiplicity function is around this division, so let's figure that out next.
+In terms of notation I'm calling system $$1$$'s energy $$u$$ instead of $$U_1$$ just to clarify the fact that it's an independent variable. Taking the derivative of $$\Omega$$ with respect to $$u$$ and setting it equal to zero gives the equilibrium point at $$u = U/2$$, which is an equal division of energy. This is an intuitive result because the gases have the same volume and population. Less intuitive is how sharply peaked the multiplicity function is around this division, so let's figure that out.
 
 Taking the Taylor series of $$\Omega$$ around the point $$u = U/2$$ gives
 
@@ -298,7 +295,7 @@ $$
 $$
 
 
-So the multiplicity function is Gaussian near equilibrium with mean $$U/2$$ and variance like $$U/\sqrt{N}$$. 
+Apparently, near equilibrium, the multiplicity function is Gaussian near equilibrium with mean $$U/2$$ and variance like $$U/\sqrt{N}$$. 
 
 As a mathematical aside, I'll note that polynomial approximations like Taylor series are only accurate when the function being approximated changes fairly slowly (like a polynomial) around the point of interest. Multiplicities tend to change very quickly, so it's best to approximate their logarithm and then exponentiate to get the final result. For example, if a function $$f(x)$$ changes quickly near $$x_0$$, its best to use
 
@@ -314,11 +311,11 @@ OK back to the physics... because $$u$$ can have any value from $$0$$ to $$U$$, 
 
 ## The Energy Distribution of a Single Particle
 
-In the section on temperature I described two systems exchanging energy, and treated the systems like they operated on similar energy scales. But often times one system is so much larger than the other that the energy it gains or loses is negligible compared to  the small system it interacts with.
+In the section on temperature I described two systems exchanging energy and treated the systems like they operated on similar energy scales. But often times one system is so much larger than the other that the energy it gains or loses is negligible compared to the smaller system.
 
-For example, if the small system is a single atom in a gas and the large system is the rest of the gas, the single atom exchanges energy with the gas through random collisions, but the energy change of the gas is approximately zero relative to its total energy. Let's see if we can derive the energy distribution of a single atom (or whatever the small system may be) in systems like this.
+For example, if the smaller system is a single atom in a gas and the larger system is the rest of the gas, the single atom will exchange energy with the gas through random collisions, but the energy change of the gas is approximately zero relative to its total energy. Let's see if we can derive the energy distribution of a single atom (or whatever the small system may be) in this context.
 
-The approach is the same as in the temperature derivation: two systems have multiplicities $$\Omega_1(u)$$ and $$\Omega_2(U-u)$$, they exchange energy, and the probability of measuring the small system with energy $$u$$ is $$p(u) \propto \Omega_1(u)\Omega_2 (U-u)$$. I'm calling the small system $$1$$ and the big system $$2$$.
+The approach here is the same as in the temperature derivation: two systems have multiplicities $$\Omega_1(u)$$ and $$\Omega_2(U-u)$$, they exchange energy, and the probability of measuring the small system with energy $$u$$ is $$p(u) \propto \Omega_1(u)\Omega_2 (U-u)$$. I'm calling the small system $$1$$ and the big system $$2$$.
 
 A natural starting point is to do a Taylor series on $$\Omega_2$$ under the assumption $$u \ll U$$. This assumption is valid but, as mentioned earlier, Taylor series aren't accurate for multiplicities, so the series is applied to the logarithm of $$\Omega$$:
 
@@ -339,7 +336,7 @@ p(u) \propto \Omega_1(u)\ \Omega_2 (U)\ e^{-u/kT_2}
 $$
 
 
-The factor $$\Omega_2 (U)$$ is a constant that can be absorbed into the proportionality, and it's generally understood that $$T_2$$ is the temperature of the larger system (sometimes called a _heat bath_ or _thermal reservoir_), so the subscript is dropped. The result is
+The factor $$\Omega_2 (U)$$ is a constant that can be absorbed into the proportionality, and it's generally understood that $$T_2$$ is the temperature of the larger system (sometimes called the _heat bath_ or _thermal reservoir_), so the subscript is dropped. The result is
 
 
 $$
@@ -393,7 +390,7 @@ $$
 
 This is exactly the same result as in the temperature derivation but with $$\langle u \rangle$$ in place of $$U/N$$.
 
-This derivation is based on the classical model of an atom's energy. Is it consistent with the quantum model? In the quantum model the atom's energy is given by
+This derivation is based on the classical model of an atom's energy. Is it consistent with the quantum model? In the quantum model the atom's energy is
 
 
 $$
@@ -410,9 +407,9 @@ kT \gg \frac{h^2}{8 m V^{2/3}}
 $$
 
 
-then quantization won't be noticeable. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT \approx 10^{-21}\ \text{J}$$, while $$h^2/8mV^{2/3} \approx 10^{-41}\ \text{J}$$, so the atom is definitely classical.
+then the quantized levels will appear continuous. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT \approx 10^{-21}\ \text{J}$$, while $$h^2/8mV^{2/3} \approx 10^{-41}\ \text{J}$$, so the atom definitely behaves classically.
 
-The next example is oscillator, like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero (and energy is in units of $$\hbar \omega$$). Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging these into the energy probability formula yields
+The next example is an oscillator, like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero, and the energy is in units of $$\hbar \omega$$. Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging this into the energy probability formula yields
 
 
 $$
@@ -420,11 +417,11 @@ p(n) = (1-e^{-1/kT})e^{-n/kT}
 $$
 
 
-and using this to compute the average energy yields
+The average energy is
 
 
 $$
-\langle u \rangle = \sum_{n=0}^\infty n\ p(n) = \frac{1}{1-e^{-1/kT}}
+\langle u \rangle = \sum_{n=1}^\infty n\ p(n) = \frac{1}{1-e^{-1/kT}}
 $$
 
 
@@ -462,7 +459,7 @@ where
 * $$\mu$$ is the reduced mass of the two atoms, and $$\omega$$ is the spring oscillation parameter
 * $$r$$ is the separation between the two atoms, and $$r_0$$ is their resting (non-vibrating) separation
 
-This is a complicated formula compared to a single atom, and counting the number of degenerate energies is difficult: we now need to find the surface area of an $$d$$-dimensional spheroide, which unfortunately doesn't have a convenient formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the sphereoide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the sphereoid's radius parameter.
+This is a complicated formula compared to that of a single atom, so counting the number of degenerate energies is difficult: we now need to find the surface area of an $$d$$-dimensional spheroid, which unfortunately doesn't have a convenient formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the spheroide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the spheroid's radius parameter.
 
 Looking at the formula for energy, $$\sqrt{u}$$ plays the role of $$\rho$$, and $$d$$ is the number of quadratic terms on the right side of the equation. As for the geometry constant $$G$$, we don't have to worry about it because it ends up canceling.
 
@@ -581,7 +578,7 @@ $$
 $$
 
 
-where $$\mu$$ is the so-called _chemical potential_. The negative sign is a convention to make particles prefer systems with lower chemical potential.
+where $$\mu$$ is the so-called _chemical potential_. The negative sign is a convention used to make particles prefer systems with lower chemical potential.
 
 ## Entropy and a Glimpse of Thermodynamics
 
@@ -620,6 +617,5 @@ $$
 This is the so-called _thermodynamic identity_. It demonstrates how the change in a system's energy can be decomposed into contributions from heat, mechanical work and chemical work. With no direct reference to $$\Omega$$, this formula is firmly in the domain of thermodynamics, where processes are framed in terms of macrostates like $$T$$ and $$P$$ rather than the underlying microstates which give rise to them. 
 
 In the next set of notes I'll talk about thermodynamics proper. Stay tuned...
-
 
 {% include disqus.html %}
