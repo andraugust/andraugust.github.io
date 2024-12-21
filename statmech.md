@@ -8,25 +8,24 @@ layout: default
 
 
 - [Notes on Statistical Mechanics](#notes-on-statistical-mechanics)
-  - [Pressure \& The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
+  - [Pressure & The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
   - [Temperature](#temperature)
   - [The Multiplicity of a Gas](#the-multiplicity-of-a-gas)
   - [The Multiplicity of a Solid](#the-multiplicity-of-a-solid)
   - [The Stability of Equilibrium](#the-stability-of-equilibrium)
-  - [The Energy Distribution of a Single Particle](#the-energy-distribution-of-a-single-particle)
+  - [The Energy of a Single Particle](#the-energy-of-a-single-particle)
   - [Molecules](#molecules)
   - [Exchanging More Than Energy](#exchanging-more-than-energy)
   - [Entropy and a Glimpse of Thermodynamics](#entropy-and-a-glimpse-of-thermodynamics)
-
 
 ## Pressure & The Kinetic Theory of Gases
 
 The kinetic theory of gases was one of the first attempts to model gases as large collections of small moving objects. The theory proposes that:
 
 * Gases contain lots of very small particles moving in constant motion
-* The particles interact by colliding elastically with each other and the walls of the container they're in
+* The particles interact by colliding elastically with each other and the walls of their container
 * Macroscopic properties like pressure emerge through the collective interaction of the particles, specifically through momentum transfer
-* "Particle" is a somewhat generic term for the microscopic constituents of bulk matter. Depending on context, a particle can be an atom, molecule, photon, etc
+* "Particle" is a general term for the microscopic constituents of bulk matter. Depending on the context a particle can be an atom, a molecule, a photon, etc
 
 Let's see if we can use these assumptions to connect microscopic particle motion with macroscopic pressure.
 
@@ -322,7 +321,7 @@ and then take the exponent of the series to recover the approximation for $$f(x)
 
 OK back to the physics... because $$u$$ can have any value from $$0$$ to $$U$$, the width of $$\Omega$$ relative to the energy scale is $$1/\sqrt{N}$$. This means that if there are $$10^{23}$$ particles in the system, only about $$10^{-10}\%$$ of possible energy divisions have a reasonable likelihood of occurring, and those divisions are all centered around $$U/2$$. In other words, thermal equilibrium is very, very stable.
 
-## The Energy Distribution of a Single Particle
+## The Energy of a Single Particle
 
 In the section on temperature I described two systems exchanging energy and treated the systems like they operated on similar energy scales. But often times one system is so much larger than the other that the energy it gains or loses is negligible compared to the smaller system.
 
@@ -401,7 +400,7 @@ $$
 $$
 
 
-This is exactly the same result as in the temperature derivation but with $$\langle u \rangle$$ in place of $$U/N$$.
+This is the exact same result as in the temperature derivation but with $$\langle u \rangle$$ in place of $$U/N$$. 
 
 This derivation is based on the classical model of an atom's energy. Is it consistent with the quantum model? In the quantum model the atom's energy is
 
@@ -410,17 +409,16 @@ $$
 u(n_x, n_y, n_z) = n_x^2 + n_y^2 + n_z^2
 $$
 
-where each $$n$$ is a positive integer starting at $$1$$ and the energy units are $$h^2/8mV^{2/3}$$. 
+where each $$n$$ is a positive integer starting at $$1$$ and the energy units are $$h^2/8mV^{2/3}$$. Degeneracy comes from the fact that different integer combinations can produce the same energy. For example, $$u(2, 1, 1) = u(1,2,1) = u(1,1,2) = 6$$, so $$\Omega(6)=3$$. Similarly $$\Omega(7)=0$$, $$\Omega(12) = 1$$, etc. 
 
-Degeneracy comes from the fact that different integer combinations can produce the same energy. For example, $$u(2, 1, 1) = u(1,2,1) = u(1,1,2) = 6$$, so $$\Omega(6)=3$$. Similarly $$\Omega(7)=0$$, $$\Omega(12) = 1$$, etc. The quantum multiplicity is not smooth like the classical one, but the difference between consecutive energy levels is only about one energy unit (depending on the level), so if 
-
+The quantum multiplicity is not smooth like the classical one, but the difference between consecutive energy levels is only about one energy unit (sometimes two or three, depending on the level), so if 
 
 $$
 kT \gg \frac{h^2}{8 m V^{2/3}}
 $$
 
 
-then the quantized levels will appear continuous. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT \approx 10^{-21}\ \text{J}$$, while $$h^2/8mV^{2/3} \approx 10^{-41}\ \text{J}$$, so the atom definitely behaves classically.
+then the quantized levels will appear continuous. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT_\text{room} \approx 0.026\ \text{eV}$$, while $$h^2/8mV^{2/3} \approx 10^{-23}\ \text{eV}$$, so the atom definitely behaves classically.
 
 The next example is an oscillator, like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero, and the energy is in units of $$\hbar \omega$$. Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging this into the energy probability formula yields
 
@@ -472,7 +470,7 @@ where
 * $$\mu$$ is the reduced mass of the two atoms, and $$\omega$$ is the spring oscillation parameter
 * $$r$$ is the separation between the two atoms, and $$r_0$$ is their resting (non-vibrating) separation
 
-This is a complicated formula compared to that of a single atom, so counting the number of degenerate energies is difficult: we now need to find the surface area of an $$d$$-dimensional spheroid, which unfortunately doesn't have a convenient formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the spheroide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the spheroid's radius parameter.
+This is a complicated formula compared to that of a single atom, so counting the number of degenerate energies is difficult: we now need to find the surface area of a $$d$$-dimensional spheroid, which unfortunately doesn't have a general formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the spheroide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the spheroid's radius parameter.
 
 Looking at the formula for energy, $$\sqrt{u}$$ plays the role of $$\rho$$, and $$d$$ is the number of quadratic terms on the right side of the equation. As for the geometry constant $$G$$, we don't have to worry about it because it ends up canceling.
 
@@ -519,13 +517,17 @@ Interestingly, this says that on average energy gets distributed evenly to each 
 
 This result is called the _equipartition theorem_, and it gives insight into the observation that different substances can require different amounts of energy to change their temperature by the same amount. For example, to raise the temperature of monatomic $$\text{He}$$ gas by $$1\text{K}$$, you have to add $$3k/2$$ units of energy per particle, whereas $$\text{O}_2$$ gas needs more---$$5k/2$$ units per particle. The helium is monatonic, having only three degrees of freedom, while the $$\text{O}_2$$ is diatomic and has three translational plus two rotational degrees of freedom. The diatomic gas has more ways to store energy, a property called _heat capacity_.
 
-In this example, for the $$\text{O}_2$$ molecule, I didn't count its third rotational degree of freedom or its two spring degrees of freedom. The reason is that the third rotation axis is co-linear with the atomic bond, and due to quantum mechanics this means it doesn't store energy. Meanwhile, the spring degrees of freedom went uncounted because at room temperature nearly all molecules are "frozen" in the ground-state: the gap between oscillation energies for $$\text{O}_2$$ is about $$0.6\ \text{eV}$$, while room temperature thermal energy is much lower, $$kT_\text{room} \approx 0.025\ \text{eV}$$, so the number of molecules in the first excited-state relative to the number in the ground-state is
+In this example, for the $$\text{O}_2$$ molecule, I didn't count the third rotational degree of freedom or the two spring degrees of freedom. The reason is that the third rotation axis is co-linear with the atomic bond, and due to quantum mechanics this means it doesn't store energy. Meanwhile, the spring degrees of freedom weren't counted because at room temperature nearly all molecules are "frozen" in the ground-state: the gap between oscillation energies for $$\text{O}_2$$ is about $$0.2\ \text{eV}$$, while room temperature thermal energy is much lower, $$kT_\text{room} \approx 0.026\ \text{eV}$$, so the number of molecules in the first excited-state relative to the number in the ground-state is
 
 
 $$
-\frac{N_1}{N_0} = e^{-(u_1-u_0)/kT_\text{room}} \approx 10^{-11}
+\frac{N_1}{N_0} = e^{-(u_1-u_0)/kT_\text{room}} \approx 10^{-4}
 $$
 
+
+Frozen indeed.
+
+This same line of reasoning can be used to understand why I haven't considered electronic energy levels in any of these calculations: the energy gap between the ground-state and first excited state of the hydrogen electron is about $$10\ \text{eV}$$, which is far beyond what room temperature thermal energy is likely to provide.
 
 ## Exchanging More Than Energy
 
@@ -601,6 +603,7 @@ Now is finally the time to step into the thermodynamic realm and define a major 
 $$
 S = k \ln \Omega
 $$
+
 
 It's mathematical properties are straightforward but important:
 
