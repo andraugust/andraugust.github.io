@@ -297,7 +297,7 @@ $$
 $$
 
 
-In terms of notation I'm calling system $$1$$'s energy $$u$$ instead of $$U_1$$ just to clarify the fact that it's an independent variable. Taking the derivative of $$\Omega$$ with respect to $$u$$ and setting it equal to zero gives the equilibrium point at $$u = U/2$$, which is an equal division of energy. This is an intuitive result because the gases have the same volume and population. Less intuitive is how sharply peaked the multiplicity function is around this division, so let's figure that out.
+In terms of notation I'm calling system $$1$$'s energy $$u$$ instead of $$U_1$$ just to clarify the fact that it's an independent variable. Taking the derivative of $$\Omega$$ with respect to $$u$$ and setting it equal to zero gives the equilibrium point at $$u = U/2$$, which is an equal division of energy. This is an intuitive result because the gases have the same volume and population. Less intuitive is how sharply peaked the multiplicity function is around this division, and that's key to understanding why the system is stable there, so let's figure that out next.
 
 Taking the Taylor series of $$\Omega$$ around the point $$u = U/2$$ gives
 
@@ -307,7 +307,7 @@ $$
 $$
 
 
-Apparently, near equilibrium, the multiplicity function is Gaussian near equilibrium with mean $$U/2$$ and variance like $$U/\sqrt{N}$$. 
+Apparently, near equilibrium, the multiplicity function is Gaussian with mean $$U/2$$ and variance like $$U/\sqrt{N}$$. 
 
 As a mathematical aside, I'll note that polynomial approximations like Taylor series are only accurate when the function being approximated changes fairly slowly (like a polynomial) around the point of interest. Multiplicities tend to change very quickly, so it's best to approximate their logarithm and then exponentiate to get the final result. For example, if a function $$f(x)$$ changes quickly near $$x_0$$, its best to use
 
