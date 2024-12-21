@@ -420,7 +420,7 @@ $$
 
 then the quantized levels will appear continuous. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT_\text{room} \approx 0.026\ \text{eV}$$, while $$h^2/8mV^{2/3} \approx 10^{-23}\ \text{eV}$$, so the atom definitely behaves classically.
 
-The next example is an oscillator, like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero, and the energy is in units of $$\hbar \omega$$. Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging this into the energy probability formula yields
+The next example is an oscillator, like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero and the energy is in units of $$\hbar \omega$$. Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging this into the energy probability formula yields
 
 
 $$
@@ -436,7 +436,7 @@ $$
 $$
 
 
-In the high-temperature limit this becomes $$kT+1/2$$, which, aside from the ground-state offset, is the same result we obtained for the Einstein solid oscillators.
+In the high-temperature limit this becomes $$kT+1/2$$, which, aside from the ground-state offset, is the same result we obtained previously for the Einstein solid.
 
 At this point $$1/kT$$ has appeared frequently enough to get its own label:
 
@@ -470,7 +470,7 @@ where
 * $$\mu$$ is the reduced mass of the two atoms, and $$\omega$$ is the spring oscillation parameter
 * $$r$$ is the separation between the two atoms, and $$r_0$$ is their resting (non-vibrating) separation
 
-This is a complicated formula compared to that of a single atom, so counting the number of degenerate energies is difficult: we now need to find the surface area of a $$d$$-dimensional spheroid, which unfortunately doesn't have a general formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the spheroide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the spheroid's radius parameter.
+This is a complicated formula compared to that of a single atom, so counting the number of degenerate energies is difficult: we would need to find the surface area of a $$d$$-dimensional spheroid, which unfortunately doesn't have a general formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the spheroide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the spheroid's radius parameter.
 
 Looking at the formula for energy, $$\sqrt{u}$$ plays the role of $$\rho$$, and $$d$$ is the number of quadratic terms on the right side of the equation. As for the geometry constant $$G$$, we don't have to worry about it because it ends up canceling.
 
@@ -533,7 +533,7 @@ This same line of reasoning can be used to understand why I haven't considered e
 
 So far, nearly the entire discussion has focused on systems exchanging energy. What happens when they exchange other things, like volume and particles?
 
-Like energy, other quantities equilibrate at the multiplicity maximum. For a general set of variables, the joint multiplicity is
+Like energy, other quantities equilibrate when they maximize multiplicity. For a general set of variables, the joint multiplicity is
 
 
 $$
@@ -630,9 +630,9 @@ dU = T\ dS - P\ dV +\mu\ dN
 $$
 
 
-This is the so-called _thermodynamic identity_. It demonstrates how the change in a system's energy can be decomposed into contributions from heat, mechanical work and chemical work. With no direct reference to $$\Omega$$, this formula is firmly in the domain of thermodynamics, where processes are framed in terms of macrostates like $$T$$ and $$P$$ rather than the underlying microstates which give rise to them. 
+This is the so-called _thermodynamic identity_. It demonstrates how the change in a system's energy can be decomposed into contributions from heat, mechanical work and chemical work. With no direct reference to $$\Omega$$, this formula is firmly in the domain of thermodynamics where processes are framed in terms of macrostates like $$T$$ and $$P$$ rather than the underlying microstates which give rise to them. 
 
-In the next set of notes I'll talk about thermodynamics proper. Stay tuned...
+In a future set of notes I'll talk about thermodynamics more thoroughly. Stay tuned...
 
 
 
