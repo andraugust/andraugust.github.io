@@ -86,7 +86,7 @@ PV = 2U/3
 $$
 
 
-where $$U$$ is the total internal energy of the gas, so now we can calculate a gas's energy by simply knowing its pressure and volume, which is pretty useful.
+where $$U$$ is the total internal energy of the gas (not counting constant offsets like ground-states which don't change in the processes considered here), so now we can calculate a gas's energy by simply knowing its pressure and volume, which is pretty useful.
 
 As mentioned earlier, particles don't have to be atoms. If they're photons, for example, we can derive a similar expression by removing mass from the equation:
 
@@ -96,7 +96,7 @@ $$
 $$
 
 
-So for a photon gas $$PV = U/3$$.
+So for a photon gas $$PV = U/3$$. 
 
 ## Temperature
 
@@ -256,9 +256,9 @@ The first equality is the so-called _ideal gas law_, and the second equality say
 
 ## The Multiplicity of a Solid
 
-Another good example involving multiplicity, temperature and energy is a simple model of a solid, called the *Einstein solid*. In the model, atoms are connected in a cubic lattice via spring-like oscillators. The oscillators are assumed to be identical so their frequency parameter $$\omega$$ is the same, and they're treated quantum mechanically so their energy is an integer multiple of $$\hbar \omega$$, which we'll take to be the energy units.
+Another good example is a simple model of a solid called the *Einstein solid*. In the model, atoms are connected in a cubic lattice via spring-like oscillators. The oscillators are assumed to be identical so their frequency parameter $$\omega$$ is the same, and they're treated quantum mechanically so their energy is an integer multiple of $$\hbar \omega$$, which we'll take to be the energy units.
 
-Since each atom has three degrees of freedom, there are three oscillators per atom. We'll let $$N$$ refer to the number of oscillators instead of the number of atoms because the oscillators are what "have" the energy. The total energy $$U$$ of the solid (relative to the ground state) is just the total number of energy units in all the oscillators.
+Since atoms are arranged in a cubic lattice, there are three oscillators per atom. We'll let $$N$$ refer to the number of oscillators instead of the number of atoms because the oscillators are what "have" the energy. The total energy $$U$$ of the solid (relative to the ground state) is just the total number of energy units in all the oscillators.
 
 The microstate of an Einstein solid is a list of each oscillator's energy. For example, if $$U=5$$ and $$N=3$$, some allowed microstates are $$(2,0,3)$$ and $$(1,1,3)$$, etc. This leads to the multiplicity function
 
@@ -288,7 +288,7 @@ So at high energy the temperature is again proportional to the average energy pe
 
 ## The Stability of Equilibrium
 
-Earlier I claimed that the joint multiplicity of two systems is sharply peaked around one energy division, which we called thermal equilibrium. The reason it's called _equilibrium_ is because the number of microstates around this particular division is so large that the system is basically spends all of its life there. Now that we have the gas's multiplicity function let's verify this. 
+Earlier I claimed that the joint multiplicity of two systems is sharply peaked around one energy division, which we called thermal equilibrium. The reason it's called _equilibrium_ is because the number of microstates around this particular division is so large that the system effectively spends all of its time there. Now that we have the gas's multiplicity function let's verify this. 
 
 To simplify, assume that the two interacting gases have the same population and volume, so the joint multiplicity is
 
