@@ -4,7 +4,7 @@ description: Andrew August's Notebook
 show_downloads: true
 google_analytics: true
 theme: jekyll-theme-slate
-big_title: Turtles at the Bottom 🐢
-little_title: Andrew August's Notebook
+big_title: Turtles at the Bottom
+little_title: [Andrew August's Notebook]
 plugins:
   - jekyll-sitemap
