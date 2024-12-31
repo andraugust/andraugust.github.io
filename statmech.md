@@ -25,7 +25,7 @@ The kinetic theory of gases was one of the first attempts to model gases as larg
 * Gases contain lots of very small particles moving in constant motion
 * The particles interact by colliding elastically with each other and the walls of their container
 * Macroscopic properties like pressure emerge through the collective interaction of the particles, specifically through momentum transfer
-* "Particle" is a general term for the microscopic constituents of bulk matter. Depending on the context a particle can be an atom, a molecule, a photon, etc
+* "Particle" is a general term for the microscopic constituents of bulk matter. Depending on the context a particle can be an atom, a molecule, a photon, or anything else that acts as a "unit of object"
 
 Let's see if we can use these assumptions to connect microscopic particle motion with macroscopic pressure.
 
@@ -109,13 +109,14 @@ $$
 U = U_1 + U_2
 $$
 
+To figure out what happens to $$U_1$$ and $$U_2$$ over time, we need to introduce the concept of a _microstate_. A microstate is simply the thing that we would have called the system's _state_ if this were classical mechanics or quantum mechanics. The reason we don't do that here is because in statistical mechanics there are two types of states---one specifying particle configurations and one specifying macroscopic properties like energy and pressure. To disambiguate, the former are called microstates and the latter are called macrostates.
 
-To figure out what happens to $$U_1$$ and $$U_2$$ over time, we need to introduce the concept of a _microstate_. A microstate is a complete specification of a system's parts. For example, if the system is a gas, its microstate is a list of each atom's position and conjugate momentum. In otherwords, it's a point in phase space.
+Representing a microstate is straightforward, at least conceptually. If the system is classical, its microstate is a point in phase space $$(\mathbf{x}_1, \mathbf{p}_1, \mathbf{x}_2, \mathbf{p}_2..., \mathbf{x}_N, \mathbf{p}_N)$$. If the system is quantum, its microstate is a vector in Hilbert space $$\Psi(\mathbf{x}_1, \mathbf{x}_2, ... \mathbf{x}_N)$$ satisfying whatever Hamiltonian happens to the govern the dynamics.
 
-With the concept of a microstate in hand, we can state the fundamental assumptions of statistical mechanics:
+With the concept of a microstate in hand, we can now write down the fundamental assumptions of statistical mechanics:
 
-* Microstates evolve continually
-* Given enough time, a system will explore all of the microstates available to it, spending an equal amount of time in each
+* Microstates evolve continually (the system isn't frozen---it moves through phase space)
+* Given enough time, a system will explore all the microstates available to it, spending an equal amount of time in each
 * If the microstate of a system is measured, each one has an equal probability of being observed
 
 This last assumption is extremely useful. It allows us to write
@@ -515,7 +516,7 @@ $$
 
 Interestingly, this says that on average energy gets distributed evenly to each of the particle's quadratic "degrees of freedom". Despite each of these degrees having unique characteristics like inertial moments and reduced mass they each get the same $$kT/2$$ worth of energy on average. 
 
-This result is called the _equipartition theorem_, and it gives insight into the observation that different substances can require different amounts of energy to change their temperature by the same amount. For example, to raise the temperature of monatomic helium gas by $$1\text{K}$$, you have to add $$3k/2$$ units of energy per particle, whereas $$\text{O}_2$$ gas requires more---$$5k/2$$ units of energy per particle. This is because the helium is monatonic and has three degrees of freedom, while the $$\text{O}_2$$ is diatomic and has three translational plus two rotational degrees of freedom. The diatomic gas has more ways to store energy, a property called _heat capacity_.
+This result is called the _equipartition theorem_, and it gives insight into the observation that different substances can require different amounts of energy to change their temperature by the same amount. For example, to raise the temperature of monatomic helium gas by $$1\text{K}$$, you have to add $$3k/2$$ units of energy per particle, whereas $$\text{O}_2$$ gas requires more---$$5k/2$$ units of energy per particle. This is because monatomic helium has three degrees of freedom, while diatomic $$\text{O}_2$$ has three translational plus two rotational degrees of freedom. The diatomic gas has more ways to store energy, a property called _heat capacity_.
 
 In this example, for the $$\text{O}_2$$ molecule, I didn't count the third rotational degree of freedom or the two spring degrees of freedom. The reason is that the third rotation axis is co-linear with the atomic bond, and due to quantum mechanics this means it doesn't store energy. Meanwhile, the spring degrees of freedom weren't counted because at room temperature nearly all molecules are "frozen" in the ground-state: the gap between oscillation energies for $$\text{O}_2$$ is about $$0.2\ \text{eV}$$, while room temperature thermal energy is much lower, $$kT_\text{room} \approx 0.026\ \text{eV}$$, so the number of molecules in the first excited-state relative to the number in the ground-state is
 
@@ -525,9 +526,7 @@ $$
 $$
 
 
-Frozen indeed.
-
-This same line of reasoning can be used to understand why I haven't considered electronic energy levels in any of these calculations: the energy gap between the ground-state and first excited state of the hydrogen electron is about $$10\ \text{eV}$$, which is far beyond what room temperature thermal energy is likely to provide.
+This same line of reasoning can be used to understand why I haven't considered electronic energy levels in any of these calculations: the energy gap between the ground-state and first excited state of the hydrogen electron, for example, is about $$10\ \text{eV}$$, which is far beyond what room temperature thermal energy is likely to provide.
 
 ## Exchanging More Than Energy
 
