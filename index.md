@@ -16,7 +16,7 @@ layout: default
 ## [Notes on Statistical Mechanics](statmech.html)
 
 <p style="opacity:0.5">12/2024</p>
-The statistical physics of many-particle systems.
+The physics of many-particle systems such as gases and solids.
 
 ## [Quantum Mechanics Part 3: Joint Systems & Entanglement](quantum-3.html)
 
