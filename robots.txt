@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://mywebsite.com/sitemap.xml
+Sitemap: https://turtles-at-the-bottom.com/sitemap.xml
