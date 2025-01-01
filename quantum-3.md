@@ -1,10 +1,10 @@
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-# Quantum Mechanics Part 3: Joint Systems & Entanglement
+# Quantum Mechanics Part III: Joint Systems & Entanglement
 
 <center><img src="quantum/banner-wavefunction.jpg" style="object-fit:contain;"></center>
 
-- [Quantum Mechanics Part 3: Joint Systems \& Entanglement](#quantum-mechanics-part-3-joint-systems--entanglement)
+- [Quantum Mechanics Part III: Joint Systems \& Entanglement](#quantum-mechanics-part-iii-joint-systems--entanglement)
     - [Joint Systems](#joint-systems)
     - [Observables](#observables)
     - [Entanglement](#entanglement)

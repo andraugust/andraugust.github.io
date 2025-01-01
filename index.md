@@ -13,22 +13,22 @@ layout: default
   </figcaption>
 </figure>
 
-## [Notes on Statistical Mechanics](statmech.html)
+## [Thermal Physics Part I: Statistical Mechanics](statmech.html)
 
 <p style="opacity:0.5">12/2024</p>
-The physics of many-particle systems such as gases and solids.
+The physics of many-particle systems like gases and solids, modeled from the bottom up.
 
-## [Quantum Mechanics Part 3: Joint Systems & Entanglement](quantum-3.html)
+## [Quantum Mechanics Part III: Joint Systems & Entanglement](quantum-3.html)
 
 <p style="opacity:0.5">11/2023</p>
 Notes on interacting quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
 
-## [Quantum Mechanics Part 2: Dynamics & Continuous States](quantum-2.html)
+## [Quantum Mechanics Part II: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
 Notes on quantum dynamics and continuous states, based on Leonard Susskind's book _The Theoretical Minimum_.
 
-## [Quantum Mechanics Part 1: States & Principles](quantum-1.html)
+## [Quantum Mechanics Part I: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
 Notes on the foundations of quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.

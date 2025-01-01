@@ -4,11 +4,11 @@ layout: default
 
 $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\newcommand{\bk}[2]{\left<#1\middle|#2\right>}\newcommand{\bke}[3]{\left<#1\middle|#2\middle|#3\right>}$$
 
-# Quantum Mechanics Part 2: Dynamics & Continuous States
+# Quantum Mechanics Part II: Dynamics & Continuous States
 
 <center><img src="quantum/banner-2.png" style="object-fit:contain;"></center>
 
-- [Quantum Mechanics Part 2: Dynamics \& Continuous States](#quantum-mechanics-part-2-dynamics--continuous-states)
+- [Quantum Mechanics Part II: Dynamics \& Continuous States](#quantum-mechanics-part-ii-dynamics--continuous-states)
   - [Dynamics](#dynamics)
     - [The Time Evolution Operator](#the-time-evolution-operator)
     - [Solving the Generalized Schrodinger Equation](#solving-the-generalized-schrodinger-equation)
