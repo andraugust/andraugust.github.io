@@ -13,7 +13,7 @@ layout: default
   </figcaption>
 </figure>
 
-## [Thermal Physics Part I: Statistical Mechanics](statmech.html)
+## [Thermal Physics Part I: Statistical Mechanics](thermo-1.html)
 
 <p style="opacity:0.5">12/2024</p>
 The physics of many-particle systems like gases and solids, modeled from the bottom up.

@@ -2,12 +2,12 @@
 layout: default
 ---
 
-# Notes on Statistical Mechanics
+# Thermal Physics Part I: Statistical Mechanics
 
 <center><img src="statmech/banner.png" style="zoom:100%;"></center>
 
 
-- [Notes on Statistical Mechanics](#notes-on-statistical-mechanics)
+- [Thermal Physics Part I: Statistical Mechanics](#thermal-physics-part-i:-statistical-mechanics)
   - [Pressure & The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
   - [Temperature](#temperature)
   - [The Multiplicity of a Gas](#the-multiplicity-of-a-gas)
