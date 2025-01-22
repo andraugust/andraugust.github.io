@@ -12,6 +12,10 @@ layout: default
     &mdash; Richard Feynman, <cite>The Pleasure of Finding Things Out</cite>
   </figcaption>
 </figure>
+
+
+
+
 <figure class="quote" style="background-color: #212426;">
   <blockquote style="color: #a7a095;">
     Figuring out the best way to explain something is almost always the best way to understand it yourself.
