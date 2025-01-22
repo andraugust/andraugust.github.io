@@ -13,7 +13,7 @@ layout: default
   </figcaption>
 </figure>
 
-<br>
+<div style="margin-bottom: 20px;"></div>
 
 <figure class="quote" style="background-color: #212426;">
   <blockquote style="color: #a7a095;">
