@@ -18,6 +18,14 @@ layout: default
 <p style="opacity:0.5">12/2024</p>
 The physics of many-particle systems like gases and solids, modeled from the bottom up.
 
+<h2><a href="thermo-1.html">Thermal Physics Part I: Statistical Mechanics</a></h2>
+<p style="opacity:0.5">12/2024</p>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img src="statmech/banner-square.png" alt="img" style="width: 25%; height: auto; object-fit: cover;">
+  <p style="width: 75%;">The physics of many-particle systems like gases and solids, modeled from the bottom up.</p>
+</div>
+
+
 ## [Quantum Mechanics Part III: Joint Systems & Entanglement](quantum-3.html)
 
 <p style="opacity:0.5">11/2023</p>
