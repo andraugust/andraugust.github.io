@@ -12,18 +12,19 @@ layout: default
     &mdash; Richard Feynman, <cite>The Pleasure of Finding Things Out</cite>
   </figcaption>
 </figure>
+<figure class="quote" style="background-color: #212426;">
+  <blockquote style="color: #a7a095;">
+    Figuring out the best way to explain something is almost always the best way to understand it yourself.
+  </blockquote>
+  <figcaption>
+    &mdash; Leonard Susskind, <cite>The Theoretical Minimum</cite>
+  </figcaption>
+</figure>
 
 ## [Thermal Physics Part I: Statistical Mechanics](thermo-1.html)
 
 <p style="opacity:0.5">12/2024</p>
-The physics of many-particle systems like gases and solids, modeled from the bottom up.
-
-<h2><a href="thermo-1.html">Thermal Physics Part I: Statistical Mechanics</a></h2>
-<p style="opacity:0.5">12/2024</p>
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img src="statmech/banner-square.png" alt="img" style="width: 25%; height: auto; object-fit: cover;">
-  <p style="width: 75%;">The physics of many-particle systems like gases and solids, modeled from the bottom up.</p>
-</div>
+The physics of many-particle systems, modeled from the bottom up.
 
 
 ## [Quantum Mechanics Part III: Joint Systems & Entanglement](quantum-3.html)
