@@ -14,7 +14,6 @@ layout: default
 </figure>
 
 <br>
-<br>
 
 <figure class="quote" style="background-color: #212426;">
   <blockquote style="color: #a7a095;">
