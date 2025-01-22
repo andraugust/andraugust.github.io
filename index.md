@@ -13,8 +13,8 @@ layout: default
   </figcaption>
 </figure>
 
-
-
+<br>
+<br>
 
 <figure class="quote" style="background-color: #212426;">
   <blockquote style="color: #a7a095;">
