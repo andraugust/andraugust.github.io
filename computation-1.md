@@ -2,19 +2,15 @@
 
 The questions I want to answer here are:
 
-1. What does it mean for a thing to "compute"?
-2. What are some examples of things that compute?
-3. How do you figure out what a given computer is cwapable of computing?
+1. What is the definition of a computer?
+2. What are some examples of computers?
+3. How do you determine what a given computer can/can't do?
 
-I think I'll start by describing different models of computation, and then look at the limits / capabilities of each. Then at the end I'll take the intersection of their characteristics to define what it means for something to compute.
+A computer is a physical system that transforms the state of another physical system. The process of this tranformation is called a computation, and by "transforms" I mean that if the state of B before the computation is b, then the state after is simply some other one b'.
 
-There are three elements:
+This definition may sound unusual. Typically computers are defined in terms of circuits and hardware, but ultimately those things are physical and therefore can be modelled as such. This definition is extremely general, but as I'll show computers are too!
 
-* Input
-* A sequence of steps that generate an output based on the input
-* Output
-
-_Anything_ that has these three elements is a computer. This definition is extremely general. 
+Let's look at some examples to ground this definition.
 
 ### Arithematic
 
@@ -28,7 +24,7 @@ The second way to think of addition is in terms of a table. A very long table li
 
 Like the algorithm, this table completely specifies addition because it associates each pair of inputs with the corresponding sum. 
 
-Neither the algorithm nor the table, however, is a computer. So where does the computer come in? The computer comes in as the thing _implementing_ the function. It's _any_ physical system that converts inputs to outputs like in the table. I emphasize _any_ because the computer could be digital, analog, quantum, made of water, sand, whatever, just as long as its i/o matches the table. 
+Neither the algorithm nor the table, however, is a computer. So where does the computer come in? The computer is the *thing* that implements the function. It's _any_ physical system that converts inputs to outputs like in the table. I emphasize _any_ because the computer could be digital, analog, quantum, made of water, sand, whatever, just as long as its i/o matches the table. 
 
 What does it mean for a physical system to "match" the table?
 

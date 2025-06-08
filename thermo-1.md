@@ -8,6 +8,7 @@ layout: default
 
 
 - [Thermal Physics Part I: Statistical Mechanics](#thermal-physics-part-i:-statistical-mechanics)
+  - [Introduction](#introduction)
   - [Pressure & The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
   - [Temperature](#temperature)
   - [The Multiplicity of a Gas](#the-multiplicity-of-a-gas)
@@ -17,6 +18,22 @@ layout: default
   - [Molecules](#molecules)
   - [Exchanging More Than Energy](#exchanging-more-than-energy)
   - [Entropy and a Glimpse of Thermodynamics](#entropy-and-a-glimpse-of-thermodynamics)
+
+## Introduction
+
+If you zoom in closely on any object, you'll see nearly the same thing: countless molecules moving in rapid, random motion.
+
+In a solid, each molecule stays roughly in place but oscillates as if connected to its neighbors by springs. In a liquid, such as water, the molecules are still closely packed but unbound, bouncing off one another and spinning. A gas appears similar to a liquid, but with much more space between molecules.
+
+To put some numbers to this picture: a human-scale sample of gas—a liter of air at standard temperature and pressure—contains about $$10^{23}$$ molecules. Each molecule moves at around $$500$$ m/s (about $$1000$$ mph) and collides with another molecule roughly $$10^{10}$$ times per second.
+
+These numbers are so large that to model gases at the human scale, we must use statistics—there’s simply no way to track each particle individually. It may seem like a compromise to use statistical models, since they provide only estimates, but in fact, the more particles there are in a system, the more deterministic the models become. In this context, “more deterministic” means the probability distributions become sharply peaked.
+
+**This post is about how macroscopic properties of many-particle systems emerge from the microscopic motion of individual molecules.** I’ll start with the emergence of pressure to demonstrate the concept, and then move on to temperature, which introduces the central theme that underlies everything else that follows: 
+
+1. Every microstate (molecular-scale state) is assumed to be equally likely at any given time
+2. Macrostates (such as temperature and pressure) can correspond to many different microstates
+3. The probability of a macrostate is therefore determined by counting the number of microstates that produce it.
 
 ## Pressure & The Kinetic Theory of Gases
 
