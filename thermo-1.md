@@ -120,18 +120,16 @@ So for a photon gas $$PV = U/3$$.
 
 ## Temperature
 
-Of all the quantities in thermodynamics, temperature has to be the most intuitive---we experience it constantly. But what is temperature objectively? Well, we know that when two systems are allowed to exchange energy for long enough they eventually come to a point where the thing we call "temperature" is the same for both. So let's imagine what happens when two gases exchange energy and then see if we can derive something useful about their equilibrium state.
+Of all the quantities in thermodynamics, temperature is probably the most intuitive---we experience it constantly. But what is temperature objectively? We know that when two systems exchange energy for long enough they reach a point where their "temperature" is the same. So let's imagine what happens when two gases exchange energy, then see what we can derive about their equilibrium state.
 
-Picture two gases separated by a wall. Assume the wall allows energy to pass between gases through random particle collisions, but without absorbing or dissipating any energy itself---it's an idealized partition. Also assume that each gas has a fixed population and volume, so they only differ (at least initially) in how much energy they have. If their energies are $$U_1$$ and $$U_2$$, the total system energy is
+Imagine two gas chambers with a wall between them. The wall allows energy to pass from one gas to the other through random molecular collisions while preventing any particles from moving between chambers. In otherwords, the gases only exchange energy. If the energy of each gas is $$U_1$$ and $$U_2$$, the total system energy is
 
 
 $$
 U = U_1 + U_2
 $$
 
-To figure out what happens to $$U_1$$ and $$U_2$$ over time, we need to introduce the concept of a _microstate_. A microstate is simply the thing that we would have called the system's _state_ if this were classical mechanics or quantum mechanics. The reason we don't do that here is because in statistical mechanics there are two types of states---one specifying particle configurations and one specifying macroscopic properties like energy and pressure. To disambiguate, the former are called microstates and the latter are called macrostates.
-
-Representing a microstate is straightforward, at least conceptually. If the system is classical, its microstate is a point in phase space $$(\mathbf{x}_1, \mathbf{p}_1, \mathbf{x}_2, \mathbf{p}_2..., \mathbf{x}_N, \mathbf{p}_N)$$. If the system is quantum, its microstate is a vector in Hilbert space $$\Psi(\mathbf{x}_1, \mathbf{x}_2, ... \mathbf{x}_N)$$ satisfying whatever Hamiltonian happens to the govern the dynamics.
+To figure out what $$U_1$$ and $$U_2$$ are at equilibrium, we need to introduce the concept of a _microstate_. A microstate is simply the gas's configuration. If the gas is modeled classically, its microstate is a point in phase space $$(\mathbf{x}_1, \mathbf{p}_1, \mathbf{x}_2, \mathbf{p}_2..., \mathbf{x}_N, \mathbf{p}_N)$$, where $$i=1 \ldots N$$ indexes particles. If the gas is modeled quantum mechanically, its microstate is a vector in Hilbert space $$\Psi(\mathbf{x}_1, \mathbf{x}_2, ... \mathbf{x}_N)$$ satisfying whatever Hamiltonian happens to the govern the dynamics.
 
 With the concept of a microstate in hand, we can now write down the fundamental assumptions of statistical mechanics:
 
@@ -147,9 +145,9 @@ p(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
-where $$p(U_1,U_2)$$ is the probability that the total energy $$U$$ is divided such that the first gas contains an amount $$U_1$$ and the second gas contains an amount $$U_2$$. Meanwhile, $$\Omega$$ is the number of microstates having a particular energy. This function is called the _multiplicity_, and it's indexed for each system because in general it can depend on volume and population, which may differ between the systems.
+where $$p(U_1,U_2)$$ is the probability that the total energy $$U$$ is divided such that the first gas has $$U_1$$ and the second gas contains has $$U_2$$. Meanwhile, $$\Omega$$ is the number of microstates corresponding to a particular energy. This function is called the _multiplicity_, and it's indexed for each system because in general it can depend on volume and population, which may differ between the systems.
 
-Now, although the gases can divide their energy in any way that satisfies $$U_1 + U_2 = U$$, some divisions have more microstates associated with them and are therefore more likely to be observed. As it turns out, $$p$$ is very sharply peaked around one specific energy division which is called, not surprisingly, _thermal equilibrium_. Let's find this division.
+Now, although the gases can divide their energy any way satisfying $$U_1 + U_2 = U$$, some divisions are more likely than others because they have more microstates associated with them. In fact, $$p$$ is very sharply peaked around one specific energy division which, not surprisingly, is _thermal equilibrium_. Let's find this division.
 
 The multiplicity maximum is found through differentiation:
 
@@ -181,9 +179,9 @@ $$
 
 where $$k \approx 10^{-23} \ \text{J/K}$$ is the _Boltzmann constant_ that simply sets the scale for temperature in energy units. This is the objective definition of temperature we set out to derive. 
 
-Now let's figure out what temperature is for a gas by calculating its multiplicity and plugging it into this formula.
+Let's use this formula to find the temperature of a gas.
 
-## The Multiplicity of a Gas
+## The Temperature of a Gas
 
 To derive $$\Omega$$ for an $$N$$-atom gas, it's easiest to start with $$N=1$$ and then generalize. For one atom, the system's microstate is given by the atom's position and momentum $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is constrained within a volume $$V$$, and $$\mathbf{p}$$ is constrained by the gas's energy according to
 
@@ -275,9 +273,9 @@ $$
 
 The first equality is the so-called _ideal gas law_, and the second equality says that temperature is proportional to the average energy per particle, which is an intuitive connection between temperature and energy.
 
-## The Multiplicity of a Solid
+## The Temperature of a Solid
 
-Another good example is a simple model of a solid called the *Einstein solid*. In the model, atoms are connected in a cubic lattice via spring-like oscillators. The oscillators are assumed to be identical so their frequency parameter $$\omega$$ is the same, and they're treated quantum mechanically so their energy is an integer multiple of $$\hbar \omega$$, which we'll take to be the energy units.
+To find the temperature of a solid, we can use a simple solid model called the *Einstein solid*. In the model, atoms are connected via springs into a cubic lattice. The springs are assumed to be identical, so their frequency parameters $$\omega$$ are all the same, and they're treated quantum mechanically so their energy is an integer multiple of $$\hbar \omega$$, which we'll take to be the energy units.
 
 Since atoms are arranged in a cubic lattice, there are three oscillators per atom. We'll let $$N$$ refer to the number of oscillators instead of the number of atoms because the oscillators are what "have" the energy. The total energy $$U$$ of the solid (relative to the ground state) is just the total number of energy units in all the oscillators.
 
@@ -309,7 +307,7 @@ So at high energy the temperature is again proportional to the average energy pe
 
 ## The Stability of Equilibrium
 
-Earlier I claimed that the joint multiplicity of two systems is sharply peaked around one energy division, which we called thermal equilibrium. The reason it's called _equilibrium_ is because the number of microstates around this particular division is so large that the system effectively spends all of its time there. Now that we have the gas's multiplicity function let's verify this. 
+Earlier I said that the joint multiplicity of two systems is sharply peaked around one energy division, which we called thermal equilibrium. The reason it's called _equilibrium_ is because the number of microstates around this particular division is so large that the system effectively spends all of its time there. Now that we have the gas's multiplicity function let's verify this.
 
 To simplify, assume that the two interacting gases have the same population and volume, so the joint multiplicity is
 
