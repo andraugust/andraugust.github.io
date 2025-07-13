@@ -23,15 +23,15 @@ layout: default
 
 If you zoom in closely on any object, you'll see nearly the same thing: countless molecules moving in rapid, random motion.
 
-If the object is a solid, you'll see each molecule stay roughly in place but oscillate as if connected to its neighbors by springs. If the object is a liquid, such as water, you'll see the molecules closely packed but unbound, bouncing off one another and spinning. If the object is a gas it'll appear like the liquid, but with much more space between molecules.
+In a solid, you'll see each molecule stay roughly in place but oscillate as if connected to its neighbors by springs. In a liquid you'll see molecules closely packed but unbound, bouncing off each other and spinning. A gas will look like a liquid, but with much more space between molecules.
 
-To put some numbers to this picture: a human-scale sample of gas—a liter of air at standard temperature and pressure—contains about $$10^{23}$$ molecules. Each molecule moves at around $$500$$ m/s (about $$1000$$ mph) and collides with another molecule roughly $$10^{10}$$ times per second.
+To put some numbers to the picture: a human-scale sample of gas—a liter of air at standard temperature and pressure—contains about $$10^{23}$$ molecules. Each molecule moves at around $$500$$ m/s (about $$1000$$ mph) and collides with another molecule roughly $$10^{10}$$ times per second.
 
-These numbers are so large that to model gases at the human scale, we must use statistics—there’s no way to track each particle individually. Now, it may seem like a compromise to use statistical models, since they provide only estimates, but in fact, the more particles there are in a system, the more deterministic the models become. “More deterministic” in the sense that the probability distributions become very sharply peaked.
+These numbers are so large that to model these systems at human scale, we must use statistics—there’s no way to track each particle individually. Statistical models may seem like a compromise, since they only provides estimates, but it turns out that the more particles or energy there is in a system, the more deterministic the models become. “More deterministic” in the sense that the probability distributions become very sharply peaked, and nearly deterministic statements can be made.
 
-**This post is about how macroscopic properties of many-particle systems emerge from the microscopic motion of individual molecules.** 
+**This post is about how macroscopic thermal properties emerge from the microscopic motion of individual molecules.**
 
-I’ll start with the emergence of pressure to demonstrate this concept, and then move on to temperature, which introduces the central theme that underlies everything else that follows: 
+I’ll start with the emergence of pressure, and then move on to temperature, which introduces the theme of all that follows: 
 
 1. Every microstate (molecular-scale state) is equally likely at any given time
 2. Macrostates (such as temperature and pressure) can correspond to many different microstates
@@ -307,7 +307,7 @@ So at high energy the temperature is again proportional to the average energy pe
 
 ## The Stability of Equilibrium
 
-Earlier I said that the joint multiplicity of two systems is sharply peaked around one energy division, which we called thermal equilibrium. The reason it's called _equilibrium_ is because the number of microstates around this particular division is so large that the system effectively spends all of its time there. Now that we have the gas's multiplicity function let's verify this.
+Earlier I claimed that the joint multiplicity of two systems is sharply peaked around one energy division, which we called thermal equilibrium. The reason it's called _equilibrium_ is because the number of microstates around this particular division is so large that the system effectively spends all of its time there. Now that we have the gas's multiplicity function let's verify this claim.
 
 To simplify, assume that the two interacting gases have the same population and volume, so the joint multiplicity is
 
@@ -328,7 +328,7 @@ $$
 
 Apparently, near equilibrium, the multiplicity function is Gaussian with mean $$U/2$$ and variance like $$U/\sqrt{N}$$. 
 
-As a mathematical aside, I'll note that polynomial approximations like Taylor series are only accurate when the function being approximated changes fairly slowly (like a polynomial) around the point of interest. Multiplicities tend to change very quickly, so it's best to approximate their logarithm and then exponentiate to get the final result. For example, if a function $$f(x)$$ changes quickly near $$x_0$$, its best to use
+As a mathematical aside, I'll note that polynomial approximations like Taylor series are only accurate when the function being approximated changes fairly slowly (like a polynomial) around the point of interest. Multiplicities tend to change very quickly, so it's best to expand their logarithm and then exponentiate to get the final result. For example, if a function $$f(x)$$ changes quickly near $$x_0$$, its best to compute the series
 
 
 $$
@@ -336,13 +336,13 @@ $$
 $$
 
 
-and then take the exponent of the series to recover the approximation for $$f(x)$$.
+and then exponentiate to recover the approximation for $$f(x)$$.
 
 OK back to the physics... because $$u$$ can have any value from $$0$$ to $$U$$, the width of $$\Omega$$ relative to the energy scale is $$1/\sqrt{N}$$. This means that if there are $$10^{23}$$ particles in the system, only about $$10^{-10}\%$$ of possible energy divisions have a reasonable likelihood of occurring, and those divisions are all centered around $$U/2$$. In other words, thermal equilibrium is very, very stable.
 
 ## The Energy of a Single Particle
 
-In the section on temperature I described two systems exchanging energy and treated the systems like they operated on similar energy scales. But often times one system is so much larger than the other that the energy it gains or loses is negligible compared to the smaller system.
+In the section on temperature I described two systems exchanging energy, treating them as if they operate on similar energy scales. But sometimes one system is so much larger than the other that the energy it gains or loses during an interaction is negligible compared to the smaller system and its overall energy.
 
 For example, if the smaller system is a single atom in a gas and the larger system is the rest of the gas, the single atom will exchange energy with the gas through random collisions, but the energy change of the gas is approximately zero relative to its total energy. Let's see if we can derive the energy distribution of a single atom (or whatever the small system may be) in this context.
 
@@ -385,9 +385,9 @@ $$
 
 In cases where $$u$$ has discrete values the integral becomes a sum.
 
-$$p(u)$$ is the energy distribution of the small system (sometimes just one particle), $$\Omega(u)$$ is the so-called _density of states_ which counts the degeneracy of $$u$$, and $$\exp(-u/kT)$$ is the so-called _Boltzmann factor_ which implies that high energy states are less likely. Let's apply this formula to one atom in a gas.
+$$p(u)$$ is the energy probability distribution of the small system (sometimes just one particle), $$\Omega(u)$$ is the so-called _density of states_ which counts the degeneracy of $$u$$, and $$\exp(-u/kT)$$ is the so-called _Boltzmann factor_ which acts to make high energy states less likely. Let's apply this formula to an atom in a gas.
 
-An atom's energy degeneracy comes from the fact that it has many momentum states with the same energy: $$p_x^2+p_y^2+p_z^2 = 2mu$$. This equation defines the surface of a sphere having radius $$R = \sqrt{2mu}$$, so the volume of states centered at a given energy is $$A\ dR$$, where $$A$$ is the surface area of the sphere. In terms of energy this means
+The energy degeneracy of a gaseous atom comes from the fact that it has many momentum states with the same energy: $$p_x^2+p_y^2+p_z^2 = 2mu$$. This equation defines the surface of a sphere having radius $$R = \sqrt{2mu}$$, so the volume of states centered at a given energy is $$A\ dR$$, where $$A$$ is the surface area of the sphere. In terms of energy this means
 
 
 $$
@@ -439,7 +439,7 @@ $$
 
 then the quantized levels will appear continuous. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT_\text{room} \approx 0.026\ \text{eV}$$, while $$h^2/8mV^{2/3} \approx 10^{-23}\ \text{eV}$$, so the atom definitely behaves classically.
 
-The next example is an oscillator, like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero and the energy is in units of $$\hbar \omega$$. Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging this into the energy probability formula yields
+The next example is an oscillator like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero and the energy is in units of $$\hbar \omega$$. Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging this into the energy probability formula yields
 
 
 $$
@@ -475,7 +475,7 @@ $$
 
 ## Molecules
 
-We now have the tools we need to model simple molecules. In the context of statistical mechanics the main difference between molecules and atoms is that molecules have more places to "put" their energy: they can rotate, oscillate and translation, while atoms can only translate. For example, if we model a diatomic molecule classically as two point masses connected by a spring, its energy is
+We now have the tools we need to model simple molecules. In the context of statistical mechanics the main difference between molecules and atoms is that molecules have more places to put their energy: they can rotate, oscillate and translation, while atoms can only translate. For example, if we model a diatomic molecule classically as two point masses connected by a spring, its energy is
 
 
 $$
@@ -548,7 +548,7 @@ This same line of reasoning can be used to understand why I haven't considered e
 
 ## Exchanging More Than Energy
 
-So far, nearly the entire discussion has focused on systems exchanging energy. What happens when they exchange other things, like volume and particles?
+So far, nearly the entire discussion has focused on systems exchanging energy. What happens when they exchange other things, like volume or particles?
 
 Like energy, other quantities equilibrate when they maximize multiplicity. For a general set of variables, the joint multiplicity is
 
