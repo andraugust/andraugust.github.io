@@ -24,10 +24,10 @@ layout: default
   </figcaption>
 </figure>
 
-## [Thermal Physics Part I: Statistical Mechanics](thermo-1.html)
+## [Notes on Statistical Thermodynamics](thermo-1.html)
 
 <p style="opacity:0.5">12/2024</p>
-The physics of many-particle systems, modeled from the bottom up.
+On the emergence of macroscopic thermal properties from the statistical behavior of microscopic particles.
 
 
 ## [Quantum Mechanics Part III: Joint Systems & Entanglement](quantum-3.html)

@@ -2,12 +2,12 @@
 layout: default
 ---
 
-# Thermal Physics Part I: Statistical Mechanics
+# Notes on Statistical Thermodynamics
 
 <center><img src="statmech/banner.png" style="zoom:100%;"></center>
 
 
-- [Thermal Physics Part I: Statistical Mechanics](#thermal-physics-part-i:-statistical-mechanics)
+- [Notes on Statistical Thermodynamics](#notes-on-statistical-thermodynamics)
   - [Introduction](#introduction)
   - [Pressure & The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
   - [Temperature](#temperature)
