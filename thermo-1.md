@@ -332,7 +332,10 @@ As a mathematical aside, I'll note that polynomial approximations like Taylor se
 
 
 $$
-\ln f(x) \approx \ln f(x_0) + \frac{f'(x_0)}{f(x_0)}(x-x_0) - \frac{1}{2}\frac{f''(x_0)}{f(x_0)^2}(x-x_0)^2 + \ldots
+\begin{align}
+\ln f(x) &\approx \ln f(x_0) + \frac{f'(x_0)}{f(x_0)}(x-x_0) \\
+&- \frac{1}{2}\frac{f''(x_0)}{f(x_0)^2}(x-x_0)^2 + \ldots
+\end{align}
 $$
 
 

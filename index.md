@@ -27,28 +27,28 @@ layout: default
 ## [Notes on Statistical Thermodynamics](thermo-1.html)
 
 <p style="opacity:0.5">12/2024</p>
-On the emergence of macroscopic thermal properties from the statistical behavior of microscopic particles.
+On the emergence of thermodynamics from molecular interactions.
 
 
 ## [Quantum Mechanics Part III: Joint Systems & Entanglement](quantum-3.html)
 
 <p style="opacity:0.5">11/2023</p>
-Notes on interacting quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
+On interacting quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part II: Dynamics & Continuous States](quantum-2.html)
 
 <p style="opacity:0.5">07/2023</p>
-Notes on quantum dynamics and continuous states, based on Leonard Susskind's book _The Theoretical Minimum_.
+On quantum dynamics and continuous states, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Quantum Mechanics Part I: States & Principles](quantum-1.html)
 
 <p style="opacity:0.5">06/2023</p>
-Notes on the foundations of quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
+On the foundations of quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [Classical Mechanics](classical-mechanics.html)
 
 <p style="opacity:0.5">05/2022</p>
-Notes on classical mechanics from Leonard Susskind's book _The Theoretical Minimum_.
+On forces, Hamiltonians and Lagrangians, based on Leonard Susskind's book _The Theoretical Minimum_.
 
 ## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
 
