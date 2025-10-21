@@ -23,20 +23,20 @@ layout: default
 
 If you zoom in closely on any object, you'll see nearly the same thing: countless molecules moving in rapid, random motion.
 
-In a solid, you'll see each molecule stay roughly in place but oscillate as if connected to its neighbors by springs. In a liquid you'll see molecules closely packed but unbound, bouncing off each other and spinning. A gas will look like a liquid, but with much more space between molecules.
+In a solid, the molecules stay roughly in place but oscillate as if connected to their neighbors by springs. In a liquid the molecules are closely packed but unbound, bouncing off each other and spinning. In a gas the molecules are like a liquid, but with much more space between each other.
 
-To put some numbers to the picture: a human-scale sample of gas—a liter of air at standard temperature and pressure—contains about $$10^{23}$$ molecules. Each molecule moves at around $$500$$ m/s (about $$1000$$ mph) and collides with another molecule roughly $$10^{10}$$ times per second.
+To put some numbers to these pictures: a human-scale sample of gas—a liter of air at standard temperature and pressure—contains about $$10^{23}$$ molecules. Each molecule moves at around $$500$$ m/s (about $$1000$$ mph) and collides with another molecule roughly $$10^{10}$$ times per second.
 
-These numbers are so large that to model these systems at human scale, we must use statistics—there’s no way to track each particle individually. Statistical models may seem like a compromise, since they only provides estimates, but it turns out that the more particles or energy there is in a system, the more deterministic the models become. “More deterministic” in the sense that the probability distributions become very sharply peaked, and nearly deterministic statements can be made.
+These numbers are so large that to model such systems at human scale, we must use statistics—there’s no way to track each particle individually. Statistical models may seem like a compromise, since they only provides estimates, but it turns out that the more particles or energy within a system, the more deterministic the models become. “More deterministic” in the sense that probability distributions describing states of systems become very sharply peaked, and nearly deterministic statements can be made.
 
 **This post is about how macroscopic thermal properties emerge from the microscopic motion of individual molecules.**
 
-I’ll start with the emergence of pressure, and then move on to temperature, which introduces the theme of all that follows: 
+I’ll start with the emergence of pressure, and then move on to temperature, which introduces the main assumptions of statistical thermodynamics: 
 
-1. Every microstate (molecular-scale state) is equally likely at any given time
-2. Macrostates (such as temperature and pressure) can correspond to many different microstates
+1. Every molecular-scale state (called a _microstate_) is equally likely at any given time
+2. Macrostates such as temperature and pressure can correspond to many different microstates
 3. The probability of a macrostate is therefore determined by counting the number of microstates that produce it (more microstates = more probable macrostate)
-4. When there are large numbers of particles, the most probable macrostate is much, much more likely than all others, and is what we observe at equilibrium. 
+4. When there are large numbers of particles, the most probable macrostate is much more likely than all others, and is what we observe at equilibrium. 
 
 ## Pressure & The Kinetic Theory of Gases
 
@@ -45,9 +45,9 @@ The kinetic theory of gases was one of the first attempts to model gases as larg
 * Gases contain lots of very small particles moving in constant motion
 * The particles interact by colliding elastically with each other and the walls of their container
 * Macroscopic properties like pressure emerge through the collective interaction of the particles, specifically through momentum transfer
-* "Particle" is a general term for the microscopic constituents of bulk matter. Depending on the context a particle can be an atom, a molecule, a photon, or anything else that acts as a "unit of object"
+* "Particle" is a general term for the microscopic constituents of bulk matter. Depending on the context a particle could be an atom, a molecule, a photon, or anything else that acts as a "unit of object"
 
-Let's see if we can use these assumptions to connect microscopic particle motion with macroscopic pressure.
+Let's see if we can use these assumptions to connect particle motion with pressure.
 
 Pressure is given by
 
@@ -106,7 +106,7 @@ PV = 2U/3
 $$
 
 
-where $$U$$ is the total internal energy of the gas (not counting constant offsets like ground-states which don't change in the processes considered here), so now we can calculate a gas's energy by simply knowing its pressure and volume, which is pretty useful.
+where $$U$$ is the total internal energy of the gas (not counting constant offsets like ground-states which don't change in the processes considered here), so now we can calculate a gas's energy simply by knowing its pressure and volume.
 
 As mentioned earlier, particles don't have to be atoms. If they're photons, for example, we can derive a similar expression by removing mass from the equation:
 
@@ -145,9 +145,9 @@ p(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
-where $$p(U_1,U_2)$$ is the probability that the total energy $$U$$ is divided such that the first gas has $$U_1$$ and the second gas contains has $$U_2$$. Meanwhile, $$\Omega$$ is the number of microstates corresponding to a particular energy. This function is called the _multiplicity_, and it's indexed for each system because in general it can depend on volume and population, which may differ between the systems.
+where $$p(U_1,U_2)$$ is the probability that the total energy $$U$$ is divided such that the first gas has $$U_1$$ and the second gas has $$U_2$$. Meanwhile, $$\Omega$$ is the number of microstates corresponding to a particular energy. This function is called the _multiplicity_, and it's indexed for each system because in general it can depend on volume and population, which may differ between the systems.
 
-Now, although the gases can divide their energy any way satisfying $$U_1 + U_2 = U$$, some divisions are more likely than others because they have more microstates associated with them. In fact, $$p$$ is very sharply peaked around one specific energy division which, not surprisingly, is _thermal equilibrium_. Let's find this division.
+Now, the gases can divide their energy any way satisfying $$U_1 + U_2 = U$$, but some divisions are more likely than others because they have more microstates associated with them. In fact, $$p$$ is very sharply peaked around one specific energy division which, not surprisingly, we call _thermal equilibrium_. Let's find this division.
 
 The multiplicity maximum is found through differentiation:
 
@@ -183,7 +183,7 @@ Let's use this formula to find the temperature of a gas.
 
 ## The Temperature of a Gas
 
-To derive $$\Omega$$ for an $$N$$-atom gas, it's easiest to start with $$N=1$$ and then generalize. For one atom, the system's microstate is given by the atom's position and momentum $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is constrained within a volume $$V$$, and $$\mathbf{p}$$ is constrained by the gas's energy according to
+Next, I want to find a formula for the temperature of a gas. To do this we derive $$\Omega$$, take its partial derivative with respect to $$U$$ and solve for $$T$$ in eq 15. For an $$N$$-atom gas, it's easiest to start with $$N=1$$ and then generalize. For one atom, the system's microstate is given by the atom's position and momentum $$(\mathbf{x},\mathbf{p})$$, where $$\mathbf{x}$$ is constrained within a volume $$V$$, and $$\mathbf{p}$$ is constrained by the gas's energy according to
 
 
 $$
@@ -271,7 +271,7 @@ kT = \frac{PV}{N} = \frac{2}{3}\frac{U}{N}
 $$
 
 
-The first equality is the so-called _ideal gas law_, and the second equality says that temperature is proportional to the average energy per particle, which is an intuitive connection between temperature and energy.
+The first equality is the so-called _ideal gas law_, and the second equality says that temperature is proportional to the average energy per particle, which is a fiarly intuitive result.
 
 ## The Temperature of a Solid
 
@@ -303,7 +303,7 @@ kT \approx \frac{U}{N}
 $$
 
 
-So at high energy the temperature is again proportional to the average energy per particle.
+So at high energy the temperature is proportional to the average energy per particle, as was the case for the gas.
 
 ## The Stability of Equilibrium
 
