@@ -177,9 +177,7 @@ $$
 $$
 
 
-where $$k \approx 10^{-23} \ \text{J/K}$$ is the _Boltzmann constant_ that simply sets the scale for temperature in energy units. This is the objective definition of temperature we set out to derive. 
-
-Let's use this formula to find the temperature of a gas.
+where $$k \approx 10^{-23} \ \text{J/K}$$ is the _Boltzmann constant_ that simply sets the scale for temperature in energy units. This is the objective definition of temperature we set out to derive. Now let's use it to find the temperature of a gas.
 
 ## The Temperature of a Gas
 
