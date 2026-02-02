@@ -21,35 +21,21 @@ layout: default
 
 ## Introduction
 
-If you zoom in closely on any object, you'll see nearly the same thing: countless molecules moving in rapid, random motion.
+If you zoom in closely on any object, you'll see nearly the same thing: countless particles moving in rapid continuous motion. Despite this motion, objects have constant, well defined thermal properties at the bulk scale, such as temperature and pressure. **Statistical thermodynamics is about reconciling these two observations and showing that stable macroscopic properties emerge from the collective motion of very small particles.**
 
-In a solid, the molecules stay roughly in place but oscillate as if connected to their neighbors by springs. In a liquid the molecules are closely packed but unbound, bouncing off each other and spinning. In a gas the molecules are like a liquid, but with much more space between each other.
-
-To put some numbers to these pictures: a human-scale sample of gas—a liter of air at standard temperature and pressure—contains about $$10^{23}$$ molecules. Each molecule moves at around $$500$$ m/s (about $$1000$$ mph) and collides with another molecule roughly $$10^{10}$$ times per second.
-
-These numbers are so large that to model such systems at human scale, we must use statistics—there’s no way to track each particle individually. Statistical models may seem like a compromise, since they only provides estimates, but it turns out that the more particles or energy within a system, the more deterministic the models become. “More deterministic” in the sense that probability distributions describing states of systems become very sharply peaked, and nearly deterministic statements can be made.
-
-**This post is about how macroscopic thermal properties emerge from the microscopic motion of individual molecules.**
-
-I’ll start with the emergence of pressure, and then move on to temperature, which introduces the main assumptions of statistical thermodynamics: 
-
-1. Every molecular-scale state (called a _microstate_) is equally likely at any given time
-2. Macrostates such as temperature and pressure can correspond to many different microstates
-3. The probability of a macrostate is therefore determined by counting the number of microstates that produce it (more microstates = more probable macrostate)
-4. When there are large numbers of particles, the most probable macrostate is much more likely than all others, and is what we observe at equilibrium. 
+In this post, I'll show how pressure emerges from atomic motion, how temperature can be defined in strictly statistical terms, and how stat-thermo methods are applied to gases, solids, single particles and molecules. I'll end by showing how stat-thermo's bottom-up approach to thermodynamics leads naturally to a central formulas of classical (non-statistical) thermodynamics, which will be the subject of the next post.
 
 ## Pressure & The Kinetic Theory of Gases
 
 The kinetic theory of gases was one of the first attempts to model gases as large collections of small moving objects. The theory proposes that:
 
-* Gases contain lots of very small particles moving in constant motion
-* The particles interact by colliding elastically with each other and the walls of their container
-* Macroscopic properties like pressure emerge through the collective interaction of the particles, specifically through momentum transfer
-* "Particle" is a general term for the microscopic constituents of bulk matter. Depending on the context a particle could be an atom, a molecule, a photon, or anything else that acts as a "unit of object"
+* Gases contain lots of very small objects, called particles, that are in constant motion
+* Particles interact by colliding elastically with each other and the walls of their container
+* Pressure emerges through the collective interaction of the particles, specifically through momentum transfer
 
-Let's see if we can use these assumptions to connect particle motion with pressure.
+(Note that "particle" is a general term for the microscopic constituents of bulk matter. Depending on context, a particle could be an atom, a molecule, a photon, or anything else that acts as a "unit of object".)
 
-Pressure is given by
+Let's see if we can use these assumptions to connect particle motion with pressure. Pressure is given by
 
 
 $$
@@ -120,9 +106,9 @@ So for a photon gas $$PV = U/3$$.
 
 ## Temperature
 
-Of all the quantities in thermodynamics, temperature is probably the most intuitive---we experience it constantly. But what is temperature objectively? We know that when two systems exchange energy for long enough they reach a point where their "temperature" is the same. So let's imagine what happens when two gases exchange energy, then see what we can derive about their equilibrium state.
+Of all the quantities in thermodynamics, temperature is probably the most intuitive---we experience it constantly. But what is temperature objectively? When two systems exchange energy for long enough we know they reach a point where their "temperature" is the same. So let's imagine what happens when two gases exchange energy, then see what we can derive about their equilibrium state.
 
-Imagine two gas chambers with a wall between them. The wall allows energy to pass from one gas to the other through random molecular collisions while preventing any particles from moving between chambers. In otherwords, the gases only exchange energy. If the energy of each gas is $$U_1$$ and $$U_2$$, the total system energy is
+Imagine two cylinders of gas with a wall between them. The wall allows energy to pass from one gas to the other through random molecular collisions, yet prevents particles from moving between chambers. In otherwords, the gases only exchange energy. If the energy of each gas is $$U_1$$ and $$U_2$$, the system's energy is
 
 
 $$
@@ -134,8 +120,8 @@ To figure out what $$U_1$$ and $$U_2$$ are at equilibrium, we need to introduce 
 With the concept of a microstate in hand, we can now write down the fundamental assumptions of statistical mechanics:
 
 * Microstates evolve continually (the system isn't frozen---it moves through phase space)
-* Given enough time, a system will explore all the microstates available to it, spending an equal amount of time in each
-* If the microstate of a system is measured, each one has an equal probability of being observed
+* Given enough time, a system explores all available microstates, spending equal time in each
+* If the microstate of a system is measured, each microstate has an equal probability of being observed
 
 This last assumption is extremely useful. It allows us to write
 
@@ -145,9 +131,9 @@ p(U_1,U_2) \propto \Omega(U_1, U_2) = \Omega_1(U_1) \Omega_2(U_2)
 $$
 
 
-where $$p(U_1,U_2)$$ is the probability that the total energy $$U$$ is divided such that the first gas has $$U_1$$ and the second gas has $$U_2$$. Meanwhile, $$\Omega$$ is the number of microstates corresponding to a particular energy. This function is called the _multiplicity_, and it's indexed for each system because in general it can depend on volume and population, which may differ between the systems.
+where $$p(U_1,U_2)$$ is the probability that the total energy $$U$$ is divided such that the first gas has $$U_1$$ and the second gas has $$U_2$$. Meanwhile, $$\Omega$$ is the number of microstates corresponding to a particular energy. This function is called the _multiplicity_, and it's indexed for each system because in general it can depend on volume and population, which may differ between systems.
 
-Now, the gases can divide their energy any way satisfying $$U_1 + U_2 = U$$, but some divisions are more likely than others because they have more microstates associated with them. In fact, $$p$$ is very sharply peaked around one specific energy division which, not surprisingly, we call _thermal equilibrium_. Let's find this division.
+Now, the gases can divide their energy in any way that satisfies $$U_1 + U_2 = U$$, but some divisions are more likely than others because they have more microstates associated with them. In fact, $$p$$ is very sharply peaked around one specific energy division, which is the state we call _thermal equilibrium_. Let's find this division.
 
 The multiplicity maximum is found through differentiation:
 
@@ -177,7 +163,7 @@ $$
 $$
 
 
-where $$k \approx 10^{-23} \ \text{J/K}$$ is the _Boltzmann constant_ that simply sets the scale for temperature in energy units. This is the objective definition of temperature we set out to derive. Now let's use it to find the temperature of a gas.
+where $$k \approx 10^{-23} \ \text{J/K}$$ is the _Boltzmann constant_ that sets the scale for temperature in energy units. This is the definition of temperature we set out to derive. Let's use it to find the temperature of a gas.
 
 ## The Temperature of a Gas
 
@@ -650,7 +636,7 @@ $$
 
 This is the so-called _thermodynamic identity_. It demonstrates how the change in a system's energy can be decomposed into contributions from heat, mechanical work and chemical work. With no direct reference to $$\Omega$$, this formula is firmly in the domain of thermodynamics where processes are framed in terms of macrostates like $$T$$ and $$P$$ rather than the underlying microstates which give rise to them. 
 
-In a future set of notes I'll talk about thermodynamics more thoroughly. Stay tuned...
+In the next set of notes I'll cover thermodynamics more thoroughly. Stay tuned...
 
 
 

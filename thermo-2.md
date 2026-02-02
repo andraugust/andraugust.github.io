@@ -89,14 +89,14 @@ $$
 
 Thermodynamics is a framework for describing the macroscopic properties of bulk matter. It's a coarse-grained model which allows us to focus an a small number of macroscopic observables.
 
-## The Domain of Validity
+## The Domain
 
-As the saying goes, *all models are wrong, but some are useful*. Thermodynamics is no different. It has a domain of validity and that domain is characterized by the following conditions:
+As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception, it's useful when
 
-* The number of particles in the system is large, typically $$N \gt 10^{10}$$.
-* Macroscopic fluctuations are negligible. For example, in a previous post we found that at equilibrium the relative energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ . 
+* The number of particles is large, typically $$N \gt 10^{10}$$.
+* Macroscopic fluctuations are negligible. For example, at equilibrium, thermal energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
 * The system's energy spectrum is effectively continuous. This happens when $$kT \gg \delta E$$, where $$\delta E$$ is a typical microstate energy spacing.
-* Microscopic events happen much faster than macroscopic events, such as when particle collisions happening much faster than pressure or volume changes.
+* Microscopic events happen much faster than macroscopic events. For example, particle collisions happening much faster than pressure or volume changes.
 * The system is in equilibrium, or evolves slowly enough for it to appear so.
 
 ## State
@@ -110,19 +110,19 @@ When the conditions listed above are true, we can characterize the system with a
 - Internal energy $$U$$
 - Entropy $$S$$
 
-From this, it seems that thermodynamic state-space is 6 dimensional. In practice, however, these states are related to each other in ways that reduce the overall dimensionality. For example, an ideal gas with fixed $$N$$ has
+This looks like a 6-dimensional state space, but in practice state variables are related to each other in ways that reduce overall dimensionality. For example, an ideal gas with fixed $$N$$ has
 
 * Equation of state: $$P(T,V) = \frac{kNT}{V}$$
 * Energy relation: $$U(T) = \frac{f}{2}kNT$$
 * Entropy relation: $$S(V,U) = Nk \lparen \ln V + \frac{f}{2}\ln U \rparen + \text{const}$$
 
-or without so many constants:
+or without constants:
 
 * $$P \propto T/V$$
 * $$U \propto T$$
 * $$S = a\ln V + b\ln U + c$$
 
-Thus, an ideal gas's state is actually two dimensional. For example, we can fully specify all state variables if we know $$(P,V)$$ or $$(S,U)$$ or $$(T,V)$$, etc. But note that not all pairs of variables work, for example $$(P,S)$$ doesn't determine $$U$$.
+Thus, an ideal gas's state is two dimensional. For example, we can fully specify all state variables if we know $$(P,V)$$ or $$(S,U)$$ or $$(T,V)$$, etc. But not all pairs of variables work, for example $$(P,S)$$ doesn't determine $$U$$.
 
 ## Energy
 
