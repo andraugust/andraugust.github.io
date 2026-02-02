@@ -23,7 +23,7 @@ layout: default
 
 If you zoom in closely on any object, you'll see nearly the same thing: countless particles moving in rapid continuous motion. Despite this motion, objects have constant, well defined thermal properties at the bulk scale, such as temperature and pressure. **Statistical thermodynamics is about reconciling these two observations and showing that stable macroscopic properties emerge from the collective motion of very small particles.**
 
-In this post, I'll show how pressure emerges from atomic motion, how temperature can be defined in strictly statistical terms, and how stat-thermo methods are applied to gases, solids, single particles and molecules. I'll end by showing how stat-thermo's bottom-up approach to thermodynamics leads naturally to a central formulas of classical (non-statistical) thermodynamics, which will be the subject of the next post.
+In this post, I'll show how pressure emerges from atomic motion, how temperature can be defined in strictly statistical terms, and how stat-thermo methods are applied to gases, solids, single particles and molecules. I'll end by showing how stat-thermo's bottom-up approach to thermodynamics leads naturally to a central formula of classical (non-statistical) thermodynamics, which will be the subject of the next post.
 
 ## Pressure & The Kinetic Theory of Gases
 
