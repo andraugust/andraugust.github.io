@@ -127,7 +127,7 @@ Thermodynamics is a framework for describing the macroscopic properties of bulk 
 
 ## When is Thermodynamics?
 
-As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception, it's useful when specific conditions are true, specifically:
+As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception, it's useful only under the following conditions:
 
 * The number of particles is large, typically $$N \gt 10^{10}$$.
 * Macroscopic fluctuations are negligible. For example, in the previous post we saw that energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
@@ -161,39 +161,39 @@ Thus, an ideal gas's state is two dimensional. For example, we can fully specify
 
 ## Energy
 
-The energy of a thermodynamic system is defined by its **internal energy** $$U$$, which is the total kinetic and potential energy of its microscopic components---the atoms, molecules and any other matter or radiation that make up the system.
+The energy of a thermodynamic system is called its **internal energy** $$U$$, defined as the total kinetic and potential energy of its microscopic components---the atoms, molecules and any other matter or radiation within it.
 
-To calculate $$U$$ we could try to explicitly sum all the particle energies, but this would be impractical due to their large number. Instead, we treat $$U$$ thermodynamically and calculate it using the first law of thermodynamics, which states that internal energy can change through two macroscopic mechanisms: heat $$Q$$ and work $$W$$
+To calculate $$U$$ we could try to explicitly sum all the particle energies, but this is impractical due to their large number. Instead, we treat $$U$$ thermodynamically and calculate it using the first law of thermodynamics, which states that internal energy changes through two macroscopic mechanisms: heat $$Q$$ and work $$W$$
 
 
 $$
 \Delta U = Q + W
 $$
 
+Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as the change in an extensive property. 
 
-Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics we define it more generally as the change in any extensive property. For example, if the system contains charges in a potential, we can "displace" it by adding some charge $$dq$$. The work done in this case is
-
-
-$$
-W_{\text{electrical}} = \phi\ dq
-$$
-
-
-Similarly, if a gas's volume $$V$$ changes against a pressure $$P$$, the work done on the system is
-
+For example, if the system contains charges in a potential $$\phi$$, we can "displace" the amount of charge by adding an amount $$dq$$. The work done in this case is
 
 $$
-W_{\text{mechanical}} = -P\ dV
+dW_{\text{electrical}} = \phi\ dq
 $$
 
 
-Going forward, I'll focus on mechanical work and refer to it simply as "the" work $$W$$.
+Similarly, if a system's volume $$V$$ changes against a pressure $$P$$, the work done system is
 
-Meanwhile, heat is defined as energy that's transferred to (or from) a system due to a temperature gradient between it and its environment. Note that systems don't "have" heat. Heat is a mechanism of energy transfer, not a property of a substance.
+
+$$
+dW_{\text{mechanical}} = -P\ dV
+$$
+
+
+The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on just mechanical work and refer to it simply as $$W$$.
+
+Heat, on the other hand, is defined as energy transferred to (or from) a system due to a temperature gradient between it and its environment. Note that systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a substance.
 
 Let's look at two common ways for energy to flow: isothermally and adiabatically.
 
-Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains near constant throughout. 
+Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains the same as the reservoir throughout. 
 
 As an example, an ideal gas has $$U = U(T)$$, so in an isothermal process $$\Delta U = 0$$. This implies that all work is dissipated to the environment as heat: $$W = -Q$$. To find out how much heat, we compute
 
@@ -207,7 +207,7 @@ W &= -\int P\ dV \\
 $$
 
 
-The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. From the first law this implies
+The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. From the first law, no heat flow implies
 
 
 $$
@@ -215,7 +215,7 @@ $$
 $$
 
 
-Here we can't calculate $$W$$ like we did for the isotherm because $$T$$ isn't constant. Instead, we have to use an explicit formula for $$U$$. As an example, for an ideal gas we have
+Here we can't calculate $$W$$ like we did for the isotherm because $$T$$ isn't constant. Instead, we have to use an explicit formula for $$U$$. For example, an ideal gas has
 
 
 $$
@@ -234,7 +234,7 @@ VT^{f/2} = \text{const}
 $$
 
 
-which can be written as
+which can be written
 
 
 $$
@@ -242,7 +242,7 @@ PV^{(f+2)/2} = \text{const}
 $$
 
 
-So now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate the change in internal energy: $$U(T_f) - U(T_i)$$.
+Now given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate the change in internal energy: $$U(T_f) - U(T_i)$$.
 
 So much for energy changes driven by work. What about energy changes driven by heat?
 
