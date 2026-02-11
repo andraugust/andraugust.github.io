@@ -27,7 +27,7 @@ layout: default
 ## [Statistical Thermodynamics](thermo-1.html)
 
 <p style="opacity:0.5">12/2024</p>
-On the emergence of thermal properties from the collective motion of microscopic particles.
+On the emergence of thermodynamics from the collective motion of microscopic particles.
 
 
 ## [Quantum Mechanics Part III: Joint Systems & Entanglement](quantum-3.html)
