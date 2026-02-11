@@ -12,33 +12,51 @@ layout: default
 
 To answer questions like these, it's sometimes enough to know only the initial and final state of the system, like its initial and final temperature. Other times, however, it's necessary to know the _path_ the system follows through state space from its initial state to its final state. For example, consider the amount of work done on an ideal gas:
 
+
 $$
 W = -\int P\ dV
 $$
 
+
 Imagine the gas transitions from state $$(P_1, V_1)$$ to state $$(P_2, V_2)$$ via the paths shown in the diagram. We have 
+
+
 $$
 \begin{align}
 W_A = P_1\ (V_2 - V_1) \\
 W_B = P_2\ (V_2 - V_1)
 \end{align}
 $$
+
+
 the two works are different, which demonstrates that work is path _dependent_.
 
 As an example of path _independence_, consider the internal energy of an ideal gas. The internal energy is given by $$U \propto T$$, so the change in internal energy during _any_ process only depends on initial and final states, namely temperature.
 
 Can we determine if a quantity is path dependent without explicitly computing it for different paths and comparing? Yes---using a mathematical thing called exact differentials. The differential expression
+
+
 $$
 F(x,y)\ dx + G(x,y)\ dy
 $$
+
+
 is called an exact differential if there exists a function $$f(x,y)$$ such that
+
+
 $$
 F = \frac{\partial f}{\partial x} \ \text{ and }\  G = \frac{\partial f}{\partial y}
 $$
+
+
 For example, the expression $$y\ dx + x\ dy$$ is an exact differential because it's the total differential of $$f = xy$$. It turns out that exact differentials are path independent, so we can calculate the total change in $$df$$ using just the endpoints:
+
+
 $$
 \int_{\mathbf{r}_1}^{\mathbf{r}_2} df = f(\mathbf{r}_2) - f(\mathbf{r}_1)
 $$
+
+
 On the other hand $$y\ dx$$, for example, is an _inexact_ differential because there's no function $$f$$ such that $$df = y\ dx$$. Note that I've written these differentials in terms of two variables $$x$$ and $$y$$, but in general they can depend on any number of scalar variables.
 
 Thus, in thermodynamics, if a quantity is an exact differnetial then we can compute it by simply looking at end points, otherwise we have to be more careful and consider exactly how the change occurs. Exact differentials will be denoted by $$df$$, while inexact differentials will be denoted by $$\delta f$$ to remind us that path matters.
@@ -53,33 +71,51 @@ Reversible processes are quasistatic and frictionless, where quasistatic means t
 
 There are a few mechanisms through which thermodynamic systems can gain or lose energy. From the previous post on statistical thermodynamics, the general change in internal energy of a system (assuming constant particle number) is given by
 
+
 $$
 dU = T\ dS - P\ dV
 $$
 
+
 The first term, $$T\ dS$$, is the heat transfer into the system. Heat is defined as energy transferred due to a temperature gradient. It's important to note that substances don't "have" heat, they only absorb or dissipate it, which is why heat is sometimes described as thermal energy in _transit_. Heat is a mechanism of energy transfer and not a property of a substance. Heat is an inexact differential:
+
 
 $$
 \delta Q = T\ dS
 $$
 
+
 The second term, $$-P\ dV$$, is the mechanical work done _on_ the system (hence the negative sign), and it too is an inexact differential:
+
+
 $$
 \delta W = -P\ dV
 $$
+
+
 Note that the sum of these two inexact differentials is an exact one.
 
 ## Heat Capacity
 
 The amount of heat needed to raise a substance's temperature varies from one substance to another. To quantify this variability we use _heat capacity_, defined as
+
+
 $$
 C = \frac{\delta Q}{dT}
 $$
+
+
 This is a strange looking derivative because it mixes $$\delta$$s with $$d$$s. To actually make the calculation we need to specify $$how$$ heat is added. If heat is added at constant volume we have
+
+
 $$
 C_V \equiv \left( \frac{\partial Q}{\partial T} \right)_V
 $$
+
+
 and if heat is added at constant pressure we have
+
+
 $$
 C_P \equiv \left( \frac{\partial Q}{\partial T} \right)_P
 $$
@@ -128,17 +164,29 @@ Thus, an ideal gas's state is two dimensional. For example, we can fully specify
 The energy of a thermodynamic system is defined by its **internal energy** $$U$$, which is the total kinetic and potential energy of its microscopic components---the atoms, molecules and any other matter or radiation that make up the system.
 
 To calculate $$U$$ we could try to explicitly sum all the particle energies, but this would be impractical due to their large number. Instead, we treat $$U$$ thermodynamically and calculate it using the first law of thermodynamics, which states that internal energy can change through two macroscopic mechanisms: heat $$Q$$ and work $$W$$
+
+
 $$
 \Delta U = Q + W
 $$
+
+
 Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics we define it more generally as the change in any extensive property. For example, if the system contains charges in a potential, we can "displace" it by adding some charge $$dq$$. The work done in this case is
+
+
 $$
 W_{\text{electrical}} = \phi\ dq
 $$
+
+
 Similarly, if a gas's volume $$V$$ changes against a pressure $$P$$, the work done on the system is
+
+
 $$
 W_{\text{mechanical}} = -P\ dV
 $$
+
+
 Going forward, I'll focus on mechanical work and refer to it simply as "the" work $$W$$.
 
 Meanwhile, heat is defined as energy that's transferred to (or from) a system due to a temperature gradient between it and its environment. Note that systems don't "have" heat. Heat is a mechanism of energy transfer, not a property of a substance.
@@ -148,6 +196,8 @@ Let's look at two common ways for energy to flow: isothermally and adiabatically
 Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains near constant throughout. 
 
 As an example, an ideal gas has $$U = U(T)$$, so in an isothermal process $$\Delta U = 0$$. This implies that all work is dissipated to the environment as heat: $$W = -Q$$. To find out how much heat, we compute
+
+
 $$
 \begin{align}
 W &= -\int P\ dV \\
@@ -155,25 +205,43 @@ W &= -\int P\ dV \\
 &= NkT \ln \frac{V_i}{V_f}
 \end{align}
 $$
+
+
 The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. From the first law this implies
+
+
 $$
 \Delta U = W
 $$
+
+
 Here we can't calculate $$W$$ like we did for the isotherm because $$T$$ isn't constant. Instead, we have to use an explicit formula for $$U$$. As an example, for an ideal gas we have
+
+
 $$
 \begin{align}
 dU &= dW \\
 \rightarrow \frac{f}{2}Nk\ dT &= -P\ dV \\
 \end{align}
 $$
+
+
 Inserting the ideal gas equation of state and integrating yields
+
+
 $$
 VT^{f/2} = \text{const}
 $$
-which can also be written as
+
+
+which can be written as
+
+
 $$
 PV^{(f+2)/2} = \text{const}
 $$
+
+
 So now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate the change in internal energy: $$U(T_f) - U(T_i)$$.
 
 So much for energy changes driven by work. What about energy changes driven by heat?
