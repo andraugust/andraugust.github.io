@@ -125,25 +125,29 @@ Thus, an ideal gas's state is two dimensional. For example, we can fully specify
 
 ## Energy
 
-The energy of a thermodynamic system is defined by its *internal energy* $$U$$, which is the total kinetic and potential energy of its microscopic components---atoms, molecules and any other matter or radiation it's made of.
+The energy of a thermodynamic system is defined by its **internal energy** $$U$$, which is the total kinetic and potential energy of its microscopic components---the atoms, molecules and any other matter or radiation that make up the system.
 
-Treating $$U$$ thermodynamically, we don't attempt to calculate it in terms of microscopics. Instead, we calculate it using the first law of thermodynamics, which states that internal energy changes through two macroscopic mechanisms: heat $$Q$$ and work $$W$$
+To calculate $$U$$ we could try to explicitly sum all the particle energies, but this would be impractical due to their large number. Instead, we treat $$U$$ thermodynamically and calculate it using the first law of thermodynamics, which states that internal energy can change through two macroscopic mechanisms: heat $$Q$$ and work $$W$$
 $$
 \Delta U = Q + W
 $$
-There are many different types of work that can be done on a system depending on the context, but without loss of generality (most types of work have the same mathematical form) I'll focus on one of them, specifically mechanical work given by
+Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics we define it more generally as the change in any extensive property. For example, if the system contains charges in a potential, we can "displace" it by adding some charge $$dq$$. The work done in this case is
 $$
-dW = -P\ dV
+W_{\text{electrical}} = \phi\ dq
 $$
-The negative sign means that decreasing volume corresponds to positive work _on_ the system.
+Similarly, if a gas's volume $$V$$ changes against a pressure $$P$$, the work done on the system is
+$$
+W_{\text{mechanical}} = -P\ dV
+$$
+Going forward, I'll focus on mechanical work and refer to it simply as "the" work $$W$$.
 
-Meanwhile, heat is what's transferred to (or from) a system when a temperature gradient exists between it and its environment. Note that systems don't "have" heat, they only absorb or dissipate it. This is why heat can be called thermal energy in _transit_: it's a mechanism of energy transfer, not a property of a substance.
+Meanwhile, heat is defined as energy that's transferred to (or from) a system due to a temperature gradient between it and its environment. Note that systems don't "have" heat. Heat is a mechanism of energy transfer, not a property of a substance.
 
-Let's look at the two main ways energy flows during a process: isothermally and adiabatically.
+Let's look at two common ways for energy to flow: isothermally and adiabatically.
 
-An isothermal process is one where temperature is held constant. In practice, this is acheived by placing the system in contact with a thermal reservoir and applying changes so slowly that the system's temperature remains close to the reservoir's at all times. 
+Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains near constant throughout. 
 
-As an example, an ideal gas has $$U = U(T)$$, so $$\Delta U = 0$$ isothermally, implying that all work is dissipated to the environment as heat: $$W = -Q$$. To find out how much heat, we can compute
+As an example, an ideal gas has $$U = U(T)$$, so in an isothermal process $$\Delta U = 0$$. This implies that all work is dissipated to the environment as heat: $$W = -Q$$. To find out how much heat, we compute
 $$
 \begin{align}
 W &= -\int P\ dV \\
@@ -151,7 +155,7 @@ W &= -\int P\ dV \\
 &= NkT \ln \frac{V_i}{V_f}
 \end{align}
 $$
-Meanwhile, an adiabatic process is one where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. In an adiabat, work results in a change in temperature, but the system doesn't then lose that new heat, by definition. From the first law, this implies
+The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. From the first law this implies
 $$
 \Delta U = W
 $$
@@ -166,13 +170,13 @@ Inserting the ideal gas equation of state and integrating yields
 $$
 VT^{f/2} = \text{const}
 $$
-which can also be written
+which can also be written as
 $$
 PV^{(f+2)/2} = \text{const}
 $$
 So now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate the change in internal energy: $$U(T_f) - U(T_i)$$.
 
-
+So much for energy changes driven by work. What about energy changes driven by heat?
 
 ## State Change
 
@@ -180,36 +184,6 @@ When a system changes state, the change in the system's The change in a systemâ€
 
 When temperature is held constant the process is called _isothermal_. In practice, this is achieved by placing the system in contact with a thermal reservoir and applying changes so slowly that the system's temperature remains equal to the reservoir at all times.
 
-For an ideal gas, $$U = U(T)$$, so $$\Delta U = 0$$, implying that all isothermal work is dissipated to the environment as heat: $$W = -Q$$. To find out how much heat, we can compute
-$$
-\begin{align}
-W &= -\int P\ dV \\
-&= -NkT \int_{V_i}^{V_f} \frac{1}{V}\ dV \\
-&= NkT \ln \frac{V_i}{V_f}
-\end{align}
-$$
-Another class of processes are those without heat transfer. These are called _adiabatic_. In practice, adiabats occur when thermal insulation surrounds the system. From the first law, we get
-$$
-\Delta U = W
-$$
-Here we can't calculate $$W$$ like in the isothermal case because now $$T$$ isn't constant. Instead, we have to make use of the formula for $$U$$. As an example, for an ideal gas, we get
-$$
-\begin{align}
-dU &= dW \\
-\rightarrow \frac{f}{2}Nk\ dT &= -P\ dV \\
-\end{align}
-$$
-Inserting the ideal gas equation of state and integrating leads to
-$$
-VT^{f/2} = \text{const}
-$$
-which can be written as
-$$
-PV^{(f+2)/2} = \text{const}
-$$
-So now, given $$(T_i, V_i, V_f)$$ we can compute $$T_f$$, or given $$(P_i, V_i, V_f)$$ we can compute $$P_f$$. With these quantities the change in internal energy is simply $$U(T_f) - U(T_i)$$.
-
-These previous two examples focus on energy change driven by work. What about energy change driven by heat?
 
 ## Cycles
 
