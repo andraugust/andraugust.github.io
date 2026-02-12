@@ -67,33 +67,9 @@ Reversibility is an important idealization in thermodynamics in much the same wa
 
 Reversible processes are quasistatic and frictionless, where quasistatic means that change is so slow the system and environment are arbitrarily close to equilibrium at all times. Of course in the limit of true reversibility the process is so slow that it doesn't happen, which is what makes this an idealization. As we'll see, if a system and environment can be returned to their initial state without producing entropy then the process is reversible.
 
-## Energy
-
-There are a few mechanisms through which thermodynamic systems can gain or lose energy. From the previous post on statistical thermodynamics, the general change in internal energy of a system (assuming constant particle number) is given by
 
 
-$$
-dU = T\ dS - P\ dV
-$$
 
-
-The first term, $$T\ dS$$, is the heat transfer into the system. Heat is defined as energy transferred due to a temperature gradient. It's important to note that substances don't "have" heat, they only absorb or dissipate it, which is why heat is sometimes described as thermal energy in _transit_. Heat is a mechanism of energy transfer and not a property of a substance. Heat is an inexact differential:
-
-
-$$
-\delta Q = T\ dS
-$$
-
-
-The second term, $$-P\ dV$$, is the mechanical work done _on_ the system (hence the negative sign), and it too is an inexact differential:
-
-
-$$
-\delta W = -P\ dV
-$$
-
-
-Note that the sum of these two inexact differentials is an exact one.
 
 ## Heat Capacity
 
@@ -123,11 +99,11 @@ $$
 
 ---
 
-Thermodynamics is a framework for describing the macroscopic properties of bulk matter. It's a coarse-grained model that allows us to focus an a small number of observables despite there being an enormous number of degrees of freedom at the microscopic level.
+Thermodynamics is a framework for describing the macroscopic properties of bulk matter. It's a coarse-grained model that allows us to focus on a small number of observables despite there being an enormous number of degrees of freedom at the microscopic level.
 
 ## When is Thermodynamics?
 
-As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception, it's useful only under the following conditions:
+As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception, it's only accurate under the following conditions:
 
 * The number of particles is large, typically $$N \gt 10^{10}$$.
 * Macroscopic fluctuations are negligible. For example, in the previous post we saw that energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
@@ -170,16 +146,18 @@ $$
 \Delta U = Q + W
 $$
 
-Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as the change in an extensive property. 
+### Work
 
-For example, if the system contains charges in a potential $$\phi$$, we can "displace" the amount of charge by adding an amount $$dq$$. The work done in this case is
+Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as the change in an extensive variable.
+
+For example, if the system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$. The work done in this case is
 
 $$
 dW_{\text{electrical}} = \phi\ dq
 $$
 
 
-Similarly, if a system's volume $$V$$ changes against a pressure $$P$$, the work done system is
+Similarly, if a system's volume $$V$$ is displaced against a pressure $$P$$, the work done on the system is
 
 
 $$
@@ -189,11 +167,9 @@ $$
 
 The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on just mechanical work and refer to it simply as $$W$$.
 
-Heat, on the other hand, is defined as energy transferred to (or from) a system due to a temperature gradient between it and its environment. Note that systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a substance.
+Let's look at two common ways for work energy to flow: isothermally and adiabatically.
 
-Let's look at two common ways for energy to flow: isothermally and adiabatically.
-
-Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains the same as the reservoir throughout. 
+Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir throughout.
 
 As an example, an ideal gas has $$U = U(T)$$, so in an isothermal process $$\Delta U = 0$$. This implies that all work is dissipated to the environment as heat: $$W = -Q$$. To find out how much heat, we compute
 
@@ -207,7 +183,7 @@ W &= -\int P\ dV \\
 $$
 
 
-The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. From the first law, no heat flow implies
+The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. No heat flows, so the first law becomes
 
 
 $$
@@ -244,13 +220,13 @@ $$
 
 Now given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate the change in internal energy: $$U(T_f) - U(T_i)$$.
 
-So much for energy changes driven by work. What about energy changes driven by heat?
+### Heat
 
-## State Change
+Heat is defined as energy transferred to (or from) a system due to a temperature gradient with its environment. Note that systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a substance.
 
-When a system changes state, the change in the system's The change in a system’s energy between its initial state and final state depends on the path the system follows between those two states. In otherwords, different paths can have different values of $$\Delta U$$ despite their initial and final states being the same. To demonstrate this, let's look at energy added via work for two classes of paths: one where temperature is held constant and one where heat is zero.
+## Path Dependence
 
-When temperature is held constant the process is called _isothermal_. In practice, this is achieved by placing the system in contact with a thermal reservoir and applying changes so slowly that the system's temperature remains equal to the reservoir at all times.
+l;k
 
 
 ## Cycles
