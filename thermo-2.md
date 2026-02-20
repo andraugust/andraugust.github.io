@@ -6,99 +6,6 @@ layout: default
 
 <center><img src="" style="zoom:100%;"></center>
 
-## Path Dependence
-
-"Doing" thermodynamics generally means calculating how the temperature, pressure, volume or energy of systems change when they interact with eachother. For example, if a gas is heated, what happens to its volume? Or if a liquid evaporates, how much heat does it have to absorb?
-
-To answer questions like these, it's sometimes enough to know only the initial and final state of the system, like its initial and final temperature. Other times, however, it's necessary to know the _path_ the system follows through state space from its initial state to its final state. For example, consider the amount of work done on an ideal gas:
-
-
-$$
-W = -\int P\ dV
-$$
-
-
-Imagine the gas transitions from state $$(P_1, V_1)$$ to state $$(P_2, V_2)$$ via the paths shown in the diagram. We have 
-
-
-$$
-\begin{align}
-W_A = P_1\ (V_2 - V_1) \\
-W_B = P_2\ (V_2 - V_1)
-\end{align}
-$$
-
-
-the two works are different, which demonstrates that work is path _dependent_.
-
-As an example of path _independence_, consider the internal energy of an ideal gas. The internal energy is given by $$U \propto T$$, so the change in internal energy during _any_ process only depends on initial and final states, namely temperature.
-
-Can we determine if a quantity is path dependent without explicitly computing it for different paths and comparing? Yes---using a mathematical thing called exact differentials. The differential expression
-
-
-$$
-F(x,y)\ dx + G(x,y)\ dy
-$$
-
-
-is called an exact differential if there exists a function $$f(x,y)$$ such that
-
-
-$$
-F = \frac{\partial f}{\partial x} \ \text{ and }\  G = \frac{\partial f}{\partial y}
-$$
-
-
-For example, the expression $$y\ dx + x\ dy$$ is an exact differential because it's the total differential of $$f = xy$$. It turns out that exact differentials are path independent, so we can calculate the total change in $$df$$ using just the endpoints:
-
-
-$$
-\int_{\mathbf{r}_1}^{\mathbf{r}_2} df = f(\mathbf{r}_2) - f(\mathbf{r}_1)
-$$
-
-
-On the other hand $$y\ dx$$, for example, is an _inexact_ differential because there's no function $$f$$ such that $$df = y\ dx$$. Note that I've written these differentials in terms of two variables $$x$$ and $$y$$, but in general they can depend on any number of scalar variables.
-
-Thus, in thermodynamics, if a quantity is an exact differnetial then we can compute it by simply looking at end points, otherwise we have to be more careful and consider exactly how the change occurs. Exact differentials will be denoted by $$df$$, while inexact differentials will be denoted by $$\delta f$$ to remind us that path matters.
-
-## Reversibility
-
-Reversibility is an important idealization in thermodynamics in much the same way that "frictionless" is an important idealization in mechanics: it removes all dissipative effects so we can understand the underlying phenomenon before accounting for real-world losses. 
-
-Reversible processes are quasistatic and frictionless, where quasistatic means that change is so slow the system and environment are arbitrarily close to equilibrium at all times. Of course in the limit of true reversibility the process is so slow that it doesn't happen, which is what makes this an idealization. As we'll see, if a system and environment can be returned to their initial state without producing entropy then the process is reversible.
-
-
-
-
-
-## Heat Capacity
-
-The amount of heat needed to raise a substance's temperature varies from one substance to another. To quantify this variability we use _heat capacity_, defined as
-
-
-$$
-C = \frac{\delta Q}{dT}
-$$
-
-
-This is a strange looking derivative because it mixes $$\delta$$s with $$d$$s. To actually make the calculation we need to specify $$how$$ heat is added. If heat is added at constant volume we have
-
-
-$$
-C_V \equiv \left( \frac{\partial Q}{\partial T} \right)_V
-$$
-
-
-and if heat is added at constant pressure we have
-
-
-$$
-C_P \equiv \left( \frac{\partial Q}{\partial T} \right)_P
-$$
-
-
----
-
 Thermodynamics is a framework for modelling the macroscopic properties of matter. It's a coarse-grained approach that allows us to describe systems in terms of a small number of observables, despite there being an enormous number of degrees of freedom at the microscopic level.
 
 ## When is Thermodynamics?
@@ -336,9 +243,74 @@ For the rest of this discussion I'll only consider systems that change volume, i
 
 The fundamental thermodynamic relation assuming only mechanical work becomes
 
+
 $$
 dU = T\ dS - P\ dV
 $$
+
+
+---
+
+## Path Dependence
+
+"Doing" thermodynamics generally means calculating how the temperature, pressure, volume or energy of systems change when they interact with eachother. For example, if a gas is heated, what happens to its volume? Or if a liquid evaporates, how much heat does it have to absorb?
+
+To answer questions like these, it's sometimes enough to know only the initial and final state of the system, like its initial and final temperature. Other times, however, it's necessary to know the _path_ the system follows through state space from its initial state to its final state. For example, consider the amount of work done on an ideal gas:
+
+
+$$
+W = -\int P\ dV
+$$
+
+
+Imagine the gas transitions from state $$(P_1, V_1)$$ to state $$(P_2, V_2)$$ via the paths shown in the diagram. We have 
+
+
+$$
+\begin{align}
+W_A = P_1\ (V_2 - V_1) \\
+W_B = P_2\ (V_2 - V_1)
+\end{align}
+$$
+
+
+the two works are different, which demonstrates that work is path _dependent_.
+
+As an example of path _independence_, consider the internal energy of an ideal gas. The internal energy is given by $$U \propto T$$, so the change in internal energy during _any_ process only depends on initial and final states, namely temperature.
+
+Can we determine if a quantity is path dependent without explicitly computing it for different paths and comparing? Yes---using a mathematical thing called exact differentials. The differential expression
+
+
+$$
+F(x,y)\ dx + G(x,y)\ dy
+$$
+
+
+is called an exact differential if there exists a function $$f(x,y)$$ such that
+
+
+$$
+F = \frac{\partial f}{\partial x} \ \text{ and }\  G = \frac{\partial f}{\partial y}
+$$
+
+
+For example, the expression $$y\ dx + x\ dy$$ is an exact differential because it's the total differential of $$f = xy$$. It turns out that exact differentials are path independent, so we can calculate the total change in $$df$$ using just the endpoints:
+
+
+$$
+\int_{\mathbf{r}_1}^{\mathbf{r}_2} df = f(\mathbf{r}_2) - f(\mathbf{r}_1)
+$$
+
+
+On the other hand $$y\ dx$$, for example, is an _inexact_ differential because there's no function $$f$$ such that $$df = y\ dx$$. Note that I've written these differentials in terms of two variables $$x$$ and $$y$$, but in general they can depend on any number of scalar variables.
+
+Thus, in thermodynamics, if a quantity is an exact differnetial then we can compute it by simply looking at end points, otherwise we have to be more careful and consider exactly how the change occurs. Exact differentials will be denoted by $$df$$, while inexact differentials will be denoted by $$\delta f$$ to remind us that path matters.
+
+## Reversibility
+
+Reversibility is an important idealization in thermodynamics in much the same way that "frictionless" is an important idealization in mechanics: it removes all dissipative effects so we can understand the underlying phenomenon before accounting for real-world losses. 
+
+Reversible processes are quasistatic and frictionless, where quasistatic means that change is so slow the system and environment are arbitrarily close to equilibrium at all times. Of course in the limit of true reversibility the process is so slow that it doesn't happen, which is what makes this an idealization. As we'll see, if a system and environment can be returned to their initial state without producing entropy then the process is reversible.
 
 
 {% include disqus.html %}
