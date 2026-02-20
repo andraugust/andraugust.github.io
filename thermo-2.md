@@ -99,7 +99,7 @@ $$
 
 ---
 
-Thermodynamics is a framework for describing the macroscopic properties of bulk matter. It's a coarse-grained model that allows us to focus on a small number of observables despite there being an enormous number of degrees of freedom at the microscopic level.
+Thermodynamics is a framework for modelling the macroscopic properties of matter. It's a coarse-grained approach that allows us to describe systems in terms of a small number of observables, despite there being an enormous number of degrees of freedom at the microscopic level.
 
 ## When is Thermodynamics?
 
@@ -121,25 +121,25 @@ When the conditions listed above are true, we can characterize the system using 
 - Internal energy $$U$$
 - Entropy $$S$$
 
-This looks like a 5-dimensional state space, but in practice state variables are related to each other such that the overall dimensionality is reduced. For example, an ideal gas with fixed $$N$$ has
+Although this looks like a 5-dimensional state space, in practice these variables are related to each other in a way that reduces the overall dimensionality. For example, an ideal gas with fixed $$N$$ has
 
 * Equation of state: $$P(T,V) = \frac{kNT}{V}$$
 * Energy relation: $$U(T) = \frac{f}{2}kNT$$
-* Entropy relation: $$S(V,U) = Nk \lparen \ln V + \frac{f}{2}\ln U \rparen + \text{const}$$
+* Entropy relation: $$S(V,U) = Nk (\ln V + \frac{f}{2}\ln U) + \text{const}$$
 
 or without constants:
 
-* $$P \propto T/V$$
-* $$U \propto T$$
-* $$S = a\ln V + b\ln U + c$$
+*  $$P \propto T/V$$
+*  $$U \propto T$$
+*  $$S = a\ln V + b\ln U + c$$
 
-Thus, an ideal gas's state is two dimensional. For example, we can fully specify all state variables if we know $$(P,V)$$ or $$(S,U)$$ or $$(T,V)$$, etc. But not all pairs of variables work, for example $$(P,S)$$ doesn't determine $$U$$.
+Thus, an ideal gas's state is really only two dimensional. For example, to the full state all we need to know is $$(P,V)$$ or $$(S,U)$$ or $$(T,V)$$, etc. But note that not all pairs of variables work, for example $$(P,S)$$ doesn't determine $$U$$.
 
 ## Energy
 
-The energy of a thermal system is defined in terms of its **internal energy** $$U$$. Internal energy is the total kinetic and potential energy of each microscopic component in a system, the sum energy of each atom, molecule, photon, etc.
+The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of each of its particles.
 
-To calculate $$U$$ we could try to explicitly add the energy each microscopic particle, but recall that thermodynamics is all about analyzing large systems in terms of a small number of macroscopic quantities, ignoring underlying microstates. And note that when thermodynamics was invented no one actually knew what matter was made of, so such a sum wouldn't be defined for some time. A thermodynamic definition of $$U$$ still existed though, and it's what we'll use here. In particular, the first law of thermodynamics describes energy flow and says that internal energy changes through two macroscopic mechanisms: heat $$Q$$ and work $$W$$
+To calculate $$U$$ we could theoretically sum each particle's energy, but thermodynamics is all about analyzing large systems using a small number of macroscopic variables, ignoring underlying microstates. Besides, when thermodynamics was developed no one actually knew what matter was made of, so such a sum wasn't an option, but the thermodynamic definition of $$U$$ still existed, and that's what we use here. In particular, the first law of thermodynamics describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
 
 $$
 \Delta U = Q + W
@@ -156,7 +156,7 @@ dW_{\text{electrical}} = \phi\ dq
 $$
 
 
-Similarly, if a system's volume $$V$$ is displace against a pressure $$P$$ then the work done is
+Similarly, if we displace a system's volume $$V$$ against a pressure $$P$$ then the work done is
 
 
 $$
@@ -164,25 +164,26 @@ dW_{\text{mechanical}} = -P\ dV
 $$
 
 
-The negative sign is used so that decreases in volume increase internal energy. Going forward, I'll focus on just mechanical work and refer to it simply as $$W$$.
+The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on mechanical work and refer to it simply as $$W$$.
 
-Let's look at two common scenarios involving work: isothermal and adiabatic processes.
+Let's look at two common processes involving work: isothermal and adiabatic.
 
 Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir throughout.
 
-How much does the system's internal energy change isothermally? As an example, an ideal gas has $$U = U(T)$$, so $$\Delta U = 0$$. This implies that all work is dissipated to the environment as heat: $$W = -Q$$. To find out how much heat, we compute
+How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so isothermally its internal energy doesn't change. Then where does the work energy go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
 
 
 $$
 \begin{align}
-W &= -\int P\ dV \\
-&= -NkT \int_{V_i}^{V_f} \frac{1}{V}\ dV \\
-&= NkT \ln \frac{V_i}{V_f}
+Q &= -W \\
+&= \int P\ dV \\
+&= NkT \int_{V_i}^{V_f} \frac{1}{V}\ dV \\
+&= NkT \ln \frac{V_f}{V_i}
 \end{align}
 $$
 
 
-The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment so that no heat flows while work is being done. How does internal energy change in this case? From the first law,
+The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. How does internal energy change in this case? From the first law,
 
 
 $$
@@ -190,7 +191,7 @@ $$
 $$
 
 
-We can't calculate $$W$$ like we did for the isotherm because $$T$$ isn't constant. Instead, we have to use an explicit formula for $$U$$. For an ideal gas we have
+We can't calculate $$W$$ like for the isotherm because $$T$$ isn't constant. Instead, we have to use an explicit formula for $$U$$. For an ideal gas we have
 
 
 $$
@@ -221,7 +222,7 @@ Now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate 
 
 ### Heat
 
-Compared to work, heat is much more passive. It's defined as energy transfer to or from a system due to a temperature gradient with it's environment. Note that systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a substance. In common language we say objects "are hot" but really we mean to say they're at a higher temperature and will transfer energy to us via heat if we touch them. "Hot" object don't physically contain something called heat.
+Compared to work, heat is much more passive. It's defined as energy transferred due to a temperature gradient between a system and its environment. Note that systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a substance. In common language we say objects "are hot" but really we mean to say they're at a higher temperature and will transfer energy via heat if we touch them. "Hot" object don't physically contain something called heat.
 
 
 
