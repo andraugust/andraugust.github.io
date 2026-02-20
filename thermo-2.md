@@ -167,13 +167,11 @@ dW_{\text{mechanical}} = -P\ dV
 $$
 
 
-The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on mechanical work and refer to it simply as $$W$$.
+The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on mechanical work and refer to it simply as $$W$$. Let's look at two common processes involving work.
 
-Let's look at two common processes involving work: isothermal and adiabatic.
+Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
 
-Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir throughout.
-
-How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so isothermally its internal energy doesn't change. Then where does the work energy go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
+How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so its internal energy doesn't change. So where does the work go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
 
 
 $$
@@ -225,31 +223,30 @@ Now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate 
 
 ### Heat
 
-Compared to work, heat is much more passive. It's defined as energy transferred due to a temperature gradient between a system and its environment. In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a system. In common language we say objects "are hot" but really we mean to say they're at a higher temperature than something else and can therefore transfer energy via heat to it. "Hot" object don't physically contain something called heat.
+Compared to work, heat is much more passive. It's defined as energy transfer due to a temperature gradient between a system and its environment. 
 
-The amount of heat transferred between a system and its environment depends on what the system is made of, and this is captured by a quantity called **heat capacity**:
+In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a system. In common language we say objects "are hot" but really we mean to say they're at a higher temperature than something else and can therefore transfer energy to it via heat. "Hot" object don't physically contain something called heat.
+
+The amount of heat transferred between a system and its environment depends on what the system is made of, and this is measured by a quantity called **heat capacity**:
 
 
 $$
 C = \frac{\partial Q}{\partial T}
 $$
 
-
 Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy gained/lost when the system equilibrates with a reservoir that was originally 1K hotter/cooler than it. 
 
-This amount of energy depends on the constraints of the process. In particular, the system could change under constant volume or constant pressure conditions, and the heat capacity will be different for each. Under constant volume no work is done, so
-
+Heat capacity depends on the constraints of the process, specifically whether it occurs under constant volume or constant pressure conditions. Under constant volume no work is done, so
 
 $$
 \begin{align}
 C_V &= \left( \frac{\partial Q}{\partial T} \right)_V \\
-
 &= \left( \frac{\partial U}{\partial T} \right)_V \\
 \end{align}
 $$
 
 
-Under constant pressure, the system expands as it absorbs heat, doing work on the environment:
+Under constant pressure, volume does change, so
 
 
 $$
@@ -285,7 +282,7 @@ C_P = \frac{f}{2}Nk + Nk
 $$
 
 
-The last thing I'll note about heat is that $$C$$ defined for a given phase--solid, liquid or gas. If a phase transition happens during heating then the heat energy goes to break chemical bonds and temperature stays constant.
+The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs during heating then the heat energy goes to break chemical bonds and temperature stays constant.
 
 ## Path Dependence
 
