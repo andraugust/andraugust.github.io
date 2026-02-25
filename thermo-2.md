@@ -6,11 +6,11 @@ layout: default
 
 <center><img src="" style="zoom:100%;"></center>
 
-Thermodynamics is a framework for modelling the macroscopic properties of matter. It's a coarse-grained approach that allows us to describe systems in terms of a small number of observables, despite there being an enormous number of degrees of freedom at the microscopic level.
+Thermodynamics is a framework for modelling macroscopic matter. Matter at a scale where individual particles are irrelevant and only collective, bulk properties matter. At such a scale, systems can be described in terms of a small number of observables, despite there being an enormous number of degrees of freedom at the microscopic level.
 
-## When is Thermodynamics?
+When is Thermodynamics? 
 
-As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception, it's only accurate under the following conditions:
+As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception. It's only accurate and therefore applicable under the following conditions:
 
 * The number of particles is large, typically $$N \gt 10^{10}$$.
 * Macroscopic fluctuations are negligible. For example, in the previous post we saw that energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
@@ -20,7 +20,7 @@ As the saying goes, "*all models are wrong but some are useful*". Thermodynamics
 
 ## States
 
-When the conditions listed above are true, we can characterize the system using a small number of state variables:
+When the conditions listed above are true, we can characterize a system using a small number of state variables:
 
 - Pressure $$P$$
 - Volume $$V$$
@@ -44,10 +44,9 @@ Thus, an ideal gas's state is really only two dimensional. For example, to the f
 
 ## Energy
 
-The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of each of its particles.
+The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of its particles.
 
-To calculate $$U$$ we could theoretically sum each particle's energy, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying microstates. When thermodynamics was developed no one actually knew what matter was made of, so such a sum wasn't an option, but the thermodynamic definition of $$U$$ still existed, and that's what we use here. In particular, the **first law of thermodynamics** describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
-
+To calculate $$U$$ we could theoretically sum all particle energies, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to use a different method. Besides, when thermodynamics was developed no one knew what matter was made of, so such a sum wasn't an option, but a thermodynamic definition of $$U$$ was nonetheless developed and it's what we'll use here. That definition is the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
 
 $$
 \Delta U = Q + W
@@ -134,16 +133,16 @@ Compared to work, heat is much more passive. It's defined as energy transfer due
 
 In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a system. In common language we say objects "are hot" but really we mean to say they're at a higher temperature than something else and can therefore transfer energy to it via heat. "Hot" object don't physically contain something called heat.
 
-The amount of heat transferred between a system and its environment depends on what the system is made of, and this is measured by a quantity called **heat capacity**:
+The amount of heat transferred between a system and its environment depends on what the system is made of, and this is captured by a quantity called **heat capacity**:
 
 
 $$
 C = \frac{\partial Q}{\partial T}
 $$
 
-Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy gained/lost when the system equilibrates with a reservoir that was originally 1K hotter/cooler than it. 
+Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy gained/lost when a system equilibrates with a reservoir that's originally 1K hotter/cooler. 
 
-Heat capacity depends on the constraints of the process, specifically whether it occurs under constant volume or constant pressure conditions. Under constant volume no work is done, so
+Heat capacity depends on the constraints of the process. Specifically, whether the process occurs under constant volume or constant pressure. Under constant volume no work is done, so
 
 $$
 \begin{align}
@@ -153,7 +152,7 @@ C_V &= \left( \frac{\partial Q}{\partial T} \right)_V \\
 $$
 
 
-Under constant pressure, volume does change, so
+Under constant pressure, volume changes, so
 
 
 $$
@@ -165,7 +164,7 @@ C_P &= \left( \frac{\partial Q}{\partial T} \right)_P \\
 $$
 
 
-For solids and liquids, volume doesn't change much with temperature, so the second term in $$C_P$$ can be ignored, making $$C_V \approx C_P$$. For gases, however, volume changes significantly with temperature. For an ideal gas,
+For solids and liquids, volume doesn't change much with temperature, so the second term in $$C_P$$ can be ignored making $$C_V \approx C_P$$. For gases, volume changes significantly with temperature. For an ideal gas,
 
 
 $$
@@ -189,7 +188,7 @@ C_P = \frac{f}{2}Nk + Nk
 $$
 
 
-The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs during heating then the heat energy goes to break chemical bonds and temperature stays constant.
+The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs during heating then the heat energy goes to break chemical bonds or moving particles across a surface tension while temperature stays constant.
 
 ## Path Dependence
 
@@ -201,14 +200,6 @@ l;k
 Heat engines are systems that convert heat into work.
 
 ## Potentials
-
-
-
-
-
-
-
-
 
 
 
