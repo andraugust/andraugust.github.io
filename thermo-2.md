@@ -46,7 +46,7 @@ Thus, an ideal gas's state is really only two dimensional. For example, to the f
 
 The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of its particles.
 
-To calculate $$U$$ we could theoretically sum all particle energies, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to use a different method. Besides, when thermodynamics was developed no one knew what matter was made of, so such a sum wasn't an option, but a thermodynamic definition of $$U$$ was nonetheless developed and it's what we'll use here. That definition is the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
+To calculate $$U$$ for a given system, we could theoretically sum all particle energies, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to use a different method. Besides, when thermodynamics was invented no one knew what matter was made of, so such a sum wasn't an option, but a thermodynamic definition of $$U$$ was nonetheless developed then and it's what we'll use here. That definition is the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
 
 $$
 \Delta U = Q + W
@@ -55,9 +55,9 @@ $$
 
 ### Work
 
-Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as changing an **extensive variable**. An extensive variable is any quantity that defines the size or amount of matter in a system, such as volume, mass, etc.. This is in contrast to **intensive variables** such as temperature and pressure which do not change when a system's volume, for example, is cut in half. 
+Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as changing an **extensive variable**. An extensive variable is any quantity that defines the size or amount of matter in a system, such as volume, mass, etc.. This contrasts with **intensive variables** such as temperature and pressure which do not change when volume, for example, is cut in half. 
 
-There are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$. The work done in this case is
+There are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$ and the work done is
 
 
 $$
@@ -65,15 +65,16 @@ dW_{\text{electrical}} = \phi\ dq
 $$
 
 
-Similarly, if we displace a system's volume $$V$$ against a pressure $$P$$ then the work done is
+Similarly, if we displace a system's volume $$V$$ against a pressure $$P$$, the work done is
 
 
 $$
 dW_{\text{mechanical}} = -P\ dV
 $$
 
+The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on mechanical work and refer to it simply as $$W$$. 
 
-The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on mechanical work and refer to it simply as $$W$$. Let's look at two common processes involving work.
+Let's look at two common processes involving work: isothermal and adiabatic processes.
 
 Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
 
@@ -129,7 +130,7 @@ Now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate 
 
 ### Heat
 
-Compared to work, heat is much more passive. It's defined as energy transfer due to a temperature gradient between a system and its environment. 
+Compared to work, heat is much more passive. It's defined as energy transfer due to a temperature gradient between a system and its environment. Heat tranfer happens spontaneously and always flows from high temperature bodies to low temperature ones (unless work is supplied to make the process go in reverse, such as a refrigerator, which I'll discuss later).
 
 In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a system. In common language we say objects "are hot" but really we mean to say they're at a higher temperature than something else and can therefore transfer energy to it via heat. "Hot" object don't physically contain something called heat.
 
@@ -140,7 +141,7 @@ $$
 C = \frac{\partial Q}{\partial T}
 $$
 
-Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy gained/lost when a system equilibrates with a reservoir that's originally 1K hotter/cooler. 
+Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy gained/lost when a system equilibrates with a reservoir that's originally 1K hotter/cooler than it.
 
 Heat capacity depends on the constraints of the process. Specifically, whether the process occurs under constant volume or constant pressure. Under constant volume no work is done, so
 
@@ -197,7 +198,21 @@ l;k
 
 ## Heat Engines
 
-Heat engines are systems that convert heat into work.
+Heat engines are systems that convert heat into work. In doing so they effectively use the incoherent energy of microscopic particles to generate coherent macroscopic motion, like the lifting of a weight. Heat engines always have the following components:
+
+* A working substance, such as a liquid or gas
+* A hot reservoir at temperature $$T_H$$ that's a source of heat energy
+* A cold reservoir at temperature $$T_C$$ that's used for dumping heat
+* An engine body which provides the physical mechanism for the energy conversion. In the examples that follow the engine body will be a sealed container of gas with a weighted piston on top. When the gas expands the piston moves, doing work.
+
+The purpose of an engine is to output work continuously, so engines operate in a cycle, starting and ending at the same point in state space before cycling again.
+
+1. Heating: The gas is in state $$(T_C, V_C)$$ and placed in contact with the hot reservoir at $$T_H$$
+2. Power stroke: The gas absorbs heat, expands and does work until it reaches $$(T_H, V_H)$$
+3. Cooling: The gas is placed in contact with the cold reservoir at $$T_C$$
+4. Compression: The gas dumps heat into the cold reservoir and compresses until it resets to $$(T_C, V_C)$$
+
+
 
 ## Potentials
 
