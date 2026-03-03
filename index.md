@@ -26,7 +26,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="thermo-1.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/thermo-1.png" alt="Statistical Thermodynamics thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/thermo-1.png" alt="Statistical Thermodynamics thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="thermo-1.html">Statistical Thermodynamics</a></h2>
@@ -37,7 +37,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="quantum-3.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/quantum-3.png" alt="Quantum Mechanics Part III thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/quantum-3.png" alt="Quantum Mechanics Part III thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-3.html">Quantum Mechanics Part III: Joint Systems & Entanglement</a></h2>
@@ -48,7 +48,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="quantum-2.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/quantum-2.png" alt="Quantum Mechanics Part II thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/quantum-2.png" alt="Quantum Mechanics Part II thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-2.html">Quantum Mechanics Part II: Dynamics & Continuous States</a></h2>
@@ -59,7 +59,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="quantum-1.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/quantum-1.png" alt="Quantum Mechanics Part I thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/quantum-1.png" alt="Quantum Mechanics Part I thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-1.html">Quantum Mechanics Part I: States & Principles</a></h2>
@@ -70,7 +70,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="classical-mechanics.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/classical.png" alt="Classical Mechanics thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/classical.png" alt="Classical Mechanics thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="classical-mechanics.html">Classical Mechanics</a></h2>
@@ -81,7 +81,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="cnn-texture-bias.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/cnn-bias.png" alt="CNN Texture Bias thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/cnn-bias.png" alt="CNN Texture Bias thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="cnn-texture-bias.html">TLDR: CNN Texture Bias</a></h2>
@@ -92,7 +92,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="platformio-notes.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/arduino.png" alt="PlatformIO Notes thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/arduino.png" alt="PlatformIO Notes thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="platformio-notes.html">PlatformIO Notes</a></h2>
@@ -103,7 +103,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="hiring-problem.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="The Hiring Problem thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="The Hiring Problem thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="hiring-problem.html">The Hiring Problem</a></h2>
@@ -114,7 +114,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="neural-style-transfer.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/texture.png" alt="Neural Style Transfer thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/texture.png" alt="Neural Style Transfer thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="neural-style-transfer.html">Neural Style Transfer</a></h2>
@@ -125,7 +125,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="airbus.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/ships.png" alt="Kaggle Ship Detection Challenge thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/ships.png" alt="Kaggle Ship Detection Challenge thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="airbus.html">Kaggle Ship Detection Challenge</a></h2>
@@ -136,7 +136,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="wikilinks.html" style="flex-shrink: 0; display: block;">
-    <img src="index_icons/wiki.png" alt="Wikipedia Taxonomy thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/wiki.png" alt="Wikipedia Taxonomy thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="wikilinks.html">The First Link Taxonomy of Wikipedia</a></h2>
@@ -147,7 +147,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="fmow.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Satellite Image Classification thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Satellite Image Classification thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="fmow.html">Satellite Image Classification on the FMoW Dataset</a></h2>
@@ -158,7 +158,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="cm-clustering.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Clustering Confusion Matrices thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Clustering Confusion Matrices thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="cm-clustering.html">Discovering Class-Hierarchies by Clustering Confusion Matrices</a></h2>
@@ -169,7 +169,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="bellman.md" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Solving Threes thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Solving Threes thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="bellman.md">Solving Threes</a></h2>
@@ -180,7 +180,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="neuroev.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Artificial Life thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Artificial Life thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="neuroev.html">Artificial Life, Neural Nets, and Genetic Algorithms</a></h2>
@@ -191,7 +191,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="rl.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Learning to Crawl thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Learning to Crawl thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="rl.html">Learning to Crawl: A Physical Implementation of Reinforcement Learning</a></h2>
@@ -202,7 +202,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="songbook.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Songbook thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Songbook thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="songbook.html">Songbook</a></h2>
