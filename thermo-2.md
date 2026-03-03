@@ -201,16 +201,18 @@ l;k
 Heat engines are systems that convert heat into work. In doing so they effectively use the incoherent energy of microscopic particles to generate coherent macroscopic motion, like the lifting of a weight. Heat engines always have the following components:
 
 * A working substance, such as a liquid or gas
-* A hot reservoir at temperature $$T_H$$ that's a source of heat energy
-* A cold reservoir at temperature $$T_C$$ that's used for dumping heat
-* An engine body which provides the physical mechanism for the energy conversion. In the examples that follow the engine body will be a sealed container of gas with a weighted piston on top. When the gas expands the piston moves, doing work.
+* A hot reservoir at temperature $$T_H$$ that's used as a source of heat energy
+* A cold reservoir at temperature $$T_C$$ that's used for dumping heat into
+* An engine body which provides the physical mechanism for the energy conversion
 
-The purpose of an engine is to output work continuously, so engines operate in a cycle, starting and ending at the same point in state space before cycling again.
+In the examples that follow the engine body will be a sealed container of gas (the working substance) with a weighted piston on top. When the gas expands or contracts the piston moves, doing work against gravity.
 
-1. Heating: The gas is in state $$(T_C, V_C)$$ and placed in contact with the hot reservoir at $$T_H$$
-2. Power stroke: The gas absorbs heat, expands and does work until it reaches $$(T_H, V_H)$$
-3. Cooling: The gas is placed in contact with the cold reservoir at $$T_C$$
-4. Compression: The gas dumps heat into the cold reservoir and compresses until it resets to $$(T_C, V_C)$$
+The purpose of an engine is to output work continuously, so engines operate in a cycle starting and ending at the same point in state space before running again. The cycle has four stages:
+
+1. Heating: the gas is in state $$(T_C, V_C)$$ and placed in contact with the hot reservoir
+2. Power stroke: the gas absorbs heat, expanding and doing work until it reaches $$(T_H, V_H)$$
+3. Cooling: the gas is placed in contact with the cold reservoir
+4. Compression: the gas dumps heat into the cold reservoir and compresses until it resets to $$(T_C, V_C)$$
 
 
 

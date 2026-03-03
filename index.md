@@ -24,90 +24,191 @@ layout: default
   </figcaption>
 </figure>
 
-## [Statistical Thermodynamics](thermo-1.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="thermo-1.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Statistical Thermodynamics thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="thermo-1.html">Statistical Thermodynamics</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">12/2024</p>
+    <p style="margin: 0;">On the emergence of thermodynamics from the collective motion of microscopic particles.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">12/2024</p>
-On the emergence of thermodynamics from the collective motion of microscopic particles.
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="quantum-3.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Quantum Mechanics Part III thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-3.html">Quantum Mechanics Part III: Joint Systems & Entanglement</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">11/2023</p>
+    <p style="margin: 0;">On interacting quantum systems, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+  </div>
+</div>
 
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="quantum-2.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Quantum Mechanics Part II thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-2.html">Quantum Mechanics Part II: Dynamics & Continuous States</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">07/2023</p>
+    <p style="margin: 0;">On quantum dynamics and continuous states, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+  </div>
+</div>
 
-## [Quantum Mechanics Part III: Joint Systems & Entanglement](quantum-3.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="quantum-1.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Quantum Mechanics Part I thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-1.html">Quantum Mechanics Part I: States & Principles</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">06/2023</p>
+    <p style="margin: 0;">On the foundations of quantum mechanics, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">11/2023</p>
-On interacting quantum systems, based on Leonard Susskind's book _The Theoretical Minimum_.
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="classical-mechanics.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Classical Mechanics thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="classical-mechanics.html">Classical Mechanics</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">05/2022</p>
+    <p style="margin: 0;">On forces, Hamiltonians and Lagrangians, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+  </div>
+</div>
 
-## [Quantum Mechanics Part II: Dynamics & Continuous States](quantum-2.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="cnn-texture-bias.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="CNN Texture Bias thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="cnn-texture-bias.html">TLDR: CNN Texture Bias</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">01/2021</p>
+    <p style="margin: 0;">A summary of the paper <em>ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness</em> by Geirhos et al, 2019.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">07/2023</p>
-On quantum dynamics and continuous states, based on Leonard Susskind's book _The Theoretical Minimum_.
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="platformio-notes.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="PlatformIO Notes thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="platformio-notes.html">PlatformIO Notes</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">02/2020</p>
+    <p style="margin: 0;">PlatformIO is an IDE for Arduino that supports environments and command-line uploads, but more importantly it has code completion and inspections, which the default Arduino IDE doesn't have.</p>
+  </div>
+</div>
 
-## [Quantum Mechanics Part I: States & Principles](quantum-1.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="hiring-problem.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="The Hiring Problem thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="hiring-problem.html">The Hiring Problem</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">09/2019</p>
+    <p style="margin: 0;">A toy problem about optimizing the trade-off between information collection and lost opportunity, in the context of hiring job applicants.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">06/2023</p>
-On the foundations of quantum mechanics, based on Leonard Susskind's book _The Theoretical Minimum_.
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="neural-style-transfer.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Neural Style Transfer thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="neural-style-transfer.html">Neural Style Transfer</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">02/2019</p>
+    <p style="margin: 0;">What defines the <em>style</em> of an image? Can it be captured computationally? If so, is it possible to transfer styles from one image another, like making a selfie appear to be painted by Van Gogh?</p>
+  </div>
+</div>
 
-## [Classical Mechanics](classical-mechanics.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="airbus.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Kaggle Ship Detection Challenge thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="airbus.html">Kaggle Ship Detection Challenge</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">11/2018</p>
+    <p style="margin: 0;">Detecting ships in sattelite images, from a Kaggle challenge.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">05/2022</p>
-On forces, Hamiltonians and Lagrangians, based on Leonard Susskind's book _The Theoretical Minimum_.
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="wikilinks.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Wikipedia Taxonomy thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="wikilinks.html">The First Link Taxonomy of Wikipedia</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">04/2018</p>
+    <p style="margin: 0;">The first link on most Wikipedia pages goes to the next most general thing. "Poker" goes to "card game", "card game" goes to "game", etc. Where do all these first links finally lead? Does Wikipedia's have something like a first-link taxonomy?</p>
+  </div>
+</div>
 
-## [TLDR: CNN Texture Bias](cnn-texture-bias.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="fmow.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Satellite Image Classification thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="fmow.html">Satellite Image Classification on the FMoW Dataset</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">12/2017</p>
+    <p style="margin: 0;">Classifying objects in satellite images, from the Functional Map of the World dataset.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">01/2021</p>
-A summary of the paper _ImageNet-trained CNNs are biased toward texture; increasing shape bias increases accuracy and robustness_ by Geirhos et al, 2019.
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="cm-clustering.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Clustering Confusion Matrices thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="cm-clustering.html">Discovering Class-Hierarchies by Clustering Confusion Matrices</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">10/2017</p>
+    <p style="margin: 0;">An example of finding class hierarchies by applying spectral clustering to confusion matrices.</p>
+  </div>
+</div>
 
-## [PlatformIO Notes](platformio-notes.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="bellman.md" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Solving Threes thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="bellman.md">Solving Threes</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">03/2016</p>
+    <p style="margin: 0;">A derivation of the optimal policy for the dice game <em>Threes</em>.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">02/2020</p>
-PlatformIO is an IDE for Arduino that supports environments and command-line uploads, but more importantly it has code completion and inspections, which the default Arduino IDE doesn't have.
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="neuroev.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Artificial Life thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="neuroev.html">Artificial Life, Neural Nets, and Genetic Algorithms</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">11/2015</p>
+    <p style="margin: 0;">Can neural nets control Artificial Life agents? Can genetic algorithms optimize these nets? In this post I implement a genetic algorithm called Enforced Subpopulations to show that yes, yes they can.</p>
+  </div>
+</div>
 
-## [The Hiring Problem](hiring-problem.html)
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="rl.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Learning to Crawl thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="rl.html">Learning to Crawl: A Physical Implementation of Reinforcement Learning</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">12/2014</p>
+    <p style="margin: 0;">An Arduino robot learning to crawl using reinforcement learning, with a video about RL and how it's implemented in the robot.</p>
+  </div>
+</div>
 
-<p style="opacity:0.5">09/2019</p>
-A toy problem about optimizing the trade-off between information collection and lost opportunity, in the context of hiring job applicants.
-
-## [Neural Style Transfer](neural-style-transfer.html)
-
-<p style="opacity:0.5">02/2019</p>
-What defines the _style_ of an image? Can it be captured computationally? If so, is it possible to transfer styles from one image another, like making a selfie appear to be painted by Van Gogh? 
-
-## [Kaggle Ship Detection Challenge](airbus.html)
-
-<p style="opacity:0.5">11/2018</p>
-Detecting ships in sattelite images, from a Kaggle challenge.
-
-## [The First Link Taxonomy of Wikipedia](wikilinks.html)
-
-<p style="opacity:0.5">04/2018</p>
-The first link on most Wikipedia pages goes to the next most general thing. "Poker" goes to "card game", "card game" goes to "game", etc.  Where do all these first links finally lead? Does Wikipedia's have something like a first-link taxonomy?
-
-## [Satellite Image Classification on the FMoW Dataset](fmow.html)
-
-<p style="opacity:0.5">12/2017</p>
-Classifying objects in satellite images, from the Functional Map of the World dataset.
-
-## [Discovering Class-Hierarchies by Clustering Confusion Matrices](cm-clustering.html)
-
-<p style="opacity:0.5">10/2017</p>
-An example of finding class hierarchies by applying spectral clustering to confusion matrices.
-
-## [Solving Threes](bellman.md)
-
-<p style="opacity:0.5">03/2016</p>
-A derivation of the optimal policy for the dice game _Threes_.
-
-## [Artificial Life, Neural Nets, and Genetic Algorithms](neuroev.html)
-
-<p style="opacity:0.5">11/2015</p>
-Can neural nets control Artificial Life agents?  Can genetic algorithms optimize these nets?  In this post I implement a genetic algorithm called Enforced Subpopulations to show that yes, yes they can.
-
-## [Learning to Crawl: A Physical Implementation of Reinforcement Learning](rl.html)
-
-<p style="opacity:0.5">12/2014</p>
-An Arduino robot learning to crawl using reinforcement learning, with a video about RL and how it's implemented in the robot.
-
-## [Songbook](songbook.html)
-
-<p style="opacity:0.5">ongoing</p>
-When guitar chord websites are all covered in ads and pop-ups, what do you do? Host your own chords, ad free!
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
+  <a href="songbook.html" style="flex-shrink: 0; display: block;">
+    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Songbook thumbnail" style="width: 160px; height: 100px; object-fit: cover; border-radius: 6px; display: block;">
+  </a>
+  <div>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="songbook.html">Songbook</a></h2>
+    <p style="opacity:0.5; margin: 0 0 0.5em 0;">ongoing</p>
+    <p style="margin: 0;">When guitar chord websites are all covered in ads and pop-ups, what do you do? Host your own chords, ad free!</p>
+  </div>
+</div>
 
 <br />
