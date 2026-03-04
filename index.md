@@ -103,7 +103,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="hiring-problem.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="The Hiring Problem thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/hiring.png" alt="The Hiring Problem thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="hiring-problem.html">The Hiring Problem</a></h2>
@@ -147,7 +147,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="fmow.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Satellite Image Classification thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/classification.png" alt="Satellite Image Classification thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="fmow.html">Satellite Image Classification on the FMoW Dataset</a></h2>
@@ -158,7 +158,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="cm-clustering.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Clustering Confusion Matrices thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/clustering.png" alt="Clustering Confusion Matrices thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="cm-clustering.html">Discovering Class-Hierarchies by Clustering Confusion Matrices</a></h2>
@@ -168,11 +168,11 @@ layout: default
 </div>
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
-  <a href="bellman.md" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Solving Threes thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
+  <a href="bellman.html" style="flex-shrink: 0; display: block;">
+    <img src="index_icons/threes.png" alt="Solving Threes thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
-    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="bellman.md">Solving Threes</a></h2>
+    <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="bellman.html">Solving Threes</a></h2>
     <p style="opacity:0.5; margin: 0 0 0.5em 0;">03/2016</p>
     <p style="margin: 0;">A derivation of the optimal policy for the dice game <em>Threes</em>.</p>
   </div>
@@ -180,7 +180,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="neuroev.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Artificial Life thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/neuroev.png" alt="Artificial Life thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="neuroev.html">Artificial Life, Neural Nets, and Genetic Algorithms</a></h2>
@@ -191,7 +191,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="rl.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Learning to Crawl thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/rl.png" alt="Learning to Crawl thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="rl.html">Learning to Crawl: A Physical Implementation of Reinforcement Learning</a></h2>
@@ -202,7 +202,7 @@ layout: default
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="songbook.html" style="flex-shrink: 0; display: block;">
-    <img src="https://via.placeholder.com/160x100?text=Add+Image" alt="Songbook thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
+    <img src="index_icons/songbook.png" alt="Songbook thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
   </a>
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="songbook.html">Songbook</a></h2>
