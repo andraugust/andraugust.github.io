@@ -198,12 +198,12 @@ l;k
 
 ## Heat Engines
 
-Heat engines are systems that convert heat into work. In doing so they effectively use the incoherent energy of microscopic particles to generate coherent macroscopic motion, like the lifting of a weight. Heat engines always have the following components:
+Heat engines are systems that convert heat into work. In doing so they effectively transform the incoherent energy of microscopic particles into coherent macroscopic motion, like the lifting of a weight or rotation of a drive shaft. Heat engines always have the following components:
 
 * A working substance, such as a liquid or gas
-* A hot reservoir at temperature $$T_H$$ that's used as a source of heat energy
-* A cold reservoir at temperature $$T_C$$ that's used for dumping heat into
-* An engine body which provides the physical mechanism for the energy conversion
+* A hot reservoir at temperature $$T_H$$ that's the source of heat energy
+* A cold reservoir at temperature $$T_C$$ that's used for dumping heat and resetting the engine
+* An engine body which provides the physical mechanism that implements the transduction
 
 In the examples that follow the engine body will be a sealed container of gas (the working substance) with a weighted piston on top. When the gas expands or contracts the piston moves, doing work against gravity.
 

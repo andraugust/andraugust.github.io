@@ -133,7 +133,6 @@ layout: default
     <p style="margin: 0;">Detecting ships in sattelite images, from a Kaggle challenge.</p>
   </div>
 </div>
-
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="wikilinks.html" style="flex-shrink: 0; display: block;">
     <img src="index_icons/wiki.png" alt="Wikipedia Taxonomy thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
@@ -141,9 +140,10 @@ layout: default
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="wikilinks.html">The First Link Taxonomy of Wikipedia</a></h2>
     <p style="opacity:0.5; margin: 0 0 0.5em 0;">04/2018</p>
-    <p style="margin: 0;">The first link on most Wikipedia pages goes to the next most general thing. "Poker" goes to "card game", "card game" goes to "game", etc. Where do all these first links finally lead? Does Wikipedia's have something like a first-link taxonomy?</p>
+    <p style="margin: 0;">The first link on most Wikipedia pages goes to the next most general thing. "Poker" goes to "card game", "card game" goes to "game", etc. Where do all these first links lead? What's Wikipedia's first-link taxonomy?</p>
   </div>
 </div>
+
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="fmow.html" style="flex-shrink: 0; display: block;">
