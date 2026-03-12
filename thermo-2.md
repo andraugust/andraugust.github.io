@@ -6,11 +6,11 @@ layout: default
 
 <center><img src="" style="zoom:100%;"></center>
 
-Thermodynamics is a framework for modelling macroscopic matter. Matter at a scale where individual particles are irrelevant and only collective, bulk properties matter. At such a scale, systems can be described in terms of a small number of observables, despite there being an enormous number of degrees of freedom at the microscopic level.
+Thermodynamics is a framework for modelling macroscopic matter, at a scale where individual particles are irrelevant and only collective, bulk properties matter. At such a scale, systems can be described in terms of a small number of state variables, despite there being an enormous number of degrees of freedom at the microscopic level.
 
 When is Thermodynamics? 
 
-As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception. It's only accurate and therefore applicable under the following conditions:
+As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception. It's only accurate, and therefore useful under the following conditions:
 
 * The number of particles is large, typically $$N \gt 10^{10}$$.
 * Macroscopic fluctuations are negligible. For example, in the previous post we saw that energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
@@ -46,8 +46,9 @@ Thus, an ideal gas's state is really only two dimensional. For example, to the f
 
 The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of its particles.
 
-To calculate $$U$$ for a given system, we could theoretically sum all particle energies, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to use a different method. Besides, when thermodynamics was invented no one knew what matter was made of, so such a sum wasn't an option, but a thermodynamic definition of $$U$$ was nonetheless developed then and it's what we'll use here. That definition is the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
+To calculate $$U$$ for a system, we could theoretically sum all its particle energies, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to use a different method. Besides, when thermodynamics was invented no one knew what matter was made of, so such a sum wasn't an option, yet a thermodynamic definition of $$U$$ was developed and it's what we'll use here. 
 
+That definition of $$U$$ comes from the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
 $$
 \Delta U = Q + W
 $$
@@ -57,7 +58,7 @@ $$
 
 Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as changing an **extensive variable**. An extensive variable is any quantity that defines the size or amount of matter in a system, such as volume, mass, etc.. This contrasts with **intensive variables** such as temperature and pressure which do not change when volume, for example, is cut in half. 
 
-There are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$ and the work done is
+There are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$ thereby doing an amount of work given by
 
 
 $$
@@ -78,7 +79,7 @@ Let's look at two common processes involving work: isothermal and adiabatic proc
 
 Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
 
-How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so its internal energy doesn't change. So where does the work go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
+How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so its internal energy in fact doesn't change. So where does the work energy go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
 
 
 $$
@@ -91,7 +92,7 @@ Q &= -W \\
 $$
 
 
-The other type of process is called adiabatic. It's where no heat enters or leaves the system. In practice, this is acheived by thermally insulating the system from its environment. How does internal energy change in this case? From the first law,
+The other type of process is called adiabatic. It's where no heat enters or leaves a system. In practice, this is acheived by thermally insulating a system from its environment. How does internal energy change in this case? From the first law,
 
 
 $$
@@ -118,32 +119,24 @@ VT^{f/2} = \text{const}
 $$
 
 
-which can be written
-
-
-$$
-PV^{(f+2)/2} = \text{const}
-$$
-
-
-Now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate the change in internal energy as $$U(T_f) - U(T_i)$$.
+Now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate the change in internal energy as $$U(T_f) - U(T_i)$$. (Note that this last equation is equivalent to $$PV^{(f+2)/2} = \text{const}$$.)
 
 ### Heat
 
-Compared to work, heat is much more passive. It's defined as energy transfer due to a temperature gradient between a system and its environment. Heat tranfer happens spontaneously and always flows from high temperature bodies to low temperature ones (unless work is supplied to make the process go in reverse, such as a refrigerator, which I'll discuss later).
+Heat is defined as energy transfer due to a temperature gradient between two systems. Compared to work, heat is much more passive in the sense that it occurs spontaneously and always from the high temperature system to the low temperature one (unless work is supplied to make the process go in reverse, such as a refrigerator, which I'll discuss later).
 
 In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a system. In common language we say objects "are hot" but really we mean to say they're at a higher temperature than something else and can therefore transfer energy to it via heat. "Hot" object don't physically contain something called heat.
 
-The amount of heat transferred between a system and its environment depends on what the system is made of, and this is captured by a quantity called **heat capacity**:
+The amount of heat transferred between two systems depends on what the systems are made of, and this is captured by a quantity called **heat capacity**:
 
 
 $$
 C = \frac{\partial Q}{\partial T}
 $$
 
-Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy gained/lost when a system equilibrates with a reservoir that's originally 1K hotter/cooler than it.
+Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy a system gains or loses when it equilibrates with a reservoir that's (originally) 1K hotter or cooler than it.
 
-Heat capacity depends on the constraints of the process. Specifically, whether the process occurs under constant volume or constant pressure. Under constant volume no work is done, so
+Heat capacity depends on the constraints of the process. Specifically, whether the process occurs under constant volume or constant pressure conditions. Under constant volume, no work is done, so
 
 $$
 \begin{align}
@@ -153,7 +146,7 @@ C_V &= \left( \frac{\partial Q}{\partial T} \right)_V \\
 $$
 
 
-Under constant pressure, volume changes, so
+Under constant pressure, volume changes, so work is done and
 
 
 $$
@@ -165,7 +158,7 @@ C_P &= \left( \frac{\partial Q}{\partial T} \right)_P \\
 $$
 
 
-For solids and liquids, volume doesn't change much with temperature, so the second term in $$C_P$$ can be ignored making $$C_V \approx C_P$$. For gases, volume changes significantly with temperature. For an ideal gas,
+For solids and liquids, volume doesn't change much with temperature, so the second term in $$C_P$$ can be ignored and $$C_V \approx C_P$$. For gases, volume changes significantly with temperature. As an example, for an ideal gas,
 
 
 $$
@@ -189,7 +182,7 @@ C_P = \frac{f}{2}Nk + Nk
 $$
 
 
-The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs during heating then the heat energy goes to break chemical bonds or moving particles across a surface tension while temperature stays constant.
+The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs while heating then the heat energy goes into breaking chemical bonds or moving particles across a surface tension, and temperature stays constant.
 
 ## Path Dependence
 
@@ -198,14 +191,14 @@ l;k
 
 ## Heat Engines
 
-Heat engines are systems that convert heat into work. In doing so they effectively transform the incoherent energy of microscopic particles into coherent macroscopic motion, like the lifting of a weight or rotation of a drive shaft. Heat engines always have the following components:
+Heat engines are systems that convert heat into work. In doing so they effectively transform the incoherent energy of microscopic particles into coherent macroscopic motion, like lifting a weight or rotating a drive shaft. Heat engines always have the following components:
 
 * A working substance, such as a liquid or gas
 * A hot reservoir at temperature $$T_H$$ that's the source of heat energy
 * A cold reservoir at temperature $$T_C$$ that's used for dumping heat and resetting the engine
-* An engine body which provides the physical mechanism that implements the transduction
+* An engine body which provides the physical mechanism for implementing the transduction
 
-In the examples that follow the engine body will be a sealed container of gas (the working substance) with a weighted piston on top. When the gas expands or contracts the piston moves, doing work against gravity.
+In the examples that follow, the heat engine will be a sealed container of gas (the working substance) with a weighted piston on top. When the gas expands it does work against gravity and when it compresses it does $$PdV$$ work.
 
 The purpose of an engine is to output work continuously, so engines operate in a cycle starting and ending at the same point in state space before running again. The cycle has four stages:
 
@@ -213,6 +206,8 @@ The purpose of an engine is to output work continuously, so engines operate in a
 2. Power stroke: the gas absorbs heat, expanding and doing work until it reaches $$(T_H, V_H)$$
 3. Cooling: the gas is placed in contact with the cold reservoir
 4. Compression: the gas dumps heat into the cold reservoir and compresses until it resets to $$(T_C, V_C)$$
+
+
 
 
 
@@ -239,13 +234,6 @@ dU = T\ dS + \sum_i X_i\ dY_i
 $$
 
 Here, $$X_i$$ is a generalized force and $$Y_i$$ is the corresponding generalized displacement, together they account for a type of __work__. Here are a few examples of force-displacement pairs:
-
-| Type of work    | Generalized Force $$X_i$$ | Generalized Displacement $$Y_i$$ |
-| --------------- | ------------------------- | -------------------------------- |
-| Mechanical      | $$-P$$                    | $$V$$                            |
-| Surface tension | $$\gamma$$                | $$A$$                            |
-| Electrical      | $$\Phi$$                  | $$Q$$                            |
-| Chemical        | $$\mu$$                   | $$N$$                            |
 
 For the rest of this discussion I'll only consider systems that change volume, i.e. those involving mechanical work, but the results are easy to generalize.
 
