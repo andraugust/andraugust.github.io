@@ -31,7 +31,7 @@ When the conditions listed above are true, we can characterize a system using a 
 Although this looks like a 5-dimensional state space, in practice these variables are related to each other in a way that reduces the overall dimensionality. For example, an ideal gas with fixed $$N$$ has
 
 * Equation of state: $$P(T,V) = \frac{kNT}{V}$$
-* Energy relation: $$U(T) = \frac{f}{2}kNT$$
+* Energy relation: $$U(T) = \frac{d}{2}kNT$$
 * Entropy relation: $$S(V,U) = Nk (\ln V + \frac{f}{2}\ln U) + \text{const}$$
 
 or without constants:
@@ -77,7 +77,7 @@ The negative sign is used to make decreases in volume increase internal energy. 
 
 Let's look at two common processes involving work: isothermal and adiabatic processes.
 
-Isothermal processes are those where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
+**Isothermal** processes are where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
 
 How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so its internal energy in fact doesn't change. So where does the work energy go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
 
@@ -91,9 +91,7 @@ Q &= -W \\
 \end{align}
 $$
 
-
-The other type of process is called adiabatic. It's where no heat enters or leaves a system. In practice, this is acheived by thermally insulating a system from its environment. How does internal energy change in this case? From the first law,
-
+**Adiabatic** processes are where no heat enters or leaves a system. In practice, this is acheived by thermally insulating a system from its environment. How does internal energy change in this case? From the first law,
 
 $$
 \Delta U = W
@@ -106,7 +104,7 @@ We can't calculate $$W$$ like for the isotherm because $$T$$ isn't constant. Ins
 $$
 \begin{align}
 dU &= dW \\
-\rightarrow \frac{f}{2}Nk\ dT &= -P\ dV \\
+\rightarrow \frac{d}{2}Nk\ dT &= -P\ dV \\
 \end{align}
 $$
 
@@ -162,7 +160,7 @@ For solids and liquids, volume doesn't change much with temperature, so the seco
 
 
 $$
-U = \frac{f}{2}NkT
+U = \frac{d}{2}NkT
 $$
 
 
@@ -170,7 +168,7 @@ so
 
 
 $$
-C_V = \frac{f}{2}Nk
+C_V = \frac{d}{2}Nk
 $$
 
 
@@ -178,11 +176,22 @@ and
 
 
 $$
-C_P = \frac{f}{2}Nk + Nk
+C_P = \frac{d}{2}Nk + Nk
 $$
 
+A few reference heat capacities per unit mass:
 
-The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs while heating then the heat energy goes into breaking chemical bonds or moving particles across a surface tension, and temperature stays constant.
+| Material | Specific Heat Capacity (J/(kg·K)) |
+|---|---|
+| Water (liquid) | 4,186 |
+| Ice | 2,090 |
+| Steam | 2,010 |
+| Air | 1,005 |
+| Iron / Steel | 450 |
+| Gold | 129 |
+| Lead | 128 |
+
+The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs then heat energy goes into breaking chemical bonds while temperature stays constant.
 
 ## Path Dependence
 
@@ -191,12 +200,12 @@ l;k
 
 ## Heat Engines
 
-Heat engines are systems that convert heat into work. In doing so they effectively transform the incoherent energy of microscopic particles into coherent macroscopic motion, like lifting a weight or rotating a drive shaft. Heat engines always have the following components:
+Heat engines are systems that convert heat into work. In doing so they effectively transform the incoherent energy of microscopic particles into coherent macroscopic motion, like the lifting of a weight or rotation of a drive shaft. Heat engines have the following components:
 
-* A working substance, such as a liquid or gas
+* A working substance, usually a liquid or gas
 * A hot reservoir at temperature $$T_H$$ that's the source of heat energy
-* A cold reservoir at temperature $$T_C$$ that's used for dumping heat and resetting the engine
-* An engine body which provides the physical mechanism for implementing the transduction
+* A cold reservoir at temperature $$T_C$$ that the engine dumps energy into in order to reset
+* An engine body providing the physical mechanism for transduction
 
 In the examples that follow, the heat engine will be a sealed container of gas (the working substance) with a weighted piston on top. When the gas expands it does work against gravity and when it compresses it does $$PdV$$ work.
 
@@ -207,7 +216,15 @@ The purpose of an engine is to output work continuously, so engines operate in a
 3. Cooling: the gas is placed in contact with the cold reservoir
 4. Compression: the gas dumps heat into the cold reservoir and compresses until it resets to $$(T_C, V_C)$$
 
-
+There are many different physical designs that realize a heat engine, but amazingly all of them have the same upper limit on their efficiency. To see this, start with conservation of energy
+$$
+Q_H = Q_C + W
+$$
+and define efficiency as
+$$
+\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}
+$$
+So the more heat exchanged into and out of the engine the more efficient it is. This is probably an intuitive result, but perhaps less intuitive is that the upper limit never can reach 100%. The reason for this is that the engine has to dump energy to the environment in order to reset, and this energy is never recovered.
 
 
 
