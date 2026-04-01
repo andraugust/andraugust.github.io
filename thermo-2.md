@@ -144,7 +144,7 @@ C_V &= \left( \frac{\partial Q}{\partial T} \right)_V \\
 $$
 
 
-Under constant pressure, volume changes, so work is done and
+Under constant pressure, volume changes, so work is done and therefore
 
 
 $$
