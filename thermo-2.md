@@ -6,11 +6,11 @@ layout: default
 
 <center><img src="" style="zoom:100%;"></center>
 
-Thermodynamics is a framework for modelling macroscopic matter, at a scale where individual particles are irrelevant and only collective, bulk properties matter. At such a scale, systems can be described in terms of a small number of state variables, despite there being an enormous number of degrees of freedom at the microscopic level.
+Thermodynamics is a framework for modelling matter at scales where individual particles can be ignored and only their collective, bulk properties matter. At these scales, a system can be described by a small number of state variables, despite there being an enormous number of degrees of freedom at the microscopic level.
 
-When is Thermodynamics? 
+## When is Thermodynamics? 
 
-As the saying goes, "*all models are wrong but some are useful*". Thermodynamics is no exception. It's only accurate, and therefore useful under the following conditions:
+As it's said, "*all models are wrong but some are useful*". Thermodynamics is no exception. It's only accurate, and therefore useful under certain conditions:
 
 * The number of particles is large, typically $$N \gt 10^{10}$$.
 * Macroscopic fluctuations are negligible. For example, in the previous post we saw that energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
@@ -46,9 +46,9 @@ Thus, an ideal gas's state is really only two dimensional. For example, to the f
 
 The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of its particles.
 
-To calculate $$U$$ for a system, we could theoretically sum all its particle energies, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to use a different method. Besides, when thermodynamics was invented no one knew what matter was made of, so such a sum wasn't an option, yet a thermodynamic definition of $$U$$ was developed and it's what we'll use here. 
+To calculate $$U$$ for a system, we could in principle sum all of the particle energies explicitly, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to take a different approach. There's also a historical reason: when thermodynamics was developed, the microscopic structure of matter wasn't yet understood, so such a sum wasn't even an option. A macroscopic definition of $U$ was developed instead, and it's what we'll use here. 
 
-That definition of $$U$$ comes from the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
+The thermodynamic definition of $$U$$ comes from the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
 $$
 \Delta U = Q + W
 $$
@@ -56,9 +56,9 @@ $$
 
 ### Work
 
-Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as changing an **extensive variable**. An extensive variable is any quantity that defines the size or amount of matter in a system, such as volume, mass, etc.. This contrasts with **intensive variables** such as temperature and pressure which do not change when volume, for example, is cut in half. 
+Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as changing an **extensive variable**. An extensive variable is any quantity that defines the size or amount of matter in a system, such as volume, mass, etc. This contrasts with **intensive variables** such as temperature and pressure which do not change when volume, for example, is cut in half. 
 
-There are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$ thereby doing an amount of work given by
+There are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$ thereby doing work
 
 
 $$
@@ -66,20 +66,20 @@ dW_{\text{electrical}} = \phi\ dq
 $$
 
 
-Similarly, if we displace a system's volume $$V$$ against a pressure $$P$$, the work done is
+Similarly, if we displace a system's volume by $$dV$$ against a pressure $$P$$, the work done is
 
 
 $$
 dW_{\text{mechanical}} = -P\ dV
 $$
 
-The negative sign is used to make decreases in volume increase internal energy. Going forward, I'll focus on mechanical work and refer to it simply as $$W$$. 
+In general, work takes the form of an extensive displacement times an intensive "force". Going forward, I'll just focus on mechanical work and refer to it simply as $$W$$.
 
-Let's look at two common processes involving work: isothermal and adiabatic processes.
+Let's look at two common processes involving work: isothermal and adiabatic.
 
-**Isothermal** processes are where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
+**Isothermal processes** are where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
 
-How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so its internal energy in fact doesn't change. So where does the work energy go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
+How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so its internal energy actually doesn't change at all. So where does the added energy go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
 
 
 $$
@@ -91,14 +91,13 @@ Q &= -W \\
 \end{align}
 $$
 
-**Adiabatic** processes are where no heat enters or leaves a system. In practice, this is acheived by thermally insulating a system from its environment. How does internal energy change in this case? From the first law,
-
+**Adiabatic processes** are where no heat enters or leaves a system. In practice, this is acheived by thermally insulating a system from its environment. How does internal energy change in this case? From the first law,
 $$
 \Delta U = W
 $$
 
 
-We can't calculate $$W$$ like for the isotherm because $$T$$ isn't constant. Instead, we have to use an explicit formula for $$U$$. For an ideal gas we have
+To calculate $$W$$ we need an explicit formula for $$U$$. For ideal gases we have
 
 
 $$
@@ -121,20 +120,20 @@ Now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate 
 
 ### Heat
 
-Heat is defined as energy transfer due to a temperature gradient between two systems. Compared to work, heat is much more passive in the sense that it occurs spontaneously and always from the high temperature system to the low temperature one (unless work is supplied to make the process go in reverse, such as a refrigerator, which I'll discuss later).
+Heat is defined as energy transfer due to a temperature gradient between two systems. It happens spontaneously, with energy always flowing from the high temperature system to the low temperature one (unless work is supplied to make the process go in reverse, such as a refrigerator, which I'll discuss later).
 
-In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a system. In common language we say objects "are hot" but really we mean to say they're at a higher temperature than something else and can therefore transfer energy to it via heat. "Hot" object don't physically contain something called heat.
+In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a substance. In common language we say objects are "hot" but really we mean they're at a higher temperature than something else and can therefore transfer energy to it via heat. "Hot" object don't physically contain something called heat.
 
-The amount of heat transferred between two systems depends on what the systems are made of, and this is captured by a quantity called **heat capacity**:
+The amount of heat transferred to a system depends on what it's made of, and this is captured by a quantity called **heat capacity**:
 
 
 $$
 C = \frac{\partial Q}{\partial T}
 $$
 
-Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or, as I like to think of it, the energy a system gains or loses when it equilibrates with a reservoir that's (originally) 1K hotter or cooler than it.
+Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or as I like to think of it, the energy a system gains/loses when it equilibrates with a reservoir that's 1K hotter/cooler than it.
 
-Heat capacity depends on the constraints of the process. Specifically, whether the process occurs under constant volume or constant pressure conditions. Under constant volume, no work is done, so
+Heat capacity depends on the constraints of the process. Specifically, whether the process is under constant volume or constant pressure conditions. Under constant volume, no work is done, so
 
 $$
 \begin{align}
@@ -179,7 +178,8 @@ $$
 C_P = \frac{d}{2}Nk + Nk
 $$
 
-A few reference heat capacities per unit mass:
+
+Here are some heat capacities per unit mass:
 
 | Material | Specific Heat Capacity (J/(kg·K)) |
 |---|---|
@@ -191,6 +191,8 @@ A few reference heat capacities per unit mass:
 | Gold | 129 |
 | Lead | 128 |
 
+Evidently it takes a lot of energy to raise the temperature of water.
+
 The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs then heat energy goes into breaking chemical bonds while temperature stays constant.
 
 ## Path Dependence
@@ -200,31 +202,41 @@ l;k
 
 ## Heat Engines
 
-Heat engines are systems that convert heat into work. In doing so they effectively transform the incoherent energy of microscopic particles into coherent macroscopic motion, like the lifting of a weight or rotation of a drive shaft. Heat engines have the following components:
+A natural question to ask next is whether heat can be converted to work, and vice versa. Heat engines do exactly that — they transform the incoherent energy of microscopic particles into coherent macroscopic motion, like the lifting of a weight or the rotation of a drive shaft.
 
-* A working substance, usually a liquid or gas
+Heat engines have the following components:
+
+* A working substance that absorbs heat and does work, usually a liquid or gas
 * A hot reservoir at temperature $$T_H$$ that's the source of heat energy
 * A cold reservoir at temperature $$T_C$$ that the engine dumps energy into in order to reset
-* An engine body providing the physical mechanism for transduction
+* An engine body providing the physical mechanism for the transduction
 
 In the examples that follow, the heat engine will be a sealed container of gas (the working substance) with a weighted piston on top. When the gas expands it does work against gravity and when it compresses it does $$PdV$$ work.
 
-The purpose of an engine is to output work continuously, so engines operate in a cycle starting and ending at the same point in state space before running again. The cycle has four stages:
+The purpose of an engine is to output work continuously, so engines operate in a (idealized) cycle starting and ending at the same point in state space before running again. The cycle has four stages:
 
 1. Heating: the gas is in state $$(T_C, V_C)$$ and placed in contact with the hot reservoir
-2. Power stroke: the gas absorbs heat, expanding and doing work until it reaches $$(T_H, V_H)$$
+2. Power stroke: the gas absorbs heat, expanding and does work until it reaches $$(T_H, V_H)$$
 3. Cooling: the gas is placed in contact with the cold reservoir
 4. Compression: the gas dumps heat into the cold reservoir and compresses until it resets to $$(T_C, V_C)$$
 
-There are many different physical designs that realize a heat engine, but amazingly all of them have the same upper limit on their efficiency. To see this, start with conservation of energy
+There are many physical ways to implementat a heat engine, but amazingly they all have the same upper limit on their efficiency. To see this, start with conservation of energy
+
+
 $$
 Q_H = Q_C + W
 $$
+
+
 and define efficiency as
+
+
 $$
 \eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}
 $$
-So the more heat exchanged into and out of the engine the more efficient it is. This is probably an intuitive result, but perhaps less intuitive is that the upper limit never can reach 100%. The reason for this is that the engine has to dump energy to the environment in order to reset, and this energy is never recovered.
+
+
+**Example.**
 
 
 
