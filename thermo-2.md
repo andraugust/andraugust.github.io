@@ -235,7 +235,6 @@ $$
 \eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}
 $$
 
-
 **Example.**
 
 

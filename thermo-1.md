@@ -9,10 +9,10 @@ layout: default
 
 - [Notes on Statistical Thermodynamics](#notes-on-statistical-thermodynamics)
   - [Introduction](#introduction)
-  - [Pressure & The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
+  - [Pressure \& The Kinetic Theory of Gases](#pressure--the-kinetic-theory-of-gases)
   - [Temperature](#temperature)
-  - [The Multiplicity of a Gas](#the-multiplicity-of-a-gas)
-  - [The Multiplicity of a Solid](#the-multiplicity-of-a-solid)
+  - [The Temperature of a Gas](#the-temperature-of-a-gas)
+  - [The Temperature of a Solid](#the-temperature-of-a-solid)
   - [The Stability of Equilibrium](#the-stability-of-equilibrium)
   - [The Energy of a Single Particle](#the-energy-of-a-single-particle)
   - [Molecules](#molecules)
@@ -21,9 +21,9 @@ layout: default
 
 ## Introduction
 
-If you zoom in closely on any object, you'll see nearly the same thing: countless particles moving in rapid continuous motion. Despite this motion, objects have constant, well defined thermal properties at the bulk scale, such as temperature and pressure. **Statistical thermodynamics is about reconciling these two observations and showing that stable macroscopic properties emerge from the collective motion of very small particles.**
+Zoom in on any object and you'll see the same thing: countless particles in rapid, chaotic motion. Yet at the bulk scale, the same object has steady, well-defined properties like temperature and pressure. **Statistical thermodynamics reconciles these two pictures, showing how stable macroscopic properties emerge from the collective motion of microscopic particles.**
 
-In this post, I'll show how pressure emerges from atomic motion, how temperature can be defined in strictly statistical terms, and how stat-thermo methods are applied to gases, solids, single particles and molecules. I'll end by showing how stat-thermo's bottom-up approach to thermodynamics leads naturally to a central formula of classical (non-statistical) thermodynamics, which will be the subject of the next post.
+This post shows how pressure emerges from atomic motion, how temperature can be defined in purely statistical terms, and how these methods apply to gases, solids, single particles, and molecules. It ends by deriving a central formula of classical thermodynamics from the bottom up — setting up the next post, which covers thermodynamics on its own terms.
 
 ## Pressure & The Kinetic Theory of Gases
 
@@ -43,7 +43,7 @@ P = F_x / \Delta A
 $$
 
 
-where $$F_x$$ is the force over an area $$\Delta A$$ perpendicular to a direction $$x$$. Force is related to momentum by $$F_x = \Delta p_x / \Delta t $$, where $$\Delta p_x$$ is the change in a particles $$x$$-momentum when it collides with a wall, and $$\Delta t$$ is the time over which one collision occurs. 
+where $$F_x$$ is the force over an area $$\Delta A$$ perpendicular to a direction $$x$$. Force is related to momentum by $$F_x = \Delta p_x / \Delta t $$, where $$\Delta p_x$$ is the change in a particle's $$x$$-momentum when it collides with a wall, and $$\Delta t$$ is the time over which one collision occurs. 
 
 The next step is to calculate $$\Delta t$$ and $$\Delta A$$, and plug them in to get pressure. But collisions happen nearly instantaneously, so $$\Delta t \rightarrow 0 $$, and collision areas are nearly points, so $$\Delta A \rightarrow 0$$, suggesting that pressure isn't well defined. For one particle this is true, but for a continuous density of particles we can create a well defined formula for pressure.
 
@@ -108,7 +108,7 @@ So for a photon gas $$PV = U/3$$.
 
 Of all the quantities in thermodynamics, temperature is probably the most intuitive---we experience it constantly. But what is temperature objectively? When two systems exchange energy for long enough we know they reach a point where their "temperature" is the same. So let's imagine what happens when two gases exchange energy, then see what we can derive about their equilibrium state.
 
-Imagine two cylinders of gas with a wall between them. The wall allows energy to pass from one gas to the other through random molecular collisions, yet prevents particles from moving between chambers. In otherwords, the gases only exchange energy. If the energy of each gas is $$U_1$$ and $$U_2$$, the system's energy is
+Imagine two cylinders of gas with a wall between them. The wall allows energy to pass from one gas to the other through random molecular collisions, yet prevents particles from moving between chambers. In other words, the gases only exchange energy. If the energy of each gas is $$U_1$$ and $$U_2$$, the system's energy is
 
 
 $$
@@ -203,7 +203,7 @@ $$
 $$
 
 
-Where $$S_d(r)$$ is the surface area of a sphere of radius $$r$$ and dimension $$d$$. Why the surface area of a sphere? It's because the energy-momentum relation is the equation of a sphere and the momenta satisfying the energy constraint lie on its surface.
+Where $$S_d(r)$$ is the surface area of a sphere of radius $$r$$ and dimension $$d$$. Why the surface area of a sphere? Because the energy-momentum relation is the equation of a sphere and the momenta satisfying the energy constraint lie on its surface.
 
 For $$N > 1$$ the approach is the same, but now position-space volume is $$V^N$$ and momentum-space dimensionality is $$d=3N$$. Also, we have to account for the fact that atoms are indistinguishable. To see why, consider a _distinguishable_ three-atom gas. One of its microstate is
 
@@ -255,7 +255,7 @@ kT = \frac{PV}{N} = \frac{2}{3}\frac{U}{N}
 $$
 
 
-The first equality is the so-called _ideal gas law_, and the second equality says that temperature is proportional to the average energy per particle, which is a fiarly intuitive result.
+The first equality is the so-called _ideal gas law_, and the second equality says that temperature is proportional to the average energy per particle, which is a fairly intuitive result.
 
 ## The Temperature of a Solid
 
@@ -462,7 +462,7 @@ $$
 
 ## Molecules
 
-We now have the tools we need to model simple molecules. In the context of statistical mechanics the main difference between molecules and atoms is that molecules have more places to put their energy: they can rotate, oscillate and translation, while atoms can only translate. For example, if we model a diatomic molecule classically as two point masses connected by a spring, its energy is
+We now have the tools we need to model simple molecules. In the context of statistical mechanics the main difference between molecules and atoms is that molecules have more places to put their energy: they can rotate, oscillate and translate, while atoms can only translate. For example, if we model a diatomic molecule classically as two point masses connected by a spring, its energy is
 
 
 $$
@@ -472,11 +472,11 @@ $$
 
 where
 
-* $$L_i$$ are the three principal angular momenta, and $$I_i$$ are the corresponding interial moments
+* $$L_i$$ are the three principal angular momenta, and $$I_i$$ are the corresponding inertial moments
 * $$\mu$$ is the reduced mass of the two atoms, and $$\omega$$ is the spring oscillation parameter
 * $$r$$ is the separation between the two atoms, and $$r_0$$ is their resting (non-vibrating) separation
 
-This is a complicated formula compared to that of a single atom, so counting the number of degenerate energies is difficult: we would need to find the surface area of a $$d$$-dimensional spheroid, which unfortunately doesn't have a general formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the spheroide to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the spheroid's radius parameter.
+This is a complicated formula compared to that of a single atom, so counting the number of degenerate energies is difficult: we would need to find the surface area of a $$d$$-dimensional spheroid, which unfortunately doesn't have a general formula like a $$d$$-dimensional sphere does. Luckily though, we don't need to know the exact surface area of the spheroid to calculate $$\langle u \rangle$$. The reason is that the surface area of a spheroid is given by $$G\rho^{d-1}$$, where $$G$$ is a constant related to geometry and $$\rho$$ is the spheroid's radius parameter.
 
 Looking at the formula for energy, $$\sqrt{u}$$ plays the role of $$\rho$$, and $$d$$ is the number of quadratic terms on the right side of the equation. As for the geometry constant $$G$$, we don't have to worry about it because it ends up canceling.
 
@@ -609,7 +609,7 @@ S = k \ln \Omega
 $$
 
 
-It's mathematical properties are straightforward but important:
+Its mathematical properties are straightforward but important:
 
 * $$S$$ is monotonic, so maximizing $$\Omega$$ implies maximizing $$S$$, and vice versa. This means that $$\Omega$$ and $$S$$ share equilibria.
 * $$S \ge 0$$ because $$\Omega \ge 1$$.

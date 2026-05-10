@@ -19,19 +19,19 @@ $$\newcommand{\bra}[1]{\left<#1\right|}\newcommand{\ket}[1]{\left|#1\right>}\new
 
 ## Systems and Experiments
 
-One way to approach quantum mechanics is by comparing it to classical mechanics though a thought experiment. The experiment involves measure the spin of a particle using an apparatus that can be oriented in an arbitrary direction. The goal is to develop a mathematical model that captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement value. 
+One way to approach quantum mechanics is by comparing it to classical mechanics through a thought experiment. The experiment involves measuring the spin of a particle using an apparatus that can be oriented in an arbitrary direction. The goal is to develop a mathematical model that captures the relationship between the spin of the particle, the orientation of the apparatus and the measurement value. 
 
 For the classical system, suppose we orient the apparatus in the $$+z$$ direction, measure the spin, and find it to be $$+1$$. Next, we orient the apparatus in the $$-z$$ direction, measure the spin, and find it to be $$-1$$. Next, orient in the $$+x$$ direction and measure $$0$$. After more configurations and measurements we find that spin can be modeled as a unit vector $$\hat{\sigma}$$ oriented in 3-space relative to the apparatus direction $$\hat{a}$$, and the measurement we get is $$\hat{a} \cdot \hat{\sigma}$$. Note we've assumed that spin is unaffected by measurements—spin is a physical state existing independent of the apparatus and measurements leave it unchanged. As we'll see this is not necessarily true in QM.
 
-Now let's do the same experiment on quantum spin. Measuring $$\pm z$$ we get the same results, but when we measure $$x$$ we don't get $$0$$ like in the classical experiment, instead we get $$+1$$. Starting the experiment over and taking the same measurements to verify results, we find that $$x$$ has spin $$-1$$. If we restart the experiment several times we get $$+1$$s and $$-1$$s in seemingly random order, with no $$0$$s or any other values. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
+Now let's do the same experiment on quantum spin. Measuring $$\pm z$$ we get the same results as before. But when we measure $$x$$, instead of $$0$$ we get $$+1$$. If we re-run the experiment from scratch and measure $$x$$ again, this time we get $$-1$$. Repeating many times, the $$x$$ measurement returns $$+1$$ or $$-1$$ in seemingly random order — never $$0$$, and never any other value. After taking more measurements a pattern emerges: the quantum result is the same as the classical result but only on average. In other words $$\left< \sigma \right> = \hat{a} \cdot \hat{\sigma}$$.
 
-So between CM and QM the notion of determinism changes, as does the notion of measureable states: classical spin is real-valued between $$-1$$ and $$+1$$, but quantum spin is binary. Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$. In other words measuring $$x$$ doesn't affect the outcome of measuring $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of  $$x$$ changes the system such that re-measuring $$z$$ may not return the original result. To develop intuition for why this is, it's helpful to remember that quantum systems are so small that any measurement energetically strong enough to be useful is necessarily strong enough to change the system in a significant way, whereas classically the energy used to measure a system usually has negligible impact on the system itself.
+So two things change between CM and QM: outcomes become non-deterministic, and the set of possible outcomes shrinks from a continuum (any value in $$[-1,+1]$$) to two discrete values ($$\pm 1$$). Also, classical states are unchanged by measurements. For example, measuring along $$z$$ and then $$x$$ and then $$z$$ returns the original measurement of $$z$$. In other words measuring $$x$$ doesn't affect the outcome of $$z$$. In quantum mechanics this isn't always true. The intermediate measurement of $$x$$ changes the system such that re-measuring $$z$$ may not return the original result.
 
 ## States
 
 Quantum states are modeled as vectors in so-called _Hilbert space_. In Hilbert space vectors can be real or complex and have finite or infinite dimension. An example of a finite-dimensional vector is a simple column-vector, and an example of an infinite-dimensional vector is a continuous-valued function (more on those later).
 
-In terms of notation, vectors are drawn as kets $$\ket{\psi}$$ that have complex conjugates called bras, drawn the other way around $$\ket{\psi}^{*} = \bra{\psi}$$. Vectors have inner products $$\bk{\psi}{\phi}^{*} = \bk{\phi}{\psi}$$, orthogonality $$\bk{\psi}{\phi} = 0$$, and unit-normalization $$\bk{\psi}{\psi} = 1$$. The familiar properties of commutativity, associativity, distributivity and closedness are required in order for kets to be considered proper Hilbert vectors. 
+In terms of notation, vectors are drawn as kets $$\ket{\psi}$$ that have Hermitian conjugates called bras, drawn the other way around $$\ket{\psi}^{*} = \bra{\psi}$$. The inner product of two vectors $$\bk{\psi}{\phi}$$ is conjugate-symmetric: $$\bk{\psi}{\phi}^* = \bk{\phi}{\psi}$$. Two vectors are *orthogonal* when $$\bk{\psi}{\phi} = 0$$, and a vector is *unit-normalized* when $$\bk{\psi}{\psi} = 1$$. The familiar properties of commutativity, associativity, distributivity and closedness are required in order for kets to be considered proper Hilbert vectors. 
 
 A general quantum state can simply be denoted by $$\ket{\psi}$$, but it's often useful to represent it explicitly with components:
 
@@ -72,7 +72,7 @@ $$
 
 Effectively $$\ket{\psi}$$ is getting projected onto the basis of interest and then squared. 
 
-So if components are related to measurement probabilities, what are they for $$z+$$ and $$z-$$? Well, it depends on how the system is prepared prior to measurement. If a $$y$$ state is prepared, the components will have certain values, but if a $$x$$ state is prepared they may have different values. 
+If components encode measurement probabilities, what are the components of, say, an $$\ket{+x}$$ state in the $$z$$-basis? It depends on what "an $$x$$ state" means in $$z$$-language — which is what we'll work out next.
 
 To actually find these values we have to pick a basis and write components down in terms of them. $$\ket{+z}$$ and $$\ket{-z}$$ are orthogonal, so we'll use them.
 
@@ -92,7 +92,7 @@ $$
 $$
 
 
-Similar logic applies to the $$y$$ measurement and the states $$\ket{+y}$$ and $$\ket{-y}$$. This time, however, we have to consider the fact that the 50% measurement outcome is true when the system is prepared in a $$z$$ state _or_ an $$x$$ state. The results are
+Similar logic applies to $$\ket{+y}$$ and $$\ket{-y}$$, but with an extra constraint: a $$y$$-prepared state must give 50/50 outcomes when measured along **either** $$z$$ **or** $$x$$. Real coefficients can satisfy one constraint but not both — this is what forces the imaginary $$i$$ into the $$y$$ states:
 
 
 $$
@@ -104,9 +104,9 @@ $$
 \ket{-y} = \frac{1}{\sqrt{2}} \ket{+z} - \frac{i}{\sqrt{2}} \ket{-z}
 $$
 
-It's important to point out that states in QM have a very different interpretation compared to states in CM. In CM, states and measurements are the same thing: measuring the state $$(q,p)$$ returns the measurement $$(q,p)$$. In QM measuring the state $$\ket{+z}$$ does not return the measurement $$\ket{+z}$$, instead it returns a number, namely $$+1$$: measured values and states are fundamentally different things in quantum mechanics, while in classical mechanics they are identical.
+It's important to point out that states and measurement outcomes are different objects in QM, in a way they aren't classically. Classically, the state $$(q,p)$$ and the measurement outcome $$(q,p)$$ are the same tuple of numbers. In QM, the state $$\ket{+z}$$ is a vector in Hilbert space, while the measurement outcome is a real number ($$+1$$). They are categorically different.
 
-The table below lists each spin eigenvector represented in the $$z$$-basis, the header row corresponds to the eigenvalue.
+The table below lists each spin eigenvector represented in the $$z$$-basis, the column header corresponds to the eigenvalue.
 
 |       |                            $$+1$$                            |                            $$-1$$                            |
 | :---: | :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -118,9 +118,9 @@ As a final comment, multiplying any state by a factor of $$e^{i\theta}$$, where 
 
 ## Principles
 
-The principles of QM are formulated around the idea of measureables, i.e., measurement outcomes. They state that:
+The principles of QM are formulated around **observables** — physical quantities that can be measured (spin, position, energy, etc.). They state that:
 
-* Measureables (such as spin) are represented by Hermitian operators, where a Hermitian operator is an operator with the defining property $$\mathbf{H^\dagger} = \mathbf{H}$$.
+* Observables (such as spin) are represented by Hermitian operators, which have the defining property $$\mathbf{H^\dagger} = \mathbf{H}$$.
 * Quantum states (such as $$\ket{+z}$$ and $$\ket{-z}$$) are eigenvectors of their corresponding Hermitian operators.
 * Measurement outcomes (such as $$\pm1$$) are eigenvalues of these operators.
 * When an eigenvalue is measured the system is said to become _prepared_ in the corresponding eigenstate.
@@ -134,11 +134,11 @@ Why Hermitian operators? Hermitian operators have a few desirable mathematical p
 * Unique eigenvalues have orthogonal eigenvectors, which means there's an unambiguously distinct state associated with each unique measurement outcome (for a given operator).
 * Their eigenvectors form a complete set, meaning that any vector the operator can generate can be written as a linear combination of its eigenvectors.
 
-Hermitian operators implicitly define eigenvectors and eigenvalues, so they encode the all the information we need to know an observable's state and measureable. The principles, meanwhile, describe the way in which eigenvalues/vectors are used to calculate measurement probabilities.
+Hermitian operators implicitly define eigenvectors and eigenvalues, so they encode all the information needed to know an observable's state and eigenvalue. The principles, meanwhile, describe the way in which eigenvalues/vectors are used to calculate measurement probabilities.
 
 ### Spin Operators
 
-How are spin operators constructed from their eigenvalues and eigenvectors? Through the matrix identity $$\mathbf{X} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{-1}$$, where $$\mathbf{P}$$'s columns are the eigenvectors of $$\mathbf{X}$$ and $$\mathbf{\Lambda}$$ is diagonal with eigenvalues of $$\mathbf{X}$$. 
+How are spin operators constructed from their eigenvalues and eigenvectors? Through the matrix identity $$\mathbf{X} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, where $$\mathbf{P}$$'s columns are the eigenvectors of $$\mathbf{X}$$ and $$\mathbf{\Lambda}$$ is diagonal with eigenvalues of $$\mathbf{X}$$. 
 
 Spin has two eigenvalues, so its operators are $$2\times2$$ matrices called $$\mathbf{\sigma}_x$$, $$\sigma_y$$, and $$\sigma_z$$. For example, $$\sigma_y$$ is
 
@@ -197,7 +197,7 @@ is guaranteed to be Hermitian. Note that the $$\sigma_i$$ are not mutually ortho
 
 
 $$
-\sigma_i \sigma_j \neq \delta_{ij}
+\sigma_i \sigma_j \neq \delta_{ij} I
 $$
 
 
@@ -277,7 +277,7 @@ $$
 
 ## Last
 
-States, operators, and principals wrap up the first part of QM. They lay the foundation over which more interesting systems can be modeling, such as particles, forces, dynamics, and entanglement, all of which will be covered in the posts that follow. To be continued…
+States, operators, and principles wrap up the first part of QM. They lay the foundation for modeling more interesting systems — particles, forces, dynamics, and entanglement — which the next posts will cover. To be continued…
 
 
 

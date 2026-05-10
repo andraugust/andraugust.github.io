@@ -34,7 +34,7 @@ $$
 
 where $$\mathbf{U}$$ is a "time evolution operator" that maps states from one time to another. Usually we set $$t_1=0$$ and $$t_2=t$$ and simply write $$\mathbf{U}(t,0) \rightarrow \mathbf{U}(t)$$. 
 
-At this point $$\mathbf{U}$$ could be anything, but there's one thing we want $$\mathbf{U}$$ to do, and that's conserve inner products. Susskind calls this "conservation of information" and it implies that for arbitrary $$t$$ it's true that $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$ or
+At this point $$\mathbf{U}$$ could be anything, but we require one thing of it: that it conserve inner products. Susskind calls this "conservation of information." It implies that for arbitrary $$t$$, $$\bk{\Psi(t)}{\Phi(t)} = \bk{\Psi(0)}{\Phi(0)}$$, or
 
 $$
 \bra{\Psi(0)}\mathbf{U}(t)^{\dagger}\mathbf{U}(t)\ket{\Phi(0)} = \bk{\Psi(0)}{\Phi(0)}
@@ -43,21 +43,21 @@ $$
 
 So $$\mathbf{U}^{\dagger}\mathbf{U} = I$$ and therefore $$\mathbf{U}$$ is unitary. A corollary to this is that the magnitude of state vectors is conserved over time.
 
-These results are for finite evolutions. What about infinitesimal ones? In the limit, the linear infinitesimal approximation of $$\mathbf{U}$$ is
+These results are for finite evolutions. What about infinitesimal ones? To leading order in a small time interval $$\epsilon$$, the linear approximation of $$\mathbf{U}$$ is
 
 $$
-\mathbf{U}(\epsilon) = I - \epsilon i \mathbf{H}
+\mathbf{U}(\epsilon) = I - \frac{i}{\hbar}\epsilon \mathbf{H}
 $$
 
 
-Where $$\epsilon$$ is a very small time interval, $$\mathbf{H}$$ is a constant operator, and $$-i$$ is factored in so that the predictions of this model match experimental measurements. What does this operator do to $$\ket{\Psi}$$?
+where $$\mathbf{H}$$ is a constant operator. The factors of $$i$$ and $$\hbar$$ are conventional: $$i$$ ensures that $$\mathbf{H}$$ comes out Hermitian under the unitarity requirement (as we verify below), and $$\hbar \approx 10^{-34}\,\text{kg}\,\text{m}^2/\text{s}$$ gives $$\mathbf{H}$$ units of energy. What does this operator do to $$\ket{\Psi}$$?
 
 
 $$
 \begin{align*}
 \ket{\Psi(\epsilon)} &= \mathbf{U}(\epsilon) \ket{\Psi(0)} \\
-\ket{\Psi(\epsilon)} &= (I - \epsilon i \mathbf{H}) \ket{\Psi(0)} \\
-\frac{\ket{\Psi(\epsilon)} - \ket{\Psi(0)}}{\epsilon} &= -i\mathbf{H} \ket{\Psi(0)} \\
+\ket{\Psi(\epsilon)} &= \left(I - \tfrac{i}{\hbar}\epsilon \mathbf{H}\right) \ket{\Psi(0)} \\
+\frac{\ket{\Psi(\epsilon)} - \ket{\Psi(0)}}{\epsilon} &= -\tfrac{i}{\hbar}\mathbf{H} \ket{\Psi(0)} \\
 \end{align*}
 $$
 
@@ -70,21 +70,21 @@ i \hbar \frac{\partial \ket{\Psi}}{\partial t} = \mathbf{H}\ket{\Psi}
 $$
 
 
-where $$\hbar$$ is factored in to make units work, it's value is about $$10^{-34} kg \space m^2/s$$. This PDE is called the _generalized Schrodinger equation_.
+This PDE is called the _generalized Schrodinger equation_.
 
 Before moving on to solve the GSE, we can learn a bit about $$\mathbf{H}$$ by asking what, if anything, the unitary condition on $$\mathbf{U}$$ implies about it:
 
 
 $$
 \begin{align*}
-\mathbf{U}(\epsilon)^\dagger \mathbf{U}(\epsilon) &= (I - \epsilon i \mathbf{H})^\dagger (I - \epsilon i \mathbf{H}) \\
-&= (I + \epsilon i \mathbf{H}^\dagger) (I - \epsilon i \mathbf{H}) \\
-&= I - \epsilon i \mathbf{H} + \epsilon i \mathbf{H}^\dagger = I \\
+\mathbf{U}(\epsilon)^\dagger \mathbf{U}(\epsilon) &= \left(I - \tfrac{i}{\hbar}\epsilon \mathbf{H}\right)^\dagger \left(I - \tfrac{i}{\hbar}\epsilon \mathbf{H}\right) \\
+&= \left(I + \tfrac{i}{\hbar}\epsilon \mathbf{H}^\dagger\right) \left(I - \tfrac{i}{\hbar}\epsilon \mathbf{H}\right) \\
+&= I - \tfrac{i}{\hbar}\epsilon \mathbf{H} + \tfrac{i}{\hbar}\epsilon \mathbf{H}^\dagger = I \\
 \end{align*}
 $$
 
 
-So $$\mathbf{U}$$ being unitary implies $$\mathbf{H}$$ is Hermitian and therefore can represents an observable, which, as we'll see, is the quantum Hamiltonian.
+So unitarity of $$\mathbf{U}$$ implies $$\mathbf{H}$$ is Hermitian, and therefore $$\mathbf{H}$$ represents an observable. As we'll see, that observable is the quantum Hamiltonian.
 
 In CM recall that Hamiltonians represent the total energy of a system and relate to the system's dynamics through the Poisson bracket:
 
@@ -94,7 +94,7 @@ $$
 $$
 
 
-$$L$$ here is any quantity defined over phase space $$L(q,p)$$. Using the GSE it's straightforward to show that a similar relation exists in QM but for expected values:
+$$L$$ here is any quantity defined over phase space $$L(q,p)$$. Using the GSE it's straightforward to show that a similar relation exists in QM but for expected values (assuming $$\mathbf{L}$$ has no explicit time dependence, which is true for most observables we care about):
 
 
 $$
@@ -104,7 +104,7 @@ $$
 
 $$\left[\mathbf{L},\mathbf{H}\right] = \mathbf{L}\mathbf{H} - \mathbf{H}\mathbf{L}$$ is called the commutator. From it we see that if a quantity commutes with $$\mathbf{H}$$ then it's conserved (in expectation), and more generally any function of a quantity that commutes with $$\mathbf{H}$$ is conserved (in expectation). This is like in CM where if the PB is $$0$$ then $$L$$ is conserved.
 
-Note that in QM expected values don't change due to the measurables changing. Those are fixed for a given operator (for example $$\pm 1$$ for spin). Instead, expected values change because the measureables' associated _probabilities_ change, and to calculate how they change we have to solve the generalized Schrodinger equation.
+In QM, expected values don't change because the measurable outcomes change—those are fixed by the operator (e.g., $$\pm 1$$ for spin). They change because the _probabilities_ of each outcome change, and computing how they change requires solving the generalized Schrodinger equation.
 
 ### Solving the Generalized Schrodinger Equation
 
@@ -136,7 +136,7 @@ $$
 
 Compared to the general form of an oscillator $$\exp(-i \omega t)$$ we see that $$E/\hbar$$ plays the role of frequency in QM.
 
-This solution assumes we're working in the energy basis. What if we're given a state vector in a different basis and want to compute dynamics? Given a general state vector $$\ket{\Psi}$$ in a non-energy basis (such as the spin basis $$\ket{+z}$$, $$\ket{-z}$$), factor the Hamiltonian according to $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$, then the state in the energy basis is $$\mathbf{P}^{\dagger}\ket{\Psi}$$.  In terms of components $$a_i = \bk{E_i}{\Psi}$$, where $$a_i$$ is the $$i$$th component of $$\ket{\Psi}$$ in the energy basis. This is all summarized by the general solution to the SE:
+This solution assumes we're working in the energy basis. What if we're given a state vector in another basis—say the spin basis $$\ket{+z}, \ket{-z}$$? Diagonalize the Hamiltonian as $$\mathbf{H} = \mathbf{P}\mathbf{\Lambda}\mathbf{P}^{\dagger}$$; the state in the energy basis is then $$\mathbf{P}^{\dagger}\ket{\Psi}$$, with components $$a_i = \bk{E_i}{\Psi}$$. Putting it all together, the general solution to the SE is
 
 
 $$
@@ -149,7 +149,7 @@ $$
 
 So far we've looked at what I'm going to call _discrete_ states—discrete in the sense that eigenvalues are countable and states are written as a finite sum over basis vectors. But we'd also like to model continuous quantities, like position and momentum. How are _continuous_ states modeled? 
 
-The answer is that they're modeled in the same way as discrete states: by the principles of QM. The trick is to keep in mind that the principles don't require states to be discrete—they only require them to be _vectors_, and vectors can be anything, discrete or continuous, as long as they satisfy the mathematical axioms of vectors (they commute, have an inverse, etc). Complex functions in this sense are continuous vectors and they're exactly what are used to model continuous states.
+The answer is that they're modeled in the same way as discrete states: by the principles of QM. The trick is to keep in mind that the principles don't require states to be discrete—they only require them to be _vectors_, and vectors can be anything, discrete or continuous, as long as they satisfy the axioms of a vector space (closure under addition and scalar multiplication, commutativity and associativity of addition, an additive identity and inverse, etc). Complex functions in this sense are continuous vectors and they're exactly what are used to model continuous states.
 
 ### Wave Functions
 
@@ -175,7 +175,7 @@ $$
 \psi(x) = \bk{x}{\Psi}
 $$
 
-The probability of measuring a continuous eigenvalue $$x$$ is analogous to the discrete case—it's $$\psi^*(x)\psi(x)$$, which can be interpereted as a probability density function for the random variable $$x$$. Keep in mind though that this is a probability _density_ and therefore we technically shouldn't say things like "the probability of measuring $$x$$" because the probability of a single value on a pdf is $$0$$. Instead, we should talk about the probability of measuring $$x\,dx$$, which is the value of $$x$$ around some small region $$dx$$, this gives a non-zero number for the probability.
+The probability of measuring a continuous eigenvalue is analogous to the discrete case—it's $$\psi^*(x)\psi(x)$$, the probability _density_ for the random variable $$x$$. Because this is a density, the probability of measuring any single value is zero; we should instead talk about the probability of measuring a value in a small region $$dx$$ around $$x$$, which is $$|\psi(x)|^2\,dx$$.
 
 ### Continuous Operators
 
@@ -215,7 +215,7 @@ $$
 $$
 
 
-Therefore the operator $$x$$ is Hermitian. Note that the $$\dagger$$ from discrete operators gets replaced by $$*$$ for functions because there are no transposes for functions. Applying the same test to $$d/dx$$ we find that it's not Hermitian, but if we multiply it by $$i$$ it is.
+Therefore the operator $$x$$ is Hermitian. The $$*$$ above is just complex conjugation of the scalar inner product—the same role it plays in the discrete case $$\bke{\psi}{\mathbf{L}}{\phi} = \bke{\phi}{\mathbf{L}}{\psi}^*$$. The adjoint $$\mathbf{L}^\dagger$$ of a continuous operator is still well-defined; for a differential operator it's computed via integration by parts rather than a matrix transpose. Applying the Hermiticity test to $$d/dx$$ we find that it's not Hermitian (integration by parts produces a minus sign), but if we multiply it by $$i$$ it is.
 
 ### Position & Momentum
 
@@ -234,7 +234,7 @@ $$
 $$
 
 
-If $$x \ne x_0$$ then this requires $$\psi(x) = 0$$, and when $$x = x_0$$ then $$\psi(x)$$ can be anything, but because $$\psi$$ is a probability amplitude, it must integrate to $$1$$, so the eigenfunction is
+If $$x \ne x_0$$ then this requires $$\psi(x) = 0$$, and when $$x = x_0$$ then $$\psi(x)$$ can be anything. Up to a scalar, the unique distribution satisfying this equation is the Dirac delta, so the eigenfunction is
 
 
 $$
@@ -242,7 +242,7 @@ $$
 $$
 
 
-This states the obvious fact that if a particle is measured at $$x_0$$ then it's only at $$x_0$$. It's important to note that $$\delta$$ is not a function, it's a distribution, and as such belongs inside an integral:
+This states the obvious fact that if a particle is measured at $$x_0$$ then it's only at $$x_0$$. Note that $$\delta(x-x_0)$$ is not square-integrable, so position eigenstates can't be normalized in the usual sense $$\int |\psi|^2\,dx = 1$$. Instead they're normalized in the distributional sense $$\bk{x'}{x} = \delta(x-x')$$, which is consistent with treating $$\delta$$ as a distribution that belongs inside an integral:
 
 
 $$
@@ -253,9 +253,9 @@ $$
 \end{align*}
 $$
 
-It's also important to note that this delta-function model of position is a mathematical idealization. If wavefunctions did in-fact collapse to delta-functions when position was measured, the uncertainty in position would be zero and, because of the position-momentum uncertainty relation, this would force momentum uncertainty be infinity, which isn't physically meaningful.
+It's also important to note that this delta-function model of position is a mathematical idealization. If wavefunctions did in fact collapse to delta-functions when position was measured, the uncertainty in position would be zero and, because of the position-momentum uncertainty relation, this would force momentum uncertainty to be infinity, which isn't physically meaningful.
 
-What are the eigenfunctions of momentum? For momentum the set-up and solution are the same, but now $$\bar\psi$$ is used to denote a wave function in momentum space:
+What are the eigenfunctions of momentum? The set-up and solution are the same, except we now write $$\bar\psi$$ for a wave function in momentum space:
 
 $$
 p\bar\psi(p) = p_0\bar\psi(p) \\
@@ -297,7 +297,7 @@ $$
 $$
 
 
-Which is undefined. This reflects the fact that when particles are unconstrained in space the planewave solution $$\exp(ipx/\hbar)$$ is physically unrealistic. In practice, particles are either constrained in space such that the integration limits are finite, or, if they are un-constrained in space, they're acted on by a potential such that the wave-function goes to zero sufficiently quickly for the integral to converge.
+Which is undefined. This reflects the fact that plane-wave momentum eigenstates aren't physical states on their own—they're idealized basis functions. Physical states are _wave packets_, superpositions of plane waves over a range of momenta, which decay at infinity and so are square-integrable. Bound states in a potential well are normalizable for the same reason.
 
 ### Changing Basis
 
@@ -351,14 +351,14 @@ $$
 
 So position and momentum space are related by the Fourier transform. This leads to the interpretation that momentum space is the spatial frequency domain of position space, where spatial frequency is given by $$k=p/\hbar$$.
 
-How do operators change basis? Operators change basis like matrices do: $$\mathbf{L' = \mathbf{U} \mathbf{L} \mathbf{U}^{-1}}$$, where $$\mathbf{L}$$ is the operator of interest, $$\mathbf{L}'$$ is the transformed operator, and $$\mathbf{U}$$ is a unitary change-of-basis operator. Because $$\mathbf{U}$$ is unitary and we're working with continuous operators we can set $$\mathbf{U}^{-1} = \mathbf{U}^*$$.
+How do operators change basis? Operators change basis like matrices do: $$\mathbf{L'} = \mathbf{U} \mathbf{L} \mathbf{U}^{-1}$$, where $$\mathbf{L}$$ is the operator of interest, $$\mathbf{L}'$$ is the transformed operator, and $$\mathbf{U}$$ is a unitary change-of-basis operator. Because $$\mathbf{U}$$ is unitary, $$\mathbf{U}^{-1} = \mathbf{U}^\dagger$$.
 
-How does this work for position and momentum? The relevant change-of-basis operator is the Fourier transform $$\mathbf{F}$$. Is it unitary? Yes, because $$\mathbf{F}^*\mathbf{F}\psi(x) = \psi(x)$$, which implies that $$\mathbf{F}^*\mathbf{F}=I$$. Let's use $$\mathbf{F}$$ to derive the position operator in momentum space, call it $$\mathbf{\bar X}$$.
+How does this work for position and momentum? The relevant change-of-basis operator is the Fourier transform $$\mathbf{F}$$. Is it unitary? Yes, because $$\mathbf{F}^\dagger\mathbf{F}\psi(x) = \psi(x)$$, which implies that $$\mathbf{F}^\dagger\mathbf{F}=I$$. Let's use $$\mathbf{F}$$ to derive the position operator in momentum space, call it $$\mathbf{\bar X}$$.
 
 
 $$
 \begin{align*}
-\mathbf{\bar X} \bar\psi(p) &= \mathbf{F}\mathbf{X}\mathbf{F}^* \bar \psi(p) \\
+\mathbf{\bar X} \bar\psi(p) &= \mathbf{F}\mathbf{X}\mathbf{F}^\dagger \bar \psi(p) \\
 &= \mathbf{F} \mathbf{X} \psi(x) \\
 &= \mathbf{F} x \psi(x) \\
 &= i\hbar \frac{d}{dp} \bar \psi(p)
@@ -366,9 +366,9 @@ $$
 $$
 
 
-Where the last step comes from a Fourier transform identity. So the position operator in momentum-space has a similar form to the momentum operator in position space, namely $$i\hbar d/dp$$.
+Where the last step comes from a Fourier transform identity. So the position operator in momentum space mirrors the form of the momentum operator in position space, but with the opposite sign: $$\mathbf{X} \to +i\hbar\,d/dp$$ versus $$\mathbf{P} \to -i\hbar\,d/dx$$. That sign asymmetry has physical content—it's what keeps $$[\mathbf{X},\mathbf{P}]$$ equal to $$+i\hbar$$ in both bases rather than flipping sign.
 
-Another way to determine or verify an operator in a new basis is through the use of commutators. The reason is that commutators are _basis independent_. For example, $$[\mathbf{X}, \mathbf{P}] = [\mathbf{\bar X}, \mathbf{\bar P}] = i\hbar$$. This method may require some guessing and checking, whereas the unitary method above is an explicit calculation that should always give the correct result, though it may be more challenging to acquire mathematically.
+Another way to determine or verify an operator in a new basis is via commutators, which are _basis-independent_: e.g., $$[\mathbf{X}, \mathbf{P}] = [\mathbf{\bar X}, \mathbf{\bar P}] = i\hbar$$. This may require some guess-and-check, whereas the unitary method is explicit and always works—though it can be harder to carry out by hand.
 
 As a practical note, when working with operators it's helpful to supply them with a test function to act on, otherwise it isn't always clear exactly how they simplify.
 
@@ -388,9 +388,9 @@ $$
 \sigma_x \sigma_p \ge \frac{\hbar}{2}
 $$
 
-The lower limit on simultaneous uncertainty is reached when either $$\psi$$ or $$\bar \psi$$ are Gaussian function.
+The lower limit on simultaneous uncertainty is reached when $$\psi$$ is a Gaussian (equivalently, when $$\bar \psi$$ is, since the Fourier transform of a Gaussian is a Gaussian).
 
-What happened to y and z? For the sake of simplicity I've focused on measurements taken in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straighforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. And similar applies to $$z$$. Just note that the derivatives change from totals to partials, and the momentum operator as a whole becomes $$-i\hbar \nabla$$.
+What happened to y and z? For the sake of simplicity I've focused on measurements taken in one dimension, namely $$x$$, but generalizing to $$y$$ and $$z$$ is straightforward. The position operator for $$y$$ is $$y$$ and the momentum operator for $$y$$ is $$-i\hbar\, \partial/\partial y$$. And the same applies to $$z$$. Just note that the derivatives change from totals to partials, and the momentum operator as a whole becomes $$-i\hbar \nabla$$.
 
 Are measurements compatible across dimensions? The answer is yes. Using $$i$$ and $$j$$ to index spatial dimensions we get
 
@@ -405,7 +405,7 @@ $$
 
 ### The Classical Connection 
 
-In CM momentum is mass times velocity, while in QM momentum is a differential operator. How are these two connected, and is there a way to connect CM to QM in general? 
+In CM momentum is mass times velocity, while in QM momentum is an observable represented by a Hermitian operator. How are these two pictures related, and is there a general bridge from CM to QM? 
 
 The closest we come to a classical-quantum connection is through expected values. For example, in QM the classical notion of velocity corresponds to 
 
@@ -422,7 +422,7 @@ $$
 $$
 
 
-In the absence of a potential the right side simplifies to $$\left< \mathbf{P} \right>/m$$, which is the classical result for velocity. It's interesting that in QM momentum is emphasized over velocity, and that velocity doesn't appear explicitly like in CM.
+Because $$\mathbf{X}$$ commutes with any function of $$\mathbf{X}$$, the potential drops out of $$[\mathbf{X},\mathbf{H}]$$ entirely, and the right side simplifies to $$\left< \mathbf{P} \right>/m$$ regardless of whether a potential is present. This is the classical result for velocity. It's interesting that, unlike in CM, velocity doesn't appear as a fundamental quantity in QM—momentum takes its place.
 
 What about when a potential _is_ present? In CM the dynamics are
 
@@ -456,14 +456,14 @@ $$
 $$
 
 
-So the quantum result looks like the classical result in expectation, except that the right side takes the expectation over the entire derivative, which in general is different from taking it over $$x$$ and then differentiating. In other words,
+The quantum result mirrors the classical one _in expectation_, but with a subtle difference: on the right we take the expectation of the derivative, which is generally not the same as evaluating the derivative at $$\left<x\right>$$:
 
 
 $$
 \left<\frac{dV}{dx}\right> \neq \frac{dV}{dx} \bigg|_{x=\left<x\right>}
 $$
 
-If the right-side were true, we could think of a particle as classically "being" at $$\left<x\right>$$ and moving according to the potential there, just like a classical particle does, but this isn't the case. In QM, wavefunctions are spread-out in space and therefore "feel" potentials as a distribution—the entire potential function needs to be considered. If, however, the potential is approximately the same across the width of the wavefunction then the $$\neq$$ can be replaced by $$=$$, which is the classical limit.
+If the right-hand side held, we could think of a particle as classically "being" at $$\left<x\right>$$ and moving according to the potential there, just like a classical particle does, but this isn't the case. In QM, wavefunctions are spread out in space and therefore "feel" potentials as a distribution—the entire potential function needs to be considered. If, however, the force $$dV/dx$$ is approximately constant across the width of the wavefunction—or equivalently, if the wavefunction is narrow compared to the scale on which $$dV/dx$$ varies—then the $$\neq$$ can be replaced by $$=$$, which is the classical limit. Taylor expanding $$V'(x)$$ around $$\left<x\right>$$ shows the leading correction is $$\tfrac{1}{2}V'''(\left<x\right>)\sigma_x^2$$, so the classical equality is exact whenever $$V$$ is at most quadratic.
 
 ## Last
 
