@@ -34,7 +34,6 @@ layout: default
     <p style="margin: 0;">On the emergence of thermodynamics from the collective motion of microscopic particles.</p>
   </div>
 </div>
-
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="quantum-3.html" style="flex-shrink: 0; display: block;">
     <img src="index_icons/quantum-3.png" alt="Quantum Mechanics Part III thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
@@ -42,7 +41,7 @@ layout: default
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-3.html">Quantum Mechanics Part III: Joint Systems & Entanglement</a></h2>
     <p style="opacity:0.5; margin: 0 0 0.5em 0;">11/2023</p>
-    <p style="margin: 0;">On interacting quantum systems, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+    <p style="margin: 0;">On interacting quantum systems: entanglement, tensor products, mixed states.</p>
   </div>
 </div>
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
@@ -52,9 +51,10 @@ layout: default
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-2.html">Quantum Mechanics Part II: Dynamics & Continuous States</a></h2>
     <p style="opacity:0.5; margin: 0 0 0.5em 0;">07/2023</p>
-    <p style="margin: 0;">On the dynamics of quantum systems and the modeling of continuous states, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+    <p style="margin: 0;">On the dynamics of quantum systems and continuous states.</p>
   </div>
 </div>
+
 
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
@@ -64,9 +64,11 @@ layout: default
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="quantum-1.html">Quantum Mechanics Part I: States & Principles</a></h2>
     <p style="opacity:0.5; margin: 0 0 0.5em 0;">06/2023</p>
-    <p style="margin: 0;">On the foundations of quantum mechanics, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+    <p style="margin: 0;">On the foundations of quantum mechanics: principles, state representations, measurements.</p>
   </div>
 </div>
+
+
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="classical-mechanics.html" style="flex-shrink: 0; display: block;">
@@ -75,9 +77,12 @@ layout: default
   <div>
     <h2 style="margin-top: 0; margin-bottom: 0.2em;"><a href="classical-mechanics.html">Classical Mechanics</a></h2>
     <p style="opacity:0.5; margin: 0 0 0.5em 0;">05/2022</p>
-    <p style="margin: 0;">On forces, Hamiltonians and Lagrangians, based on Leonard Susskind's book <em>The Theoretical Minimum</em>.</p>
+    <p style="margin: 0;">Notes on forces, Hamiltonians, Lagrangians.</p>
   </div>
 </div>
+
+
+
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="cnn-texture-bias.html" style="flex-shrink: 0; display: block;">

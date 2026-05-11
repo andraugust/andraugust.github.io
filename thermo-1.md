@@ -47,7 +47,7 @@ where $$F_x$$ is the force over an area $$\Delta A$$ perpendicular to a directio
 
 The next step is to calculate $$\Delta t$$ and $$\Delta A$$, and plug them in to get pressure. But collisions happen nearly instantaneously, so $$\Delta t \rightarrow 0 $$, and collision areas are nearly points, so $$\Delta A \rightarrow 0$$, suggesting that pressure isn't well defined. For one particle this is true, but for a continuous density of particles we can create a well defined formula for pressure.
 
-Instead of a single particle, consider a density of particles $$n = N/V$$ having speed density distribution $$f(v_x)$$. The number of particles with speed $$v_x$$ hitting area $$\Delta A$$ over time $$\Delta t$$ is
+Instead of a single particle, consider a density of particles $$n = N/V$$ having speed density distribution $$f(v_x)$$, where $$f$$ is the distribution of $$\lvert v_x \rvert$$, normalized to 1 on $$[0,\infty)$$. The number of particles with speed $$v_x$$ hitting area $$\Delta A$$ over time $$\Delta t$$ is
 
 
 $$
@@ -57,7 +57,7 @@ $$
 
 where the factor of one-half is used to only count particles moving toward the area $$\Delta A$$ (half are moving away).
 
-When one particle collides with the wall it's momentum changes by $$2mv_x$$, so for all particles in the density the total momentum change is
+When one particle collides with the wall its momentum changes by $$2mv_x$$, so for all particles in the density the total momentum change is
 
 
 $$
@@ -115,7 +115,7 @@ $$
 U = U_1 + U_2
 $$
 
-To figure out what $$U_1$$ and $$U_2$$ are at equilibrium, we need to introduce the concept of a _microstate_. A microstate is simply the gas's configuration. If the gas is modeled classically, its microstate is a point in phase space $$(\mathbf{x}_1, \mathbf{p}_1, \mathbf{x}_2, \mathbf{p}_2..., \mathbf{x}_N, \mathbf{p}_N)$$, where $$i=1 \ldots N$$ indexes particles. If the gas is modeled quantum mechanically, its microstate is a vector in Hilbert space $$\Psi(\mathbf{x}_1, \mathbf{x}_2, ... \mathbf{x}_N)$$ satisfying whatever Hamiltonian happens to the govern the dynamics.
+To figure out what $$U_1$$ and $$U_2$$ are at equilibrium, we need to introduce the concept of a _microstate_. A microstate is simply the gas's configuration. If the gas is modeled classically, its microstate is a point in phase space $$(\mathbf{x}_1, \mathbf{p}_1, \mathbf{x}_2, \mathbf{p}_2..., \mathbf{x}_N, \mathbf{p}_N)$$, where $$i=1 \ldots N$$ indexes particles. If the gas is modeled quantum mechanically, its microstate is a vector in Hilbert space $$\Psi(\mathbf{x}_1, \mathbf{x}_2, ... \mathbf{x}_N)$$ satisfying whatever Hamiltonian happens to govern the dynamics.
 
 With the concept of a microstate in hand, we can now write down the fundamental assumptions of statistical mechanics:
 
@@ -185,7 +185,7 @@ $$
 $$
 
 
-Classically, a single particle can occupy continuous positions and momenta as long as the energy and volume constraints are satisfied. But this would imply that multiplicity is infinite. Quantum mechanically, however, there's a limit to the simultaneous "resolution" of $$\mathbf{x}$$ and $$\mathbf{p}$$. In particular, they're limited to have $$\Delta x_i \Delta p_i = \hbar/2$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped into a grid of $$\Delta x$$s and $$\Delta p$$s at this limit, then microstates become countable and finite (even though there may be _a lot_ of them).
+Classically, a single particle can occupy continuous positions and momenta as long as the energy and volume constraints are satisfied. But this would imply that multiplicity is infinite. Quantum mechanically, however, each independent quantum state occupies a phase-space volume of $$h$$ per spatial dimension, so $$\Delta x_i \Delta p_i = h$$, where $$i$$ indexes the three spatial dimensions. So if we imagine phase space as being chopped into a grid of $$\Delta x$$s and $$\Delta p$$s at this scale, then microstates become countable and finite (even though there may be _a lot_ of them).
 
 With this quantization, the number of position states is
 
@@ -231,7 +231,7 @@ $$
 $$
 
 
-In the limit of large $$N$$ this simplifies to
+This counts states on the energy surface; multiplying by an energy-shell width (or equivalently switching to the volume of the energy ball) absorbs the leftover $$\sqrt{2mU}$$ factor. In the limit of large $$N$$ this simplifies to
 
 
 $$
@@ -310,7 +310,7 @@ $$
 $$
 
 
-Apparently, near equilibrium, the multiplicity function is Gaussian with mean $$U/2$$ and variance like $$U/\sqrt{N}$$. 
+Apparently, near equilibrium, the multiplicity function is Gaussian with mean $$U/2$$ and standard deviation like $$U/\sqrt{N}$$. 
 
 As a mathematical aside, I'll note that polynomial approximations like Taylor series are only accurate when the function being approximated changes fairly slowly (like a polynomial) around the point of interest. Multiplicities tend to change very quickly, so it's best to expand their logarithm and then exponentiate to get the final result. For example, if a function $$f(x)$$ changes quickly near $$x_0$$, its best to compute the series
 
@@ -424,7 +424,7 @@ kT \gg \frac{h^2}{8 m V^{2/3}}
 $$
 
 
-then the quantized levels will appear continuous. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT_\text{room} \approx 0.026\ \text{eV}$$, while $$h^2/8mV^{2/3} \approx 10^{-23}\ \text{eV}$$, so the atom definitely behaves classically.
+then the quantized levels will appear continuous. For a hydrogen atom in a $$1\ \text{m}^3$$ container at room temperature, $$kT_\text{room} \approx 0.026\ \text{eV}$$, while $$h^2/8mV^{2/3} \approx 2 \times 10^{-22}\ \text{eV}$$, so the atom definitely behaves classically.
 
 The next example is an oscillator like the ones in the Einstein solid. Quantum oscillators have energy levels given by $$u_n = n + 1/2$$, where $$n$$ is a positive integer starting at zero and the energy is in units of $$\hbar \omega$$. Each energy level has a unique value of $$n$$ associated with it, so $$\Omega = 1$$. Plugging this into the energy probability formula yields
 
@@ -438,11 +438,11 @@ The average energy is
 
 
 $$
-\langle u \rangle = \sum_{n=1}^\infty n\ p(n) = \frac{1}{1-e^{-1/kT}}
+\langle u \rangle = \sum_{n=0}^\infty (n+\tfrac{1}{2})\ p(n) = \frac{1}{2} + \frac{1}{e^{1/kT}-1}
 $$
 
 
-In the high-temperature limit this becomes $$kT+1/2$$, which, aside from the ground-state offset, is the same result we obtained previously for the Einstein solid.
+In the high-temperature limit this becomes $$kT$$, the same result we obtained previously for the Einstein solid.
 
 At this point $$1/kT$$ has appeared frequently enough to get its own label:
 
@@ -621,7 +621,7 @@ Entropy is special for many reasons, but here it's important because it ties tog
 $$
 \begin{align}
 dS &= \frac{\partial S}{\partial U}\ dU + \frac{\partial S}{\partial V}\ dV + \frac{\partial S}{\partial N} \ dN \\
-&= \frac{1}{T}\ dU + \frac{P}{T}\ dV + \frac{\mu}{T}\ dN
+&= \frac{1}{T}\ dU + \frac{P}{T}\ dV - \frac{\mu}{T}\ dN
 \end{align}
 $$
 
@@ -636,7 +636,7 @@ $$
 
 This is the so-called _thermodynamic identity_. It demonstrates how the change in a system's energy can be decomposed into contributions from heat, mechanical work and chemical work. With no direct reference to $$\Omega$$, this formula is firmly in the domain of thermodynamics where processes are framed in terms of macrostates like $$T$$ and $$P$$ rather than the underlying microstates which give rise to them. 
 
-In the next set of notes I'll cover thermodynamics more thoroughly. Stay tuned...
+In the next set of notes I'll cover thermodynamics more thoroughly.
 
 
 

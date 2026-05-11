@@ -41,11 +41,11 @@ $$
 $$
 
 
-For now we'll assume $$N \ne \infty$$, meaning this is a finite dimensional vector. The set of $$\ket{i}$$ form an orthonormal basis and the set of $$a_i$$ are complex components. Note that representing $$\ket{\psi}$$ this way implies using a specific basis, and the values of the $$a_i$$ can change from one basis to another.
+For now we'll assume $$N \ne \infty$$, meaning this is a finite dimensional vector. The set of $$\ket{i}$$ form an orthonormal basis and the set of $$a_i$$ are complex components. Note that this representation of $$\ket{\psi}$$ implies using a specific basis, and the values of $$a_i$$ depend on the basis.
 
 ### Spin States
 
-How is spin represented in this notation? Let $$\ket{+z}$$ and $$\ket{-z}$$ be orthonormal bases for the $$z$$ measurement so that an arbitrary state prior to measurement is written as
+How is spin represented in this notation? Let $$\ket{+z}$$ and $$\ket{-z}$$ be orthonormal bases for the $$z$$ measurement such that an arbitrary state prior to measurement is written as
 
 
 $$
@@ -53,7 +53,7 @@ $$
 $$
 
 
-Defining $$\ket{+z}$$ and $$\ket{-z}$$ as orthonormal is important because it encodes the fact that they are distinct: measuring $$z$$ returns $$\ket{+z}$$ or $$\ket{-z}$$ but never both.
+Defining the bases as orthonormal is important because it encodes the fact that they are distinct: measuring $$z$$ returns $$\ket{+z}$$ or $$\ket{-z}$$ but never both.
 
 When the values of $$a_+$$ and $$a_-$$ are squared and normalized they represent measurement probabilities. In other words, $$a_+^{*}a_+$$ is the probability of measuring $$\sigma_z = +1$$ and configuring the system into $$\ket{+z}$$, while $$a_-^{*} a_-$$ is the probability of measuring $$\sigma_z = -1$$ and configuring the system into $$\ket{-z}$$. The probabilities normalize:
 
@@ -84,7 +84,7 @@ $$
 $$
 
 
-Next, for $$\ket{-x}$$, it may seem like the same coefficients will work because they also capture the 50% measurement outcomes, but that would violate the orthogonality constraint $$\bk{+x}{-x} = 0$$. To be orthogonal we use
+Next, for $$\ket{-x}$$, it may seem like the same coefficients work because they also capture the 50% measurement outcomes, but that would violate the orthogonality requirement, namely $$\bk{+x}{-x} = 0$$. To be orthogonal we use
 
 
 $$
@@ -92,7 +92,7 @@ $$
 $$
 
 
-Similar logic applies to $$\ket{+y}$$ and $$\ket{-y}$$, but with an extra constraint: a $$y$$-prepared state must give 50/50 outcomes when measured along **either** $$z$$ **or** $$x$$. Real coefficients can satisfy one constraint but not both — this is what forces the imaginary $$i$$ into the $$y$$ states:
+Similar logic applies to $$\ket{+y}$$ and $$\ket{-y}$$, but with an extra constraint: a $$y$$-prepared state must give 50/50 outcomes when measured along **either** $$z$$ **or** $$x$$. Real coefficients can satisfy one constraint but not both — this is what forces the imaginary $$i$$ into $$y$$ states:
 
 
 $$
