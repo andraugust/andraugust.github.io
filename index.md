@@ -24,7 +24,7 @@ layout: default
   </figcaption>
 </figure>
 
-<div style="margin-bottom: 20px;"></div>
+<div style="margin-bottom: 2.5em;"></div>
 
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="thermo-1.html" style="flex-shrink: 0; display: block;">
@@ -36,6 +36,9 @@ layout: default
     <p style="margin: 0;">On the emergence of thermodynamics from microscopic motion.</p>
   </div>
 </div>
+
+
+
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="quantum-3.html" style="flex-shrink: 0; display: block;">
     <img src="index_icons/quantum-3.png" alt="Quantum Mechanics Part III thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
@@ -46,6 +49,9 @@ layout: default
     <p style="margin: 0;">On interacting quantum systems ‒ entanglement, tensor products and mixed states.</p>
   </div>
 </div>
+
+
+
 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 2.5em;">
   <a href="quantum-2.html" style="flex-shrink: 0; display: block;">
     <img src="index_icons/quantum-2.png" alt="Quantum Mechanics Part II thumbnail" style="width: 160px; height: 160px; object-fit: cover; border-radius: 6px; display: block;">
