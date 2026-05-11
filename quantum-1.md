@@ -55,7 +55,7 @@ $$
 
 Defining the bases as orthonormal is important because it encodes the fact that they are distinct: measuring $$z$$ returns $$\ket{+z}$$ or $$\ket{-z}$$ but never both.
 
-When the values of $$a_+$$ and $$a_-$$ are squared and normalized they represent measurement probabilities. In other words, $$a_+^{*}a_+$$ is the probability of measuring $$\sigma_z = +1$$ and configuring the system into $$\ket{+z}$$, while $$a_-^{*} a_-$$ is the probability of measuring $$\sigma_z = -1$$ and configuring the system into $$\ket{-z}$$. The probabilities normalize:
+When the values of $$a_+$$ and $$a_-$$ are squared and normalized they represent measurement probabilities. In other words, $$a_+^{*}a_+$$ is the probability of measuring $$\sigma_z = +1$$ and preparing $$\ket{+z}$$, while $$a_-^{*} a_-$$ is the probability of measuring $$\sigma_z = -1$$ and preparing $$\ket{-z}$$. The probabilities normalize:
 
 
 $$
