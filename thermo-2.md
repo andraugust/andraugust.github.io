@@ -6,16 +6,16 @@ layout: default
 
 <center><img src="" style="zoom:100%;"></center>
 
-Thermodynamics is a framework for modelling matter at scales where individual particles can be ignored and only their collective, bulk properties matter. At these scales, a system can be described by a small number of state variables, despite there being an enormous number of degrees of freedom at the microscopic level.
+Thermodynamics is a framework for modelling matter at the bulk scale, where individual particles can be safely ignored. At such a scale, systems can be described by a small number of state variables, despite there being an enormous number of degrees of freedom at the microscopic level.
 
 ## When is Thermodynamics? 
 
-As it's said, "*all models are wrong but some are useful*". Thermodynamics is no exception. It's only accurate, and therefore useful under certain conditions:
+All models are wrong but some are useful. Thermodynamics is no exception, it's accurate under the following conditions:
 
 * The number of particles is large, typically $$N \gt 10^{10}$$.
-* Macroscopic fluctuations are negligible. For example, in the previous post we saw that energy fluctuations scale as $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
+* Macroscopic fluctuations are negligible. For example, in the previous post we saw that energy fluctuates according to $$\Delta U/ \langle U \rangle \sim 1/\sqrt{N}  $$, which is sufficiently small for $$N \sim 10^{10}$$ .
 * The system's energy spectrum is effectively continuous. This happens when $$kT \gg \delta E$$, where $$\delta E$$ is a typical microstate energy spacing.
-* Microscopic events happen much faster than macroscopic ones. For example, particle collisions happening much faster than pressure or volume changes.
+* Microscopic events happen much faster than macroscopic ones. For example, particle collisions happen much faster than pressure or volume changes.
 * The system is in equilibrium, or evolves slowly enough for it to appear so.
 
 ## States
@@ -44,11 +44,11 @@ Thus, an ideal gas's state is really only two dimensional. For example, to the f
 
 ## Energy
 
-The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of its particles.
+The energy of a thermal system is defined by its **internal energy** $$U$$, which is simply the total kinetic and potential energy of all its particles.
 
-To calculate $$U$$ for a system, we could in principle sum all of the particle energies explicitly, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to take a different approach. There's also a historical reason: when thermodynamics was developed, the microscopic structure of matter wasn't yet understood, so such a sum wasn't even an option. A macroscopic definition of $U$ was developed instead, and it's what we'll use here. 
+To calculate $$U$$, we could in principle sum the energy of each particle in a system, but thermodynamics is about analyzing large systems using a small number of macroscopic variables, ignoring underlying particles, so we'd like to take a different approach. There's also a historical reason: when thermodynamics was developed, the microscopic structure of matter wasn't yet understood, so such a sum wasn't even an option. A macroscopic definition of $U$ was developed instead, and it's what we'll use here.
 
-The thermodynamic definition of $$U$$ comes from the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: heat $$Q$$ and work $$W$$
+The thermodynamic definition of $$U$$ comes from the **first law of thermodynamics** which describes energy flow and says that internal energy changes through just two mechanisms: work $$W$$ and heat $$Q$$
 $$
 \Delta U = Q + W
 $$
@@ -56,9 +56,9 @@ $$
 
 ### Work
 
-Work is defined as energy transferred by a force acting through a displacement. "Displacement" usually refers to a change in the spatial coordinate of a particle, but in thermodynamics it's defined more generally as changing an **extensive variable**. An extensive variable is any quantity that defines the size or amount of matter in a system, such as volume, mass, etc. This contrasts with **intensive variables** such as temperature and pressure which do not change when volume, for example, is cut in half. 
+Work is defined as energy transferred by a force acting through a displacement. "Displacement" typically refers to the spatial displacement of a particle, but in thermodynamics it's defined generally as the change in an **extensive variable**. An extensive variable is one that defines the size or amount of matter in a system, such as volume, mass, charge, etc. This contrasts with **intensive variables** such as temperature and pressure which do not change when volume, for example, is cut in half. 
 
-There are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$ thereby doing work
+Because there are many different types of extensive variables, there are many different types of work. For example, if a system contains charges in a potential $$\phi$$, we can "displace" charge by adding an amount $$dq$$ thereby doing work
 
 
 $$
@@ -75,11 +75,11 @@ $$
 
 In general, work takes the form of an extensive displacement times an intensive "force". Going forward, I'll just focus on mechanical work and refer to it simply as $$W$$.
 
-Let's look at two common processes involving work: isothermal and adiabatic.
+Let's look at two common processes involving work.
 
-**Isothermal processes** are where temperature is held constant. In practice, this is acheived by placing the system in contact with a constant-temperature reservoir and changing the system so slowly that its temperature remains equal to the reservoir at all times.
+**Isothermal processes**. An isothermal process is one where temperature stays constant. In practice, this happens when a system is placed in contact with a constant-temperature heat bath while work is done so slowly that the system stays in thermal equilibrium with the bath throughout 
 
-How much does the system's internal energy change in such a process? As an example, an ideal gas has $$U = U(T)$$, so its internal energy actually doesn't change at all. So where does the added energy go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
+As an example, consider an ideal gas. It has $$U = U(T)$$, so its internal energy doesn't change during isothermal processes. So where does the work go? It's all dissipated to the environment as heat. To find out how much heat, we use the first law:
 
 
 $$
@@ -91,7 +91,7 @@ Q &= -W \\
 \end{align}
 $$
 
-**Adiabatic processes** are where no heat enters or leaves a system. In practice, this is acheived by thermally insulating a system from its environment. How does internal energy change in this case? From the first law,
+**Adiabatic processes**. An adiabatic process is one where no heat enters or leaves a system. In practice, this happens when a system is thermally insulated from its environment. How does internal energy change in this case? From the first law,
 $$
 \Delta U = W
 $$
@@ -120,7 +120,7 @@ Now, given $$(T_i, V_i, V_f)$$ we can solve for $$T_f$$ and use it to calculate 
 
 ### Heat
 
-Heat is defined as energy transfer due to a temperature gradient between two systems. It happens spontaneously, with energy always flowing from the high temperature system to the low temperature one (unless work is supplied to make the process go in reverse, such as a refrigerator, which I'll discuss later).
+Heat is defined as energy transfered by a temperature gradient. It happens spontaneously and always moves from the high temperature system to the low temperature one (unless work is supplied to make the process go in reverse, such as a refrigerator).
 
 In terms of terminology, systems don't "have" heat---heat is a mechanism of energy transfer, not a property of a substance. In common language we say objects are "hot" but really we mean they're at a higher temperature than something else and can therefore transfer energy to it via heat. "Hot" object don't physically contain something called heat.
 
@@ -131,9 +131,9 @@ $$
 C = \frac{\partial Q}{\partial T}
 $$
 
-Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K. Or as I like to think of it, the energy a system gains/loses when it equilibrates with a reservoir that's 1K hotter/cooler than it.
+Heat capacity is defined as the amount of heat needed to raise a system's temperature by 1K, or as I like to think of it, the energy a system gains/loses when it equilibrates with a reservoir that's 1K hotter/cooler than it.
 
-Heat capacity depends on the constraints of the process. Specifically, whether the process is under constant volume or constant pressure conditions. Under constant volume, no work is done, so
+Heat capacity depends on the constraints of the process. Specifically, whether the process takes place under constant volume or constant pressure conditions. Under constant volume conditions no work is done, so
 
 $$
 \begin{align}
@@ -143,7 +143,7 @@ C_V &= \left( \frac{\partial Q}{\partial T} \right)_V \\
 $$
 
 
-Under constant pressure, volume changes, so work is done and therefore
+Under constant pressure conditions volume changes, so work is done and therefore
 
 
 $$
@@ -179,7 +179,7 @@ C_P = \frac{d}{2}Nk + Nk
 $$
 
 
-Here are some heat capacities per unit mass:
+Here are the heat capacities of some materials, listed per unit mass:
 
 | Material | Specific Heat Capacity (J/(kg·K)) |
 |---|---|
@@ -191,18 +191,16 @@ Here are some heat capacities per unit mass:
 | Gold | 129 |
 | Lead | 128 |
 
-Evidently it takes a lot of energy to raise the temperature of water.
+Evidently it takes a lot of energy to raise the temperature of water, which is what makes it such a good coolant.
 
-The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs then heat energy goes into breaking chemical bonds while temperature stays constant.
+The last thing I'll note about heat is that $$C$$ is defined for a given phase--solid, liquid or gas. If a phase transition occurs, heat energy is used to break chemical bonds while temperature stays constant.
 
-## Path Dependence
-
-l;k
+## State Transitions and Path Dependence
 
 
 ## Heat Engines
 
-A natural question to ask next is whether heat can be converted to work, and vice versa. Heat engines do exactly that — they transform the incoherent energy of microscopic particles into coherent macroscopic motion, like the lifting of a weight or the rotation of a drive shaft.
+A natural question to ask next is whether heat can be converted to work, and vice versa. Heat engines do exactly that — they transform the incoherent energy of microscopic particles into coherent macroscopic motion, like the lifting of a weight or the rotating of a drive shaft.
 
 Heat engines have the following components:
 
@@ -235,11 +233,19 @@ $$
 \eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}
 $$
 
-**Example.**
+### Examples
 
 
+
+## Entropy
 
 ## Potentials
+
+## Van der Waals Gas
+
+
+
+---
 
 
 
